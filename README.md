@@ -51,8 +51,20 @@ Sakenoteなどの個人が楽しむだけのアプリとは違って、
 * 知らない人にもEdit-thonに参加してもらう
 * 酒蔵や酒屋にもEdit-thonに協力してもらう
 * Sakepedia（仮）を使ったアプリをつくる
+* 酒蔵おすすめの飲み方など、酒蔵が思うお客さんに飲んでほしいスタイルややり方をデータとして作成
+* アニメに登場やJALで提供されたなどのうんちく情報をデータとして構築
+* 酒蔵ツーリズムにつながるようにしたい　⇒地域の活性化につなげる
+* 居酒屋や酒屋の取り扱っている銘柄の可視化
 
 ## 東京オリンピックまでにやりたいこと
 
 * 多言語対応
 * 日本酒といえばコレという定番アプリを作る
+
+## 利用予定のオントロジー（メモ書き）
++ [schema.org](http://schema.org/)
++ [rdf](http://www.w3.org/1999/02/22-rdf-syntax-ns#)
++ [rdfs](http://www.w3.org/2000/01/rdf-schema#)
++ [ont](http://www.daml.org/2001/03/daml-ont#)
++ [bevon](http://rdfs.co/bevon/)
++ [DBpedia Japanese](http://ja.dbpedia.org/)
