@@ -15,6 +15,7 @@ module.exports = {
     "plugins": [
         "react"
     ],
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
     "rules": {
         "indent": [
             "error",
@@ -27,11 +28,6 @@ module.exports = {
         "quotes": [
             "error",
             "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
-        "no-console":0
+        ]
     }
 };
