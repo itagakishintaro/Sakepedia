@@ -28842,16 +28842,16 @@
 	
 	var _App2 = _interopRequireDefault(_App);
 	
-	var _List = __webpack_require__(/*! ./containers/List */ 606);
+	var _Search = __webpack_require__(/*! ./containers/Search */ 639);
 	
-	var _List2 = _interopRequireDefault(_List);
+	var _Search2 = _interopRequireDefault(_Search);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Routes = _react2.default.createElement(
 	  _reactRouter.Route,
 	  { path: '/', component: _App2.default },
-	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _List2.default })
+	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Search2.default })
 	);
 	exports.default = Routes;
 
@@ -28924,6 +28924,9 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	var headerStyle = {
+	  marginBottom: '1rem'
+	};
 	var Header = function Header() {
 	  return _react2.default.createElement(_materialUi.AppBar, {
 	    title: 'Sakepedia',
@@ -28949,7 +28952,8 @@
 	      ),
 	      _react2.default.createElement(_materialUi.MenuItem, { primaryText: 'XXX' }),
 	      _react2.default.createElement(_materialUi.MenuItem, { primaryText: 'YYY' })
-	    )
+	    ),
+	    style: headerStyle
 	  });
 	};
 	
@@ -65877,8 +65881,6 @@
 	
 	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
 	
-	var _actions = __webpack_require__(/*! ../actions */ 607);
-	
 	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 627);
 	
 	var _SakeCard2 = _interopRequireDefault(_SakeCard);
@@ -65901,11 +65903,6 @@
 	  }
 	
 	  _createClass(List, [{
-	    key: 'componentWillMount',
-	    value: function componentWillMount() {
-	      (0, _actions.getSakeList)(this.props.dispatch);
-	    }
-	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -65921,15 +65918,14 @@
 	  return List;
 	}(_react2.default.Component);
 	
-	function mapStateToProps(state) {
-	  return state;
-	}
-	
 	List.propTypes = {
 	  dispatch: _react.PropTypes.func.isRequired,
 	  list: _react.PropTypes.array.isRequired
 	};
 	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return state;
+	};
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(List);
 
 /***/ },
@@ -67258,8 +67254,8 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var cardStyle = { 'margin-top': '1em' };
-	var imgStyle = { 'height': '100px', 'margin-left': '1em' };
+	var cardStyle = { 'marginTop': '1em' };
+	var imgStyle = { 'height': '100px', 'marginLeft': '1em' };
 	
 	var SakeCard = function SakeCard(_ref) {
 	  var sake = _ref.sake;
@@ -68058,6 +68054,119 @@
 			URL.revokeObjectURL(oldSrc);
 	}
 
+
+/***/ },
+/* 639 */
+/*!**********************************!*\
+  !*** ./src/containers/Search.js ***!
+  \**********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 166);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _AutoComplete = __webpack_require__(/*! material-ui/AutoComplete */ 298);
+	
+	var _AutoComplete2 = _interopRequireDefault(_AutoComplete);
+	
+	var _Toolbar = __webpack_require__(/*! material-ui/Toolbar */ 601);
+	
+	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 282);
+	
+	var _FontIcon2 = _interopRequireDefault(_FontIcon);
+	
+	var _List = __webpack_require__(/*! ./List */ 606);
+	
+	var _List2 = _interopRequireDefault(_List);
+	
+	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
+	
+	var _actions = __webpack_require__(/*! ../actions */ 607);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var words = ['板垣', '真太郎'];
+	
+	var Search = function (_React$Component) {
+	  _inherits(Search, _React$Component);
+	
+	  function Search() {
+	    _classCallCheck(this, Search);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Search).apply(this, arguments));
+	  }
+	
+	  _createClass(Search, [{
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
+	      (0, _actions.getSakeList)(this.props.dispatch);
+	    }
+	  }, {
+	    key: 'search',
+	    value: function search() {
+	      console.log('search');
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var searchBarStyles = {
+	        fontSize: '3em'
+	      };
+	      var iconStyles = {
+	        fontSize: '3em',
+	        color: 'gray'
+	      };
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(_AutoComplete2.default, {
+	            hintText: _react2.default.createElement(
+	              _FontIcon2.default,
+	              { className: 'material-icons', style: iconStyles },
+	              'search'
+	            ),
+	            dataSource: words,
+	            onUpdateInput: this.handleUpdateInput,
+	            fullWidth: true,
+	            style: searchBarStyles,
+	            onNewRequest: this.search
+	          })
+	        ),
+	        _react2.default.createElement(_List2.default, null)
+	      );
+	    }
+	  }]);
+	
+	  return Search;
+	}(_react2.default.Component);
+	
+	Search.propTypes = {
+	  dispatch: _react.PropTypes.func.isRequired,
+	  list: _react.PropTypes.array.isRequired
+	};
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return state;
+	};
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Search);
 
 /***/ }
 /******/ ]);

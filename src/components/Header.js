@@ -3,6 +3,9 @@ import { Link } from 'react-router'
 import { AppBar, IconButton, IconMenu, MenuItem } from 'material-ui'
 import MenuIcon from 'material-ui/svg-icons/navigation/menu'
 
+const headerStyle = {
+  marginBottom: '1rem',
+}
 const Header = () => (
   <AppBar
     title="Sakepedia"
@@ -17,6 +20,7 @@ const Header = () => (
         <MenuItem primaryText='YYY' />
       </IconMenu>
     }
+    style={ headerStyle }
   />
 )
 

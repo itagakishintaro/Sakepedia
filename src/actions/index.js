@@ -3,7 +3,7 @@ import axios from 'axios'
 export const setSakeList = ( list ) => {
   return {
     type: 'SETLIST',
-    list: list
+    list: list,
   }
 }
 

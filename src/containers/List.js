@@ -1,13 +1,8 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { getSakeList } from '../actions'
 import SakeCard from '../components/SakeCard'
 
 class List extends React.Component {
-  componentWillMount() {
-    getSakeList( this.props.dispatch )
-  }
-
   render() {
     return (
       <div>
@@ -17,13 +12,10 @@ class List extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return state
-}
-
 List.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  list: PropTypes.array.isRequired
+  list: PropTypes.array.isRequired,
 }
 
+const mapStateToProps = state => state
 export default connect( mapStateToProps )( List )
