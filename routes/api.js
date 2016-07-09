@@ -1,10 +1,15 @@
 'use strict';
+/**
+ * node-mongodbのドキュメント
+ * http://mongodb.github.io/node-mongodb-native/2.1/
+ */
 let express = require( 'express' );
 let router = express.Router();
 let ObjectID = require( 'mongodb' ).ObjectID;
 // MongoDB用ファイルを指定
 let collection = require( '../mongo' );
 const COL = 'sake';
+const LIMIT = 20;
 
 // For Cross Origin
 router.all( '/*', ( req, res, next ) => {
@@ -15,7 +20,7 @@ router.all( '/*', ( req, res, next ) => {
 
 // GET find
 router.get( '/', ( req, res ) => {
-  collection( COL ).find().toArray( ( err, docs ) => {
+  collection( COL ).find().limit( LIMIT ).toArray( ( err, docs ) => {
     res.send( docs );
   } );
 } );
