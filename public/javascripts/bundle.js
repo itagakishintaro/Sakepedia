@@ -65891,13 +65891,13 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var List = function (_Component) {
-	  _inherits(List, _Component);
+	var List = function (_React$Component) {
+	  _inherits(List, _React$Component);
 	
-	  function List(props) {
+	  function List() {
 	    _classCallCheck(this, List);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(List).call(this, props));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(List).apply(this, arguments));
 	  }
 	
 	  _createClass(List, [{
@@ -65919,7 +65919,7 @@
 	  }]);
 	
 	  return List;
-	}(_react.Component);
+	}(_react2.default.Component);
 	
 	function mapStateToProps(state) {
 	  return state;
@@ -67258,17 +67258,20 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var mediaStyle = { width: '2em' };
+	var cardStyle = { 'margin-top': '1em' };
+	var imgStyle = { 'height': '100px', 'margin-left': '1em' };
+	
 	var SakeCard = function SakeCard(_ref) {
 	  var sake = _ref.sake;
 	  return _react2.default.createElement(
 	    _Card.Card,
-	    null,
+	    { style: cardStyle },
 	    _react2.default.createElement(_Card.CardTitle, { title: sake.名前 + ' ( ' + sake.種類 + ' )', subtitle: sake.蔵元 + ' ( ' + sake.都道府県 + ' ) ' }),
 	    _react2.default.createElement(
-	      _Card.CardMedia,
-	      { mediaStyle: mediaStyle },
-	      _react2.default.createElement('img', { src: sake.画像URL })
+	      'div',
+	      null,
+	      _react2.default.createElement('img', { src: sake.画像URL, style: imgStyle }),
+	      _react2.default.createElement('img', { src: sake.画像URL, style: imgStyle })
 	    ),
 	    _react2.default.createElement(
 	      _Card.CardText,

@@ -1,13 +1,9 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { getSakeList } from '../actions'
 import SakeCard from '../components/SakeCard'
 
-class List extends Component {
-  constructor(props) {
-    super(props)
-  }
-
+class List extends React.Component {
   componentWillMount() {
     getSakeList( this.props.dispatch )
   }

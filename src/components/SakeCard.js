@@ -1,13 +1,16 @@
 import React, { PropTypes } from 'react'
-import {Card, CardMedia, CardTitle, CardText} from 'material-ui/Card'
+import {Card, CardTitle, CardText} from 'material-ui/Card'
 
-const mediaStyle = { width: '2em' }
+const cardStyle = { 'margin-top': '1em' }
+const imgStyle = { 'height': '100px', 'margin-left': '1em' }
+
 const SakeCard = ( { sake } ) => (
-  <Card>
+  <Card style={ cardStyle }>
     <CardTitle title={ `${sake.名前} ( ${sake.種類} )` } subtitle={ `${sake.蔵元} ( ${sake.都道府県} ) ` }/>
-    <CardMedia mediaStyle={ mediaStyle } >
-      <img src={ sake.画像URL } />
-    </CardMedia>
+    <div>
+      <img src={ sake.画像URL } style={ imgStyle } />
+      <img src={ sake.画像URL } style={ imgStyle } />
+    </div>
     <CardText>{ sake.香味 }</CardText>
   </Card>
 )
