@@ -67258,16 +67258,22 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	var mediaStyle = { width: '2em' };
 	var SakeCard = function SakeCard(_ref) {
 	  var sake = _ref.sake;
 	  return _react2.default.createElement(
 	    _Card.Card,
 	    null,
-	    _react2.default.createElement(_Card.CardTitle, { title: sake.name }),
+	    _react2.default.createElement(_Card.CardTitle, { title: sake.名前 + ' ( ' + sake.種類 + ' )', subtitle: sake.蔵元 + ' ( ' + sake.都道府県 + ' ) ' }),
+	    _react2.default.createElement(
+	      _Card.CardMedia,
+	      { mediaStyle: mediaStyle },
+	      _react2.default.createElement('img', { src: sake.画像URL })
+	    ),
 	    _react2.default.createElement(
 	      _Card.CardText,
 	      null,
-	      sake._id
+	      sake.香味
 	    )
 	  );
 	};
