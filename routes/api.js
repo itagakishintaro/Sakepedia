@@ -20,8 +20,18 @@ router.all( '/*', ( req, res, next ) => {
 
 // GET find
 router.get( '/find', ( req, res ) => {
-  let re = new RegExp( req.query.key );
-  collection( COL ).find( { '名前': re } ).limit( LIMIT ).toArray( ( err, docs ) => {
+  let query = {}
+  if ( req.query.prefecture ) {
+    query['都道府県'] = new RegExp( req.query.prefecture );
+  }
+  if ( req.query.brewrey ) {
+    query['蔵元'] = new RegExp( req.query.brewrey );
+  }
+  if ( req.query.name ) {
+    query['名前'] = new RegExp( req.query.name );
+  }
+  console.log(query);
+  collection( COL ).find( query ).limit( LIMIT ).toArray( ( err, docs ) => {
     res.send( docs );
   } );
 } );

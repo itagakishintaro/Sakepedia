@@ -9,7 +9,6 @@ const SakeCard = ( { sake } ) => (
     <CardTitle title={ `${sake.名前} ( ${sake.種類} )` } subtitle={ `${sake.蔵元} ( ${sake.都道府県} ) ` }/>
     <div>
       <img src={ sake.画像URL } style={ imgStyle } />
-      <img src={ sake.画像URL } style={ imgStyle } />
     </div>
     <CardText>{ sake.香味 }</CardText>
   </Card>

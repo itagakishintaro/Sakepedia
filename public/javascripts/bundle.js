@@ -65887,6 +65887,12 @@
 	
 	var _FontIcon2 = _interopRequireDefault(_FontIcon);
 	
+	var _Tabs = __webpack_require__(/*! material-ui/Tabs */ 576);
+	
+	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 555);
+	
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+	
 	var _List = __webpack_require__(/*! ./List */ 607);
 	
 	var _List2 = _interopRequireDefault(_List);
@@ -65908,10 +65914,13 @@
 	var Search = function (_React$Component) {
 	  _inherits(Search, _React$Component);
 	
-	  function Search() {
+	  function Search(props) {
 	    _classCallCheck(this, Search);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Search).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Search).call(this, props));
+	
+	    _this.state = { value: 1 };
+	    return _this;
 	  }
 	
 	  _createClass(Search, [{
@@ -65920,42 +65929,110 @@
 	      // getSakeList( this.props.dispatch )
 	    }
 	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var _this2 = this;
+	
+	      document.getElementById('detailSearch').addEventListener('click', function () {
+	        console.log('detailSearch');
+	        _this2.search(_this2.props.dispatch, {
+	          prefecture: document.getElementById('prefecture').value,
+	          brewrey: document.getElementById('brewrey').value,
+	          name: document.getElementById('name').value
+	        });
+	      });
+	    }
+	  }, {
 	    key: 'search',
-	    value: function search(dispatch, chosen) {
-	      console.log('search event', chosen);
-	      (0, _actions.getSakeList)(dispatch, chosen);
+	    value: function search(dispatch, words) {
+	      console.log('search event', words);
+	      (0, _actions.getSakeList)(dispatch, words);
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var _this2 = this;
+	      var _this3 = this;
 	
-	      var searchBarStyles = {
-	        fontSize: '3em'
-	      };
 	      var iconStyles = {
-	        fontSize: '3em',
 	        color: 'gray'
 	      };
 	      return _react2.default.createElement(
 	        'div',
 	        null,
 	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(_AutoComplete2.default, {
-	            hintText: _react2.default.createElement(
-	              _FontIcon2.default,
-	              { className: 'material-icons', style: iconStyles },
-	              'search'
-	            ),
-	            dataSource: words,
-	            fullWidth: true,
-	            style: searchBarStyles,
-	            onNewRequest: function onNewRequest(chosen) {
-	              _this2.search(_this2.props.dispatch, chosen);
-	            }
-	          })
+	          _Tabs.Tabs,
+	          { tabItemContainerStyle: { 'backgroundColor': 'lightgray' }, inkBarStyle: { 'color': 'gray' } },
+	          _react2.default.createElement(
+	            _Tabs.Tab,
+	            { label: '銘柄検索' },
+	            _react2.default.createElement(_AutoComplete2.default, {
+	              hintText: _react2.default.createElement(
+	                'span',
+	                null,
+	                _react2.default.createElement(
+	                  _FontIcon2.default,
+	                  { className: 'material-icons', style: iconStyles },
+	                  'search'
+	                ),
+	                '銘柄'
+	              ),
+	              dataSource: words,
+	              fullWidth: true,
+	              onNewRequest: function onNewRequest(name) {
+	                _this3.search(_this3.props.dispatch, { name: name });
+	              }
+	            })
+	          ),
+	          _react2.default.createElement(
+	            _Tabs.Tab,
+	            { label: '詳細検索' },
+	            _react2.default.createElement(_AutoComplete2.default, {
+	              id: 'prefecture',
+	              hintText: _react2.default.createElement(
+	                'span',
+	                null,
+	                _react2.default.createElement(
+	                  _FontIcon2.default,
+	                  { className: 'material-icons', style: iconStyles },
+	                  'search'
+	                ),
+	                '都道府県'
+	              ),
+	              dataSource: words,
+	              fullWidth: true
+	            }),
+	            _react2.default.createElement(_AutoComplete2.default, {
+	              id: 'brewrey',
+	              hintText: _react2.default.createElement(
+	                'span',
+	                null,
+	                _react2.default.createElement(
+	                  _FontIcon2.default,
+	                  { className: 'material-icons', style: iconStyles },
+	                  'search'
+	                ),
+	                '蔵元'
+	              ),
+	              dataSource: words,
+	              fullWidth: true
+	            }),
+	            _react2.default.createElement(_AutoComplete2.default, {
+	              id: 'name',
+	              hintText: _react2.default.createElement(
+	                'span',
+	                null,
+	                _react2.default.createElement(
+	                  _FontIcon2.default,
+	                  { className: 'material-icons', style: iconStyles },
+	                  'search'
+	                ),
+	                '銘柄'
+	              ),
+	              dataSource: words,
+	              fullWidth: true
+	            }),
+	            _react2.default.createElement(_RaisedButton2.default, { id: 'detailSearch', label: '検索', primary: true })
+	          )
 	        ),
 	        _react2.default.createElement(_List2.default, null)
 	      );
@@ -66076,7 +66153,6 @@
 	    _react2.default.createElement(
 	      'div',
 	      null,
-	      _react2.default.createElement('img', { src: sake.画像URL, style: imgStyle }),
 	      _react2.default.createElement('img', { src: sake.画像URL, style: imgStyle })
 	    ),
 	    _react2.default.createElement(
@@ -66120,8 +66196,19 @@
 	  };
 	};
 	
-	var getSakeList = exports.getSakeList = function getSakeList(dispatch, chosen) {
-	  _axios2.default.get('/api/find?key=' + chosen).then(function (response) {
+	var getSakeList = exports.getSakeList = function getSakeList(dispatch, words) {
+	  var query = 'action=search';
+	  if (words.prefecture) {
+	    query = query + '&prefecture=' + words.prefecture;
+	  }
+	  if (words.brewrey) {
+	    query = query + '&brewrey=' + words.brewrey;
+	  }
+	  if (words.name) {
+	    query = query + '&name=' + words.name;
+	  }
+	  console.log('axios.get: ', '/api/find?' + query);
+	  _axios2.default.get('/api/find?' + query).then(function (response) {
 	    console.log(response.data);
 	    dispatch(setSakeList(response.data));
 	  }).catch(function (error) {
@@ -67851,7 +67938,7 @@
 	
 	
 	// module
-	exports.push([module.id, "body {\n  padding: 50px;\n  font: 14px \"Lucida Grande\", Helvetica, Arial, sans-serif; }\n\na {\n  color: #00B7FF; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/public/stylesheets/scss/style.scss"],"names":[],"mappings":"AAAA;EACE,cAAc;EACd,yDAAyD,EAC1D;;AAED;EACE,eAAe,EAChB","file":"style.scss","sourcesContent":["body {\n  padding: 50px;\n  font: 14px \"Lucida Grande\", Helvetica, Arial, sans-serif;\n}\n\na {\n  color: #00B7FF;\n}\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "a {\n  color: #00B7FF; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/public/stylesheets/scss/style.scss"],"names":[],"mappings":"AAAA;EACE,eAAe,EAChB","file":"style.scss","sourcesContent":["a {\n  color: #00B7FF;\n}\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
