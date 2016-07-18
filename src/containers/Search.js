@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react'
 import AutoComplete from 'material-ui/AutoComplete'
-import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar';
 import FontIcon from 'material-ui/FontIcon';
 import List from './List'
 import { connect } from 'react-redux'
@@ -13,11 +12,12 @@ const words=[
 
 class Search extends React.Component {
   componentWillMount() {
-    getSakeList( this.props.dispatch )
+    // getSakeList( this.props.dispatch )
   }
 
-  search() {
-    console.log('search')
+  search(dispatch, chosen) {
+    console.log('search event', chosen)
+    getSakeList( dispatch, chosen )
   }
 
   render() {
@@ -34,10 +34,9 @@ class Search extends React.Component {
             <AutoComplete
               hintText={<FontIcon className="material-icons" style={iconStyles}>search</FontIcon>}
               dataSource={words}
-              onUpdateInput={this.handleUpdateInput}
               fullWidth={true}
               style={ searchBarStyles }
-              onNewRequest= { this.search }
+              onNewRequest={ ( chosen ) => { this.search( this.props.dispatch, chosen ) } }
             />
           </div>
         <List />

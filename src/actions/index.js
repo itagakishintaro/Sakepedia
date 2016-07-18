@@ -7,8 +7,8 @@ export const setSakeList = ( list ) => {
   }
 }
 
-export const getSakeList = ( dispatch ) => {
-  axios.get( '/api' )
+export const getSakeList = ( dispatch, chosen ) => {
+  axios.get( `/api/find?key=${chosen}` )
     .then( response => {
       console.log( response.data )
       dispatch( setSakeList( response.data ) )

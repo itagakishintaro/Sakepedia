@@ -9,7 +9,7 @@ let ObjectID = require( 'mongodb' ).ObjectID;
 // MongoDB用ファイルを指定
 let collection = require( '../mongo' );
 const COL = 'sake';
-const LIMIT = 20;
+const LIMIT = 100;
 
 // For Cross Origin
 router.all( '/*', ( req, res, next ) => {
@@ -19,8 +19,9 @@ router.all( '/*', ( req, res, next ) => {
 } );
 
 // GET find
-router.get( '/', ( req, res ) => {
-  collection( COL ).find().limit( LIMIT ).toArray( ( err, docs ) => {
+router.get( '/find', ( req, res ) => {
+  let re = new RegExp( req.query.key );
+  collection( COL ).find( { '名前': re } ).limit( LIMIT ).toArray( ( err, docs ) => {
     res.send( docs );
   } );
 } );
