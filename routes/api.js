@@ -36,6 +36,21 @@ router.get( '/find', ( req, res ) => {
   } );
 } );
 
+// GET find names
+router.get( '/find/names', ( req, res ) => {
+  collection( COL ).distinct( '名前', ( err, docs ) => { res.send( docs) } );
+} );
+
+// GET find breweries
+router.get( '/find/breweries', ( req, res ) => {
+  collection( COL ).distinct( '蔵元', ( err, docs ) => { res.send( docs) } );
+} );
+
+// GET find prefectures
+router.get( '/find/prefectures', ( req, res ) => {
+  collection( COL ).distinct( '都道府県', ( err, docs ) => { res.send( docs) } );
+} );
+
 // GET find :id
 router.get( '/:id', ( req, res ) => {
   collection( COL ).findOne( {
@@ -44,7 +59,6 @@ router.get( '/:id', ( req, res ) => {
     res.send( r );
   } );
 } );
-
 
 // POST insert data
 router.post( '/', ( req, res ) => {

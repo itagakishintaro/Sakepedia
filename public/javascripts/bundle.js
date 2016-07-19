@@ -23165,10 +23165,22 @@
 	
 	var _list2 = _interopRequireDefault(_list);
 	
+	var _names = __webpack_require__(/*! ./names */ 640);
+	
+	var _names2 = _interopRequireDefault(_names);
+	
+	var _breweries = __webpack_require__(/*! ./breweries */ 641);
+	
+	var _breweries2 = _interopRequireDefault(_breweries);
+	
+	var _prefectures = __webpack_require__(/*! ./prefectures */ 642);
+	
+	var _prefectures2 = _interopRequireDefault(_prefectures);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var app = (0, _redux.combineReducers)({
-	  list: _list2.default
+	  list: _list2.default, names: _names2.default, breweries: _breweries2.default, prefectures: _prefectures2.default
 	});
 	
 	exports.default = app;
@@ -65917,16 +65929,15 @@
 	  function Search(props) {
 	    _classCallCheck(this, Search);
 	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Search).call(this, props));
-	
-	    _this.state = { value: 1 };
-	    return _this;
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Search).call(this, props));
 	  }
 	
 	  _createClass(Search, [{
 	    key: 'componentWillMount',
 	    value: function componentWillMount() {
-	      // getSakeList( this.props.dispatch )
+	      (0, _actions.getNames)(this.props.dispatch);
+	      (0, _actions.getBreweries)(this.props.dispatch);
+	      (0, _actions.getPrefectures)(this.props.dispatch);
 	    }
 	  }, {
 	    key: 'componentDidMount',
@@ -65934,7 +65945,6 @@
 	      var _this2 = this;
 	
 	      document.getElementById('detailSearch').addEventListener('click', function () {
-	        console.log('detailSearch');
 	        _this2.search(_this2.props.dispatch, {
 	          prefecture: document.getElementById('prefecture').value,
 	          brewrey: document.getElementById('brewrey').value,
@@ -65945,7 +65955,6 @@
 	  }, {
 	    key: 'search',
 	    value: function search(dispatch, words) {
-	      console.log('search event', words);
 	      (0, _actions.getSakeList)(dispatch, words);
 	    }
 	  }, {
@@ -65956,12 +65965,15 @@
 	      var iconStyles = {
 	        color: 'gray'
 	      };
+	      var tabItemContainerStyles = {
+	        'backgroundColor': 'lightgray'
+	      };
 	      return _react2.default.createElement(
 	        'div',
 	        null,
 	        _react2.default.createElement(
 	          _Tabs.Tabs,
-	          { tabItemContainerStyle: { 'backgroundColor': 'lightgray' }, inkBarStyle: { 'color': 'gray' } },
+	          { tabItemContainerStyle: tabItemContainerStyles },
 	          _react2.default.createElement(
 	            _Tabs.Tab,
 	            { label: '銘柄検索' },
@@ -65976,7 +65988,7 @@
 	                ),
 	                '銘柄'
 	              ),
-	              dataSource: words,
+	              dataSource: this.props.names,
 	              fullWidth: true,
 	              onNewRequest: function onNewRequest(name) {
 	                _this3.search(_this3.props.dispatch, { name: name });
@@ -65998,7 +66010,7 @@
 	                ),
 	                '都道府県'
 	              ),
-	              dataSource: words,
+	              dataSource: this.props.prefectures,
 	              fullWidth: true
 	            }),
 	            _react2.default.createElement(_AutoComplete2.default, {
@@ -66013,7 +66025,7 @@
 	                ),
 	                '蔵元'
 	              ),
-	              dataSource: words,
+	              dataSource: this.props.breweries,
 	              fullWidth: true
 	            }),
 	            _react2.default.createElement(_AutoComplete2.default, {
@@ -66028,7 +66040,7 @@
 	                ),
 	                '銘柄'
 	              ),
-	              dataSource: words,
+	              dataSource: this.props.names,
 	              fullWidth: true
 	            }),
 	            _react2.default.createElement(_RaisedButton2.default, { id: 'detailSearch', label: '検索', primary: true })
@@ -66044,7 +66056,10 @@
 	
 	Search.propTypes = {
 	  dispatch: _react.PropTypes.func.isRequired,
-	  list: _react.PropTypes.array.isRequired
+	  list: _react.PropTypes.array.isRequired,
+	  names: _react.PropTypes.array.isRequired,
+	  breweries: _react.PropTypes.array.isRequired,
+	  prefectures: _react.PropTypes.array.isRequired
 	};
 	
 	var mapStateToProps = function mapStateToProps(state) {
@@ -66181,7 +66196,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.getSakeList = exports.setSakeList = undefined;
+	exports.getPrefectures = exports.getBreweries = exports.getNames = exports.getSakeList = exports.setPrefectures = exports.setBreweries = exports.setNames = exports.setSakeList = undefined;
 	
 	var _axios = __webpack_require__(/*! axios */ 610);
 	
@@ -66193,6 +66208,27 @@
 	  return {
 	    type: 'SETLIST',
 	    list: list
+	  };
+	};
+	
+	var setNames = exports.setNames = function setNames(names) {
+	  return {
+	    type: 'SETNAMES',
+	    names: names
+	  };
+	};
+	
+	var setBreweries = exports.setBreweries = function setBreweries(breweries) {
+	  return {
+	    type: 'SETBREWERIES',
+	    breweries: breweries
+	  };
+	};
+	
+	var setPrefectures = exports.setPrefectures = function setPrefectures(prefectures) {
+	  return {
+	    type: 'SETPREFECTURES',
+	    prefectures: prefectures
 	  };
 	};
 	
@@ -66208,9 +66244,36 @@
 	    query = query + '&name=' + words.name;
 	  }
 	  console.log('axios.get: ', '/api/find?' + query);
-	  _axios2.default.get('/api/find?' + query).then(function (response) {
-	    console.log(response.data);
-	    dispatch(setSakeList(response.data));
+	  _axios2.default.get('/api/find?' + query).then(function (res) {
+	    console.log(res.data);
+	    dispatch(setSakeList(res.data));
+	  }).catch(function (error) {
+	    console.log(error);
+	  });
+	};
+	
+	var getNames = exports.getNames = function getNames(dispatch) {
+	  _axios2.default.get('/api/find/names').then(function (res) {
+	    console.log(res.data);
+	    dispatch(setNames(res.data));
+	  }).catch(function (error) {
+	    console.log(error);
+	  });
+	};
+	
+	var getBreweries = exports.getBreweries = function getBreweries(dispatch) {
+	  _axios2.default.get('/api/find/breweries').then(function (res) {
+	    console.log(res.data);
+	    dispatch(setBreweries(res.data));
+	  }).catch(function (error) {
+	    console.log(error);
+	  });
+	};
+	
+	var getPrefectures = exports.getPrefectures = function getPrefectures(dispatch) {
+	  _axios2.default.get('/api/find/prefectures').then(function (res) {
+	    console.log(res.data);
+	    dispatch(setPrefectures(res.data));
 	  }).catch(function (error) {
 	    console.log(error);
 	  });
@@ -68256,6 +68319,84 @@
 			URL.revokeObjectURL(oldSrc);
 	}
 
+
+/***/ },
+/* 640 */
+/*!*******************************!*\
+  !*** ./src/reducers/names.js ***!
+  \*******************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var names = function names() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
+	  var action = arguments[1];
+	
+	  switch (action.type) {
+	    case 'SETNAMES':
+	      return action.names;
+	    default:
+	      return state;
+	  }
+	};
+	
+	exports.default = names;
+
+/***/ },
+/* 641 */
+/*!***********************************!*\
+  !*** ./src/reducers/breweries.js ***!
+  \***********************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var breweries = function breweries() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
+	  var action = arguments[1];
+	
+	  switch (action.type) {
+	    case 'SETBREWERIES':
+	      return action.breweries;
+	    default:
+	      return state;
+	  }
+	};
+	
+	exports.default = breweries;
+
+/***/ },
+/* 642 */
+/*!*************************************!*\
+  !*** ./src/reducers/prefectures.js ***!
+  \*************************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var prefectures = function prefectures() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
+	  var action = arguments[1];
+	
+	  switch (action.type) {
+	    case 'SETPREFECTURES':
+	      return action.prefectures;
+	    default:
+	      return state;
+	  }
+	};
+	
+	exports.default = prefectures;
 
 /***/ }
 /******/ ]);

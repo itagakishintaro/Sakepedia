@@ -5,7 +5,7 @@ import {Tabs, Tab} from 'material-ui/Tabs'
 import RaisedButton from 'material-ui/RaisedButton'
 import List from './List'
 import { connect } from 'react-redux'
-import { getSakeList, getSakeListByDetail } from '../actions'
+import { getSakeList, getNames, getBreweries, getPrefectures } from '../actions'
 
 const words=[
   '板垣',
@@ -15,16 +15,16 @@ const words=[
 class Search extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {value: 1}
   }
 
   componentWillMount() {
-    // getSakeList( this.props.dispatch )
+    getNames( this.props.dispatch )
+    getBreweries( this.props.dispatch )
+    getPrefectures( this.props.dispatch )
   }
 
 componentDidMount(){
   document.getElementById('detailSearch').addEventListener('click', () => {
-    console.log('detailSearch');
     this.search( this.props.dispatch, {
       prefecture: document.getElementById('prefecture').value,
       brewrey: document.getElementById('brewrey').value,
@@ -34,7 +34,6 @@ componentDidMount(){
 }
 
   search(dispatch, words) {
-    console.log('search event', words)
     getSakeList( dispatch, words )
   }
 
@@ -42,13 +41,16 @@ componentDidMount(){
     const iconStyles = {
       color: 'gray',
     }
+    const tabItemContainerStyles = {
+      'backgroundColor': 'lightgray',
+    }
     return (
       <div>
-        <Tabs tabItemContainerStyle={{'backgroundColor': 'lightgray'}} inkBarStyle={{'color': 'gray'}}>
+        <Tabs tabItemContainerStyle={ tabItemContainerStyles } >
           <Tab label="銘柄検索" >
             <AutoComplete
               hintText={ <span><FontIcon className="material-icons" style={iconStyles}>search</FontIcon>銘柄</span> }
-              dataSource={words}
+              dataSource={ this.props.names }
               fullWidth={true}
               onNewRequest={ ( name ) => { this.search( this.props.dispatch, { name } ) } }
             />
@@ -57,19 +59,19 @@ componentDidMount(){
             <AutoComplete
               id="prefecture"
               hintText={ <span><FontIcon className="material-icons" style={iconStyles}>search</FontIcon>都道府県</span> }
-              dataSource={words}
+              dataSource={ this.props.prefectures }
               fullWidth={true}
             />
             <AutoComplete
               id="brewrey"
               hintText={ <span><FontIcon className="material-icons" style={iconStyles}>search</FontIcon>蔵元</span> }
-              dataSource={words}
+              dataSource={ this.props.breweries }
               fullWidth={true}
             />
             <AutoComplete
               id="name"
               hintText={ <span><FontIcon className="material-icons" style={iconStyles}>search</FontIcon>銘柄</span> }
-              dataSource={words}
+              dataSource={ this.props.names }
               fullWidth={true}
             />
             <RaisedButton id="detailSearch" label="検索" primary={true} />
@@ -85,6 +87,9 @@ componentDidMount(){
 Search.propTypes = {
   dispatch: PropTypes.func.isRequired,
   list: PropTypes.array.isRequired,
+  names: PropTypes.array.isRequired,
+  breweries: PropTypes.array.isRequired,
+  prefectures: PropTypes.array.isRequired,
 }
 
 const mapStateToProps = state => state
