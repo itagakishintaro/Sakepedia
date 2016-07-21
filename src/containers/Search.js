@@ -7,11 +7,6 @@ import List from './List'
 import { connect } from 'react-redux'
 import { getSakeList, getNames, getBreweries, getPrefectures } from '../actions'
 
-const words=[
-  '板垣',
-  '真太郎',
-]
-
 class Search extends React.Component {
   constructor(props) {
     super(props)
@@ -23,15 +18,15 @@ class Search extends React.Component {
     getPrefectures( this.props.dispatch )
   }
 
-componentDidMount(){
-  document.getElementById('detailSearch').addEventListener('click', () => {
-    this.search( this.props.dispatch, {
-      prefecture: document.getElementById('prefecture').value,
-      brewrey: document.getElementById('brewrey').value,
-      name: document.getElementById('name').value
-    } );
-  } )
-}
+  componentDidMount(){
+    document.getElementById('detailSearch').addEventListener('click', () => {
+      this.search( this.props.dispatch, {
+        prefecture: document.getElementById('prefecture').value,
+        brewrey: document.getElementById('brewrey').value,
+        name: document.getElementById('name').value
+      } );
+    } )
+  }
 
   search(dispatch, words) {
     getSakeList( dispatch, words )

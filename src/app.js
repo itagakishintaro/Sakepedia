@@ -1,5 +1,3 @@
-require( '../public/stylesheets/scss/style.scss' )
-
 let React = require('react')
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'

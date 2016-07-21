@@ -23,7 +23,7 @@ module.exports = {
       }, {
         test: /\.scss$/,
         // loader: ExtractTextPlugin.extract( 'style-loader', 'css-loader!sass-loader' ) // need raw css
-        loaders: [ 'style', 'css?sourceMap', 'sass?sourceMap' ] // don't need raw css
+        loaders: [ 'style', 'css?sourceMap&modules', 'sass?sourceMap&modules' ] // don't need raw css
       }
     ]
   },

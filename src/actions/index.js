@@ -39,10 +39,8 @@ export const getSakeList = ( dispatch, words ) => {
   if( words.name ) {
     query = `${query}&name=${words.name}`
   }
-  console.log('axios.get: ', `/api/find?${query}`)
   axios.get( `/api/find?${query}` )
     .then( res => {
-      console.log( res.data )
       dispatch( setSakeList( res.data ) )
     })
     .catch( error => {
@@ -53,7 +51,6 @@ export const getSakeList = ( dispatch, words ) => {
 export const getNames = ( dispatch ) => {
   axios.get( '/api/find/names' )
     .then( res => {
-      console.log( res.data )
       dispatch( setNames( res.data ) )
     })
     .catch( error => {
@@ -64,7 +61,6 @@ export const getNames = ( dispatch ) => {
 export const getBreweries = ( dispatch ) => {
   axios.get( '/api/find/breweries' )
     .then( res => {
-      console.log( res.data )
       dispatch( setBreweries( res.data ) )
     })
     .catch( error => {
@@ -75,7 +71,6 @@ export const getBreweries = ( dispatch ) => {
 export const getPrefectures = ( dispatch ) => {
   axios.get( '/api/find/prefectures' )
     .then( res => {
-      console.log( res.data )
       dispatch( setPrefectures( res.data ) )
     })
     .catch( error => {
