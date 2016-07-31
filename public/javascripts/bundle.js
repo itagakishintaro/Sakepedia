@@ -69,11 +69,11 @@
 	
 	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 	
-	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 640);
+	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 641);
 	
 	var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
 	
-	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 646);
+	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 647);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
@@ -28934,7 +28934,7 @@
 	
 	var _Search2 = _interopRequireDefault(_Search);
 	
-	var _New = __webpack_require__(/*! ./containers/New */ 647);
+	var _New = __webpack_require__(/*! ./containers/New */ 640);
 	
 	var _New2 = _interopRequireDefault(_New);
 	
@@ -68533,13 +68533,129 @@
 
 /***/ },
 /* 640 */
+/*!*******************************!*\
+  !*** ./src/containers/New.js ***!
+  \*******************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 166);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
+	
+	var _TextField = __webpack_require__(/*! material-ui/TextField */ 303);
+	
+	var _TextField2 = _interopRequireDefault(_TextField);
+	
+	var _SelectField = __webpack_require__(/*! material-ui/SelectField */ 562);
+	
+	var _SelectField2 = _interopRequireDefault(_SelectField);
+	
+	var _MenuItem = __webpack_require__(/*! material-ui/MenuItem */ 319);
+	
+	var _MenuItem2 = _interopRequireDefault(_MenuItem);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	// import AutoComplete from 'material-ui/AutoComplete'
+	
+	var New = function (_React$Component) {
+	  _inherits(New, _React$Component);
+	
+	  function New(props) {
+	    _classCallCheck(this, New);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(New).call(this, props));
+	
+	    _this.state = { category: 0 };
+	    return _this;
+	  }
+	
+	  _createClass(New, [{
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          '新規登録'
+	        ),
+	        _react2.default.createElement(
+	          'form',
+	          null,
+	          _react2.default.createElement(_TextField2.default, {
+	            hintText: '銘柄',
+	            fullWidth: 'true'
+	          }),
+	          _react2.default.createElement(
+	            _SelectField2.default,
+	            {
+	              hintText: '分類',
+	              fullWidth: 'true',
+	              value: this.state.category,
+	              onChange: function onChange(event, index, value) {
+	                return _this2.setState({ category: value });
+	              } },
+	            _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '純米大吟醸' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: '大吟醸' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: '純米吟醸' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: '吟醸' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 5, primaryText: '特別純米' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 6, primaryText: '特別本醸造' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 7, primaryText: '純米' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 8, primaryText: '本醸造' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 9, primaryText: '普通' })
+	          ),
+	          _react2.default.createElement(_TextField2.default, {
+	            hintText: 'その他（銘柄、分類以外の副名）',
+	            fullWidth: 'true'
+	          })
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return New;
+	}(_react2.default.Component);
+	
+	New.propTypes = {
+	  dispatch: _react.PropTypes.func.isRequired,
+	  list: _react.PropTypes.array.isRequired
+	};
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return state;
+	};
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(New);
+
+/***/ },
+/* 641 */
 /*!**************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/injectTapEventPlugin.js ***!
   \**************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 641);
-	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 642);
+	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 642);
+	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 643);
 	
 	var alreadyInjected = false;
 	
@@ -68561,14 +68677,14 @@
 	  alreadyInjected = true;
 	
 	  __webpack_require__(/*! react/lib/EventPluginHub */ 14).injection.injectEventPluginsByName({
-	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 643)(shouldRejectClick)
+	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 644)(shouldRejectClick)
 	  });
 	};
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 641 */
+/* 642 */
 /*!**********************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/invariant.js ***!
   \**********************************************************/
@@ -68626,7 +68742,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 642 */
+/* 643 */
 /*!***********************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/defaultClickRejectionStrategy.js ***!
   \***********************************************************************/
@@ -68640,7 +68756,7 @@
 
 
 /***/ },
-/* 643 */
+/* 644 */
 /*!********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TapEventPlugin.js ***!
   \********************************************************/
@@ -68671,10 +68787,10 @@
 	var EventPluginUtils = __webpack_require__(/*! react/lib/EventPluginUtils */ 16);
 	var EventPropagators = __webpack_require__(/*! react/lib/EventPropagators */ 13);
 	var SyntheticUIEvent = __webpack_require__(/*! react/lib/SyntheticUIEvent */ 53);
-	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 644);
+	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 645);
 	var ViewportMetrics = __webpack_require__(/*! react/lib/ViewportMetrics */ 54);
 	
-	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 645);
+	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 646);
 	var topLevelTypes = EventConstants.topLevelTypes;
 	
 	var isStartish = EventPluginUtils.isStartish;
@@ -68819,7 +68935,7 @@
 
 
 /***/ },
-/* 644 */
+/* 645 */
 /*!*********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TouchEventUtils.js ***!
   \*********************************************************/
@@ -68870,7 +68986,7 @@
 
 
 /***/ },
-/* 645 */
+/* 646 */
 /*!******************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/keyOf.js ***!
   \******************************************************/
@@ -68913,7 +69029,7 @@
 	module.exports = keyOf;
 
 /***/ },
-/* 646 */
+/* 647 */
 /*!************************************!*\
   !*** ./~/redux-thunk/lib/index.js ***!
   \************************************/
@@ -68942,72 +69058,6 @@
 	thunk.withExtraArgument = createThunkMiddleware;
 	
 	exports['default'] = thunk;
-
-/***/ },
-/* 647 */
-/*!*******************************!*\
-  !*** ./src/containers/New.js ***!
-  \*******************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 166);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var New = function (_React$Component) {
-	  _inherits(New, _React$Component);
-	
-	  function New() {
-	    _classCallCheck(this, New);
-	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(New).apply(this, arguments));
-	  }
-	
-	  _createClass(New, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          '新規登録'
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return New;
-	}(_react2.default.Component);
-	
-	New.propTypes = {
-	  dispatch: _react.PropTypes.func.isRequired,
-	  list: _react.PropTypes.array.isRequired
-	};
-	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return state;
-	};
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(New);
 
 /***/ }
 /******/ ]);
