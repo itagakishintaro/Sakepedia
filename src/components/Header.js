@@ -7,6 +7,10 @@ const styles = {
   appbar: {
     marginBottom: '1rem',
   },
+  link: {
+    color: '#000',
+    textDecoration: 'none',
+  }
 }
 
 class Header extends React.Component{
@@ -16,11 +20,8 @@ class Header extends React.Component{
   }
 
   componentDidMount(){
-    console.log('componentDidMount')
     document.getElementById('menuIcon').addEventListener( 'click', () =>{
-      console.log('state', this.state)
       this.setState({open: !this.state.open})
-      console.log('state', this.state)
     } )
   }
 
@@ -35,8 +36,8 @@ class Header extends React.Component{
           style={ styles.appbar }
         />
         <Drawer open={this.state.open} docked={false} onRequestChange={(open) => this.setState({open})}>
-          <MenuItem onTouchTap={() => this.setState({open: false})}><Link to={'/'}>トップ</Link></MenuItem>
-          <MenuItem onTouchTap={() => this.setState({open: false})} primaryText='XXX' />
+          <MenuItem onTouchTap={() => this.setState({open: false})}><Link to={'/'} style={styles.link}>トップ</Link></MenuItem>
+          <MenuItem onTouchTap={() => this.setState({open: false})}><Link to={'/new'} style={styles.link}>新規登録</Link></MenuItem>
           <MenuItem onTouchTap={() => this.setState({open: false})} primaryText='YYY' />
         </Drawer>
       </div>

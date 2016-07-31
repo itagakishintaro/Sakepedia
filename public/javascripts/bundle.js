@@ -28934,12 +28934,17 @@
 	
 	var _Search2 = _interopRequireDefault(_Search);
 	
+	var _New = __webpack_require__(/*! ./containers/New */ 647);
+	
+	var _New2 = _interopRequireDefault(_New);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Routes = _react2.default.createElement(
 	  _reactRouter.Route,
 	  { path: '/', component: _App2.default },
-	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Search2.default })
+	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Search2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: 'new', component: _New2.default })
 	);
 	exports.default = Routes;
 
@@ -29023,6 +29028,10 @@
 	var styles = {
 	  appbar: {
 	    marginBottom: '1rem'
+	  },
+	  link: {
+	    color: '#000',
+	    textDecoration: 'none'
 	  }
 	};
 	
@@ -29043,11 +29052,8 @@
 	    value: function componentDidMount() {
 	      var _this2 = this;
 	
-	      console.log('componentDidMount');
 	      document.getElementById('menuIcon').addEventListener('click', function () {
-	        console.log('state', _this2.state);
 	        _this2.setState({ open: !_this2.state.open });
-	        console.log('state', _this2.state);
 	      });
 	    }
 	  }, {
@@ -29079,13 +29085,21 @@
 	              } },
 	            _react2.default.createElement(
 	              _reactRouter.Link,
-	              { to: '/' },
+	              { to: '/', style: styles.link },
 	              'トップ'
 	            )
 	          ),
-	          _react2.default.createElement(_materialUi.MenuItem, { onTouchTap: function onTouchTap() {
-	              return _this3.setState({ open: false });
-	            }, primaryText: 'XXX' }),
+	          _react2.default.createElement(
+	            _materialUi.MenuItem,
+	            { onTouchTap: function onTouchTap() {
+	                return _this3.setState({ open: false });
+	              } },
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: '/new', style: styles.link },
+	              '新規登録'
+	            )
+	          ),
 	          _react2.default.createElement(_materialUi.MenuItem, { onTouchTap: function onTouchTap() {
 	              return _this3.setState({ open: false });
 	            }, primaryText: 'YYY' })
@@ -68928,6 +68942,72 @@
 	thunk.withExtraArgument = createThunkMiddleware;
 	
 	exports['default'] = thunk;
+
+/***/ },
+/* 647 */
+/*!*******************************!*\
+  !*** ./src/containers/New.js ***!
+  \*******************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 166);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var New = function (_React$Component) {
+	  _inherits(New, _React$Component);
+	
+	  function New() {
+	    _classCallCheck(this, New);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(New).apply(this, arguments));
+	  }
+	
+	  _createClass(New, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          '新規登録'
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return New;
+	}(_react2.default.Component);
+	
+	New.propTypes = {
+	  dispatch: _react.PropTypes.func.isRequired,
+	  list: _react.PropTypes.array.isRequired
+	};
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return state;
+	};
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(New);
 
 /***/ }
 /******/ ]);
