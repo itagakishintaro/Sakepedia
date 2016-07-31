@@ -6,7 +6,6 @@ import SakeCard from '../components/SakeCard'
 
 class List extends React.Component {
   render() {
-    console.log( 'list length', this.props.list.length )
     const MAX = 100
     let alertMessage = ''
     if ( MAX <= this.props.list.length ) {
