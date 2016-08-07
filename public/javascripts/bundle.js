@@ -69,11 +69,11 @@
 	
 	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 	
-	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 641);
+	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 643);
 	
 	var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
 	
-	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 647);
+	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 649);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
@@ -68564,6 +68564,26 @@
 	
 	var _MenuItem2 = _interopRequireDefault(_MenuItem);
 	
+	var _AutoComplete = __webpack_require__(/*! material-ui/AutoComplete */ 301);
+	
+	var _AutoComplete2 = _interopRequireDefault(_AutoComplete);
+	
+	var _Slider = __webpack_require__(/*! material-ui/Slider */ 564);
+	
+	var _Slider2 = _interopRequireDefault(_Slider);
+	
+	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 558);
+	
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+	
+	var _app = __webpack_require__(/*! ../../public/stylesheets/scss/app.scss */ 641);
+	
+	var _app2 = _interopRequireDefault(_app);
+	
+	var _axios = __webpack_require__(/*! axios */ 621);
+	
+	var _axios2 = _interopRequireDefault(_axios);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -68571,8 +68591,6 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	// import AutoComplete from 'material-ui/AutoComplete'
 	
 	var New = function (_React$Component) {
 	  _inherits(New, _React$Component);
@@ -68582,34 +68600,99 @@
 	
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(New).call(this, props));
 	
-	    _this.state = { category: 0 };
+	    _this.state = {
+	      acidRate: 1.5,
+	      alcoholRate: 15,
+	      aminoRate: 1.5,
+	      brands: [],
+	      breweries: [],
+	      category: 0,
+	      flavor: 0,
+	      koubo: [],
+	      lowerTemperature: 0,
+	      maturation: 0,
+	      polishRate: 60,
+	      prefectures: [],
+	      process: 1,
+	      riceOfKake: [],
+	      riceOfKouji: [],
+	      sakeRate: 0,
+	      taste: 0,
+	      upperTemperature: 0
+	    };
 	    return _this;
 	  }
 	
 	  _createClass(New, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      document.getElementById('sendBtn').addEventListener('click', this.send);
+	    }
+	  }, {
+	    key: 'send',
+	    value: function send() {
+	      _axios2.default.post('/api', {
+	        brand: document.getElementById('brand').value,
+	        category: document.getElementById('category').value,
+	        process: document.getElementById('process').value,
+	        subname: document.getElementById('subname').value,
+	        url: document.getElementById('url').value,
+	        brewery: document.getElementById('brewery').value,
+	        prefecture: document.getElementById('prefecture').value,
+	        riceOfKouji: document.getElementById('riceOfKouji').value,
+	        riceOfKake: document.getElementById('riceOfKake').value,
+	        koubo: document.getElementById('koubo').value,
+	        polishRate: document.getElementById('polishRate').value,
+	        alcoholRate: document.getElementById('alcoholRate').value,
+	        sakeRate: document.getElementById('sakeRate').value,
+	        acidRate: document.getElementById('acidRate').value,
+	        aminoRate: document.getElementById('aminoRate').value,
+	        picture: document.getElementById('picture').value,
+	        comment: document.getElementById('comment').value,
+	        flavor: document.getElementById('flavor').value,
+	        taste: document.getElementById('taste').value,
+	        maturation: document.getElementById('maturation').value,
+	        lowerTemperature: document.getElementById('lowerTemperature').value,
+	        upperTemperature: document.getElementById('upperTemperature').value,
+	        matched: document.getElementById('matched').value
+	      }).then(function (res) {
+	        console.log(res);
+	      }).catch(function (error) {
+	        console.log(error);
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _this2 = this;
 	
+	      var styles = {
+	        button: {
+	          margin: '1em 0'
+	        }
+	      };
 	      return _react2.default.createElement(
 	        'div',
 	        null,
 	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          '新規登録'
-	        ),
-	        _react2.default.createElement(
 	          'form',
 	          null,
-	          _react2.default.createElement(_TextField2.default, {
-	            hintText: '銘柄',
+	          _react2.default.createElement(
+	            'div',
+	            { className: _app2.default.header },
+	            '基本データ'
+	          ),
+	          _react2.default.createElement(_AutoComplete2.default, {
+	            id: 'brand',
+	            hintText: '銘柄*',
+	            dataSource: this.state.brands,
 	            fullWidth: 'true'
 	          }),
 	          _react2.default.createElement(
 	            _SelectField2.default,
 	            {
-	              hintText: '分類',
+	              id: 'category',
+	              floatingLabelText: '分類*',
 	              fullWidth: 'true',
 	              value: this.state.category,
 	              onChange: function onChange(event, index, value) {
@@ -68625,10 +68708,195 @@
 	            _react2.default.createElement(_MenuItem2.default, { value: 8, primaryText: '本醸造' }),
 	            _react2.default.createElement(_MenuItem2.default, { value: 9, primaryText: '普通' })
 	          ),
+	          _react2.default.createElement(
+	            _SelectField2.default,
+	            {
+	              id: 'process',
+	              floatingLabelText: '製法*',
+	              fullWidth: 'true',
+	              value: this.state.process,
+	              onChange: function onChange(event, index, value) {
+	                return _this2.setState({ process: value });
+	              } },
+	            _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '速醸酛' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: '山廃酛' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: '生酛' })
+	          ),
 	          _react2.default.createElement(_TextField2.default, {
+	            id: 'subname',
 	            hintText: 'その他（銘柄、分類以外の副名）',
 	            fullWidth: 'true'
-	          })
+	          }),
+	          _react2.default.createElement(_TextField2.default, {
+	            id: 'url',
+	            hintText: 'メーカーURL',
+	            fullWidth: 'true'
+	          }),
+	          _react2.default.createElement(_AutoComplete2.default, {
+	            id: 'brewery',
+	            hintText: '蔵元*',
+	            dataSource: this.state.breweries,
+	            fullWidth: 'true'
+	          }),
+	          _react2.default.createElement(_AutoComplete2.default, {
+	            id: 'prefecture',
+	            hintText: '都道府県*',
+	            dataSource: this.state.prefectures,
+	            fullWidth: 'true'
+	          }),
+	          _react2.default.createElement(_AutoComplete2.default, {
+	            id: 'riceOfKouji',
+	            hintText: '麹米',
+	            dataSource: this.state.riceOfKouji,
+	            fullWidth: 'true'
+	          }),
+	          _react2.default.createElement(_AutoComplete2.default, {
+	            id: 'riceOfKake',
+	            hintText: '掛米',
+	            dataSource: this.state.riceOfKake,
+	            fullWidth: 'true'
+	          }),
+	          _react2.default.createElement(_AutoComplete2.default, {
+	            id: 'koubo',
+	            hintText: '酵母',
+	            dataSource: this.state.koubo,
+	            fullWidth: 'true'
+	          }),
+	          _react2.default.createElement(_TextField2.default, {
+	            id: 'polishRate',
+	            hintText: '精米歩合',
+	            fullWidth: 'true'
+	          }),
+	          _react2.default.createElement(_TextField2.default, {
+	            id: 'alcoholRate',
+	            hintText: 'アルコール度数(%)',
+	            fullWidth: 'true'
+	          }),
+	          _react2.default.createElement(_TextField2.default, {
+	            id: 'sakeRate',
+	            hintText: '日本酒度',
+	            fullWidth: 'true'
+	          }),
+	          _react2.default.createElement(_TextField2.default, {
+	            id: 'acidRate',
+	            hintText: '酸度',
+	            fullWidth: 'true'
+	          }),
+	          _react2.default.createElement(_TextField2.default, {
+	            id: 'aminoRate',
+	            hintText: 'アミノ酸度',
+	            fullWidth: 'true'
+	          }),
+	          _react2.default.createElement(
+	            'div',
+	            { id: 'picture' },
+	            '画像（準備中）'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: _app2.default.header },
+	            'ユーザーデータ'
+	          ),
+	          _react2.default.createElement(_TextField2.default, {
+	            id: 'comment',
+	            hintText: '香味*',
+	            fullWidth: 'true',
+	            multiLine: 'true',
+	            rows: '3'
+	          }),
+	          _react2.default.createElement(
+	            _SelectField2.default,
+	            {
+	              id: 'flavor',
+	              floatingLabelText: '香り*',
+	              fullWidth: 'true',
+	              value: this.state.flavor,
+	              onChange: function onChange(event, index, value) {
+	                return _this2.setState({ flavor: value });
+	              } },
+	            _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '低い' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: 'やや低い' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: 'やや高い' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: '高い' })
+	          ),
+	          _react2.default.createElement(
+	            _SelectField2.default,
+	            {
+	              id: 'taste',
+	              floatingLabelText: '味*',
+	              fullWidth: 'true',
+	              value: this.state.taste,
+	              onChange: function onChange(event, index, value) {
+	                return _this2.setState({ taste: value });
+	              } },
+	            _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '淡い' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: 'やや淡い' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: 'やや濃い' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: '濃い' })
+	          ),
+	          _react2.default.createElement(
+	            _SelectField2.default,
+	            {
+	              id: 'maturation',
+	              floatingLabelText: '熟成*',
+	              fullWidth: 'true',
+	              value: this.state.maturation,
+	              onChange: function onChange(event, index, value) {
+	                return _this2.setState({ maturation: value });
+	              } },
+	            _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: 'フレッシュ' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: 'ややフレッシュ' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: 'やや熟成' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: '熟成' })
+	          ),
+	          _react2.default.createElement(
+	            _SelectField2.default,
+	            {
+	              id: 'lowerTemperature',
+	              floatingLabelText: '温度（下限）',
+	              fullWidth: 'true',
+	              value: this.state.lowerTemperature,
+	              onChange: function onChange(event, index, value) {
+	                return _this2.setState({ lowerTemperature: value });
+	              } },
+	            _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '一番冷たい(5度位)' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: 'やや冷たい(10度位)' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: '常温(15度位)' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: 'ぬる燗(40度位)' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 5, primaryText: '熱燗(50度位)' })
+	          ),
+	          _react2.default.createElement(
+	            _SelectField2.default,
+	            {
+	              id: 'upperTemperature',
+	              floatingLabelText: '温度（上限）',
+	              fullWidth: 'true',
+	              value: this.state.upperTemperature,
+	              onChange: function onChange(event, index, value) {
+	                return _this2.setState({ upperTemperature: value });
+	              } },
+	            _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '一番冷たい(5度位)' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: 'やや冷たい(10度位)' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: '常温(15度位)' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: 'ぬる燗(40度位)' }),
+	            _react2.default.createElement(_MenuItem2.default, { value: 5, primaryText: '熱燗(50度位)' })
+	          ),
+	          _react2.default.createElement(_TextField2.default, {
+	            id: 'matched',
+	            hintText: '相性のよい料理',
+	            fullWidth: 'true'
+	          }),
+	          _react2.default.createElement(_TextField2.default, {
+	            id: 'matched',
+	            hintText: '相性のよい料理',
+	            fullWidth: 'true'
+	          }),
+	          _react2.default.createElement(_TextField2.default, {
+	            id: 'matched',
+	            hintText: '相性のよい料理',
+	            fullWidth: 'true'
+	          }),
+	          _react2.default.createElement(_RaisedButton2.default, { id: 'sendBtn', label: '登録', primary: 'true', style: styles.button })
 	        )
 	      );
 	    }
@@ -68649,13 +68917,61 @@
 
 /***/ },
 /* 641 */
+/*!******************************************!*\
+  !*** ./public/stylesheets/scss/app.scss ***!
+  \******************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./app.scss */ 642);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 614)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules!./../../../node_modules/sass-loader/index.js?sourceMap&modules!./app.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules!./../../../node_modules/sass-loader/index.js?sourceMap&modules!./app.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 642 */
+/*!*************************************************************************************************************!*\
+  !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/app.scss ***!
+  \*************************************************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 613)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "a {\n  color: #00b7ff; }\n\n._1HZakTyYzCCyDLij-iZdgO {\n  background-color: #d3d3d3;\n  border-radius: .2em;\n  color: #808080;\n  padding: .5em; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/public/stylesheets/scss/app.scss"],"names":[],"mappings":"AAIA;EACE,eALY,EAMb;;AAED;EACE,0BARiB;EASjB,oBAAoB;EACpB,eATY;EAUZ,cAAc,EACf","file":"app.scss","sourcesContent":["$blue: #00b7ff;\n$lightgray: #d3d3d3;\n$gray: #808080;\n\na {\n  color: $blue;\n}\n\n.header {\n  background-color: $lightgray;\n  border-radius: .2em;\n  color: $gray;\n  padding: .5em;\n}\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+	exports.locals = {
+		"header": "_1HZakTyYzCCyDLij-iZdgO"
+	};
+
+/***/ },
+/* 643 */
 /*!**************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/injectTapEventPlugin.js ***!
   \**************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 642);
-	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 643);
+	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 644);
+	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 645);
 	
 	var alreadyInjected = false;
 	
@@ -68677,14 +68993,14 @@
 	  alreadyInjected = true;
 	
 	  __webpack_require__(/*! react/lib/EventPluginHub */ 14).injection.injectEventPluginsByName({
-	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 644)(shouldRejectClick)
+	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 646)(shouldRejectClick)
 	  });
 	};
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 642 */
+/* 644 */
 /*!**********************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/invariant.js ***!
   \**********************************************************/
@@ -68742,7 +69058,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 643 */
+/* 645 */
 /*!***********************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/defaultClickRejectionStrategy.js ***!
   \***********************************************************************/
@@ -68756,7 +69072,7 @@
 
 
 /***/ },
-/* 644 */
+/* 646 */
 /*!********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TapEventPlugin.js ***!
   \********************************************************/
@@ -68787,10 +69103,10 @@
 	var EventPluginUtils = __webpack_require__(/*! react/lib/EventPluginUtils */ 16);
 	var EventPropagators = __webpack_require__(/*! react/lib/EventPropagators */ 13);
 	var SyntheticUIEvent = __webpack_require__(/*! react/lib/SyntheticUIEvent */ 53);
-	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 645);
+	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 647);
 	var ViewportMetrics = __webpack_require__(/*! react/lib/ViewportMetrics */ 54);
 	
-	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 646);
+	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 648);
 	var topLevelTypes = EventConstants.topLevelTypes;
 	
 	var isStartish = EventPluginUtils.isStartish;
@@ -68935,7 +69251,7 @@
 
 
 /***/ },
-/* 645 */
+/* 647 */
 /*!*********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TouchEventUtils.js ***!
   \*********************************************************/
@@ -68986,7 +69302,7 @@
 
 
 /***/ },
-/* 646 */
+/* 648 */
 /*!******************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/keyOf.js ***!
   \******************************************************/
@@ -69029,7 +69345,7 @@
 	module.exports = keyOf;
 
 /***/ },
-/* 647 */
+/* 649 */
 /*!************************************!*\
   !*** ./~/redux-thunk/lib/index.js ***!
   \************************************/

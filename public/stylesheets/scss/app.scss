@@ -1,3 +1,14 @@
+$blue: #00b7ff;
+$lightgray: #d3d3d3;
+$gray: #808080;
+
 a {
-  color: #00B7FF;
+  color: $blue;
+}
+
+.header {
+  background-color: $lightgray;
+  border-radius: .2em;
+  color: $gray;
+  padding: .5em;
 }
