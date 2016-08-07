@@ -69,11 +69,11 @@
 	
 	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 	
-	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 643);
+	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 642);
 	
 	var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
 	
-	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 649);
+	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 648);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
@@ -28934,7 +28934,7 @@
 	
 	var _Search2 = _interopRequireDefault(_Search);
 	
-	var _New = __webpack_require__(/*! ./containers/New */ 640);
+	var _New = __webpack_require__(/*! ./containers/New */ 639);
 	
 	var _New2 = _interopRequireDefault(_New);
 	
@@ -66053,7 +66053,7 @@
 	
 	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
 	
-	var _actions = __webpack_require__(/*! ../actions */ 620);
+	var _actions = __webpack_require__(/*! ../actions */ 619);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -66738,37 +66738,29 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Chip = __webpack_require__(/*! material-ui/Chip */ 617);
+	var _details = __webpack_require__(/*! ../../public/stylesheets/scss/details.scss */ 617);
 	
-	var _Chip2 = _interopRequireDefault(_Chip);
+	var _details2 = _interopRequireDefault(_details);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var styles = {
-	  chip: {
-	    height: '1.2em'
-	  },
-	  label: {
-	    lineHeight: '1.2em'
-	  }
-	};
 	var Details = function Details(_ref) {
 	  var sake = _ref.sake;
 	  return _react2.default.createElement(
-	    'div',
-	    null,
+	    'table',
+	    { className: _details2.default.table },
 	    Object.keys(sake).map(function (key) {
 	      return _react2.default.createElement(
-	        'div',
-	        null,
+	        'tr',
+	        { className: _details2.default.tr },
 	        _react2.default.createElement(
-	          _Chip2.default,
-	          { style: styles.chip, labelStyle: styles.label },
+	          'th',
+	          { className: _details2.default.th },
 	          key
 	        ),
 	        _react2.default.createElement(
-	          'p',
-	          null,
+	          'td',
+	          { className: _details2.default.td },
 	          sake[key]
 	        )
 	      );
@@ -66784,396 +66776,56 @@
 
 /***/ },
 /* 617 */
-/*!*************************************!*\
-  !*** ./~/material-ui/Chip/index.js ***!
-  \*************************************/
+/*!**********************************************!*\
+  !*** ./public/stylesheets/scss/details.scss ***!
+  \**********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = undefined;
-	
-	var _Chip = __webpack_require__(/*! ./Chip */ 618);
-	
-	var _Chip2 = _interopRequireDefault(_Chip);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _Chip2.default;
+	// load the styles
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./details.scss */ 618);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 614)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules!./../../../node_modules/sass-loader/index.js?sourceMap&modules!./details.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules!./../../../node_modules/sass-loader/index.js?sourceMap&modules!./details.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
 
 /***/ },
 /* 618 */
-/*!************************************!*\
-  !*** ./~/material-ui/Chip/Chip.js ***!
-  \************************************/
+/*!*****************************************************************************************************************!*\
+  !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/details.scss ***!
+  \*****************************************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _simpleAssign = __webpack_require__(/*! simple-assign */ 263);
-	
-	var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-	
-	var _react = __webpack_require__(/*! react */ 166);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _keycode = __webpack_require__(/*! keycode */ 273);
-	
-	var _keycode2 = _interopRequireDefault(_keycode);
-	
-	var _colorManipulator = __webpack_require__(/*! ../utils/colorManipulator */ 305);
-	
-	var _EnhancedButton = __webpack_require__(/*! ../internal/EnhancedButton */ 268);
-	
-	var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
-	
-	var _cancel = __webpack_require__(/*! ../svg-icons/navigation/cancel */ 619);
-	
-	var _cancel2 = _interopRequireDefault(_cancel);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	function getStyles(props, context, state) {
-	  var chip = context.muiTheme.chip;
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 613)();
+	// imports
 	
 	
-	  var backgroundColor = props.backgroundColor || chip.backgroundColor;
-	  var focusColor = (0, _colorManipulator.emphasize)(backgroundColor, 0.08);
-	  var pressedColor = (0, _colorManipulator.emphasize)(backgroundColor, 0.12);
+	// module
+	exports.push([module.id, "._1XREMN6CgTTlzOJ-qVa_It {\n  border-collapse: collapse;\n  width: 100%; }\n\n._11hIwCwvK91Q1tLJllmF5W {\n  background-color: #ddd;\n  border: 1px solid #808080;\n  font-weight: normal;\n  text-align: left; }\n\n._3DGU6Rp4AHRP_xMiM2s6kg {\n  border: 1px solid #808080;\n  word-break: break-all; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/public/stylesheets/scss/details.scss"],"names":[],"mappings":"AAIA;EACE,0BAA0B;EAC1B,YAAY,EACb;;AAED;EACE,uBATc;EAUd,0BAXY;EAYZ,oBAAoB;EACpB,iBAAiB,EAClB;;AAED;EACE,0BAjBY;EAkBZ,sBAAsB,EACvB","file":"details.scss","sourcesContent":["$gray: #808080;\n$lightgray: #ddd;\n$border: 1px solid $gray;\n\n.table {\n  border-collapse: collapse;\n  width: 100%;\n}\n\n.th {\n  background-color: $lightgray;\n  border: $border;\n  font-weight: normal;\n  text-align: left;\n}\n\n.td {\n  border: $border;\n  word-break: break-all;\n}\n"],"sourceRoot":"webpack://"}]);
 	
-	  return {
-	    avatar: {
-	      marginRight: -4
-	    },
-	    deleteIcon: {
-	      color: state.deleteHovered ? (0, _colorManipulator.fade)(chip.deleteIconColor, 0.4) : chip.deleteIconColor,
-	      cursor: 'pointer',
-	      margin: '4px 4px 0px -8px'
-	    },
-	    label: {
-	      color: props.labelColor || chip.textColor,
-	      fontSize: chip.fontSize,
-	      fontWeight: chip.fontWeight,
-	      lineHeight: '32px',
-	      paddingLeft: 12,
-	      paddingRight: 12,
-	      userSelect: 'none',
-	      whiteSpace: 'nowrap'
-	    },
-	    root: {
-	      backgroundColor: state.clicked ? pressedColor : state.focused || state.hovered ? focusColor : backgroundColor,
-	      borderRadius: 16,
-	      boxShadow: state.clicked ? chip.shadow : null,
-	      cursor: props.onTouchTap ? 'pointer' : 'default',
-	      display: 'flex',
-	      whiteSpace: 'nowrap',
-	      width: 'fit-content'
-	    }
-	  };
-	}
-	
-	var Chip = function (_Component) {
-	  _inherits(Chip, _Component);
-	
-	  function Chip() {
-	    var _Object$getPrototypeO;
-	
-	    var _temp, _this, _ret;
-	
-	    _classCallCheck(this, Chip);
-	
-	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	      args[_key] = arguments[_key];
-	    }
-	
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Chip)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
-	      clicked: false,
-	      deleteHovered: false,
-	      focused: false,
-	      hovered: false
-	    }, _this.handleBlur = function (event) {
-	      _this.setState({ clicked: false, focused: false });
-	      _this.props.onBlur(event);
-	    }, _this.handleFocus = function (event) {
-	      if (_this.props.onTouchTap || _this.props.onRequestDelete) {
-	        _this.setState({ focused: true });
-	      }
-	      _this.props.onFocus(event);
-	    }, _this.handleKeyboardFocus = function (event, keyboardFocused) {
-	      if (keyboardFocused) {
-	        _this.handleFocus();
-	        _this.props.onFocus(event);
-	      } else {
-	        _this.handleBlur();
-	      }
-	
-	      _this.props.onKeyboardFocus(event, keyboardFocused);
-	    }, _this.handleKeyDown = function (event) {
-	      if ((0, _keycode2.default)(event) === 'backspace') {
-	        event.preventDefault();
-	        if (_this.props.onRequestDelete) {
-	          _this.props.onRequestDelete(event);
-	        }
-	      }
-	      _this.props.onKeyDown(event);
-	    }, _this.handleMouseDown = function (event) {
-	      // Only listen to left clicks
-	      if (event.button === 0) {
-	        event.stopPropagation();
-	        if (_this.props.onTouchTap) {
-	          _this.setState({ clicked: true });
-	        }
-	      }
-	      _this.props.onMouseDown(event);
-	    }, _this.handleMouseEnter = function (event) {
-	      if (_this.props.onTouchTap) {
-	        _this.setState({ hovered: true });
-	      }
-	      _this.props.onMouseEnter(event);
-	    }, _this.handleMouseEnterDeleteIcon = function () {
-	      _this.setState({ deleteHovered: true });
-	    }, _this.handleMouseLeave = function (event) {
-	      _this.setState({
-	        clicked: false,
-	        hovered: false
-	      });
-	      _this.props.onMouseLeave(event);
-	    }, _this.handleMouseLeaveDeleteIcon = function () {
-	      _this.setState({ deleteHovered: false });
-	    }, _this.handleMouseUp = function (event) {
-	      _this.setState({ clicked: false });
-	      _this.props.onMouseUp(event);
-	    }, _this.handleTouchTapDeleteIcon = function (event) {
-	      // Stop the event from bubbling up to the `Chip`
-	      event.stopPropagation();
-	      _this.props.onRequestDelete(event);
-	    }, _this.handleTouchEnd = function (event) {
-	      _this.setState({ clicked: false });
-	      _this.props.onTouchEnd(event);
-	    }, _this.handleTouchStart = function (event) {
-	      event.stopPropagation();
-	      if (_this.props.onTouchTap) {
-	        _this.setState({ clicked: true });
-	      }
-	      _this.props.onTouchStart(event);
-	    }, _temp), _possibleConstructorReturn(_this, _ret);
-	  }
-	
-	  _createClass(Chip, [{
-	    key: 'render',
-	    value: function render() {
-	      var buttonEventHandlers = {
-	        onBlur: this.handleBlur,
-	        onFocus: this.handleFocus,
-	        onKeyDown: this.handleKeyDown,
-	        onMouseDown: this.handleMouseDown,
-	        onMouseEnter: this.handleMouseEnter,
-	        onMouseLeave: this.handleMouseLeave,
-	        onMouseUp: this.handleMouseUp,
-	        onTouchEnd: this.handleTouchEnd,
-	        onTouchStart: this.handleTouchStart,
-	        onKeyboardFocus: this.handleKeyboardFocus
-	      };
-	
-	      var prepareStyles = this.context.muiTheme.prepareStyles;
-	
-	      var styles = getStyles(this.props, this.context, this.state);
-	
-	      var _props = this.props;
-	      var children = _props.children;
-	      var style = _props.style;
-	      var className = _props.className;
-	      var labelStyle = _props.labelStyle;
-	
-	      var other = _objectWithoutProperties(_props, ['children', 'style', 'className', 'labelStyle']);
-	
-	      var deletable = this.props.onRequestDelete;
-	      var avatar = null;
-	
-	      style = (0, _simpleAssign2.default)(styles.root, style);
-	      labelStyle = prepareStyles((0, _simpleAssign2.default)(styles.label, labelStyle));
-	
-	      var deleteIcon = deletable ? _react2.default.createElement(_cancel2.default, {
-	        color: styles.deleteIcon.color,
-	        style: styles.deleteIcon,
-	        onTouchTap: this.handleTouchTapDeleteIcon,
-	        onMouseEnter: this.handleMouseEnterDeleteIcon,
-	        onMouseLeave: this.handleMouseLeaveDeleteIcon
-	      }) : null;
-	
-	      var childCount = _react2.default.Children.count(children);
-	
-	      // If the first child is an avatar, extract it and style it
-	      if (childCount > 1) {
-	        children = _react2.default.Children.toArray(children);
-	
-	        if (_react2.default.isValidElement(children[0]) && children[0].type.muiName === 'Avatar') {
-	          avatar = children.shift();
-	
-	          avatar = _react2.default.cloneElement(avatar, {
-	            style: (0, _simpleAssign2.default)(styles.avatar, avatar.props.style),
-	            size: 32
-	          });
-	        }
-	      }
-	
-	      return _react2.default.createElement(
-	        _EnhancedButton2.default,
-	        _extends({}, other, buttonEventHandlers, {
-	          className: className,
-	          containerElement: 'div' // Firefox doesn't support nested buttons
-	          , disableTouchRipple: true,
-	          disableFocusRipple: true,
-	          style: style
-	        }),
-	        avatar,
-	        _react2.default.createElement(
-	          'span',
-	          { style: labelStyle },
-	          children
-	        ),
-	        deleteIcon
-	      );
-	    }
-	  }]);
-	
-	  return Chip;
-	}(_react.Component);
-	
-	Chip.propTypes = {
-	  /**
-	   * Override the background color of the chip.
-	   */
-	  backgroundColor: _react.PropTypes.string,
-	  /**
-	   * Used to render elements inside the Chip.
-	   */
-	  children: _react.PropTypes.node,
-	  /**
-	   * CSS `className` of the root element.
-	   */
-	  className: _react.PropTypes.node,
-	  /**
-	   * Override the label color.
-	   */
-	  labelColor: _react.PropTypes.string,
-	  /**
-	   * Override the inline-styles of the label.
-	   */
-	  labelStyle: _react.PropTypes.object,
-	  /** @ignore */
-	  onBlur: _react.PropTypes.func,
-	  /** @ignore */
-	  onFocus: _react.PropTypes.func,
-	  /** @ignore */
-	  onKeyDown: _react.PropTypes.func,
-	  /** @ignore */
-	  onKeyboardFocus: _react.PropTypes.func,
-	  /** @ignore */
-	  onMouseDown: _react.PropTypes.func,
-	  /** @ignore */
-	  onMouseEnter: _react.PropTypes.func,
-	  /** @ignore */
-	  onMouseLeave: _react.PropTypes.func,
-	  /** @ignore */
-	  onMouseUp: _react.PropTypes.func,
-	  /**
-	   * Callback function fired when the delete icon is clicked. If set, the delete icon will be shown.
-	   * @param {object} event `touchTap` event targeting the element.
-	   */
-	  onRequestDelete: _react.PropTypes.func,
-	  /** @ignore */
-	  onTouchEnd: _react.PropTypes.func,
-	  /** @ignore */
-	  onTouchStart: _react.PropTypes.func,
-	  /**
-	   * Callback function fired when the `Chip` element is touch-tapped.
-	   *
-	   * @param {object} event TouchTap event targeting the element.
-	   */
-	  onTouchTap: _react.PropTypes.func,
-	  /**
-	   * Override the inline-styles of the root element.
-	   */
-	  style: _react.PropTypes.object
+	// exports
+	exports.locals = {
+		"table": "_1XREMN6CgTTlzOJ-qVa_It",
+		"th": "_11hIwCwvK91Q1tLJllmF5W",
+		"td": "_3DGU6Rp4AHRP_xMiM2s6kg"
 	};
-	Chip.defaultProps = {
-	  onBlur: function onBlur() {},
-	  onFocus: function onFocus() {},
-	  onKeyDown: function onKeyDown() {},
-	  onKeyboardFocus: function onKeyboardFocus() {},
-	  onMouseDown: function onMouseDown() {},
-	  onMouseEnter: function onMouseEnter() {},
-	  onMouseLeave: function onMouseLeave() {},
-	  onMouseUp: function onMouseUp() {},
-	  onTouchEnd: function onTouchEnd() {},
-	  onTouchStart: function onTouchStart() {}
-	};
-	Chip.contextTypes = { muiTheme: _react.PropTypes.object.isRequired };
-	exports.default = Chip;
 
 /***/ },
 /* 619 */
-/*!******************************************************!*\
-  !*** ./~/material-ui/svg-icons/navigation/cancel.js ***!
-  \******************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(/*! react */ 166);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _pure = __webpack_require__(/*! recompose/pure */ 289);
-	
-	var _pure2 = _interopRequireDefault(_pure);
-	
-	var _SvgIcon = __webpack_require__(/*! ../../SvgIcon */ 297);
-	
-	var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var NavigationCancel = function NavigationCancel(props) {
-	  return _react2.default.createElement(
-	    _SvgIcon2.default,
-	    props,
-	    _react2.default.createElement('path', { d: 'M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z' })
-	  );
-	};
-	NavigationCancel = (0, _pure2.default)(NavigationCancel);
-	NavigationCancel.displayName = 'NavigationCancel';
-	NavigationCancel.muiName = 'SvgIcon';
-	
-	exports.default = NavigationCancel;
-
-/***/ },
-/* 620 */
 /*!******************************!*\
   !*** ./src/actions/index.js ***!
   \******************************/
@@ -67186,7 +66838,7 @@
 	});
 	exports.getPrefectures = exports.getBreweries = exports.getNames = exports.getSakeList = exports.setPrefectures = exports.setBreweries = exports.setNames = exports.setSakeList = undefined;
 	
-	var _axios = __webpack_require__(/*! axios */ 621);
+	var _axios = __webpack_require__(/*! axios */ 620);
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
@@ -67263,16 +66915,16 @@
 	};
 
 /***/ },
-/* 621 */
+/* 620 */
 /*!**************************!*\
   !*** ./~/axios/index.js ***!
   \**************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(/*! ./lib/axios */ 622);
+	module.exports = __webpack_require__(/*! ./lib/axios */ 621);
 
 /***/ },
-/* 622 */
+/* 621 */
 /*!******************************!*\
   !*** ./~/axios/lib/axios.js ***!
   \******************************/
@@ -67280,14 +66932,14 @@
 
 	'use strict';
 	
-	var defaults = __webpack_require__(/*! ./defaults */ 623);
-	var utils = __webpack_require__(/*! ./utils */ 624);
-	var dispatchRequest = __webpack_require__(/*! ./core/dispatchRequest */ 626);
-	var InterceptorManager = __webpack_require__(/*! ./core/InterceptorManager */ 635);
-	var isAbsoluteURL = __webpack_require__(/*! ./helpers/isAbsoluteURL */ 636);
-	var combineURLs = __webpack_require__(/*! ./helpers/combineURLs */ 637);
-	var bind = __webpack_require__(/*! ./helpers/bind */ 638);
-	var transformData = __webpack_require__(/*! ./helpers/transformData */ 630);
+	var defaults = __webpack_require__(/*! ./defaults */ 622);
+	var utils = __webpack_require__(/*! ./utils */ 623);
+	var dispatchRequest = __webpack_require__(/*! ./core/dispatchRequest */ 625);
+	var InterceptorManager = __webpack_require__(/*! ./core/InterceptorManager */ 634);
+	var isAbsoluteURL = __webpack_require__(/*! ./helpers/isAbsoluteURL */ 635);
+	var combineURLs = __webpack_require__(/*! ./helpers/combineURLs */ 636);
+	var bind = __webpack_require__(/*! ./helpers/bind */ 637);
+	var transformData = __webpack_require__(/*! ./helpers/transformData */ 629);
 	
 	function Axios(defaultConfig) {
 	  this.defaults = utils.merge({}, defaultConfig);
@@ -67376,7 +67028,7 @@
 	axios.all = function all(promises) {
 	  return Promise.all(promises);
 	};
-	axios.spread = __webpack_require__(/*! ./helpers/spread */ 639);
+	axios.spread = __webpack_require__(/*! ./helpers/spread */ 638);
 	
 	// Provide aliases for supported request methods
 	utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
@@ -67404,7 +67056,7 @@
 
 
 /***/ },
-/* 623 */
+/* 622 */
 /*!*********************************!*\
   !*** ./~/axios/lib/defaults.js ***!
   \*********************************/
@@ -67412,8 +67064,8 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./utils */ 624);
-	var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ 625);
+	var utils = __webpack_require__(/*! ./utils */ 623);
+	var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ 624);
 	
 	var PROTECTION_PREFIX = /^\)\]\}',?\n/;
 	var DEFAULT_CONTENT_TYPE = {
@@ -67485,7 +67137,7 @@
 
 
 /***/ },
-/* 624 */
+/* 623 */
 /*!******************************!*\
   !*** ./~/axios/lib/utils.js ***!
   \******************************/
@@ -67771,7 +67423,7 @@
 
 
 /***/ },
-/* 625 */
+/* 624 */
 /*!****************************************************!*\
   !*** ./~/axios/lib/helpers/normalizeHeaderName.js ***!
   \****************************************************/
@@ -67779,7 +67431,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ../utils */ 624);
+	var utils = __webpack_require__(/*! ../utils */ 623);
 	
 	module.exports = function normalizeHeaderName(headers, normalizedName) {
 	  utils.forEach(headers, function processHeader(value, name) {
@@ -67792,7 +67444,7 @@
 
 
 /***/ },
-/* 626 */
+/* 625 */
 /*!*********************************************!*\
   !*** ./~/axios/lib/core/dispatchRequest.js ***!
   \*********************************************/
@@ -67817,10 +67469,10 @@
 	        adapter = config.adapter;
 	      } else if (typeof XMLHttpRequest !== 'undefined') {
 	        // For browsers use XHR adapter
-	        adapter = __webpack_require__(/*! ../adapters/xhr */ 627);
+	        adapter = __webpack_require__(/*! ../adapters/xhr */ 626);
 	      } else if (typeof process !== 'undefined') {
 	        // For node use HTTP adapter
-	        adapter = __webpack_require__(/*! ../adapters/http */ 627);
+	        adapter = __webpack_require__(/*! ../adapters/http */ 626);
 	      }
 	
 	      if (typeof adapter === 'function') {
@@ -67836,7 +67488,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 627 */
+/* 626 */
 /*!*************************************!*\
   !*** ./~/axios/lib/adapters/xhr.js ***!
   \*************************************/
@@ -67844,13 +67496,13 @@
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
-	var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ 628);
-	var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ 629);
-	var transformData = __webpack_require__(/*! ./../helpers/transformData */ 630);
-	var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ 631);
-	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(/*! ./../helpers/btoa */ 632);
-	var settle = __webpack_require__(/*! ../helpers/settle */ 633);
+	var utils = __webpack_require__(/*! ./../utils */ 623);
+	var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ 627);
+	var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ 628);
+	var transformData = __webpack_require__(/*! ./../helpers/transformData */ 629);
+	var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ 630);
+	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(/*! ./../helpers/btoa */ 631);
+	var settle = __webpack_require__(/*! ../helpers/settle */ 632);
 	
 	module.exports = function xhrAdapter(resolve, reject, config) {
 	  var requestData = config.data;
@@ -67947,7 +67599,7 @@
 	  // This is only done if running in a standard browser environment.
 	  // Specifically not if we're in a web worker, or react-native.
 	  if (utils.isStandardBrowserEnv()) {
-	    var cookies = __webpack_require__(/*! ./../helpers/cookies */ 634);
+	    var cookies = __webpack_require__(/*! ./../helpers/cookies */ 633);
 	
 	    // Add xsrf header
 	    var xsrfValue = config.withCredentials || isURLSameOrigin(config.url) ?
@@ -68008,7 +67660,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 628 */
+/* 627 */
 /*!*****************************************!*\
   !*** ./~/axios/lib/helpers/buildURL.js ***!
   \*****************************************/
@@ -68016,7 +67668,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
+	var utils = __webpack_require__(/*! ./../utils */ 623);
 	
 	function encode(val) {
 	  return encodeURIComponent(val).
@@ -68085,7 +67737,7 @@
 
 
 /***/ },
-/* 629 */
+/* 628 */
 /*!*********************************************!*\
   !*** ./~/axios/lib/helpers/parseHeaders.js ***!
   \*********************************************/
@@ -68093,7 +67745,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
+	var utils = __webpack_require__(/*! ./../utils */ 623);
 	
 	/**
 	 * Parse headers into an object
@@ -68131,7 +67783,7 @@
 
 
 /***/ },
-/* 630 */
+/* 629 */
 /*!**********************************************!*\
   !*** ./~/axios/lib/helpers/transformData.js ***!
   \**********************************************/
@@ -68139,7 +67791,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
+	var utils = __webpack_require__(/*! ./../utils */ 623);
 	
 	/**
 	 * Transform the data for a request or a response
@@ -68160,7 +67812,7 @@
 
 
 /***/ },
-/* 631 */
+/* 630 */
 /*!************************************************!*\
   !*** ./~/axios/lib/helpers/isURLSameOrigin.js ***!
   \************************************************/
@@ -68168,7 +67820,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
+	var utils = __webpack_require__(/*! ./../utils */ 623);
 	
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -68237,7 +67889,7 @@
 
 
 /***/ },
-/* 632 */
+/* 631 */
 /*!*************************************!*\
   !*** ./~/axios/lib/helpers/btoa.js ***!
   \*************************************/
@@ -68282,7 +67934,7 @@
 
 
 /***/ },
-/* 633 */
+/* 632 */
 /*!***************************************!*\
   !*** ./~/axios/lib/helpers/settle.js ***!
   \***************************************/
@@ -68309,7 +67961,7 @@
 
 
 /***/ },
-/* 634 */
+/* 633 */
 /*!****************************************!*\
   !*** ./~/axios/lib/helpers/cookies.js ***!
   \****************************************/
@@ -68317,7 +67969,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
+	var utils = __webpack_require__(/*! ./../utils */ 623);
 	
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -68371,7 +68023,7 @@
 
 
 /***/ },
-/* 635 */
+/* 634 */
 /*!************************************************!*\
   !*** ./~/axios/lib/core/InterceptorManager.js ***!
   \************************************************/
@@ -68379,7 +68031,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
+	var utils = __webpack_require__(/*! ./../utils */ 623);
 	
 	function InterceptorManager() {
 	  this.handlers = [];
@@ -68432,7 +68084,7 @@
 
 
 /***/ },
-/* 636 */
+/* 635 */
 /*!**********************************************!*\
   !*** ./~/axios/lib/helpers/isAbsoluteURL.js ***!
   \**********************************************/
@@ -68455,7 +68107,7 @@
 
 
 /***/ },
-/* 637 */
+/* 636 */
 /*!********************************************!*\
   !*** ./~/axios/lib/helpers/combineURLs.js ***!
   \********************************************/
@@ -68476,7 +68128,7 @@
 
 
 /***/ },
-/* 638 */
+/* 637 */
 /*!*************************************!*\
   !*** ./~/axios/lib/helpers/bind.js ***!
   \*************************************/
@@ -68496,7 +68148,7 @@
 
 
 /***/ },
-/* 639 */
+/* 638 */
 /*!***************************************!*\
   !*** ./~/axios/lib/helpers/spread.js ***!
   \***************************************/
@@ -68532,7 +68184,7 @@
 
 
 /***/ },
-/* 640 */
+/* 639 */
 /*!*******************************!*\
   !*** ./src/containers/New.js ***!
   \*******************************/
@@ -68576,11 +68228,11 @@
 	
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 	
-	var _app = __webpack_require__(/*! ../../public/stylesheets/scss/app.scss */ 641);
+	var _app = __webpack_require__(/*! ../../public/stylesheets/scss/app.scss */ 640);
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	var _axios = __webpack_require__(/*! axios */ 621);
+	var _axios = __webpack_require__(/*! axios */ 620);
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
@@ -68916,7 +68568,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(New);
 
 /***/ },
-/* 641 */
+/* 640 */
 /*!******************************************!*\
   !*** ./public/stylesheets/scss/app.scss ***!
   \******************************************/
@@ -68925,7 +68577,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./app.scss */ 642);
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./app.scss */ 641);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 614)(content, {});
@@ -68945,7 +68597,7 @@
 	}
 
 /***/ },
-/* 642 */
+/* 641 */
 /*!*************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/app.scss ***!
   \*************************************************************************************************************/
@@ -68964,14 +68616,14 @@
 	};
 
 /***/ },
-/* 643 */
+/* 642 */
 /*!**************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/injectTapEventPlugin.js ***!
   \**************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 644);
-	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 645);
+	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 643);
+	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 644);
 	
 	var alreadyInjected = false;
 	
@@ -68993,14 +68645,14 @@
 	  alreadyInjected = true;
 	
 	  __webpack_require__(/*! react/lib/EventPluginHub */ 14).injection.injectEventPluginsByName({
-	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 646)(shouldRejectClick)
+	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 645)(shouldRejectClick)
 	  });
 	};
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 644 */
+/* 643 */
 /*!**********************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/invariant.js ***!
   \**********************************************************/
@@ -69058,7 +68710,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 645 */
+/* 644 */
 /*!***********************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/defaultClickRejectionStrategy.js ***!
   \***********************************************************************/
@@ -69072,7 +68724,7 @@
 
 
 /***/ },
-/* 646 */
+/* 645 */
 /*!********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TapEventPlugin.js ***!
   \********************************************************/
@@ -69103,10 +68755,10 @@
 	var EventPluginUtils = __webpack_require__(/*! react/lib/EventPluginUtils */ 16);
 	var EventPropagators = __webpack_require__(/*! react/lib/EventPropagators */ 13);
 	var SyntheticUIEvent = __webpack_require__(/*! react/lib/SyntheticUIEvent */ 53);
-	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 647);
+	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 646);
 	var ViewportMetrics = __webpack_require__(/*! react/lib/ViewportMetrics */ 54);
 	
-	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 648);
+	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 647);
 	var topLevelTypes = EventConstants.topLevelTypes;
 	
 	var isStartish = EventPluginUtils.isStartish;
@@ -69251,7 +68903,7 @@
 
 
 /***/ },
-/* 647 */
+/* 646 */
 /*!*********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TouchEventUtils.js ***!
   \*********************************************************/
@@ -69302,7 +68954,7 @@
 
 
 /***/ },
-/* 648 */
+/* 647 */
 /*!******************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/keyOf.js ***!
   \******************************************************/
@@ -69345,7 +68997,7 @@
 	module.exports = keyOf;
 
 /***/ },
-/* 649 */
+/* 648 */
 /*!************************************!*\
   !*** ./~/redux-thunk/lib/index.js ***!
   \************************************/
