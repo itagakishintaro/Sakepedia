@@ -3,36 +3,63 @@ import { connect } from 'react-redux'
 import TextField from 'material-ui/TextField'
 import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem'
+import RaisedButton from 'material-ui/RaisedButton'
+import axios from 'axios'
 
-class NewUserData extends React.Component {
+class NewReview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      evaluation: null,
-      flavor: null,
-      lowerTemperature: null,
-      maturation: null,
-      sakeRate: null,
-      taste: null,
-      upperTemperature: null,
+      evaluation: '',
+      flavor: '',
+      lowerTemperature: '',
+      maturation: '',
+      sakeRate: '',
+      taste: '',
+      upperTemperature: '',
     }
   }
 
+  send(){
+    axios.post( '/api/review' , {
+      sakeId: this.props.sakeId,
+      evaluation: this.state.evaluation,
+      comment: document.getElementById('comment').value,
+      flavor: this.state.flavor,
+      taste: this.state.taste,
+      maturation: this.state.maturation,
+      lowerTemperature: this.state.lowerTemperature,
+      upperTemperature: this.state.upperTemperature,
+      matched: document.getElementById('matched').value,
+    })
+    .then( res => {
+      console.log( res )
+    })
+    .catch( error => {
+      console.log( error )
+    })
+  }
+
   render() {
+    const styles = {
+      button: {
+        margin: '1em 0',
+      },
+    }
     return (
       <div>
-                <SelectField
-                  id="evaluation"
-                  floatingLabelText="評価*"
-                  fullWidth="true"
-                  value={this.state.evaluation}
-                  onChange={ (event, index, value) => this.setState( { evaluation: value } ) } >
-                  <MenuItem value={1} primaryText="もう飲まない" />
-                  <MenuItem value={2} primaryText="好んでは飲まない" />
-                  <MenuItem value={3} primaryText="また飲んでもいい" />
-                  <MenuItem value={4} primaryText="また飲みたい" />
-                  <MenuItem value={5} primaryText="定番にしたい" />
-                </SelectField>
+          <SelectField
+            id="evaluation"
+            floatingLabelText="評価*"
+            fullWidth="true"
+            value={this.state.evaluation}
+            onChange={ (event, index, value) => this.setState( { evaluation: value } ) } >
+            <MenuItem value={1} primaryText="もう飲まない" />
+            <MenuItem value={2} primaryText="好んでは飲まない" />
+            <MenuItem value={3} primaryText="また飲んでもいい" />
+            <MenuItem value={4} primaryText="また飲みたい" />
+            <MenuItem value={5} primaryText="定番にしたい" />
+          </SelectField>
 
           <TextField
             id="comment"
@@ -106,25 +133,18 @@ class NewUserData extends React.Component {
             hintText="相性のよい料理"
             fullWidth="true"
           />
-          <TextField
-            id="matched"
-            hintText="相性のよい料理"
-            fullWidth="true"
-          />
-          <TextField
-            id="matched"
-            hintText="相性のよい料理"
-            fullWidth="true"
-          />
+
+          <RaisedButton label="登録" primary="true" style={styles.button} onClick={ this.send.bind(this) } />
       </div>
     )
   }
 }
 
-NewUserData.propTypes = {
+NewReview.propTypes = {
   dispatch: PropTypes.func.isRequired,
   list: PropTypes.array.isRequired,
+  sakeId: PropTypes.string.isRequired,
 }
 
 const mapStateToProps = state => state
-export default connect( mapStateToProps )( NewUserData )
+export default connect( mapStateToProps )( NewReview )

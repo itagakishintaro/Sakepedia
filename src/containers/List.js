@@ -2,7 +2,7 @@ import styles from '../../public/stylesheets/scss/list.scss'
 
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
-import SakeCard from '../components/SakeCard'
+import SakeCard from './SakeCard'
 
 class List extends React.Component {
   render() {

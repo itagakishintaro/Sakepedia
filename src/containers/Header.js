@@ -19,10 +19,8 @@ class Header extends React.Component{
     this.state = {open: false}
   }
 
-  componentDidMount(){
-    document.getElementById('menuIcon').addEventListener( 'click', () =>{
-      this.setState({open: !this.state.open})
-    } )
+  openMenu(){
+    this.setState({open: !this.state.open})
   }
 
   render() {
@@ -31,13 +29,13 @@ class Header extends React.Component{
         <AppBar
           title="Sakepedia"
           iconElementLeft={
-            <IconButton id="menuIcon"><MenuIcon color={'#fff'} /></IconButton>
+            <IconButton onClick={ this.openMenu.bind(this) } ><MenuIcon color={'#fff'} /></IconButton>
           }
           style={ styles.appbar }
         />
         <Drawer open={this.state.open} docked={false} onRequestChange={(open) => this.setState({open})}>
           <MenuItem onTouchTap={() => this.setState({open: false})}><Link to={'/'} style={styles.link}>トップ</Link></MenuItem>
-          <MenuItem onTouchTap={() => this.setState({open: false})}><Link to={'/new'} style={styles.link}>新規登録</Link></MenuItem>
+          <MenuItem onTouchTap={() => this.setState({open: false})}><Link to={'/sake/new'} style={styles.link}>銘柄登録</Link></MenuItem>
           <MenuItem onTouchTap={() => this.setState({open: false})} primaryText='YYY' />
         </Drawer>
       </div>

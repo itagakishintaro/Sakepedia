@@ -4,28 +4,62 @@ import TextField from 'material-ui/TextField'
 import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem'
 import AutoComplete from 'material-ui/AutoComplete'
+import RaisedButton from 'material-ui/RaisedButton'
+import axios from 'axios'
 
-class NewBasicData extends React.Component {
+class NewSake extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      acidRate: null,
-      alcoholRate: null,
-      aminoRate: null,
+      acidRate: '',
+      alcoholRate: '',
+      aminoRate: '',
       brands: [],
       breweries: [],
-      category: null,
+      category: '',
       koubo: [],
-      polishRate: null,
+      polishRate: '',
       prefectures: [],
-      process: null,
+      process: '',
       riceOfKake: [],
       riceOfKouji: [],
-      sakeRate: null,
+      sakeRate: '',
     }
   }
 
+  send(){
+    axios.post( '/api/sake' , {
+      brand: document.getElementById('brand').value,
+      category: this.state.category,
+      process: this.state.process,
+      subname: document.getElementById('subname').value,
+      url: document.getElementById('url').value,
+      brewery: document.getElementById('brewery').value,
+      prefecture: document.getElementById('prefecture').value,
+      riceOfKouji: document.getElementById('riceOfKouji').value,
+      riceOfKake: document.getElementById('riceOfKake').value,
+      koubo: document.getElementById('koubo').value,
+      polishRate: this.state.polishRate,
+      alcoholRate: this.state.alcoholRate,
+      sakeRate: this.state.sakeRate,
+      acidRate: this.state.acidRate,
+      aminoRate: this.state.aminoRate,
+      picture: '',
+    })
+    .then( res => {
+      console.log( res )
+    })
+    .catch( error => {
+      console.log( error )
+    })
+  }
+
   render() {
+    const styles = {
+      button: {
+        margin: '1em 0',
+      },
+    }
     return (
       <div>
           <AutoComplete
@@ -127,15 +161,17 @@ class NewBasicData extends React.Component {
             fullWidth="true"
           />
           <div id="picture">画像（準備中）</div>
+
+          <RaisedButton label="登録" primary="true" style={styles.button} onClick={this.send.bind(this)} />
       </div>
     )
   }
 }
 
-NewBasicData.propTypes = {
+NewSake.propTypes = {
   dispatch: PropTypes.func.isRequired,
   list: PropTypes.array.isRequired,
 }
 
 const mapStateToProps = state => state
-export default connect( mapStateToProps )( NewBasicData )
+export default connect( mapStateToProps )( NewSake )

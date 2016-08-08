@@ -39,7 +39,7 @@ export const getSakeList = ( dispatch, words ) => {
   if( words.name ) {
     query = `${query}&name=${words.name}`
   }
-  axios.get( `/api/find?${query}` )
+  axios.get( `/api/sake/find?${query}` )
     .then( res => {
       dispatch( setSakeList( res.data ) )
     })
@@ -49,7 +49,7 @@ export const getSakeList = ( dispatch, words ) => {
 }
 
 export const getNames = ( dispatch ) => {
-  axios.get( '/api/find/names' )
+  axios.get( '/api/sake/names/find' )
     .then( res => {
       dispatch( setNames( res.data ) )
     })
@@ -59,7 +59,7 @@ export const getNames = ( dispatch ) => {
 }
 
 export const getBreweries = ( dispatch ) => {
-  axios.get( '/api/find/breweries' )
+  axios.get( '/api/sake/breweries/find' )
     .then( res => {
       dispatch( setBreweries( res.data ) )
     })
@@ -69,7 +69,7 @@ export const getBreweries = ( dispatch ) => {
 }
 
 export const getPrefectures = ( dispatch ) => {
-  axios.get( '/api/find/prefectures' )
+  axios.get( '/api/sake/prefectures/find' )
     .then( res => {
       dispatch( setPrefectures( res.data ) )
     })
