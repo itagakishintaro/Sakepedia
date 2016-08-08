@@ -30,6 +30,7 @@ class New extends React.Component {
       acidRate: document.getElementById('acidRate').value,
       aminoRate: document.getElementById('aminoRate').value,
       picture: document.getElementById('picture').value,
+      evaluation: document.getElementById('evaluation').value,
       comment: document.getElementById('comment').value,
       flavor: document.getElementById('flavor').value,
       taste: document.getElementById('taste').value,

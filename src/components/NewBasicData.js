@@ -9,19 +9,19 @@ class NewBasicData extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      acidRate: 1.5,
-      alcoholRate: 15,
-      aminoRate: 1.5,
+      acidRate: null,
+      alcoholRate: null,
+      aminoRate: null,
       brands: [],
       breweries: [],
-      category: 0,
+      category: null,
       koubo: [],
-      polishRate: 60,
+      polishRate: null,
       prefectures: [],
-      process: 1,
+      process: null,
       riceOfKake: [],
       riceOfKouji: [],
-      sakeRate: 0,
+      sakeRate: null,
     }
   }
 

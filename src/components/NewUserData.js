@@ -8,18 +8,32 @@ class NewUserData extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      flavor: 0,
-      lowerTemperature: 0,
-      maturation: 0,
-      sakeRate: 0,
-      taste: 0,
-      upperTemperature: 0,
+      evaluation: null,
+      flavor: null,
+      lowerTemperature: null,
+      maturation: null,
+      sakeRate: null,
+      taste: null,
+      upperTemperature: null,
     }
   }
 
   render() {
     return (
       <div>
+                <SelectField
+                  id="evaluation"
+                  floatingLabelText="評価*"
+                  fullWidth="true"
+                  value={this.state.evaluation}
+                  onChange={ (event, index, value) => this.setState( { evaluation: value } ) } >
+                  <MenuItem value={1} primaryText="もう飲まない" />
+                  <MenuItem value={2} primaryText="好んでは飲まない" />
+                  <MenuItem value={3} primaryText="また飲んでもいい" />
+                  <MenuItem value={4} primaryText="また飲みたい" />
+                  <MenuItem value={5} primaryText="定番にしたい" />
+                </SelectField>
+
           <TextField
             id="comment"
             hintText="香味*"

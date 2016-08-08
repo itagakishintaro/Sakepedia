@@ -68266,6 +68266,7 @@
 	        acidRate: document.getElementById('acidRate').value,
 	        aminoRate: document.getElementById('aminoRate').value,
 	        picture: document.getElementById('picture').value,
+	        evaluation: document.getElementById('evaluation').value,
 	        comment: document.getElementById('comment').value,
 	        flavor: document.getElementById('flavor').value,
 	        taste: document.getElementById('taste').value,
@@ -68374,19 +68375,19 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(NewBasicData).call(this, props));
 	
 	    _this.state = {
-	      acidRate: 1.5,
-	      alcoholRate: 15,
-	      aminoRate: 1.5,
+	      acidRate: null,
+	      alcoholRate: null,
+	      aminoRate: null,
 	      brands: [],
 	      breweries: [],
-	      category: 0,
+	      category: null,
 	      koubo: [],
-	      polishRate: 60,
+	      polishRate: null,
 	      prefectures: [],
-	      process: 1,
+	      process: null,
 	      riceOfKake: [],
 	      riceOfKouji: [],
-	      sakeRate: 0
+	      sakeRate: null
 	    };
 	    return _this;
 	  }
@@ -68576,12 +68577,13 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(NewUserData).call(this, props));
 	
 	    _this.state = {
-	      flavor: 0,
-	      lowerTemperature: 0,
-	      maturation: 0,
-	      sakeRate: 0,
-	      taste: 0,
-	      upperTemperature: 0
+	      evaluation: null,
+	      flavor: null,
+	      lowerTemperature: null,
+	      maturation: null,
+	      sakeRate: null,
+	      taste: null,
+	      upperTemperature: null
 	    };
 	    return _this;
 	  }
@@ -68594,6 +68596,22 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
+	        _react2.default.createElement(
+	          _SelectField2.default,
+	          {
+	            id: 'evaluation',
+	            floatingLabelText: '評価*',
+	            fullWidth: 'true',
+	            value: this.state.evaluation,
+	            onChange: function onChange(event, index, value) {
+	              return _this2.setState({ evaluation: value });
+	            } },
+	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: 'もう飲まない' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: '好んでは飲まない' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: 'また飲んでもいい' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: 'また飲みたい' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 5, primaryText: '定番にしたい' })
+	        ),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'comment',
 	          hintText: '香味*',
