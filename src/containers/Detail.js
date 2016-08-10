@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { getSake } from '../actions'
-import FlatButton from 'material-ui/FlatButton'
+import {Tabs, Tab} from 'material-ui/Tabs'
+import FontIcon from 'material-ui/FontIcon'
 import NewReview from './NewReview'
 import styles from '../../public/stylesheets/scss/detail.scss'
 
@@ -22,6 +23,14 @@ class Detail extends React.Component{
   }
 
   render() {
+    const tabStyles = {
+      contentContainer: {
+        'margin': '1em 0',
+      },
+      tabItemContainer: {
+        'backgroundColor': 'lightgray',
+      },
+    }
     return (
       <div>
         <div>
@@ -34,20 +43,34 @@ class Detail extends React.Component{
           <img src={ this.props.sake.画像URL } className={ styles.img } />
         </div>
 
-        <table className={styles.table}>
-              { Object.keys(this.props.sake).map( key => {
-                return(
-                  <tr className={styles.tr}>
-                    <th className={styles.th}>{ key }</th>
-                    <td className={styles.td}>{ this.props.sake[key] }</td>
-                  </tr>
-                )
-              } ) }
-        </table>
-
-        <FlatButton label="レビューする" primary={true} onClick={this.toggleNewReview.bind(this)} />
-        { this.state.showNewReview ? <NewReview sakeId={this.props.sake._id} /> : null }
-
+        <Tabs tabItemContainerStyle={ tabStyles.tabItemContainer } contentContainerStyle={tabStyles.contentContainer}>
+          <Tab
+            icon={<FontIcon className="material-icons">details</FontIcon>}
+            label="詳細"
+          >
+            <table className={styles.table}>
+                  { Object.keys(this.props.sake).map( key => {
+                    return(
+                      <tr className={styles.tr}>
+                        <th className={styles.th}>{ key }</th>
+                        <td className={styles.td}>{ this.props.sake[key] }</td>
+                      </tr>
+                    )
+                  } ) }
+            </table>
+          </Tab>
+          <Tab
+            icon={<FontIcon className="material-icons">people</FontIcon>}
+            label="レビュー"
+          >
+          </Tab>
+          <Tab
+            icon={<FontIcon className="material-icons">chat_bubble_outline</FontIcon>}
+            label="レビューする"
+          >
+            <NewReview sakeId={this.props.sake._id} />
+          </Tab>
+        </Tabs>
       </div>
     )
   }

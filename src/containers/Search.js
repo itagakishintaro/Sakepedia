@@ -31,18 +31,20 @@ class Search extends React.Component {
   }
 
   render() {
-    const iconStyles = {
-      color: 'gray',
-    }
-    const tabItemContainerStyles = {
-      'backgroundColor': 'lightgray',
+    const styles = {
+      icon: {
+        color: 'gray',
+      },
+      tabItemContainer: {
+        'backgroundColor': 'lightgray',
+      },
     }
     return (
       <div>
-        <Tabs tabItemContainerStyle={ tabItemContainerStyles } >
+        <Tabs tabItemContainerStyle={ styles.tabItemContainer } >
           <Tab label="銘柄検索" >
             <AutoComplete
-              hintText={ <span><FontIcon className="material-icons" style={iconStyles}>search</FontIcon>銘柄</span> }
+              hintText={ <span><FontIcon className="material-icons" style={styles.icon}>search</FontIcon>銘柄</span> }
               dataSource={ this.props.names }
               fullWidth={true}
               onNewRequest={ ( name ) => { this.search( this.props.dispatch, { name } ) } }
@@ -51,19 +53,19 @@ class Search extends React.Component {
           <Tab label="詳細検索" >
             <AutoComplete
               id="prefecture"
-              hintText={ <span><FontIcon className="material-icons" style={iconStyles}>search</FontIcon>都道府県</span> }
+              hintText={ <span><FontIcon className="material-icons" style={styles.icon}>search</FontIcon>都道府県</span> }
               dataSource={ this.props.prefectures }
               fullWidth={true}
             />
             <AutoComplete
               id="brewrey"
-              hintText={ <span><FontIcon className="material-icons" style={iconStyles}>search</FontIcon>蔵元</span> }
+              hintText={ <span><FontIcon className="material-icons" style={styles.icon}>search</FontIcon>蔵元</span> }
               dataSource={ this.props.breweries }
               fullWidth={true}
             />
             <AutoComplete
               id="name"
-              hintText={ <span><FontIcon className="material-icons" style={iconStyles}>search</FontIcon>銘柄</span> }
+              hintText={ <span><FontIcon className="material-icons" style={styles.icon}>search</FontIcon>銘柄</span> }
               dataSource={ this.props.names }
               fullWidth={true}
             />

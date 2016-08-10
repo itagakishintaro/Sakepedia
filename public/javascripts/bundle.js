@@ -66129,18 +66129,20 @@
 	    value: function render() {
 	      var _this2 = this;
 	
-	      var iconStyles = {
-	        color: 'gray'
-	      };
-	      var tabItemContainerStyles = {
-	        'backgroundColor': 'lightgray'
+	      var styles = {
+	        icon: {
+	          color: 'gray'
+	        },
+	        tabItemContainer: {
+	          'backgroundColor': 'lightgray'
+	        }
 	      };
 	      return _react2.default.createElement(
 	        'div',
 	        null,
 	        _react2.default.createElement(
 	          _Tabs.Tabs,
-	          { tabItemContainerStyle: tabItemContainerStyles },
+	          { tabItemContainerStyle: styles.tabItemContainer },
 	          _react2.default.createElement(
 	            _Tabs.Tab,
 	            { label: '銘柄検索' },
@@ -66150,7 +66152,7 @@
 	                null,
 	                _react2.default.createElement(
 	                  _FontIcon2.default,
-	                  { className: 'material-icons', style: iconStyles },
+	                  { className: 'material-icons', style: styles.icon },
 	                  'search'
 	                ),
 	                '銘柄'
@@ -66172,7 +66174,7 @@
 	                null,
 	                _react2.default.createElement(
 	                  _FontIcon2.default,
-	                  { className: 'material-icons', style: iconStyles },
+	                  { className: 'material-icons', style: styles.icon },
 	                  'search'
 	                ),
 	                '都道府県'
@@ -66187,7 +66189,7 @@
 	                null,
 	                _react2.default.createElement(
 	                  _FontIcon2.default,
-	                  { className: 'material-icons', style: iconStyles },
+	                  { className: 'material-icons', style: styles.icon },
 	                  'search'
 	                ),
 	                '蔵元'
@@ -66202,7 +66204,7 @@
 	                null,
 	                _react2.default.createElement(
 	                  _FontIcon2.default,
-	                  { className: 'material-icons', style: iconStyles },
+	                  { className: 'material-icons', style: styles.icon },
 	                  'search'
 	                ),
 	                '銘柄'
@@ -68839,9 +68841,11 @@
 	
 	var _actions = __webpack_require__(/*! ../actions */ 617);
 	
-	var _FlatButton = __webpack_require__(/*! material-ui/FlatButton */ 366);
+	var _Tabs = __webpack_require__(/*! material-ui/Tabs */ 580);
 	
-	var _FlatButton2 = _interopRequireDefault(_FlatButton);
+	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 286);
+	
+	var _FontIcon2 = _interopRequireDefault(_FontIcon);
 	
 	var _NewReview = __webpack_require__(/*! ./NewReview */ 646);
 	
@@ -68888,6 +68892,14 @@
 	    value: function render() {
 	      var _this2 = this;
 	
+	      var tabStyles = {
+	        contentContainer: {
+	          'margin': '1em 0'
+	        },
+	        tabItemContainer: {
+	          'backgroundColor': 'lightgray'
+	        }
+	      };
 	      return _react2.default.createElement(
 	        'div',
 	        null,
@@ -68913,27 +68925,60 @@
 	          _react2.default.createElement('img', { src: this.props.sake.画像URL, className: _detail2.default.img })
 	        ),
 	        _react2.default.createElement(
-	          'table',
-	          { className: _detail2.default.table },
-	          Object.keys(this.props.sake).map(function (key) {
-	            return _react2.default.createElement(
-	              'tr',
-	              { className: _detail2.default.tr },
-	              _react2.default.createElement(
-	                'th',
-	                { className: _detail2.default.th },
-	                key
+	          _Tabs.Tabs,
+	          { tabItemContainerStyle: tabStyles.tabItemContainer, contentContainerStyle: tabStyles.contentContainer },
+	          _react2.default.createElement(
+	            _Tabs.Tab,
+	            {
+	              icon: _react2.default.createElement(
+	                _FontIcon2.default,
+	                { className: 'material-icons' },
+	                'details'
 	              ),
-	              _react2.default.createElement(
-	                'td',
-	                { className: _detail2.default.td },
-	                _this2.props.sake[key]
-	              )
-	            );
-	          })
-	        ),
-	        _react2.default.createElement(_FlatButton2.default, { label: 'レビューする', primary: true, onClick: this.toggleNewReview.bind(this) }),
-	        this.state.showNewReview ? _react2.default.createElement(_NewReview2.default, { sakeId: this.props.sake._id }) : null
+	              label: '詳細'
+	            },
+	            _react2.default.createElement(
+	              'table',
+	              { className: _detail2.default.table },
+	              Object.keys(this.props.sake).map(function (key) {
+	                return _react2.default.createElement(
+	                  'tr',
+	                  { className: _detail2.default.tr },
+	                  _react2.default.createElement(
+	                    'th',
+	                    { className: _detail2.default.th },
+	                    key
+	                  ),
+	                  _react2.default.createElement(
+	                    'td',
+	                    { className: _detail2.default.td },
+	                    _this2.props.sake[key]
+	                  )
+	                );
+	              })
+	            )
+	          ),
+	          _react2.default.createElement(_Tabs.Tab, {
+	            icon: _react2.default.createElement(
+	              _FontIcon2.default,
+	              { className: 'material-icons' },
+	              'people'
+	            ),
+	            label: 'レビュー'
+	          }),
+	          _react2.default.createElement(
+	            _Tabs.Tab,
+	            {
+	              icon: _react2.default.createElement(
+	                _FontIcon2.default,
+	                { className: 'material-icons' },
+	                'chat_bubble_outline'
+	              ),
+	              label: 'レビューする'
+	            },
+	            _react2.default.createElement(_NewReview2.default, { sakeId: this.props.sake._id })
+	          )
+	        )
 	      );
 	    }
 	  }]);
