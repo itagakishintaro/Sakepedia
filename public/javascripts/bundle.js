@@ -66967,8 +66967,9 @@
 	          _SelectField2.default,
 	          {
 	            id: 'evaluation',
+	            floatingLabelFixed: true,
 	            floatingLabelText: '評価*',
-	            fullWidth: 'true',
+	            fullWidth: true,
 	            value: this.state.evaluation,
 	            onChange: function onChange(event, index, value) {
 	              return _this2.setState({ evaluation: value });
@@ -66981,17 +66982,19 @@
 	        ),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'comment',
-	          hintText: '香味*',
-	          fullWidth: 'true',
-	          multiLine: 'true',
+	          floatingLabelFixed: true,
+	          floatingLabelText: '香味*',
+	          fullWidth: true,
+	          multiLine: true,
 	          rows: '3'
 	        }),
 	        _react2.default.createElement(
 	          _SelectField2.default,
 	          {
 	            id: 'flavor',
+	            floatingLabelFixed: true,
 	            floatingLabelText: '香り*',
-	            fullWidth: 'true',
+	            fullWidth: true,
 	            value: this.state.flavor,
 	            onChange: function onChange(event, index, value) {
 	              return _this2.setState({ flavor: value });
@@ -67005,8 +67008,9 @@
 	          _SelectField2.default,
 	          {
 	            id: 'taste',
+	            floatingLabelFixed: true,
 	            floatingLabelText: '味*',
-	            fullWidth: 'true',
+	            fullWidth: true,
 	            value: this.state.taste,
 	            onChange: function onChange(event, index, value) {
 	              return _this2.setState({ taste: value });
@@ -67020,8 +67024,9 @@
 	          _SelectField2.default,
 	          {
 	            id: 'maturation',
+	            floatingLabelFixed: true,
 	            floatingLabelText: '熟成*',
-	            fullWidth: 'true',
+	            fullWidth: true,
 	            value: this.state.maturation,
 	            onChange: function onChange(event, index, value) {
 	              return _this2.setState({ maturation: value });
@@ -67035,8 +67040,9 @@
 	          _SelectField2.default,
 	          {
 	            id: 'lowerTemperature',
+	            floatingLabelFixed: true,
 	            floatingLabelText: '温度（下限）',
-	            fullWidth: 'true',
+	            fullWidth: true,
 	            value: this.state.lowerTemperature,
 	            onChange: function onChange(event, index, value) {
 	              return _this2.setState({ lowerTemperature: value });
@@ -67051,8 +67057,9 @@
 	          _SelectField2.default,
 	          {
 	            id: 'upperTemperature',
+	            floatingLabelFixed: true,
 	            floatingLabelText: '温度（上限）',
-	            fullWidth: 'true',
+	            fullWidth: true,
 	            value: this.state.upperTemperature,
 	            onChange: function onChange(event, index, value) {
 	              return _this2.setState({ upperTemperature: value });
@@ -67065,10 +67072,11 @@
 	        ),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'matched',
-	          hintText: '相性のよい料理',
-	          fullWidth: 'true'
+	          floatingLabelFixed: true,
+	          floatingLabelText: '相性のよい料理',
+	          fullWidth: true
 	        }),
-	        _react2.default.createElement(_RaisedButton2.default, { label: '登録', primary: 'true', style: styles.button, onClick: this.send.bind(this) })
+	        _react2.default.createElement(_RaisedButton2.default, { label: '登録', primary: true, style: styles.button, onClick: this.send.bind(this) })
 	      );
 	    }
 	  }]);
@@ -68566,16 +68574,18 @@
 	        null,
 	        _react2.default.createElement(_AutoComplete2.default, {
 	          id: 'brand',
-	          hintText: '銘柄*',
+	          floatingLabelFixed: true,
+	          floatingLabelText: '銘柄*',
 	          dataSource: this.state.brands,
-	          fullWidth: 'true'
+	          fullWidth: true
 	        }),
 	        _react2.default.createElement(
 	          _SelectField2.default,
 	          {
 	            id: 'category',
+	            floatingLabelFixed: true,
 	            floatingLabelText: '分類*',
-	            fullWidth: 'true',
+	            fullWidth: true,
 	            value: this.state.category,
 	            onChange: function onChange(event, index, value) {
 	              return _this2.setState({ category: value });
@@ -68594,8 +68604,9 @@
 	          _SelectField2.default,
 	          {
 	            id: 'process',
+	            floatingLabelFixed: true,
 	            floatingLabelText: '製法*',
-	            fullWidth: 'true',
+	            fullWidth: true,
 	            value: this.state.process,
 	            onChange: function onChange(event, index, value) {
 	              return _this2.setState({ process: value });
@@ -68606,75 +68617,87 @@
 	        ),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'subname',
-	          hintText: 'その他（銘柄、分類以外の副名）',
-	          fullWidth: 'true'
+	          floatingLabelFixed: true,
+	          floatingLabelText: 'その他（銘柄、分類以外の副名）',
+	          fullWidth: true
 	        }),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'url',
-	          hintText: 'メーカーURL',
-	          fullWidth: 'true'
+	          floatingLabelFixed: true,
+	          floatingLabelText: 'メーカーURL',
+	          fullWidth: true
 	        }),
 	        _react2.default.createElement(_AutoComplete2.default, {
 	          id: 'brewery',
-	          hintText: '蔵元*',
+	          floatingLabelFixed: true,
+	          floatingLabelText: '蔵元*',
 	          dataSource: this.state.breweries,
-	          fullWidth: 'true'
+	          fullWidth: true
 	        }),
 	        _react2.default.createElement(_AutoComplete2.default, {
 	          id: 'prefecture',
-	          hintText: '都道府県*',
+	          floatingLabelFixed: true,
+	          floatingLabelText: '都道府県*',
 	          dataSource: this.state.prefectures,
-	          fullWidth: 'true'
+	          fullWidth: true
 	        }),
 	        _react2.default.createElement(_AutoComplete2.default, {
 	          id: 'riceOfKouji',
-	          hintText: '麹米',
+	          floatingLabelFixed: true,
+	          floatingLabelText: '麹米',
 	          dataSource: this.state.riceOfKouji,
-	          fullWidth: 'true'
+	          fullWidth: true
 	        }),
 	        _react2.default.createElement(_AutoComplete2.default, {
 	          id: 'riceOfKake',
-	          hintText: '掛米',
+	          floatingLabelFixed: true,
+	          floatingLabelText: '掛米',
 	          dataSource: this.state.riceOfKake,
-	          fullWidth: 'true'
+	          fullWidth: true
 	        }),
 	        _react2.default.createElement(_AutoComplete2.default, {
 	          id: 'koubo',
-	          hintText: '酵母',
+	          floatingLabelFixed: true,
+	          floatingLabelText: '酵母',
 	          dataSource: this.state.koubo,
-	          fullWidth: 'true'
+	          fullWidth: true
 	        }),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'polishRate',
-	          hintText: '精米歩合',
-	          fullWidth: 'true'
+	          floatingLabelFixed: true,
+	          floatingLabelText: '精米歩合',
+	          fullWidth: true
 	        }),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'alcoholRate',
-	          hintText: 'アルコール度数(%)',
-	          fullWidth: 'true'
+	          floatingLabelFixed: true,
+	          floatingLabelText: 'アルコール度数(%)',
+	          fullWidth: true
 	        }),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'sakeRate',
-	          hintText: '日本酒度',
-	          fullWidth: 'true'
+	          floatingLabelFixed: true,
+	          floatingLabelText: '日本酒度',
+	          fullWidth: true
 	        }),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'acidRate',
-	          hintText: '酸度',
-	          fullWidth: 'true'
+	          floatingLabelFixed: true,
+	          floatingLabelText: '酸度',
+	          fullWidth: true
 	        }),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'aminoRate',
-	          hintText: 'アミノ酸度',
-	          fullWidth: 'true'
+	          floatingLabelFixed: true,
+	          floatingLabelText: 'アミノ酸度',
+	          fullWidth: true
 	        }),
 	        _react2.default.createElement(
 	          'div',
 	          { id: 'picture' },
 	          '画像（準備中）'
 	        ),
-	        _react2.default.createElement(_RaisedButton2.default, { label: '登録', primary: 'true', style: styles.button, onClick: this.send.bind(this) })
+	        _react2.default.createElement(_RaisedButton2.default, { label: '登録', primary: true, style: styles.button, onClick: this.send.bind(this) })
 	      );
 	    }
 	  }]);

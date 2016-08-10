@@ -50,8 +50,9 @@ class NewReview extends React.Component {
       <div>
           <SelectField
             id="evaluation"
+            floatingLabelFixed={true}
             floatingLabelText="評価*"
-            fullWidth="true"
+            fullWidth={true}
             value={this.state.evaluation}
             onChange={ (event, index, value) => this.setState( { evaluation: value } ) } >
             <MenuItem value={1} primaryText="もう飲まない" />
@@ -63,16 +64,18 @@ class NewReview extends React.Component {
 
           <TextField
             id="comment"
-            hintText="香味*"
-            fullWidth="true"
-            multiLine="true"
+            floatingLabelFixed={true}
+            floatingLabelText="香味*"
+            fullWidth={true}
+            multiLine={true}
             rows="3"
           />
 
           <SelectField
             id="flavor"
+            floatingLabelFixed={true}
             floatingLabelText="香り*"
-            fullWidth="true"
+            fullWidth={true}
             value={this.state.flavor}
             onChange={ (event, index, value) => this.setState( { flavor: value } ) } >
             <MenuItem value={1} primaryText="低い" />
@@ -82,8 +85,9 @@ class NewReview extends React.Component {
           </SelectField>
           <SelectField
             id="taste"
+            floatingLabelFixed={true}
             floatingLabelText="味*"
-            fullWidth="true"
+            fullWidth={true}
             value={this.state.taste}
             onChange={ (event, index, value) => this.setState( { taste: value } ) } >
             <MenuItem value={1} primaryText="淡い" />
@@ -93,8 +97,9 @@ class NewReview extends React.Component {
           </SelectField>
           <SelectField
             id="maturation"
+            floatingLabelFixed={true}
             floatingLabelText="熟成*"
-            fullWidth="true"
+            fullWidth={true}
             value={this.state.maturation}
             onChange={ (event, index, value) => this.setState( { maturation: value } ) } >
             <MenuItem value={1} primaryText="フレッシュ" />
@@ -105,8 +110,9 @@ class NewReview extends React.Component {
 
           <SelectField
             id="lowerTemperature"
+            floatingLabelFixed={true}
             floatingLabelText="温度（下限）"
-            fullWidth="true"
+            fullWidth={true}
             value={this.state.lowerTemperature}
             onChange={ (event, index, value) => this.setState( { lowerTemperature: value } ) } >
             <MenuItem value={1} primaryText="一番冷たい(5度位)" />
@@ -117,8 +123,9 @@ class NewReview extends React.Component {
           </SelectField>
           <SelectField
             id="upperTemperature"
+            floatingLabelFixed={true}
             floatingLabelText="温度（上限）"
-            fullWidth="true"
+            fullWidth={true}
             value={this.state.upperTemperature}
             onChange={ (event, index, value) => this.setState( { upperTemperature: value } ) } >
             <MenuItem value={1} primaryText="一番冷たい(5度位)" />
@@ -130,11 +137,12 @@ class NewReview extends React.Component {
 
           <TextField
             id="matched"
-            hintText="相性のよい料理"
-            fullWidth="true"
+            floatingLabelFixed={true}
+            floatingLabelText="相性のよい料理"
+            fullWidth={true}
           />
 
-          <RaisedButton label="登録" primary="true" style={styles.button} onClick={ this.send.bind(this) } />
+          <RaisedButton label="登録" primary={true} style={styles.button} onClick={ this.send.bind(this) } />
       </div>
     )
   }

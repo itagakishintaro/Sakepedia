@@ -64,14 +64,16 @@ class NewSake extends React.Component {
       <div>
           <AutoComplete
             id="brand"
-            hintText="銘柄*"
+            floatingLabelFixed={true}
+            floatingLabelText="銘柄*"
             dataSource={this.state.brands}
-            fullWidth="true"
+            fullWidth={true}
           />
           <SelectField
             id="category"
+            floatingLabelFixed={true}
             floatingLabelText="分類*"
-            fullWidth="true"
+            fullWidth={true}
             value={this.state.category}
             onChange={ (event, index, value) => this.setState( { category: value } ) } >
             <MenuItem value={1} primaryText="純米大吟醸" />
@@ -86,8 +88,9 @@ class NewSake extends React.Component {
           </SelectField>
           <SelectField
             id="process"
+            floatingLabelFixed={true}
             floatingLabelText="製法*"
-            fullWidth="true"
+            fullWidth={true}
             value={this.state.process}
             onChange={ (event, index, value) => this.setState( { process: value } ) } >
             <MenuItem value={1} primaryText="速醸酛" />
@@ -96,73 +99,85 @@ class NewSake extends React.Component {
           </SelectField>
           <TextField
             id="subname"
-            hintText="その他（銘柄、分類以外の副名）"
-            fullWidth="true"
+            floatingLabelFixed={true}
+            floatingLabelText="その他（銘柄、分類以外の副名）"
+            fullWidth={true}
           />
           <TextField
             id="url"
-            hintText="メーカーURL"
-            fullWidth="true"
+            floatingLabelFixed={true}
+            floatingLabelText="メーカーURL"
+            fullWidth={true}
           />
           <AutoComplete
             id="brewery"
-            hintText="蔵元*"
+            floatingLabelFixed={true}
+            floatingLabelText="蔵元*"
             dataSource={this.state.breweries}
-            fullWidth="true"
+            fullWidth={true}
           />
           <AutoComplete
             id="prefecture"
-            hintText="都道府県*"
+            floatingLabelFixed={true}
+            floatingLabelText="都道府県*"
             dataSource={this.state.prefectures}
-            fullWidth="true"
+            fullWidth={true}
           />
           <AutoComplete
             id="riceOfKouji"
-            hintText="麹米"
+            floatingLabelFixed={true}
+            floatingLabelText="麹米"
             dataSource={this.state.riceOfKouji}
-            fullWidth="true"
+            fullWidth={true}
           />
           <AutoComplete
             id="riceOfKake"
-            hintText="掛米"
+            floatingLabelFixed={true}
+            floatingLabelText="掛米"
             dataSource={this.state.riceOfKake}
-            fullWidth="true"
+            fullWidth={true}
           />
           <AutoComplete
             id="koubo"
-            hintText="酵母"
+            floatingLabelFixed={true}
+            floatingLabelText="酵母"
             dataSource={this.state.koubo}
-            fullWidth="true"
+            fullWidth={true}
           />
 
           <TextField
             id="polishRate"
-            hintText="精米歩合"
-            fullWidth="true"
+            floatingLabelFixed={true}
+            floatingLabelText="精米歩合"
+            fullWidth={true}
           />
           <TextField
             id="alcoholRate"
-            hintText="アルコール度数(%)"
-            fullWidth="true"
+            floatingLabelFixed={true}
+            floatingLabelText="アルコール度数(%)"
+            fullWidth={true}
           />
           <TextField
             id="sakeRate"
-            hintText="日本酒度"
-            fullWidth="true"
+            floatingLabelFixed={true}
+            floatingLabelText="日本酒度"
+            fullWidth={true}
           />
           <TextField
             id="acidRate"
-            hintText="酸度"
-            fullWidth="true"
+            floatingLabelFixed={true}
+            floatingLabelText="酸度"
+            fullWidth={true}
           />
           <TextField
             id="aminoRate"
-            hintText="アミノ酸度"
-            fullWidth="true"
+            floatingLabelFixed={true}
+            floatingLabelText="アミノ酸度"
+            fullWidth={true}
           />
           <div id="picture">画像（準備中）</div>
 
-          <RaisedButton label="登録" primary="true" style={styles.button} onClick={this.send.bind(this)} />
+          <RaisedButton label="登録" primary={true} style={styles.button} onClick={this.send.bind(this)} />
       </div>
     )
   }
