@@ -7,6 +7,13 @@ export const setSakeList = ( list ) => {
   }
 }
 
+export const setSake = ( sake ) => {
+  return {
+    type: 'SETSAKE',
+    sake,
+  }
+}
+
 export const setNames = ( names ) => {
   return {
     type: 'SETNAMES',
@@ -48,8 +55,18 @@ export const getSakeList = ( dispatch, words ) => {
     })
 }
 
+export const getSake = ( dispatch, id ) => {
+  axios.get( `/api/sake/${id}` )
+    .then( res => {
+      dispatch( setSake( res.data ) )
+    })
+    .catch( error => {
+      console.log( error )
+    })
+}
+
 export const getNames = ( dispatch ) => {
-  axios.get( '/api/sake/names/find' )
+  axios.get( '/api/sake/names' )
     .then( res => {
       dispatch( setNames( res.data ) )
     })
@@ -59,7 +76,7 @@ export const getNames = ( dispatch ) => {
 }
 
 export const getBreweries = ( dispatch ) => {
-  axios.get( '/api/sake/breweries/find' )
+  axios.get( '/api/sake/breweries' )
     .then( res => {
       dispatch( setBreweries( res.data ) )
     })
@@ -69,7 +86,7 @@ export const getBreweries = ( dispatch ) => {
 }
 
 export const getPrefectures = ( dispatch ) => {
-  axios.get( '/api/sake/prefectures/find' )
+  axios.get( '/api/sake/prefectures' )
     .then( res => {
       dispatch( setPrefectures( res.data ) )
     })

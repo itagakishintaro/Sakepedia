@@ -35,17 +35,17 @@ router.get( '/find', ( req, res ) => {
 } );
 
 // GET find names
-router.get( '/names/find', ( req, res ) => {
+router.get( '/names', ( req, res ) => {
   collection( 'sake' ).distinct( '名前', ( err, docs ) => { res.send( docs) } );
 } );
 
 // GET find breweries
-router.get( '/breweries/find', ( req, res ) => {
+router.get( '/breweries', ( req, res ) => {
   collection( 'sake' ).distinct( '蔵元', ( err, docs ) => { res.send( docs) } );
 } );
 
 // GET find prefectures
-router.get( '/prefectures/find', ( req, res ) => {
+router.get( '/prefectures', ( req, res ) => {
   collection( 'sake' ).distinct( '都道府県', ( err, docs ) => { res.send( docs) } );
 } );
 

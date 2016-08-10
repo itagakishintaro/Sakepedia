@@ -18,18 +18,16 @@ class Search extends React.Component {
     getPrefectures( this.props.dispatch )
   }
 
-  componentDidMount(){
-    document.getElementById('detailSearch').addEventListener('click', () => {
-      this.search( this.props.dispatch, {
-        prefecture: document.getElementById('prefecture').value,
-        brewrey: document.getElementById('brewrey').value,
-        name: document.getElementById('name').value
-      } );
-    } )
+  detailSearch() {
+    this.search( this.props.dispatch, {
+      prefecture: document.getElementById('prefecture').value,
+      brewrey: document.getElementById('brewrey').value,
+      name: document.getElementById('name').value
+    }  )
   }
 
-  search(dispatch, words) {
-    getSakeList( dispatch, words )
+  search( dispatch, query ) {
+    getSakeList( dispatch, query )
   }
 
   render() {
@@ -69,7 +67,7 @@ class Search extends React.Component {
               dataSource={ this.props.names }
               fullWidth={true}
             />
-            <RaisedButton id="detailSearch" label="検索" primary={true} />
+            <RaisedButton label="検索" primary={true} onClick={this.detailSearch.bind(this)} />
           </Tab>
         </Tabs>
 
