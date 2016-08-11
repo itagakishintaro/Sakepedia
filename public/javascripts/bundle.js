@@ -69,11 +69,11 @@
 	
 	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 	
-	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 638);
+	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 642);
 	
 	var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
 	
-	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 644);
+	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 648);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
@@ -28968,7 +28968,7 @@
 	
 	var _NewSake2 = _interopRequireDefault(_NewSake);
 	
-	var _Detail = __webpack_require__(/*! ./containers/Detail */ 645);
+	var _Detail = __webpack_require__(/*! ./containers/Detail */ 638);
 	
 	var _Detail2 = _interopRequireDefault(_Detail);
 	
@@ -29000,11 +29000,18 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _app = __webpack_require__(/*! ../../public/stylesheets/scss/app.scss */ 649);
+	
+	var _app2 = _interopRequireDefault(_app);
+	
 	var _Header = __webpack_require__(/*! ../containers/Header */ 260);
 	
 	var _Header2 = _interopRequireDefault(_Header);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// css
+	
 	
 	var App = _react2.default.createClass({
 	  displayName: 'App',
@@ -29016,12 +29023,14 @@
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
-	      null,
+	      { className: _app2.default.content },
 	      _react2.default.createElement(_Header2.default, null),
 	      this.props.children
 	    );
 	  }
 	});
+	// components
+	
 	
 	exports.default = App;
 
@@ -29059,6 +29068,8 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
 	
 	var styles = {
 	  appbar: {
@@ -66064,6 +66075,8 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
+	
 	var _AutoComplete = __webpack_require__(/*! material-ui/AutoComplete */ 302);
 	
 	var _AutoComplete2 = _interopRequireDefault(_AutoComplete);
@@ -66072,17 +66085,15 @@
 	
 	var _FontIcon2 = _interopRequireDefault(_FontIcon);
 	
+	var _List = __webpack_require__(/*! ./List */ 611);
+	
+	var _List2 = _interopRequireDefault(_List);
+	
 	var _Tabs = __webpack_require__(/*! material-ui/Tabs */ 580);
 	
 	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 559);
 	
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
-	
-	var _List = __webpack_require__(/*! ./List */ 611);
-	
-	var _List2 = _interopRequireDefault(_List);
-	
-	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
 	
 	var _actions = __webpack_require__(/*! ../actions */ 617);
 	
@@ -66093,6 +66104,10 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	// actions
+	
 	
 	var Search = function (_React$Component) {
 	  _inherits(Search, _React$Component);
@@ -66251,15 +66266,15 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 612);
-	
-	var _list2 = _interopRequireDefault(_list);
-	
 	var _react = __webpack_require__(/*! react */ 166);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
 	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
+	
+	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 612);
+	
+	var _list2 = _interopRequireDefault(_list);
 	
 	var _SakeCard = __webpack_require__(/*! ./SakeCard */ 616);
 	
@@ -66272,6 +66287,10 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// css
+	
+	// components
+	
 	
 	var List = function (_React$Component) {
 	  _inherits(List, _React$Component);
@@ -66710,20 +66729,8 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
 	
-	var styles = {
-	  card: {
-	    'marginTop': '1em'
-	  },
-	  img: {
-	    'height': '100px',
-	    'marginLeft': '1em'
-	  },
-	  link: {
-	    color: '#000',
-	    textDecoration: 'none'
-	  }
-	};
 	
 	var SakeCard = function (_React$Component) {
 	  _inherits(SakeCard, _React$Component);
@@ -66737,6 +66744,19 @@
 	  _createClass(SakeCard, [{
 	    key: 'render',
 	    value: function render() {
+	      var styles = {
+	        card: {
+	          'marginTop': '1em'
+	        },
+	        img: {
+	          'height': '100px',
+	          'marginLeft': '1em'
+	        },
+	        link: {
+	          color: '#000',
+	          textDecoration: 'none'
+	        }
+	      };
 	      return _react2.default.createElement(
 	        _reactRouter.Link,
 	        { to: '/sake/' + this.props.sake._id, style: styles.link },
@@ -68166,21 +68186,21 @@
 	
 	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
 	
-	var _TextField = __webpack_require__(/*! material-ui/TextField */ 304);
+	var _AutoComplete = __webpack_require__(/*! material-ui/AutoComplete */ 302);
 	
-	var _TextField2 = _interopRequireDefault(_TextField);
-	
-	var _SelectField = __webpack_require__(/*! material-ui/SelectField */ 563);
-	
-	var _SelectField2 = _interopRequireDefault(_SelectField);
+	var _AutoComplete2 = _interopRequireDefault(_AutoComplete);
 	
 	var _MenuItem = __webpack_require__(/*! material-ui/MenuItem */ 320);
 	
 	var _MenuItem2 = _interopRequireDefault(_MenuItem);
 	
-	var _AutoComplete = __webpack_require__(/*! material-ui/AutoComplete */ 302);
+	var _SelectField = __webpack_require__(/*! material-ui/SelectField */ 563);
 	
-	var _AutoComplete2 = _interopRequireDefault(_AutoComplete);
+	var _SelectField2 = _interopRequireDefault(_SelectField);
+	
+	var _TextField = __webpack_require__(/*! material-ui/TextField */ 304);
+	
+	var _TextField2 = _interopRequireDefault(_TextField);
 	
 	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 559);
 	
@@ -68197,6 +68217,10 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	// lib
+	
 	
 	var NewSake = function (_React$Component) {
 	  _inherits(NewSake, _React$Component);
@@ -68408,418 +68432,6 @@
 
 /***/ },
 /* 638 */
-/*!**************************************************************!*\
-  !*** ./~/react-tap-event-plugin/src/injectTapEventPlugin.js ***!
-  \**************************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 639);
-	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 640);
-	
-	var alreadyInjected = false;
-	
-	module.exports = function injectTapEventPlugin (strategyOverrides) {
-	  strategyOverrides = strategyOverrides || {}
-	  var shouldRejectClick = strategyOverrides.shouldRejectClick || defaultClickRejectionStrategy;
-	
-	  if (process.env.NODE_ENV !== 'production') {
-	    invariant(
-	      !alreadyInjected,
-	      'injectTapEventPlugin(): Can only be called once per application lifecycle.\n\n\
-	It is recommended to call injectTapEventPlugin() just before you call \
-	ReactDOM.render(). If you are using an external library which calls injectTapEventPlugin() \
-	itself, please contact the maintainer as it shouldn\'t be called in library code and \
-	should be injected by the application.'
-	    )
-	  }
-	
-	  alreadyInjected = true;
-	
-	  __webpack_require__(/*! react/lib/EventPluginHub */ 14).injection.injectEventPluginsByName({
-	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 641)(shouldRejectClick)
-	  });
-	};
-	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
-
-/***/ },
-/* 639 */
-/*!**********************************************************!*\
-  !*** ./~/react-tap-event-plugin/~/fbjs/lib/invariant.js ***!
-  \**********************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule invariant
-	 */
-	
-	"use strict";
-	
-	/**
-	 * Use invariant() to assert state which your program assumes to be true.
-	 *
-	 * Provide sprintf-style format (only %s is supported) and arguments
-	 * to provide information about what broke and what you were
-	 * expecting.
-	 *
-	 * The invariant message will be stripped in production, but the invariant
-	 * will remain to ensure logic does not differ in production.
-	 */
-	
-	var invariant = function (condition, format, a, b, c, d, e, f) {
-	  if (process.env.NODE_ENV !== 'production') {
-	    if (format === undefined) {
-	      throw new Error('invariant requires an error message argument');
-	    }
-	  }
-	
-	  if (!condition) {
-	    var error;
-	    if (format === undefined) {
-	      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
-	    } else {
-	      var args = [a, b, c, d, e, f];
-	      var argIndex = 0;
-	      error = new Error('Invariant Violation: ' + format.replace(/%s/g, function () {
-	        return args[argIndex++];
-	      }));
-	    }
-	
-	    error.framesToPop = 1; // we don't care about invariant's own frame
-	    throw error;
-	  }
-	};
-	
-	module.exports = invariant;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
-
-/***/ },
-/* 640 */
-/*!***********************************************************************!*\
-  !*** ./~/react-tap-event-plugin/src/defaultClickRejectionStrategy.js ***!
-  \***********************************************************************/
-/***/ function(module, exports) {
-
-	module.exports = function(lastTouchEvent, clickTimestamp) {
-	  if (lastTouchEvent && (clickTimestamp - lastTouchEvent) < 750) {
-	    return true;
-	  }
-	};
-
-
-/***/ },
-/* 641 */
-/*!********************************************************!*\
-  !*** ./~/react-tap-event-plugin/src/TapEventPlugin.js ***!
-  \********************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2014 Facebook, Inc.
-	 *
-	 * Licensed under the Apache License, Version 2.0 (the "License");
-	 * you may not use this file except in compliance with the License.
-	 * You may obtain a copy of the License at
-	 *
-	 * http://www.apache.org/licenses/LICENSE-2.0
-	 *
-	 * Unless required by applicable law or agreed to in writing, software
-	 * distributed under the License is distributed on an "AS IS" BASIS,
-	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	 * See the License for the specific language governing permissions and
-	 * limitations under the License.
-	 *
-	 * @providesModule TapEventPlugin
-	 * @typechecks static-only
-	 */
-	
-	"use strict";
-	
-	var EventConstants = __webpack_require__(/*! react/lib/EventConstants */ 11);
-	var EventPluginUtils = __webpack_require__(/*! react/lib/EventPluginUtils */ 16);
-	var EventPropagators = __webpack_require__(/*! react/lib/EventPropagators */ 13);
-	var SyntheticUIEvent = __webpack_require__(/*! react/lib/SyntheticUIEvent */ 53);
-	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 642);
-	var ViewportMetrics = __webpack_require__(/*! react/lib/ViewportMetrics */ 54);
-	
-	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 643);
-	var topLevelTypes = EventConstants.topLevelTypes;
-	
-	var isStartish = EventPluginUtils.isStartish;
-	var isEndish = EventPluginUtils.isEndish;
-	
-	var isTouch = function(topLevelType) {
-	  var touchTypes = [
-	    topLevelTypes.topTouchCancel,
-	    topLevelTypes.topTouchEnd,
-	    topLevelTypes.topTouchStart,
-	    topLevelTypes.topTouchMove
-	  ];
-	  return touchTypes.indexOf(topLevelType) >= 0;
-	}
-	
-	/**
-	 * Number of pixels that are tolerated in between a `touchStart` and `touchEnd`
-	 * in order to still be considered a 'tap' event.
-	 */
-	var tapMoveThreshold = 10;
-	var ignoreMouseThreshold = 750;
-	var startCoords = {x: null, y: null};
-	var lastTouchEvent = null;
-	
-	var Axis = {
-	  x: {page: 'pageX', client: 'clientX', envScroll: 'currentPageScrollLeft'},
-	  y: {page: 'pageY', client: 'clientY', envScroll: 'currentPageScrollTop'}
-	};
-	
-	function getAxisCoordOfEvent(axis, nativeEvent) {
-	  var singleTouch = TouchEventUtils.extractSingleTouch(nativeEvent);
-	  if (singleTouch) {
-	    return singleTouch[axis.page];
-	  }
-	  return axis.page in nativeEvent ?
-	    nativeEvent[axis.page] :
-	    nativeEvent[axis.client] + ViewportMetrics[axis.envScroll];
-	}
-	
-	function getDistance(coords, nativeEvent) {
-	  var pageX = getAxisCoordOfEvent(Axis.x, nativeEvent);
-	  var pageY = getAxisCoordOfEvent(Axis.y, nativeEvent);
-	  return Math.pow(
-	    Math.pow(pageX - coords.x, 2) + Math.pow(pageY - coords.y, 2),
-	    0.5
-	  );
-	}
-	
-	var touchEvents = [
-	  topLevelTypes.topTouchStart,
-	  topLevelTypes.topTouchCancel,
-	  topLevelTypes.topTouchEnd,
-	  topLevelTypes.topTouchMove,
-	];
-	
-	var dependencies = [
-	  topLevelTypes.topMouseDown,
-	  topLevelTypes.topMouseMove,
-	  topLevelTypes.topMouseUp,
-	].concat(touchEvents);
-	
-	var eventTypes = {
-	  touchTap: {
-	    phasedRegistrationNames: {
-	      bubbled: keyOf({onTouchTap: null}),
-	      captured: keyOf({onTouchTapCapture: null})
-	    },
-	    dependencies: dependencies
-	  }
-	};
-	
-	var now = (function() {
-	  if (Date.now) {
-	    return Date.now;
-	  } else {
-	    // IE8 support: http://stackoverflow.com/questions/9430357/please-explain-why-and-how-new-date-works-as-workaround-for-date-now-in
-	    return function () {
-	      return +new Date;
-	    }
-	  }
-	})();
-	
-	function createTapEventPlugin(shouldRejectClick) {
-	  return {
-	
-	    tapMoveThreshold: tapMoveThreshold,
-	
-	    ignoreMouseThreshold: ignoreMouseThreshold,
-	
-	    eventTypes: eventTypes,
-	
-	    /**
-	     * @param {string} topLevelType Record from `EventConstants`.
-	     * @param {DOMEventTarget} targetInst The listening component root node.
-	     * @param {object} nativeEvent Native browser event.
-	     * @return {*} An accumulation of synthetic events.
-	     * @see {EventPluginHub.extractEvents}
-	     */
-	    extractEvents: function(
-	      topLevelType,
-	      targetInst,
-	      nativeEvent,
-	      nativeEventTarget
-	    ) {
-	
-	      if (isTouch(topLevelType)) {
-	        lastTouchEvent = now();
-	      } else {
-	        if (shouldRejectClick(lastTouchEvent, now())) {
-	          return null;
-	        }
-	      }
-	
-	      if (!isStartish(topLevelType) && !isEndish(topLevelType)) {
-	        return null;
-	      }
-	      var event = null;
-	      var distance = getDistance(startCoords, nativeEvent);
-	      if (isEndish(topLevelType) && distance < tapMoveThreshold) {
-	        event = SyntheticUIEvent.getPooled(
-	          eventTypes.touchTap,
-	          targetInst,
-	          nativeEvent,
-	          nativeEventTarget
-	        );
-	      }
-	      if (isStartish(topLevelType)) {
-	        startCoords.x = getAxisCoordOfEvent(Axis.x, nativeEvent);
-	        startCoords.y = getAxisCoordOfEvent(Axis.y, nativeEvent);
-	      } else if (isEndish(topLevelType)) {
-	        startCoords.x = 0;
-	        startCoords.y = 0;
-	      }
-	      EventPropagators.accumulateTwoPhaseDispatches(event);
-	      return event;
-	    }
-	
-	  };
-	}
-	
-	module.exports = createTapEventPlugin;
-
-
-/***/ },
-/* 642 */
-/*!*********************************************************!*\
-  !*** ./~/react-tap-event-plugin/src/TouchEventUtils.js ***!
-  \*********************************************************/
-/***/ function(module, exports) {
-
-	/**
-	 * Copyright 2013-2014 Facebook, Inc.
-	 *
-	 * Licensed under the Apache License, Version 2.0 (the "License");
-	 * you may not use this file except in compliance with the License.
-	 * You may obtain a copy of the License at
-	 *
-	 * http://www.apache.org/licenses/LICENSE-2.0
-	 *
-	 * Unless required by applicable law or agreed to in writing, software
-	 * distributed under the License is distributed on an "AS IS" BASIS,
-	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	 * See the License for the specific language governing permissions and
-	 * limitations under the License.
-	 *
-	 * @providesModule TouchEventUtils
-	 */
-	
-	var TouchEventUtils = {
-	  /**
-	   * Utility function for common case of extracting out the primary touch from a
-	   * touch event.
-	   * - `touchEnd` events usually do not have the `touches` property.
-	   *   http://stackoverflow.com/questions/3666929/
-	   *   mobile-sarai-touchend-event-not-firing-when-last-touch-is-removed
-	   *
-	   * @param {Event} nativeEvent Native event that may or may not be a touch.
-	   * @return {TouchesObject?} an object with pageX and pageY or null.
-	   */
-	  extractSingleTouch: function(nativeEvent) {
-	    var touches = nativeEvent.touches;
-	    var changedTouches = nativeEvent.changedTouches;
-	    var hasTouches = touches && touches.length > 0;
-	    var hasChangedTouches = changedTouches && changedTouches.length > 0;
-	
-	    return !hasTouches && hasChangedTouches ? changedTouches[0] :
-	           hasTouches ? touches[0] :
-	           nativeEvent;
-	  }
-	};
-	
-	module.exports = TouchEventUtils;
-
-
-/***/ },
-/* 643 */
-/*!******************************************************!*\
-  !*** ./~/react-tap-event-plugin/~/fbjs/lib/keyOf.js ***!
-  \******************************************************/
-/***/ function(module, exports) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule keyOf
-	 */
-	
-	/**
-	 * Allows extraction of a minified key. Let's the build system minify keys
-	 * without losing the ability to dynamically use key strings as values
-	 * themselves. Pass in an object with a single key/val pair and it will return
-	 * you the string key of that single record. Suppose you want to grab the
-	 * value for a key 'className' inside of an object. Key/val minification may
-	 * have aliased that key to be 'xa12'. keyOf({className: null}) will return
-	 * 'xa12' in that case. Resolve keys you want to use once at startup time, then
-	 * reuse those resolutions.
-	 */
-	"use strict";
-	
-	var keyOf = function (oneKeyObj) {
-	  var key;
-	  for (key in oneKeyObj) {
-	    if (!oneKeyObj.hasOwnProperty(key)) {
-	      continue;
-	    }
-	    return key;
-	  }
-	  return null;
-	};
-	
-	module.exports = keyOf;
-
-/***/ },
-/* 644 */
-/*!************************************!*\
-  !*** ./~/redux-thunk/lib/index.js ***!
-  \************************************/
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	exports.__esModule = true;
-	function createThunkMiddleware(extraArgument) {
-	  return function (_ref) {
-	    var dispatch = _ref.dispatch;
-	    var getState = _ref.getState;
-	    return function (next) {
-	      return function (action) {
-	        if (typeof action === 'function') {
-	          return action(dispatch, getState, extraArgument);
-	        }
-	
-	        return next(action);
-	      };
-	    };
-	  };
-	}
-	
-	var thunk = createThunkMiddleware();
-	thunk.withExtraArgument = createThunkMiddleware;
-	
-	exports['default'] = thunk;
-
-/***/ },
-/* 645 */
 /*!**********************************!*\
   !*** ./src/containers/Detail.js ***!
   \**********************************/
@@ -68839,21 +68451,21 @@
 	
 	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
 	
-	var _actions = __webpack_require__(/*! ../actions */ 617);
-	
 	var _Tabs = __webpack_require__(/*! material-ui/Tabs */ 580);
 	
 	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 286);
 	
 	var _FontIcon2 = _interopRequireDefault(_FontIcon);
 	
-	var _NewReview = __webpack_require__(/*! ./NewReview */ 646);
-	
-	var _NewReview2 = _interopRequireDefault(_NewReview);
-	
-	var _detail = __webpack_require__(/*! ../../public/stylesheets/scss/detail.scss */ 647);
+	var _detail = __webpack_require__(/*! ../../public/stylesheets/scss/detail.scss */ 640);
 	
 	var _detail2 = _interopRequireDefault(_detail);
+	
+	var _actions = __webpack_require__(/*! ../actions */ 617);
+	
+	var _NewReview = __webpack_require__(/*! ./NewReview */ 639);
+	
+	var _NewReview2 = _interopRequireDefault(_NewReview);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -68862,6 +68474,14 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	// css
+	
+	// actions
+	
+	// components
+	
 	
 	var Detail = function (_React$Component) {
 	  _inherits(Detail, _React$Component);
@@ -68892,7 +68512,7 @@
 	    value: function render() {
 	      var _this2 = this;
 	
-	      var tabStyles = {
+	      var styles = {
 	        contentContainer: {
 	          'margin': '1em 0'
 	        },
@@ -68905,28 +68525,36 @@
 	        null,
 	        _react2.default.createElement(
 	          'div',
-	          null,
-	          this.props.sake.名前,
-	          ' ( ',
-	          this.props.sake.種類,
-	          ' )'
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          this.props.sake.蔵元,
-	          ' ( ',
-	          this.props.sake.都道府県,
-	          ' )'
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement('img', { src: this.props.sake.画像URL, className: _detail2.default.img })
+	          { className: _detail2.default.header },
+	          _react2.default.createElement('img', { src: this.props.sake.画像URL, className: _detail2.default.image }),
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'div',
+	              null,
+	              _react2.default.createElement(
+	                'span',
+	                { className: _detail2.default.title },
+	                this.props.sake.名前
+	              ),
+	              '( ',
+	              this.props.sake.種類,
+	              ' )'
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              null,
+	              this.props.sake.蔵元,
+	              ' ( ',
+	              this.props.sake.都道府県,
+	              ' )'
+	            )
+	          )
 	        ),
 	        _react2.default.createElement(
 	          _Tabs.Tabs,
-	          { tabItemContainerStyle: tabStyles.tabItemContainer, contentContainerStyle: tabStyles.contentContainer },
+	          { tabItemContainerStyle: styles.tabItemContainer, contentContainerStyle: styles.contentContainer },
 	          _react2.default.createElement(
 	            _Tabs.Tab,
 	            {
@@ -68998,7 +68626,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Detail);
 
 /***/ },
-/* 646 */
+/* 639 */
 /*!*************************************!*\
   !*** ./src/containers/NewReview.js ***!
   \*************************************/
@@ -69018,17 +68646,17 @@
 	
 	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
 	
-	var _TextField = __webpack_require__(/*! material-ui/TextField */ 304);
+	var _MenuItem = __webpack_require__(/*! material-ui/MenuItem */ 320);
 	
-	var _TextField2 = _interopRequireDefault(_TextField);
+	var _MenuItem2 = _interopRequireDefault(_MenuItem);
 	
 	var _SelectField = __webpack_require__(/*! material-ui/SelectField */ 563);
 	
 	var _SelectField2 = _interopRequireDefault(_SelectField);
 	
-	var _MenuItem = __webpack_require__(/*! material-ui/MenuItem */ 320);
+	var _TextField = __webpack_require__(/*! material-ui/TextField */ 304);
 	
-	var _MenuItem2 = _interopRequireDefault(_MenuItem);
+	var _TextField2 = _interopRequireDefault(_TextField);
 	
 	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 559);
 	
@@ -69045,6 +68673,10 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	// lib
+	
 	
 	var NewReview = function (_React$Component) {
 	  _inherits(NewReview, _React$Component);
@@ -69231,7 +68863,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(NewReview);
 
 /***/ },
-/* 647 */
+/* 640 */
 /*!*********************************************!*\
   !*** ./public/stylesheets/scss/detail.scss ***!
   \*********************************************/
@@ -69240,7 +68872,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./detail.scss */ 648);
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./detail.scss */ 641);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 615)(content, {});
@@ -69260,7 +68892,7 @@
 	}
 
 /***/ },
-/* 648 */
+/* 641 */
 /*!****************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/detail.scss ***!
   \****************************************************************************************************************/
@@ -69271,14 +68903,476 @@
 	
 	
 	// module
-	exports.push([module.id, "._2-fi9Iwrwd3YRtzIg1b2Zr {\n  border-collapse: collapse;\n  width: 100%; }\n\n._25k5ugQnWORAe2oEY2IIU1 {\n  background-color: #ddd;\n  border: 1px solid #808080;\n  font-weight: normal;\n  text-align: left; }\n\n._1ZWnjABlkjhLa3ex2zrUG_ {\n  border: 1px solid #808080;\n  word-break: break-all; }\n\n._3stpEnD2rW4IzDuR8zhZOP {\n  height: 100px;\n  margin-left: 1em; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/public/stylesheets/scss/detail.scss"],"names":[],"mappings":"AAIA;EACE,0BAA0B;EAC1B,YAAY,EACb;;AAED;EACE,uBATc;EAUd,0BAXY;EAYZ,oBAAoB;EACpB,iBAAiB,EAClB;;AAED;EACE,0BAjBY;EAkBZ,sBAAsB,EACvB;;AAED;EACE,cAAc;EACd,iBAAiB,EAClB","file":"detail.scss","sourcesContent":["$gray: #808080;\n$lightgray: #ddd;\n$border: 1px solid $gray;\n\n.table {\n  border-collapse: collapse;\n  width: 100%;\n}\n\n.th {\n  background-color: $lightgray;\n  border: $border;\n  font-weight: normal;\n  text-align: left;\n}\n\n.td {\n  border: $border;\n  word-break: break-all;\n}\n\n.img {\n  height: 100px;\n  margin-left: 1em;\n}\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "._2-fi9Iwrwd3YRtzIg1b2Zr {\n  border-collapse: collapse;\n  width: 100%; }\n\n._25k5ugQnWORAe2oEY2IIU1 {\n  background-color: #eee;\n  border: 1px solid #e0e0e0;\n  font-weight: normal;\n  text-align: left; }\n\n._1ZWnjABlkjhLa3ex2zrUG_ {\n  border: 1px solid #e0e0e0;\n  word-break: break-all; }\n\n._3DMalhqR9_-mh8K_2Ojm2J {\n  display: flex; }\n  ._3DMalhqR9_-mh8K_2Ojm2J ._2NQngWCqZELrSA9_zgjWGP {\n    height: 100px;\n    margin: 0 1em 1em; }\n  ._3DMalhqR9_-mh8K_2Ojm2J ._1PZlXYJlaryIj50bTeo1A7 {\n    font-size: 1.5em; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/public/stylesheets/scss/detail.scss","/./public/stylesheets/scss/public/stylesheets/scss/_common.scss"],"names":[],"mappings":"AAIA;EACE,0BAA0B;EAC1B,YAAY,EACb;;AAED;EACE,uBCVY;EDWZ,0BCVe;EDWf,oBAAoB;EACpB,iBAAiB,EAClB;;AAED;EACE,0BChBe;EDiBf,sBAAsB,EACvB;;AAED;EACE,cAAc,EAUf;EAXD;IAII,cAAc;IACd,kBAAkB,EACnB;EANH;IASI,iBAAiB,EAClB","file":"detail.scss","sourcesContent":["@import 'common';\n\n$border: 1px solid $grey300;\n\n.table {\n  border-collapse: collapse;\n  width: 100%;\n}\n\n.th {\n  background-color: $grey200;\n  border: $border;\n  font-weight: normal;\n  text-align: left;\n}\n\n.td {\n  border: $border;\n  word-break: break-all;\n}\n\n.header {\n  display: flex;\n\n  .image {\n    height: 100px;\n    margin: 0 1em 1em;\n  }\n\n  .title {\n    font-size: 1.5em;\n  }\n}\n","$grey200: #eee;\n$grey300: #e0e0e0;\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 	exports.locals = {
 		"table": "_2-fi9Iwrwd3YRtzIg1b2Zr",
 		"th": "_25k5ugQnWORAe2oEY2IIU1",
 		"td": "_1ZWnjABlkjhLa3ex2zrUG_",
-		"img": "_3stpEnD2rW4IzDuR8zhZOP"
+		"header": "_3DMalhqR9_-mh8K_2Ojm2J",
+		"image": "_2NQngWCqZELrSA9_zgjWGP",
+		"title": "_1PZlXYJlaryIj50bTeo1A7"
+	};
+
+/***/ },
+/* 642 */
+/*!**************************************************************!*\
+  !*** ./~/react-tap-event-plugin/src/injectTapEventPlugin.js ***!
+  \**************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 643);
+	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 644);
+	
+	var alreadyInjected = false;
+	
+	module.exports = function injectTapEventPlugin (strategyOverrides) {
+	  strategyOverrides = strategyOverrides || {}
+	  var shouldRejectClick = strategyOverrides.shouldRejectClick || defaultClickRejectionStrategy;
+	
+	  if (process.env.NODE_ENV !== 'production') {
+	    invariant(
+	      !alreadyInjected,
+	      'injectTapEventPlugin(): Can only be called once per application lifecycle.\n\n\
+	It is recommended to call injectTapEventPlugin() just before you call \
+	ReactDOM.render(). If you are using an external library which calls injectTapEventPlugin() \
+	itself, please contact the maintainer as it shouldn\'t be called in library code and \
+	should be injected by the application.'
+	    )
+	  }
+	
+	  alreadyInjected = true;
+	
+	  __webpack_require__(/*! react/lib/EventPluginHub */ 14).injection.injectEventPluginsByName({
+	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 645)(shouldRejectClick)
+	  });
+	};
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+
+/***/ },
+/* 643 */
+/*!**********************************************************!*\
+  !*** ./~/react-tap-event-plugin/~/fbjs/lib/invariant.js ***!
+  \**********************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule invariant
+	 */
+	
+	"use strict";
+	
+	/**
+	 * Use invariant() to assert state which your program assumes to be true.
+	 *
+	 * Provide sprintf-style format (only %s is supported) and arguments
+	 * to provide information about what broke and what you were
+	 * expecting.
+	 *
+	 * The invariant message will be stripped in production, but the invariant
+	 * will remain to ensure logic does not differ in production.
+	 */
+	
+	var invariant = function (condition, format, a, b, c, d, e, f) {
+	  if (process.env.NODE_ENV !== 'production') {
+	    if (format === undefined) {
+	      throw new Error('invariant requires an error message argument');
+	    }
+	  }
+	
+	  if (!condition) {
+	    var error;
+	    if (format === undefined) {
+	      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
+	    } else {
+	      var args = [a, b, c, d, e, f];
+	      var argIndex = 0;
+	      error = new Error('Invariant Violation: ' + format.replace(/%s/g, function () {
+	        return args[argIndex++];
+	      }));
+	    }
+	
+	    error.framesToPop = 1; // we don't care about invariant's own frame
+	    throw error;
+	  }
+	};
+	
+	module.exports = invariant;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+
+/***/ },
+/* 644 */
+/*!***********************************************************************!*\
+  !*** ./~/react-tap-event-plugin/src/defaultClickRejectionStrategy.js ***!
+  \***********************************************************************/
+/***/ function(module, exports) {
+
+	module.exports = function(lastTouchEvent, clickTimestamp) {
+	  if (lastTouchEvent && (clickTimestamp - lastTouchEvent) < 750) {
+	    return true;
+	  }
+	};
+
+
+/***/ },
+/* 645 */
+/*!********************************************************!*\
+  !*** ./~/react-tap-event-plugin/src/TapEventPlugin.js ***!
+  \********************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2014 Facebook, Inc.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 * http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *
+	 * @providesModule TapEventPlugin
+	 * @typechecks static-only
+	 */
+	
+	"use strict";
+	
+	var EventConstants = __webpack_require__(/*! react/lib/EventConstants */ 11);
+	var EventPluginUtils = __webpack_require__(/*! react/lib/EventPluginUtils */ 16);
+	var EventPropagators = __webpack_require__(/*! react/lib/EventPropagators */ 13);
+	var SyntheticUIEvent = __webpack_require__(/*! react/lib/SyntheticUIEvent */ 53);
+	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 646);
+	var ViewportMetrics = __webpack_require__(/*! react/lib/ViewportMetrics */ 54);
+	
+	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 647);
+	var topLevelTypes = EventConstants.topLevelTypes;
+	
+	var isStartish = EventPluginUtils.isStartish;
+	var isEndish = EventPluginUtils.isEndish;
+	
+	var isTouch = function(topLevelType) {
+	  var touchTypes = [
+	    topLevelTypes.topTouchCancel,
+	    topLevelTypes.topTouchEnd,
+	    topLevelTypes.topTouchStart,
+	    topLevelTypes.topTouchMove
+	  ];
+	  return touchTypes.indexOf(topLevelType) >= 0;
+	}
+	
+	/**
+	 * Number of pixels that are tolerated in between a `touchStart` and `touchEnd`
+	 * in order to still be considered a 'tap' event.
+	 */
+	var tapMoveThreshold = 10;
+	var ignoreMouseThreshold = 750;
+	var startCoords = {x: null, y: null};
+	var lastTouchEvent = null;
+	
+	var Axis = {
+	  x: {page: 'pageX', client: 'clientX', envScroll: 'currentPageScrollLeft'},
+	  y: {page: 'pageY', client: 'clientY', envScroll: 'currentPageScrollTop'}
+	};
+	
+	function getAxisCoordOfEvent(axis, nativeEvent) {
+	  var singleTouch = TouchEventUtils.extractSingleTouch(nativeEvent);
+	  if (singleTouch) {
+	    return singleTouch[axis.page];
+	  }
+	  return axis.page in nativeEvent ?
+	    nativeEvent[axis.page] :
+	    nativeEvent[axis.client] + ViewportMetrics[axis.envScroll];
+	}
+	
+	function getDistance(coords, nativeEvent) {
+	  var pageX = getAxisCoordOfEvent(Axis.x, nativeEvent);
+	  var pageY = getAxisCoordOfEvent(Axis.y, nativeEvent);
+	  return Math.pow(
+	    Math.pow(pageX - coords.x, 2) + Math.pow(pageY - coords.y, 2),
+	    0.5
+	  );
+	}
+	
+	var touchEvents = [
+	  topLevelTypes.topTouchStart,
+	  topLevelTypes.topTouchCancel,
+	  topLevelTypes.topTouchEnd,
+	  topLevelTypes.topTouchMove,
+	];
+	
+	var dependencies = [
+	  topLevelTypes.topMouseDown,
+	  topLevelTypes.topMouseMove,
+	  topLevelTypes.topMouseUp,
+	].concat(touchEvents);
+	
+	var eventTypes = {
+	  touchTap: {
+	    phasedRegistrationNames: {
+	      bubbled: keyOf({onTouchTap: null}),
+	      captured: keyOf({onTouchTapCapture: null})
+	    },
+	    dependencies: dependencies
+	  }
+	};
+	
+	var now = (function() {
+	  if (Date.now) {
+	    return Date.now;
+	  } else {
+	    // IE8 support: http://stackoverflow.com/questions/9430357/please-explain-why-and-how-new-date-works-as-workaround-for-date-now-in
+	    return function () {
+	      return +new Date;
+	    }
+	  }
+	})();
+	
+	function createTapEventPlugin(shouldRejectClick) {
+	  return {
+	
+	    tapMoveThreshold: tapMoveThreshold,
+	
+	    ignoreMouseThreshold: ignoreMouseThreshold,
+	
+	    eventTypes: eventTypes,
+	
+	    /**
+	     * @param {string} topLevelType Record from `EventConstants`.
+	     * @param {DOMEventTarget} targetInst The listening component root node.
+	     * @param {object} nativeEvent Native browser event.
+	     * @return {*} An accumulation of synthetic events.
+	     * @see {EventPluginHub.extractEvents}
+	     */
+	    extractEvents: function(
+	      topLevelType,
+	      targetInst,
+	      nativeEvent,
+	      nativeEventTarget
+	    ) {
+	
+	      if (isTouch(topLevelType)) {
+	        lastTouchEvent = now();
+	      } else {
+	        if (shouldRejectClick(lastTouchEvent, now())) {
+	          return null;
+	        }
+	      }
+	
+	      if (!isStartish(topLevelType) && !isEndish(topLevelType)) {
+	        return null;
+	      }
+	      var event = null;
+	      var distance = getDistance(startCoords, nativeEvent);
+	      if (isEndish(topLevelType) && distance < tapMoveThreshold) {
+	        event = SyntheticUIEvent.getPooled(
+	          eventTypes.touchTap,
+	          targetInst,
+	          nativeEvent,
+	          nativeEventTarget
+	        );
+	      }
+	      if (isStartish(topLevelType)) {
+	        startCoords.x = getAxisCoordOfEvent(Axis.x, nativeEvent);
+	        startCoords.y = getAxisCoordOfEvent(Axis.y, nativeEvent);
+	      } else if (isEndish(topLevelType)) {
+	        startCoords.x = 0;
+	        startCoords.y = 0;
+	      }
+	      EventPropagators.accumulateTwoPhaseDispatches(event);
+	      return event;
+	    }
+	
+	  };
+	}
+	
+	module.exports = createTapEventPlugin;
+
+
+/***/ },
+/* 646 */
+/*!*********************************************************!*\
+  !*** ./~/react-tap-event-plugin/src/TouchEventUtils.js ***!
+  \*********************************************************/
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2013-2014 Facebook, Inc.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 * http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *
+	 * @providesModule TouchEventUtils
+	 */
+	
+	var TouchEventUtils = {
+	  /**
+	   * Utility function for common case of extracting out the primary touch from a
+	   * touch event.
+	   * - `touchEnd` events usually do not have the `touches` property.
+	   *   http://stackoverflow.com/questions/3666929/
+	   *   mobile-sarai-touchend-event-not-firing-when-last-touch-is-removed
+	   *
+	   * @param {Event} nativeEvent Native event that may or may not be a touch.
+	   * @return {TouchesObject?} an object with pageX and pageY or null.
+	   */
+	  extractSingleTouch: function(nativeEvent) {
+	    var touches = nativeEvent.touches;
+	    var changedTouches = nativeEvent.changedTouches;
+	    var hasTouches = touches && touches.length > 0;
+	    var hasChangedTouches = changedTouches && changedTouches.length > 0;
+	
+	    return !hasTouches && hasChangedTouches ? changedTouches[0] :
+	           hasTouches ? touches[0] :
+	           nativeEvent;
+	  }
+	};
+	
+	module.exports = TouchEventUtils;
+
+
+/***/ },
+/* 647 */
+/*!******************************************************!*\
+  !*** ./~/react-tap-event-plugin/~/fbjs/lib/keyOf.js ***!
+  \******************************************************/
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule keyOf
+	 */
+	
+	/**
+	 * Allows extraction of a minified key. Let's the build system minify keys
+	 * without losing the ability to dynamically use key strings as values
+	 * themselves. Pass in an object with a single key/val pair and it will return
+	 * you the string key of that single record. Suppose you want to grab the
+	 * value for a key 'className' inside of an object. Key/val minification may
+	 * have aliased that key to be 'xa12'. keyOf({className: null}) will return
+	 * 'xa12' in that case. Resolve keys you want to use once at startup time, then
+	 * reuse those resolutions.
+	 */
+	"use strict";
+	
+	var keyOf = function (oneKeyObj) {
+	  var key;
+	  for (key in oneKeyObj) {
+	    if (!oneKeyObj.hasOwnProperty(key)) {
+	      continue;
+	    }
+	    return key;
+	  }
+	  return null;
+	};
+	
+	module.exports = keyOf;
+
+/***/ },
+/* 648 */
+/*!************************************!*\
+  !*** ./~/redux-thunk/lib/index.js ***!
+  \************************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	exports.__esModule = true;
+	function createThunkMiddleware(extraArgument) {
+	  return function (_ref) {
+	    var dispatch = _ref.dispatch;
+	    var getState = _ref.getState;
+	    return function (next) {
+	      return function (action) {
+	        if (typeof action === 'function') {
+	          return action(dispatch, getState, extraArgument);
+	        }
+	
+	        return next(action);
+	      };
+	    };
+	  };
+	}
+	
+	var thunk = createThunkMiddleware();
+	thunk.withExtraArgument = createThunkMiddleware;
+	
+	exports['default'] = thunk;
+
+/***/ },
+/* 649 */
+/*!******************************************!*\
+  !*** ./public/stylesheets/scss/app.scss ***!
+  \******************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./app.scss */ 650);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 615)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules!./../../../node_modules/sass-loader/index.js?sourceMap&modules!./app.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules!./../../../node_modules/sass-loader/index.js?sourceMap&modules!./app.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 650 */
+/*!*************************************************************************************************************!*\
+  !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/app.scss ***!
+  \*************************************************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 614)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "@charset \"UTF-8\";\n._1yWK57Pn2C7cRevf2RM7fS {\n  font-family: \"\\6E38\\30B4\\30B7\\30C3\\30AF\\4F53\", \"Yu Gothic\", YuGothic, \"\\30D2\\30E9\\30AE\\30CE\\89D2\\30B4   Pro\", \"Hiragino Kaku Gothic Pro\", \"\\30E1\\30A4\\30EA\\30AA\", \"Meiryo\", sans-serif; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/app.scss","/./public/stylesheets/scss/public/stylesheets/scss/app.scss"],"names":[],"mappings":"AAAA,iBAAiB;ACAjB;EACE,uLAAa,EAAA","file":"app.scss","sourcesContent":["@charset \"UTF-8\";\n.content {\n  font-family: \"游ゴシック体\", \"Yu Gothic\", YuGothic, \"ヒラギノ角ゴ Pro\", \"Hiragino Kaku Gothic Pro\", \"メイリオ\", \"Meiryo\", sans-serif; }\n",".content {\n  font-family: \"游ゴシック体\", \"Yu Gothic\", YuGothic, \"ヒラギノ角ゴ Pro\", \"Hiragino Kaku Gothic Pro\", \"メイリオ\", \"Meiryo\", sans-serif;\n}\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+	exports.locals = {
+		"content": "_1yWK57Pn2C7cRevf2RM7fS"
 	};
 
 /***/ }

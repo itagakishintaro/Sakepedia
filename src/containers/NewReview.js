@@ -1,9 +1,11 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
-import TextField from 'material-ui/TextField'
-import SelectField from 'material-ui/SelectField'
+// material-ui
 import MenuItem from 'material-ui/MenuItem'
+import SelectField from 'material-ui/SelectField'
+import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
+// lib
 import axios from 'axios'
 
 class NewReview extends React.Component {

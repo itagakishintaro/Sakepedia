@@ -1,6 +1,6 @@
-$gray: #808080;
-$lightgray: #ddd;
-$border: 1px solid $gray;
+@import 'common';
+
+$border: 1px solid $grey300;
 
 .table {
   border-collapse: collapse;
@@ -8,7 +8,7 @@ $border: 1px solid $gray;
 }
 
 .th {
-  background-color: $lightgray;
+  background-color: $grey200;
   border: $border;
   font-weight: normal;
   text-align: left;
@@ -19,7 +19,15 @@ $border: 1px solid $gray;
   word-break: break-all;
 }
 
-.img {
-  height: 100px;
-  margin-left: 1em;
+.header {
+  display: flex;
+
+  .image {
+    height: 100px;
+    margin: 0 1em 1em;
+  }
+
+  .title {
+    font-size: 1.5em;
+  }
 }

@@ -1,10 +1,12 @@
 import React, { PropTypes } from 'react'
+import { connect } from 'react-redux'
+// material-ui
 import AutoComplete from 'material-ui/AutoComplete'
 import FontIcon from 'material-ui/FontIcon'
+import List from './List'
 import {Tabs, Tab} from 'material-ui/Tabs'
 import RaisedButton from 'material-ui/RaisedButton'
-import List from './List'
-import { connect } from 'react-redux'
+// actions
 import { getSakeList, getNames, getBreweries, getPrefectures } from '../actions'
 
 class Search extends React.Component {

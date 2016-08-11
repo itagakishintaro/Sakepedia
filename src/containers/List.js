@@ -1,7 +1,8 @@
-import styles from '../../public/stylesheets/scss/list.scss'
-
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
+// css
+import classes from '../../public/stylesheets/scss/list.scss'
+// components
 import SakeCard from './SakeCard'
 
 class List extends React.Component {
@@ -13,7 +14,7 @@ class List extends React.Component {
     }
     return (
       <div>
-        <div className={styles.alert}>{ alertMessage }</div>
+        <div className={classes.alert}>{ alertMessage }</div>
         { this.props.list.map( sake => <SakeCard sake={ sake } />  ) }
       </div>
     )

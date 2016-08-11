@@ -1,10 +1,14 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { getSake } from '../actions'
+// material-ui
 import {Tabs, Tab} from 'material-ui/Tabs'
 import FontIcon from 'material-ui/FontIcon'
+// css
+import classes from '../../public/stylesheets/scss/detail.scss'
+// actions
+import { getSake } from '../actions'
+// components
 import NewReview from './NewReview'
-import styles from '../../public/stylesheets/scss/detail.scss'
 
 class Detail extends React.Component{
   constructor(props) {
@@ -23,7 +27,7 @@ class Detail extends React.Component{
   }
 
   render() {
-    const tabStyles = {
+    const styles = {
       contentContainer: {
         'margin': '1em 0',
       },
@@ -33,27 +37,25 @@ class Detail extends React.Component{
     }
     return (
       <div>
-        <div>
-          {this.props.sake.名前} ( {this.props.sake.種類} )
-        </div>
-        <div>
-          {this.props.sake.蔵元} ( {this.props.sake.都道府県} )
-        </div>
-        <div>
-          <img src={ this.props.sake.画像URL } className={ styles.img } />
+        <div className={classes.header}>
+          <img src={ this.props.sake.画像URL } className={classes.image} />
+          <div>
+            <div><span className={classes.title}>{this.props.sake.名前}</span>( {this.props.sake.種類} )</div>
+            <div>{this.props.sake.蔵元} ( {this.props.sake.都道府県} )</div>
+          </div>
         </div>
 
-        <Tabs tabItemContainerStyle={ tabStyles.tabItemContainer } contentContainerStyle={tabStyles.contentContainer}>
+        <Tabs tabItemContainerStyle={ styles.tabItemContainer } contentContainerStyle={styles.contentContainer}>
           <Tab
             icon={<FontIcon className="material-icons">details</FontIcon>}
             label="詳細"
           >
-            <table className={styles.table}>
+            <table className={classes.table}>
                   { Object.keys(this.props.sake).map( key => {
                     return(
-                      <tr className={styles.tr}>
-                        <th className={styles.th}>{ key }</th>
-                        <td className={styles.td}>{ this.props.sake[key] }</td>
+                      <tr className={classes.tr}>
+                        <th className={classes.th}>{ key }</th>
+                        <td className={classes.td}>{ this.props.sake[key] }</td>
                       </tr>
                     )
                   } ) }

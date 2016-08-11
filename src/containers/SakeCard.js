@@ -1,23 +1,23 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
+// material-ui
 import {Card, CardHeader, CardText} from 'material-ui/Card'
-
-const styles = {
-  card: {
-    'marginTop': '1em',
-  },
-  img: {
-    'height': '100px',
-    'marginLeft': '1em',
-  },
-  link: {
-    color: '#000',
-    textDecoration: 'none',
-  },
-}
 
 class SakeCard extends React.Component {
   render() {
+    const styles = {
+      card: {
+        'marginTop': '1em',
+      },
+      img: {
+        'height': '100px',
+        'marginLeft': '1em',
+      },
+      link: {
+        color: '#000',
+        textDecoration: 'none',
+      },
+    }
     return (
       <Link to={`/sake/${this.props.sake._id}`} style={styles.link}>
         <Card style={ styles.card }>
