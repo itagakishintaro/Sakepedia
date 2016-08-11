@@ -10,7 +10,7 @@ import axios from 'axios'
 
 class NewReview extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       evaluation: '',
       flavor: '',
@@ -25,6 +25,7 @@ class NewReview extends React.Component {
   send(){
     axios.post( '/api/reviews' , {
       sakeId: this.props.sakeId,
+      date: new Date(),
       evaluation: this.state.evaluation,
       comment: document.getElementById('comment').value,
       flavor: this.state.flavor,
@@ -32,6 +33,8 @@ class NewReview extends React.Component {
       maturation: this.state.maturation,
       lowerTemperature: this.state.lowerTemperature,
       upperTemperature: this.state.upperTemperature,
+      userId: 'user id',
+      userName: 'user name',
       matched: document.getElementById('matched').value,
     })
     .then( res => {

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 // css
 import classes from '../../public/stylesheets/scss/list.scss'
 // components
-import SakeCard from './SakeCard'
+import SakeCard from '../components/SakeCard'
 
 class List extends React.Component {
   render() {

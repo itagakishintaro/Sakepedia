@@ -20,7 +20,7 @@ class Header extends React.Component{
     this.state = {open: false}
   }
 
-  openMenu(){
+  toggleMenu(){
     this.setState({open: !this.state.open})
   }
 
@@ -30,7 +30,7 @@ class Header extends React.Component{
         <AppBar
           title="Sakepedia"
           iconElementLeft={
-            <IconButton onClick={ this.openMenu.bind(this) } ><MenuIcon color={'#fff'} /></IconButton>
+            <IconButton onClick={ this.toggleMenu.bind(this) } ><MenuIcon color={'#fff'} /></IconButton>
           }
           style={ styles.appbar }
         />

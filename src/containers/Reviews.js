@@ -3,17 +3,18 @@ import { connect } from 'react-redux'
 // material-ui
 // css
 // actions
-import { getReviews } from '../actions/sake'
+import { getReviews } from '../actions/review'
 // components
+import ReviewCard from '../components/ReviewCard'
 
 class Reviews extends React.Component{
-  componentWillMount() {
-    getReviews( this.props.dispatch )
-  }
-
   render() {
+    if ( this.props.sakeId ) {
+      getReviews( this.props.dispatch, this.props.sakeId )
+    }
     return (
       <div>
+        { this.props.reviews.map( review => <ReviewCard review={review} /> ) }
       </div>
     )
   }
@@ -21,6 +22,8 @@ class Reviews extends React.Component{
 
 Reviews.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  reviews: PropTypes.array.isRequired,
+  sakeId: PropTypes.string.isRequired,
 }
 
 const mapStateToProps = state => state

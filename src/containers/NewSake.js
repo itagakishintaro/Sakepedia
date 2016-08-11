@@ -11,7 +11,7 @@ import axios from 'axios'
 
 class NewSake extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       acidRate: '',
       alcoholRate: '',

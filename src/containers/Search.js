@@ -12,9 +12,6 @@ import { getSakeList, getNames, getBreweries, getPrefectures } from '../actions/
 class Search extends React.Component {
   constructor(props) {
     super(props)
-  }
-
-  componentWillMount() {
     getNames( this.props.dispatch )
     getBreweries( this.props.dispatch )
     getPrefectures( this.props.dispatch )

@@ -9,9 +9,11 @@ import classes from '../../public/stylesheets/scss/detail.scss'
 import { getSake } from '../actions/sake'
 // components
 import NewReview from './NewReview'
+import Reviews from './Reviews'
 
 class Detail extends React.Component{
-  componentWillMount() {
+  constructor(props) {
+    super(props)
     getSake( this.props.dispatch, this.props.params.sakeId )
   }
 
@@ -54,6 +56,7 @@ class Detail extends React.Component{
             icon={<FontIcon className="material-icons">people</FontIcon>}
             label="レビュー"
           >
+            <Reviews sakeId={this.props.sake._id} />
           </Tab>
           <Tab
             icon={<FontIcon className="material-icons">chat_bubble_outline</FontIcon>}
