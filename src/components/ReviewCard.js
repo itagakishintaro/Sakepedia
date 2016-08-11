@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react'
 import Badge from 'material-ui/Badge'
 import {Card, CardHeader, CardText} from 'material-ui/Card'
 import Chip from 'material-ui/Chip'
-import { blue200, brown200, green200, orange200, perple200 } from 'material-ui/styles/colors'
+import { blue200, brown200, green200, orange200, purple200 } from 'material-ui/styles/colors'
 // components
 import Stars from './Stars'
 // lib
@@ -24,7 +24,7 @@ class Review extends React.Component {
       return <Chip backgroundColor={brown200}>熟酒</Chip>
     }
     if( 2 <= review.flavor & 2 <= review.taste & review.maturation <= 2 ){
-      return <Chip backgroundColor={perple200}>薫醇酒(芳醇旨口)</Chip>
+      return <Chip backgroundColor={purple200}>薫醇酒</Chip>
     }
   }
 

@@ -23,17 +23,8 @@ router.get( '/', ( req, res ) => {
   if ( req.query.sakeId ) {
     query['sakeId'] = new RegExp( req.query.sakeId );
   }
-  collection( 'review' ).find( query ).limit( LIMIT ).toArray( ( err, docs ) => {
+  collection( 'review' ).find( query ).sort( { 'date': -1 } ).limit( LIMIT ).toArray( ( err, docs ) => {
     res.send( docs );
-  } );
-} );
-
-// GET find :id
-router.get( '/:id', ( req, res ) => {
-  collection( 'review' ).findOne( {
-    _id: new ObjectID( req.params.id )
-  }, {}, function ( err, r ) {
-    res.send( r );
   } );
 } );
 

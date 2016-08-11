@@ -38,6 +38,7 @@ class Detail extends React.Component{
 
         <Tabs tabItemContainerStyle={ styles.tabItemContainer } contentContainerStyle={styles.contentContainer}>
           <Tab
+             id="detail"
             icon={<FontIcon className="material-icons">details</FontIcon>}
             label="詳細"
           >
@@ -53,12 +54,14 @@ class Detail extends React.Component{
             </table>
           </Tab>
           <Tab
+            id="reviews"
             icon={<FontIcon className="material-icons">people</FontIcon>}
             label="レビュー"
           >
             <Reviews sakeId={this.props.sake._id} />
           </Tab>
           <Tab
+            id="createReview"
             icon={<FontIcon className="material-icons">chat_bubble_outline</FontIcon>}
             label="レビューする"
           >

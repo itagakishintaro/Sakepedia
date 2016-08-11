@@ -43,6 +43,8 @@ class NewReview extends React.Component {
     .catch( error => {
       console.log( error )
     })
+
+    location.reload()
   }
 
   render() {
@@ -155,6 +157,7 @@ class NewReview extends React.Component {
 
 NewReview.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
   list: PropTypes.array.isRequired,
   sakeId: PropTypes.string.isRequired,
 }
