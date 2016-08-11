@@ -18,7 +18,7 @@ router.all( '/*', ( req, res, next ) => {
 } );
 
 // GET find
-router.get( '/find', ( req, res ) => {
+router.get( '/', ( req, res ) => {
   let query = {}
   if ( req.query.sakeId ) {
     query['sakeId'] = new RegExp( req.query.sakeId );

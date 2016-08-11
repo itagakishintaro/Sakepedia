@@ -66095,7 +66095,7 @@
 	
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 	
-	var _actions = __webpack_require__(/*! ../actions */ 617);
+	var _sake = __webpack_require__(/*! ../actions/sake */ 651);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -66121,9 +66121,9 @@
 	  _createClass(Search, [{
 	    key: 'componentWillMount',
 	    value: function componentWillMount() {
-	      (0, _actions.getNames)(this.props.dispatch);
-	      (0, _actions.getBreweries)(this.props.dispatch);
-	      (0, _actions.getPrefectures)(this.props.dispatch);
+	      (0, _sake.getNames)(this.props.dispatch);
+	      (0, _sake.getBreweries)(this.props.dispatch);
+	      (0, _sake.getPrefectures)(this.props.dispatch);
 	    }
 	  }, {
 	    key: 'detailSearch',
@@ -66137,7 +66137,7 @@
 	  }, {
 	    key: 'search',
 	    value: function search(dispatch, query) {
-	      (0, _actions.getSakeList)(dispatch, query);
+	      (0, _sake.getSakeList)(dispatch, query);
 	    }
 	  }, {
 	    key: 'render',
@@ -66792,111 +66792,7 @@
 	exports.default = SakeCard;
 
 /***/ },
-/* 617 */
-/*!******************************!*\
-  !*** ./src/actions/index.js ***!
-  \******************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.getPrefectures = exports.getBreweries = exports.getNames = exports.getSake = exports.getSakeList = exports.setPrefectures = exports.setBreweries = exports.setNames = exports.setSake = exports.setSakeList = undefined;
-	
-	var _axios = __webpack_require__(/*! axios */ 618);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var setSakeList = exports.setSakeList = function setSakeList(list) {
-	  return {
-	    type: 'SETLIST',
-	    list: list
-	  };
-	};
-	
-	var setSake = exports.setSake = function setSake(sake) {
-	  return {
-	    type: 'SETSAKE',
-	    sake: sake
-	  };
-	};
-	
-	var setNames = exports.setNames = function setNames(names) {
-	  return {
-	    type: 'SETNAMES',
-	    names: names
-	  };
-	};
-	
-	var setBreweries = exports.setBreweries = function setBreweries(breweries) {
-	  return {
-	    type: 'SETBREWERIES',
-	    breweries: breweries
-	  };
-	};
-	
-	var setPrefectures = exports.setPrefectures = function setPrefectures(prefectures) {
-	  return {
-	    type: 'SETPREFECTURES',
-	    prefectures: prefectures
-	  };
-	};
-	
-	var getSakeList = exports.getSakeList = function getSakeList(dispatch, words) {
-	  var query = 'action=search';
-	  if (words.prefecture) {
-	    query = query + '&prefecture=' + words.prefecture;
-	  }
-	  if (words.brewrey) {
-	    query = query + '&brewrey=' + words.brewrey;
-	  }
-	  if (words.name) {
-	    query = query + '&name=' + words.name;
-	  }
-	  _axios2.default.get('/api/sake/find?' + query).then(function (res) {
-	    dispatch(setSakeList(res.data));
-	  }).catch(function (error) {
-	    console.log(error);
-	  });
-	};
-	
-	var getSake = exports.getSake = function getSake(dispatch, id) {
-	  _axios2.default.get('/api/sake/' + id).then(function (res) {
-	    dispatch(setSake(res.data));
-	  }).catch(function (error) {
-	    console.log(error);
-	  });
-	};
-	
-	var getNames = exports.getNames = function getNames(dispatch) {
-	  _axios2.default.get('/api/sake/names').then(function (res) {
-	    dispatch(setNames(res.data));
-	  }).catch(function (error) {
-	    console.log(error);
-	  });
-	};
-	
-	var getBreweries = exports.getBreweries = function getBreweries(dispatch) {
-	  _axios2.default.get('/api/sake/breweries').then(function (res) {
-	    dispatch(setBreweries(res.data));
-	  }).catch(function (error) {
-	    console.log(error);
-	  });
-	};
-	
-	var getPrefectures = exports.getPrefectures = function getPrefectures(dispatch) {
-	  _axios2.default.get('/api/sake/prefectures').then(function (res) {
-	    dispatch(setPrefectures(res.data));
-	  }).catch(function (error) {
-	    console.log(error);
-	  });
-	};
-
-/***/ },
+/* 617 */,
 /* 618 */
 /*!**************************!*\
   !*** ./~/axios/index.js ***!
@@ -68251,7 +68147,7 @@
 	  _createClass(NewSake, [{
 	    key: 'send',
 	    value: function send() {
-	      _axios2.default.post('/api/sake', {
+	      _axios2.default.post('/api/sakes', {
 	        brand: document.getElementById('brand').value,
 	        category: this.state.category,
 	        process: this.state.process,
@@ -68461,7 +68357,7 @@
 	
 	var _detail2 = _interopRequireDefault(_detail);
 	
-	var _actions = __webpack_require__(/*! ../actions */ 617);
+	var _sake = __webpack_require__(/*! ../actions/sake */ 651);
 	
 	var _NewReview = __webpack_require__(/*! ./NewReview */ 639);
 	
@@ -68486,26 +68382,16 @@
 	var Detail = function (_React$Component) {
 	  _inherits(Detail, _React$Component);
 	
-	  function Detail(props) {
+	  function Detail() {
 	    _classCallCheck(this, Detail);
 	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Detail).call(this, props));
-	
-	    _this.state = {
-	      showNewReview: false
-	    };
-	    return _this;
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Detail).apply(this, arguments));
 	  }
 	
 	  _createClass(Detail, [{
 	    key: 'componentWillMount',
 	    value: function componentWillMount() {
-	      (0, _actions.getSake)(this.props.dispatch, this.props.params.sakeId);
-	    }
-	  }, {
-	    key: 'toggleNewReview',
-	    value: function toggleNewReview() {
-	      this.setState({ showNewReview: !this.state.showNewReview });
+	      (0, _sake.getSake)(this.props.dispatch, this.props.params.sakeId);
 	    }
 	  }, {
 	    key: 'render',
@@ -68701,7 +68587,7 @@
 	  _createClass(NewReview, [{
 	    key: 'send',
 	    value: function send() {
-	      _axios2.default.post('/api/review', {
+	      _axios2.default.post('/api/reviews', {
 	        sakeId: this.props.sakeId,
 	        evaluation: this.state.evaluation,
 	        comment: document.getElementById('comment').value,
@@ -69373,6 +69259,111 @@
 	// exports
 	exports.locals = {
 		"content": "_1yWK57Pn2C7cRevf2RM7fS"
+	};
+
+/***/ },
+/* 651 */
+/*!*****************************!*\
+  !*** ./src/actions/sake.js ***!
+  \*****************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.getPrefectures = exports.getBreweries = exports.getNames = exports.getSake = exports.getSakeList = exports.setPrefectures = exports.setBreweries = exports.setNames = exports.setSake = exports.setSakeList = undefined;
+	
+	var _axios = __webpack_require__(/*! axios */ 618);
+	
+	var _axios2 = _interopRequireDefault(_axios);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var setSakeList = exports.setSakeList = function setSakeList(list) {
+	  return {
+	    type: 'SETLIST',
+	    list: list
+	  };
+	};
+	
+	var setSake = exports.setSake = function setSake(sake) {
+	  return {
+	    type: 'SETSAKE',
+	    sake: sake
+	  };
+	};
+	
+	var setNames = exports.setNames = function setNames(names) {
+	  return {
+	    type: 'SETNAMES',
+	    names: names
+	  };
+	};
+	
+	var setBreweries = exports.setBreweries = function setBreweries(breweries) {
+	  return {
+	    type: 'SETBREWERIES',
+	    breweries: breweries
+	  };
+	};
+	
+	var setPrefectures = exports.setPrefectures = function setPrefectures(prefectures) {
+	  return {
+	    type: 'SETPREFECTURES',
+	    prefectures: prefectures
+	  };
+	};
+	
+	var getSakeList = exports.getSakeList = function getSakeList(dispatch, words) {
+	  var query = 'action=search';
+	  if (words.prefecture) {
+	    query = query + '&prefecture=' + words.prefecture;
+	  }
+	  if (words.brewrey) {
+	    query = query + '&brewrey=' + words.brewrey;
+	  }
+	  if (words.name) {
+	    query = query + '&name=' + words.name;
+	  }
+	  _axios2.default.get('/api/sakes?' + query).then(function (res) {
+	    dispatch(setSakeList(res.data));
+	  }).catch(function (error) {
+	    console.log(error);
+	  });
+	};
+	
+	var getSake = exports.getSake = function getSake(dispatch, id) {
+	  _axios2.default.get('/api/sakes/' + id).then(function (res) {
+	    dispatch(setSake(res.data));
+	  }).catch(function (error) {
+	    console.log(error);
+	  });
+	};
+	
+	var getNames = exports.getNames = function getNames(dispatch) {
+	  _axios2.default.get('/api/sakes/names').then(function (res) {
+	    dispatch(setNames(res.data));
+	  }).catch(function (error) {
+	    console.log(error);
+	  });
+	};
+	
+	var getBreweries = exports.getBreweries = function getBreweries(dispatch) {
+	  _axios2.default.get('/api/sakes/breweries').then(function (res) {
+	    dispatch(setBreweries(res.data));
+	  }).catch(function (error) {
+	    console.log(error);
+	  });
+	};
+	
+	var getPrefectures = exports.getPrefectures = function getPrefectures(dispatch) {
+	  _axios2.default.get('/api/sakes/prefectures').then(function (res) {
+	    dispatch(setPrefectures(res.data));
+	  }).catch(function (error) {
+	    console.log(error);
+	  });
 	};
 
 /***/ }

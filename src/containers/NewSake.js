@@ -30,7 +30,7 @@ class NewSake extends React.Component {
   }
 
   send(){
-    axios.post( '/api/sake' , {
+    axios.post( '/api/sakes' , {
       brand: document.getElementById('brand').value,
       category: this.state.category,
       process: this.state.process,

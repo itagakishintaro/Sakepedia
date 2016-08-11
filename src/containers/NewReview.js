@@ -23,7 +23,7 @@ class NewReview extends React.Component {
   }
 
   send(){
-    axios.post( '/api/review' , {
+    axios.post( '/api/reviews' , {
       sakeId: this.props.sakeId,
       evaluation: this.state.evaluation,
       comment: document.getElementById('comment').value,

@@ -18,7 +18,7 @@ router.all( '/*', ( req, res, next ) => {
 } );
 
 // GET find
-router.get( '/find', ( req, res ) => {
+router.get( '/', ( req, res ) => {
   let query = {}
   if ( req.query.prefecture ) {
     query['都道府県'] = new RegExp( req.query.prefecture );

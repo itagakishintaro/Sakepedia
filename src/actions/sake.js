@@ -46,7 +46,7 @@ export const getSakeList = ( dispatch, words ) => {
   if( words.name ) {
     query = `${query}&name=${words.name}`
   }
-  axios.get( `/api/sake/find?${query}` )
+  axios.get( `/api/sakes?${query}` )
     .then( res => {
       dispatch( setSakeList( res.data ) )
     })
@@ -56,7 +56,7 @@ export const getSakeList = ( dispatch, words ) => {
 }
 
 export const getSake = ( dispatch, id ) => {
-  axios.get( `/api/sake/${id}` )
+  axios.get( `/api/sakes/${id}` )
     .then( res => {
       dispatch( setSake( res.data ) )
     })
@@ -66,7 +66,7 @@ export const getSake = ( dispatch, id ) => {
 }
 
 export const getNames = ( dispatch ) => {
-  axios.get( '/api/sake/names' )
+  axios.get( '/api/sakes/names' )
     .then( res => {
       dispatch( setNames( res.data ) )
     })
@@ -76,7 +76,7 @@ export const getNames = ( dispatch ) => {
 }
 
 export const getBreweries = ( dispatch ) => {
-  axios.get( '/api/sake/breweries' )
+  axios.get( '/api/sakes/breweries' )
     .then( res => {
       dispatch( setBreweries( res.data ) )
     })
@@ -86,7 +86,7 @@ export const getBreweries = ( dispatch ) => {
 }
 
 export const getPrefectures = ( dispatch ) => {
-  axios.get( '/api/sake/prefectures' )
+  axios.get( '/api/sakes/prefectures' )
     .then( res => {
       dispatch( setPrefectures( res.data ) )
     })

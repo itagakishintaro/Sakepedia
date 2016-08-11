@@ -7,7 +7,7 @@ import List from './List'
 import {Tabs, Tab} from 'material-ui/Tabs'
 import RaisedButton from 'material-ui/RaisedButton'
 // actions
-import { getSakeList, getNames, getBreweries, getPrefectures } from '../actions'
+import { getSakeList, getNames, getBreweries, getPrefectures } from '../actions/sake'
 
 class Search extends React.Component {
   constructor(props) {

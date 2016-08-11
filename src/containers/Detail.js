@@ -6,24 +6,13 @@ import FontIcon from 'material-ui/FontIcon'
 // css
 import classes from '../../public/stylesheets/scss/detail.scss'
 // actions
-import { getSake } from '../actions'
+import { getSake } from '../actions/sake'
 // components
 import NewReview from './NewReview'
 
 class Detail extends React.Component{
-  constructor(props) {
-    super(props)
-    this.state = {
-      showNewReview: false,
-    }
-  }
-
   componentWillMount() {
     getSake( this.props.dispatch, this.props.params.sakeId )
-  }
-
-  toggleNewReview() {
-    this.setState({ showNewReview: !this.state.showNewReview })
   }
 
   render() {
