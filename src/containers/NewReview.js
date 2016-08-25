@@ -1,8 +1,10 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 // material-ui
+import Checkbox from 'material-ui/Checkbox'
 import MenuItem from 'material-ui/MenuItem'
 import SelectField from 'material-ui/SelectField'
+import { grey400 } from 'material-ui/styles/colors'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 // lib
@@ -31,8 +33,13 @@ class NewReview extends React.Component {
       flavor: this.state.flavor,
       taste: this.state.taste,
       maturation: this.state.maturation,
-      lowerTemperature: this.state.lowerTemperature,
-      upperTemperature: this.state.upperTemperature,
+      temperature: {
+        '5': document.getElementById('temp5').checked,
+        '10': document.getElementById('temp10').checked,
+        '15': document.getElementById('temp15').checked,
+        '40': document.getElementById('temp40').checked,
+        '50': document.getElementById('temp50').checked,
+      },
       userId: 'user id',
       userName: 'user name',
       matched: document.getElementById('matched').value,
@@ -52,6 +59,10 @@ class NewReview extends React.Component {
       button: {
         margin: '1em 0',
       },
+      label: {
+        color:  grey400,
+        fontSize: '0.8em',
+      }
     }
     return (
       <div>
@@ -115,32 +126,27 @@ class NewReview extends React.Component {
             <MenuItem value={4} primaryText="熟成" />
           </SelectField>
 
-          <SelectField
-            id="lowerTemperature"
-            floatingLabelFixed={true}
-            floatingLabelText="温度（下限）"
-            fullWidth={true}
-            value={this.state.lowerTemperature}
-            onChange={ (event, index, value) => this.setState( { lowerTemperature: value } ) } >
-            <MenuItem value={1} primaryText="一番冷たい(5度位)" />
-            <MenuItem value={2} primaryText="やや冷たい(10度位)" />
-            <MenuItem value={3} primaryText="常温(15度位)" />
-            <MenuItem value={4} primaryText="ぬる燗(40度位)" />
-            <MenuItem value={5} primaryText="熱燗(50度位)" />
-          </SelectField>
-          <SelectField
-            id="upperTemperature"
-            floatingLabelFixed={true}
-            floatingLabelText="温度（上限）"
-            fullWidth={true}
-            value={this.state.upperTemperature}
-            onChange={ (event, index, value) => this.setState( { upperTemperature: value } ) } >
-            <MenuItem value={1} primaryText="一番冷たい(5度位)" />
-            <MenuItem value={2} primaryText="やや冷たい(10度位)" />
-            <MenuItem value={3} primaryText="常温(15度位)" />
-            <MenuItem value={4} primaryText="ぬる燗(40度位)" />
-            <MenuItem value={5} primaryText="熱燗(50度位)" />
-          </SelectField>
+          <label style={styles.label}>適した温度</label>
+          <Checkbox
+            id="temp5"
+            label="一番冷たい(5度位)"
+          />
+          <Checkbox
+            id="temp10"
+            label="やや冷たい(10度位)"
+          />
+          <Checkbox
+            id="temp15"
+            label="常温(15度位)"
+          />
+          <Checkbox
+            id="temp40"
+            label="ぬる燗(40度位)"
+          />
+          <Checkbox
+            id="temp50"
+            label="熱燗(50度位)"
+          />
 
           <TextField
             id="matched"

@@ -68785,6 +68785,10 @@
 	
 	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
 	
+	var _Checkbox = __webpack_require__(/*! material-ui/Checkbox */ 358);
+	
+	var _Checkbox2 = _interopRequireDefault(_Checkbox);
+	
 	var _MenuItem = __webpack_require__(/*! material-ui/MenuItem */ 325);
 	
 	var _MenuItem2 = _interopRequireDefault(_MenuItem);
@@ -68792,6 +68796,8 @@
 	var _SelectField = __webpack_require__(/*! material-ui/SelectField */ 568);
 	
 	var _SelectField2 = _interopRequireDefault(_SelectField);
+	
+	var _colors = __webpack_require__(/*! material-ui/styles/colors */ 518);
 	
 	var _TextField = __webpack_require__(/*! material-ui/TextField */ 309);
 	
@@ -68848,8 +68854,13 @@
 	        flavor: this.state.flavor,
 	        taste: this.state.taste,
 	        maturation: this.state.maturation,
-	        lowerTemperature: this.state.lowerTemperature,
-	        upperTemperature: this.state.upperTemperature,
+	        temperature: {
+	          '5': document.getElementById('temp5').checked,
+	          '10': document.getElementById('temp10').checked,
+	          '15': document.getElementById('temp15').checked,
+	          '40': document.getElementById('temp40').checked,
+	          '50': document.getElementById('temp50').checked
+	        },
 	        userId: 'user id',
 	        userName: 'user name',
 	        matched: document.getElementById('matched').value
@@ -68869,6 +68880,10 @@
 	      var styles = {
 	        button: {
 	          margin: '1em 0'
+	        },
+	        label: {
+	          color: _colors.grey400,
+	          fontSize: '0.8em'
 	        }
 	      };
 	      return _react2.default.createElement(
@@ -68948,39 +68963,30 @@
 	          _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: '熟成' })
 	        ),
 	        _react2.default.createElement(
-	          _SelectField2.default,
-	          {
-	            id: 'lowerTemperature',
-	            floatingLabelFixed: true,
-	            floatingLabelText: '温度（下限）',
-	            fullWidth: true,
-	            value: this.state.lowerTemperature,
-	            onChange: function onChange(event, index, value) {
-	              return _this2.setState({ lowerTemperature: value });
-	            } },
-	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '一番冷たい(5度位)' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: 'やや冷たい(10度位)' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: '常温(15度位)' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: 'ぬる燗(40度位)' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 5, primaryText: '熱燗(50度位)' })
+	          'label',
+	          { style: styles.label },
+	          '適した温度'
 	        ),
-	        _react2.default.createElement(
-	          _SelectField2.default,
-	          {
-	            id: 'upperTemperature',
-	            floatingLabelFixed: true,
-	            floatingLabelText: '温度（上限）',
-	            fullWidth: true,
-	            value: this.state.upperTemperature,
-	            onChange: function onChange(event, index, value) {
-	              return _this2.setState({ upperTemperature: value });
-	            } },
-	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '一番冷たい(5度位)' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: 'やや冷たい(10度位)' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: '常温(15度位)' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: 'ぬる燗(40度位)' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 5, primaryText: '熱燗(50度位)' })
-	        ),
+	        _react2.default.createElement(_Checkbox2.default, {
+	          id: 'temp5',
+	          label: '一番冷たい(5度位)'
+	        }),
+	        _react2.default.createElement(_Checkbox2.default, {
+	          id: 'temp10',
+	          label: 'やや冷たい(10度位)'
+	        }),
+	        _react2.default.createElement(_Checkbox2.default, {
+	          id: 'temp15',
+	          label: '常温(15度位)'
+	        }),
+	        _react2.default.createElement(_Checkbox2.default, {
+	          id: 'temp40',
+	          label: 'ぬる燗(40度位)'
+	        }),
+	        _react2.default.createElement(_Checkbox2.default, {
+	          id: 'temp50',
+	          label: '熱燗(50度位)'
+	        }),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'matched',
 	          floatingLabelFixed: true,
@@ -69147,6 +69153,10 @@
 	
 	var _Card = __webpack_require__(/*! material-ui/Card */ 348);
 	
+	var _Checkbox = __webpack_require__(/*! material-ui/Checkbox */ 358);
+	
+	var _Checkbox2 = _interopRequireDefault(_Checkbox);
+	
 	var _Chip = __webpack_require__(/*! material-ui/Chip */ 648);
 	
 	var _Chip2 = _interopRequireDefault(_Chip);
@@ -69224,20 +69234,33 @@
 	    key: 'render',
 	    value: function render() {
 	      var styles = {
+	        badge: {
+	          textAlign: 'right',
+	          width: '2em'
+	        },
 	        card: {
 	          'marginBottom': '1em'
+	        },
+	        comment: {
+	          marginBottom: '.5em'
+	        },
+	        content: {
+	          marginLeft: '1em'
 	        },
 	        date: {
 	          float: 'right',
 	          fontSize: '.5em',
 	          padding: '.5em'
 	        },
+	        label: {
+	          marginTop: '1em'
+	        },
 	        type: {
 	          display: 'flex',
 	          flexWrap: 'wrap'
 	        },
 	        typeMark: {
-	          margin: '1em 0 0'
+	          margin: '1em 2em 0 0'
 	        }
 	      };
 	      return _react2.default.createElement(
@@ -69257,7 +69280,7 @@
 	          null,
 	          _react2.default.createElement(
 	            'div',
-	            null,
+	            { style: styles.comment },
 	            this.props.review.comment
 	          ),
 	          _react2.default.createElement(
@@ -69272,7 +69295,8 @@
 	              _Badge2.default,
 	              {
 	                badgeContent: this.props.review.flavor,
-	                secondary: true
+	                secondary: true,
+	                style: styles.badge
 	              },
 	              '香り'
 	            ),
@@ -69280,7 +69304,8 @@
 	              _Badge2.default,
 	              {
 	                badgeContent: this.props.review.taste,
-	                secondary: true
+	                secondary: true,
+	                style: styles.badge
 	              },
 	              '味'
 	            ),
@@ -69288,24 +69313,55 @@
 	              _Badge2.default,
 	              {
 	                badgeContent: this.props.review.maturation,
-	                secondary: true
+	                secondary: true,
+	                style: styles.badge
 	              },
 	              '熟成'
 	            )
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            null,
-	            _react2.default.createElement(
-	              'span',
-	              null,
-	              '相性のよい料理：'
-	            ),
-	            _react2.default.createElement(
-	              'span',
-	              null,
-	              this.props.review.matched
-	            )
+	            { style: styles.label },
+	            '適した温度'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { style: styles.content },
+	            _react2.default.createElement(_Checkbox2.default, {
+	              checked: this.props.review.temperature['5'],
+	              disabled: true,
+	              label: '一番冷たい(5度位)'
+	            }),
+	            _react2.default.createElement(_Checkbox2.default, {
+	              checked: this.props.review.temperature['10'],
+	              disabled: true,
+	              label: 'やや冷たい(10度位)'
+	            }),
+	            _react2.default.createElement(_Checkbox2.default, {
+	              checked: this.props.review.temperature['15'],
+	              disabled: true,
+	              label: '常温(15度位)'
+	            }),
+	            _react2.default.createElement(_Checkbox2.default, {
+	              checked: this.props.review.temperature['40'],
+	              disabled: true,
+	              label: 'ぬる燗(40度位)'
+	            }),
+	            _react2.default.createElement(_Checkbox2.default, {
+	              checked: this.props.review.temperature['50'],
+	              disabled: true,
+	              label: '熱燗(50度位)'
+	            })
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { style: styles.label },
+	            '相性のよい料理'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { style: styles.content },
+	            this.props.review.matched
 	          )
 	        )
 	      );
