@@ -22,13 +22,13 @@ class SakeCard extends React.Component {
       <Link to={`/sake/${this.props.sake._id}`} style={styles.link}>
         <Card style={ styles.card }>
           <CardHeader
-            title={ `${this.props.sake.名前} ( ${this.props.sake.種類} )` }
+            title={ `${this.props.sake.銘柄名} ( ${this.props.sake.種類} )` }
             subtitle={ `${this.props.sake.蔵元} ( ${this.props.sake.都道府県} ) ` }
           />
           <div>
             <img src={ this.props.sake.画像URL } style={ styles.img } />
           </div>
-          <CardText>{ this.props.sake.香味 }</CardText>
+          <CardText>{ this.props.sake.説明 }</CardText>
         </Card>
       </Link>
     )

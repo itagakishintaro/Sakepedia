@@ -66840,7 +66840,7 @@
 	          _Card.Card,
 	          { style: styles.card },
 	          _react2.default.createElement(_Card.CardHeader, {
-	            title: this.props.sake.名前 + ' ( ' + this.props.sake.種類 + ' )',
+	            title: this.props.sake.銘柄名 + ' ( ' + this.props.sake.種類 + ' )',
 	            subtitle: this.props.sake.蔵元 + ' ( ' + this.props.sake.都道府県 + ' ) '
 	          }),
 	          _react2.default.createElement(
@@ -66851,7 +66851,7 @@
 	          _react2.default.createElement(
 	            _Card.CardText,
 	            null,
-	            this.props.sake.香味
+	            this.props.sake.説明
 	          )
 	        )
 	      );
@@ -68588,6 +68588,17 @@
 	          'backgroundColor': 'lightgray'
 	        }
 	      };
+	      var items = ['銘柄名', '種類', '酒母', 'その他', 'メーカーURL', '蔵元', '都道府県', '麹米', '掛米', '酵母', '精米歩合', 'アルコール度数', '日本酒度', '酸度', 'アミノ酸度', '説明'];
+	      var setAnchor = function setAnchor(input) {
+	        if (/http/.test(input)) {
+	          return _react2.default.createElement(
+	            'a',
+	            { href: input, target: '_blank' },
+	            input
+	          );
+	        }
+	        return input;
+	      };
 	      return _react2.default.createElement(
 	        'div',
 	        null,
@@ -68604,7 +68615,7 @@
 	              _react2.default.createElement(
 	                'span',
 	                { className: _detail2.default.title },
-	                this.props.sake.名前
+	                this.props.sake.銘柄名
 	              ),
 	              '( ',
 	              this.props.sake.種類,
@@ -68637,19 +68648,19 @@
 	            _react2.default.createElement(
 	              'table',
 	              { className: _detail2.default.table },
-	              Object.keys(this.props.sake).map(function (key) {
+	              items.map(function (key) {
 	                return _react2.default.createElement(
 	                  'tr',
 	                  { className: _detail2.default.tr },
 	                  _react2.default.createElement(
 	                    'th',
-	                    { className: _detail2.default.th },
+	                    { className: _detail2.default.th, width: '25%' },
 	                    key
 	                  ),
 	                  _react2.default.createElement(
 	                    'td',
 	                    { className: _detail2.default.td },
-	                    _this2.props.sake[key]
+	                    setAnchor(_this2.props.sake[key])
 	                  )
 	                );
 	              })

@@ -27,7 +27,7 @@ router.get( '/', ( req, res ) => {
     query['蔵元'] = new RegExp( req.query.brewrey );
   }
   if ( req.query.name ) {
-    query['名前'] = new RegExp( req.query.name );
+    query['銘柄名'] = new RegExp( req.query.name );
   }
   collection( 'sake' ).find( query ).limit( LIMIT ).toArray( ( err, docs ) => {
     res.send( docs );
@@ -36,7 +36,7 @@ router.get( '/', ( req, res ) => {
 
 // GET find names
 router.get( '/names', ( req, res ) => {
-  collection( 'sake' ).distinct( '名前', ( err, docs ) => { res.send( docs) } );
+  collection( 'sake' ).distinct( '銘柄名', ( err, docs ) => { res.send( docs) } );
 } );
 
 // GET find breweries

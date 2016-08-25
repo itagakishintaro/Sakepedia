@@ -26,12 +26,36 @@ class Detail extends React.Component{
         'backgroundColor': 'lightgray',
       },
     }
+    const items = [
+      '銘柄名',
+      '種類',
+      '酒母',
+      'その他',
+      'メーカーURL',
+      '蔵元',
+      '都道府県',
+      '麹米',
+      '掛米',
+      '酵母',
+      '精米歩合',
+      'アルコール度数',
+      '日本酒度',
+      '酸度',
+      'アミノ酸度',
+      '説明',
+    ]
+    let setAnchor = ( input ) => {
+      if( /http/.test( input ) ){
+        return <a href={input} target="_blank">{input}</a>
+      }
+      return input
+    }
     return (
       <div>
         <div className={classes.header}>
           <img src={ this.props.sake.画像URL } className={classes.image} />
           <div>
-            <div><span className={classes.title}>{this.props.sake.名前}</span>( {this.props.sake.種類} )</div>
+            <div><span className={classes.title}>{this.props.sake.銘柄名}</span>( {this.props.sake.種類} )</div>
             <div>{this.props.sake.蔵元} ( {this.props.sake.都道府県} )</div>
           </div>
         </div>
@@ -43,11 +67,13 @@ class Detail extends React.Component{
             label="詳細"
           >
             <table className={classes.table}>
-                  { Object.keys(this.props.sake).map( key => {
+                  { items.map( key => {
                     return(
                       <tr className={classes.tr}>
-                        <th className={classes.th}>{ key }</th>
-                        <td className={classes.td}>{ this.props.sake[key] }</td>
+                        <th className={classes.th} width="25%">{ key }</th>
+                        <td className={classes.td}>
+                            { setAnchor( this.props.sake[key] ) }
+                        </td>
                       </tr>
                     )
                   } ) }
