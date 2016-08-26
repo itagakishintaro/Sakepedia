@@ -8,6 +8,8 @@ import {Tabs, Tab} from 'material-ui/Tabs'
 import RaisedButton from 'material-ui/RaisedButton'
 // actions
 import { getSakeList, getNames, getBreweries, getPrefectures } from '../actions/sake'
+// components
+import Prefectures from '../components/Prefectures'
 
 class Search extends React.Component {
   constructor(props) {
@@ -15,11 +17,14 @@ class Search extends React.Component {
     getNames( this.props.dispatch )
     getBreweries( this.props.dispatch )
     getPrefectures( this.props.dispatch )
+    this.state = {
+      prefecture: '',
+    }
   }
 
   detailSearch() {
     this.search( this.props.dispatch, {
-      prefecture: document.getElementById('prefecture').value,
+      prefecture: this.state.prefecture,
       brewrey: document.getElementById('brewrey').value,
       name: document.getElementById('name').value
     }  )
@@ -27,6 +32,10 @@ class Search extends React.Component {
 
   search( dispatch, query ) {
     getSakeList( dispatch, query )
+  }
+
+  setPrefecture(pref) {
+    this.setState( { prefecture: pref } )
   }
 
   render() {
@@ -50,21 +59,18 @@ class Search extends React.Component {
             />
           </Tab>
           <Tab label="詳細検索" >
-            <AutoComplete
-              id="prefecture"
-              hintText={ <span><FontIcon className="material-icons" style={styles.icon}>search</FontIcon>都道府県</span> }
-              dataSource={ this.props.prefectures }
-              fullWidth={true}
-            />
+            <Prefectures label="都道府県" setPrefecture={this.setPrefecture.bind(this)} />
             <AutoComplete
               id="brewrey"
-              hintText={ <span><FontIcon className="material-icons" style={styles.icon}>search</FontIcon>蔵元</span> }
+              floatingLabelFixed={true}
+              floatingLabelText="蔵元"
               dataSource={ this.props.breweries }
               fullWidth={true}
             />
             <AutoComplete
               id="name"
-              hintText={ <span><FontIcon className="material-icons" style={styles.icon}>search</FontIcon>銘柄</span> }
+              floatingLabelFixed={true}
+              floatingLabelText="銘柄"
               dataSource={ this.props.names }
               fullWidth={true}
             />

@@ -8,6 +8,8 @@ import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 // lib
 import axios from 'axios'
+// components
+import Prefectures from '../components/Prefectures'
 
 class NewSake extends React.Component {
   constructor(props) {
@@ -21,6 +23,7 @@ class NewSake extends React.Component {
       category: '',
       koubo: [],
       polishRate: '',
+      prefecture: '',
       prefectures: [],
       process: '',
       riceOfKake: [],
@@ -54,6 +57,10 @@ class NewSake extends React.Component {
     .catch( error => {
       console.log( error )
     })
+  }
+
+  setPrefecture(pref) {
+    this.setState( { prefecture: pref } )
   }
 
   render() {
@@ -118,13 +125,9 @@ class NewSake extends React.Component {
             dataSource={this.state.breweries}
             fullWidth={true}
           />
-          <AutoComplete
-            id="prefecture"
-            floatingLabelFixed={true}
-            floatingLabelText="都道府県*"
-            dataSource={this.state.prefectures}
-            fullWidth={true}
-          />
+
+        <Prefectures label="都道府県*" setPrefecture={this.setPrefecture.bind(this)}/>
+
           <AutoComplete
             id="riceOfKouji"
             floatingLabelFixed={true}

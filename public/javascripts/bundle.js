@@ -66489,6 +66489,10 @@
 	
 	var _sake = __webpack_require__(/*! ../actions/sake */ 620);
 	
+	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 660);
+	
+	var _Prefectures2 = _interopRequireDefault(_Prefectures);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -66499,6 +66503,8 @@
 	// material-ui
 	
 	// actions
+	
+	// components
 	
 	
 	var Search = function (_React$Component) {
@@ -66512,6 +66518,9 @@
 	    (0, _sake.getNames)(_this.props.dispatch);
 	    (0, _sake.getBreweries)(_this.props.dispatch);
 	    (0, _sake.getPrefectures)(_this.props.dispatch);
+	    _this.state = {
+	      prefecture: ''
+	    };
 	    return _this;
 	  }
 	
@@ -66519,7 +66528,7 @@
 	    key: 'detailSearch',
 	    value: function detailSearch() {
 	      this.search(this.props.dispatch, {
-	        prefecture: document.getElementById('prefecture').value,
+	        prefecture: this.state.prefecture,
 	        brewrey: document.getElementById('brewrey').value,
 	        name: document.getElementById('name').value
 	      });
@@ -66528,6 +66537,11 @@
 	    key: 'search',
 	    value: function search(dispatch, query) {
 	      (0, _sake.getSakeList)(dispatch, query);
+	    }
+	  }, {
+	    key: 'setPrefecture',
+	    value: function setPrefecture(pref) {
+	      this.setState({ prefecture: pref });
 	    }
 	  }, {
 	    key: 'render',
@@ -66572,48 +66586,18 @@
 	          _react2.default.createElement(
 	            _Tabs.Tab,
 	            { label: '詳細検索' },
-	            _react2.default.createElement(_AutoComplete2.default, {
-	              id: 'prefecture',
-	              hintText: _react2.default.createElement(
-	                'span',
-	                null,
-	                _react2.default.createElement(
-	                  _FontIcon2.default,
-	                  { className: 'material-icons', style: styles.icon },
-	                  'search'
-	                ),
-	                '都道府県'
-	              ),
-	              dataSource: this.props.prefectures,
-	              fullWidth: true
-	            }),
+	            _react2.default.createElement(_Prefectures2.default, { label: '都道府県', setPrefecture: this.setPrefecture.bind(this) }),
 	            _react2.default.createElement(_AutoComplete2.default, {
 	              id: 'brewrey',
-	              hintText: _react2.default.createElement(
-	                'span',
-	                null,
-	                _react2.default.createElement(
-	                  _FontIcon2.default,
-	                  { className: 'material-icons', style: styles.icon },
-	                  'search'
-	                ),
-	                '蔵元'
-	              ),
+	              floatingLabelFixed: true,
+	              floatingLabelText: '蔵元',
 	              dataSource: this.props.breweries,
 	              fullWidth: true
 	            }),
 	            _react2.default.createElement(_AutoComplete2.default, {
 	              id: 'name',
-	              hintText: _react2.default.createElement(
-	                'span',
-	                null,
-	                _react2.default.createElement(
-	                  _FontIcon2.default,
-	                  { className: 'material-icons', style: styles.icon },
-	                  'search'
-	                ),
-	                '銘柄'
-	              ),
+	              floatingLabelFixed: true,
+	              floatingLabelText: '銘柄',
 	              dataSource: this.props.names,
 	              fullWidth: true
 	            }),
@@ -68286,6 +68270,10 @@
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
+	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 660);
+	
+	var _Prefectures2 = _interopRequireDefault(_Prefectures);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -68296,6 +68284,8 @@
 	// material-ui
 	
 	// lib
+	
+	// components
 	
 	
 	var NewSake = function (_React$Component) {
@@ -68315,6 +68305,7 @@
 	      category: '',
 	      koubo: [],
 	      polishRate: '',
+	      prefecture: '',
 	      prefectures: [],
 	      process: '',
 	      riceOfKake: [],
@@ -68349,6 +68340,11 @@
 	      }).catch(function (error) {
 	        console.log(error);
 	      });
+	    }
+	  }, {
+	    key: 'setPrefecture',
+	    value: function setPrefecture(pref) {
+	      this.setState({ prefecture: pref });
 	    }
 	  }, {
 	    key: 'render',
@@ -68425,13 +68421,7 @@
 	          dataSource: this.state.breweries,
 	          fullWidth: true
 	        }),
-	        _react2.default.createElement(_AutoComplete2.default, {
-	          id: 'prefecture',
-	          floatingLabelFixed: true,
-	          floatingLabelText: '都道府県*',
-	          dataSource: this.state.prefectures,
-	          fullWidth: true
-	        }),
+	        _react2.default.createElement(_Prefectures2.default, { label: '都道府県*', setPrefecture: this.setPrefecture.bind(this) }),
 	        _react2.default.createElement(_AutoComplete2.default, {
 	          id: 'riceOfKouji',
 	          floatingLabelFixed: true,
@@ -70493,6 +70483,141 @@
 	thunk.withExtraArgument = createThunkMiddleware;
 	
 	exports['default'] = thunk;
+
+/***/ },
+/* 660 */
+/*!***************************************!*\
+  !*** ./src/components/Prefectures.js ***!
+  \***************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 166);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _SelectField = __webpack_require__(/*! material-ui/SelectField */ 568);
+	
+	var _SelectField2 = _interopRequireDefault(_SelectField);
+	
+	var _MenuItem = __webpack_require__(/*! material-ui/MenuItem */ 325);
+	
+	var _MenuItem2 = _interopRequireDefault(_MenuItem);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	
+	var Prefectures = function (_React$Component) {
+	  _inherits(Prefectures, _React$Component);
+	
+	  function Prefectures(props) {
+	    _classCallCheck(this, Prefectures);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Prefectures).call(this, props));
+	
+	    _this.state = {
+	      prefecture: ''
+	    };
+	    return _this;
+	  }
+	
+	  _createClass(Prefectures, [{
+	    key: 'handleChange',
+	    value: function handleChange(event, index, value) {
+	      this.setState({ prefecture: value });
+	      this.props.setPrefecture(value);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          _SelectField2.default,
+	          {
+	            id: 'prefecture',
+	            floatingLabelFixed: true,
+	            floatingLabelText: this.props.label,
+	            fullWidth: true,
+	            value: this.state.prefecture,
+	            onChange: this.handleChange.bind(this)
+	          },
+	          _react2.default.createElement(_MenuItem2.default, { value: '北海道', primaryText: '北海道' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '青森県', primaryText: '青森県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '岩手県', primaryText: '岩手県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '宮城県', primaryText: '宮城県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '秋田県', primaryText: '秋田県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '山形県', primaryText: '山形県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '福島県', primaryText: '福島県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '茨城県', primaryText: '茨城県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '栃木県', primaryText: '栃木県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '群馬県', primaryText: '群馬県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '埼玉県', primaryText: '埼玉県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '千葉県', primaryText: '千葉県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '東京都', primaryText: '東京都' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '神奈川県', primaryText: '神奈川県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '新潟県', primaryText: '新潟県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '富山県', primaryText: '富山県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '石川県', primaryText: '石川県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '福井県', primaryText: '福井県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '山梨県', primaryText: '山梨県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '長野県', primaryText: '長野県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '岐阜県', primaryText: '岐阜県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '静岡県', primaryText: '静岡県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '愛知県', primaryText: '愛知県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '三重県', primaryText: '三重県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '滋賀県', primaryText: '滋賀県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '京都府', primaryText: '京都府' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '大阪府', primaryText: '大阪府' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '兵庫県', primaryText: '兵庫県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '奈良県', primaryText: '奈良県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '和歌山県', primaryText: '和歌山県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '鳥取県', primaryText: '鳥取県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '島根県', primaryText: '島根県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '岡山県', primaryText: '岡山県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '広島県', primaryText: '広島県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '山口県', primaryText: '山口県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '徳島県', primaryText: '徳島県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '香川県', primaryText: '香川県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '愛媛県', primaryText: '愛媛県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '高知県', primaryText: '高知県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '福岡県', primaryText: '福岡県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '佐賀県', primaryText: '佐賀県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '長崎県', primaryText: '長崎県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '熊本県', primaryText: '熊本県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '大分県', primaryText: '大分県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '宮崎県', primaryText: '宮崎県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '鹿児島県', primaryText: '鹿児島県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '沖縄県', primaryText: '沖縄県' })
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Prefectures;
+	}(_react2.default.Component);
+	
+	Prefectures.propTypes = {
+	  setPrefecture: _react.PropTypes.func.isRequired,
+	  label: _react.PropTypes.string.isRequired
+	};
+	
+	exports.default = Prefectures;
 
 /***/ }
 /******/ ]);
