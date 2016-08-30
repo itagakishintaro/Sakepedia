@@ -10,6 +10,8 @@ import RaisedButton from 'material-ui/RaisedButton'
 import axios from 'axios'
 // components
 import Prefectures from '../components/Prefectures'
+// validation
+import validate from './NewSakeValidation'
 
 class NewSake extends React.Component {
   constructor(props) {
@@ -21,6 +23,8 @@ class NewSake extends React.Component {
       brands: [],
       breweries: [],
       category: '',
+      error: false,
+      errorText: {},
       koubo: [],
       polishRate: '',
       prefecture: '',
@@ -33,6 +37,11 @@ class NewSake extends React.Component {
   }
 
   send(){
+    let validation = validate( this.state )
+    this.setState( { errorText: validation.errorText } )
+    if ( validation.error ) {
+      return
+    }
     axios.post( '/api/sakes' , {
       brand: document.getElementById('brand').value,
       category: this.state.category,
@@ -73,13 +82,15 @@ class NewSake extends React.Component {
       <div>
           <AutoComplete
             id="brand"
+            dataSource={this.state.brands}
+            errorText={this.state.errorText.brand}
             floatingLabelFixed={true}
             floatingLabelText="銘柄*"
-            dataSource={this.state.brands}
             fullWidth={true}
           />
           <SelectField
             id="category"
+            errorText={this.state.errorText.category}
             floatingLabelFixed={true}
             floatingLabelText="分類*"
             fullWidth={true}
@@ -97,6 +108,7 @@ class NewSake extends React.Component {
           </SelectField>
           <SelectField
             id="process"
+            errorText={this.state.errorText.process}
             floatingLabelFixed={true}
             floatingLabelText="製法*"
             fullWidth={true}
@@ -120,13 +132,18 @@ class NewSake extends React.Component {
           />
           <AutoComplete
             id="brewery"
+            dataSource={this.state.breweries}
+            errorText={this.state.errorText.brewery}
             floatingLabelFixed={true}
             floatingLabelText="蔵元*"
-            dataSource={this.state.breweries}
             fullWidth={true}
           />
 
-        <Prefectures label="都道府県*" setPrefecture={this.setPrefecture.bind(this)}/>
+        <Prefectures
+          errorText={this.state.errorText.prefecture}
+          label="都道府県*"
+          setPrefecture={this.setPrefecture.bind(this)}
+        />
 
           <AutoComplete
             id="riceOfKouji"

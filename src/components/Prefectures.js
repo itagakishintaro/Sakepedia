@@ -21,6 +21,7 @@ class Prefectures extends React.Component {
     <div>
     <SelectField
       id="prefecture"
+      errorText={this.props.errorText}
       floatingLabelFixed={true}
       floatingLabelText={ this.props.label }
       fullWidth={true}
@@ -81,6 +82,7 @@ class Prefectures extends React.Component {
 }
 
 Prefectures.propTypes = {
+  errorText: PropTypes.string,
   setPrefecture: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
 }
