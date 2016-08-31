@@ -11,6 +11,8 @@ import RaisedButton from 'material-ui/RaisedButton'
 import axios from 'axios'
 // validation
 import validate from './NewReviewValidation'
+// util
+import smoothScroll from '../util/SmoothScroll'
 
 class NewReview extends React.Component {
   constructor(props) {
@@ -31,6 +33,7 @@ class NewReview extends React.Component {
     let validation = validate( this.state )
     this.setState( { errorText: validation.errorText } )
     if ( validation.error ) {
+      smoothScroll( document.getElementById('newReview'), 1000 )
       return
     }
     axios.post( '/api/reviews' , {
@@ -73,7 +76,7 @@ class NewReview extends React.Component {
       }
     }
     return (
-      <div>
+      <div id="newReview">
           <SelectField
             id="evaluation"
             errorText={this.state.errorText.evaluation}

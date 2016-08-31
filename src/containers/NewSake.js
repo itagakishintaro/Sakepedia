@@ -12,6 +12,8 @@ import axios from 'axios'
 import Prefectures from '../components/Prefectures'
 // validation
 import validate from './NewSakeValidation'
+// util
+import smoothScroll from '../util/SmoothScroll'
 
 class NewSake extends React.Component {
   constructor(props) {
@@ -40,6 +42,7 @@ class NewSake extends React.Component {
     let validation = validate( this.state )
     this.setState( { errorText: validation.errorText } )
     if ( validation.error ) {
+      smoothScroll( document.getElementById('newSake'), 1000 )
       return
     }
     axios.post( '/api/sakes' , {
@@ -81,7 +84,7 @@ class NewSake extends React.Component {
       },
     }
     return (
-      <div>
+      <div id="newSake">
           <AutoComplete
             id="brand"
             dataSource={this.state.brands}

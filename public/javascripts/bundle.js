@@ -69,11 +69,11 @@
 	
 	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 	
-	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 655);
+	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 657);
 	
 	var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
 	
-	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 661);
+	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 663);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
@@ -28998,7 +28998,7 @@
 	
 	var _NewSake2 = _interopRequireDefault(_NewSake);
 	
-	var _Detail = __webpack_require__(/*! ./containers/Detail */ 643);
+	var _Detail = __webpack_require__(/*! ./containers/Detail */ 644);
 	
 	var _Detail2 = _interopRequireDefault(_Detail);
 	
@@ -68415,6 +68415,10 @@
 	
 	var _NewSakeValidation2 = _interopRequireDefault(_NewSakeValidation);
 	
+	var _SmoothScroll = __webpack_require__(/*! ../util/SmoothScroll */ 643);
+	
+	var _SmoothScroll2 = _interopRequireDefault(_SmoothScroll);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -68429,6 +68433,8 @@
 	// components
 	
 	// validation
+	
+	// util
 	
 	
 	var NewSake = function (_React$Component) {
@@ -68466,6 +68472,7 @@
 	      var validation = (0, _NewSakeValidation2.default)(this.state);
 	      this.setState({ errorText: validation.errorText });
 	      if (validation.error) {
+	        (0, _SmoothScroll2.default)(document.getElementById('newSake'), 1000);
 	        return;
 	      }
 	      _axios2.default.post('/api/sakes', {
@@ -68510,7 +68517,7 @@
 	      };
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { id: 'newSake' },
 	        _react2.default.createElement(_AutoComplete2.default, {
 	          id: 'brand',
 	          dataSource: this.state.brands,
@@ -68807,6 +68814,39 @@
 /***/ },
 /* 643 */
 /*!**********************************!*\
+  !*** ./src/util/SmoothScroll.js ***!
+  \**********************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// http://dongzhang.github.io/blog/Smooth-Scroll-Without-jQuery/
+	var smoothScroll = function smoothScroll(target, time) {
+	  var start = new Date().getTime();
+	  var startPosition = document.body['scrollTop'];
+	
+	  // set an interval to update scrollTop attribute every 25 ms
+	  var timer = setInterval(function () {
+	    // calculate the step, i.e the degree of completion of the smooth scroll
+	    var step = Math.min(1, (new Date().getTime() - start) / time);
+	
+	    // calculate the scroll distance and update the scrollTop
+	    document.body['scrollTop'] -= step * (startPosition - target.offsetTop);
+	
+	    // end interval if the scroll is completed
+	    if (step == 1) {
+	      clearInterval(timer);
+	    }
+	  }, 25);
+	};
+	exports.default = smoothScroll;
+
+/***/ },
+/* 644 */
+/*!**********************************!*\
   !*** ./src/containers/Detail.js ***!
   \**********************************/
 /***/ function(module, exports, __webpack_require__) {
@@ -68831,17 +68871,17 @@
 	
 	var _FontIcon2 = _interopRequireDefault(_FontIcon);
 	
-	var _detail = __webpack_require__(/*! ../../public/stylesheets/scss/detail.scss */ 644);
+	var _detail = __webpack_require__(/*! ../../public/stylesheets/scss/detail.scss */ 645);
 	
 	var _detail2 = _interopRequireDefault(_detail);
 	
 	var _sake = __webpack_require__(/*! ../actions/sake */ 620);
 	
-	var _NewReview = __webpack_require__(/*! ./NewReview */ 646);
+	var _NewReview = __webpack_require__(/*! ./NewReview */ 647);
 	
 	var _NewReview2 = _interopRequireDefault(_NewReview);
 	
-	var _Reviews = __webpack_require__(/*! ./Reviews */ 647);
+	var _Reviews = __webpack_require__(/*! ./Reviews */ 649);
 	
 	var _Reviews2 = _interopRequireDefault(_Reviews);
 	
@@ -69010,7 +69050,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Detail);
 
 /***/ },
-/* 644 */
+/* 645 */
 /*!*********************************************!*\
   !*** ./public/stylesheets/scss/detail.scss ***!
   \*********************************************/
@@ -69019,7 +69059,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./detail.scss */ 645);
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./detail.scss */ 646);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 264)(content, {});
@@ -69039,7 +69079,7 @@
 	}
 
 /***/ },
-/* 645 */
+/* 646 */
 /*!****************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/detail.scss ***!
   \****************************************************************************************************************/
@@ -69063,7 +69103,7 @@
 	};
 
 /***/ },
-/* 646 */
+/* 647 */
 /*!*************************************!*\
   !*** ./src/containers/NewReview.js ***!
   \*************************************/
@@ -69109,9 +69149,13 @@
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
-	var _NewReviewValidation = __webpack_require__(/*! ./NewReviewValidation */ 662);
+	var _NewReviewValidation = __webpack_require__(/*! ./NewReviewValidation */ 648);
 	
 	var _NewReviewValidation2 = _interopRequireDefault(_NewReviewValidation);
+	
+	var _SmoothScroll = __webpack_require__(/*! ../util/SmoothScroll */ 643);
+	
+	var _SmoothScroll2 = _interopRequireDefault(_SmoothScroll);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -69125,6 +69169,8 @@
 	// lib
 	
 	// validation
+	
+	// util
 	
 	
 	var NewReview = function (_React$Component) {
@@ -69154,6 +69200,7 @@
 	      var validation = (0, _NewReviewValidation2.default)(this.state);
 	      this.setState({ errorText: validation.errorText });
 	      if (validation.error) {
+	        (0, _SmoothScroll2.default)(document.getElementById('newReview'), 1000);
 	        return;
 	      }
 	      _axios2.default.post('/api/reviews', {
@@ -69198,7 +69245,7 @@
 	      };
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { id: 'newReview' },
 	        _react2.default.createElement(
 	          _SelectField2.default,
 	          {
@@ -69330,7 +69377,76 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(NewReview);
 
 /***/ },
-/* 647 */
+/* 648 */
+/*!***********************************************!*\
+  !*** ./src/containers/NewReviewValidation.js ***!
+  \***********************************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var validate = function validate(state) {
+	  state.error = false;
+	  validateEvaluation(state);
+	  validateComment(state);
+	  validateFlavor(state);
+	  validateTaste(state);
+	  validateMaturation(state);
+	  return state;
+	};
+	
+	var validateEvaluation = function validateEvaluation(state) {
+	  if (!state.evaluation) {
+	    state.error = true;
+	    state.errorText.evaluation = '評価は必須です';
+	  } else {
+	    state.errorText.evaluation = '';
+	  }
+	};
+	
+	var validateComment = function validateComment(state) {
+	  if (!document.getElementById('comment').validity.valid) {
+	    state.error = true;
+	    state.errorText.comment = '香味は必須です';
+	  } else {
+	    state.errorText.comment = '';
+	  }
+	};
+	
+	var validateFlavor = function validateFlavor(state) {
+	  if (!state.flavor) {
+	    state.error = true;
+	    state.errorText.flavor = '香りは必須です';
+	  } else {
+	    state.errorText.flavor = '';
+	  }
+	};
+	
+	var validateTaste = function validateTaste(state) {
+	  if (!state.taste) {
+	    state.error = true;
+	    state.errorText.taste = '味は必須です';
+	  } else {
+	    state.errorText.taste = '';
+	  }
+	};
+	
+	var validateMaturation = function validateMaturation(state) {
+	  if (!state.maturation) {
+	    state.error = true;
+	    state.errorText.maturation = '熟成は必須です';
+	  } else {
+	    state.errorText.maturation = '';
+	  }
+	};
+	
+	exports.default = validate;
+
+/***/ },
+/* 649 */
 /*!***********************************!*\
   !*** ./src/containers/Reviews.js ***!
   \***********************************/
@@ -69350,9 +69466,9 @@
 	
 	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
 	
-	var _review = __webpack_require__(/*! ../actions/review */ 648);
+	var _review = __webpack_require__(/*! ../actions/review */ 650);
 	
-	var _ReviewCard = __webpack_require__(/*! ../components/ReviewCard */ 649);
+	var _ReviewCard = __webpack_require__(/*! ../components/ReviewCard */ 651);
 	
 	var _ReviewCard2 = _interopRequireDefault(_ReviewCard);
 	
@@ -69410,7 +69526,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Reviews);
 
 /***/ },
-/* 648 */
+/* 650 */
 /*!*******************************!*\
   !*** ./src/actions/review.js ***!
   \*******************************/
@@ -69445,7 +69561,7 @@
 	};
 
 /***/ },
-/* 649 */
+/* 651 */
 /*!**************************************!*\
   !*** ./src/components/ReviewCard.js ***!
   \**************************************/
@@ -69473,13 +69589,13 @@
 	
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 	
-	var _Chip = __webpack_require__(/*! material-ui/Chip */ 650);
+	var _Chip = __webpack_require__(/*! material-ui/Chip */ 652);
 	
 	var _Chip2 = _interopRequireDefault(_Chip);
 	
 	var _colors = __webpack_require__(/*! material-ui/styles/colors */ 518);
 	
-	var _Stars = __webpack_require__(/*! ./Stars */ 653);
+	var _Stars = __webpack_require__(/*! ./Stars */ 655);
 	
 	var _Stars2 = _interopRequireDefault(_Stars);
 	
@@ -69496,7 +69612,7 @@
 	
 	
 	// lib
-	var dateFormat = __webpack_require__(/*! dateformat */ 654);
+	var dateFormat = __webpack_require__(/*! dateformat */ 656);
 	
 	var Review = function (_React$Component) {
 	  _inherits(Review, _React$Component);
@@ -69694,7 +69810,7 @@
 	exports.default = Review;
 
 /***/ },
-/* 650 */
+/* 652 */
 /*!*************************************!*\
   !*** ./~/material-ui/Chip/index.js ***!
   \*************************************/
@@ -69707,7 +69823,7 @@
 	});
 	exports.default = undefined;
 	
-	var _Chip = __webpack_require__(/*! ./Chip */ 651);
+	var _Chip = __webpack_require__(/*! ./Chip */ 653);
 	
 	var _Chip2 = _interopRequireDefault(_Chip);
 	
@@ -69716,7 +69832,7 @@
 	exports.default = _Chip2.default;
 
 /***/ },
-/* 651 */
+/* 653 */
 /*!************************************!*\
   !*** ./~/material-ui/Chip/Chip.js ***!
   \************************************/
@@ -69750,7 +69866,7 @@
 	
 	var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
 	
-	var _cancel = __webpack_require__(/*! ../svg-icons/navigation/cancel */ 652);
+	var _cancel = __webpack_require__(/*! ../svg-icons/navigation/cancel */ 654);
 	
 	var _cancel2 = _interopRequireDefault(_cancel);
 	
@@ -70044,7 +70160,7 @@
 	exports.default = Chip;
 
 /***/ },
-/* 652 */
+/* 654 */
 /*!******************************************************!*\
   !*** ./~/material-ui/svg-icons/navigation/cancel.js ***!
   \******************************************************/
@@ -70084,7 +70200,7 @@
 	exports.default = NavigationCancel;
 
 /***/ },
-/* 653 */
+/* 655 */
 /*!*********************************!*\
   !*** ./src/components/Stars.js ***!
   \*********************************/
@@ -70164,7 +70280,7 @@
 	exports.default = Stars;
 
 /***/ },
-/* 654 */
+/* 656 */
 /*!****************************************!*\
   !*** ./~/dateformat/lib/dateformat.js ***!
   \****************************************/
@@ -70399,14 +70515,14 @@
 
 
 /***/ },
-/* 655 */
+/* 657 */
 /*!**************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/injectTapEventPlugin.js ***!
   \**************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 656);
-	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 657);
+	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 658);
+	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 659);
 	
 	var alreadyInjected = false;
 	
@@ -70428,14 +70544,14 @@
 	  alreadyInjected = true;
 	
 	  __webpack_require__(/*! react/lib/EventPluginHub */ 14).injection.injectEventPluginsByName({
-	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 658)(shouldRejectClick)
+	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 660)(shouldRejectClick)
 	  });
 	};
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 656 */
+/* 658 */
 /*!**********************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/invariant.js ***!
   \**********************************************************/
@@ -70493,7 +70609,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 657 */
+/* 659 */
 /*!***********************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/defaultClickRejectionStrategy.js ***!
   \***********************************************************************/
@@ -70507,7 +70623,7 @@
 
 
 /***/ },
-/* 658 */
+/* 660 */
 /*!********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TapEventPlugin.js ***!
   \********************************************************/
@@ -70538,10 +70654,10 @@
 	var EventPluginUtils = __webpack_require__(/*! react/lib/EventPluginUtils */ 16);
 	var EventPropagators = __webpack_require__(/*! react/lib/EventPropagators */ 13);
 	var SyntheticUIEvent = __webpack_require__(/*! react/lib/SyntheticUIEvent */ 53);
-	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 659);
+	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 661);
 	var ViewportMetrics = __webpack_require__(/*! react/lib/ViewportMetrics */ 54);
 	
-	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 660);
+	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 662);
 	var topLevelTypes = EventConstants.topLevelTypes;
 	
 	var isStartish = EventPluginUtils.isStartish;
@@ -70686,7 +70802,7 @@
 
 
 /***/ },
-/* 659 */
+/* 661 */
 /*!*********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TouchEventUtils.js ***!
   \*********************************************************/
@@ -70737,7 +70853,7 @@
 
 
 /***/ },
-/* 660 */
+/* 662 */
 /*!******************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/keyOf.js ***!
   \******************************************************/
@@ -70780,7 +70896,7 @@
 	module.exports = keyOf;
 
 /***/ },
-/* 661 */
+/* 663 */
 /*!************************************!*\
   !*** ./~/redux-thunk/lib/index.js ***!
   \************************************/
@@ -70809,75 +70925,6 @@
 	thunk.withExtraArgument = createThunkMiddleware;
 	
 	exports['default'] = thunk;
-
-/***/ },
-/* 662 */
-/*!***********************************************!*\
-  !*** ./src/containers/NewReviewValidation.js ***!
-  \***********************************************/
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var validate = function validate(state) {
-	  state.error = false;
-	  validateEvaluation(state);
-	  validateComment(state);
-	  validateFlavor(state);
-	  validateTaste(state);
-	  validateMaturation(state);
-	  return state;
-	};
-	
-	var validateEvaluation = function validateEvaluation(state) {
-	  if (!state.evaluation) {
-	    state.error = true;
-	    state.errorText.evaluation = '評価は必須です';
-	  } else {
-	    state.errorText.evaluation = '';
-	  }
-	};
-	
-	var validateComment = function validateComment(state) {
-	  if (!document.getElementById('comment').validity.valid) {
-	    state.error = true;
-	    state.errorText.comment = '香味は必須です';
-	  } else {
-	    state.errorText.comment = '';
-	  }
-	};
-	
-	var validateFlavor = function validateFlavor(state) {
-	  if (!state.flavor) {
-	    state.error = true;
-	    state.errorText.flavor = '香りは必須です';
-	  } else {
-	    state.errorText.flavor = '';
-	  }
-	};
-	
-	var validateTaste = function validateTaste(state) {
-	  if (!state.taste) {
-	    state.error = true;
-	    state.errorText.taste = '味は必須です';
-	  } else {
-	    state.errorText.taste = '';
-	  }
-	};
-	
-	var validateMaturation = function validateMaturation(state) {
-	  if (!state.maturation) {
-	    state.error = true;
-	    state.errorText.maturation = '熟成は必須です';
-	  } else {
-	    state.errorText.maturation = '';
-	  }
-	};
-	
-	exports.default = validate;
 
 /***/ }
 /******/ ]);
