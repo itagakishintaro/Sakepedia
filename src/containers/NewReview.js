@@ -9,11 +9,14 @@ import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 // lib
 import axios from 'axios'
+// validation
+import validate from './NewReviewValidation'
 
 class NewReview extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      errorText: {},
       evaluation: '',
       flavor: '',
       lowerTemperature: '',
@@ -25,6 +28,11 @@ class NewReview extends React.Component {
   }
 
   send(){
+    let validation = validate( this.state )
+    this.setState( { errorText: validation.errorText } )
+    if ( validation.error ) {
+      return
+    }
     axios.post( '/api/reviews' , {
       sakeId: this.props.sakeId,
       date: new Date(),
@@ -68,6 +76,7 @@ class NewReview extends React.Component {
       <div>
           <SelectField
             id="evaluation"
+            errorText={this.state.errorText.evaluation}
             floatingLabelFixed={true}
             floatingLabelText="評価*"
             fullWidth={true}
@@ -82,15 +91,18 @@ class NewReview extends React.Component {
 
           <TextField
             id="comment"
+            errorText={this.state.errorText.comment}
             floatingLabelFixed={true}
             floatingLabelText="香味*"
             fullWidth={true}
             multiLine={true}
+            required={true}
             rows="3"
           />
 
           <SelectField
             id="flavor"
+            errorText={this.state.errorText.flavor}
             floatingLabelFixed={true}
             floatingLabelText="香り*"
             fullWidth={true}
@@ -103,6 +115,7 @@ class NewReview extends React.Component {
           </SelectField>
           <SelectField
             id="taste"
+            errorText={this.state.errorText.taste}
             floatingLabelFixed={true}
             floatingLabelText="味*"
             fullWidth={true}
@@ -115,6 +128,7 @@ class NewReview extends React.Component {
           </SelectField>
           <SelectField
             id="maturation"
+            errorText={this.state.errorText.maturation}
             floatingLabelFixed={true}
             floatingLabelText="熟成*"
             fullWidth={true}

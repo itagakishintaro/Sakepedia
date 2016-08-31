@@ -35,8 +35,8 @@ class Header extends React.Component{
           style={ styles.appbar }
         />
         <Drawer open={this.state.open} docked={false} onRequestChange={(open) => this.setState({open})}>
-          <MenuItem onTouchTap={() => this.setState({open: false})}><Link to={'/'} style={styles.link}>トップ</Link></MenuItem>
-          <MenuItem onTouchTap={() => this.setState({open: false})}><Link to={'/sake/new'} style={styles.link}>銘柄登録</Link></MenuItem>
+          <Link to={'/'} style={styles.link}><MenuItem onTouchTap={() => this.setState({open: false})}>トップ</MenuItem></Link>
+          <Link to={'/sake/new'} style={styles.link}><MenuItem onTouchTap={() => this.setState({open: false})}>銘柄登録</MenuItem></Link>
           <MenuItem onTouchTap={() => this.setState({open: false})} primaryText='YYY' />
         </Drawer>
       </div>

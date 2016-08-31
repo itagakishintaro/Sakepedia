@@ -29513,24 +29513,24 @@
 	              return _this2.setState({ open: open });
 	            } },
 	          _react2.default.createElement(
-	            _materialUi.MenuItem,
-	            { onTouchTap: function onTouchTap() {
-	                return _this2.setState({ open: false });
-	              } },
+	            _reactRouter.Link,
+	            { to: '/', style: styles.link },
 	            _react2.default.createElement(
-	              _reactRouter.Link,
-	              { to: '/', style: styles.link },
+	              _materialUi.MenuItem,
+	              { onTouchTap: function onTouchTap() {
+	                  return _this2.setState({ open: false });
+	                } },
 	              'トップ'
 	            )
 	          ),
 	          _react2.default.createElement(
-	            _materialUi.MenuItem,
-	            { onTouchTap: function onTouchTap() {
-	                return _this2.setState({ open: false });
-	              } },
+	            _reactRouter.Link,
+	            { to: '/sake/new', style: styles.link },
 	            _react2.default.createElement(
-	              _reactRouter.Link,
-	              { to: '/sake/new', style: styles.link },
+	              _materialUi.MenuItem,
+	              { onTouchTap: function onTouchTap() {
+	                  return _this2.setState({ open: false });
+	                } },
 	              '銘柄登録'
 	            )
 	          ),
@@ -69109,6 +69109,10 @@
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
+	var _NewReviewValidation = __webpack_require__(/*! ./NewReviewValidation */ 662);
+	
+	var _NewReviewValidation2 = _interopRequireDefault(_NewReviewValidation);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -69120,6 +69124,8 @@
 	
 	// lib
 	
+	// validation
+	
 	
 	var NewReview = function (_React$Component) {
 	  _inherits(NewReview, _React$Component);
@@ -69130,6 +69136,7 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(NewReview).call(this, props));
 	
 	    _this.state = {
+	      errorText: {},
 	      evaluation: '',
 	      flavor: '',
 	      lowerTemperature: '',
@@ -69144,6 +69151,11 @@
 	  _createClass(NewReview, [{
 	    key: 'send',
 	    value: function send() {
+	      var validation = (0, _NewReviewValidation2.default)(this.state);
+	      this.setState({ errorText: validation.errorText });
+	      if (validation.error) {
+	        return;
+	      }
 	      _axios2.default.post('/api/reviews', {
 	        sakeId: this.props.sakeId,
 	        date: new Date(),
@@ -69191,6 +69203,7 @@
 	          _SelectField2.default,
 	          {
 	            id: 'evaluation',
+	            errorText: this.state.errorText.evaluation,
 	            floatingLabelFixed: true,
 	            floatingLabelText: '評価*',
 	            fullWidth: true,
@@ -69206,16 +69219,19 @@
 	        ),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'comment',
+	          errorText: this.state.errorText.comment,
 	          floatingLabelFixed: true,
 	          floatingLabelText: '香味*',
 	          fullWidth: true,
 	          multiLine: true,
+	          required: true,
 	          rows: '3'
 	        }),
 	        _react2.default.createElement(
 	          _SelectField2.default,
 	          {
 	            id: 'flavor',
+	            errorText: this.state.errorText.flavor,
 	            floatingLabelFixed: true,
 	            floatingLabelText: '香り*',
 	            fullWidth: true,
@@ -69232,6 +69248,7 @@
 	          _SelectField2.default,
 	          {
 	            id: 'taste',
+	            errorText: this.state.errorText.taste,
 	            floatingLabelFixed: true,
 	            floatingLabelText: '味*',
 	            fullWidth: true,
@@ -69248,6 +69265,7 @@
 	          _SelectField2.default,
 	          {
 	            id: 'maturation',
+	            errorText: this.state.errorText.maturation,
 	            floatingLabelFixed: true,
 	            floatingLabelText: '熟成*',
 	            fullWidth: true,
@@ -70791,6 +70809,75 @@
 	thunk.withExtraArgument = createThunkMiddleware;
 	
 	exports['default'] = thunk;
+
+/***/ },
+/* 662 */
+/*!***********************************************!*\
+  !*** ./src/containers/NewReviewValidation.js ***!
+  \***********************************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var validate = function validate(state) {
+	  state.error = false;
+	  validateEvaluation(state);
+	  validateComment(state);
+	  validateFlavor(state);
+	  validateTaste(state);
+	  validateMaturation(state);
+	  return state;
+	};
+	
+	var validateEvaluation = function validateEvaluation(state) {
+	  if (!state.evaluation) {
+	    state.error = true;
+	    state.errorText.evaluation = '評価は必須です';
+	  } else {
+	    state.errorText.evaluation = '';
+	  }
+	};
+	
+	var validateComment = function validateComment(state) {
+	  if (!document.getElementById('comment').validity.valid) {
+	    state.error = true;
+	    state.errorText.comment = '香味は必須です';
+	  } else {
+	    state.errorText.comment = '';
+	  }
+	};
+	
+	var validateFlavor = function validateFlavor(state) {
+	  if (!state.flavor) {
+	    state.error = true;
+	    state.errorText.flavor = '香りは必須です';
+	  } else {
+	    state.errorText.flavor = '';
+	  }
+	};
+	
+	var validateTaste = function validateTaste(state) {
+	  if (!state.taste) {
+	    state.error = true;
+	    state.errorText.taste = '味は必須です';
+	  } else {
+	    state.errorText.taste = '';
+	  }
+	};
+	
+	var validateMaturation = function validateMaturation(state) {
+	  if (!state.maturation) {
+	    state.error = true;
+	    state.errorText.maturation = '熟成は必須です';
+	  } else {
+	    state.errorText.maturation = '';
+	  }
+	};
+	
+	exports.default = validate;
 
 /***/ }
 /******/ ]);
