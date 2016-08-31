@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import Checkbox from 'material-ui/Checkbox'
 import MenuItem from 'material-ui/MenuItem'
 import SelectField from 'material-ui/SelectField'
+import Snackbar from 'material-ui/Snackbar'
 import { grey400 } from 'material-ui/styles/colors'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
@@ -21,11 +22,10 @@ class NewReview extends React.Component {
       errorText: {},
       evaluation: '',
       flavor: '',
-      lowerTemperature: '',
       maturation: '',
       sakeRate: '',
       taste: '',
-      upperTemperature: '',
+      snackbarOpen: false,
     }
   }
 
@@ -55,14 +55,22 @@ class NewReview extends React.Component {
       userName: 'user name',
       matched: document.getElementById('matched').value,
     })
-    .then( res => {
-      console.log( res )
+    .then( () => {
+      this.props.changeTab('reviews')
     })
     .catch( error => {
-      console.log( error )
+      document.getElementById('error').textContent = JSON.stringify(error)
+      smoothScroll( document.getElementById('error'), 100)
     })
+    this.openSnackbar()
+  }
 
-    location.reload()
+  openSnackbar() {
+    this.setState({ snackbarOpen: true })
+  }
+
+  closeSnackbar() {
+    this.setState({ snackbarOpen: false })
   }
 
   render() {
@@ -77,6 +85,12 @@ class NewReview extends React.Component {
     }
     return (
       <div id="newReview">
+        <Snackbar
+          open={this.state.snackbarOpen}
+          message="送信しました"
+          autoHideDuration={1000}
+          onRequestClose={this.closeSnackbar.bind(this)}
+        />
           <SelectField
             id="evaluation"
             errorText={this.state.errorText.evaluation}
@@ -173,12 +187,14 @@ class NewReview extends React.Component {
           />
 
           <RaisedButton label="登録" primary={true} style={styles.button} onClick={ this.send.bind(this) } />
+          <div id="error" className="error"></div>
       </div>
     )
   }
 }
 
 NewReview.propTypes = {
+  changeTab: PropTypes.func.isRequired,
   dispatch: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired,
   list: PropTypes.array.isRequired,

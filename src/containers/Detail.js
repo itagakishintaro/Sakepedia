@@ -7,6 +7,7 @@ import FontIcon from 'material-ui/FontIcon'
 import classes from '../../public/stylesheets/scss/detail.scss'
 // actions
 import { getSake } from '../actions/sake'
+import { getReviews } from '../actions/review'
 // components
 import NewReview from './NewReview'
 import Reviews from './Reviews'
@@ -14,7 +15,17 @@ import Reviews from './Reviews'
 class Detail extends React.Component{
   constructor(props) {
     super(props)
+    this.state = {
+      tab: 'detail',
+    }
     getSake( this.props.dispatch, this.props.params.sakeId )
+  }
+
+  changeTab( tab ) {
+    if( tab === 'reviews' ) {
+      getReviews( this.props.dispatch, this.props.sake._id )
+    }
+    this.setState({ tab })
   }
 
   render() {
@@ -60,11 +71,16 @@ class Detail extends React.Component{
           </div>
         </div>
 
-        <Tabs tabItemContainerStyle={ styles.tabItemContainer } contentContainerStyle={styles.contentContainer}>
+        <Tabs
+          contentContainerStyle={styles.contentContainer}
+          tabItemContainerStyle={styles.tabItemContainer}
+          value={this.state.tab} >
           <Tab
              id="detail"
             icon={<FontIcon className="material-icons">details</FontIcon>}
             label="詳細"
+            onClick={ () => { this.changeTab('detail') } }
+            value="detail"
           >
             <table className={classes.table}>
                   { items.map( key => {
@@ -83,6 +99,8 @@ class Detail extends React.Component{
             id="reviews"
             icon={<FontIcon className="material-icons">people</FontIcon>}
             label="レビュー"
+            onClick={ () => { this.changeTab('reviews') } }
+            value="reviews"
           >
             <Reviews sakeId={this.props.sake._id} />
           </Tab>
@@ -90,8 +108,13 @@ class Detail extends React.Component{
             id="createReview"
             icon={<FontIcon className="material-icons">chat_bubble_outline</FontIcon>}
             label="レビューする"
+            onClick={ () => { this.changeTab('createReview') } }
+            value="createReview"
           >
-            <NewReview sakeId={this.props.sake._id} />
+            <NewReview
+              changeTab={this.changeTab.bind(this)}
+              sakeId={this.props.sake._id}
+             />
           </Tab>
         </Tabs>
       </div>

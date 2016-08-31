@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import AutoComplete from 'material-ui/AutoComplete'
 import MenuItem from 'material-ui/MenuItem'
 import SelectField from 'material-ui/SelectField'
+import Snackbar from 'material-ui/Snackbar'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 // lib
@@ -35,6 +36,7 @@ class NewSake extends React.Component {
       riceOfKake: [],
       riceOfKouji: [],
       sakeRate: '',
+      snackbarOpen: false,
     }
   }
 
@@ -45,7 +47,7 @@ class NewSake extends React.Component {
       smoothScroll( document.getElementById('newSake'), 1000 )
       return
     }
-    axios.post( '/api/sakes' , {
+    axios.post( '/api/sakes-' , {
       brand: document.getElementById('brand').value,
       category: this.state.category,
       process: this.state.process,
@@ -62,19 +64,28 @@ class NewSake extends React.Component {
       acidRate: this.state.acidRate,
       aminoRate: this.state.aminoRate,
       picture: '',
+      snackbarOpen: false,
     })
-    .then( res => {
-      console.log( res )
+    .then( () => {
+      window.location.href ='/'
     })
     .catch( error => {
-      console.log( error )
+      document.getElementById('error').textContent = JSON.stringify(error)
+      smoothScroll( document.getElementById('error'), 100)
     })
-
-    window.location.href ='/'
+    this.openSnackbar()
   }
 
   setPrefecture(pref) {
     this.setState( { prefecture: pref } )
+  }
+
+  openSnackbar() {
+    this.setState({ snackbarOpen: true })
+  }
+
+  closeSnackbar() {
+    this.setState({ snackbarOpen: false })
   }
 
   render() {
@@ -85,6 +96,12 @@ class NewSake extends React.Component {
     }
     return (
       <div id="newSake">
+        <Snackbar
+          open={this.state.snackbarOpen}
+          message="送信しました"
+          autoHideDuration={1000}
+          onRequestClose={this.closeSnackbar.bind(this)}
+        />
           <AutoComplete
             id="brand"
             dataSource={this.state.brands}
@@ -224,6 +241,7 @@ class NewSake extends React.Component {
           <div id="picture">画像（準備中）</div>
 
           <RaisedButton label="登録" primary={true} style={styles.button} onClick={this.send.bind(this)} />
+          <div id="error" className="error"></div>
       </div>
     )
   }

@@ -68395,6 +68395,10 @@
 	
 	var _SelectField2 = _interopRequireDefault(_SelectField);
 	
+	var _Snackbar = __webpack_require__(/*! material-ui/Snackbar */ 581);
+	
+	var _Snackbar2 = _interopRequireDefault(_Snackbar);
+	
 	var _TextField = __webpack_require__(/*! material-ui/TextField */ 309);
 	
 	var _TextField2 = _interopRequireDefault(_TextField);
@@ -68461,7 +68465,8 @@
 	      process: '',
 	      riceOfKake: [],
 	      riceOfKouji: [],
-	      sakeRate: ''
+	      sakeRate: '',
+	      snackbarOpen: false
 	    };
 	    return _this;
 	  }
@@ -68475,7 +68480,7 @@
 	        (0, _SmoothScroll2.default)(document.getElementById('newSake'), 1000);
 	        return;
 	      }
-	      _axios2.default.post('/api/sakes', {
+	      _axios2.default.post('/api/sakes-', {
 	        brand: document.getElementById('brand').value,
 	        category: this.state.category,
 	        process: this.state.process,
@@ -68491,19 +68496,30 @@
 	        sakeRate: this.state.sakeRate,
 	        acidRate: this.state.acidRate,
 	        aminoRate: this.state.aminoRate,
-	        picture: ''
-	      }).then(function (res) {
-	        console.log(res);
+	        picture: '',
+	        snackbarOpen: false
+	      }).then(function () {
+	        window.location.href = '/';
 	      }).catch(function (error) {
-	        console.log(error);
+	        document.getElementById('error').textContent = JSON.stringify(error);
+	        (0, _SmoothScroll2.default)(document.getElementById('error'), 100);
 	      });
-	
-	      window.location.href = '/';
+	      this.openSnackbar();
 	    }
 	  }, {
 	    key: 'setPrefecture',
 	    value: function setPrefecture(pref) {
 	      this.setState({ prefecture: pref });
+	    }
+	  }, {
+	    key: 'openSnackbar',
+	    value: function openSnackbar() {
+	      this.setState({ snackbarOpen: true });
+	    }
+	  }, {
+	    key: 'closeSnackbar',
+	    value: function closeSnackbar() {
+	      this.setState({ snackbarOpen: false });
 	    }
 	  }, {
 	    key: 'render',
@@ -68518,6 +68534,12 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { id: 'newSake' },
+	        _react2.default.createElement(_Snackbar2.default, {
+	          open: this.state.snackbarOpen,
+	          message: '送信しました',
+	          autoHideDuration: 1000,
+	          onRequestClose: this.closeSnackbar.bind(this)
+	        }),
 	        _react2.default.createElement(_AutoComplete2.default, {
 	          id: 'brand',
 	          dataSource: this.state.brands,
@@ -68664,7 +68686,8 @@
 	          { id: 'picture' },
 	          '画像（準備中）'
 	        ),
-	        _react2.default.createElement(_RaisedButton2.default, { label: '登録', primary: true, style: styles.button, onClick: this.send.bind(this) })
+	        _react2.default.createElement(_RaisedButton2.default, { label: '登録', primary: true, style: styles.button, onClick: this.send.bind(this) }),
+	        _react2.default.createElement('div', { id: 'error', className: 'error' })
 	      );
 	    }
 	  }]);
@@ -68877,6 +68900,8 @@
 	
 	var _sake = __webpack_require__(/*! ../actions/sake */ 620);
 	
+	var _review = __webpack_require__(/*! ../actions/review */ 650);
+	
 	var _NewReview = __webpack_require__(/*! ./NewReview */ 647);
 	
 	var _NewReview2 = _interopRequireDefault(_NewReview);
@@ -68909,11 +68934,22 @@
 	
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Detail).call(this, props));
 	
+	    _this.state = {
+	      tab: 'detail'
+	    };
 	    (0, _sake.getSake)(_this.props.dispatch, _this.props.params.sakeId);
 	    return _this;
 	  }
 	
 	  _createClass(Detail, [{
+	    key: 'changeTab',
+	    value: function changeTab(tab) {
+	      if (tab === 'reviews') {
+	        (0, _review.getReviews)(this.props.dispatch, this.props.sake._id);
+	      }
+	      this.setState({ tab: tab });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _this2 = this;
@@ -68971,7 +69007,10 @@
 	        ),
 	        _react2.default.createElement(
 	          _Tabs.Tabs,
-	          { tabItemContainerStyle: styles.tabItemContainer, contentContainerStyle: styles.contentContainer },
+	          {
+	            contentContainerStyle: styles.contentContainer,
+	            tabItemContainerStyle: styles.tabItemContainer,
+	            value: this.state.tab },
 	          _react2.default.createElement(
 	            _Tabs.Tab,
 	            {
@@ -68981,7 +69020,11 @@
 	                { className: 'material-icons' },
 	                'details'
 	              ),
-	              label: '詳細'
+	              label: '詳細',
+	              onClick: function onClick() {
+	                _this2.changeTab('detail');
+	              },
+	              value: 'detail'
 	            },
 	            _react2.default.createElement(
 	              'table',
@@ -69013,7 +69056,11 @@
 	                { className: 'material-icons' },
 	                'people'
 	              ),
-	              label: 'レビュー'
+	              label: 'レビュー',
+	              onClick: function onClick() {
+	                _this2.changeTab('reviews');
+	              },
+	              value: 'reviews'
 	            },
 	            _react2.default.createElement(_Reviews2.default, { sakeId: this.props.sake._id })
 	          ),
@@ -69026,9 +69073,16 @@
 	                { className: 'material-icons' },
 	                'chat_bubble_outline'
 	              ),
-	              label: 'レビューする'
+	              label: 'レビューする',
+	              onClick: function onClick() {
+	                _this2.changeTab('createReview');
+	              },
+	              value: 'createReview'
 	            },
-	            _react2.default.createElement(_NewReview2.default, { sakeId: this.props.sake._id })
+	            _react2.default.createElement(_NewReview2.default, {
+	              changeTab: this.changeTab.bind(this),
+	              sakeId: this.props.sake._id
+	            })
 	          )
 	        )
 	      );
@@ -69135,6 +69189,10 @@
 	
 	var _SelectField2 = _interopRequireDefault(_SelectField);
 	
+	var _Snackbar = __webpack_require__(/*! material-ui/Snackbar */ 581);
+	
+	var _Snackbar2 = _interopRequireDefault(_Snackbar);
+	
 	var _colors = __webpack_require__(/*! material-ui/styles/colors */ 518);
 	
 	var _TextField = __webpack_require__(/*! material-ui/TextField */ 309);
@@ -69185,11 +69243,10 @@
 	      errorText: {},
 	      evaluation: '',
 	      flavor: '',
-	      lowerTemperature: '',
 	      maturation: '',
 	      sakeRate: '',
 	      taste: '',
-	      upperTemperature: ''
+	      snackbarOpen: false
 	    };
 	    return _this;
 	  }
@@ -69197,6 +69254,8 @@
 	  _createClass(NewReview, [{
 	    key: 'send',
 	    value: function send() {
+	      var _this2 = this;
+	
 	      var validation = (0, _NewReviewValidation2.default)(this.state);
 	      this.setState({ errorText: validation.errorText });
 	      if (validation.error) {
@@ -69221,18 +69280,28 @@
 	        userId: 'user id',
 	        userName: 'user name',
 	        matched: document.getElementById('matched').value
-	      }).then(function (res) {
-	        console.log(res);
+	      }).then(function () {
+	        _this2.props.changeTab('reviews');
 	      }).catch(function (error) {
-	        console.log(error);
+	        document.getElementById('error').textContent = JSON.stringify(error);
+	        (0, _SmoothScroll2.default)(document.getElementById('error'), 100);
 	      });
-	
-	      location.reload();
+	      this.openSnackbar();
+	    }
+	  }, {
+	    key: 'openSnackbar',
+	    value: function openSnackbar() {
+	      this.setState({ snackbarOpen: true });
+	    }
+	  }, {
+	    key: 'closeSnackbar',
+	    value: function closeSnackbar() {
+	      this.setState({ snackbarOpen: false });
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var _this2 = this;
+	      var _this3 = this;
 	
 	      var styles = {
 	        button: {
@@ -69246,6 +69315,12 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { id: 'newReview' },
+	        _react2.default.createElement(_Snackbar2.default, {
+	          open: this.state.snackbarOpen,
+	          message: '送信しました',
+	          autoHideDuration: 1000,
+	          onRequestClose: this.closeSnackbar.bind(this)
+	        }),
 	        _react2.default.createElement(
 	          _SelectField2.default,
 	          {
@@ -69256,7 +69331,7 @@
 	            fullWidth: true,
 	            value: this.state.evaluation,
 	            onChange: function onChange(event, index, value) {
-	              return _this2.setState({ evaluation: value });
+	              return _this3.setState({ evaluation: value });
 	            } },
 	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: 'もう飲まない' }),
 	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: '好んでは飲まない' }),
@@ -69284,7 +69359,7 @@
 	            fullWidth: true,
 	            value: this.state.flavor,
 	            onChange: function onChange(event, index, value) {
-	              return _this2.setState({ flavor: value });
+	              return _this3.setState({ flavor: value });
 	            } },
 	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '低い' }),
 	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: 'やや低い' }),
@@ -69301,7 +69376,7 @@
 	            fullWidth: true,
 	            value: this.state.taste,
 	            onChange: function onChange(event, index, value) {
-	              return _this2.setState({ taste: value });
+	              return _this3.setState({ taste: value });
 	            } },
 	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '淡い' }),
 	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: 'やや淡い' }),
@@ -69318,7 +69393,7 @@
 	            fullWidth: true,
 	            value: this.state.maturation,
 	            onChange: function onChange(event, index, value) {
-	              return _this2.setState({ maturation: value });
+	              return _this3.setState({ maturation: value });
 	            } },
 	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: 'フレッシュ' }),
 	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: 'ややフレッシュ' }),
@@ -69356,7 +69431,8 @@
 	          floatingLabelText: '相性のよい料理',
 	          fullWidth: true
 	        }),
-	        _react2.default.createElement(_RaisedButton2.default, { label: '登録', primary: true, style: styles.button, onClick: this.send.bind(this) })
+	        _react2.default.createElement(_RaisedButton2.default, { label: '登録', primary: true, style: styles.button, onClick: this.send.bind(this) }),
+	        _react2.default.createElement('div', { id: 'error', className: 'error' })
 	      );
 	    }
 	  }]);
@@ -69365,6 +69441,7 @@
 	}(_react2.default.Component);
 	
 	NewReview.propTypes = {
+	  changeTab: _react.PropTypes.func.isRequired,
 	  dispatch: _react.PropTypes.func.isRequired,
 	  history: _react.PropTypes.object.isRequired,
 	  list: _react.PropTypes.array.isRequired,
@@ -69466,8 +69543,6 @@
 	
 	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
 	
-	var _review = __webpack_require__(/*! ../actions/review */ 650);
-	
 	var _ReviewCard = __webpack_require__(/*! ../components/ReviewCard */ 651);
 	
 	var _ReviewCard2 = _interopRequireDefault(_ReviewCard);
@@ -69481,8 +69556,6 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	// material-ui
 	// css
-	// actions
-	
 	// components
 	
 	
@@ -69498,9 +69571,6 @@
 	  _createClass(Reviews, [{
 	    key: 'render',
 	    value: function render() {
-	      if (this.props.sakeId && this.props.reviews !== undefined) {
-	        (0, _review.getReviews)(this.props.dispatch, this.props.sakeId);
-	      }
 	      return _react2.default.createElement(
 	        'div',
 	        null,
