@@ -66,6 +66,8 @@ class NewSake extends React.Component {
     .catch( error => {
       console.log( error )
     })
+
+    window.location.href ='/'
   }
 
   setPrefecture(pref) {
@@ -87,6 +89,7 @@ class NewSake extends React.Component {
             floatingLabelFixed={true}
             floatingLabelText="銘柄*"
             fullWidth={true}
+            required={true}
           />
           <SelectField
             id="category"
@@ -126,9 +129,11 @@ class NewSake extends React.Component {
           />
           <TextField
             id="url"
+            errorText={this.state.errorText.url}
             floatingLabelFixed={true}
             floatingLabelText="メーカーURL"
             fullWidth={true}
+            type="url"
           />
           <AutoComplete
             id="brewery"
@@ -137,6 +142,7 @@ class NewSake extends React.Component {
             floatingLabelFixed={true}
             floatingLabelText="蔵元*"
             fullWidth={true}
+            required={true}
           />
 
         <Prefectures
@@ -169,33 +175,48 @@ class NewSake extends React.Component {
 
           <TextField
             id="polishRate"
+            errorText={this.state.errorText.polishRate}
             floatingLabelFixed={true}
-            floatingLabelText="精米歩合"
+            floatingLabelText="精米歩合(%)"
             fullWidth={true}
+            step="0.1"
+            type="number"
           />
           <TextField
             id="alcoholRate"
+            errorText={this.state.errorText.alcoholRate}
             floatingLabelFixed={true}
             floatingLabelText="アルコール度数(%)"
             fullWidth={true}
+            step="0.1"
+            type="number"
           />
           <TextField
             id="sakeRate"
+            errorText={this.state.errorText.sakeRate}
             floatingLabelFixed={true}
             floatingLabelText="日本酒度"
             fullWidth={true}
+            step="0.1"
+            type="number"
           />
           <TextField
             id="acidRate"
+            errorText={this.state.errorText.acidRate}
             floatingLabelFixed={true}
             floatingLabelText="酸度"
             fullWidth={true}
+            step="0.1"
+            type="number"
           />
           <TextField
             id="aminoRate"
+            errorText={this.state.errorText.aminoRate}
             floatingLabelFixed={true}
             floatingLabelText="アミノ酸度"
             fullWidth={true}
+            step="0.1"
+            type="number"
           />
           <div id="picture">画像（準備中）</div>
 

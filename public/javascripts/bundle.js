@@ -69,11 +69,11 @@
 	
 	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 	
-	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 654);
+	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 655);
 	
 	var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
 	
-	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 660);
+	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 661);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
@@ -28998,7 +28998,7 @@
 	
 	var _NewSake2 = _interopRequireDefault(_NewSake);
 	
-	var _Detail = __webpack_require__(/*! ./containers/Detail */ 642);
+	var _Detail = __webpack_require__(/*! ./containers/Detail */ 643);
 	
 	var _Detail2 = _interopRequireDefault(_Detail);
 	
@@ -68411,7 +68411,7 @@
 	
 	var _Prefectures2 = _interopRequireDefault(_Prefectures);
 	
-	var _NewSakeValidation = __webpack_require__(/*! ./NewSakeValidation */ 661);
+	var _NewSakeValidation = __webpack_require__(/*! ./NewSakeValidation */ 642);
 	
 	var _NewSakeValidation2 = _interopRequireDefault(_NewSakeValidation);
 	
@@ -68490,6 +68490,8 @@
 	      }).catch(function (error) {
 	        console.log(error);
 	      });
+	
+	      window.location.href = '/';
 	    }
 	  }, {
 	    key: 'setPrefecture',
@@ -68515,7 +68517,8 @@
 	          errorText: this.state.errorText.brand,
 	          floatingLabelFixed: true,
 	          floatingLabelText: '銘柄*',
-	          fullWidth: true
+	          fullWidth: true,
+	          required: true
 	        }),
 	        _react2.default.createElement(
 	          _SelectField2.default,
@@ -68563,9 +68566,11 @@
 	        }),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'url',
+	          errorText: this.state.errorText.url,
 	          floatingLabelFixed: true,
 	          floatingLabelText: 'メーカーURL',
-	          fullWidth: true
+	          fullWidth: true,
+	          type: 'url'
 	        }),
 	        _react2.default.createElement(_AutoComplete2.default, {
 	          id: 'brewery',
@@ -68573,7 +68578,8 @@
 	          errorText: this.state.errorText.brewery,
 	          floatingLabelFixed: true,
 	          floatingLabelText: '蔵元*',
-	          fullWidth: true
+	          fullWidth: true,
+	          required: true
 	        }),
 	        _react2.default.createElement(_Prefectures2.default, {
 	          errorText: this.state.errorText.prefecture,
@@ -68603,33 +68609,48 @@
 	        }),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'polishRate',
+	          errorText: this.state.errorText.polishRate,
 	          floatingLabelFixed: true,
-	          floatingLabelText: '精米歩合',
-	          fullWidth: true
+	          floatingLabelText: '精米歩合(%)',
+	          fullWidth: true,
+	          step: '0.1',
+	          type: 'number'
 	        }),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'alcoholRate',
+	          errorText: this.state.errorText.alcoholRate,
 	          floatingLabelFixed: true,
 	          floatingLabelText: 'アルコール度数(%)',
-	          fullWidth: true
+	          fullWidth: true,
+	          step: '0.1',
+	          type: 'number'
 	        }),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'sakeRate',
+	          errorText: this.state.errorText.sakeRate,
 	          floatingLabelFixed: true,
 	          floatingLabelText: '日本酒度',
-	          fullWidth: true
+	          fullWidth: true,
+	          step: '0.1',
+	          type: 'number'
 	        }),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'acidRate',
+	          errorText: this.state.errorText.acidRate,
 	          floatingLabelFixed: true,
 	          floatingLabelText: '酸度',
-	          fullWidth: true
+	          fullWidth: true,
+	          step: '0.1',
+	          type: 'number'
 	        }),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'aminoRate',
+	          errorText: this.state.errorText.aminoRate,
 	          floatingLabelFixed: true,
 	          floatingLabelText: 'アミノ酸度',
-	          fullWidth: true
+	          fullWidth: true,
+	          step: '0.1',
+	          type: 'number'
 	        }),
 	        _react2.default.createElement(
 	          'div',
@@ -68656,6 +68677,135 @@
 
 /***/ },
 /* 642 */
+/*!*********************************************!*\
+  !*** ./src/containers/NewSakeValidation.js ***!
+  \*********************************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var validate = function validate(state) {
+	  state.error = false;
+	  validateBrand(state);
+	  validateCategory(state);
+	  validateProcess(state);
+	  validateBrewery(state);
+	  validatePrefecture(state);
+	  validateUrl(state);
+	  validatePolishRate(state);
+	  validateSakeRate(state);
+	  validateAlcoholRate(state);
+	  validateAcidRate(state);
+	  validateAminoRate(state);
+	  return state;
+	};
+	
+	var validateBrand = function validateBrand(state) {
+	  if (!document.getElementById('brand').validity.valid) {
+	    state.error = true;
+	    state.errorText.brand = '銘柄は必須です';
+	  } else {
+	    state.errorText.brand = '';
+	  }
+	};
+	
+	var validateCategory = function validateCategory(state) {
+	  if (!state.category) {
+	    state.error = true;
+	    state.errorText.category = '分類は必須です';
+	  } else {
+	    state.errorText.category = '';
+	  }
+	};
+	
+	var validateProcess = function validateProcess(state) {
+	  if (!state.process) {
+	    state.error = true;
+	    state.errorText.process = '製法は必須です';
+	  } else {
+	    state.errorText.process = '';
+	  }
+	};
+	
+	var validateBrewery = function validateBrewery(state) {
+	  if (!document.getElementById('brewery').validity.valid) {
+	    state.error = true;
+	    state.errorText.brewery = '蔵元は必須です';
+	  } else {
+	    state.errorText.brewery = '';
+	  }
+	};
+	
+	var validatePrefecture = function validatePrefecture(state) {
+	  if (!state.prefecture) {
+	    state.error = true;
+	    state.errorText.prefecture = '都道府県は必須です';
+	  } else {
+	    state.errorText.prefecture = '';
+	  }
+	};
+	
+	var validateUrl = function validateUrl(state) {
+	  if (!document.getElementById('url').validity.valid) {
+	    state.error = true;
+	    state.errorText.url = 'URLのフォーマットにしてください';
+	  } else {
+	    state.errorText.url = '';
+	  }
+	};
+	
+	var validatePolishRate = function validatePolishRate(state) {
+	  if (!document.getElementById('polishRate').validity.valid) {
+	    state.error = true;
+	    state.errorText.polishRate = '数値を入力してください';
+	  } else {
+	    state.errorText.polishRate = '';
+	  }
+	};
+	
+	var validateAlcoholRate = function validateAlcoholRate(state) {
+	  if (!document.getElementById('alcoholRate').validity.valid) {
+	    state.error = true;
+	    state.errorText.alcoholRate = '数値を入力してください';
+	  } else {
+	    state.errorText.alcoholRate = '';
+	  }
+	};
+	
+	var validateSakeRate = function validateSakeRate(state) {
+	  if (!document.getElementById('sakeRate').validity.valid) {
+	    state.error = true;
+	    state.errorText.sakeRate = '数値を入力してください';
+	  } else {
+	    state.errorText.sakeRate = '';
+	  }
+	};
+	
+	var validateAcidRate = function validateAcidRate(state) {
+	  if (!document.getElementById('acidRate').validity.valid) {
+	    state.error = true;
+	    state.errorText.acidRate = '数値を入力してください';
+	  } else {
+	    state.errorText.acidRate = '';
+	  }
+	};
+	
+	var validateAminoRate = function validateAminoRate(state) {
+	  if (!document.getElementById('aminoRate').validity.valid) {
+	    state.error = true;
+	    state.errorText.aminoRate = '数値を入力してください';
+	  } else {
+	    state.errorText.aminoRate = '';
+	  }
+	};
+	
+	exports.default = validate;
+
+/***/ },
+/* 643 */
 /*!**********************************!*\
   !*** ./src/containers/Detail.js ***!
   \**********************************/
@@ -68681,17 +68831,17 @@
 	
 	var _FontIcon2 = _interopRequireDefault(_FontIcon);
 	
-	var _detail = __webpack_require__(/*! ../../public/stylesheets/scss/detail.scss */ 643);
+	var _detail = __webpack_require__(/*! ../../public/stylesheets/scss/detail.scss */ 644);
 	
 	var _detail2 = _interopRequireDefault(_detail);
 	
 	var _sake = __webpack_require__(/*! ../actions/sake */ 620);
 	
-	var _NewReview = __webpack_require__(/*! ./NewReview */ 645);
+	var _NewReview = __webpack_require__(/*! ./NewReview */ 646);
 	
 	var _NewReview2 = _interopRequireDefault(_NewReview);
 	
-	var _Reviews = __webpack_require__(/*! ./Reviews */ 646);
+	var _Reviews = __webpack_require__(/*! ./Reviews */ 647);
 	
 	var _Reviews2 = _interopRequireDefault(_Reviews);
 	
@@ -68860,7 +69010,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Detail);
 
 /***/ },
-/* 643 */
+/* 644 */
 /*!*********************************************!*\
   !*** ./public/stylesheets/scss/detail.scss ***!
   \*********************************************/
@@ -68869,7 +69019,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./detail.scss */ 644);
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./detail.scss */ 645);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 264)(content, {});
@@ -68889,7 +69039,7 @@
 	}
 
 /***/ },
-/* 644 */
+/* 645 */
 /*!****************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/detail.scss ***!
   \****************************************************************************************************************/
@@ -68913,7 +69063,7 @@
 	};
 
 /***/ },
-/* 645 */
+/* 646 */
 /*!*************************************!*\
   !*** ./src/containers/NewReview.js ***!
   \*************************************/
@@ -69162,7 +69312,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(NewReview);
 
 /***/ },
-/* 646 */
+/* 647 */
 /*!***********************************!*\
   !*** ./src/containers/Reviews.js ***!
   \***********************************/
@@ -69182,9 +69332,9 @@
 	
 	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
 	
-	var _review = __webpack_require__(/*! ../actions/review */ 647);
+	var _review = __webpack_require__(/*! ../actions/review */ 648);
 	
-	var _ReviewCard = __webpack_require__(/*! ../components/ReviewCard */ 648);
+	var _ReviewCard = __webpack_require__(/*! ../components/ReviewCard */ 649);
 	
 	var _ReviewCard2 = _interopRequireDefault(_ReviewCard);
 	
@@ -69242,7 +69392,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Reviews);
 
 /***/ },
-/* 647 */
+/* 648 */
 /*!*******************************!*\
   !*** ./src/actions/review.js ***!
   \*******************************/
@@ -69277,7 +69427,7 @@
 	};
 
 /***/ },
-/* 648 */
+/* 649 */
 /*!**************************************!*\
   !*** ./src/components/ReviewCard.js ***!
   \**************************************/
@@ -69305,13 +69455,13 @@
 	
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 	
-	var _Chip = __webpack_require__(/*! material-ui/Chip */ 649);
+	var _Chip = __webpack_require__(/*! material-ui/Chip */ 650);
 	
 	var _Chip2 = _interopRequireDefault(_Chip);
 	
 	var _colors = __webpack_require__(/*! material-ui/styles/colors */ 518);
 	
-	var _Stars = __webpack_require__(/*! ./Stars */ 652);
+	var _Stars = __webpack_require__(/*! ./Stars */ 653);
 	
 	var _Stars2 = _interopRequireDefault(_Stars);
 	
@@ -69328,7 +69478,7 @@
 	
 	
 	// lib
-	var dateFormat = __webpack_require__(/*! dateformat */ 653);
+	var dateFormat = __webpack_require__(/*! dateformat */ 654);
 	
 	var Review = function (_React$Component) {
 	  _inherits(Review, _React$Component);
@@ -69526,7 +69676,7 @@
 	exports.default = Review;
 
 /***/ },
-/* 649 */
+/* 650 */
 /*!*************************************!*\
   !*** ./~/material-ui/Chip/index.js ***!
   \*************************************/
@@ -69539,7 +69689,7 @@
 	});
 	exports.default = undefined;
 	
-	var _Chip = __webpack_require__(/*! ./Chip */ 650);
+	var _Chip = __webpack_require__(/*! ./Chip */ 651);
 	
 	var _Chip2 = _interopRequireDefault(_Chip);
 	
@@ -69548,7 +69698,7 @@
 	exports.default = _Chip2.default;
 
 /***/ },
-/* 650 */
+/* 651 */
 /*!************************************!*\
   !*** ./~/material-ui/Chip/Chip.js ***!
   \************************************/
@@ -69582,7 +69732,7 @@
 	
 	var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
 	
-	var _cancel = __webpack_require__(/*! ../svg-icons/navigation/cancel */ 651);
+	var _cancel = __webpack_require__(/*! ../svg-icons/navigation/cancel */ 652);
 	
 	var _cancel2 = _interopRequireDefault(_cancel);
 	
@@ -69876,7 +70026,7 @@
 	exports.default = Chip;
 
 /***/ },
-/* 651 */
+/* 652 */
 /*!******************************************************!*\
   !*** ./~/material-ui/svg-icons/navigation/cancel.js ***!
   \******************************************************/
@@ -69916,7 +70066,7 @@
 	exports.default = NavigationCancel;
 
 /***/ },
-/* 652 */
+/* 653 */
 /*!*********************************!*\
   !*** ./src/components/Stars.js ***!
   \*********************************/
@@ -69996,7 +70146,7 @@
 	exports.default = Stars;
 
 /***/ },
-/* 653 */
+/* 654 */
 /*!****************************************!*\
   !*** ./~/dateformat/lib/dateformat.js ***!
   \****************************************/
@@ -70231,14 +70381,14 @@
 
 
 /***/ },
-/* 654 */
+/* 655 */
 /*!**************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/injectTapEventPlugin.js ***!
   \**************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 655);
-	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 656);
+	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 656);
+	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 657);
 	
 	var alreadyInjected = false;
 	
@@ -70260,14 +70410,14 @@
 	  alreadyInjected = true;
 	
 	  __webpack_require__(/*! react/lib/EventPluginHub */ 14).injection.injectEventPluginsByName({
-	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 657)(shouldRejectClick)
+	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 658)(shouldRejectClick)
 	  });
 	};
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 655 */
+/* 656 */
 /*!**********************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/invariant.js ***!
   \**********************************************************/
@@ -70325,7 +70475,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 656 */
+/* 657 */
 /*!***********************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/defaultClickRejectionStrategy.js ***!
   \***********************************************************************/
@@ -70339,7 +70489,7 @@
 
 
 /***/ },
-/* 657 */
+/* 658 */
 /*!********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TapEventPlugin.js ***!
   \********************************************************/
@@ -70370,10 +70520,10 @@
 	var EventPluginUtils = __webpack_require__(/*! react/lib/EventPluginUtils */ 16);
 	var EventPropagators = __webpack_require__(/*! react/lib/EventPropagators */ 13);
 	var SyntheticUIEvent = __webpack_require__(/*! react/lib/SyntheticUIEvent */ 53);
-	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 658);
+	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 659);
 	var ViewportMetrics = __webpack_require__(/*! react/lib/ViewportMetrics */ 54);
 	
-	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 659);
+	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 660);
 	var topLevelTypes = EventConstants.topLevelTypes;
 	
 	var isStartish = EventPluginUtils.isStartish;
@@ -70518,7 +70668,7 @@
 
 
 /***/ },
-/* 658 */
+/* 659 */
 /*!*********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TouchEventUtils.js ***!
   \*********************************************************/
@@ -70569,7 +70719,7 @@
 
 
 /***/ },
-/* 659 */
+/* 660 */
 /*!******************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/keyOf.js ***!
   \******************************************************/
@@ -70612,7 +70762,7 @@
 	module.exports = keyOf;
 
 /***/ },
-/* 660 */
+/* 661 */
 /*!************************************!*\
   !*** ./~/redux-thunk/lib/index.js ***!
   \************************************/
@@ -70641,75 +70791,6 @@
 	thunk.withExtraArgument = createThunkMiddleware;
 	
 	exports['default'] = thunk;
-
-/***/ },
-/* 661 */
-/*!*********************************************!*\
-  !*** ./src/containers/NewSakeValidation.js ***!
-  \*********************************************/
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var validate = function validate(state) {
-	  state.error = false;
-	  validateBrand(state);
-	  validateCategory(state);
-	  validateProcess(state);
-	  validateBrewery(state);
-	  validatePrefecture(state);
-	  return state;
-	};
-	
-	var validateBrand = function validateBrand(state) {
-	  if (!state.brand) {
-	    state.error = true;
-	    state.errorText.brand = '銘柄は必須です';
-	  } else {
-	    state.errorText.brand = '';
-	  }
-	};
-	
-	var validateCategory = function validateCategory(state) {
-	  if (!state.category) {
-	    state.error = true;
-	    state.errorText.category = '分類は必須です';
-	  } else {
-	    state.errorText.category = '';
-	  }
-	};
-	
-	var validateProcess = function validateProcess(state) {
-	  if (!state.process) {
-	    state.error = true;
-	    state.errorText.process = '製法は必須です';
-	  } else {
-	    state.errorText.process = '';
-	  }
-	};
-	
-	var validateBrewery = function validateBrewery(state) {
-	  if (!state.brewery) {
-	    state.error = true;
-	    state.errorText.brewery = '蔵元は必須です';
-	  } else {
-	    state.errorText.brewery = '';
-	  }
-	};
-	
-	var validatePrefecture = function validatePrefecture(state) {
-	  if (!state.prefecture) {
-	    state.error = true;
-	    state.errorText.prefecture = '都道府県は必須です';
-	  } else {
-	    state.errorText.prefecture = '';
-	  }
-	};
-	
-	exports.default = validate;
 
 /***/ }
 /******/ ]);
