@@ -1,37 +1,34 @@
 import React, { PropTypes } from 'react'
-import { connect } from 'react-redux'
 // material-ui
 import AutoComplete from 'material-ui/AutoComplete'
 import FontIcon from 'material-ui/FontIcon'
-import List from './List'
 import {Tabs, Tab} from 'material-ui/Tabs'
 import RaisedButton from 'material-ui/RaisedButton'
-// actions
-import { getSakeList, getNames, getBreweries, getPrefectures } from '../actions/sake'
 // components
 import Prefectures from '../components/Prefectures'
 
 class Search extends React.Component {
   constructor(props) {
     super(props)
-    getNames( this.props.dispatch )
-    getBreweries( this.props.dispatch )
-    getPrefectures( this.props.dispatch )
     this.state = {
       prefecture: '',
     }
+    this.detailSearch = this.detailSearch.bind(this)
+    this.search = this.search.bind(this)
   }
 
   detailSearch() {
-    this.search( this.props.dispatch, {
-      prefecture: this.state.prefecture,
-      brewrey: document.getElementById('brewrey').value,
-      name: document.getElementById('name').value
-    }  )
+    this.props.search(
+      {
+        prefecture: this.state.prefecture,
+        brewrey: document.getElementById('brewrey').value,
+        name: document.getElementById('name').value,
+      }
+   )
   }
 
-  search( dispatch, query ) {
-    getSakeList( dispatch, query )
+  search( name ) {
+    this.props.search( { name } )
   }
 
   setPrefecture(pref) {
@@ -55,7 +52,7 @@ class Search extends React.Component {
               hintText={ <span><FontIcon className="material-icons" style={styles.icon}>search</FontIcon>銘柄</span> }
               dataSource={ this.props.names }
               fullWidth={true}
-              onNewRequest={ ( name ) => { this.search( this.props.dispatch, { name } ) } }
+              onNewRequest={ this.search }
             />
           </Tab>
           <Tab label="詳細検索" >
@@ -74,23 +71,23 @@ class Search extends React.Component {
               dataSource={ this.props.names }
               fullWidth={true}
             />
-            <RaisedButton label="検索" primary={true} onClick={this.detailSearch.bind(this)} />
+          <RaisedButton
+            label="検索"
+            primary={true}
+            onClick={ this.detailSearch } />
           </Tab>
         </Tabs>
-
-        <List />
       </div>
     )
   }
 }
 
 Search.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  list: PropTypes.array.isRequired,
+  detailSearch: PropTypes.func.isRequired,
   names: PropTypes.array.isRequired,
   breweries: PropTypes.array.isRequired,
   prefectures: PropTypes.array.isRequired,
+  search: PropTypes.func.isRequired,
 }
 
-const mapStateToProps = state => state
-export default connect( mapStateToProps )( Search )
+export default Search

@@ -1,13 +1,9 @@
 import React, { PropTypes } from 'react'
-import { connect } from 'react-redux'
 // material-ui
 import {Tabs, Tab} from 'material-ui/Tabs'
 import FontIcon from 'material-ui/FontIcon'
 // css
 import classes from '../../public/stylesheets/scss/detail.scss'
-// actions
-import { getSake } from '../actions/sake'
-import { getReviews } from '../actions/review'
 // components
 import NewReview from './NewReview'
 import Reviews from './Reviews'
@@ -16,15 +12,12 @@ class Detail extends React.Component{
   constructor(props) {
     super(props)
     this.state = {
-      tab: 'detail',
+      tab: this.props.initialTab,
     }
-    getSake( this.props.dispatch, this.props.params.sakeId )
   }
 
   changeTab( tab ) {
-    if( tab === 'reviews' ) {
-      getReviews( this.props.dispatch, this.props.sake._id )
-    }
+    this.props.changeTab( tab )
     this.setState({ tab })
   }
 
@@ -102,7 +95,7 @@ class Detail extends React.Component{
             onClick={ () => { this.changeTab('reviews') } }
             value="reviews"
           >
-            <Reviews sakeId={this.props.sake._id} />
+          <Reviews reviews={this.props.reviews} />
           </Tab>
           <Tab
             id="createReview"
@@ -113,7 +106,6 @@ class Detail extends React.Component{
           >
             <NewReview
               changeTab={this.changeTab.bind(this)}
-              sakeId={this.props.sake._id}
              />
           </Tab>
         </Tabs>
@@ -123,10 +115,10 @@ class Detail extends React.Component{
 }
 
 Detail.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  params: PropTypes.object.isRequired,
+  changeTab: PropTypes.func.isRequired,
+  initialTab: PropTypes.string.isRequired,
   sake: PropTypes.object.isRequired,
+  reviews: PropTypes.object.isRequired,
 }
 
-const mapStateToProps = state => state
-export default connect( mapStateToProps )( Detail )
+export default Detail

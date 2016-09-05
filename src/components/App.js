@@ -2,7 +2,7 @@ import React from 'react'
 // css
 import classes from '../../public/stylesheets/scss/app.scss'
 // components
-import Header from '../containers/Header'
+import Header from './Header'
 
 const App = React.createClass({
   propTypes: {

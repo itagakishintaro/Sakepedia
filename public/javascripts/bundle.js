@@ -69,11 +69,11 @@
 	
 	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 	
-	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 657);
+	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 653);
 	
 	var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
 	
-	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 663);
+	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 659);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
@@ -28990,26 +28990,26 @@
 	
 	var _App2 = _interopRequireDefault(_App);
 	
-	var _Search = __webpack_require__(/*! ./containers/Search */ 615);
+	var _DetailContainer = __webpack_require__(/*! ./containers/DetailContainer */ 615);
 	
-	var _Search2 = _interopRequireDefault(_Search);
+	var _DetailContainer2 = _interopRequireDefault(_DetailContainer);
 	
-	var _NewSake = __webpack_require__(/*! ./containers/NewSake */ 641);
+	var _NewSake = __webpack_require__(/*! ./components/NewSake */ 650);
 	
 	var _NewSake2 = _interopRequireDefault(_NewSake);
 	
-	var _Detail = __webpack_require__(/*! ./containers/Detail */ 644);
+	var _SearchContainer = __webpack_require__(/*! ./containers/SearchContainer */ 660);
 	
-	var _Detail2 = _interopRequireDefault(_Detail);
+	var _SearchContainer2 = _interopRequireDefault(_SearchContainer);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Routes = _react2.default.createElement(
 	  _reactRouter.Route,
 	  { path: '/', component: _App2.default },
-	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Search2.default }),
+	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _SearchContainer2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'sake/new', component: _NewSake2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: 'sake/:sakeId', component: _Detail2.default })
+	  _react2.default.createElement(_reactRouter.Route, { path: 'sake/:sakeId', component: _DetailContainer2.default })
 	);
 	exports.default = Routes;
 
@@ -29034,7 +29034,7 @@
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	var _Header = __webpack_require__(/*! ../containers/Header */ 265);
+	var _Header = __webpack_require__(/*! ./Header */ 265);
 	
 	var _Header2 = _interopRequireDefault(_Header);
 	
@@ -29429,7 +29429,7 @@
 /***/ },
 /* 265 */
 /*!**********************************!*\
-  !*** ./src/containers/Header.js ***!
+  !*** ./src/components/Header.js ***!
   \**********************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -66450,9 +66450,9 @@
 
 /***/ },
 /* 615 */
-/*!**********************************!*\
-  !*** ./src/containers/Search.js ***!
-  \**********************************/
+/*!*******************************************!*\
+  !*** ./src/containers/DetailContainer.js ***!
+  \*******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -66469,29 +66469,13 @@
 	
 	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
 	
-	var _AutoComplete = __webpack_require__(/*! material-ui/AutoComplete */ 307);
+	var _sake = __webpack_require__(/*! ../actions/sake */ 616);
 	
-	var _AutoComplete2 = _interopRequireDefault(_AutoComplete);
+	var _review = __webpack_require__(/*! ../actions/review */ 636);
 	
-	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 291);
+	var _Detail = __webpack_require__(/*! ../components/Detail */ 637);
 	
-	var _FontIcon2 = _interopRequireDefault(_FontIcon);
-	
-	var _List = __webpack_require__(/*! ./List */ 616);
-	
-	var _List2 = _interopRequireDefault(_List);
-	
-	var _Tabs = __webpack_require__(/*! material-ui/Tabs */ 585);
-	
-	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 564);
-	
-	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
-	
-	var _sake = __webpack_require__(/*! ../actions/sake */ 620);
-	
-	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 640);
-	
-	var _Prefectures2 = _interopRequireDefault(_Prefectures);
+	var _Detail2 = _interopRequireDefault(_Detail);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -66500,359 +66484,59 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// material-ui
-	
 	// actions
 	
 	// components
 	
 	
-	var Search = function (_React$Component) {
-	  _inherits(Search, _React$Component);
+	var DetailContainer = function (_React$Component) {
+	  _inherits(DetailContainer, _React$Component);
 	
-	  function Search(props) {
-	    _classCallCheck(this, Search);
+	  function DetailContainer(props) {
+	    _classCallCheck(this, DetailContainer);
 	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Search).call(this, props));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(DetailContainer).call(this, props));
 	
-	    (0, _sake.getNames)(_this.props.dispatch);
-	    (0, _sake.getBreweries)(_this.props.dispatch);
-	    (0, _sake.getPrefectures)(_this.props.dispatch);
-	    _this.state = {
-	      prefecture: ''
-	    };
+	    (0, _sake.getSake)(_this.props.dispatch, _this.props.params.sakeId);
+	    (0, _review.getReviews)(_this.props.dispatch, _this.props.params.sakeId);
 	    return _this;
 	  }
 	
-	  _createClass(Search, [{
-	    key: 'detailSearch',
-	    value: function detailSearch() {
-	      this.search(this.props.dispatch, {
-	        prefecture: this.state.prefecture,
-	        brewrey: document.getElementById('brewrey').value,
-	        name: document.getElementById('name').value
-	      });
-	    }
-	  }, {
-	    key: 'search',
-	    value: function search(dispatch, query) {
-	      (0, _sake.getSakeList)(dispatch, query);
-	    }
-	  }, {
-	    key: 'setPrefecture',
-	    value: function setPrefecture(pref) {
-	      this.setState({ prefecture: pref });
+	  _createClass(DetailContainer, [{
+	    key: 'changeTab',
+	    value: function changeTab(tab) {
+	      if (tab === 'reviews') {
+	        (0, _review.getReviews)(this.props.dispatch, this.props.params.sakeId);
+	      }
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var _this2 = this;
-	
-	      var styles = {
-	        icon: {
-	          color: 'gray'
-	        },
-	        tabItemContainer: {
-	          'backgroundColor': 'lightgray'
-	        }
-	      };
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          _Tabs.Tabs,
-	          { tabItemContainerStyle: styles.tabItemContainer },
-	          _react2.default.createElement(
-	            _Tabs.Tab,
-	            { label: '銘柄検索' },
-	            _react2.default.createElement(_AutoComplete2.default, {
-	              hintText: _react2.default.createElement(
-	                'span',
-	                null,
-	                _react2.default.createElement(
-	                  _FontIcon2.default,
-	                  { className: 'material-icons', style: styles.icon },
-	                  'search'
-	                ),
-	                '銘柄'
-	              ),
-	              dataSource: this.props.names,
-	              fullWidth: true,
-	              onNewRequest: function onNewRequest(name) {
-	                _this2.search(_this2.props.dispatch, { name: name });
-	              }
-	            })
-	          ),
-	          _react2.default.createElement(
-	            _Tabs.Tab,
-	            { label: '詳細検索' },
-	            _react2.default.createElement(_Prefectures2.default, { label: '都道府県', setPrefecture: this.setPrefecture.bind(this) }),
-	            _react2.default.createElement(_AutoComplete2.default, {
-	              id: 'brewrey',
-	              floatingLabelFixed: true,
-	              floatingLabelText: '蔵元',
-	              dataSource: this.props.breweries,
-	              fullWidth: true
-	            }),
-	            _react2.default.createElement(_AutoComplete2.default, {
-	              id: 'name',
-	              floatingLabelFixed: true,
-	              floatingLabelText: '銘柄',
-	              dataSource: this.props.names,
-	              fullWidth: true
-	            }),
-	            _react2.default.createElement(_RaisedButton2.default, { label: '検索', primary: true, onClick: this.detailSearch.bind(this) })
-	          )
-	        ),
-	        _react2.default.createElement(_List2.default, null)
-	      );
+	      return _react2.default.createElement(_Detail2.default, {
+	        changeTab: this.changeTab.bind(this),
+	        initialTab: 'details',
+	        sake: this.props.sake,
+	        reviews: this.props.reviews });
 	    }
 	  }]);
 	
-	  return Search;
+	  return DetailContainer;
 	}(_react2.default.Component);
 	
-	Search.propTypes = {
+	DetailContainer.propTypes = {
 	  dispatch: _react.PropTypes.func.isRequired,
-	  list: _react.PropTypes.array.isRequired,
-	  names: _react.PropTypes.array.isRequired,
-	  breweries: _react.PropTypes.array.isRequired,
-	  prefectures: _react.PropTypes.array.isRequired
+	  params: _react.PropTypes.object.isRequired,
+	  sake: _react.PropTypes.object.isRequired,
+	  reviews: _react.PropTypes.object.isRequired
 	};
 	
 	var mapStateToProps = function mapStateToProps(state) {
 	  return state;
 	};
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Search);
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(DetailContainer);
 
 /***/ },
 /* 616 */
-/*!********************************!*\
-  !*** ./src/containers/List.js ***!
-  \********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 166);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
-	
-	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 617);
-	
-	var _list2 = _interopRequireDefault(_list);
-	
-	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 619);
-	
-	var _SakeCard2 = _interopRequireDefault(_SakeCard);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// css
-	
-	// components
-	
-	
-	var List = function (_React$Component) {
-	  _inherits(List, _React$Component);
-	
-	  function List() {
-	    _classCallCheck(this, List);
-	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(List).apply(this, arguments));
-	  }
-	
-	  _createClass(List, [{
-	    key: 'render',
-	    value: function render() {
-	      var MAX = 100;
-	      var alertMessage = '';
-	      if (MAX <= this.props.list.length) {
-	        alertMessage = '検索結果が多すぎるため、' + MAX + '件のみ表示しています。検索条件を絞り込んでください。';
-	      }
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'div',
-	          { className: _list2.default.alert },
-	          alertMessage
-	        ),
-	        this.props.list.map(function (sake) {
-	          return _react2.default.createElement(_SakeCard2.default, { sake: sake });
-	        })
-	      );
-	    }
-	  }]);
-	
-	  return List;
-	}(_react2.default.Component);
-	
-	List.propTypes = {
-	  dispatch: _react.PropTypes.func.isRequired,
-	  list: _react.PropTypes.array.isRequired
-	};
-	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return state;
-	};
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(List);
-
-/***/ },
-/* 617 */
-/*!*******************************************!*\
-  !*** ./public/stylesheets/scss/list.scss ***!
-  \*******************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./list.scss */ 618);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 264)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules!./../../../node_modules/sass-loader/index.js?sourceMap&modules!./list.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules!./../../../node_modules/sass-loader/index.js?sourceMap&modules!./list.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 618 */
-/*!**************************************************************************************************************!*\
-  !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/list.scss ***!
-  \**************************************************************************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 263)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "._19UnZ5RVOI2wLYZf-npqSE {\n  color: #f00;\n  margin-top: .5em; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/public/stylesheets/scss/list.scss"],"names":[],"mappings":"AAEA;EACE,YAHgB;EAIhB,iBAAiB,EAClB","file":"list.scss","sourcesContent":["$alert-color: #f00;\n\n.alert {\n  color: $alert-color;\n  margin-top: .5em;\n}\n"],"sourceRoot":"webpack://"}]);
-	
-	// exports
-	exports.locals = {
-		"alert": "_19UnZ5RVOI2wLYZf-npqSE"
-	};
-
-/***/ },
-/* 619 */
-/*!************************************!*\
-  !*** ./src/components/SakeCard.js ***!
-  \************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 166);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRouter = __webpack_require__(/*! react-router */ 199);
-	
-	var _Card = __webpack_require__(/*! material-ui/Card */ 348);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// material-ui
-	
-	
-	var SakeCard = function (_React$Component) {
-	  _inherits(SakeCard, _React$Component);
-	
-	  function SakeCard() {
-	    _classCallCheck(this, SakeCard);
-	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(SakeCard).apply(this, arguments));
-	  }
-	
-	  _createClass(SakeCard, [{
-	    key: 'render',
-	    value: function render() {
-	      var styles = {
-	        card: {
-	          'marginTop': '1em'
-	        },
-	        img: {
-	          'height': '100px',
-	          'marginLeft': '1em'
-	        },
-	        link: {
-	          color: '#000',
-	          textDecoration: 'none'
-	        }
-	      };
-	      return _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: '/sake/' + this.props.sake._id, style: styles.link },
-	        _react2.default.createElement(
-	          _Card.Card,
-	          { style: styles.card },
-	          _react2.default.createElement(_Card.CardHeader, {
-	            title: this.props.sake.銘柄名 + ' ( ' + this.props.sake.種類 + ' )',
-	            subtitle: this.props.sake.蔵元 + ' ( ' + this.props.sake.都道府県 + ' ) '
-	          }),
-	          _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement('img', { src: this.props.sake.画像URL, style: styles.img })
-	          ),
-	          _react2.default.createElement(
-	            _Card.CardText,
-	            null,
-	            this.props.sake.説明
-	          )
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return SakeCard;
-	}(_react2.default.Component);
-	
-	SakeCard.propTypes = {
-	  sake: _react.PropTypes.object.isRequired
-	};
-	
-	exports.default = SakeCard;
-
-/***/ },
-/* 620 */
 /*!*****************************!*\
   !*** ./src/actions/sake.js ***!
   \*****************************/
@@ -66865,7 +66549,7 @@
 	});
 	exports.getPrefectures = exports.getBreweries = exports.getNames = exports.getSake = exports.getSakeList = exports.setPrefectures = exports.setBreweries = exports.setNames = exports.setSake = exports.setSakeList = undefined;
 	
-	var _axios = __webpack_require__(/*! axios */ 621);
+	var _axios = __webpack_require__(/*! axios */ 617);
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
@@ -66957,16 +66641,16 @@
 	};
 
 /***/ },
-/* 621 */
+/* 617 */
 /*!**************************!*\
   !*** ./~/axios/index.js ***!
   \**************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(/*! ./lib/axios */ 622);
+	module.exports = __webpack_require__(/*! ./lib/axios */ 618);
 
 /***/ },
-/* 622 */
+/* 618 */
 /*!******************************!*\
   !*** ./~/axios/lib/axios.js ***!
   \******************************/
@@ -66974,14 +66658,14 @@
 
 	'use strict';
 	
-	var defaults = __webpack_require__(/*! ./defaults */ 623);
-	var utils = __webpack_require__(/*! ./utils */ 624);
-	var dispatchRequest = __webpack_require__(/*! ./core/dispatchRequest */ 626);
-	var InterceptorManager = __webpack_require__(/*! ./core/InterceptorManager */ 635);
-	var isAbsoluteURL = __webpack_require__(/*! ./helpers/isAbsoluteURL */ 636);
-	var combineURLs = __webpack_require__(/*! ./helpers/combineURLs */ 637);
-	var bind = __webpack_require__(/*! ./helpers/bind */ 638);
-	var transformData = __webpack_require__(/*! ./helpers/transformData */ 630);
+	var defaults = __webpack_require__(/*! ./defaults */ 619);
+	var utils = __webpack_require__(/*! ./utils */ 620);
+	var dispatchRequest = __webpack_require__(/*! ./core/dispatchRequest */ 622);
+	var InterceptorManager = __webpack_require__(/*! ./core/InterceptorManager */ 631);
+	var isAbsoluteURL = __webpack_require__(/*! ./helpers/isAbsoluteURL */ 632);
+	var combineURLs = __webpack_require__(/*! ./helpers/combineURLs */ 633);
+	var bind = __webpack_require__(/*! ./helpers/bind */ 634);
+	var transformData = __webpack_require__(/*! ./helpers/transformData */ 626);
 	
 	function Axios(defaultConfig) {
 	  this.defaults = utils.merge({}, defaultConfig);
@@ -67070,7 +66754,7 @@
 	axios.all = function all(promises) {
 	  return Promise.all(promises);
 	};
-	axios.spread = __webpack_require__(/*! ./helpers/spread */ 639);
+	axios.spread = __webpack_require__(/*! ./helpers/spread */ 635);
 	
 	// Provide aliases for supported request methods
 	utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
@@ -67098,7 +66782,7 @@
 
 
 /***/ },
-/* 623 */
+/* 619 */
 /*!*********************************!*\
   !*** ./~/axios/lib/defaults.js ***!
   \*********************************/
@@ -67106,8 +66790,8 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./utils */ 624);
-	var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ 625);
+	var utils = __webpack_require__(/*! ./utils */ 620);
+	var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ 621);
 	
 	var PROTECTION_PREFIX = /^\)\]\}',?\n/;
 	var DEFAULT_CONTENT_TYPE = {
@@ -67179,7 +66863,7 @@
 
 
 /***/ },
-/* 624 */
+/* 620 */
 /*!******************************!*\
   !*** ./~/axios/lib/utils.js ***!
   \******************************/
@@ -67465,7 +67149,7 @@
 
 
 /***/ },
-/* 625 */
+/* 621 */
 /*!****************************************************!*\
   !*** ./~/axios/lib/helpers/normalizeHeaderName.js ***!
   \****************************************************/
@@ -67473,7 +67157,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ../utils */ 624);
+	var utils = __webpack_require__(/*! ../utils */ 620);
 	
 	module.exports = function normalizeHeaderName(headers, normalizedName) {
 	  utils.forEach(headers, function processHeader(value, name) {
@@ -67486,7 +67170,7 @@
 
 
 /***/ },
-/* 626 */
+/* 622 */
 /*!*********************************************!*\
   !*** ./~/axios/lib/core/dispatchRequest.js ***!
   \*********************************************/
@@ -67511,10 +67195,10 @@
 	        adapter = config.adapter;
 	      } else if (typeof XMLHttpRequest !== 'undefined') {
 	        // For browsers use XHR adapter
-	        adapter = __webpack_require__(/*! ../adapters/xhr */ 627);
+	        adapter = __webpack_require__(/*! ../adapters/xhr */ 623);
 	      } else if (typeof process !== 'undefined') {
 	        // For node use HTTP adapter
-	        adapter = __webpack_require__(/*! ../adapters/http */ 627);
+	        adapter = __webpack_require__(/*! ../adapters/http */ 623);
 	      }
 	
 	      if (typeof adapter === 'function') {
@@ -67530,7 +67214,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 627 */
+/* 623 */
 /*!*************************************!*\
   !*** ./~/axios/lib/adapters/xhr.js ***!
   \*************************************/
@@ -67538,13 +67222,13 @@
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
-	var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ 628);
-	var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ 629);
-	var transformData = __webpack_require__(/*! ./../helpers/transformData */ 630);
-	var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ 631);
-	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(/*! ./../helpers/btoa */ 632);
-	var settle = __webpack_require__(/*! ../helpers/settle */ 633);
+	var utils = __webpack_require__(/*! ./../utils */ 620);
+	var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ 624);
+	var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ 625);
+	var transformData = __webpack_require__(/*! ./../helpers/transformData */ 626);
+	var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ 627);
+	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(/*! ./../helpers/btoa */ 628);
+	var settle = __webpack_require__(/*! ../helpers/settle */ 629);
 	
 	module.exports = function xhrAdapter(resolve, reject, config) {
 	  var requestData = config.data;
@@ -67641,7 +67325,7 @@
 	  // This is only done if running in a standard browser environment.
 	  // Specifically not if we're in a web worker, or react-native.
 	  if (utils.isStandardBrowserEnv()) {
-	    var cookies = __webpack_require__(/*! ./../helpers/cookies */ 634);
+	    var cookies = __webpack_require__(/*! ./../helpers/cookies */ 630);
 	
 	    // Add xsrf header
 	    var xsrfValue = config.withCredentials || isURLSameOrigin(config.url) ?
@@ -67702,7 +67386,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 628 */
+/* 624 */
 /*!*****************************************!*\
   !*** ./~/axios/lib/helpers/buildURL.js ***!
   \*****************************************/
@@ -67710,7 +67394,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
+	var utils = __webpack_require__(/*! ./../utils */ 620);
 	
 	function encode(val) {
 	  return encodeURIComponent(val).
@@ -67779,7 +67463,7 @@
 
 
 /***/ },
-/* 629 */
+/* 625 */
 /*!*********************************************!*\
   !*** ./~/axios/lib/helpers/parseHeaders.js ***!
   \*********************************************/
@@ -67787,7 +67471,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
+	var utils = __webpack_require__(/*! ./../utils */ 620);
 	
 	/**
 	 * Parse headers into an object
@@ -67825,7 +67509,7 @@
 
 
 /***/ },
-/* 630 */
+/* 626 */
 /*!**********************************************!*\
   !*** ./~/axios/lib/helpers/transformData.js ***!
   \**********************************************/
@@ -67833,7 +67517,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
+	var utils = __webpack_require__(/*! ./../utils */ 620);
 	
 	/**
 	 * Transform the data for a request or a response
@@ -67854,7 +67538,7 @@
 
 
 /***/ },
-/* 631 */
+/* 627 */
 /*!************************************************!*\
   !*** ./~/axios/lib/helpers/isURLSameOrigin.js ***!
   \************************************************/
@@ -67862,7 +67546,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
+	var utils = __webpack_require__(/*! ./../utils */ 620);
 	
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -67931,7 +67615,7 @@
 
 
 /***/ },
-/* 632 */
+/* 628 */
 /*!*************************************!*\
   !*** ./~/axios/lib/helpers/btoa.js ***!
   \*************************************/
@@ -67976,7 +67660,7 @@
 
 
 /***/ },
-/* 633 */
+/* 629 */
 /*!***************************************!*\
   !*** ./~/axios/lib/helpers/settle.js ***!
   \***************************************/
@@ -68003,7 +67687,7 @@
 
 
 /***/ },
-/* 634 */
+/* 630 */
 /*!****************************************!*\
   !*** ./~/axios/lib/helpers/cookies.js ***!
   \****************************************/
@@ -68011,7 +67695,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
+	var utils = __webpack_require__(/*! ./../utils */ 620);
 	
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -68065,7 +67749,7 @@
 
 
 /***/ },
-/* 635 */
+/* 631 */
 /*!************************************************!*\
   !*** ./~/axios/lib/core/InterceptorManager.js ***!
   \************************************************/
@@ -68073,7 +67757,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
+	var utils = __webpack_require__(/*! ./../utils */ 620);
 	
 	function InterceptorManager() {
 	  this.handlers = [];
@@ -68126,7 +67810,7 @@
 
 
 /***/ },
-/* 636 */
+/* 632 */
 /*!**********************************************!*\
   !*** ./~/axios/lib/helpers/isAbsoluteURL.js ***!
   \**********************************************/
@@ -68149,7 +67833,7 @@
 
 
 /***/ },
-/* 637 */
+/* 633 */
 /*!********************************************!*\
   !*** ./~/axios/lib/helpers/combineURLs.js ***!
   \********************************************/
@@ -68170,7 +67854,7 @@
 
 
 /***/ },
-/* 638 */
+/* 634 */
 /*!*************************************!*\
   !*** ./~/axios/lib/helpers/bind.js ***!
   \*************************************/
@@ -68190,7 +67874,7 @@
 
 
 /***/ },
-/* 639 */
+/* 635 */
 /*!***************************************!*\
   !*** ./~/axios/lib/helpers/spread.js ***!
   \***************************************/
@@ -68226,10 +67910,10 @@
 
 
 /***/ },
-/* 640 */
-/*!***************************************!*\
-  !*** ./src/components/Prefectures.js ***!
-  \***************************************/
+/* 636 */
+/*!*******************************!*\
+  !*** ./src/actions/review.js ***!
+  \*******************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -68237,640 +67921,33 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.getReviews = exports.setReviews = undefined;
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 166);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _SelectField = __webpack_require__(/*! material-ui/SelectField */ 568);
-	
-	var _SelectField2 = _interopRequireDefault(_SelectField);
-	
-	var _MenuItem = __webpack_require__(/*! material-ui/MenuItem */ 325);
-	
-	var _MenuItem2 = _interopRequireDefault(_MenuItem);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// material-ui
-	
-	
-	var Prefectures = function (_React$Component) {
-	  _inherits(Prefectures, _React$Component);
-	
-	  function Prefectures(props) {
-	    _classCallCheck(this, Prefectures);
-	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Prefectures).call(this, props));
-	
-	    _this.state = {
-	      prefecture: ''
-	    };
-	    return _this;
-	  }
-	
-	  _createClass(Prefectures, [{
-	    key: 'handleChange',
-	    value: function handleChange(event, index, value) {
-	      this.setState({ prefecture: value });
-	      this.props.setPrefecture(value);
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          _SelectField2.default,
-	          {
-	            id: 'prefecture',
-	            errorText: this.props.errorText,
-	            floatingLabelFixed: true,
-	            floatingLabelText: this.props.label,
-	            fullWidth: true,
-	            value: this.state.prefecture,
-	            onChange: this.handleChange.bind(this)
-	          },
-	          _react2.default.createElement(_MenuItem2.default, { value: '北海道', primaryText: '北海道' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '青森県', primaryText: '青森県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '岩手県', primaryText: '岩手県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '宮城県', primaryText: '宮城県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '秋田県', primaryText: '秋田県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '山形県', primaryText: '山形県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '福島県', primaryText: '福島県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '茨城県', primaryText: '茨城県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '栃木県', primaryText: '栃木県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '群馬県', primaryText: '群馬県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '埼玉県', primaryText: '埼玉県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '千葉県', primaryText: '千葉県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '東京都', primaryText: '東京都' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '神奈川県', primaryText: '神奈川県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '新潟県', primaryText: '新潟県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '富山県', primaryText: '富山県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '石川県', primaryText: '石川県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '福井県', primaryText: '福井県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '山梨県', primaryText: '山梨県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '長野県', primaryText: '長野県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '岐阜県', primaryText: '岐阜県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '静岡県', primaryText: '静岡県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '愛知県', primaryText: '愛知県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '三重県', primaryText: '三重県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '滋賀県', primaryText: '滋賀県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '京都府', primaryText: '京都府' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '大阪府', primaryText: '大阪府' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '兵庫県', primaryText: '兵庫県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '奈良県', primaryText: '奈良県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '和歌山県', primaryText: '和歌山県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '鳥取県', primaryText: '鳥取県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '島根県', primaryText: '島根県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '岡山県', primaryText: '岡山県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '広島県', primaryText: '広島県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '山口県', primaryText: '山口県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '徳島県', primaryText: '徳島県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '香川県', primaryText: '香川県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '愛媛県', primaryText: '愛媛県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '高知県', primaryText: '高知県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '福岡県', primaryText: '福岡県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '佐賀県', primaryText: '佐賀県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '長崎県', primaryText: '長崎県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '熊本県', primaryText: '熊本県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '大分県', primaryText: '大分県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '宮崎県', primaryText: '宮崎県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '鹿児島県', primaryText: '鹿児島県' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: '沖縄県', primaryText: '沖縄県' })
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return Prefectures;
-	}(_react2.default.Component);
-	
-	Prefectures.propTypes = {
-	  errorText: _react.PropTypes.string,
-	  setPrefecture: _react.PropTypes.func.isRequired,
-	  label: _react.PropTypes.string.isRequired
-	};
-	
-	exports.default = Prefectures;
-
-/***/ },
-/* 641 */
-/*!***********************************!*\
-  !*** ./src/containers/NewSake.js ***!
-  \***********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 166);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
-	
-	var _AutoComplete = __webpack_require__(/*! material-ui/AutoComplete */ 307);
-	
-	var _AutoComplete2 = _interopRequireDefault(_AutoComplete);
-	
-	var _MenuItem = __webpack_require__(/*! material-ui/MenuItem */ 325);
-	
-	var _MenuItem2 = _interopRequireDefault(_MenuItem);
-	
-	var _SelectField = __webpack_require__(/*! material-ui/SelectField */ 568);
-	
-	var _SelectField2 = _interopRequireDefault(_SelectField);
-	
-	var _Snackbar = __webpack_require__(/*! material-ui/Snackbar */ 581);
-	
-	var _Snackbar2 = _interopRequireDefault(_Snackbar);
-	
-	var _TextField = __webpack_require__(/*! material-ui/TextField */ 309);
-	
-	var _TextField2 = _interopRequireDefault(_TextField);
-	
-	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 564);
-	
-	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
-	
-	var _axios = __webpack_require__(/*! axios */ 621);
+	var _axios = __webpack_require__(/*! axios */ 617);
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
-	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 640);
-	
-	var _Prefectures2 = _interopRequireDefault(_Prefectures);
-	
-	var _NewSakeValidation = __webpack_require__(/*! ./NewSakeValidation */ 642);
-	
-	var _NewSakeValidation2 = _interopRequireDefault(_NewSakeValidation);
-	
-	var _SmoothScroll = __webpack_require__(/*! ../util/SmoothScroll */ 643);
-	
-	var _SmoothScroll2 = _interopRequireDefault(_SmoothScroll);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// material-ui
-	
-	// lib
-	
-	// components
-	
-	// validation
-	
-	// util
-	
-	
-	var NewSake = function (_React$Component) {
-	  _inherits(NewSake, _React$Component);
-	
-	  function NewSake(props) {
-	    _classCallCheck(this, NewSake);
-	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(NewSake).call(this, props));
-	
-	    _this.state = {
-	      acidRate: '',
-	      alcoholRate: '',
-	      aminoRate: '',
-	      brands: [],
-	      breweries: [],
-	      category: '',
-	      error: false,
-	      errorText: {},
-	      koubo: [],
-	      polishRate: '',
-	      prefecture: '',
-	      prefectures: [],
-	      process: '',
-	      riceOfKake: [],
-	      riceOfKouji: [],
-	      sakeRate: '',
-	      snackbarOpen: false
-	    };
-	    return _this;
-	  }
-	
-	  _createClass(NewSake, [{
-	    key: 'send',
-	    value: function send() {
-	      var validation = (0, _NewSakeValidation2.default)(this.state);
-	      this.setState({ errorText: validation.errorText });
-	      if (validation.error) {
-	        (0, _SmoothScroll2.default)(document.getElementById('newSake'), 1000);
-	        return;
-	      }
-	      _axios2.default.post('/api/sakes-', {
-	        brand: document.getElementById('brand').value,
-	        category: this.state.category,
-	        process: this.state.process,
-	        subname: document.getElementById('subname').value,
-	        url: document.getElementById('url').value,
-	        brewery: document.getElementById('brewery').value,
-	        prefecture: document.getElementById('prefecture').value,
-	        riceOfKouji: document.getElementById('riceOfKouji').value,
-	        riceOfKake: document.getElementById('riceOfKake').value,
-	        koubo: document.getElementById('koubo').value,
-	        polishRate: this.state.polishRate,
-	        alcoholRate: this.state.alcoholRate,
-	        sakeRate: this.state.sakeRate,
-	        acidRate: this.state.acidRate,
-	        aminoRate: this.state.aminoRate,
-	        picture: '',
-	        snackbarOpen: false
-	      }).then(function () {
-	        window.location.href = '/';
-	      }).catch(function (error) {
-	        document.getElementById('error').textContent = JSON.stringify(error);
-	        (0, _SmoothScroll2.default)(document.getElementById('error'), 100);
-	      });
-	      this.openSnackbar();
-	    }
-	  }, {
-	    key: 'setPrefecture',
-	    value: function setPrefecture(pref) {
-	      this.setState({ prefecture: pref });
-	    }
-	  }, {
-	    key: 'openSnackbar',
-	    value: function openSnackbar() {
-	      this.setState({ snackbarOpen: true });
-	    }
-	  }, {
-	    key: 'closeSnackbar',
-	    value: function closeSnackbar() {
-	      this.setState({ snackbarOpen: false });
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-	
-	      var styles = {
-	        button: {
-	          margin: '1em 0'
-	        }
-	      };
-	      return _react2.default.createElement(
-	        'div',
-	        { id: 'newSake' },
-	        _react2.default.createElement(_Snackbar2.default, {
-	          open: this.state.snackbarOpen,
-	          message: '送信しました',
-	          autoHideDuration: 1000,
-	          onRequestClose: this.closeSnackbar.bind(this)
-	        }),
-	        _react2.default.createElement(_AutoComplete2.default, {
-	          id: 'brand',
-	          dataSource: this.state.brands,
-	          errorText: this.state.errorText.brand,
-	          floatingLabelFixed: true,
-	          floatingLabelText: '銘柄*',
-	          fullWidth: true,
-	          required: true
-	        }),
-	        _react2.default.createElement(
-	          _SelectField2.default,
-	          {
-	            id: 'category',
-	            errorText: this.state.errorText.category,
-	            floatingLabelFixed: true,
-	            floatingLabelText: '分類*',
-	            fullWidth: true,
-	            value: this.state.category,
-	            onChange: function onChange(event, index, value) {
-	              return _this2.setState({ category: value });
-	            } },
-	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '純米大吟醸' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: '大吟醸' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: '純米吟醸' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: '吟醸' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 5, primaryText: '特別純米' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 6, primaryText: '特別本醸造' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 7, primaryText: '純米' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 8, primaryText: '本醸造' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 9, primaryText: '普通' })
-	        ),
-	        _react2.default.createElement(
-	          _SelectField2.default,
-	          {
-	            id: 'process',
-	            errorText: this.state.errorText.process,
-	            floatingLabelFixed: true,
-	            floatingLabelText: '製法*',
-	            fullWidth: true,
-	            value: this.state.process,
-	            onChange: function onChange(event, index, value) {
-	              return _this2.setState({ process: value });
-	            } },
-	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '速醸酛' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: '山廃酛' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: '生酛' })
-	        ),
-	        _react2.default.createElement(_TextField2.default, {
-	          id: 'subname',
-	          floatingLabelFixed: true,
-	          floatingLabelText: 'その他（銘柄、分類以外の副名）',
-	          fullWidth: true
-	        }),
-	        _react2.default.createElement(_TextField2.default, {
-	          id: 'url',
-	          errorText: this.state.errorText.url,
-	          floatingLabelFixed: true,
-	          floatingLabelText: 'メーカーURL',
-	          fullWidth: true,
-	          type: 'url'
-	        }),
-	        _react2.default.createElement(_AutoComplete2.default, {
-	          id: 'brewery',
-	          dataSource: this.state.breweries,
-	          errorText: this.state.errorText.brewery,
-	          floatingLabelFixed: true,
-	          floatingLabelText: '蔵元*',
-	          fullWidth: true,
-	          required: true
-	        }),
-	        _react2.default.createElement(_Prefectures2.default, {
-	          errorText: this.state.errorText.prefecture,
-	          label: '都道府県*',
-	          setPrefecture: this.setPrefecture.bind(this)
-	        }),
-	        _react2.default.createElement(_AutoComplete2.default, {
-	          id: 'riceOfKouji',
-	          floatingLabelFixed: true,
-	          floatingLabelText: '麹米',
-	          dataSource: this.state.riceOfKouji,
-	          fullWidth: true
-	        }),
-	        _react2.default.createElement(_AutoComplete2.default, {
-	          id: 'riceOfKake',
-	          floatingLabelFixed: true,
-	          floatingLabelText: '掛米',
-	          dataSource: this.state.riceOfKake,
-	          fullWidth: true
-	        }),
-	        _react2.default.createElement(_AutoComplete2.default, {
-	          id: 'koubo',
-	          floatingLabelFixed: true,
-	          floatingLabelText: '酵母',
-	          dataSource: this.state.koubo,
-	          fullWidth: true
-	        }),
-	        _react2.default.createElement(_TextField2.default, {
-	          id: 'polishRate',
-	          errorText: this.state.errorText.polishRate,
-	          floatingLabelFixed: true,
-	          floatingLabelText: '精米歩合(%)',
-	          fullWidth: true,
-	          step: '0.1',
-	          type: 'number'
-	        }),
-	        _react2.default.createElement(_TextField2.default, {
-	          id: 'alcoholRate',
-	          errorText: this.state.errorText.alcoholRate,
-	          floatingLabelFixed: true,
-	          floatingLabelText: 'アルコール度数(%)',
-	          fullWidth: true,
-	          step: '0.1',
-	          type: 'number'
-	        }),
-	        _react2.default.createElement(_TextField2.default, {
-	          id: 'sakeRate',
-	          errorText: this.state.errorText.sakeRate,
-	          floatingLabelFixed: true,
-	          floatingLabelText: '日本酒度',
-	          fullWidth: true,
-	          step: '0.1',
-	          type: 'number'
-	        }),
-	        _react2.default.createElement(_TextField2.default, {
-	          id: 'acidRate',
-	          errorText: this.state.errorText.acidRate,
-	          floatingLabelFixed: true,
-	          floatingLabelText: '酸度',
-	          fullWidth: true,
-	          step: '0.1',
-	          type: 'number'
-	        }),
-	        _react2.default.createElement(_TextField2.default, {
-	          id: 'aminoRate',
-	          errorText: this.state.errorText.aminoRate,
-	          floatingLabelFixed: true,
-	          floatingLabelText: 'アミノ酸度',
-	          fullWidth: true,
-	          step: '0.1',
-	          type: 'number'
-	        }),
-	        _react2.default.createElement(
-	          'div',
-	          { id: 'picture' },
-	          '画像（準備中）'
-	        ),
-	        _react2.default.createElement(_RaisedButton2.default, { label: '登録', primary: true, style: styles.button, onClick: this.send.bind(this) }),
-	        _react2.default.createElement('div', { id: 'error', className: 'error' })
-	      );
-	    }
-	  }]);
-	
-	  return NewSake;
-	}(_react2.default.Component);
-	
-	NewSake.propTypes = {
-	  dispatch: _react.PropTypes.func.isRequired,
-	  list: _react.PropTypes.array.isRequired
+	var setReviews = exports.setReviews = function setReviews(reviews) {
+	  return {
+	    type: 'SETREVIEWS',
+	    reviews: reviews
+	  };
 	};
 	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return state;
+	var getReviews = exports.getReviews = function getReviews(dispatch, sakeId) {
+	  _axios2.default.get('/api/reviews?sakeId=' + sakeId).then(function (res) {
+	    dispatch(setReviews(res.data));
+	  }).catch(function (error) {
+	    console.log(error);
+	  });
 	};
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(NewSake);
 
 /***/ },
-/* 642 */
-/*!*********************************************!*\
-  !*** ./src/containers/NewSakeValidation.js ***!
-  \*********************************************/
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var validate = function validate(state) {
-	  state.error = false;
-	  validateBrand(state);
-	  validateCategory(state);
-	  validateProcess(state);
-	  validateBrewery(state);
-	  validatePrefecture(state);
-	  validateUrl(state);
-	  validatePolishRate(state);
-	  validateSakeRate(state);
-	  validateAlcoholRate(state);
-	  validateAcidRate(state);
-	  validateAminoRate(state);
-	  return state;
-	};
-	
-	var validateBrand = function validateBrand(state) {
-	  if (!document.getElementById('brand').validity.valid) {
-	    state.error = true;
-	    state.errorText.brand = '銘柄は必須です';
-	  } else {
-	    state.errorText.brand = '';
-	  }
-	};
-	
-	var validateCategory = function validateCategory(state) {
-	  if (!state.category) {
-	    state.error = true;
-	    state.errorText.category = '分類は必須です';
-	  } else {
-	    state.errorText.category = '';
-	  }
-	};
-	
-	var validateProcess = function validateProcess(state) {
-	  if (!state.process) {
-	    state.error = true;
-	    state.errorText.process = '製法は必須です';
-	  } else {
-	    state.errorText.process = '';
-	  }
-	};
-	
-	var validateBrewery = function validateBrewery(state) {
-	  if (!document.getElementById('brewery').validity.valid) {
-	    state.error = true;
-	    state.errorText.brewery = '蔵元は必須です';
-	  } else {
-	    state.errorText.brewery = '';
-	  }
-	};
-	
-	var validatePrefecture = function validatePrefecture(state) {
-	  if (!state.prefecture) {
-	    state.error = true;
-	    state.errorText.prefecture = '都道府県は必須です';
-	  } else {
-	    state.errorText.prefecture = '';
-	  }
-	};
-	
-	var validateUrl = function validateUrl(state) {
-	  if (!document.getElementById('url').validity.valid) {
-	    state.error = true;
-	    state.errorText.url = 'URLのフォーマットにしてください';
-	  } else {
-	    state.errorText.url = '';
-	  }
-	};
-	
-	var validatePolishRate = function validatePolishRate(state) {
-	  if (!document.getElementById('polishRate').validity.valid) {
-	    state.error = true;
-	    state.errorText.polishRate = '数値を入力してください';
-	  } else {
-	    state.errorText.polishRate = '';
-	  }
-	};
-	
-	var validateAlcoholRate = function validateAlcoholRate(state) {
-	  if (!document.getElementById('alcoholRate').validity.valid) {
-	    state.error = true;
-	    state.errorText.alcoholRate = '数値を入力してください';
-	  } else {
-	    state.errorText.alcoholRate = '';
-	  }
-	};
-	
-	var validateSakeRate = function validateSakeRate(state) {
-	  if (!document.getElementById('sakeRate').validity.valid) {
-	    state.error = true;
-	    state.errorText.sakeRate = '数値を入力してください';
-	  } else {
-	    state.errorText.sakeRate = '';
-	  }
-	};
-	
-	var validateAcidRate = function validateAcidRate(state) {
-	  if (!document.getElementById('acidRate').validity.valid) {
-	    state.error = true;
-	    state.errorText.acidRate = '数値を入力してください';
-	  } else {
-	    state.errorText.acidRate = '';
-	  }
-	};
-	
-	var validateAminoRate = function validateAminoRate(state) {
-	  if (!document.getElementById('aminoRate').validity.valid) {
-	    state.error = true;
-	    state.errorText.aminoRate = '数値を入力してください';
-	  } else {
-	    state.errorText.aminoRate = '';
-	  }
-	};
-	
-	exports.default = validate;
-
-/***/ },
-/* 643 */
+/* 637 */
 /*!**********************************!*\
-  !*** ./src/util/SmoothScroll.js ***!
-  \**********************************/
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	// http://dongzhang.github.io/blog/Smooth-Scroll-Without-jQuery/
-	var smoothScroll = function smoothScroll(target, time) {
-	  var start = new Date().getTime();
-	  var startPosition = document.body['scrollTop'];
-	
-	  // set an interval to update scrollTop attribute every 25 ms
-	  var timer = setInterval(function () {
-	    // calculate the step, i.e the degree of completion of the smooth scroll
-	    var step = Math.min(1, (new Date().getTime() - start) / time);
-	
-	    // calculate the scroll distance and update the scrollTop
-	    document.body['scrollTop'] -= step * (startPosition - target.offsetTop);
-	
-	    // end interval if the scroll is completed
-	    if (step == 1) {
-	      clearInterval(timer);
-	    }
-	  }, 25);
-	};
-	exports.default = smoothScroll;
-
-/***/ },
-/* 644 */
-/*!**********************************!*\
-  !*** ./src/containers/Detail.js ***!
+  !*** ./src/components/Detail.js ***!
   \**********************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -68885,8 +67962,6 @@
 	var _react = __webpack_require__(/*! react */ 166);
 	
 	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
 	
 	var _Tabs = __webpack_require__(/*! material-ui/Tabs */ 585);
 	
@@ -68894,19 +67969,15 @@
 	
 	var _FontIcon2 = _interopRequireDefault(_FontIcon);
 	
-	var _detail = __webpack_require__(/*! ../../public/stylesheets/scss/detail.scss */ 645);
+	var _detail = __webpack_require__(/*! ../../public/stylesheets/scss/detail.scss */ 638);
 	
 	var _detail2 = _interopRequireDefault(_detail);
 	
-	var _sake = __webpack_require__(/*! ../actions/sake */ 620);
-	
-	var _review = __webpack_require__(/*! ../actions/review */ 650);
-	
-	var _NewReview = __webpack_require__(/*! ./NewReview */ 647);
+	var _NewReview = __webpack_require__(/*! ./NewReview */ 640);
 	
 	var _NewReview2 = _interopRequireDefault(_NewReview);
 	
-	var _Reviews = __webpack_require__(/*! ./Reviews */ 649);
+	var _Reviews = __webpack_require__(/*! ./Reviews */ 643);
 	
 	var _Reviews2 = _interopRequireDefault(_Reviews);
 	
@@ -68921,8 +67992,6 @@
 	
 	// css
 	
-	// actions
-	
 	// components
 	
 	
@@ -68935,18 +68004,15 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Detail).call(this, props));
 	
 	    _this.state = {
-	      tab: 'detail'
+	      tab: _this.props.initialTab
 	    };
-	    (0, _sake.getSake)(_this.props.dispatch, _this.props.params.sakeId);
 	    return _this;
 	  }
 	
 	  _createClass(Detail, [{
 	    key: 'changeTab',
 	    value: function changeTab(tab) {
-	      if (tab === 'reviews') {
-	        (0, _review.getReviews)(this.props.dispatch, this.props.sake._id);
-	      }
+	      this.props.changeTab(tab);
 	      this.setState({ tab: tab });
 	    }
 	  }, {
@@ -69062,7 +68128,7 @@
 	              },
 	              value: 'reviews'
 	            },
-	            _react2.default.createElement(_Reviews2.default, { sakeId: this.props.sake._id })
+	            _react2.default.createElement(_Reviews2.default, { reviews: this.props.reviews })
 	          ),
 	          _react2.default.createElement(
 	            _Tabs.Tab,
@@ -69080,8 +68146,7 @@
 	              value: 'createReview'
 	            },
 	            _react2.default.createElement(_NewReview2.default, {
-	              changeTab: this.changeTab.bind(this),
-	              sakeId: this.props.sake._id
+	              changeTab: this.changeTab.bind(this)
 	            })
 	          )
 	        )
@@ -69093,18 +68158,16 @@
 	}(_react2.default.Component);
 	
 	Detail.propTypes = {
-	  dispatch: _react.PropTypes.func.isRequired,
-	  params: _react.PropTypes.object.isRequired,
-	  sake: _react.PropTypes.object.isRequired
+	  changeTab: _react.PropTypes.func.isRequired,
+	  initialTab: _react.PropTypes.string.isRequired,
+	  sake: _react.PropTypes.object.isRequired,
+	  reviews: _react.PropTypes.object.isRequired
 	};
 	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return state;
-	};
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Detail);
+	exports.default = Detail;
 
 /***/ },
-/* 645 */
+/* 638 */
 /*!*********************************************!*\
   !*** ./public/stylesheets/scss/detail.scss ***!
   \*********************************************/
@@ -69113,7 +68176,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./detail.scss */ 646);
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./detail.scss */ 639);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 264)(content, {});
@@ -69133,7 +68196,7 @@
 	}
 
 /***/ },
-/* 646 */
+/* 639 */
 /*!****************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/detail.scss ***!
   \****************************************************************************************************************/
@@ -69157,9 +68220,9 @@
 	};
 
 /***/ },
-/* 647 */
+/* 640 */
 /*!*************************************!*\
-  !*** ./src/containers/NewReview.js ***!
+  !*** ./src/components/NewReview.js ***!
   \*************************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -69174,8 +68237,6 @@
 	var _react = __webpack_require__(/*! react */ 166);
 	
 	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
 	
 	var _Checkbox = __webpack_require__(/*! material-ui/Checkbox */ 358);
 	
@@ -69203,15 +68264,15 @@
 	
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 	
-	var _axios = __webpack_require__(/*! axios */ 621);
+	var _axios = __webpack_require__(/*! axios */ 617);
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
-	var _NewReviewValidation = __webpack_require__(/*! ./NewReviewValidation */ 648);
+	var _NewReviewValidation = __webpack_require__(/*! ./NewReviewValidation */ 641);
 	
 	var _NewReviewValidation2 = _interopRequireDefault(_NewReviewValidation);
 	
-	var _SmoothScroll = __webpack_require__(/*! ../util/SmoothScroll */ 643);
+	var _SmoothScroll = __webpack_require__(/*! ../util/SmoothScroll */ 642);
 	
 	var _SmoothScroll2 = _interopRequireDefault(_SmoothScroll);
 	
@@ -69448,15 +68509,12 @@
 	  sakeId: _react.PropTypes.string.isRequired
 	};
 	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return state;
-	};
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(NewReview);
+	exports.default = NewReview;
 
 /***/ },
-/* 648 */
+/* 641 */
 /*!***********************************************!*\
-  !*** ./src/containers/NewReviewValidation.js ***!
+  !*** ./src/components/NewReviewValidation.js ***!
   \***********************************************/
 /***/ function(module, exports) {
 
@@ -69523,9 +68581,42 @@
 	exports.default = validate;
 
 /***/ },
-/* 649 */
+/* 642 */
+/*!**********************************!*\
+  !*** ./src/util/SmoothScroll.js ***!
+  \**********************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// http://dongzhang.github.io/blog/Smooth-Scroll-Without-jQuery/
+	var smoothScroll = function smoothScroll(target, time) {
+	  var start = new Date().getTime();
+	  var startPosition = document.body['scrollTop'];
+	
+	  // set an interval to update scrollTop attribute every 25 ms
+	  var timer = setInterval(function () {
+	    // calculate the step, i.e the degree of completion of the smooth scroll
+	    var step = Math.min(1, (new Date().getTime() - start) / time);
+	
+	    // calculate the scroll distance and update the scrollTop
+	    document.body['scrollTop'] -= step * (startPosition - target.offsetTop);
+	
+	    // end interval if the scroll is completed
+	    if (step == 1) {
+	      clearInterval(timer);
+	    }
+	  }, 25);
+	};
+	exports.default = smoothScroll;
+
+/***/ },
+/* 643 */
 /*!***********************************!*\
-  !*** ./src/containers/Reviews.js ***!
+  !*** ./src/components/Reviews.js ***!
   \***********************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -69541,9 +68632,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
-	
-	var _ReviewCard = __webpack_require__(/*! ../components/ReviewCard */ 651);
+	var _ReviewCard = __webpack_require__(/*! ./ReviewCard */ 644);
 	
 	var _ReviewCard2 = _interopRequireDefault(_ReviewCard);
 	
@@ -69554,8 +68643,6 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// material-ui
-	// css
 	// components
 	
 	
@@ -69585,53 +68672,13 @@
 	}(_react2.default.Component);
 	
 	Reviews.propTypes = {
-	  dispatch: _react.PropTypes.func.isRequired,
-	  reviews: _react.PropTypes.array.isRequired,
-	  sakeId: _react.PropTypes.string.isRequired
+	  reviews: _react.PropTypes.array.isRequired
 	};
 	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return state;
-	};
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Reviews);
+	exports.default = Reviews;
 
 /***/ },
-/* 650 */
-/*!*******************************!*\
-  !*** ./src/actions/review.js ***!
-  \*******************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.getReviews = exports.setReviews = undefined;
-	
-	var _axios = __webpack_require__(/*! axios */ 621);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var setReviews = exports.setReviews = function setReviews(reviews) {
-	  return {
-	    type: 'SETREVIEWS',
-	    reviews: reviews
-	  };
-	};
-	
-	var getReviews = exports.getReviews = function getReviews(dispatch, sakeId) {
-	  _axios2.default.get('/api/reviews?sakeId=' + sakeId).then(function (res) {
-	    dispatch(setReviews(res.data));
-	  }).catch(function (error) {
-	    console.log(error);
-	  });
-	};
-
-/***/ },
-/* 651 */
+/* 644 */
 /*!**************************************!*\
   !*** ./src/components/ReviewCard.js ***!
   \**************************************/
@@ -69659,13 +68706,13 @@
 	
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 	
-	var _Chip = __webpack_require__(/*! material-ui/Chip */ 652);
+	var _Chip = __webpack_require__(/*! material-ui/Chip */ 645);
 	
 	var _Chip2 = _interopRequireDefault(_Chip);
 	
 	var _colors = __webpack_require__(/*! material-ui/styles/colors */ 518);
 	
-	var _Stars = __webpack_require__(/*! ./Stars */ 655);
+	var _Stars = __webpack_require__(/*! ./Stars */ 648);
 	
 	var _Stars2 = _interopRequireDefault(_Stars);
 	
@@ -69682,18 +68729,18 @@
 	
 	
 	// lib
-	var dateFormat = __webpack_require__(/*! dateformat */ 656);
+	var dateFormat = __webpack_require__(/*! dateformat */ 649);
 	
-	var Review = function (_React$Component) {
-	  _inherits(Review, _React$Component);
+	var ReviewCard = function (_React$Component) {
+	  _inherits(ReviewCard, _React$Component);
 	
-	  function Review() {
-	    _classCallCheck(this, Review);
+	  function ReviewCard() {
+	    _classCallCheck(this, ReviewCard);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Review).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(ReviewCard).apply(this, arguments));
 	  }
 	
-	  _createClass(Review, [{
+	  _createClass(ReviewCard, [{
 	    key: 'judgeType',
 	    value: function judgeType(review) {
 	      if (review.flavor <= 2 & review.taste <= 2) {
@@ -69870,17 +68917,17 @@
 	    }
 	  }]);
 	
-	  return Review;
+	  return ReviewCard;
 	}(_react2.default.Component);
 	
-	Review.propTypes = {
+	ReviewCard.propTypes = {
 	  review: _react.PropTypes.object.isRequired
 	};
 	
-	exports.default = Review;
+	exports.default = ReviewCard;
 
 /***/ },
-/* 652 */
+/* 645 */
 /*!*************************************!*\
   !*** ./~/material-ui/Chip/index.js ***!
   \*************************************/
@@ -69893,7 +68940,7 @@
 	});
 	exports.default = undefined;
 	
-	var _Chip = __webpack_require__(/*! ./Chip */ 653);
+	var _Chip = __webpack_require__(/*! ./Chip */ 646);
 	
 	var _Chip2 = _interopRequireDefault(_Chip);
 	
@@ -69902,7 +68949,7 @@
 	exports.default = _Chip2.default;
 
 /***/ },
-/* 653 */
+/* 646 */
 /*!************************************!*\
   !*** ./~/material-ui/Chip/Chip.js ***!
   \************************************/
@@ -69936,7 +68983,7 @@
 	
 	var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
 	
-	var _cancel = __webpack_require__(/*! ../svg-icons/navigation/cancel */ 654);
+	var _cancel = __webpack_require__(/*! ../svg-icons/navigation/cancel */ 647);
 	
 	var _cancel2 = _interopRequireDefault(_cancel);
 	
@@ -70230,7 +69277,7 @@
 	exports.default = Chip;
 
 /***/ },
-/* 654 */
+/* 647 */
 /*!******************************************************!*\
   !*** ./~/material-ui/svg-icons/navigation/cancel.js ***!
   \******************************************************/
@@ -70270,7 +69317,7 @@
 	exports.default = NavigationCancel;
 
 /***/ },
-/* 655 */
+/* 648 */
 /*!*********************************!*\
   !*** ./src/components/Stars.js ***!
   \*********************************/
@@ -70350,7 +69397,7 @@
 	exports.default = Stars;
 
 /***/ },
-/* 656 */
+/* 649 */
 /*!****************************************!*\
   !*** ./~/dateformat/lib/dateformat.js ***!
   \****************************************/
@@ -70585,14 +69632,619 @@
 
 
 /***/ },
-/* 657 */
+/* 650 */
+/*!***********************************!*\
+  !*** ./src/components/NewSake.js ***!
+  \***********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 166);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _AutoComplete = __webpack_require__(/*! material-ui/AutoComplete */ 307);
+	
+	var _AutoComplete2 = _interopRequireDefault(_AutoComplete);
+	
+	var _MenuItem = __webpack_require__(/*! material-ui/MenuItem */ 325);
+	
+	var _MenuItem2 = _interopRequireDefault(_MenuItem);
+	
+	var _SelectField = __webpack_require__(/*! material-ui/SelectField */ 568);
+	
+	var _SelectField2 = _interopRequireDefault(_SelectField);
+	
+	var _Snackbar = __webpack_require__(/*! material-ui/Snackbar */ 581);
+	
+	var _Snackbar2 = _interopRequireDefault(_Snackbar);
+	
+	var _TextField = __webpack_require__(/*! material-ui/TextField */ 309);
+	
+	var _TextField2 = _interopRequireDefault(_TextField);
+	
+	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 564);
+	
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+	
+	var _axios = __webpack_require__(/*! axios */ 617);
+	
+	var _axios2 = _interopRequireDefault(_axios);
+	
+	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 651);
+	
+	var _Prefectures2 = _interopRequireDefault(_Prefectures);
+	
+	var _NewSakeValidation = __webpack_require__(/*! ./NewSakeValidation */ 652);
+	
+	var _NewSakeValidation2 = _interopRequireDefault(_NewSakeValidation);
+	
+	var _SmoothScroll = __webpack_require__(/*! ../util/SmoothScroll */ 642);
+	
+	var _SmoothScroll2 = _interopRequireDefault(_SmoothScroll);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	// lib
+	
+	// components
+	
+	// validation
+	
+	// util
+	
+	
+	var NewSake = function (_React$Component) {
+	  _inherits(NewSake, _React$Component);
+	
+	  function NewSake(props) {
+	    _classCallCheck(this, NewSake);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(NewSake).call(this, props));
+	
+	    _this.state = {
+	      acidRate: '',
+	      alcoholRate: '',
+	      aminoRate: '',
+	      brands: [],
+	      breweries: [],
+	      category: '',
+	      error: false,
+	      errorText: {},
+	      koubo: [],
+	      polishRate: '',
+	      prefecture: '',
+	      prefectures: [],
+	      process: '',
+	      riceOfKake: [],
+	      riceOfKouji: [],
+	      sakeRate: '',
+	      snackbarOpen: false
+	    };
+	    return _this;
+	  }
+	
+	  _createClass(NewSake, [{
+	    key: 'send',
+	    value: function send() {
+	      var validation = (0, _NewSakeValidation2.default)(this.state);
+	      this.setState({ errorText: validation.errorText });
+	      if (validation.error) {
+	        (0, _SmoothScroll2.default)(document.getElementById('newSake'), 1000);
+	        return;
+	      }
+	      _axios2.default.post('/api/sakes', {
+	        brand: document.getElementById('brand').value,
+	        category: this.state.category,
+	        process: this.state.process,
+	        subname: document.getElementById('subname').value,
+	        url: document.getElementById('url').value,
+	        brewery: document.getElementById('brewery').value,
+	        prefecture: document.getElementById('prefecture').value,
+	        riceOfKouji: document.getElementById('riceOfKouji').value,
+	        riceOfKake: document.getElementById('riceOfKake').value,
+	        koubo: document.getElementById('koubo').value,
+	        polishRate: this.state.polishRate,
+	        alcoholRate: this.state.alcoholRate,
+	        sakeRate: this.state.sakeRate,
+	        acidRate: this.state.acidRate,
+	        aminoRate: this.state.aminoRate,
+	        picture: '',
+	        snackbarOpen: false
+	      }).then(function () {
+	        window.location.href = '/';
+	      }).catch(function (error) {
+	        document.getElementById('error').textContent = JSON.stringify(error);
+	        (0, _SmoothScroll2.default)(document.getElementById('error'), 100);
+	      });
+	      this.openSnackbar();
+	    }
+	  }, {
+	    key: 'setPrefecture',
+	    value: function setPrefecture(pref) {
+	      this.setState({ prefecture: pref });
+	    }
+	  }, {
+	    key: 'openSnackbar',
+	    value: function openSnackbar() {
+	      this.setState({ snackbarOpen: true });
+	    }
+	  }, {
+	    key: 'closeSnackbar',
+	    value: function closeSnackbar() {
+	      this.setState({ snackbarOpen: false });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      var styles = {
+	        button: {
+	          margin: '1em 0'
+	        }
+	      };
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'newSake' },
+	        _react2.default.createElement(_Snackbar2.default, {
+	          open: this.state.snackbarOpen,
+	          message: '送信しました',
+	          autoHideDuration: 1000,
+	          onRequestClose: this.closeSnackbar.bind(this)
+	        }),
+	        _react2.default.createElement(_AutoComplete2.default, {
+	          id: 'brand',
+	          dataSource: this.state.brands,
+	          errorText: this.state.errorText.brand,
+	          floatingLabelFixed: true,
+	          floatingLabelText: '銘柄*',
+	          fullWidth: true,
+	          required: true
+	        }),
+	        _react2.default.createElement(
+	          _SelectField2.default,
+	          {
+	            id: 'category',
+	            errorText: this.state.errorText.category,
+	            floatingLabelFixed: true,
+	            floatingLabelText: '分類*',
+	            fullWidth: true,
+	            value: this.state.category,
+	            onChange: function onChange(event, index, value) {
+	              return _this2.setState({ category: value });
+	            } },
+	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '純米大吟醸' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: '大吟醸' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: '純米吟醸' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: '吟醸' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 5, primaryText: '特別純米' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 6, primaryText: '特別本醸造' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 7, primaryText: '純米' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 8, primaryText: '本醸造' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 9, primaryText: '普通' })
+	        ),
+	        _react2.default.createElement(
+	          _SelectField2.default,
+	          {
+	            id: 'process',
+	            errorText: this.state.errorText.process,
+	            floatingLabelFixed: true,
+	            floatingLabelText: '製法*',
+	            fullWidth: true,
+	            value: this.state.process,
+	            onChange: function onChange(event, index, value) {
+	              return _this2.setState({ process: value });
+	            } },
+	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '速醸酛' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: '山廃酛' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: '生酛' })
+	        ),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'subname',
+	          floatingLabelFixed: true,
+	          floatingLabelText: 'その他（銘柄、分類以外の副名）',
+	          fullWidth: true
+	        }),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'url',
+	          errorText: this.state.errorText.url,
+	          floatingLabelFixed: true,
+	          floatingLabelText: 'メーカーURL',
+	          fullWidth: true,
+	          type: 'url'
+	        }),
+	        _react2.default.createElement(_AutoComplete2.default, {
+	          id: 'brewery',
+	          dataSource: this.state.breweries,
+	          errorText: this.state.errorText.brewery,
+	          floatingLabelFixed: true,
+	          floatingLabelText: '蔵元*',
+	          fullWidth: true,
+	          required: true
+	        }),
+	        _react2.default.createElement(_Prefectures2.default, {
+	          errorText: this.state.errorText.prefecture,
+	          label: '都道府県*',
+	          setPrefecture: this.setPrefecture.bind(this)
+	        }),
+	        _react2.default.createElement(_AutoComplete2.default, {
+	          id: 'riceOfKouji',
+	          floatingLabelFixed: true,
+	          floatingLabelText: '麹米',
+	          dataSource: this.state.riceOfKouji,
+	          fullWidth: true
+	        }),
+	        _react2.default.createElement(_AutoComplete2.default, {
+	          id: 'riceOfKake',
+	          floatingLabelFixed: true,
+	          floatingLabelText: '掛米',
+	          dataSource: this.state.riceOfKake,
+	          fullWidth: true
+	        }),
+	        _react2.default.createElement(_AutoComplete2.default, {
+	          id: 'koubo',
+	          floatingLabelFixed: true,
+	          floatingLabelText: '酵母',
+	          dataSource: this.state.koubo,
+	          fullWidth: true
+	        }),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'polishRate',
+	          errorText: this.state.errorText.polishRate,
+	          floatingLabelFixed: true,
+	          floatingLabelText: '精米歩合(%)',
+	          fullWidth: true,
+	          step: '0.1',
+	          type: 'number'
+	        }),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'alcoholRate',
+	          errorText: this.state.errorText.alcoholRate,
+	          floatingLabelFixed: true,
+	          floatingLabelText: 'アルコール度数(%)',
+	          fullWidth: true,
+	          step: '0.1',
+	          type: 'number'
+	        }),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'sakeRate',
+	          errorText: this.state.errorText.sakeRate,
+	          floatingLabelFixed: true,
+	          floatingLabelText: '日本酒度',
+	          fullWidth: true,
+	          step: '0.1',
+	          type: 'number'
+	        }),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'acidRate',
+	          errorText: this.state.errorText.acidRate,
+	          floatingLabelFixed: true,
+	          floatingLabelText: '酸度',
+	          fullWidth: true,
+	          step: '0.1',
+	          type: 'number'
+	        }),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'aminoRate',
+	          errorText: this.state.errorText.aminoRate,
+	          floatingLabelFixed: true,
+	          floatingLabelText: 'アミノ酸度',
+	          fullWidth: true,
+	          step: '0.1',
+	          type: 'number'
+	        }),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'picture' },
+	          '画像（準備中）'
+	        ),
+	        _react2.default.createElement(_RaisedButton2.default, { label: '登録', primary: true, style: styles.button, onClick: this.send.bind(this) }),
+	        _react2.default.createElement('div', { id: 'error', className: 'error' })
+	      );
+	    }
+	  }]);
+	
+	  return NewSake;
+	}(_react2.default.Component);
+	
+	NewSake.propTypes = {
+	  dispatch: _react.PropTypes.func.isRequired,
+	  list: _react.PropTypes.array.isRequired
+	};
+	
+	exports.default = NewSake;
+
+/***/ },
+/* 651 */
+/*!***************************************!*\
+  !*** ./src/components/Prefectures.js ***!
+  \***************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 166);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _SelectField = __webpack_require__(/*! material-ui/SelectField */ 568);
+	
+	var _SelectField2 = _interopRequireDefault(_SelectField);
+	
+	var _MenuItem = __webpack_require__(/*! material-ui/MenuItem */ 325);
+	
+	var _MenuItem2 = _interopRequireDefault(_MenuItem);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	
+	var Prefectures = function (_React$Component) {
+	  _inherits(Prefectures, _React$Component);
+	
+	  function Prefectures(props) {
+	    _classCallCheck(this, Prefectures);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Prefectures).call(this, props));
+	
+	    _this.state = {
+	      prefecture: ''
+	    };
+	    return _this;
+	  }
+	
+	  _createClass(Prefectures, [{
+	    key: 'handleChange',
+	    value: function handleChange(event, index, value) {
+	      this.setState({ prefecture: value });
+	      this.props.setPrefecture(value);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          _SelectField2.default,
+	          {
+	            id: 'prefecture',
+	            errorText: this.props.errorText,
+	            floatingLabelFixed: true,
+	            floatingLabelText: this.props.label,
+	            fullWidth: true,
+	            value: this.state.prefecture,
+	            onChange: this.handleChange.bind(this)
+	          },
+	          _react2.default.createElement(_MenuItem2.default, { value: '', primaryText: '　' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '北海道', primaryText: '北海道' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '青森県', primaryText: '青森県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '岩手県', primaryText: '岩手県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '宮城県', primaryText: '宮城県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '秋田県', primaryText: '秋田県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '山形県', primaryText: '山形県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '福島県', primaryText: '福島県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '茨城県', primaryText: '茨城県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '栃木県', primaryText: '栃木県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '群馬県', primaryText: '群馬県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '埼玉県', primaryText: '埼玉県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '千葉県', primaryText: '千葉県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '東京都', primaryText: '東京都' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '神奈川県', primaryText: '神奈川県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '新潟県', primaryText: '新潟県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '富山県', primaryText: '富山県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '石川県', primaryText: '石川県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '福井県', primaryText: '福井県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '山梨県', primaryText: '山梨県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '長野県', primaryText: '長野県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '岐阜県', primaryText: '岐阜県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '静岡県', primaryText: '静岡県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '愛知県', primaryText: '愛知県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '三重県', primaryText: '三重県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '滋賀県', primaryText: '滋賀県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '京都府', primaryText: '京都府' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '大阪府', primaryText: '大阪府' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '兵庫県', primaryText: '兵庫県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '奈良県', primaryText: '奈良県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '和歌山県', primaryText: '和歌山県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '鳥取県', primaryText: '鳥取県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '島根県', primaryText: '島根県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '岡山県', primaryText: '岡山県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '広島県', primaryText: '広島県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '山口県', primaryText: '山口県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '徳島県', primaryText: '徳島県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '香川県', primaryText: '香川県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '愛媛県', primaryText: '愛媛県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '高知県', primaryText: '高知県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '福岡県', primaryText: '福岡県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '佐賀県', primaryText: '佐賀県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '長崎県', primaryText: '長崎県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '熊本県', primaryText: '熊本県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '大分県', primaryText: '大分県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '宮崎県', primaryText: '宮崎県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '鹿児島県', primaryText: '鹿児島県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '沖縄県', primaryText: '沖縄県' })
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Prefectures;
+	}(_react2.default.Component);
+	
+	Prefectures.propTypes = {
+	  errorText: _react.PropTypes.string,
+	  setPrefecture: _react.PropTypes.func.isRequired,
+	  label: _react.PropTypes.string.isRequired
+	};
+	
+	exports.default = Prefectures;
+
+/***/ },
+/* 652 */
+/*!*********************************************!*\
+  !*** ./src/components/NewSakeValidation.js ***!
+  \*********************************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var validate = function validate(state) {
+	  state.error = false;
+	  validateBrand(state);
+	  validateCategory(state);
+	  validateProcess(state);
+	  validateBrewery(state);
+	  validatePrefecture(state);
+	  validateUrl(state);
+	  validatePolishRate(state);
+	  validateSakeRate(state);
+	  validateAlcoholRate(state);
+	  validateAcidRate(state);
+	  validateAminoRate(state);
+	  return state;
+	};
+	
+	var validateBrand = function validateBrand(state) {
+	  if (!document.getElementById('brand').validity.valid) {
+	    state.error = true;
+	    state.errorText.brand = '銘柄は必須です';
+	  } else {
+	    state.errorText.brand = '';
+	  }
+	};
+	
+	var validateCategory = function validateCategory(state) {
+	  if (!state.category) {
+	    state.error = true;
+	    state.errorText.category = '分類は必須です';
+	  } else {
+	    state.errorText.category = '';
+	  }
+	};
+	
+	var validateProcess = function validateProcess(state) {
+	  if (!state.process) {
+	    state.error = true;
+	    state.errorText.process = '製法は必須です';
+	  } else {
+	    state.errorText.process = '';
+	  }
+	};
+	
+	var validateBrewery = function validateBrewery(state) {
+	  if (!document.getElementById('brewery').validity.valid) {
+	    state.error = true;
+	    state.errorText.brewery = '蔵元は必須です';
+	  } else {
+	    state.errorText.brewery = '';
+	  }
+	};
+	
+	var validatePrefecture = function validatePrefecture(state) {
+	  if (!state.prefecture) {
+	    state.error = true;
+	    state.errorText.prefecture = '都道府県は必須です';
+	  } else {
+	    state.errorText.prefecture = '';
+	  }
+	};
+	
+	var validateUrl = function validateUrl(state) {
+	  if (!document.getElementById('url').validity.valid) {
+	    state.error = true;
+	    state.errorText.url = 'URLのフォーマットにしてください';
+	  } else {
+	    state.errorText.url = '';
+	  }
+	};
+	
+	var validatePolishRate = function validatePolishRate(state) {
+	  if (!document.getElementById('polishRate').validity.valid) {
+	    state.error = true;
+	    state.errorText.polishRate = '数値を入力してください';
+	  } else {
+	    state.errorText.polishRate = '';
+	  }
+	};
+	
+	var validateAlcoholRate = function validateAlcoholRate(state) {
+	  if (!document.getElementById('alcoholRate').validity.valid) {
+	    state.error = true;
+	    state.errorText.alcoholRate = '数値を入力してください';
+	  } else {
+	    state.errorText.alcoholRate = '';
+	  }
+	};
+	
+	var validateSakeRate = function validateSakeRate(state) {
+	  if (!document.getElementById('sakeRate').validity.valid) {
+	    state.error = true;
+	    state.errorText.sakeRate = '数値を入力してください';
+	  } else {
+	    state.errorText.sakeRate = '';
+	  }
+	};
+	
+	var validateAcidRate = function validateAcidRate(state) {
+	  if (!document.getElementById('acidRate').validity.valid) {
+	    state.error = true;
+	    state.errorText.acidRate = '数値を入力してください';
+	  } else {
+	    state.errorText.acidRate = '';
+	  }
+	};
+	
+	var validateAminoRate = function validateAminoRate(state) {
+	  if (!document.getElementById('aminoRate').validity.valid) {
+	    state.error = true;
+	    state.errorText.aminoRate = '数値を入力してください';
+	  } else {
+	    state.errorText.aminoRate = '';
+	  }
+	};
+	
+	exports.default = validate;
+
+/***/ },
+/* 653 */
 /*!**************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/injectTapEventPlugin.js ***!
   \**************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 658);
-	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 659);
+	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 654);
+	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 655);
 	
 	var alreadyInjected = false;
 	
@@ -70614,14 +70266,14 @@
 	  alreadyInjected = true;
 	
 	  __webpack_require__(/*! react/lib/EventPluginHub */ 14).injection.injectEventPluginsByName({
-	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 660)(shouldRejectClick)
+	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 656)(shouldRejectClick)
 	  });
 	};
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 658 */
+/* 654 */
 /*!**********************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/invariant.js ***!
   \**********************************************************/
@@ -70679,7 +70331,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 659 */
+/* 655 */
 /*!***********************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/defaultClickRejectionStrategy.js ***!
   \***********************************************************************/
@@ -70693,7 +70345,7 @@
 
 
 /***/ },
-/* 660 */
+/* 656 */
 /*!********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TapEventPlugin.js ***!
   \********************************************************/
@@ -70724,10 +70376,10 @@
 	var EventPluginUtils = __webpack_require__(/*! react/lib/EventPluginUtils */ 16);
 	var EventPropagators = __webpack_require__(/*! react/lib/EventPropagators */ 13);
 	var SyntheticUIEvent = __webpack_require__(/*! react/lib/SyntheticUIEvent */ 53);
-	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 661);
+	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 657);
 	var ViewportMetrics = __webpack_require__(/*! react/lib/ViewportMetrics */ 54);
 	
-	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 662);
+	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 658);
 	var topLevelTypes = EventConstants.topLevelTypes;
 	
 	var isStartish = EventPluginUtils.isStartish;
@@ -70872,7 +70524,7 @@
 
 
 /***/ },
-/* 661 */
+/* 657 */
 /*!*********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TouchEventUtils.js ***!
   \*********************************************************/
@@ -70923,7 +70575,7 @@
 
 
 /***/ },
-/* 662 */
+/* 658 */
 /*!******************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/keyOf.js ***!
   \******************************************************/
@@ -70966,7 +70618,7 @@
 	module.exports = keyOf;
 
 /***/ },
-/* 663 */
+/* 659 */
 /*!************************************!*\
   !*** ./~/redux-thunk/lib/index.js ***!
   \************************************/
@@ -70995,6 +70647,486 @@
 	thunk.withExtraArgument = createThunkMiddleware;
 	
 	exports['default'] = thunk;
+
+/***/ },
+/* 660 */
+/*!*******************************************!*\
+  !*** ./src/containers/SearchContainer.js ***!
+  \*******************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 166);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
+	
+	var _sake = __webpack_require__(/*! ../actions/sake */ 616);
+	
+	var _List = __webpack_require__(/*! ../Components/List */ 661);
+	
+	var _List2 = _interopRequireDefault(_List);
+	
+	var _Search = __webpack_require__(/*! ../components/Search */ 665);
+	
+	var _Search2 = _interopRequireDefault(_Search);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// actions
+	
+	// material-ui
+	
+	// components
+	
+	
+	var SearchContainer = function (_React$Component) {
+	  _inherits(SearchContainer, _React$Component);
+	
+	  function SearchContainer(props) {
+	    _classCallCheck(this, SearchContainer);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SearchContainer).call(this, props));
+	
+	    _this.search = _this.search.bind(_this);
+	    (0, _sake.getNames)(_this.props.dispatch);
+	    (0, _sake.getBreweries)(_this.props.dispatch);
+	    (0, _sake.getPrefectures)(_this.props.dispatch);
+	    return _this;
+	  }
+	
+	  _createClass(SearchContainer, [{
+	    key: 'search',
+	    value: function search(query) {
+	      (0, _sake.getSakeList)(this.props.dispatch, query);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_Search2.default, {
+	          names: this.props.names,
+	          breweries: this.props.breweries,
+	          prefectures: this.props.prefectures,
+	          search: this.search
+	        }),
+	        _react2.default.createElement(_List2.default, { list: this.props.list })
+	      );
+	    }
+	  }]);
+	
+	  return SearchContainer;
+	}(_react2.default.Component);
+	
+	SearchContainer.propTypes = {
+	  dispatch: _react.PropTypes.func.isRequired,
+	  list: _react.PropTypes.array.isRequired,
+	  names: _react.PropTypes.array.isRequired,
+	  breweries: _react.PropTypes.array.isRequired,
+	  prefectures: _react.PropTypes.array.isRequired
+	};
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return state;
+	};
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(SearchContainer);
+
+/***/ },
+/* 661 */
+/*!********************************!*\
+  !*** ./src/Components/List.js ***!
+  \********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 166);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 662);
+	
+	var _list2 = _interopRequireDefault(_list);
+	
+	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 664);
+	
+	var _SakeCard2 = _interopRequireDefault(_SakeCard);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// css
+	
+	// components
+	
+	
+	var List = function (_React$Component) {
+	  _inherits(List, _React$Component);
+	
+	  function List() {
+	    _classCallCheck(this, List);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(List).apply(this, arguments));
+	  }
+	
+	  _createClass(List, [{
+	    key: 'render',
+	    value: function render() {
+	      var MAX = 100;
+	      var alertMessage = '';
+	      if (MAX <= this.props.list.length) {
+	        alertMessage = '検索結果が多すぎるため、' + MAX + '件のみ表示しています。検索条件を絞り込んでください。';
+	      }
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { className: _list2.default.alert },
+	          alertMessage
+	        ),
+	        this.props.list.map(function (sake) {
+	          return _react2.default.createElement(_SakeCard2.default, { sake: sake });
+	        })
+	      );
+	    }
+	  }]);
+	
+	  return List;
+	}(_react2.default.Component);
+	
+	List.propTypes = {
+	  dispatch: _react.PropTypes.func.isRequired,
+	  list: _react.PropTypes.array.isRequired
+	};
+	
+	exports.default = List;
+
+/***/ },
+/* 662 */
+/*!*******************************************!*\
+  !*** ./public/stylesheets/scss/list.scss ***!
+  \*******************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./list.scss */ 663);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 264)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules!./../../../node_modules/sass-loader/index.js?sourceMap&modules!./list.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules!./../../../node_modules/sass-loader/index.js?sourceMap&modules!./list.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 663 */
+/*!**************************************************************************************************************!*\
+  !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/list.scss ***!
+  \**************************************************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 263)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "._19UnZ5RVOI2wLYZf-npqSE {\n  color: #f00;\n  margin-top: .5em; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/public/stylesheets/scss/list.scss"],"names":[],"mappings":"AAEA;EACE,YAHgB;EAIhB,iBAAiB,EAClB","file":"list.scss","sourcesContent":["$alert-color: #f00;\n\n.alert {\n  color: $alert-color;\n  margin-top: .5em;\n}\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+	exports.locals = {
+		"alert": "_19UnZ5RVOI2wLYZf-npqSE"
+	};
+
+/***/ },
+/* 664 */
+/*!************************************!*\
+  !*** ./src/components/SakeCard.js ***!
+  \************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 166);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRouter = __webpack_require__(/*! react-router */ 199);
+	
+	var _Card = __webpack_require__(/*! material-ui/Card */ 348);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	
+	var SakeCard = function (_React$Component) {
+	  _inherits(SakeCard, _React$Component);
+	
+	  function SakeCard() {
+	    _classCallCheck(this, SakeCard);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(SakeCard).apply(this, arguments));
+	  }
+	
+	  _createClass(SakeCard, [{
+	    key: 'render',
+	    value: function render() {
+	      var styles = {
+	        card: {
+	          'marginTop': '1em'
+	        },
+	        img: {
+	          'height': '100px',
+	          'marginLeft': '1em'
+	        },
+	        link: {
+	          color: '#000',
+	          textDecoration: 'none'
+	        }
+	      };
+	      return _react2.default.createElement(
+	        _reactRouter.Link,
+	        { to: '/sake/' + this.props.sake._id, style: styles.link },
+	        _react2.default.createElement(
+	          _Card.Card,
+	          { style: styles.card },
+	          _react2.default.createElement(_Card.CardHeader, {
+	            title: this.props.sake.銘柄名 + ' ( ' + this.props.sake.種類 + ' )',
+	            subtitle: this.props.sake.蔵元 + ' ( ' + this.props.sake.都道府県 + ' ) '
+	          }),
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement('img', { src: this.props.sake.画像URL, style: styles.img })
+	          ),
+	          _react2.default.createElement(
+	            _Card.CardText,
+	            null,
+	            this.props.sake.説明
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return SakeCard;
+	}(_react2.default.Component);
+	
+	SakeCard.propTypes = {
+	  sake: _react.PropTypes.object.isRequired
+	};
+	
+	exports.default = SakeCard;
+
+/***/ },
+/* 665 */
+/*!**********************************!*\
+  !*** ./src/components/Search.js ***!
+  \**********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 166);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _AutoComplete = __webpack_require__(/*! material-ui/AutoComplete */ 307);
+	
+	var _AutoComplete2 = _interopRequireDefault(_AutoComplete);
+	
+	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 291);
+	
+	var _FontIcon2 = _interopRequireDefault(_FontIcon);
+	
+	var _Tabs = __webpack_require__(/*! material-ui/Tabs */ 585);
+	
+	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 564);
+	
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+	
+	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 651);
+	
+	var _Prefectures2 = _interopRequireDefault(_Prefectures);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	// components
+	
+	
+	var Search = function (_React$Component) {
+	  _inherits(Search, _React$Component);
+	
+	  function Search(props) {
+	    _classCallCheck(this, Search);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Search).call(this, props));
+	
+	    _this.state = {
+	      prefecture: ''
+	    };
+	    _this.detailSearch = _this.detailSearch.bind(_this);
+	    _this.search = _this.search.bind(_this);
+	    return _this;
+	  }
+	
+	  _createClass(Search, [{
+	    key: 'detailSearch',
+	    value: function detailSearch() {
+	      this.props.search({
+	        prefecture: this.state.prefecture,
+	        brewrey: document.getElementById('brewrey').value,
+	        name: document.getElementById('name').value
+	      });
+	    }
+	  }, {
+	    key: 'search',
+	    value: function search(name) {
+	      this.props.search({ name: name });
+	    }
+	  }, {
+	    key: 'setPrefecture',
+	    value: function setPrefecture(pref) {
+	      this.setState({ prefecture: pref });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var styles = {
+	        icon: {
+	          color: 'gray'
+	        },
+	        tabItemContainer: {
+	          'backgroundColor': 'lightgray'
+	        }
+	      };
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          _Tabs.Tabs,
+	          { tabItemContainerStyle: styles.tabItemContainer },
+	          _react2.default.createElement(
+	            _Tabs.Tab,
+	            { label: '銘柄検索' },
+	            _react2.default.createElement(_AutoComplete2.default, {
+	              hintText: _react2.default.createElement(
+	                'span',
+	                null,
+	                _react2.default.createElement(
+	                  _FontIcon2.default,
+	                  { className: 'material-icons', style: styles.icon },
+	                  'search'
+	                ),
+	                '銘柄'
+	              ),
+	              dataSource: this.props.names,
+	              fullWidth: true,
+	              onNewRequest: this.search
+	            })
+	          ),
+	          _react2.default.createElement(
+	            _Tabs.Tab,
+	            { label: '詳細検索' },
+	            _react2.default.createElement(_Prefectures2.default, { label: '都道府県', setPrefecture: this.setPrefecture.bind(this) }),
+	            _react2.default.createElement(_AutoComplete2.default, {
+	              id: 'brewrey',
+	              floatingLabelFixed: true,
+	              floatingLabelText: '蔵元',
+	              dataSource: this.props.breweries,
+	              fullWidth: true
+	            }),
+	            _react2.default.createElement(_AutoComplete2.default, {
+	              id: 'name',
+	              floatingLabelFixed: true,
+	              floatingLabelText: '銘柄',
+	              dataSource: this.props.names,
+	              fullWidth: true
+	            }),
+	            _react2.default.createElement(_RaisedButton2.default, {
+	              label: '検索',
+	              primary: true,
+	              onClick: this.detailSearch })
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Search;
+	}(_react2.default.Component);
+	
+	Search.propTypes = {
+	  detailSearch: _react.PropTypes.func.isRequired,
+	  names: _react.PropTypes.array.isRequired,
+	  breweries: _react.PropTypes.array.isRequired,
+	  prefectures: _react.PropTypes.array.isRequired,
+	  search: _react.PropTypes.func.isRequired
+	};
+	
+	exports.default = Search;
 
 /***/ }
 /******/ ]);

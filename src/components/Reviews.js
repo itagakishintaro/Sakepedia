@@ -1,9 +1,6 @@
 import React, { PropTypes } from 'react'
-import { connect } from 'react-redux'
-// material-ui
-// css
 // components
-import ReviewCard from '../components/ReviewCard'
+import ReviewCard from './ReviewCard'
 
 class Reviews extends React.Component{
   render() {
@@ -16,10 +13,7 @@ class Reviews extends React.Component{
 }
 
 Reviews.propTypes = {
-  dispatch: PropTypes.func.isRequired,
   reviews: PropTypes.array.isRequired,
-  sakeId: PropTypes.string.isRequired,
 }
 
-const mapStateToProps = state => state
-export default connect( mapStateToProps )( Reviews )
+export default Reviews

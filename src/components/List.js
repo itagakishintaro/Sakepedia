@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react'
-import { connect } from 'react-redux'
 // css
 import classes from '../../public/stylesheets/scss/list.scss'
 // components
@@ -26,5 +25,4 @@ List.propTypes = {
   list: PropTypes.array.isRequired,
 }
 
-const mapStateToProps = state => state
-export default connect( mapStateToProps )( List )
+export default List

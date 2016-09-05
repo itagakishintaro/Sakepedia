@@ -10,7 +10,7 @@ import Stars from './Stars'
 // lib
 let dateFormat = require('dateformat')
 
-class Review extends React.Component {
+class ReviewCard extends React.Component {
   judgeType( review ) {
     if( review.flavor <= 2 & review.taste <= 2 ){
       return <Chip backgroundColor={blue200}>爽酒</Chip>
@@ -126,8 +126,8 @@ class Review extends React.Component {
   }
 }
 
-Review.propTypes = {
+ReviewCard.propTypes = {
   review: PropTypes.object.isRequired,
 }
 
-export default Review
+export default ReviewCard

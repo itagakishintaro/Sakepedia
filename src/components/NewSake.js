@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react'
-import { connect } from 'react-redux'
 // material-ui
 import AutoComplete from 'material-ui/AutoComplete'
 import MenuItem from 'material-ui/MenuItem'
@@ -47,7 +46,7 @@ class NewSake extends React.Component {
       smoothScroll( document.getElementById('newSake'), 1000 )
       return
     }
-    axios.post( '/api/sakes-' , {
+    axios.post( '/api/sakes' , {
       brand: document.getElementById('brand').value,
       category: this.state.category,
       process: this.state.process,
@@ -252,5 +251,4 @@ NewSake.propTypes = {
   list: PropTypes.array.isRequired,
 }
 
-const mapStateToProps = state => state
-export default connect( mapStateToProps )( NewSake )
+export default NewSake

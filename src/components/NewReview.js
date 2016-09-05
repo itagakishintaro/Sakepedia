@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react'
-import { connect } from 'react-redux'
 // material-ui
 import Checkbox from 'material-ui/Checkbox'
 import MenuItem from 'material-ui/MenuItem'
@@ -201,5 +200,4 @@ NewReview.propTypes = {
   sakeId: PropTypes.string.isRequired,
 }
 
-const mapStateToProps = state => state
-export default connect( mapStateToProps )( NewReview )
+export default NewReview

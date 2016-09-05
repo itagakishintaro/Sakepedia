@@ -28,6 +28,7 @@ class Prefectures extends React.Component {
       value={this.state.prefecture}
       onChange={ this.handleChange.bind(this) }
     >
+      <MenuItem value="" primaryText="　" />
       <MenuItem value="北海道" primaryText="北海道" />
       <MenuItem value="青森県" primaryText="青森県" />
       <MenuItem value="岩手県" primaryText="岩手県" />
