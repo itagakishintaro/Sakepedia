@@ -1,27 +1,47 @@
 import React from 'react'
 import { Link } from 'react-router'
-import { AppBar, IconButton, IconMenu, MenuItem } from 'material-ui'
+// material-ui
+import { AppBar, IconButton, Drawer, MenuItem } from 'material-ui'
 import MenuIcon from 'material-ui/svg-icons/navigation/menu'
 
-const headerStyle = {
-  marginBottom: '1rem',
+const styles = {
+  appbar: {
+    marginBottom: '1rem',
+  },
+  link: {
+    color: '#000',
+    textDecoration: 'none',
+  }
 }
-const Header = () => (
-  <AppBar
-    title="Sakepedia"
-    iconElementLeft={
-      <IconMenu
-        iconButtonElement={ <IconButton><MenuIcon color={'#fff'} /></IconButton> }
-        targetOrigin={{horizontal: 'right', vertical: 'top'}}
-        anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-      >
-        <MenuItem><Link to={'/'}>トップ</Link></MenuItem>
-        <MenuItem primaryText='XXX' />
-        <MenuItem primaryText='YYY' />
-      </IconMenu>
-    }
-    style={ headerStyle }
-  />
-)
+
+class Header extends React.Component{
+  constructor(props) {
+    super(props)
+    this.state = {open: false}
+  }
+
+  toggleMenu(){
+    this.setState({open: !this.state.open})
+  }
+
+  render() {
+    return (
+      <div>
+        <AppBar
+          title="Sakepedia"
+          iconElementLeft={
+            <IconButton onClick={ this.toggleMenu.bind(this) } ><MenuIcon color={'#fff'} /></IconButton>
+          }
+          style={ styles.appbar }
+        />
+        <Drawer open={this.state.open} docked={false} onRequestChange={(open) => this.setState({open})}>
+          <Link to={'/'} style={styles.link}><MenuItem onTouchTap={() => this.setState({open: false})}>トップ</MenuItem></Link>
+          <Link to={'/sake/new'} style={styles.link}><MenuItem onTouchTap={() => this.setState({open: false})}>銘柄登録</MenuItem></Link>
+          <MenuItem onTouchTap={() => this.setState({open: false})} primaryText='YYY' />
+        </Drawer>
+      </div>
+    )
+  }
+}
 
 export default Header

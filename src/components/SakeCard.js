@@ -1,18 +1,39 @@
 import React, { PropTypes } from 'react'
-import {Card, CardTitle, CardText} from 'material-ui/Card'
+import { Link } from 'react-router'
+// material-ui
+import {Card, CardHeader, CardText} from 'material-ui/Card'
 
-const cardStyle = { 'marginTop': '1em' }
-const imgStyle = { 'height': '100px', 'marginLeft': '1em' }
-
-const SakeCard = ( { sake } ) => (
-  <Card style={ cardStyle }>
-    <CardTitle title={ `${sake.名前} ( ${sake.種類} )` } subtitle={ `${sake.蔵元} ( ${sake.都道府県} ) ` }/>
-    <div>
-      <img src={ sake.画像URL } style={ imgStyle } />
-    </div>
-    <CardText>{ sake.香味 }</CardText>
-  </Card>
-)
+class SakeCard extends React.Component {
+  render() {
+    const styles = {
+      card: {
+        'marginTop': '1em',
+      },
+      img: {
+        'height': '100px',
+        'marginLeft': '1em',
+      },
+      link: {
+        color: '#000',
+        textDecoration: 'none',
+      },
+    }
+    return (
+      <Link to={`/sake/${this.props.sake._id}`} style={styles.link}>
+        <Card style={ styles.card }>
+          <CardHeader
+            title={ `${this.props.sake.銘柄名} ( ${this.props.sake.種類} )` }
+            subtitle={ `${this.props.sake.蔵元} ( ${this.props.sake.都道府県} ) ` }
+          />
+          <div>
+            <img src={ this.props.sake.画像URL } style={ styles.img } />
+          </div>
+          <CardText>{ this.props.sake.説明 }</CardText>
+        </Card>
+      </Link>
+    )
+  }
+}
 
 SakeCard.propTypes = {
   sake: PropTypes.object.isRequired,

@@ -1,12 +1,11 @@
-import styles from '../../public/stylesheets/scss/list.scss'
-
 import React, { PropTypes } from 'react'
-import { connect } from 'react-redux'
+// css
+import classes from '../../public/stylesheets/scss/list.scss'
+// components
 import SakeCard from '../components/SakeCard'
 
 class List extends React.Component {
   render() {
-    console.log( 'list length', this.props.list.length )
     const MAX = 100
     let alertMessage = ''
     if ( MAX <= this.props.list.length ) {
@@ -14,7 +13,7 @@ class List extends React.Component {
     }
     return (
       <div>
-        <div className={styles.alert}>{ alertMessage }</div>
+        <div className={classes.alert}>{ alertMessage }</div>
         { this.props.list.map( sake => <SakeCard sake={ sake } />  ) }
       </div>
     )
@@ -26,5 +25,4 @@ List.propTypes = {
   list: PropTypes.array.isRequired,
 }
 
-const mapStateToProps = state => state
-export default connect( mapStateToProps )( List )
+export default List

@@ -1,4 +1,7 @@
 import React from 'react'
+// css
+import classes from '../../public/stylesheets/scss/app.scss'
+// components
 import Header from './Header'
 
 const App = React.createClass({
@@ -8,7 +11,7 @@ const App = React.createClass({
 
   render() {
     return (
-      <div>
+      <div className={classes.content}>
         <Header />
 
         {/* add this */}
