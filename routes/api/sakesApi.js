@@ -26,16 +26,16 @@ router.get( '/', ( req, res ) => {
   if ( req.query.brewrey ) {
     query['蔵元'] = new RegExp( req.query.brewrey );
   }
-  if ( req.query.name ) {
-    query['銘柄名'] = new RegExp( req.query.name );
+  if ( req.query.brand ) {
+    query['銘柄名'] = new RegExp( req.query.brand );
   }
   collection( 'sake' ).find( query ).limit( LIMIT ).toArray( ( err, docs ) => {
     res.send( docs );
   } );
 } );
 
-// GET find names
-router.get( '/names', ( req, res ) => {
+// GET find brands
+router.get( '/brands', ( req, res ) => {
   collection( 'sake' ).distinct( '銘柄名', ( err, docs ) => { res.send( docs) } );
 } );
 
@@ -44,9 +44,26 @@ router.get( '/breweries', ( req, res ) => {
   collection( 'sake' ).distinct( '蔵元', ( err, docs ) => { res.send( docs) } );
 } );
 
+// GET find koubos
+router.get( '/koubos', ( req, res ) => {
+  collection( 'sake' ).distinct( '酵母', ( err, docs ) => { res.send( docs) } );
+} );
+
 // GET find prefectures
 router.get( '/prefectures', ( req, res ) => {
   collection( 'sake' ).distinct( '都道府県', ( err, docs ) => { res.send( docs) } );
+} );
+
+// GET find rices
+router.get( '/rices', ( req, res ) => {
+  collection( 'sake' ).distinct( '麹米', ( err, docs ) => {
+    let riceOfKoujis = docs
+    collection( 'sake' ).distinct( '掛米', ( err, docs ) => {
+      let riceOfKakes = docs
+      let rices = [ ...riceOfKoujis, ...riceOfKakes ].filter( ( x, i, self ) => self.indexOf( x ) === i );
+      res.send( rices )
+    } );
+  } );
 } );
 
 // GET find :id

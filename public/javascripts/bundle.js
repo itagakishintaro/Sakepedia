@@ -69,11 +69,11 @@
 	
 	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 	
-	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 653);
+	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 659);
 	
 	var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
 	
-	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 659);
+	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 665);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
@@ -23163,17 +23163,25 @@
 	
 	var _list2 = _interopRequireDefault(_list);
 	
-	var _names = __webpack_require__(/*! ./names */ 194);
+	var _brands = __webpack_require__(/*! ./brands */ 666);
 	
-	var _names2 = _interopRequireDefault(_names);
+	var _brands2 = _interopRequireDefault(_brands);
 	
 	var _breweries = __webpack_require__(/*! ./breweries */ 195);
 	
 	var _breweries2 = _interopRequireDefault(_breweries);
 	
+	var _koubos = __webpack_require__(/*! ./koubos */ 669);
+	
+	var _koubos2 = _interopRequireDefault(_koubos);
+	
 	var _prefectures = __webpack_require__(/*! ./prefectures */ 196);
 	
 	var _prefectures2 = _interopRequireDefault(_prefectures);
+	
+	var _rices = __webpack_require__(/*! ./rices */ 668);
+	
+	var _rices2 = _interopRequireDefault(_rices);
 	
 	var _sake = __webpack_require__(/*! ./sake */ 197);
 	
@@ -23186,7 +23194,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var app = (0, _redux.combineReducers)({
-	  list: _list2.default, names: _names2.default, breweries: _breweries2.default, prefectures: _prefectures2.default, sake: _sake2.default, reviews: _reviews2.default
+	  list: _list2.default, brands: _brands2.default, breweries: _breweries2.default, koubos: _koubos2.default, prefectures: _prefectures2.default, rices: _rices2.default, sake: _sake2.default, reviews: _reviews2.default
 	});
 	
 	exports.default = app;
@@ -23218,32 +23226,7 @@
 	exports.default = list;
 
 /***/ },
-/* 194 */
-/*!*******************************!*\
-  !*** ./src/reducers/names.js ***!
-  \*******************************/
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var names = function names() {
-	  var state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
-	  var action = arguments[1];
-	
-	  switch (action.type) {
-	    case 'SETNAMES':
-	      return action.names;
-	    default:
-	      return state;
-	  }
-	};
-	
-	exports.default = names;
-
-/***/ },
+/* 194 */,
 /* 195 */
 /*!***********************************!*\
   !*** ./src/reducers/breweries.js ***!
@@ -28994,11 +28977,11 @@
 	
 	var _DetailContainer2 = _interopRequireDefault(_DetailContainer);
 	
-	var _NewSake = __webpack_require__(/*! ./components/NewSake */ 650);
+	var _NewSakeContainer = __webpack_require__(/*! ./containers/NewSakeContainer */ 667);
 	
-	var _NewSake2 = _interopRequireDefault(_NewSake);
+	var _NewSakeContainer2 = _interopRequireDefault(_NewSakeContainer);
 	
-	var _SearchContainer = __webpack_require__(/*! ./containers/SearchContainer */ 660);
+	var _SearchContainer = __webpack_require__(/*! ./containers/SearchContainer */ 653);
 	
 	var _SearchContainer2 = _interopRequireDefault(_SearchContainer);
 	
@@ -29008,7 +28991,7 @@
 	  _reactRouter.Route,
 	  { path: '/', component: _App2.default },
 	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _SearchContainer2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: 'sake/new', component: _NewSake2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: 'sake/new', component: _NewSakeContainer2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'sake/:sakeId', component: _DetailContainer2.default })
 	);
 	exports.default = Routes;
@@ -66547,7 +66530,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.getPrefectures = exports.getBreweries = exports.getNames = exports.getSake = exports.getSakeList = exports.setPrefectures = exports.setBreweries = exports.setNames = exports.setSake = exports.setSakeList = undefined;
+	exports.getRices = exports.getKoubos = exports.getBreweries = exports.getBrands = exports.getSake = exports.getSakeList = exports.setRices = exports.setKoubos = exports.setBreweries = exports.setBrands = exports.setSake = exports.setSakeList = undefined;
 	
 	var _axios = __webpack_require__(/*! axios */ 617);
 	
@@ -66569,10 +66552,10 @@
 	  };
 	};
 	
-	var setNames = exports.setNames = function setNames(names) {
+	var setBrands = exports.setBrands = function setBrands(brands) {
 	  return {
-	    type: 'SETNAMES',
-	    names: names
+	    type: 'SETBRANDS',
+	    brands: brands
 	  };
 	};
 	
@@ -66583,10 +66566,17 @@
 	  };
 	};
 	
-	var setPrefectures = exports.setPrefectures = function setPrefectures(prefectures) {
+	var setKoubos = exports.setKoubos = function setKoubos(koubos) {
 	  return {
-	    type: 'SETPREFECTURES',
-	    prefectures: prefectures
+	    type: 'SETKOUBOS',
+	    koubos: koubos
+	  };
+	};
+	
+	var setRices = exports.setRices = function setRices(rices) {
+	  return {
+	    type: 'SETRICES',
+	    rices: rices
 	  };
 	};
 	
@@ -66616,9 +66606,9 @@
 	  });
 	};
 	
-	var getNames = exports.getNames = function getNames(dispatch) {
-	  _axios2.default.get('/api/sakes/names').then(function (res) {
-	    dispatch(setNames(res.data));
+	var getBrands = exports.getBrands = function getBrands(dispatch) {
+	  _axios2.default.get('/api/sakes/brands').then(function (res) {
+	    dispatch(setBrands(res.data));
 	  }).catch(function (error) {
 	    console.log(error);
 	  });
@@ -66632,9 +66622,17 @@
 	  });
 	};
 	
-	var getPrefectures = exports.getPrefectures = function getPrefectures(dispatch) {
-	  _axios2.default.get('/api/sakes/prefectures').then(function (res) {
-	    dispatch(setPrefectures(res.data));
+	var getKoubos = exports.getKoubos = function getKoubos(dispatch) {
+	  _axios2.default.get('/api/sakes/koubos').then(function (res) {
+	    dispatch(setKoubos(res.data));
+	  }).catch(function (error) {
+	    console.log(error);
+	  });
+	};
+	
+	var getRices = exports.getRices = function getRices(dispatch) {
+	  _axios2.default.get('/api/sakes/rices').then(function (res) {
+	    dispatch(setRices(res.data));
 	  }).catch(function (error) {
 	    console.log(error);
 	  });
@@ -69809,7 +69807,7 @@
 	        }),
 	        _react2.default.createElement(_AutoComplete2.default, {
 	          id: 'brand',
-	          dataSource: this.state.brands,
+	          dataSource: this.props.brands,
 	          errorText: this.state.errorText.brand,
 	          floatingLabelFixed: true,
 	          floatingLabelText: '銘柄*',
@@ -69870,7 +69868,7 @@
 	        }),
 	        _react2.default.createElement(_AutoComplete2.default, {
 	          id: 'brewery',
-	          dataSource: this.state.breweries,
+	          dataSource: this.props.breweries,
 	          errorText: this.state.errorText.brewery,
 	          floatingLabelFixed: true,
 	          floatingLabelText: '蔵元*',
@@ -69886,21 +69884,21 @@
 	          id: 'riceOfKouji',
 	          floatingLabelFixed: true,
 	          floatingLabelText: '麹米',
-	          dataSource: this.state.riceOfKouji,
+	          dataSource: this.props.rices,
 	          fullWidth: true
 	        }),
 	        _react2.default.createElement(_AutoComplete2.default, {
 	          id: 'riceOfKake',
 	          floatingLabelFixed: true,
 	          floatingLabelText: '掛米',
-	          dataSource: this.state.riceOfKake,
+	          dataSource: this.props.rices,
 	          fullWidth: true
 	        }),
 	        _react2.default.createElement(_AutoComplete2.default, {
 	          id: 'koubo',
 	          floatingLabelFixed: true,
 	          floatingLabelText: '酵母',
-	          dataSource: this.state.koubo,
+	          dataSource: this.props.koubos,
 	          fullWidth: true
 	        }),
 	        _react2.default.createElement(_TextField2.default, {
@@ -69963,8 +69961,12 @@
 	}(_react2.default.Component);
 	
 	NewSake.propTypes = {
+	  breweries: _react.PropTypes.array.isRequired,
+	  brands: _react.PropTypes.array.isRequired,
 	  dispatch: _react.PropTypes.func.isRequired,
-	  list: _react.PropTypes.array.isRequired
+	  koubos: _react.PropTypes.array.isRequired,
+	  list: _react.PropTypes.array.isRequired,
+	  rices: _react.PropTypes.array.isRequired
 	};
 	
 	exports.default = NewSake;
@@ -70238,13 +70240,489 @@
 
 /***/ },
 /* 653 */
+/*!*******************************************!*\
+  !*** ./src/containers/SearchContainer.js ***!
+  \*******************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 166);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
+	
+	var _sake = __webpack_require__(/*! ../actions/sake */ 616);
+	
+	var _List = __webpack_require__(/*! ../Components/List */ 654);
+	
+	var _List2 = _interopRequireDefault(_List);
+	
+	var _Search = __webpack_require__(/*! ../components/Search */ 658);
+	
+	var _Search2 = _interopRequireDefault(_Search);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// actions
+	
+	// material-ui
+	
+	// components
+	
+	
+	var SearchContainer = function (_React$Component) {
+	  _inherits(SearchContainer, _React$Component);
+	
+	  function SearchContainer(props) {
+	    _classCallCheck(this, SearchContainer);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SearchContainer).call(this, props));
+	
+	    _this.search = _this.search.bind(_this);
+	    (0, _sake.getBrands)(_this.props.dispatch);
+	    (0, _sake.getBreweries)(_this.props.dispatch);
+	    return _this;
+	  }
+	
+	  _createClass(SearchContainer, [{
+	    key: 'search',
+	    value: function search(query) {
+	      (0, _sake.getSakeList)(this.props.dispatch, query);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_Search2.default, {
+	          brands: this.props.brands,
+	          breweries: this.props.breweries,
+	          search: this.search
+	        }),
+	        _react2.default.createElement(_List2.default, { list: this.props.list })
+	      );
+	    }
+	  }]);
+	
+	  return SearchContainer;
+	}(_react2.default.Component);
+	
+	SearchContainer.propTypes = {
+	  dispatch: _react.PropTypes.func.isRequired,
+	  list: _react.PropTypes.array.isRequired,
+	  brands: _react.PropTypes.array.isRequired,
+	  breweries: _react.PropTypes.array.isRequired
+	};
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return state;
+	};
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(SearchContainer);
+
+/***/ },
+/* 654 */
+/*!********************************!*\
+  !*** ./src/Components/List.js ***!
+  \********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 166);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 655);
+	
+	var _list2 = _interopRequireDefault(_list);
+	
+	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 657);
+	
+	var _SakeCard2 = _interopRequireDefault(_SakeCard);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// css
+	
+	// components
+	
+	
+	var List = function (_React$Component) {
+	  _inherits(List, _React$Component);
+	
+	  function List() {
+	    _classCallCheck(this, List);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(List).apply(this, arguments));
+	  }
+	
+	  _createClass(List, [{
+	    key: 'render',
+	    value: function render() {
+	      var MAX = 100;
+	      var alertMessage = '';
+	      if (MAX <= this.props.list.length) {
+	        alertMessage = '検索結果が多すぎるため、' + MAX + '件のみ表示しています。検索条件を絞り込んでください。';
+	      }
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { className: _list2.default.alert },
+	          alertMessage
+	        ),
+	        this.props.list.map(function (sake) {
+	          return _react2.default.createElement(_SakeCard2.default, { sake: sake });
+	        })
+	      );
+	    }
+	  }]);
+	
+	  return List;
+	}(_react2.default.Component);
+	
+	List.propTypes = {
+	  dispatch: _react.PropTypes.func.isRequired,
+	  list: _react.PropTypes.array.isRequired
+	};
+	
+	exports.default = List;
+
+/***/ },
+/* 655 */
+/*!*******************************************!*\
+  !*** ./public/stylesheets/scss/list.scss ***!
+  \*******************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./list.scss */ 656);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 264)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules!./../../../node_modules/sass-loader/index.js?sourceMap&modules!./list.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules!./../../../node_modules/sass-loader/index.js?sourceMap&modules!./list.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 656 */
+/*!**************************************************************************************************************!*\
+  !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/list.scss ***!
+  \**************************************************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 263)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "._19UnZ5RVOI2wLYZf-npqSE {\n  color: #f00;\n  margin-top: .5em; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/public/stylesheets/scss/list.scss"],"names":[],"mappings":"AAEA;EACE,YAHgB;EAIhB,iBAAiB,EAClB","file":"list.scss","sourcesContent":["$alert-color: #f00;\n\n.alert {\n  color: $alert-color;\n  margin-top: .5em;\n}\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+	exports.locals = {
+		"alert": "_19UnZ5RVOI2wLYZf-npqSE"
+	};
+
+/***/ },
+/* 657 */
+/*!************************************!*\
+  !*** ./src/components/SakeCard.js ***!
+  \************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 166);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRouter = __webpack_require__(/*! react-router */ 199);
+	
+	var _Card = __webpack_require__(/*! material-ui/Card */ 348);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	
+	var SakeCard = function (_React$Component) {
+	  _inherits(SakeCard, _React$Component);
+	
+	  function SakeCard() {
+	    _classCallCheck(this, SakeCard);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(SakeCard).apply(this, arguments));
+	  }
+	
+	  _createClass(SakeCard, [{
+	    key: 'render',
+	    value: function render() {
+	      var styles = {
+	        card: {
+	          'marginTop': '1em'
+	        },
+	        img: {
+	          'height': '100px',
+	          'marginLeft': '1em'
+	        },
+	        link: {
+	          color: '#000',
+	          textDecoration: 'none'
+	        }
+	      };
+	      return _react2.default.createElement(
+	        _reactRouter.Link,
+	        { to: '/sake/' + this.props.sake._id, style: styles.link },
+	        _react2.default.createElement(
+	          _Card.Card,
+	          { style: styles.card },
+	          _react2.default.createElement(_Card.CardHeader, {
+	            title: this.props.sake.銘柄名 + ' ( ' + this.props.sake.種類 + ' )',
+	            subtitle: this.props.sake.蔵元 + ' ( ' + this.props.sake.都道府県 + ' ) '
+	          }),
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement('img', { src: this.props.sake.画像URL, style: styles.img })
+	          ),
+	          _react2.default.createElement(
+	            _Card.CardText,
+	            null,
+	            this.props.sake.説明
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return SakeCard;
+	}(_react2.default.Component);
+	
+	SakeCard.propTypes = {
+	  sake: _react.PropTypes.object.isRequired
+	};
+	
+	exports.default = SakeCard;
+
+/***/ },
+/* 658 */
+/*!**********************************!*\
+  !*** ./src/components/Search.js ***!
+  \**********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 166);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _AutoComplete = __webpack_require__(/*! material-ui/AutoComplete */ 307);
+	
+	var _AutoComplete2 = _interopRequireDefault(_AutoComplete);
+	
+	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 291);
+	
+	var _FontIcon2 = _interopRequireDefault(_FontIcon);
+	
+	var _Tabs = __webpack_require__(/*! material-ui/Tabs */ 585);
+	
+	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 564);
+	
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+	
+	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 651);
+	
+	var _Prefectures2 = _interopRequireDefault(_Prefectures);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	// components
+	
+	
+	var Search = function (_React$Component) {
+	  _inherits(Search, _React$Component);
+	
+	  function Search(props) {
+	    _classCallCheck(this, Search);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Search).call(this, props));
+	
+	    _this.state = {
+	      prefecture: ''
+	    };
+	    _this.detailSearch = _this.detailSearch.bind(_this);
+	    _this.search = _this.search.bind(_this);
+	    return _this;
+	  }
+	
+	  _createClass(Search, [{
+	    key: 'detailSearch',
+	    value: function detailSearch() {
+	      this.props.search({
+	        prefecture: this.state.prefecture,
+	        brewrey: document.getElementById('brewrey').value,
+	        brand: document.getElementById('brand').value
+	      });
+	    }
+	  }, {
+	    key: 'search',
+	    value: function search(brand) {
+	      this.props.search({ brand: brand });
+	    }
+	  }, {
+	    key: 'setPrefecture',
+	    value: function setPrefecture(pref) {
+	      this.setState({ prefecture: pref });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var styles = {
+	        icon: {
+	          color: 'gray'
+	        },
+	        tabItemContainer: {
+	          'backgroundColor': 'lightgray'
+	        }
+	      };
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          _Tabs.Tabs,
+	          { tabItemContainerStyle: styles.tabItemContainer },
+	          _react2.default.createElement(
+	            _Tabs.Tab,
+	            { label: '銘柄検索' },
+	            _react2.default.createElement(_AutoComplete2.default, {
+	              hintText: _react2.default.createElement(
+	                'span',
+	                null,
+	                _react2.default.createElement(
+	                  _FontIcon2.default,
+	                  { className: 'material-icons', style: styles.icon },
+	                  'search'
+	                ),
+	                '銘柄'
+	              ),
+	              dataSource: this.props.brands,
+	              fullWidth: true,
+	              onNewRequest: this.search
+	            })
+	          ),
+	          _react2.default.createElement(
+	            _Tabs.Tab,
+	            { label: '詳細検索' },
+	            _react2.default.createElement(_Prefectures2.default, { label: '都道府県', setPrefecture: this.setPrefecture.bind(this) }),
+	            _react2.default.createElement(_AutoComplete2.default, {
+	              id: 'brewrey',
+	              floatingLabelFixed: true,
+	              floatingLabelText: '蔵元',
+	              dataSource: this.props.breweries,
+	              fullWidth: true
+	            }),
+	            _react2.default.createElement(_AutoComplete2.default, {
+	              id: 'brand',
+	              floatingLabelFixed: true,
+	              floatingLabelText: '銘柄',
+	              dataSource: this.props.brands,
+	              fullWidth: true
+	            }),
+	            _react2.default.createElement(_RaisedButton2.default, {
+	              label: '検索',
+	              primary: true,
+	              onClick: this.detailSearch })
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Search;
+	}(_react2.default.Component);
+	
+	Search.propTypes = {
+	  detailSearch: _react.PropTypes.func.isRequired,
+	  brands: _react.PropTypes.array.isRequired,
+	  breweries: _react.PropTypes.array.isRequired,
+	  search: _react.PropTypes.func.isRequired
+	};
+	
+	exports.default = Search;
+
+/***/ },
+/* 659 */
 /*!**************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/injectTapEventPlugin.js ***!
   \**************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 654);
-	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 655);
+	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 660);
+	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 661);
 	
 	var alreadyInjected = false;
 	
@@ -70266,14 +70744,14 @@
 	  alreadyInjected = true;
 	
 	  __webpack_require__(/*! react/lib/EventPluginHub */ 14).injection.injectEventPluginsByName({
-	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 656)(shouldRejectClick)
+	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 662)(shouldRejectClick)
 	  });
 	};
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 654 */
+/* 660 */
 /*!**********************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/invariant.js ***!
   \**********************************************************/
@@ -70331,7 +70809,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 655 */
+/* 661 */
 /*!***********************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/defaultClickRejectionStrategy.js ***!
   \***********************************************************************/
@@ -70345,7 +70823,7 @@
 
 
 /***/ },
-/* 656 */
+/* 662 */
 /*!********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TapEventPlugin.js ***!
   \********************************************************/
@@ -70376,10 +70854,10 @@
 	var EventPluginUtils = __webpack_require__(/*! react/lib/EventPluginUtils */ 16);
 	var EventPropagators = __webpack_require__(/*! react/lib/EventPropagators */ 13);
 	var SyntheticUIEvent = __webpack_require__(/*! react/lib/SyntheticUIEvent */ 53);
-	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 657);
+	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 663);
 	var ViewportMetrics = __webpack_require__(/*! react/lib/ViewportMetrics */ 54);
 	
-	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 658);
+	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 664);
 	var topLevelTypes = EventConstants.topLevelTypes;
 	
 	var isStartish = EventPluginUtils.isStartish;
@@ -70524,7 +71002,7 @@
 
 
 /***/ },
-/* 657 */
+/* 663 */
 /*!*********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TouchEventUtils.js ***!
   \*********************************************************/
@@ -70575,7 +71053,7 @@
 
 
 /***/ },
-/* 658 */
+/* 664 */
 /*!******************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/keyOf.js ***!
   \******************************************************/
@@ -70618,7 +71096,7 @@
 	module.exports = keyOf;
 
 /***/ },
-/* 659 */
+/* 665 */
 /*!************************************!*\
   !*** ./~/redux-thunk/lib/index.js ***!
   \************************************/
@@ -70649,10 +71127,36 @@
 	exports['default'] = thunk;
 
 /***/ },
-/* 660 */
-/*!*******************************************!*\
-  !*** ./src/containers/SearchContainer.js ***!
-  \*******************************************/
+/* 666 */
+/*!********************************!*\
+  !*** ./src/reducers/brands.js ***!
+  \********************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var brands = function brands() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
+	  var action = arguments[1];
+	
+	  switch (action.type) {
+	    case 'SETBRANDS':
+	      return action.brands;
+	    default:
+	      return state;
+	  }
+	};
+	
+	exports.default = brands;
+
+/***/ },
+/* 667 */
+/*!********************************************!*\
+  !*** ./src/containers/NewSakeContainer.js ***!
+  \********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -70671,13 +71175,9 @@
 	
 	var _sake = __webpack_require__(/*! ../actions/sake */ 616);
 	
-	var _List = __webpack_require__(/*! ../Components/List */ 661);
+	var _NewSake = __webpack_require__(/*! ../components/NewSake */ 650);
 	
-	var _List2 = _interopRequireDefault(_List);
-	
-	var _Search = __webpack_require__(/*! ../components/Search */ 665);
-	
-	var _Search2 = _interopRequireDefault(_Search);
+	var _NewSake2 = _interopRequireDefault(_NewSake);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -70688,445 +71188,103 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	// actions
 	
-	// material-ui
-	
 	// components
 	
 	
-	var SearchContainer = function (_React$Component) {
-	  _inherits(SearchContainer, _React$Component);
+	var NewSakeContainer = function (_React$Component) {
+	  _inherits(NewSakeContainer, _React$Component);
 	
-	  function SearchContainer(props) {
-	    _classCallCheck(this, SearchContainer);
+	  function NewSakeContainer(props) {
+	    _classCallCheck(this, NewSakeContainer);
 	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SearchContainer).call(this, props));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(NewSakeContainer).call(this, props));
 	
-	    _this.search = _this.search.bind(_this);
-	    (0, _sake.getNames)(_this.props.dispatch);
+	    (0, _sake.getBrands)(_this.props.dispatch);
 	    (0, _sake.getBreweries)(_this.props.dispatch);
-	    (0, _sake.getPrefectures)(_this.props.dispatch);
+	    (0, _sake.getRices)(_this.props.dispatch);
+	    (0, _sake.getKoubos)(_this.props.dispatch);
 	    return _this;
 	  }
 	
-	  _createClass(SearchContainer, [{
-	    key: 'search',
-	    value: function search(query) {
-	      (0, _sake.getSakeList)(this.props.dispatch, query);
-	    }
-	  }, {
+	  _createClass(NewSakeContainer, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(_Search2.default, {
-	          names: this.props.names,
-	          breweries: this.props.breweries,
-	          prefectures: this.props.prefectures,
-	          search: this.search
-	        }),
-	        _react2.default.createElement(_List2.default, { list: this.props.list })
-	      );
+	      return _react2.default.createElement(_NewSake2.default, {
+	        brands: this.props.brands,
+	        breweries: this.props.breweries,
+	        koubos: this.props.koubos,
+	        rices: this.props.rices
+	      });
 	    }
 	  }]);
 	
-	  return SearchContainer;
+	  return NewSakeContainer;
 	}(_react2.default.Component);
 	
-	SearchContainer.propTypes = {
+	NewSakeContainer.propTypes = {
 	  dispatch: _react.PropTypes.func.isRequired,
-	  list: _react.PropTypes.array.isRequired,
-	  names: _react.PropTypes.array.isRequired,
+	  brands: _react.PropTypes.array.isRequired,
 	  breweries: _react.PropTypes.array.isRequired,
-	  prefectures: _react.PropTypes.array.isRequired
+	  koubos: _react.PropTypes.array.isRequired,
+	  rices: _react.PropTypes.array.isRequired
 	};
 	
 	var mapStateToProps = function mapStateToProps(state) {
 	  return state;
 	};
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(SearchContainer);
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(NewSakeContainer);
 
 /***/ },
-/* 661 */
+/* 668 */
+/*!*******************************!*\
+  !*** ./src/reducers/rices.js ***!
+  \*******************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var rices = function rices() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
+	  var action = arguments[1];
+	
+	  switch (action.type) {
+	    case 'SETRICES':
+	      return action.rices;
+	    default:
+	      return state;
+	  }
+	};
+	
+	exports.default = rices;
+
+/***/ },
+/* 669 */
 /*!********************************!*\
-  !*** ./src/Components/List.js ***!
+  !*** ./src/reducers/koubos.js ***!
   \********************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	var koubos = function koubos() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
+	  var action = arguments[1];
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 166);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 662);
-	
-	var _list2 = _interopRequireDefault(_list);
-	
-	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 664);
-	
-	var _SakeCard2 = _interopRequireDefault(_SakeCard);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// css
-	
-	// components
-	
-	
-	var List = function (_React$Component) {
-	  _inherits(List, _React$Component);
-	
-	  function List() {
-	    _classCallCheck(this, List);
-	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(List).apply(this, arguments));
+	  switch (action.type) {
+	    case 'SETKOUBOS':
+	      return action.koubos;
+	    default:
+	      return state;
 	  }
-	
-	  _createClass(List, [{
-	    key: 'render',
-	    value: function render() {
-	      var MAX = 100;
-	      var alertMessage = '';
-	      if (MAX <= this.props.list.length) {
-	        alertMessage = '検索結果が多すぎるため、' + MAX + '件のみ表示しています。検索条件を絞り込んでください。';
-	      }
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'div',
-	          { className: _list2.default.alert },
-	          alertMessage
-	        ),
-	        this.props.list.map(function (sake) {
-	          return _react2.default.createElement(_SakeCard2.default, { sake: sake });
-	        })
-	      );
-	    }
-	  }]);
-	
-	  return List;
-	}(_react2.default.Component);
-	
-	List.propTypes = {
-	  dispatch: _react.PropTypes.func.isRequired,
-	  list: _react.PropTypes.array.isRequired
 	};
 	
-	exports.default = List;
-
-/***/ },
-/* 662 */
-/*!*******************************************!*\
-  !*** ./public/stylesheets/scss/list.scss ***!
-  \*******************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./list.scss */ 663);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 264)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules!./../../../node_modules/sass-loader/index.js?sourceMap&modules!./list.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules!./../../../node_modules/sass-loader/index.js?sourceMap&modules!./list.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 663 */
-/*!**************************************************************************************************************!*\
-  !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/list.scss ***!
-  \**************************************************************************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 263)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "._19UnZ5RVOI2wLYZf-npqSE {\n  color: #f00;\n  margin-top: .5em; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/public/stylesheets/scss/list.scss"],"names":[],"mappings":"AAEA;EACE,YAHgB;EAIhB,iBAAiB,EAClB","file":"list.scss","sourcesContent":["$alert-color: #f00;\n\n.alert {\n  color: $alert-color;\n  margin-top: .5em;\n}\n"],"sourceRoot":"webpack://"}]);
-	
-	// exports
-	exports.locals = {
-		"alert": "_19UnZ5RVOI2wLYZf-npqSE"
-	};
-
-/***/ },
-/* 664 */
-/*!************************************!*\
-  !*** ./src/components/SakeCard.js ***!
-  \************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 166);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRouter = __webpack_require__(/*! react-router */ 199);
-	
-	var _Card = __webpack_require__(/*! material-ui/Card */ 348);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// material-ui
-	
-	
-	var SakeCard = function (_React$Component) {
-	  _inherits(SakeCard, _React$Component);
-	
-	  function SakeCard() {
-	    _classCallCheck(this, SakeCard);
-	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(SakeCard).apply(this, arguments));
-	  }
-	
-	  _createClass(SakeCard, [{
-	    key: 'render',
-	    value: function render() {
-	      var styles = {
-	        card: {
-	          'marginTop': '1em'
-	        },
-	        img: {
-	          'height': '100px',
-	          'marginLeft': '1em'
-	        },
-	        link: {
-	          color: '#000',
-	          textDecoration: 'none'
-	        }
-	      };
-	      return _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: '/sake/' + this.props.sake._id, style: styles.link },
-	        _react2.default.createElement(
-	          _Card.Card,
-	          { style: styles.card },
-	          _react2.default.createElement(_Card.CardHeader, {
-	            title: this.props.sake.銘柄名 + ' ( ' + this.props.sake.種類 + ' )',
-	            subtitle: this.props.sake.蔵元 + ' ( ' + this.props.sake.都道府県 + ' ) '
-	          }),
-	          _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement('img', { src: this.props.sake.画像URL, style: styles.img })
-	          ),
-	          _react2.default.createElement(
-	            _Card.CardText,
-	            null,
-	            this.props.sake.説明
-	          )
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return SakeCard;
-	}(_react2.default.Component);
-	
-	SakeCard.propTypes = {
-	  sake: _react.PropTypes.object.isRequired
-	};
-	
-	exports.default = SakeCard;
-
-/***/ },
-/* 665 */
-/*!**********************************!*\
-  !*** ./src/components/Search.js ***!
-  \**********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 166);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _AutoComplete = __webpack_require__(/*! material-ui/AutoComplete */ 307);
-	
-	var _AutoComplete2 = _interopRequireDefault(_AutoComplete);
-	
-	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 291);
-	
-	var _FontIcon2 = _interopRequireDefault(_FontIcon);
-	
-	var _Tabs = __webpack_require__(/*! material-ui/Tabs */ 585);
-	
-	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 564);
-	
-	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
-	
-	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 651);
-	
-	var _Prefectures2 = _interopRequireDefault(_Prefectures);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// material-ui
-	
-	// components
-	
-	
-	var Search = function (_React$Component) {
-	  _inherits(Search, _React$Component);
-	
-	  function Search(props) {
-	    _classCallCheck(this, Search);
-	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Search).call(this, props));
-	
-	    _this.state = {
-	      prefecture: ''
-	    };
-	    _this.detailSearch = _this.detailSearch.bind(_this);
-	    _this.search = _this.search.bind(_this);
-	    return _this;
-	  }
-	
-	  _createClass(Search, [{
-	    key: 'detailSearch',
-	    value: function detailSearch() {
-	      this.props.search({
-	        prefecture: this.state.prefecture,
-	        brewrey: document.getElementById('brewrey').value,
-	        name: document.getElementById('name').value
-	      });
-	    }
-	  }, {
-	    key: 'search',
-	    value: function search(name) {
-	      this.props.search({ name: name });
-	    }
-	  }, {
-	    key: 'setPrefecture',
-	    value: function setPrefecture(pref) {
-	      this.setState({ prefecture: pref });
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var styles = {
-	        icon: {
-	          color: 'gray'
-	        },
-	        tabItemContainer: {
-	          'backgroundColor': 'lightgray'
-	        }
-	      };
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          _Tabs.Tabs,
-	          { tabItemContainerStyle: styles.tabItemContainer },
-	          _react2.default.createElement(
-	            _Tabs.Tab,
-	            { label: '銘柄検索' },
-	            _react2.default.createElement(_AutoComplete2.default, {
-	              hintText: _react2.default.createElement(
-	                'span',
-	                null,
-	                _react2.default.createElement(
-	                  _FontIcon2.default,
-	                  { className: 'material-icons', style: styles.icon },
-	                  'search'
-	                ),
-	                '銘柄'
-	              ),
-	              dataSource: this.props.names,
-	              fullWidth: true,
-	              onNewRequest: this.search
-	            })
-	          ),
-	          _react2.default.createElement(
-	            _Tabs.Tab,
-	            { label: '詳細検索' },
-	            _react2.default.createElement(_Prefectures2.default, { label: '都道府県', setPrefecture: this.setPrefecture.bind(this) }),
-	            _react2.default.createElement(_AutoComplete2.default, {
-	              id: 'brewrey',
-	              floatingLabelFixed: true,
-	              floatingLabelText: '蔵元',
-	              dataSource: this.props.breweries,
-	              fullWidth: true
-	            }),
-	            _react2.default.createElement(_AutoComplete2.default, {
-	              id: 'name',
-	              floatingLabelFixed: true,
-	              floatingLabelText: '銘柄',
-	              dataSource: this.props.names,
-	              fullWidth: true
-	            }),
-	            _react2.default.createElement(_RaisedButton2.default, {
-	              label: '検索',
-	              primary: true,
-	              onClick: this.detailSearch })
-	          )
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return Search;
-	}(_react2.default.Component);
-	
-	Search.propTypes = {
-	  detailSearch: _react.PropTypes.func.isRequired,
-	  names: _react.PropTypes.array.isRequired,
-	  breweries: _react.PropTypes.array.isRequired,
-	  prefectures: _react.PropTypes.array.isRequired,
-	  search: _react.PropTypes.func.isRequired
-	};
-	
-	exports.default = Search;
+	exports.default = koubos;
 
 /***/ }
 /******/ ]);

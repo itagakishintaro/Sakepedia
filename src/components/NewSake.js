@@ -103,7 +103,7 @@ class NewSake extends React.Component {
         />
           <AutoComplete
             id="brand"
-            dataSource={this.state.brands}
+            dataSource={this.props.brands}
             errorText={this.state.errorText.brand}
             floatingLabelFixed={true}
             floatingLabelText="銘柄*"
@@ -156,7 +156,7 @@ class NewSake extends React.Component {
           />
           <AutoComplete
             id="brewery"
-            dataSource={this.state.breweries}
+            dataSource={this.props.breweries}
             errorText={this.state.errorText.brewery}
             floatingLabelFixed={true}
             floatingLabelText="蔵元*"
@@ -174,21 +174,21 @@ class NewSake extends React.Component {
             id="riceOfKouji"
             floatingLabelFixed={true}
             floatingLabelText="麹米"
-            dataSource={this.state.riceOfKouji}
+            dataSource={this.props.rices}
             fullWidth={true}
           />
           <AutoComplete
             id="riceOfKake"
             floatingLabelFixed={true}
             floatingLabelText="掛米"
-            dataSource={this.state.riceOfKake}
+            dataSource={this.props.rices}
             fullWidth={true}
           />
           <AutoComplete
             id="koubo"
             floatingLabelFixed={true}
             floatingLabelText="酵母"
-            dataSource={this.state.koubo}
+            dataSource={this.props.koubos}
             fullWidth={true}
           />
 
@@ -247,8 +247,12 @@ class NewSake extends React.Component {
 }
 
 NewSake.propTypes = {
+  breweries: PropTypes.array.isRequired,
+  brands: PropTypes.array.isRequired,
   dispatch: PropTypes.func.isRequired,
+  koubos: PropTypes.array.isRequired,
   list: PropTypes.array.isRequired,
+  rices: PropTypes.array.isRequired,
 }
 
 export default NewSake
