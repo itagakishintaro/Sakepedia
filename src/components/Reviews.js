@@ -8,6 +8,11 @@ class Reviews extends React.Component{
     if( !reviews ) {
       reviews = []
     }
+    reviews.sort( (a, b) => {
+      if (a.日時 > b.日時) { return -1 }
+      if (a.日時 < b.日時) { return 1 }
+      return 0
+    })
     return (
       <div>
         { reviews.map( review => <ReviewCard review={ review } />  ) }

@@ -11,16 +11,14 @@ class DetailContainer extends React.Component{
     getSake( this.props.dispatch, this.props.params.sakeId )
   }
 
-  changeTab( tab ) {
-    if( tab === 'reviews' ) {
-      // getSake( this.props.dispatch, this.props.params.sakeId )
-    }
+  update() {
+    getSake( this.props.dispatch, this.props.params.sakeId )
   }
 
   render() {
     return (
       <Detail
-        changeTab={this.changeTab.bind(this)}
+        update={this.update.bind(this)}
         initialTab="detail"
         sake={this.props.sake}
       />

@@ -54,6 +54,7 @@ class NewReview extends React.Component {
       'ユーザー名': 'user name',
     })
     .then( () => {
+      this.props.update()
       this.props.changeTab('reviews')
     })
     .catch( error => {
@@ -197,6 +198,7 @@ NewReview.propTypes = {
   history: PropTypes.object.isRequired,
   list: PropTypes.array.isRequired,
   sake: PropTypes.object.isRequired,
+  update: PropTypes.func.isRequired,
 }
 
 export default NewReview

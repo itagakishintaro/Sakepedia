@@ -66560,17 +66560,15 @@
 	  }
 	
 	  _createClass(DetailContainer, [{
-	    key: 'changeTab',
-	    value: function changeTab(tab) {
-	      if (tab === 'reviews') {
-	        // getSake( this.props.dispatch, this.props.params.sakeId )
-	      }
+	    key: 'update',
+	    value: function update() {
+	      (0, _sake.getSake)(this.props.dispatch, this.props.params.sakeId);
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(_Detail2.default, {
-	        changeTab: this.changeTab.bind(this),
+	        update: this.update.bind(this),
 	        initialTab: 'detail',
 	        sake: this.props.sake
 	      });
@@ -68049,7 +68047,6 @@
 	  _createClass(Detail, [{
 	    key: 'changeTab',
 	    value: function changeTab(tab) {
-	      this.props.changeTab(tab);
 	      this.setState({ tab: tab });
 	    }
 	  }, {
@@ -68184,7 +68181,8 @@
 	            },
 	            _react2.default.createElement(_NewReview2.default, {
 	              changeTab: this.changeTab.bind(this),
-	              sake: this.props.sake
+	              sake: this.props.sake,
+	              update: this.props.update
 	            })
 	          )
 	        )
@@ -68196,9 +68194,9 @@
 	}(_react2.default.Component);
 	
 	Detail.propTypes = {
-	  changeTab: _react.PropTypes.func.isRequired,
 	  initialTab: _react.PropTypes.string.isRequired,
-	  sake: _react.PropTypes.object.isRequired
+	  sake: _react.PropTypes.object.isRequired,
+	  update: _react.PropTypes.func.isRequired
 	};
 	
 	exports.default = Detail;
@@ -68378,6 +68376,7 @@
 	        'ユーザーID': 'user id',
 	        'ユーザー名': 'user name'
 	      }).then(function () {
+	        _this2.props.update();
 	        _this2.props.changeTab('reviews');
 	      }).catch(function (error) {
 	        document.getElementById('error').textContent = JSON.stringify(error);
@@ -68542,7 +68541,8 @@
 	  dispatch: _react.PropTypes.func.isRequired,
 	  history: _react.PropTypes.object.isRequired,
 	  list: _react.PropTypes.array.isRequired,
-	  sake: _react.PropTypes.object.isRequired
+	  sake: _react.PropTypes.object.isRequired,
+	  update: _react.PropTypes.func.isRequired
 	};
 	
 	exports.default = NewReview;
@@ -68698,6 +68698,15 @@
 	      if (!reviews) {
 	        reviews = [];
 	      }
+	      reviews.sort(function (a, b) {
+	        if (a.日時 > b.日時) {
+	          return -1;
+	        }
+	        if (a.日時 < b.日時) {
+	          return 1;
+	        }
+	        return 0;
+	      });
 	      return _react2.default.createElement(
 	        'div',
 	        null,

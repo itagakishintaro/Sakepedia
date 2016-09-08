@@ -17,7 +17,6 @@ class Detail extends React.Component{
   }
 
   changeTab( tab ) {
-    this.props.changeTab( tab )
     this.setState({ tab })
   }
 
@@ -107,6 +106,7 @@ class Detail extends React.Component{
             <NewReview
               changeTab={this.changeTab.bind(this)}
               sake={this.props.sake}
+              update={this.props.update}
              />
           </Tab>
         </Tabs>
@@ -116,9 +116,9 @@ class Detail extends React.Component{
 }
 
 Detail.propTypes = {
-  changeTab: PropTypes.func.isRequired,
   initialTab: PropTypes.string.isRequired,
   sake: PropTypes.object.isRequired,
+  update: PropTypes.func.isRequired,
 }
 
 export default Detail
