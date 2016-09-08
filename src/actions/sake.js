@@ -50,8 +50,8 @@ export const getSakeList = ( dispatch, words ) => {
   if( words.brewrey ) {
     query = `${query}&brewrey=${words.brewrey}`
   }
-  if( words.name ) {
-    query = `${query}&name=${words.name}`
+  if( words.brand ) {
+    query = `${query}&brand=${words.brand}`
   }
   axios.get( `/api/sakes?${query}` )
     .then( res => {

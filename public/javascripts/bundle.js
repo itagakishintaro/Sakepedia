@@ -66661,8 +66661,8 @@
 	  if (words.brewrey) {
 	    query = query + '&brewrey=' + words.brewrey;
 	  }
-	  if (words.name) {
-	    query = query + '&name=' + words.name;
+	  if (words.brand) {
+	    query = query + '&brand=' + words.brand;
 	  }
 	  _axios2.default.get('/api/sakes?' + query).then(function (res) {
 	    dispatch(setSakeList(res.data));
