@@ -69,11 +69,11 @@
 	
 	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 	
-	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 661);
+	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 662);
 	
 	var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
 	
-	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 667);
+	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 668);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
@@ -29054,11 +29054,11 @@
 	
 	var _DetailContainer2 = _interopRequireDefault(_DetailContainer);
 	
-	var _NewSakeContainer = __webpack_require__(/*! ./containers/NewSakeContainer */ 651);
+	var _NewSakeContainer = __webpack_require__(/*! ./containers/NewSakeContainer */ 652);
 	
 	var _NewSakeContainer2 = _interopRequireDefault(_NewSakeContainer);
 	
-	var _SearchContainer = __webpack_require__(/*! ./containers/SearchContainer */ 655);
+	var _SearchContainer = __webpack_require__(/*! ./containers/SearchContainer */ 656);
 	
 	var _SearchContainer2 = _interopRequireDefault(_SearchContainer);
 	
@@ -66531,9 +66531,7 @@
 	
 	var _sake = __webpack_require__(/*! ../actions/sake */ 618);
 	
-	var _review = __webpack_require__(/*! ../actions/review */ 668);
-	
-	var _Detail = __webpack_require__(/*! ../components/Detail */ 638);
+	var _Detail = __webpack_require__(/*! ../components/Detail */ 639);
 	
 	var _Detail2 = _interopRequireDefault(_Detail);
 	
@@ -66558,7 +66556,6 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(DetailContainer).call(this, props));
 	
 	    (0, _sake.getSake)(_this.props.dispatch, _this.props.params.sakeId);
-	    (0, _review.getReviews)(_this.props.dispatch, _this.props.params.sakeId);
 	    return _this;
 	  }
 	
@@ -66566,7 +66563,7 @@
 	    key: 'changeTab',
 	    value: function changeTab(tab) {
 	      if (tab === 'reviews') {
-	        (0, _review.getReviews)(this.props.dispatch, this.props.params.sakeId);
+	        // getSake( this.props.dispatch, this.props.params.sakeId )
 	      }
 	    }
 	  }, {
@@ -66575,8 +66572,8 @@
 	      return _react2.default.createElement(_Detail2.default, {
 	        changeTab: this.changeTab.bind(this),
 	        initialTab: 'detail',
-	        sake: this.props.sake,
-	        reviews: this.props.reviews });
+	        sake: this.props.sake
+	      });
 	    }
 	  }]);
 	
@@ -66586,8 +66583,7 @@
 	DetailContainer.propTypes = {
 	  dispatch: _react.PropTypes.func.isRequired,
 	  params: _react.PropTypes.object.isRequired,
-	  sake: _react.PropTypes.object.isRequired,
-	  reviews: _react.PropTypes.object.isRequired
+	  sake: _react.PropTypes.object.isRequired
 	};
 	
 	var mapStateToProps = function mapStateToProps(state) {
@@ -67985,7 +67981,8 @@
 
 
 /***/ },
-/* 638 */
+/* 638 */,
+/* 639 */
 /*!**********************************!*\
   !*** ./src/components/Detail.js ***!
   \**********************************/
@@ -68009,15 +68006,15 @@
 	
 	var _FontIcon2 = _interopRequireDefault(_FontIcon);
 	
-	var _detail = __webpack_require__(/*! ../../public/stylesheets/scss/detail.scss */ 639);
+	var _detail = __webpack_require__(/*! ../../public/stylesheets/scss/detail.scss */ 640);
 	
 	var _detail2 = _interopRequireDefault(_detail);
 	
-	var _NewReview = __webpack_require__(/*! ./NewReview */ 641);
+	var _NewReview = __webpack_require__(/*! ./NewReview */ 642);
 	
 	var _NewReview2 = _interopRequireDefault(_NewReview);
 	
-	var _Reviews = __webpack_require__(/*! ./Reviews */ 644);
+	var _Reviews = __webpack_require__(/*! ./Reviews */ 645);
 	
 	var _Reviews2 = _interopRequireDefault(_Reviews);
 	
@@ -68046,7 +68043,6 @@
 	    _this.state = {
 	      tab: _this.props.initialTab
 	    };
-	    console.log('tab', _this.props.initialTab);
 	    return _this;
 	  }
 	
@@ -68169,7 +68165,7 @@
 	              },
 	              value: 'reviews'
 	            },
-	            _react2.default.createElement(_Reviews2.default, { reviews: this.props.reviews })
+	            _react2.default.createElement(_Reviews2.default, { reviews: this.props.sake.レビュー })
 	          ),
 	          _react2.default.createElement(
 	            _Tabs.Tab,
@@ -68202,14 +68198,13 @@
 	Detail.propTypes = {
 	  changeTab: _react.PropTypes.func.isRequired,
 	  initialTab: _react.PropTypes.string.isRequired,
-	  sake: _react.PropTypes.object.isRequired,
-	  reviews: _react.PropTypes.object.isRequired
+	  sake: _react.PropTypes.object.isRequired
 	};
 	
 	exports.default = Detail;
 
 /***/ },
-/* 639 */
+/* 640 */
 /*!*********************************************!*\
   !*** ./public/stylesheets/scss/detail.scss ***!
   \*********************************************/
@@ -68218,7 +68213,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./detail.scss */ 640);
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./detail.scss */ 641);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 266)(content, {});
@@ -68238,7 +68233,7 @@
 	}
 
 /***/ },
-/* 640 */
+/* 641 */
 /*!****************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/detail.scss ***!
   \****************************************************************************************************************/
@@ -68262,7 +68257,7 @@
 	};
 
 /***/ },
-/* 641 */
+/* 642 */
 /*!*************************************!*\
   !*** ./src/components/NewReview.js ***!
   \*************************************/
@@ -68310,11 +68305,11 @@
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
-	var _NewReviewValidation = __webpack_require__(/*! ./NewReviewValidation */ 642);
+	var _NewReviewValidation = __webpack_require__(/*! ./NewReviewValidation */ 643);
 	
 	var _NewReviewValidation2 = _interopRequireDefault(_NewReviewValidation);
 	
-	var _SmoothScroll = __webpack_require__(/*! ../util/SmoothScroll */ 643);
+	var _SmoothScroll = __webpack_require__(/*! ../util/SmoothScroll */ 644);
 	
 	var _SmoothScroll2 = _interopRequireDefault(_SmoothScroll);
 	
@@ -68553,7 +68548,7 @@
 	exports.default = NewReview;
 
 /***/ },
-/* 642 */
+/* 643 */
 /*!***********************************************!*\
   !*** ./src/components/NewReviewValidation.js ***!
   \***********************************************/
@@ -68622,7 +68617,7 @@
 	exports.default = validate;
 
 /***/ },
-/* 643 */
+/* 644 */
 /*!**********************************!*\
   !*** ./src/util/SmoothScroll.js ***!
   \**********************************/
@@ -68655,7 +68650,7 @@
 	exports.default = smoothScroll;
 
 /***/ },
-/* 644 */
+/* 645 */
 /*!***********************************!*\
   !*** ./src/components/Reviews.js ***!
   \***********************************/
@@ -68673,7 +68668,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _ReviewCard = __webpack_require__(/*! ./ReviewCard */ 645);
+	var _ReviewCard = __webpack_require__(/*! ./ReviewCard */ 646);
 	
 	var _ReviewCard2 = _interopRequireDefault(_ReviewCard);
 	
@@ -68699,10 +68694,14 @@
 	  _createClass(Reviews, [{
 	    key: 'render',
 	    value: function render() {
+	      var reviews = this.props.reviews;
+	      if (!reviews) {
+	        reviews = [];
+	      }
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        this.props.reviews.map(function (review) {
+	        reviews.map(function (review) {
 	          return _react2.default.createElement(_ReviewCard2.default, { review: review });
 	        })
 	      );
@@ -68719,7 +68718,7 @@
 	exports.default = Reviews;
 
 /***/ },
-/* 645 */
+/* 646 */
 /*!**************************************!*\
   !*** ./src/components/ReviewCard.js ***!
   \**************************************/
@@ -68747,13 +68746,13 @@
 	
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 	
-	var _Chip = __webpack_require__(/*! material-ui/Chip */ 646);
+	var _Chip = __webpack_require__(/*! material-ui/Chip */ 647);
 	
 	var _Chip2 = _interopRequireDefault(_Chip);
 	
 	var _colors = __webpack_require__(/*! material-ui/styles/colors */ 520);
 	
-	var _Stars = __webpack_require__(/*! ./Stars */ 649);
+	var _Stars = __webpack_require__(/*! ./Stars */ 650);
 	
 	var _Stars2 = _interopRequireDefault(_Stars);
 	
@@ -68770,7 +68769,7 @@
 	
 	
 	// lib
-	var dateFormat = __webpack_require__(/*! dateformat */ 650);
+	var dateFormat = __webpack_require__(/*! dateformat */ 651);
 	
 	var ReviewCard = function (_React$Component) {
 	  _inherits(ReviewCard, _React$Component);
@@ -68784,35 +68783,35 @@
 	  _createClass(ReviewCard, [{
 	    key: 'judgeType',
 	    value: function judgeType(review) {
-	      if (review.flavor <= 2 & review.taste <= 2) {
+	      if (review.香り <= 2 & review.味 <= 2) {
 	        return _react2.default.createElement(
 	          _Chip2.default,
 	          { backgroundColor: _colors.blue200 },
 	          '爽酒'
 	        );
 	      }
-	      if (review.flavor <= 2 & 2 <= review.taste) {
+	      if (review.香り <= 2 & 2 <= review.味) {
 	        return _react2.default.createElement(
 	          _Chip2.default,
 	          { backgroundColor: _colors.orange200 },
 	          '醇酒'
 	        );
 	      }
-	      if (2 <= review.flavor & review.taste <= 2) {
+	      if (2 <= review.香り & review.味 <= 2) {
 	        return _react2.default.createElement(
 	          _Chip2.default,
 	          { backgroundColor: _colors.green200 },
 	          '薫酒'
 	        );
 	      }
-	      if (2 <= review.flavor & 2 <= review.taste & 2 <= review.maturation) {
+	      if (2 <= review.香り & 2 <= review.味 & 2 <= review.熟成) {
 	        return _react2.default.createElement(
 	          _Chip2.default,
 	          { backgroundColor: _colors.brown200 },
 	          '熟酒'
 	        );
 	      }
-	      if (2 <= review.flavor & 2 <= review.taste & review.maturation <= 2) {
+	      if (2 <= review.香り & 2 <= review.味 & review.熟成 <= 2) {
 	        return _react2.default.createElement(
 	          _Chip2.default,
 	          { backgroundColor: _colors.purple200 },
@@ -68859,11 +68858,11 @@
 	        _react2.default.createElement(
 	          'div',
 	          { style: styles.date },
-	          dateFormat(this.props.review.date, 'yyyy/mm/dd HH:MM')
+	          dateFormat(this.props.review.日時, 'yyyy/mm/dd HH:MM')
 	        ),
 	        _react2.default.createElement(_Card.CardHeader, {
-	          title: _react2.default.createElement(_Stars2.default, { evaluation: this.props.review.evaluation }),
-	          subtitle: this.props.review.userName
+	          title: _react2.default.createElement(_Stars2.default, { evaluation: this.props.review.評価 }),
+	          subtitle: this.props.review.ユーザー名
 	        }),
 	        _react2.default.createElement(
 	          _Card.CardText,
@@ -68871,7 +68870,7 @@
 	          _react2.default.createElement(
 	            'div',
 	            { style: styles.comment },
-	            this.props.review.comment
+	            this.props.review.コメント
 	          ),
 	          _react2.default.createElement(
 	            'div',
@@ -68884,7 +68883,7 @@
 	            _react2.default.createElement(
 	              _Badge2.default,
 	              {
-	                badgeContent: this.props.review.flavor,
+	                badgeContent: this.props.review.香り,
 	                secondary: true,
 	                style: styles.badge
 	              },
@@ -68893,7 +68892,7 @@
 	            _react2.default.createElement(
 	              _Badge2.default,
 	              {
-	                badgeContent: this.props.review.taste,
+	                badgeContent: this.props.review.味,
 	                secondary: true,
 	                style: styles.badge
 	              },
@@ -68902,7 +68901,7 @@
 	            _react2.default.createElement(
 	              _Badge2.default,
 	              {
-	                badgeContent: this.props.review.maturation,
+	                badgeContent: this.props.review.熟成,
 	                secondary: true,
 	                style: styles.badge
 	              },
@@ -68918,27 +68917,27 @@
 	            'div',
 	            { style: styles.content },
 	            _react2.default.createElement(_Checkbox2.default, {
-	              checked: this.props.review.temperature['5'],
+	              checked: this.props.review.温度['一番冷たい(5度位)'],
 	              disabled: true,
 	              label: '一番冷たい(5度位)'
 	            }),
 	            _react2.default.createElement(_Checkbox2.default, {
-	              checked: this.props.review.temperature['10'],
+	              checked: this.props.review.温度['やや冷たい(10度位)'],
 	              disabled: true,
 	              label: 'やや冷たい(10度位)'
 	            }),
 	            _react2.default.createElement(_Checkbox2.default, {
-	              checked: this.props.review.temperature['15'],
+	              checked: this.props.review.温度['常温(15度位)'],
 	              disabled: true,
 	              label: '常温(15度位)'
 	            }),
 	            _react2.default.createElement(_Checkbox2.default, {
-	              checked: this.props.review.temperature['40'],
+	              checked: this.props.review.温度['ぬる燗(40度位)'],
 	              disabled: true,
 	              label: 'ぬる燗(40度位)'
 	            }),
 	            _react2.default.createElement(_Checkbox2.default, {
-	              checked: this.props.review.temperature['50'],
+	              checked: this.props.review.温度['熱燗(50度位)'],
 	              disabled: true,
 	              label: '熱燗(50度位)'
 	            })
@@ -68951,7 +68950,7 @@
 	          _react2.default.createElement(
 	            'div',
 	            { style: styles.content },
-	            this.props.review.matched
+	            this.props.review.相性のよい料理
 	          )
 	        )
 	      );
@@ -68968,7 +68967,7 @@
 	exports.default = ReviewCard;
 
 /***/ },
-/* 646 */
+/* 647 */
 /*!*************************************!*\
   !*** ./~/material-ui/Chip/index.js ***!
   \*************************************/
@@ -68981,7 +68980,7 @@
 	});
 	exports.default = undefined;
 	
-	var _Chip = __webpack_require__(/*! ./Chip */ 647);
+	var _Chip = __webpack_require__(/*! ./Chip */ 648);
 	
 	var _Chip2 = _interopRequireDefault(_Chip);
 	
@@ -68990,7 +68989,7 @@
 	exports.default = _Chip2.default;
 
 /***/ },
-/* 647 */
+/* 648 */
 /*!************************************!*\
   !*** ./~/material-ui/Chip/Chip.js ***!
   \************************************/
@@ -69024,7 +69023,7 @@
 	
 	var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
 	
-	var _cancel = __webpack_require__(/*! ../svg-icons/navigation/cancel */ 648);
+	var _cancel = __webpack_require__(/*! ../svg-icons/navigation/cancel */ 649);
 	
 	var _cancel2 = _interopRequireDefault(_cancel);
 	
@@ -69318,7 +69317,7 @@
 	exports.default = Chip;
 
 /***/ },
-/* 648 */
+/* 649 */
 /*!******************************************************!*\
   !*** ./~/material-ui/svg-icons/navigation/cancel.js ***!
   \******************************************************/
@@ -69358,7 +69357,7 @@
 	exports.default = NavigationCancel;
 
 /***/ },
-/* 649 */
+/* 650 */
 /*!*********************************!*\
   !*** ./src/components/Stars.js ***!
   \*********************************/
@@ -69438,7 +69437,7 @@
 	exports.default = Stars;
 
 /***/ },
-/* 650 */
+/* 651 */
 /*!****************************************!*\
   !*** ./~/dateformat/lib/dateformat.js ***!
   \****************************************/
@@ -69673,7 +69672,7 @@
 
 
 /***/ },
-/* 651 */
+/* 652 */
 /*!********************************************!*\
   !*** ./src/containers/NewSakeContainer.js ***!
   \********************************************/
@@ -69695,7 +69694,7 @@
 	
 	var _sake = __webpack_require__(/*! ../actions/sake */ 618);
 	
-	var _NewSake = __webpack_require__(/*! ../components/NewSake */ 652);
+	var _NewSake = __webpack_require__(/*! ../components/NewSake */ 653);
 	
 	var _NewSake2 = _interopRequireDefault(_NewSake);
 	
@@ -69755,7 +69754,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(NewSakeContainer);
 
 /***/ },
-/* 652 */
+/* 653 */
 /*!***********************************!*\
   !*** ./src/components/NewSake.js ***!
   \***********************************/
@@ -69801,15 +69800,15 @@
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
-	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 653);
+	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 654);
 	
 	var _Prefectures2 = _interopRequireDefault(_Prefectures);
 	
-	var _NewSakeValidation = __webpack_require__(/*! ./NewSakeValidation */ 654);
+	var _NewSakeValidation = __webpack_require__(/*! ./NewSakeValidation */ 655);
 	
 	var _NewSakeValidation2 = _interopRequireDefault(_NewSakeValidation);
 	
-	var _SmoothScroll = __webpack_require__(/*! ../util/SmoothScroll */ 643);
+	var _SmoothScroll = __webpack_require__(/*! ../util/SmoothScroll */ 644);
 	
 	var _SmoothScroll2 = _interopRequireDefault(_SmoothScroll);
 	
@@ -70097,7 +70096,7 @@
 	exports.default = NewSake;
 
 /***/ },
-/* 653 */
+/* 654 */
 /*!***************************************!*\
   !*** ./src/components/Prefectures.js ***!
   \***************************************/
@@ -70235,7 +70234,7 @@
 	exports.default = Prefectures;
 
 /***/ },
-/* 654 */
+/* 655 */
 /*!*********************************************!*\
   !*** ./src/components/NewSakeValidation.js ***!
   \*********************************************/
@@ -70364,7 +70363,7 @@
 	exports.default = validate;
 
 /***/ },
-/* 655 */
+/* 656 */
 /*!*******************************************!*\
   !*** ./src/containers/SearchContainer.js ***!
   \*******************************************/
@@ -70386,11 +70385,11 @@
 	
 	var _sake = __webpack_require__(/*! ../actions/sake */ 618);
 	
-	var _List = __webpack_require__(/*! ../Components/List */ 656);
+	var _List = __webpack_require__(/*! ../Components/List */ 657);
 	
 	var _List2 = _interopRequireDefault(_List);
 	
-	var _Search = __webpack_require__(/*! ../components/Search */ 660);
+	var _Search = __webpack_require__(/*! ../components/Search */ 661);
 	
 	var _Search2 = _interopRequireDefault(_Search);
 	
@@ -70459,7 +70458,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(SearchContainer);
 
 /***/ },
-/* 656 */
+/* 657 */
 /*!********************************!*\
   !*** ./src/Components/List.js ***!
   \********************************/
@@ -70477,11 +70476,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 657);
+	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 658);
 	
 	var _list2 = _interopRequireDefault(_list);
 	
-	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 659);
+	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 660);
 	
 	var _SakeCard2 = _interopRequireDefault(_SakeCard);
 	
@@ -70540,7 +70539,7 @@
 	exports.default = List;
 
 /***/ },
-/* 657 */
+/* 658 */
 /*!*******************************************!*\
   !*** ./public/stylesheets/scss/list.scss ***!
   \*******************************************/
@@ -70549,7 +70548,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./list.scss */ 658);
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./list.scss */ 659);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 266)(content, {});
@@ -70569,7 +70568,7 @@
 	}
 
 /***/ },
-/* 658 */
+/* 659 */
 /*!**************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/list.scss ***!
   \**************************************************************************************************************/
@@ -70588,7 +70587,7 @@
 	};
 
 /***/ },
-/* 659 */
+/* 660 */
 /*!************************************!*\
   !*** ./src/components/SakeCard.js ***!
   \************************************/
@@ -70680,7 +70679,7 @@
 	exports.default = SakeCard;
 
 /***/ },
-/* 660 */
+/* 661 */
 /*!**********************************!*\
   !*** ./src/components/Search.js ***!
   \**********************************/
@@ -70712,7 +70711,7 @@
 	
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 	
-	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 653);
+	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 654);
 	
 	var _Prefectures2 = _interopRequireDefault(_Prefectures);
 	
@@ -70840,14 +70839,14 @@
 	exports.default = Search;
 
 /***/ },
-/* 661 */
+/* 662 */
 /*!**************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/injectTapEventPlugin.js ***!
   \**************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 662);
-	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 663);
+	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 663);
+	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 664);
 	
 	var alreadyInjected = false;
 	
@@ -70869,14 +70868,14 @@
 	  alreadyInjected = true;
 	
 	  __webpack_require__(/*! react/lib/EventPluginHub */ 14).injection.injectEventPluginsByName({
-	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 664)(shouldRejectClick)
+	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 665)(shouldRejectClick)
 	  });
 	};
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 662 */
+/* 663 */
 /*!**********************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/invariant.js ***!
   \**********************************************************/
@@ -70934,7 +70933,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 663 */
+/* 664 */
 /*!***********************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/defaultClickRejectionStrategy.js ***!
   \***********************************************************************/
@@ -70948,7 +70947,7 @@
 
 
 /***/ },
-/* 664 */
+/* 665 */
 /*!********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TapEventPlugin.js ***!
   \********************************************************/
@@ -70979,10 +70978,10 @@
 	var EventPluginUtils = __webpack_require__(/*! react/lib/EventPluginUtils */ 16);
 	var EventPropagators = __webpack_require__(/*! react/lib/EventPropagators */ 13);
 	var SyntheticUIEvent = __webpack_require__(/*! react/lib/SyntheticUIEvent */ 53);
-	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 665);
+	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 666);
 	var ViewportMetrics = __webpack_require__(/*! react/lib/ViewportMetrics */ 54);
 	
-	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 666);
+	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 667);
 	var topLevelTypes = EventConstants.topLevelTypes;
 	
 	var isStartish = EventPluginUtils.isStartish;
@@ -71127,7 +71126,7 @@
 
 
 /***/ },
-/* 665 */
+/* 666 */
 /*!*********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TouchEventUtils.js ***!
   \*********************************************************/
@@ -71178,7 +71177,7 @@
 
 
 /***/ },
-/* 666 */
+/* 667 */
 /*!******************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/keyOf.js ***!
   \******************************************************/
@@ -71221,7 +71220,7 @@
 	module.exports = keyOf;
 
 /***/ },
-/* 667 */
+/* 668 */
 /*!************************************!*\
   !*** ./~/redux-thunk/lib/index.js ***!
   \************************************/
@@ -71250,41 +71249,6 @@
 	thunk.withExtraArgument = createThunkMiddleware;
 	
 	exports['default'] = thunk;
-
-/***/ },
-/* 668 */
-/*!*******************************!*\
-  !*** ./src/actions/review.js ***!
-  \*******************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.getReviews = exports.setReviews = undefined;
-	
-	var _axios = __webpack_require__(/*! axios */ 619);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var setReviews = exports.setReviews = function setReviews(reviews) {
-	  return {
-	    type: 'SETREVIEWS',
-	    reviews: reviews
-	  };
-	};
-	
-	var getReviews = exports.getReviews = function getReviews(dispatch, sakeId) {
-	  _axios2.default.get('/api/reviews?sakeId=' + sakeId).then(function (res) {
-	    dispatch(setReviews(res.data));
-	  }).catch(function (error) {
-	    console.log(error);
-	  });
-	};
 
 /***/ }
 /******/ ]);

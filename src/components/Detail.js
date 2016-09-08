@@ -14,7 +14,6 @@ class Detail extends React.Component{
     this.state = {
       tab: this.props.initialTab,
     }
-    console.log('tab', this.props.initialTab)
   }
 
   changeTab( tab ) {
@@ -96,7 +95,7 @@ class Detail extends React.Component{
             onClick={ () => { this.changeTab('reviews') } }
             value="reviews"
           >
-          <Reviews reviews={this.props.reviews} />
+          <Reviews reviews={this.props.sake.レビュー} />
           </Tab>
           <Tab
             id="createReview"
@@ -120,7 +119,6 @@ Detail.propTypes = {
   changeTab: PropTypes.func.isRequired,
   initialTab: PropTypes.string.isRequired,
   sake: PropTypes.object.isRequired,
-  reviews: PropTypes.object.isRequired,
 }
 
 export default Detail

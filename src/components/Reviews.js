@@ -4,9 +4,13 @@ import ReviewCard from './ReviewCard'
 
 class Reviews extends React.Component{
   render() {
+    let reviews = this.props.reviews
+    if( !reviews ) {
+      reviews = []
+    }
     return (
       <div>
-        { this.props.reviews.map( review => <ReviewCard review={review} /> ) }
+        { reviews.map( review => <ReviewCard review={ review } />  ) }
       </div>
     )
   }
