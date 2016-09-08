@@ -82,6 +82,19 @@ router.post( '/', ( req, res ) => {
   } );
 } );
 
+// PUT add review
+router.put( '/:id/add/review', ( req, res ) => {
+  collection( 'sake' ).findAndModify(
+    { _id: new ObjectID( req.params.id ) },
+    [ [ '_id', 1 ] ],
+    { $push: { 'レビュー': req.body } },
+    { upsert: true },
+    function ( err, r ) {
+      res.send( r );
+    }
+  );
+} );
+
 // PUT update data
 router.put( '/:id', ( req, res ) => {
   collection( 'sake' ).findOneAndUpdate( {

@@ -23,7 +23,7 @@ class DetailContainer extends React.Component{
     return (
       <Detail
         changeTab={this.changeTab.bind(this)}
-        initialTab="details"
+        initialTab="detail"
         sake={this.props.sake}
         reviews={this.props.reviews} />
     )

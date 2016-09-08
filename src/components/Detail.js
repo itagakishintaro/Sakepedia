@@ -14,6 +14,7 @@ class Detail extends React.Component{
     this.state = {
       tab: this.props.initialTab,
     }
+    console.log('tab', this.props.initialTab)
   }
 
   changeTab( tab ) {
@@ -106,6 +107,7 @@ class Detail extends React.Component{
           >
             <NewReview
               changeTab={this.changeTab.bind(this)}
+              sake={this.props.sake}
              />
           </Tab>
         </Tabs>

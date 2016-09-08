@@ -35,24 +35,23 @@ class NewReview extends React.Component {
       smoothScroll( document.getElementById('newReview'), 1000 )
       return
     }
-    axios.post( '/api/reviews' , {
-      sakeId: this.props.sakeId,
-      date: new Date(),
-      evaluation: this.state.evaluation,
-      comment: document.getElementById('comment').value,
-      flavor: this.state.flavor,
-      taste: this.state.taste,
-      maturation: this.state.maturation,
-      temperature: {
-        '5': document.getElementById('temp5').checked,
-        '10': document.getElementById('temp10').checked,
-        '15': document.getElementById('temp15').checked,
-        '40': document.getElementById('temp40').checked,
-        '50': document.getElementById('temp50').checked,
+    axios.put( `/api/sakes/${ this.props.sake._id }/add/review`, {
+      '日時': new Date(),
+      '評価': this.state.evaluation,
+      'コメント': document.getElementById('comment').value,
+      '香り': this.state.flavor,
+      '味': this.state.taste,
+      '熟成': this.state.maturation,
+      '温度': {
+        '一番冷たい(5度位)': document.getElementById('temp5').checked,
+        'やや冷たい(10度位)': document.getElementById('temp10').checked,
+        '常温(15度位)': document.getElementById('temp15').checked,
+        'ぬる燗(40度位)': document.getElementById('temp40').checked,
+        '熱燗(50度位)': document.getElementById('temp50').checked,
       },
-      userId: 'user id',
-      userName: 'user name',
-      matched: document.getElementById('matched').value,
+      '相性のよい料理': document.getElementById('matched').value,
+      'ユーザーID': 'user id',
+      'ユーザー名': 'user name',
     })
     .then( () => {
       this.props.changeTab('reviews')
@@ -197,7 +196,7 @@ NewReview.propTypes = {
   dispatch: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired,
   list: PropTypes.array.isRequired,
-  sakeId: PropTypes.string.isRequired,
+  sake: PropTypes.object.isRequired,
 }
 
 export default NewReview
