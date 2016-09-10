@@ -13,8 +13,14 @@ class Reviews extends React.Component{
       if (a.日時 < b.日時) { return 1 }
       return 0
     })
+    const styles = {
+      reviews: {
+        display: 'flex',
+        flexWrap: 'wrap',
+      },
+    }
     return (
-      <div>
+      <div style={ styles.reviews }>
         { reviews.map( review => <ReviewCard review={ review } />  ) }
       </div>
     )

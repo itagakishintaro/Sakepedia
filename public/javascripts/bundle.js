@@ -66531,7 +66531,7 @@
 	
 	var _sake = __webpack_require__(/*! ../actions/sake */ 618);
 	
-	var _Detail = __webpack_require__(/*! ../components/Detail */ 639);
+	var _Detail = __webpack_require__(/*! ../components/Detail */ 638);
 	
 	var _Detail2 = _interopRequireDefault(_Detail);
 	
@@ -67979,8 +67979,7 @@
 
 
 /***/ },
-/* 638 */,
-/* 639 */
+/* 638 */
 /*!**********************************!*\
   !*** ./src/components/Detail.js ***!
   \**********************************/
@@ -68004,15 +68003,15 @@
 	
 	var _FontIcon2 = _interopRequireDefault(_FontIcon);
 	
-	var _detail = __webpack_require__(/*! ../../public/stylesheets/scss/detail.scss */ 640);
+	var _detail = __webpack_require__(/*! ../../public/stylesheets/scss/detail.scss */ 639);
 	
 	var _detail2 = _interopRequireDefault(_detail);
 	
-	var _NewReview = __webpack_require__(/*! ./NewReview */ 642);
+	var _NewReview = __webpack_require__(/*! ./NewReview */ 641);
 	
 	var _NewReview2 = _interopRequireDefault(_NewReview);
 	
-	var _Reviews = __webpack_require__(/*! ./Reviews */ 645);
+	var _Reviews = __webpack_require__(/*! ./Reviews */ 644);
 	
 	var _Reviews2 = _interopRequireDefault(_Reviews);
 	
@@ -68202,7 +68201,7 @@
 	exports.default = Detail;
 
 /***/ },
-/* 640 */
+/* 639 */
 /*!*********************************************!*\
   !*** ./public/stylesheets/scss/detail.scss ***!
   \*********************************************/
@@ -68211,7 +68210,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./detail.scss */ 641);
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./detail.scss */ 640);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 266)(content, {});
@@ -68231,7 +68230,7 @@
 	}
 
 /***/ },
-/* 641 */
+/* 640 */
 /*!****************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/detail.scss ***!
   \****************************************************************************************************************/
@@ -68255,7 +68254,7 @@
 	};
 
 /***/ },
-/* 642 */
+/* 641 */
 /*!*************************************!*\
   !*** ./src/components/NewReview.js ***!
   \*************************************/
@@ -68303,11 +68302,11 @@
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
-	var _NewReviewValidation = __webpack_require__(/*! ./NewReviewValidation */ 643);
+	var _NewReviewValidation = __webpack_require__(/*! ./NewReviewValidation */ 642);
 	
 	var _NewReviewValidation2 = _interopRequireDefault(_NewReviewValidation);
 	
-	var _SmoothScroll = __webpack_require__(/*! ../util/SmoothScroll */ 644);
+	var _SmoothScroll = __webpack_require__(/*! ../util/SmoothScroll */ 643);
 	
 	var _SmoothScroll2 = _interopRequireDefault(_SmoothScroll);
 	
@@ -68548,7 +68547,7 @@
 	exports.default = NewReview;
 
 /***/ },
-/* 643 */
+/* 642 */
 /*!***********************************************!*\
   !*** ./src/components/NewReviewValidation.js ***!
   \***********************************************/
@@ -68617,7 +68616,7 @@
 	exports.default = validate;
 
 /***/ },
-/* 644 */
+/* 643 */
 /*!**********************************!*\
   !*** ./src/util/SmoothScroll.js ***!
   \**********************************/
@@ -68650,7 +68649,7 @@
 	exports.default = smoothScroll;
 
 /***/ },
-/* 645 */
+/* 644 */
 /*!***********************************!*\
   !*** ./src/components/Reviews.js ***!
   \***********************************/
@@ -68668,7 +68667,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _ReviewCard = __webpack_require__(/*! ./ReviewCard */ 646);
+	var _ReviewCard = __webpack_require__(/*! ./ReviewCard */ 645);
 	
 	var _ReviewCard2 = _interopRequireDefault(_ReviewCard);
 	
@@ -68707,9 +68706,15 @@
 	        }
 	        return 0;
 	      });
+	      var styles = {
+	        reviews: {
+	          display: 'flex',
+	          flexWrap: 'wrap'
+	        }
+	      };
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { style: styles.reviews },
 	        reviews.map(function (review) {
 	          return _react2.default.createElement(_ReviewCard2.default, { review: review });
 	        })
@@ -68727,7 +68732,7 @@
 	exports.default = Reviews;
 
 /***/ },
-/* 646 */
+/* 645 */
 /*!**************************************!*\
   !*** ./src/components/ReviewCard.js ***!
   \**************************************/
@@ -68755,15 +68760,13 @@
 	
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 	
-	var _Chip = __webpack_require__(/*! material-ui/Chip */ 647);
-	
-	var _Chip2 = _interopRequireDefault(_Chip);
-	
-	var _colors = __webpack_require__(/*! material-ui/styles/colors */ 520);
-	
-	var _Stars = __webpack_require__(/*! ./Stars */ 650);
+	var _Stars = __webpack_require__(/*! ./Stars */ 646);
 	
 	var _Stars2 = _interopRequireDefault(_Stars);
+	
+	var _TypeMark = __webpack_require__(/*! ./TypeMark */ 647);
+	
+	var _TypeMark2 = _interopRequireDefault(_TypeMark);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -68790,54 +68793,13 @@
 	  }
 	
 	  _createClass(ReviewCard, [{
-	    key: 'judgeType',
-	    value: function judgeType(review) {
-	      if (review.香り <= 2 & review.味 <= 2) {
-	        return _react2.default.createElement(
-	          _Chip2.default,
-	          { backgroundColor: _colors.blue200 },
-	          '爽酒'
-	        );
-	      }
-	      if (review.香り <= 2 & 2 <= review.味) {
-	        return _react2.default.createElement(
-	          _Chip2.default,
-	          { backgroundColor: _colors.orange200 },
-	          '醇酒'
-	        );
-	      }
-	      if (2 <= review.香り & review.味 <= 2) {
-	        return _react2.default.createElement(
-	          _Chip2.default,
-	          { backgroundColor: _colors.green200 },
-	          '薫酒'
-	        );
-	      }
-	      if (2 <= review.香り & 2 <= review.味 & 2 <= review.熟成) {
-	        return _react2.default.createElement(
-	          _Chip2.default,
-	          { backgroundColor: _colors.brown200 },
-	          '熟酒'
-	        );
-	      }
-	      if (2 <= review.香り & 2 <= review.味 & review.熟成 <= 2) {
-	        return _react2.default.createElement(
-	          _Chip2.default,
-	          { backgroundColor: _colors.purple200 },
-	          '薫醇酒'
-	        );
-	      }
-	    }
-	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var styles = {
-	        badge: {
-	          textAlign: 'right',
-	          width: '2em'
-	        },
 	        card: {
-	          'marginBottom': '1em'
+	          marginBottom: '1em',
+	          maxWidth: '400px',
+	          width: '100%'
 	        },
 	        comment: {
 	          marginBottom: '.5em'
@@ -68858,7 +68820,7 @@
 	          flexWrap: 'wrap'
 	        },
 	        typeMark: {
-	          margin: '1em 2em 0 0'
+	          margin: '1em 0 0 0'
 	        }
 	      };
 	      return _react2.default.createElement(
@@ -68884,17 +68846,12 @@
 	          _react2.default.createElement(
 	            'div',
 	            { style: styles.type },
-	            _react2.default.createElement(
-	              'div',
-	              { style: styles.typeMark },
-	              this.judgeType(this.props.review)
-	            ),
+	            _react2.default.createElement(_TypeMark2.default, { review: this.props.review }),
 	            _react2.default.createElement(
 	              _Badge2.default,
 	              {
 	                badgeContent: this.props.review.香り,
-	                secondary: true,
-	                style: styles.badge
+	                secondary: true
 	              },
 	              '香り'
 	            ),
@@ -68902,8 +68859,7 @@
 	              _Badge2.default,
 	              {
 	                badgeContent: this.props.review.味,
-	                secondary: true,
-	                style: styles.badge
+	                secondary: true
 	              },
 	              '味'
 	            ),
@@ -68911,8 +68867,7 @@
 	              _Badge2.default,
 	              {
 	                badgeContent: this.props.review.熟成,
-	                secondary: true,
-	                style: styles.badge
+	                secondary: true
 	              },
 	              '熟成'
 	            )
@@ -68976,7 +68931,204 @@
 	exports.default = ReviewCard;
 
 /***/ },
+/* 646 */
+/*!*********************************!*\
+  !*** ./src/components/Stars.js ***!
+  \*********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 166);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 293);
+	
+	var _FontIcon2 = _interopRequireDefault(_FontIcon);
+	
+	var _colors = __webpack_require__(/*! material-ui/styles/colors */ 520);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	
+	var Stars = function (_React$Component) {
+	  _inherits(Stars, _React$Component);
+	
+	  function Stars() {
+	    _classCallCheck(this, Stars);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Stars).apply(this, arguments));
+	  }
+	
+	  _createClass(Stars, [{
+	    key: 'render',
+	    value: function render() {
+	      var MAX = 5;
+	      var stars = [];
+	      for (var i = 0; i < Math.round(this.props.evaluation); i++) {
+	        stars.push(_react2.default.createElement(
+	          _FontIcon2.default,
+	          { className: 'material-icons', color: _colors.yellow500 },
+	          'star'
+	        ));
+	      }
+	      for (var _i = 0; _i < Math.round(MAX - this.props.evaluation); _i++) {
+	        stars.push(_react2.default.createElement(
+	          _FontIcon2.default,
+	          { className: 'material-icons', color: _colors.grey100 },
+	          'star'
+	        ));
+	      }
+	      return _react2.default.createElement(
+	        'span',
+	        null,
+	        stars
+	      );
+	    }
+	  }]);
+	
+	  return Stars;
+	}(_react2.default.Component);
+	
+	Stars.propTypes = {
+	  evaluation: _react.PropTypes.number.isRequired
+	};
+	
+	exports.default = Stars;
+
+/***/ },
 /* 647 */
+/*!************************************!*\
+  !*** ./src/components/TypeMark.js ***!
+  \************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 166);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Chip = __webpack_require__(/*! material-ui/Chip */ 648);
+	
+	var _Chip2 = _interopRequireDefault(_Chip);
+	
+	var _colors = __webpack_require__(/*! material-ui/styles/colors */ 520);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	
+	var TypeMark = function (_React$Component) {
+	  _inherits(TypeMark, _React$Component);
+	
+	  function TypeMark() {
+	    _classCallCheck(this, TypeMark);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(TypeMark).apply(this, arguments));
+	  }
+	
+	  _createClass(TypeMark, [{
+	    key: 'judgeType',
+	    value: function judgeType(review) {
+	      if (!(review.香り && review.味 && review.熟成)) {
+	        return '';
+	      }
+	      if (review.香り <= 2 & review.味 <= 2) {
+	        return _react2.default.createElement(
+	          _Chip2.default,
+	          { backgroundColor: _colors.blue200 },
+	          '爽酒'
+	        );
+	      }
+	      if (review.香り <= 2 & 2 <= review.味) {
+	        return _react2.default.createElement(
+	          _Chip2.default,
+	          { backgroundColor: _colors.orange200 },
+	          '醇酒'
+	        );
+	      }
+	      if (2 <= review.香り & review.味 <= 2) {
+	        return _react2.default.createElement(
+	          _Chip2.default,
+	          { backgroundColor: _colors.green200 },
+	          '薫酒'
+	        );
+	      }
+	      if (2 <= review.香り & 2 <= review.味 & 2 <= review.熟成) {
+	        return _react2.default.createElement(
+	          _Chip2.default,
+	          { backgroundColor: _colors.brown200 },
+	          '熟酒'
+	        );
+	      }
+	      if (2 <= review.香り & 2 <= review.味 & review.熟成 <= 2) {
+	        return _react2.default.createElement(
+	          _Chip2.default,
+	          { backgroundColor: _colors.purple200 },
+	          '薫醇酒'
+	        );
+	      }
+	    }
+	  }, {
+	    key: 'type',
+	    value: function type() {
+	      return '爽酒';
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var styles = {
+	        typeMark: {
+	          margin: '1em 0 0 0'
+	        }
+	      };
+	      return _react2.default.createElement(
+	        'div',
+	        { style: Object.assign(styles.typeMark, this.props.style) },
+	        this.judgeType(this.props.review)
+	      );
+	    }
+	  }]);
+	
+	  return TypeMark;
+	}(_react2.default.Component);
+	
+	TypeMark.propTypes = {
+	  review: _react.PropTypes.number.isRequired,
+	  style: _react.PropTypes.object
+	};
+	
+	exports.default = TypeMark;
+
+/***/ },
+/* 648 */
 /*!*************************************!*\
   !*** ./~/material-ui/Chip/index.js ***!
   \*************************************/
@@ -68989,7 +69141,7 @@
 	});
 	exports.default = undefined;
 	
-	var _Chip = __webpack_require__(/*! ./Chip */ 648);
+	var _Chip = __webpack_require__(/*! ./Chip */ 649);
 	
 	var _Chip2 = _interopRequireDefault(_Chip);
 	
@@ -68998,7 +69150,7 @@
 	exports.default = _Chip2.default;
 
 /***/ },
-/* 648 */
+/* 649 */
 /*!************************************!*\
   !*** ./~/material-ui/Chip/Chip.js ***!
   \************************************/
@@ -69032,7 +69184,7 @@
 	
 	var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
 	
-	var _cancel = __webpack_require__(/*! ../svg-icons/navigation/cancel */ 649);
+	var _cancel = __webpack_require__(/*! ../svg-icons/navigation/cancel */ 650);
 	
 	var _cancel2 = _interopRequireDefault(_cancel);
 	
@@ -69326,7 +69478,7 @@
 	exports.default = Chip;
 
 /***/ },
-/* 649 */
+/* 650 */
 /*!******************************************************!*\
   !*** ./~/material-ui/svg-icons/navigation/cancel.js ***!
   \******************************************************/
@@ -69364,86 +69516,6 @@
 	NavigationCancel.muiName = 'SvgIcon';
 	
 	exports.default = NavigationCancel;
-
-/***/ },
-/* 650 */
-/*!*********************************!*\
-  !*** ./src/components/Stars.js ***!
-  \*********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 166);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 293);
-	
-	var _FontIcon2 = _interopRequireDefault(_FontIcon);
-	
-	var _colors = __webpack_require__(/*! material-ui/styles/colors */ 520);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// material-ui
-	
-	
-	var Stars = function (_React$Component) {
-	  _inherits(Stars, _React$Component);
-	
-	  function Stars() {
-	    _classCallCheck(this, Stars);
-	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Stars).apply(this, arguments));
-	  }
-	
-	  _createClass(Stars, [{
-	    key: 'render',
-	    value: function render() {
-	      var MAX = 5;
-	      var stars = [];
-	      for (var i = 0; i < this.props.evaluation; i++) {
-	        stars.push(_react2.default.createElement(
-	          _FontIcon2.default,
-	          { className: 'material-icons', color: _colors.yellow500 },
-	          'star'
-	        ));
-	      }
-	      for (var _i = 0; _i < MAX - this.props.evaluation; _i++) {
-	        stars.push(_react2.default.createElement(
-	          _FontIcon2.default,
-	          { className: 'material-icons', color: _colors.grey100 },
-	          'star'
-	        ));
-	      }
-	      return _react2.default.createElement(
-	        'span',
-	        null,
-	        stars
-	      );
-	    }
-	  }]);
-	
-	  return Stars;
-	}(_react2.default.Component);
-	
-	Stars.propTypes = {
-	  evaluation: _react.PropTypes.number.isRequired
-	};
-	
-	exports.default = Stars;
 
 /***/ },
 /* 651 */
@@ -69817,7 +69889,7 @@
 	
 	var _NewSakeValidation2 = _interopRequireDefault(_NewSakeValidation);
 	
-	var _SmoothScroll = __webpack_require__(/*! ../util/SmoothScroll */ 644);
+	var _SmoothScroll = __webpack_require__(/*! ../util/SmoothScroll */ 643);
 	
 	var _SmoothScroll2 = _interopRequireDefault(_SmoothScroll);
 	
@@ -70618,6 +70690,14 @@
 	
 	var _Card = __webpack_require__(/*! material-ui/Card */ 350);
 	
+	var _Stars = __webpack_require__(/*! ./Stars */ 646);
+	
+	var _Stars2 = _interopRequireDefault(_Stars);
+	
+	var _TypeMark = __webpack_require__(/*! ./TypeMark */ 647);
+	
+	var _TypeMark2 = _interopRequireDefault(_TypeMark);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -70626,6 +70706,8 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	// material-ui
+	
+	// components
 	
 	
 	var SakeCard = function (_React$Component) {
@@ -70638,19 +70720,81 @@
 	  }
 	
 	  _createClass(SakeCard, [{
+	    key: 'averageEvaluation',
+	    value: function averageEvaluation(reviews) {
+	      if (!reviews) {
+	        return 0;
+	      }
+	      return reviews.map(function (r) {
+	        return Number(r.評価);
+	      }).reduce(function (p, c) {
+	        return p + c;
+	      }) / reviews.length;
+	    }
+	  }, {
+	    key: 'averageReview',
+	    value: function averageReview(reviews) {
+	      if (!reviews) {
+	        return {};
+	      }
+	      var flavor = reviews.map(function (r) {
+	        return Number(r.香り);
+	      }).reduce(function (p, c) {
+	        return p + c;
+	      }) / reviews.length;
+	      var taste = reviews.map(function (r) {
+	        return Number(r.味);
+	      }).reduce(function (p, c) {
+	        return p + c;
+	      }) / reviews.length;
+	      var maturation = reviews.map(function (r) {
+	        return Number(r.熟成);
+	      }).reduce(function (p, c) {
+	        return p + c;
+	      }) / reviews.length;
+	      return { 香り: flavor, 味: taste, 熟成: maturation };
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var styles = {
 	        card: {
-	          'marginTop': '1em'
+	          marginTop: '1em',
+	          maxWidth: '400px'
+	        },
+	        cardText: {
+	          display: 'flex'
+	        },
+	        description: {
+	          paddingLeft: '1em',
+	          width: '80%'
 	        },
 	        img: {
-	          'height': '100px',
-	          'marginLeft': '1em'
+	          height: '100%',
+	          left: '50%',
+	          position: 'relative',
+	          top: '50%',
+	          transform: 'translate(-50%, -50%)',
+	          width: 'auto'
 	        },
 	        link: {
 	          color: '#000',
 	          textDecoration: 'none'
+	        },
+	        picture: {
+	          height: '100px',
+	          maxWidth: '100px',
+	          overflow: 'hidden',
+	          width: '20%'
+	        },
+	        review: {
+	          display: 'flex',
+	          justifyContent: 'space-between',
+	          padding: '0 0 0 1em'
+	        },
+	        typeMark: {
+	          float: 'right',
+	          marginRight: '1em'
 	        }
 	      };
 	      return _react2.default.createElement(
@@ -70659,19 +70803,29 @@
 	        _react2.default.createElement(
 	          _Card.Card,
 	          { style: styles.card },
+	          _react2.default.createElement(_TypeMark2.default, { review: this.averageReview(this.props.sake.レビュー), style: styles.typeMark }),
 	          _react2.default.createElement(_Card.CardHeader, {
 	            title: this.props.sake.銘柄名 + ' ( ' + this.props.sake.種類 + ' )',
 	            subtitle: this.props.sake.蔵元 + ' ( ' + this.props.sake.都道府県 + ' ) '
 	          }),
 	          _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement('img', { src: this.props.sake.画像URL, style: styles.img })
-	          ),
-	          _react2.default.createElement(
 	            _Card.CardText,
-	            null,
-	            this.props.sake.説明
+	            { style: styles.cardText },
+	            _react2.default.createElement(
+	              'div',
+	              { style: styles.picture },
+	              _react2.default.createElement('img', { src: this.props.sake.画像URL, style: styles.img })
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { style: styles.description },
+	              _react2.default.createElement(_Stars2.default, { evaluation: this.averageEvaluation(this.props.sake.レビュー) }),
+	              _react2.default.createElement(
+	                'div',
+	                null,
+	                this.props.sake.説明
+	              )
+	            )
 	          )
 	        )
 	      );

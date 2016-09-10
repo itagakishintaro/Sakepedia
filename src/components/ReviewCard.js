@@ -3,40 +3,19 @@ import React, { PropTypes } from 'react'
 import Badge from 'material-ui/Badge'
 import {Card, CardHeader, CardText} from 'material-ui/Card'
 import Checkbox from 'material-ui/Checkbox'
-import Chip from 'material-ui/Chip'
-import { blue200, brown200, green200, orange200, purple200 } from 'material-ui/styles/colors'
 // components
 import Stars from './Stars'
+import TypeMark from './TypeMark'
 // lib
 let dateFormat = require('dateformat')
 
 class ReviewCard extends React.Component {
-  judgeType( review ) {
-    if( review.香り <= 2 & review.味 <= 2 ){
-      return <Chip backgroundColor={blue200}>爽酒</Chip>
-    }
-    if( review.香り <= 2 & 2 <= review.味 ){
-      return <Chip backgroundColor={orange200}>醇酒</Chip>
-    }
-    if( 2 <= review.香り & review.味 <= 2 ){
-      return <Chip backgroundColor={green200}>薫酒</Chip>
-    }
-    if( 2 <= review.香り & 2 <= review.味 &  2 <= review.熟成 ){
-      return <Chip backgroundColor={brown200}>熟酒</Chip>
-    }
-    if( 2 <= review.香り & 2 <= review.味 & review.熟成 <= 2 ){
-      return <Chip backgroundColor={purple200}>薫醇酒</Chip>
-    }
-  }
-
   render() {
     const styles = {
-      badge: {
-        textAlign: 'right',
-        width: '2em',
-      },
       card: {
-        'marginBottom': '1em',
+        marginBottom: '1em',
+        maxWidth: '400px',
+        width: '100%',
       },
       comment: {
         marginBottom: '.5em',
@@ -57,7 +36,7 @@ class ReviewCard extends React.Component {
         flexWrap: 'wrap',
       },
       typeMark: {
-        margin: '1em 2em 0 0',
+        margin: '1em 0 0 0',
       },
     }
     return (
@@ -71,21 +50,18 @@ class ReviewCard extends React.Component {
           <div style={ styles.comment }>{ this.props.review.コメント }</div>
 
           <div style={ styles.type }>
-            <div style={styles.typeMark}>{ this.judgeType(this.props.review) }</div>
+            <TypeMark review={ this.props.review } />
             <Badge
               badgeContent={ this.props.review.香り }
               secondary={true}
-              style={ styles.badge }
             >香り</Badge>
             <Badge
               badgeContent={ this.props.review.味 }
               secondary={true}
-              style={ styles.badge }
             >味</Badge>
             <Badge
               badgeContent={ this.props.review.熟成 }
               secondary={true}
-              style={ styles.badge }
             >熟成</Badge>
           </div>
 
