@@ -27,8 +27,8 @@ const capture = ( canvas, video ) => {
   if ( video.videoHeight <= video.videoWidth ) {
     // Landscape
     let cropWidth = video.videoHeight * canvas.width / canvas.height
-    console.log('ceopWidth', cropWidth)
-    context.drawImage( video, ( video.videoWidth - cropWidth ) / 2, 0, ( video.videoWidth + cropWidth ) / 2, video.videoHeight, 0, 0, canvas.width, canvas.height )
+    let diffWidth = video.videoWidth - cropWidth
+    context.drawImage( video, diffWidth / 2, 0, video.videoWidth - diffWidth, video.videoHeight, 0, 0, canvas.width, canvas.height )
   } else {
     // Portrait
     context.drawImage( video, 0, 0, video.videoWidth, video.videoHeight, 0, 0, canvas.width , canvas.height )

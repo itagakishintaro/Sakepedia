@@ -7,6 +7,7 @@ import SelectField from 'material-ui/SelectField'
 import Snackbar from 'material-ui/Snackbar'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
+import { grey400 } from 'material-ui/styles/colors'
 // lib
 import axios from 'axios'
 // components
@@ -102,9 +103,13 @@ class NewSake extends React.Component {
       button: {
         margin: '1em 0',
       },
+      picture: {
+        fontSize: 'small',
+        color: grey400,
+      },
       snap: {
-        backgroundColor: 'lightgray',
-      }
+        backgroundColor: grey400,
+      },
     }
     return (
       <div id="newSake">
@@ -257,7 +262,7 @@ class NewSake extends React.Component {
             fullWidth={true}
           />
           <div id="picture">
-            <div style={{ fontSize: 'small', color: 'lightgray' }}>写真</div>
+            <div style={ styles.picture }>写真</div>
             <div>
               <canvas id="canvas" width="120" height="160" hidden />
               <video width="120" height="160" id="video" />
