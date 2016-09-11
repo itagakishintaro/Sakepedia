@@ -12,7 +12,7 @@ import axios from 'axios'
 // validation
 import validate from './NewReviewValidation'
 // util
-import smoothScroll from '../util/SmoothScroll'
+import smoothScroll from '../util/smoothScroll'
 
 class NewReview extends React.Component {
   constructor(props) {

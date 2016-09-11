@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 // material-ui
 import AutoComplete from 'material-ui/AutoComplete'
+import FontIcon from 'material-ui/FontIcon'
 import MenuItem from 'material-ui/MenuItem'
 import SelectField from 'material-ui/SelectField'
 import Snackbar from 'material-ui/Snackbar'
@@ -13,7 +14,8 @@ import Prefectures from '../components/Prefectures'
 // validation
 import validate from './NewSakeValidation'
 // util
-import smoothScroll from '../util/SmoothScroll'
+import { start, capture } from '../util/camera'
+import smoothScroll from '../util/smoothScroll'
 
 class NewSake extends React.Component {
   constructor(props) {
@@ -39,6 +41,13 @@ class NewSake extends React.Component {
     }
   }
 
+  componentDidMount() {
+    start( document.getElementById( 'video' ) )
+  }
+  startCamera () {
+    document.getElementById('snap').src = capture( document.getElementById('canvas'), document.getElementById('video') )
+  }
+
   send(){
     let validation = validate( this.state )
     this.setState( { errorText: validation.errorText } )
@@ -47,22 +56,23 @@ class NewSake extends React.Component {
       return
     }
     axios.post( '/api/sakes' , {
-      brand: document.getElementById('brand').value,
-      category: this.state.category,
-      process: this.state.process,
-      subname: document.getElementById('subname').value,
-      url: document.getElementById('url').value,
-      brewery: document.getElementById('brewery').value,
-      prefecture: document.getElementById('prefecture').value,
-      riceOfKouji: document.getElementById('riceOfKouji').value,
-      riceOfKake: document.getElementById('riceOfKake').value,
-      koubo: document.getElementById('koubo').value,
-      polishRate: this.state.polishRate,
-      alcoholRate: this.state.alcoholRate,
-      sakeRate: this.state.sakeRate,
-      acidRate: this.state.acidRate,
-      aminoRate: this.state.aminoRate,
-      picture: '',
+      '銘柄名': document.getElementById('brand').value,
+      '種類': this.state.category,
+      '酒母': this.state.process,
+      'その他': document.getElementById('subname').value,
+      'メーカーURL': document.getElementById('url').value,
+      '蔵元': document.getElementById('brewery').value,
+      '都道府県': this.state.prefecture,
+      '麹米': document.getElementById('riceOfKouji').value,
+      '掛米': document.getElementById('riceOfKake').value,
+      '酵母': document.getElementById('koubo').value,
+      '精米歩合': this.state.polishRate,
+      'アルコール度数': this.state.alcoholRate,
+      '日本酒度': this.state.sakeRate,
+      '酸度': this.state.acidRate,
+      'アミノ酸度': this.state.aminoRate,
+      '説明': document.getElementById('description').value,
+      '画像URL': document.getElementById('snap').src,
       snackbarOpen: false,
     })
     .then( () => {
@@ -75,8 +85,8 @@ class NewSake extends React.Component {
     this.openSnackbar()
   }
 
-  setPrefecture(pref) {
-    this.setState( { prefecture: pref } )
+  setPrefecture(prefecture) {
+    this.setState( { prefecture } )
   }
 
   openSnackbar() {
@@ -92,6 +102,9 @@ class NewSake extends React.Component {
       button: {
         margin: '1em 0',
       },
+      snap: {
+        backgroundColor: 'lightgray',
+      }
     }
     return (
       <div id="newSake">
@@ -118,15 +131,15 @@ class NewSake extends React.Component {
             fullWidth={true}
             value={this.state.category}
             onChange={ (event, index, value) => this.setState( { category: value } ) } >
-            <MenuItem value={1} primaryText="純米大吟醸" />
-            <MenuItem value={2} primaryText="大吟醸" />
-            <MenuItem value={3} primaryText="純米吟醸" />
-            <MenuItem value={4} primaryText="吟醸" />
-            <MenuItem value={5} primaryText="特別純米" />
-            <MenuItem value={6} primaryText="特別本醸造" />
-            <MenuItem value={7} primaryText="純米" />
-            <MenuItem value={8} primaryText="本醸造" />
-            <MenuItem value={9} primaryText="普通" />
+            <MenuItem value="純米大吟醸" primaryText="純米大吟醸" />
+            <MenuItem value="大吟醸" primaryText="大吟醸" />
+            <MenuItem value="純米吟醸" primaryText="純米吟醸" />
+            <MenuItem value="吟醸" primaryText="吟醸" />
+            <MenuItem value="特別純米" primaryText="特別純米" />
+            <MenuItem value="特別本醸造" primaryText="特別本醸造" />
+            <MenuItem value="純米" primaryText="純米" />
+            <MenuItem value="本醸造" primaryText="本醸造" />
+            <MenuItem value="普通" primaryText="普通" />
           </SelectField>
           <SelectField
             id="process"
@@ -136,9 +149,9 @@ class NewSake extends React.Component {
             fullWidth={true}
             value={this.state.process}
             onChange={ (event, index, value) => this.setState( { process: value } ) } >
-            <MenuItem value={1} primaryText="速醸酛" />
-            <MenuItem value={2} primaryText="山廃酛" />
-            <MenuItem value={3} primaryText="生酛" />
+            <MenuItem value="速醸酛"  primaryText="速醸酛" />
+            <MenuItem value="山廃酛" primaryText="山廃酛" />
+            <MenuItem value="生酛" primaryText="生酛" />
           </SelectField>
           <TextField
             id="subname"
@@ -237,7 +250,21 @@ class NewSake extends React.Component {
             step="0.1"
             type="number"
           />
-          <div id="picture">画像（準備中）</div>
+          <TextField
+            id="description"
+            floatingLabelFixed={true}
+            floatingLabelText="説明"
+            fullWidth={true}
+          />
+          <div id="picture">
+            <div style={{ fontSize: 'small', color: 'lightgray' }}>写真</div>
+            <div>
+              <canvas id="canvas" width="120" height="160" hidden />
+              <video width="120" height="160" id="video" />
+              <img id="snap" style={ styles.snap }/>
+            </div>
+            <RaisedButton label="" onClick={ this.startCamera } icon={ <FontIcon className="material-icons">photo_camera</FontIcon> } />
+          </div>
 
           <RaisedButton label="登録" primary={true} style={styles.button} onClick={this.send.bind(this)} />
           <div id="error" className="error"></div>

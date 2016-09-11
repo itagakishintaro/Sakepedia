@@ -69,11 +69,11 @@
 	
 	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 	
-	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 662);
+	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 663);
 	
 	var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
 	
-	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 668);
+	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 669);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
@@ -29058,7 +29058,7 @@
 	
 	var _NewSakeContainer2 = _interopRequireDefault(_NewSakeContainer);
 	
-	var _SearchContainer = __webpack_require__(/*! ./containers/SearchContainer */ 656);
+	var _SearchContainer = __webpack_require__(/*! ./containers/SearchContainer */ 657);
 	
 	var _SearchContainer2 = _interopRequireDefault(_SearchContainer);
 	
@@ -68306,9 +68306,9 @@
 	
 	var _NewReviewValidation2 = _interopRequireDefault(_NewReviewValidation);
 	
-	var _SmoothScroll = __webpack_require__(/*! ../util/SmoothScroll */ 643);
+	var _smoothScroll = __webpack_require__(/*! ../util/smoothScroll */ 643);
 	
-	var _SmoothScroll2 = _interopRequireDefault(_SmoothScroll);
+	var _smoothScroll2 = _interopRequireDefault(_smoothScroll);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -68354,7 +68354,7 @@
 	      var validation = (0, _NewReviewValidation2.default)(this.state);
 	      this.setState({ errorText: validation.errorText });
 	      if (validation.error) {
-	        (0, _SmoothScroll2.default)(document.getElementById('newReview'), 1000);
+	        (0, _smoothScroll2.default)(document.getElementById('newReview'), 1000);
 	        return;
 	      }
 	      _axios2.default.put('/api/sakes/' + this.props.sake._id + '/add/review', {
@@ -68379,7 +68379,7 @@
 	        _this2.props.changeTab('reviews');
 	      }).catch(function (error) {
 	        document.getElementById('error').textContent = JSON.stringify(error);
-	        (0, _SmoothScroll2.default)(document.getElementById('error'), 100);
+	        (0, _smoothScroll2.default)(document.getElementById('error'), 100);
 	      });
 	      this.openSnackbar();
 	    }
@@ -68618,7 +68618,7 @@
 /***/ },
 /* 643 */
 /*!**********************************!*\
-  !*** ./src/util/SmoothScroll.js ***!
+  !*** ./src/util/smoothScroll.js ***!
   \**********************************/
 /***/ function(module, exports) {
 
@@ -69857,6 +69857,10 @@
 	
 	var _AutoComplete2 = _interopRequireDefault(_AutoComplete);
 	
+	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 293);
+	
+	var _FontIcon2 = _interopRequireDefault(_FontIcon);
+	
 	var _MenuItem = __webpack_require__(/*! material-ui/MenuItem */ 327);
 	
 	var _MenuItem2 = _interopRequireDefault(_MenuItem);
@@ -69889,9 +69893,11 @@
 	
 	var _NewSakeValidation2 = _interopRequireDefault(_NewSakeValidation);
 	
-	var _SmoothScroll = __webpack_require__(/*! ../util/SmoothScroll */ 643);
+	var _camera = __webpack_require__(/*! ../util/camera */ 671);
 	
-	var _SmoothScroll2 = _interopRequireDefault(_SmoothScroll);
+	var _smoothScroll = __webpack_require__(/*! ../util/smoothScroll */ 643);
+	
+	var _smoothScroll2 = _interopRequireDefault(_smoothScroll);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -69942,44 +69948,55 @@
 	  }
 	
 	  _createClass(NewSake, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      (0, _camera.start)(document.getElementById('video'));
+	    }
+	  }, {
+	    key: 'startCamera',
+	    value: function startCamera() {
+	      document.getElementById('snap').src = (0, _camera.capture)(document.getElementById('canvas'), document.getElementById('video'));
+	    }
+	  }, {
 	    key: 'send',
 	    value: function send() {
 	      var validation = (0, _NewSakeValidation2.default)(this.state);
 	      this.setState({ errorText: validation.errorText });
 	      if (validation.error) {
-	        (0, _SmoothScroll2.default)(document.getElementById('newSake'), 1000);
+	        (0, _smoothScroll2.default)(document.getElementById('newSake'), 1000);
 	        return;
 	      }
 	      _axios2.default.post('/api/sakes', {
-	        brand: document.getElementById('brand').value,
-	        category: this.state.category,
-	        process: this.state.process,
-	        subname: document.getElementById('subname').value,
-	        url: document.getElementById('url').value,
-	        brewery: document.getElementById('brewery').value,
-	        prefecture: document.getElementById('prefecture').value,
-	        riceOfKouji: document.getElementById('riceOfKouji').value,
-	        riceOfKake: document.getElementById('riceOfKake').value,
-	        koubo: document.getElementById('koubo').value,
-	        polishRate: this.state.polishRate,
-	        alcoholRate: this.state.alcoholRate,
-	        sakeRate: this.state.sakeRate,
-	        acidRate: this.state.acidRate,
-	        aminoRate: this.state.aminoRate,
-	        picture: '',
+	        '銘柄名': document.getElementById('brand').value,
+	        '種類': this.state.category,
+	        '酒母': this.state.process,
+	        'その他': document.getElementById('subname').value,
+	        'メーカーURL': document.getElementById('url').value,
+	        '蔵元': document.getElementById('brewery').value,
+	        '都道府県': this.state.prefecture,
+	        '麹米': document.getElementById('riceOfKouji').value,
+	        '掛米': document.getElementById('riceOfKake').value,
+	        '酵母': document.getElementById('koubo').value,
+	        '精米歩合': this.state.polishRate,
+	        'アルコール度数': this.state.alcoholRate,
+	        '日本酒度': this.state.sakeRate,
+	        '酸度': this.state.acidRate,
+	        'アミノ酸度': this.state.aminoRate,
+	        '説明': document.getElementById('description').value,
+	        '画像URL': document.getElementById('snap').src,
 	        snackbarOpen: false
 	      }).then(function () {
 	        window.location.href = '/';
 	      }).catch(function (error) {
 	        document.getElementById('error').textContent = JSON.stringify(error);
-	        (0, _SmoothScroll2.default)(document.getElementById('error'), 100);
+	        (0, _smoothScroll2.default)(document.getElementById('error'), 100);
 	      });
 	      this.openSnackbar();
 	    }
 	  }, {
 	    key: 'setPrefecture',
-	    value: function setPrefecture(pref) {
-	      this.setState({ prefecture: pref });
+	    value: function setPrefecture(prefecture) {
+	      this.setState({ prefecture: prefecture });
 	    }
 	  }, {
 	    key: 'openSnackbar',
@@ -69999,6 +70016,9 @@
 	      var styles = {
 	        button: {
 	          margin: '1em 0'
+	        },
+	        snap: {
+	          backgroundColor: 'lightgray'
 	        }
 	      };
 	      return _react2.default.createElement(
@@ -70031,15 +70051,15 @@
 	            onChange: function onChange(event, index, value) {
 	              return _this2.setState({ category: value });
 	            } },
-	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '純米大吟醸' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: '大吟醸' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: '純米吟醸' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: '吟醸' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 5, primaryText: '特別純米' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 6, primaryText: '特別本醸造' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 7, primaryText: '純米' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 8, primaryText: '本醸造' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 9, primaryText: '普通' })
+	          _react2.default.createElement(_MenuItem2.default, { value: '純米大吟醸', primaryText: '純米大吟醸' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '大吟醸', primaryText: '大吟醸' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '純米吟醸', primaryText: '純米吟醸' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '吟醸', primaryText: '吟醸' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '特別純米', primaryText: '特別純米' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '特別本醸造', primaryText: '特別本醸造' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '純米', primaryText: '純米' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '本醸造', primaryText: '本醸造' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '普通', primaryText: '普通' })
 	        ),
 	        _react2.default.createElement(
 	          _SelectField2.default,
@@ -70053,9 +70073,9 @@
 	            onChange: function onChange(event, index, value) {
 	              return _this2.setState({ process: value });
 	            } },
-	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '速醸酛' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: '山廃酛' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: '生酛' })
+	          _react2.default.createElement(_MenuItem2.default, { value: '速醸酛', primaryText: '速醸酛' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '山廃酛', primaryText: '山廃酛' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '生酛', primaryText: '生酛' })
 	        ),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'subname',
@@ -70151,10 +70171,32 @@
 	          step: '0.1',
 	          type: 'number'
 	        }),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'description',
+	          floatingLabelFixed: true,
+	          floatingLabelText: '説明',
+	          fullWidth: true
+	        }),
 	        _react2.default.createElement(
 	          'div',
 	          { id: 'picture' },
-	          '画像（準備中）'
+	          _react2.default.createElement(
+	            'div',
+	            { style: { fontSize: 'small', color: 'lightgray' } },
+	            '写真'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement('canvas', { id: 'canvas', width: '120', height: '160', hidden: true }),
+	            _react2.default.createElement('video', { width: '120', height: '160', id: 'video' }),
+	            _react2.default.createElement('img', { id: 'snap', style: styles.snap })
+	          ),
+	          _react2.default.createElement(_RaisedButton2.default, { label: '', onClick: this.startCamera, icon: _react2.default.createElement(
+	              _FontIcon2.default,
+	              { className: 'material-icons' },
+	              'photo_camera'
+	            ) })
 	        ),
 	        _react2.default.createElement(_RaisedButton2.default, { label: '登録', primary: true, style: styles.button, onClick: this.send.bind(this) }),
 	        _react2.default.createElement('div', { id: 'error', className: 'error' })
@@ -70444,7 +70486,8 @@
 	exports.default = validate;
 
 /***/ },
-/* 656 */
+/* 656 */,
+/* 657 */
 /*!*******************************************!*\
   !*** ./src/containers/SearchContainer.js ***!
   \*******************************************/
@@ -70466,11 +70509,11 @@
 	
 	var _sake = __webpack_require__(/*! ../actions/sake */ 618);
 	
-	var _List = __webpack_require__(/*! ../Components/List */ 657);
+	var _List = __webpack_require__(/*! ../Components/List */ 658);
 	
 	var _List2 = _interopRequireDefault(_List);
 	
-	var _Search = __webpack_require__(/*! ../components/Search */ 661);
+	var _Search = __webpack_require__(/*! ../components/Search */ 662);
 	
 	var _Search2 = _interopRequireDefault(_Search);
 	
@@ -70539,7 +70582,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(SearchContainer);
 
 /***/ },
-/* 657 */
+/* 658 */
 /*!********************************!*\
   !*** ./src/Components/List.js ***!
   \********************************/
@@ -70557,11 +70600,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 658);
+	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 659);
 	
 	var _list2 = _interopRequireDefault(_list);
 	
-	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 660);
+	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 661);
 	
 	var _SakeCard2 = _interopRequireDefault(_SakeCard);
 	
@@ -70630,7 +70673,7 @@
 	exports.default = List;
 
 /***/ },
-/* 658 */
+/* 659 */
 /*!*******************************************!*\
   !*** ./public/stylesheets/scss/list.scss ***!
   \*******************************************/
@@ -70639,7 +70682,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./list.scss */ 659);
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./list.scss */ 660);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 266)(content, {});
@@ -70659,7 +70702,7 @@
 	}
 
 /***/ },
-/* 659 */
+/* 660 */
 /*!**************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/list.scss ***!
   \**************************************************************************************************************/
@@ -70678,7 +70721,7 @@
 	};
 
 /***/ },
-/* 660 */
+/* 661 */
 /*!************************************!*\
   !*** ./src/components/SakeCard.js ***!
   \************************************/
@@ -70865,7 +70908,7 @@
 	exports.default = SakeCard;
 
 /***/ },
-/* 661 */
+/* 662 */
 /*!**********************************!*\
   !*** ./src/components/Search.js ***!
   \**********************************/
@@ -71025,14 +71068,14 @@
 	exports.default = Search;
 
 /***/ },
-/* 662 */
+/* 663 */
 /*!**************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/injectTapEventPlugin.js ***!
   \**************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 663);
-	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 664);
+	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 664);
+	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 665);
 	
 	var alreadyInjected = false;
 	
@@ -71054,14 +71097,14 @@
 	  alreadyInjected = true;
 	
 	  __webpack_require__(/*! react/lib/EventPluginHub */ 14).injection.injectEventPluginsByName({
-	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 665)(shouldRejectClick)
+	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 666)(shouldRejectClick)
 	  });
 	};
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 663 */
+/* 664 */
 /*!**********************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/invariant.js ***!
   \**********************************************************/
@@ -71119,7 +71162,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 664 */
+/* 665 */
 /*!***********************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/defaultClickRejectionStrategy.js ***!
   \***********************************************************************/
@@ -71133,7 +71176,7 @@
 
 
 /***/ },
-/* 665 */
+/* 666 */
 /*!********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TapEventPlugin.js ***!
   \********************************************************/
@@ -71164,10 +71207,10 @@
 	var EventPluginUtils = __webpack_require__(/*! react/lib/EventPluginUtils */ 16);
 	var EventPropagators = __webpack_require__(/*! react/lib/EventPropagators */ 13);
 	var SyntheticUIEvent = __webpack_require__(/*! react/lib/SyntheticUIEvent */ 53);
-	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 666);
+	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 667);
 	var ViewportMetrics = __webpack_require__(/*! react/lib/ViewportMetrics */ 54);
 	
-	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 667);
+	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 668);
 	var topLevelTypes = EventConstants.topLevelTypes;
 	
 	var isStartish = EventPluginUtils.isStartish;
@@ -71312,7 +71355,7 @@
 
 
 /***/ },
-/* 666 */
+/* 667 */
 /*!*********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TouchEventUtils.js ***!
   \*********************************************************/
@@ -71363,7 +71406,7 @@
 
 
 /***/ },
-/* 667 */
+/* 668 */
 /*!******************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/keyOf.js ***!
   \******************************************************/
@@ -71406,7 +71449,7 @@
 	module.exports = keyOf;
 
 /***/ },
-/* 668 */
+/* 669 */
 /*!************************************!*\
   !*** ./~/redux-thunk/lib/index.js ***!
   \************************************/
@@ -71435,6 +71478,53 @@
 	thunk.withExtraArgument = createThunkMiddleware;
 	
 	exports['default'] = thunk;
+
+/***/ },
+/* 670 */,
+/* 671 */
+/*!****************************!*\
+  !*** ./src/util/camera.js ***!
+  \****************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var start = function start(elm) {
+	  navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+	
+	  if (navigator.getUserMedia) {
+	    navigator.getUserMedia({ video: true }, function (stream) {
+	      elm.src = window.URL.createObjectURL(stream);
+	      elm.onloadedmetadata = function () {
+	        elm.play();
+	      };
+	    }, function (err) {
+	      return err;
+	    });
+	  } else {
+	    return 'getUserMedia not supported';
+	  }
+	};
+	
+	var capture = function capture(canvas, video) {
+	  var context = canvas.getContext('2d');
+	  if (video.videoHeight <= video.videoWidth) {
+	    // Landscape
+	    var cropWidth = video.videoHeight * canvas.width / canvas.height;
+	    console.log('ceopWidth', cropWidth);
+	    context.drawImage(video, (video.videoWidth - cropWidth) / 2, 0, (video.videoWidth + cropWidth) / 2, video.videoHeight, 0, 0, canvas.width, canvas.height);
+	  } else {
+	    // Portrait
+	    context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight, 0, 0, canvas.width, canvas.height);
+	  }
+	  return canvas.toDataURL('mage/png');
+	};
+	
+	exports.start = start;
+	exports.capture = capture;
 
 /***/ }
 /******/ ]);
