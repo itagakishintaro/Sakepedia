@@ -14,7 +14,7 @@ class ReviewCard extends React.Component {
     const styles = {
       card: {
         marginBottom: '1em',
-        maxWidth: '400px',
+        maxWidth: '414px',
         width: '100%',
       },
       comment: {

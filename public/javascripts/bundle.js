@@ -68798,7 +68798,7 @@
 	      var styles = {
 	        card: {
 	          marginBottom: '1em',
-	          maxWidth: '400px',
+	          maxWidth: '414px',
 	          width: '100%'
 	        },
 	        comment: {
@@ -70594,6 +70594,12 @@
 	      if (MAX <= this.props.list.length) {
 	        alertMessage = '検索結果が多すぎるため、' + MAX + '件のみ表示しています。検索条件を絞り込んでください。';
 	      }
+	      var styles = {
+	        list: {
+	          display: 'flex',
+	          flexWrap: 'wrap'
+	        }
+	      };
 	      return _react2.default.createElement(
 	        'div',
 	        null,
@@ -70602,9 +70608,13 @@
 	          { className: _list2.default.alert },
 	          alertMessage
 	        ),
-	        this.props.list.map(function (sake) {
-	          return _react2.default.createElement(_SakeCard2.default, { sake: sake });
-	        })
+	        _react2.default.createElement(
+	          'div',
+	          { style: styles.list },
+	          this.props.list.map(function (sake) {
+	            return _react2.default.createElement(_SakeCard2.default, { sake: sake });
+	          })
+	        )
 	      );
 	    }
 	  }]);
@@ -70713,10 +70723,15 @@
 	var SakeCard = function (_React$Component) {
 	  _inherits(SakeCard, _React$Component);
 	
-	  function SakeCard() {
+	  function SakeCard(props) {
 	    _classCallCheck(this, SakeCard);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(SakeCard).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SakeCard).call(this, props));
+	
+	    _this.width = window.innerWidth - 16 + 'px';
+	    _this.resizeWidth();
+	    window.addEventListener('resize', _this.resizeWidth);
+	    return _this;
 	  }
 	
 	  _createClass(SakeCard, [{
@@ -70755,12 +70770,20 @@
 	      return { 香り: flavor, 味: taste, 熟成: maturation };
 	    }
 	  }, {
+	    key: 'resizeWidth',
+	    value: function resizeWidth() {
+	      this.width = window.innerWidth - 16 + 'px';
+	      if (414 < window.innerWidth) {
+	        this.width = '360px';
+	      }
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var styles = {
 	        card: {
 	          marginTop: '1em',
-	          maxWidth: '400px'
+	          width: this.width
 	        },
 	        cardText: {
 	          display: 'flex'

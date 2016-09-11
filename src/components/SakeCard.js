@@ -7,6 +7,12 @@ import Stars from './Stars'
 import TypeMark from './TypeMark'
 
 class SakeCard extends React.Component {
+  constructor(props) {
+    super(props)
+    this.width = window.innerWidth - 16 + 'px'
+    this.resizeWidth()
+    window.addEventListener( 'resize', this.resizeWidth )
+  }
   averageEvaluation( reviews ) {
     if( !reviews ) {
       return 0
@@ -22,11 +28,17 @@ class SakeCard extends React.Component {
     let maturation = reviews.map( r => Number( r.熟成 ) ).reduce( ( p, c ) => p + c ) / reviews.length
     return { 香り: flavor, 味: taste, 熟成: maturation }
   }
+  resizeWidth() {
+    this.width = window.innerWidth - 16 + 'px'
+    if( 414 < window.innerWidth ) {
+      this.width = '360px'
+    }
+  }
   render() {
     const styles = {
       card: {
         marginTop: '1em',
-        maxWidth: '400px',
+        width: this.width,
       },
       cardText: {
         display: 'flex',
