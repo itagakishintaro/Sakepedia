@@ -69857,10 +69857,6 @@
 	
 	var _AutoComplete2 = _interopRequireDefault(_AutoComplete);
 	
-	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 293);
-	
-	var _FontIcon2 = _interopRequireDefault(_FontIcon);
-	
 	var _MenuItem = __webpack_require__(/*! material-ui/MenuItem */ 327);
 	
 	var _MenuItem2 = _interopRequireDefault(_MenuItem);
@@ -69881,21 +69877,21 @@
 	
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 	
-	var _colors = __webpack_require__(/*! material-ui/styles/colors */ 520);
-	
 	var _axios = __webpack_require__(/*! axios */ 619);
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
-	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 654);
+	var _Camera = __webpack_require__(/*! ./Camera */ 654);
+	
+	var _Camera2 = _interopRequireDefault(_Camera);
+	
+	var _Prefectures = __webpack_require__(/*! ./Prefectures */ 655);
 	
 	var _Prefectures2 = _interopRequireDefault(_Prefectures);
 	
-	var _NewSakeValidation = __webpack_require__(/*! ./NewSakeValidation */ 655);
+	var _NewSakeValidation = __webpack_require__(/*! ./NewSakeValidation */ 656);
 	
 	var _NewSakeValidation2 = _interopRequireDefault(_NewSakeValidation);
-	
-	var _camera = __webpack_require__(/*! ../util/camera */ 656);
 	
 	var _smoothScroll = __webpack_require__(/*! ../util/smoothScroll */ 643);
 	
@@ -69950,16 +69946,6 @@
 	  }
 	
 	  _createClass(NewSake, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      (0, _camera.start)(document.getElementById('video'));
-	    }
-	  }, {
-	    key: 'startCamera',
-	    value: function startCamera() {
-	      document.getElementById('snap').src = (0, _camera.capture)(document.getElementById('canvas'), document.getElementById('video'));
-	    }
-	  }, {
 	    key: 'send',
 	    value: function send() {
 	      var validation = (0, _NewSakeValidation2.default)(this.state);
@@ -70018,13 +70004,6 @@
 	      var styles = {
 	        button: {
 	          margin: '1em 0'
-	        },
-	        picture: {
-	          fontSize: 'small',
-	          color: _colors.grey400
-	        },
-	        snap: {
-	          backgroundColor: _colors.grey400
 	        }
 	      };
 	      return _react2.default.createElement(
@@ -70183,27 +70162,7 @@
 	          floatingLabelText: '説明',
 	          fullWidth: true
 	        }),
-	        _react2.default.createElement(
-	          'div',
-	          { id: 'picture' },
-	          _react2.default.createElement(
-	            'div',
-	            { style: styles.picture },
-	            '写真'
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement('canvas', { id: 'canvas', width: '120', height: '160', hidden: true }),
-	            _react2.default.createElement('video', { width: '120', height: '160', id: 'video' }),
-	            _react2.default.createElement('img', { id: 'snap', style: styles.snap })
-	          ),
-	          _react2.default.createElement(_RaisedButton2.default, { label: '', onClick: this.startCamera, icon: _react2.default.createElement(
-	              _FontIcon2.default,
-	              { className: 'material-icons' },
-	              'photo_camera'
-	            ) })
-	        ),
+	        _react2.default.createElement(_Camera2.default, null),
 	        _react2.default.createElement(_RaisedButton2.default, { label: '登録', primary: true, style: styles.button, onClick: this.send.bind(this) }),
 	        _react2.default.createElement('div', { id: 'error', className: 'error' })
 	      );
@@ -70226,6 +70185,140 @@
 
 /***/ },
 /* 654 */
+/*!**********************************!*\
+  !*** ./src/components/Camera.js ***!
+  \**********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 166);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 293);
+	
+	var _FontIcon2 = _interopRequireDefault(_FontIcon);
+	
+	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 566);
+	
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+	
+	var _colors = __webpack_require__(/*! material-ui/styles/colors */ 520);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	
+	var Camera = function (_React$Component) {
+	  _inherits(Camera, _React$Component);
+	
+	  function Camera() {
+	    _classCallCheck(this, Camera);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Camera).apply(this, arguments));
+	  }
+	
+	  _createClass(Camera, [{
+	    key: 'start',
+	
+	    // Plain JavaScript
+	    value: function start(elm) {
+	      navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+	
+	      if (navigator.getUserMedia) {
+	        navigator.getUserMedia({ video: true }, function (stream) {
+	          elm.src = window.URL.createObjectURL(stream);
+	          elm.onloadedmetadata = function () {
+	            elm.play();
+	          };
+	        }, function (err) {
+	          return err;
+	        });
+	      } else {
+	        return 'getUserMedia not supported';
+	      }
+	    }
+	  }, {
+	    key: 'capture',
+	    value: function capture(canvas, video) {
+	      var context = canvas.getContext('2d');
+	      if (video.videoHeight <= video.videoWidth) {
+	        // Landscape
+	        var cropWidth = video.videoHeight * canvas.width / canvas.height;
+	        var diffWidth = video.videoWidth - cropWidth;
+	        context.drawImage(video, diffWidth / 2, 0, video.videoWidth - diffWidth, video.videoHeight, 0, 0, canvas.width, canvas.height);
+	      } else {
+	        // Portrait
+	        context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight, 0, 0, canvas.width, canvas.height);
+	      }
+	      return canvas.toDataURL('mage/png');
+	    }
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.start(document.getElementById('video'));
+	    }
+	  }, {
+	    key: 'startCamera',
+	    value: function startCamera() {
+	      document.getElementById('snap').src = this.capture(document.getElementById('canvas'), document.getElementById('video'));
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var styles = {
+	        picture: {
+	          fontSize: 'small',
+	          color: _colors.grey400
+	        },
+	        snap: {
+	          backgroundColor: _colors.grey400
+	        }
+	      };
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { style: styles.picture },
+	          '写真'
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement('canvas', { id: 'canvas', width: '120', height: '160', hidden: true }),
+	          _react2.default.createElement('video', { width: '120', height: '160', id: 'video' }),
+	          _react2.default.createElement('img', { id: 'snap', style: styles.snap })
+	        ),
+	        _react2.default.createElement(_RaisedButton2.default, { label: '', onClick: this.startCamera.bind(this), icon: _react2.default.createElement(
+	            _FontIcon2.default,
+	            { className: 'material-icons' },
+	            'photo_camera'
+	          ) })
+	      );
+	    }
+	  }]);
+	
+	  return Camera;
+	}(_react2.default.Component);
+	
+	exports.default = Camera;
+
+/***/ },
+/* 655 */
 /*!***************************************!*\
   !*** ./src/components/Prefectures.js ***!
   \***************************************/
@@ -70363,7 +70456,7 @@
 	exports.default = Prefectures;
 
 /***/ },
-/* 655 */
+/* 656 */
 /*!*********************************************!*\
   !*** ./src/components/NewSakeValidation.js ***!
   \*********************************************/
@@ -70490,52 +70583,6 @@
 	};
 	
 	exports.default = validate;
-
-/***/ },
-/* 656 */
-/*!****************************!*\
-  !*** ./src/util/camera.js ***!
-  \****************************/
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var start = function start(elm) {
-	  navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-	
-	  if (navigator.getUserMedia) {
-	    navigator.getUserMedia({ video: true }, function (stream) {
-	      elm.src = window.URL.createObjectURL(stream);
-	      elm.onloadedmetadata = function () {
-	        elm.play();
-	      };
-	    }, function (err) {
-	      return err;
-	    });
-	  } else {
-	    return 'getUserMedia not supported';
-	  }
-	};
-	
-	var capture = function capture(canvas, video) {
-	  var context = canvas.getContext('2d');
-	  if (video.videoHeight <= video.videoWidth) {
-	    // Landscape
-	    var cropWidth = video.videoHeight * canvas.width / canvas.height;
-	    var diffWidth = video.videoWidth - cropWidth;
-	    context.drawImage(video, diffWidth / 2, 0, video.videoWidth - diffWidth, video.videoHeight, 0, 0, canvas.width, canvas.height);
-	  } else {
-	    // Portrait
-	    context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight, 0, 0, canvas.width, canvas.height);
-	  }
-	  return canvas.toDataURL('mage/png');
-	};
-	
-	exports.start = start;
-	exports.capture = capture;
 
 /***/ },
 /* 657 */
@@ -70991,7 +71038,7 @@
 	
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 	
-	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 654);
+	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 655);
 	
 	var _Prefectures2 = _interopRequireDefault(_Prefectures);
 	

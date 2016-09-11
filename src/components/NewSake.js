@@ -1,21 +1,19 @@
 import React, { PropTypes } from 'react'
 // material-ui
 import AutoComplete from 'material-ui/AutoComplete'
-import FontIcon from 'material-ui/FontIcon'
 import MenuItem from 'material-ui/MenuItem'
 import SelectField from 'material-ui/SelectField'
 import Snackbar from 'material-ui/Snackbar'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
-import { grey400 } from 'material-ui/styles/colors'
 // lib
 import axios from 'axios'
 // components
-import Prefectures from '../components/Prefectures'
+import Camera from './Camera'
+import Prefectures from './Prefectures'
 // validation
 import validate from './NewSakeValidation'
 // util
-import { start, capture } from '../util/camera'
 import smoothScroll from '../util/smoothScroll'
 
 class NewSake extends React.Component {
@@ -40,13 +38,6 @@ class NewSake extends React.Component {
       sakeRate: '',
       snackbarOpen: false,
     }
-  }
-
-  componentDidMount() {
-    start( document.getElementById( 'video' ) )
-  }
-  startCamera () {
-    document.getElementById('snap').src = capture( document.getElementById('canvas'), document.getElementById('video') )
   }
 
   send(){
@@ -102,13 +93,6 @@ class NewSake extends React.Component {
     const styles = {
       button: {
         margin: '1em 0',
-      },
-      picture: {
-        fontSize: 'small',
-        color: grey400,
-      },
-      snap: {
-        backgroundColor: grey400,
       },
     }
     return (
@@ -261,15 +245,7 @@ class NewSake extends React.Component {
             floatingLabelText="説明"
             fullWidth={true}
           />
-          <div id="picture">
-            <div style={ styles.picture }>写真</div>
-            <div>
-              <canvas id="canvas" width="120" height="160" hidden />
-              <video width="120" height="160" id="video" />
-              <img id="snap" style={ styles.snap }/>
-            </div>
-            <RaisedButton label="" onClick={ this.startCamera } icon={ <FontIcon className="material-icons">photo_camera</FontIcon> } />
-          </div>
+        <Camera />
 
           <RaisedButton label="登録" primary={true} style={styles.button} onClick={this.send.bind(this)} />
           <div id="error" className="error"></div>
