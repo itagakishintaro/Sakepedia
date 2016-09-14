@@ -29054,15 +29054,15 @@
 	
 	var _DetailContainer2 = _interopRequireDefault(_DetailContainer);
 	
-	var _NewSakeContainer = __webpack_require__(/*! ./containers/NewSakeContainer */ 653);
+	var _NewSakeContainer = __webpack_require__(/*! ./containers/NewSakeContainer */ 652);
 	
 	var _NewSakeContainer2 = _interopRequireDefault(_NewSakeContainer);
 	
-	var _SearchContainer = __webpack_require__(/*! ./containers/SearchContainer */ 658);
+	var _SearchContainer = __webpack_require__(/*! ./containers/SearchContainer */ 657);
 	
 	var _SearchContainer2 = _interopRequireDefault(_SearchContainer);
 	
-	var _Login = __webpack_require__(/*! ./components/Login */ 652);
+	var _Login = __webpack_require__(/*! ./components/Login */ 663);
 	
 	var _Login2 = _interopRequireDefault(_Login);
 	
@@ -69767,96 +69767,6 @@
 
 /***/ },
 /* 652 */
-/*!*********************************!*\
-  !*** ./src/components/Login.js ***!
-  \*********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 166);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 566);
-	
-	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// material-ui
-	
-	
-	var Login = function (_React$Component) {
-	  _inherits(Login, _React$Component);
-	
-	  function Login(props) {
-	    _classCallCheck(this, Login);
-	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Login).call(this, props));
-	  }
-	
-	  _createClass(Login, [{
-	    key: 'render',
-	    value: function render() {
-	      var styles = {
-	        button: {
-	          margin: '.5em 0',
-	          width: '100%'
-	        }
-	      };
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(
-	            'a',
-	            { href: '/auth/twitter' },
-	            _react2.default.createElement(_RaisedButton2.default, { label: 'Twitterでログイン', style: styles.button, backgroundColor: '#1DA1F3', labelColor: 'white' })
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(
-	            'a',
-	            { href: '/auth/facebook' },
-	            _react2.default.createElement(_RaisedButton2.default, { label: 'Facebookでログイン', style: styles.button, backgroundColor: '#3B579D', labelColor: 'white' })
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(
-	            'a',
-	            { href: '/auth/google' },
-	            _react2.default.createElement(_RaisedButton2.default, { label: 'Googleでログイン', style: styles.button, backgroundColor: '#DC4A38', labelColor: 'white' })
-	          )
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return Login;
-	}(_react2.default.Component);
-	
-	exports.default = Login;
-
-/***/ },
-/* 653 */
 /*!********************************************!*\
   !*** ./src/containers/NewSakeContainer.js ***!
   \********************************************/
@@ -69878,7 +69788,7 @@
 	
 	var _sake = __webpack_require__(/*! ../actions/sake */ 618);
 	
-	var _NewSake = __webpack_require__(/*! ../components/NewSake */ 654);
+	var _NewSake = __webpack_require__(/*! ../components/NewSake */ 653);
 	
 	var _NewSake2 = _interopRequireDefault(_NewSake);
 	
@@ -69938,7 +69848,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(NewSakeContainer);
 
 /***/ },
-/* 654 */
+/* 653 */
 /*!***********************************!*\
   !*** ./src/components/NewSake.js ***!
   \***********************************/
@@ -69984,15 +69894,15 @@
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
-	var _Camera = __webpack_require__(/*! ./Camera */ 655);
+	var _Camera = __webpack_require__(/*! ./Camera */ 654);
 	
 	var _Camera2 = _interopRequireDefault(_Camera);
 	
-	var _Prefectures = __webpack_require__(/*! ./Prefectures */ 656);
+	var _Prefectures = __webpack_require__(/*! ./Prefectures */ 655);
 	
 	var _Prefectures2 = _interopRequireDefault(_Prefectures);
 	
-	var _NewSakeValidation = __webpack_require__(/*! ./NewSakeValidation */ 657);
+	var _NewSakeValidation = __webpack_require__(/*! ./NewSakeValidation */ 656);
 	
 	var _NewSakeValidation2 = _interopRequireDefault(_NewSakeValidation);
 	
@@ -70287,7 +70197,7 @@
 	exports.default = NewSake;
 
 /***/ },
-/* 655 */
+/* 654 */
 /*!**********************************!*\
   !*** ./src/components/Camera.js ***!
   \**********************************/
@@ -70421,7 +70331,7 @@
 	exports.default = Camera;
 
 /***/ },
-/* 656 */
+/* 655 */
 /*!***************************************!*\
   !*** ./src/components/Prefectures.js ***!
   \***************************************/
@@ -70559,7 +70469,7 @@
 	exports.default = Prefectures;
 
 /***/ },
-/* 657 */
+/* 656 */
 /*!*********************************************!*\
   !*** ./src/components/NewSakeValidation.js ***!
   \*********************************************/
@@ -70688,7 +70598,7 @@
 	exports.default = validate;
 
 /***/ },
-/* 658 */
+/* 657 */
 /*!*******************************************!*\
   !*** ./src/containers/SearchContainer.js ***!
   \*******************************************/
@@ -70710,11 +70620,11 @@
 	
 	var _sake = __webpack_require__(/*! ../actions/sake */ 618);
 	
-	var _List = __webpack_require__(/*! ../Components/List */ 659);
+	var _List = __webpack_require__(/*! ../Components/List */ 658);
 	
 	var _List2 = _interopRequireDefault(_List);
 	
-	var _Search = __webpack_require__(/*! ../components/Search */ 663);
+	var _Search = __webpack_require__(/*! ../components/Search */ 662);
 	
 	var _Search2 = _interopRequireDefault(_Search);
 	
@@ -70783,7 +70693,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(SearchContainer);
 
 /***/ },
-/* 659 */
+/* 658 */
 /*!********************************!*\
   !*** ./src/Components/List.js ***!
   \********************************/
@@ -70801,11 +70711,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 660);
+	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 659);
 	
 	var _list2 = _interopRequireDefault(_list);
 	
-	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 662);
+	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 661);
 	
 	var _SakeCard2 = _interopRequireDefault(_SakeCard);
 	
@@ -70874,7 +70784,7 @@
 	exports.default = List;
 
 /***/ },
-/* 660 */
+/* 659 */
 /*!*******************************************!*\
   !*** ./public/stylesheets/scss/list.scss ***!
   \*******************************************/
@@ -70883,7 +70793,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./list.scss */ 661);
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./list.scss */ 660);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 266)(content, {});
@@ -70903,7 +70813,7 @@
 	}
 
 /***/ },
-/* 661 */
+/* 660 */
 /*!**************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/list.scss ***!
   \**************************************************************************************************************/
@@ -70922,7 +70832,7 @@
 	};
 
 /***/ },
-/* 662 */
+/* 661 */
 /*!************************************!*\
   !*** ./src/components/SakeCard.js ***!
   \************************************/
@@ -71109,7 +71019,7 @@
 	exports.default = SakeCard;
 
 /***/ },
-/* 663 */
+/* 662 */
 /*!**********************************!*\
   !*** ./src/components/Search.js ***!
   \**********************************/
@@ -71141,7 +71051,7 @@
 	
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 	
-	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 656);
+	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 655);
 	
 	var _Prefectures2 = _interopRequireDefault(_Prefectures);
 	
@@ -71267,6 +71177,96 @@
 	};
 	
 	exports.default = Search;
+
+/***/ },
+/* 663 */
+/*!*********************************!*\
+  !*** ./src/components/Login.js ***!
+  \*********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 166);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 566);
+	
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	
+	var Login = function (_React$Component) {
+	  _inherits(Login, _React$Component);
+	
+	  function Login(props) {
+	    _classCallCheck(this, Login);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Login).call(this, props));
+	  }
+	
+	  _createClass(Login, [{
+	    key: 'render',
+	    value: function render() {
+	      var styles = {
+	        button: {
+	          margin: '.5em 0',
+	          width: '100%'
+	        }
+	      };
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'a',
+	            { href: '/auth/twitter' },
+	            _react2.default.createElement(_RaisedButton2.default, { label: 'Twitterでログイン', style: styles.button, backgroundColor: '#1DA1F3', labelColor: 'white' })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'a',
+	            { href: '/auth/facebook' },
+	            _react2.default.createElement(_RaisedButton2.default, { label: 'Facebookでログイン', style: styles.button, backgroundColor: '#3B579D', labelColor: 'white' })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'a',
+	            { href: '/auth/google' },
+	            _react2.default.createElement(_RaisedButton2.default, { label: 'Googleでログイン', style: styles.button, backgroundColor: '#DC4A38', labelColor: 'white' })
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Login;
+	}(_react2.default.Component);
+	
+	exports.default = Login;
 
 /***/ },
 /* 664 */

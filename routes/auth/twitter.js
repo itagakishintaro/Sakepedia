@@ -31,7 +31,7 @@ passport.use(new TwitterStrategy({
 
 router.get('/', passport.authenticate('twitter') );
 router.get( '/callback', passport.authenticate( 'twitter', {  failureRedirect: '/#/login' } ), (req, res) => {
-  session.user = { name: req.user.displayName, photo: req.user.photos[0].value }
+  session.user = { id: req.user.id, name: req.user.displayName }
   res.redirect('/');
 } );
 
