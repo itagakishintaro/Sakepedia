@@ -29599,9 +29599,17 @@
 	              '銘柄登録'
 	            )
 	          ),
-	          _react2.default.createElement(_materialUi.MenuItem, { onTouchTap: function onTouchTap() {
-	              return _this2.setState({ open: false });
-	            }, primaryText: 'YYY' })
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/login', style: styles.link },
+	            _react2.default.createElement(
+	              _materialUi.MenuItem,
+	              { onTouchTap: function onTouchTap() {
+	                  return _this2.setState({ open: false });
+	                } },
+	              'ログイン'
+	            )
+	          )
 	        )
 	      );
 	    }
@@ -69802,13 +69810,41 @@
 	  _createClass(Login, [{
 	    key: 'render',
 	    value: function render() {
+	      var styles = {
+	        button: {
+	          margin: '.5em 0',
+	          width: '100%'
+	        }
+	      };
 	      return _react2.default.createElement(
 	        'div',
 	        null,
 	        _react2.default.createElement(
-	          'a',
-	          { href: '/auth/twitter' },
-	          _react2.default.createElement(_RaisedButton2.default, { label: 'Twitterでログイン' })
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'a',
+	            { href: '/auth/twitter' },
+	            _react2.default.createElement(_RaisedButton2.default, { label: 'Twitterでログイン', style: styles.button, backgroundColor: '#1DA1F3', labelColor: 'white' })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'a',
+	            { href: '/auth/facebook' },
+	            _react2.default.createElement(_RaisedButton2.default, { label: 'Facebookでログイン', style: styles.button, backgroundColor: '#3B579D', labelColor: 'white' })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'a',
+	            { href: '/auth/google' },
+	            _react2.default.createElement(_RaisedButton2.default, { label: 'Googleでログイン', style: styles.button, backgroundColor: '#DC4A38', labelColor: 'white' })
+	          )
 	        )
 	      );
 	    }

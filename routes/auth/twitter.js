@@ -2,19 +2,19 @@
 let express = require( 'express' );
 let router = express.Router();
 
+let session = require('express-session')
 /**
  * pssport twitter
  * http://passportjs.org/docs/twitter
  */
-
 let passport = require('passport')
   , TwitterStrategy = require('passport-twitter').Strategy;
 
-passport.serializeUser(function(user, done) {
+passport.serializeUser( (user, done) => {
   done(null, user);
 });
 
-passport.deserializeUser(function(user, done) {
+passport.deserializeUser( (user, done) => {
   done(null, user);
 });
 
@@ -23,22 +23,16 @@ passport.use(new TwitterStrategy({
   consumerSecret: '59ELSChlyWqCtbqCH29IwZhz5x4QCSW8S1XsFZKxxll0hbZbQh',
   callbackURL: '/auth/twitter/callback' },
   ( token, tokenSecret, profile, done ) => {
-    console.log(token, tokenSecret, profile);
-    process.nextTick(function () {
+    process.nextTick( () => {
       return done(null, profile);
     });
   }
 ));
 
-// Redirect the user to Twitter for authentication.  When complete, Twitter
-// will redirect the user back to the application at
-//   /auth/twitter/callback
 router.get('/', passport.authenticate('twitter') );
+router.get( '/callback', passport.authenticate( 'twitter', {  failureRedirect: '/#/login' } ), (req, res) => {
+  session.user = { name: req.user.displayName, photo: req.user.photos[0].value }
+  res.redirect('/');
+} );
 
-// Twitter will redirect the user to this URL after approval.  Finish the
-// authentication process by attempting to obtain an access token.  If
-// access was granted, the user will be logged in.  Otherwise,
-// authentication has failed.
-router.get( '/callback', passport.authenticate( 'twitter', { successRedirect: '/', failureRedirect: '/#/login' } ) );
-
-module.exports = { passport, router } ;
+module.exports = { passport, router, session } ;
