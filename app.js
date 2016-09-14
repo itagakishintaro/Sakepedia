@@ -9,6 +9,9 @@ let bodyParser = require('body-parser');
 let sakesApi = require('./routes/api/sakesApi');
 let reviewsApi = require('./routes/api/reviewsApi');
 let screen = require('./routes/screen');
+// passport-twitter用
+var session = require('express-session')
+let twitter = require('./routes/auth/twitter');
 
 let app = express();
 
@@ -27,6 +30,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/sakes', sakesApi);
 app.use('/api/reviews', reviewsApi);
 app.use('/', screen);
+// passport-twitter用
+app.use(twitter.passport.initialize());
+app.use(twitter.passport.session());
+app.use(session({secret: 'itagaki'}));
+app.use('/auth/twitter', twitter.router);
 
 // catch 404 and forward to error handler
 app.use( (req, res, next) => {

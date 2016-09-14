@@ -5,12 +5,14 @@ import App from './components/App'
 import DetailContainer from './containers/DetailContainer'
 import NewSakeContainer from './containers/NewSakeContainer'
 import SearchContainer from './containers/SearchContainer'
+import Login from './components/Login'
 
 const Routes = (
   <Route path='/' component={App}>
     <IndexRoute component={SearchContainer} />
     <Route path="sake/new" component={NewSakeContainer}/>
     <Route path="sake/:sakeId" component={DetailContainer}/>
+    <Route path="login" component={Login}/>
   </Route>
 );
 export default Routes;
