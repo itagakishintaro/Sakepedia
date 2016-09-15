@@ -29546,7 +29546,9 @@
 	
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Header).call(this, props));
 	
-	    _this.state = { open: false };
+	    _this.state = {
+	      open: false
+	    };
 	    return _this;
 	  }
 	
@@ -29609,6 +29611,11 @@
 	                } },
 	              'ログイン'
 	            )
+	          ),
+	          _react2.default.createElement(
+	            _materialUi.MenuItem,
+	            { href: '/auth/logout' },
+	            'ログアウト'
 	          )
 	        )
 	      );

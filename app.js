@@ -13,6 +13,7 @@ let screen = require('./routes/screen');
 let twitter = require('./routes/auth/twitter');
 let facebook = require('./routes/auth/facebook');
 let google = require('./routes/auth/google');
+let logout = require('./routes/auth/logout');
 
 let app = express();
 
@@ -42,6 +43,7 @@ app.use(twitter.passport.session());
 app.use('/auth/twitter', twitter.router);
 app.use('/auth/facebook', facebook.router);
 app.use('/auth/google', google.router);
+app.use('/auth/logout', logout);
 
 // catch 404 and forward to error handler
 app.use( (req, res, next) => {

@@ -17,7 +17,9 @@ const styles = {
 class Header extends React.Component{
   constructor(props) {
     super(props)
-    this.state = {open: false}
+    this.state = {
+      open: false,
+    }
   }
 
   toggleMenu(){
@@ -38,6 +40,7 @@ class Header extends React.Component{
           <Link to={'/'} style={styles.link}><MenuItem onTouchTap={() => this.setState({open: false})}>トップ</MenuItem></Link>
           <Link to={'/sake/new'} style={styles.link}><MenuItem onTouchTap={() => this.setState({open: false})}>銘柄登録</MenuItem></Link>
           <Link to={'/login'} style={styles.link}><MenuItem onTouchTap={() => this.setState({open: false})}>ログイン</MenuItem></Link>
+          <MenuItem href='/auth/logout'>ログアウト</MenuItem>
         </Drawer>
       </div>
     )
