@@ -29549,6 +29549,7 @@
 	    _this.state = {
 	      open: false
 	    };
+	    _this.isLogin = false;
 	    return _this;
 	  }
 	
@@ -29556,6 +29557,13 @@
 	    key: 'toggleMenu',
 	    value: function toggleMenu() {
 	      this.setState({ open: !this.state.open });
+	    }
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      if (document.getElementById('id').innerHTML) {
+	        this.isLogin = true;
+	      }
 	    }
 	  }, {
 	    key: 'render',
@@ -29608,13 +29616,13 @@
 	              _materialUi.MenuItem,
 	              { onTouchTap: function onTouchTap() {
 	                  return _this2.setState({ open: false });
-	                } },
+	                }, disabled: this.isLogin },
 	              'ログイン'
 	            )
 	          ),
 	          _react2.default.createElement(
 	            _materialUi.MenuItem,
-	            { href: '/auth/logout' },
+	            { href: '/auth/logout', disabled: !this.isLogin },
 	            'ログアウト'
 	          )
 	        )
