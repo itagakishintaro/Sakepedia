@@ -12,6 +12,7 @@ let screen = require('./routes/screen');
 // passport
 let twitter = require('./routes/auth/twitter');
 let facebook = require('./routes/auth/facebook');
+let google = require('./routes/auth/google');
 
 let app = express();
 
@@ -40,6 +41,7 @@ app.use(twitter.passport.initialize());
 app.use(twitter.passport.session());
 app.use('/auth/twitter', twitter.router);
 app.use('/auth/facebook', facebook.router);
+app.use('/auth/google', google.router);
 
 // catch 404 and forward to error handler
 app.use( (req, res, next) => {
