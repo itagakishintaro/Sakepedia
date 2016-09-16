@@ -18,9 +18,10 @@ class DetailContainer extends React.Component{
   render() {
     return (
       <Detail
-        update={this.update.bind(this)}
         initialTab="detail"
+        isLogin={this.props.isLogin}
         sake={this.props.sake}
+        update={this.update.bind(this)}
       />
     )
   }
@@ -28,6 +29,7 @@ class DetailContainer extends React.Component{
 
 DetailContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  isLogin: PropTypes.bool.isRequired,
   params: PropTypes.object.isRequired,
   sake: PropTypes.object.isRequired,
 }

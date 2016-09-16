@@ -23187,14 +23187,14 @@
 	
 	var _sake2 = _interopRequireDefault(_sake);
 	
-	var _auth = __webpack_require__(/*! ./auth */ 673);
+	var _isLogin = __webpack_require__(/*! ./isLogin */ 674);
 	
-	var _auth2 = _interopRequireDefault(_auth);
+	var _isLogin2 = _interopRequireDefault(_isLogin);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var app = (0, _redux.combineReducers)({
-	  list: _list2.default, brands: _brands2.default, breweries: _breweries2.default, koubos: _koubos2.default, prefectures: _prefectures2.default, rices: _rices2.default, sake: _sake2.default, auth: _auth2.default
+	  list: _list2.default, brands: _brands2.default, breweries: _breweries2.default, koubos: _koubos2.default, prefectures: _prefectures2.default, rices: _rices2.default, sake: _sake2.default, isLogin: _isLogin2.default
 	});
 	
 	exports.default = app;
@@ -66517,9 +66517,10 @@
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(_Detail2.default, {
-	        update: this.update.bind(this),
 	        initialTab: 'detail',
-	        sake: this.props.sake
+	        isLogin: this.props.isLogin,
+	        sake: this.props.sake,
+	        update: this.update.bind(this)
 	      });
 	    }
 	  }]);
@@ -66529,6 +66530,7 @@
 	
 	DetailContainer.propTypes = {
 	  dispatch: _react.PropTypes.func.isRequired,
+	  isLogin: _react.PropTypes.bool.isRequired,
 	  params: _react.PropTypes.object.isRequired,
 	  sake: _react.PropTypes.object.isRequired
 	};
@@ -67946,11 +67948,17 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactRouter = __webpack_require__(/*! react-router */ 201);
+	
 	var _Tabs = __webpack_require__(/*! material-ui/Tabs */ 587);
 	
 	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 293);
 	
 	var _FontIcon2 = _interopRequireDefault(_FontIcon);
+	
+	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 566);
+	
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 	
 	var _detail = __webpack_require__(/*! ../../public/stylesheets/scss/detail.scss */ 639);
 	
@@ -68008,8 +68016,14 @@
 	        },
 	        tabItemContainer: {
 	          'backgroundColor': 'lightgray'
+	        },
+	        visible: {
+	          display: 'none'
 	        }
 	      };
+	      if (!this.props.isLogin) {
+	        styles.visible.display = 'block';
+	      }
 	      var items = ['銘柄名', '種類', '酒母', 'その他', 'メーカーURL', '蔵元', '都道府県', '麹米', '掛米', '酵母', '精米歩合', 'アルコール度数', '日本酒度', '酸度', 'アミノ酸度', '説明'];
 	      var setAnchor = function setAnchor(input) {
 	        if (/http/.test(input)) {
@@ -68130,8 +68144,19 @@
 	            _react2.default.createElement(_NewReview2.default, {
 	              changeTab: this.changeTab.bind(this),
 	              sake: this.props.sake,
-	              update: this.props.update
-	            })
+	              update: this.props.update,
+	              isLogin: this.props.isLogin
+	            }),
+	            _react2.default.createElement(
+	              'div',
+	              { style: styles.visible },
+	              'ログインしてください。',
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/login' },
+	                _react2.default.createElement(_RaisedButton2.default, { label: 'ログイン' })
+	              )
+	            )
 	          )
 	        )
 	      );
@@ -68143,6 +68168,7 @@
 	
 	Detail.propTypes = {
 	  initialTab: _react.PropTypes.string.isRequired,
+	  isLogin: _react.PropTypes.bool.isRequired,
 	  sake: _react.PropTypes.object.isRequired,
 	  update: _react.PropTypes.func.isRequired
 	};
@@ -68354,11 +68380,17 @@
 	        label: {
 	          color: _colors.grey400,
 	          fontSize: '0.8em'
+	        },
+	        visible: {
+	          display: 'none'
 	        }
 	      };
+	      if (this.props.isLogin) {
+	        styles.visible.display = 'block';
+	      }
 	      return _react2.default.createElement(
 	        'div',
-	        { id: 'newReview' },
+	        { id: 'newReview', style: styles.visible },
 	        _react2.default.createElement(_Snackbar2.default, {
 	          open: this.state.snackbarOpen,
 	          message: '送信しました',
@@ -68488,6 +68520,7 @@
 	  changeTab: _react.PropTypes.func.isRequired,
 	  dispatch: _react.PropTypes.func.isRequired,
 	  history: _react.PropTypes.object.isRequired,
+	  isLogin: _react.PropTypes.bool.isRequired,
 	  list: _react.PropTypes.array.isRequired,
 	  sake: _react.PropTypes.object.isRequired,
 	  update: _react.PropTypes.func.isRequired
@@ -71637,7 +71670,7 @@
 	
 	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
 	
-	var _auth = __webpack_require__(/*! ../actions/auth */ 672);
+	var _isLogin = __webpack_require__(/*! ../actions/isLogin */ 675);
 	
 	var _app = __webpack_require__(/*! ../../public/stylesheets/scss/app.scss */ 263);
 	
@@ -71664,22 +71697,20 @@
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
 	
-	  function App() {
+	  function App(props) {
 	    _classCallCheck(this, App);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(App).call(this, props));
+	
+	    if (document.getElementById('id').innerHTML) {
+	      _this.props.dispatch((0, _isLogin.setAuthStatus)(true));
+	    } else {
+	      _this.props.dispatch((0, _isLogin.setAuthStatus)(false));
+	    }
+	    return _this;
 	  }
 	
 	  _createClass(App, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      if (document.getElementById('id').innerHTML) {
-	        this.dispatch((0, _auth.setAuthStatus)(true));
-	      } else {
-	        this.dispatch((0, _auth.setAuthStatus)(false));
-	      }
-	    }
-	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -71695,8 +71726,9 @@
 	}(_react2.default.Component);
 	
 	App.propTypes = {
-	  children: _react2.default.PropTypes.element.isRequired,
-	  isLogin: _react2.default.PropTypes.bool.isRequired
+	  children: _react.PropTypes.element.isRequired,
+	  dispatch: _react.PropTypes.func.isRequired,
+	  isLogin: _react.PropTypes.bool.isRequired
 	};
 	
 	var mapStateToProps = function mapStateToProps(state) {
@@ -71705,10 +71737,12 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(App);
 
 /***/ },
-/* 672 */
-/*!*****************************!*\
-  !*** ./src/actions/auth.js ***!
-  \*****************************/
+/* 672 */,
+/* 673 */,
+/* 674 */
+/*!*********************************!*\
+  !*** ./src/reducers/isLogin.js ***!
+  \*********************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -71716,38 +71750,38 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	var setAuthStatus = exports.setAuthStatus = function setAuthStatus(status) {
-	  return {
-	    type: 'SET_AUTH_STATUS',
-	    status: status
-	  };
-	};
-
-/***/ },
-/* 673 */
-/*!******************************!*\
-  !*** ./src/reducers/auth.js ***!
-  \******************************/
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var auth = function auth() {
+	var isLogin = function isLogin() {
 	  var state = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
 	  var action = arguments[1];
 	
 	  switch (action.type) {
 	    case 'SET_AUTH_STATUS':
-	      return action;
+	      return action.isLogin;
 	    default:
 	      return state;
 	  }
 	};
 	
-	exports.default = auth;
+	exports.default = isLogin;
+
+/***/ },
+/* 675 */
+/*!********************************!*\
+  !*** ./src/actions/isLogin.js ***!
+  \********************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var setAuthStatus = exports.setAuthStatus = function setAuthStatus(isLogin) {
+	  return {
+	    type: 'SET_AUTH_STATUS',
+	    isLogin: isLogin
+	  };
+	};
 
 /***/ }
 /******/ ]);

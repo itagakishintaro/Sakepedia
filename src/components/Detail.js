@@ -1,7 +1,9 @@
 import React, { PropTypes } from 'react'
+import { Link } from 'react-router'
 // material-ui
 import {Tabs, Tab} from 'material-ui/Tabs'
 import FontIcon from 'material-ui/FontIcon'
+import RaisedButton from 'material-ui/RaisedButton'
 // css
 import classes from '../../public/stylesheets/scss/detail.scss'
 // components
@@ -28,6 +30,12 @@ class Detail extends React.Component{
       tabItemContainer: {
         'backgroundColor': 'lightgray',
       },
+      visible: {
+        display: 'none',
+      },
+    }
+    if( !this.props.isLogin ) {
+      styles.visible.display = 'block'
     }
     const items = [
       '銘柄名',
@@ -107,7 +115,12 @@ class Detail extends React.Component{
               changeTab={this.changeTab.bind(this)}
               sake={this.props.sake}
               update={this.props.update}
+              isLogin={this.props.isLogin}
              />
+           <div style={styles.visible}>
+             ログインしてください。
+             <Link to={'/login'}><RaisedButton label="ログイン" /></Link>
+           </div>
           </Tab>
         </Tabs>
       </div>
@@ -117,6 +130,7 @@ class Detail extends React.Component{
 
 Detail.propTypes = {
   initialTab: PropTypes.string.isRequired,
+  isLogin: PropTypes.bool.isRequired,
   sake: PropTypes.object.isRequired,
   update: PropTypes.func.isRequired,
 }

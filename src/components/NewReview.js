@@ -80,10 +80,16 @@ class NewReview extends React.Component {
       label: {
         color:  grey400,
         fontSize: '0.8em',
-      }
+      },
+      visible: {
+        display: 'none',
+      },
+    }
+    if( this.props.isLogin ) {
+      styles.visible.display = 'block'
     }
     return (
-      <div id="newReview">
+      <div id="newReview" style={styles.visible}>
         <Snackbar
           open={this.state.snackbarOpen}
           message="送信しました"
@@ -196,6 +202,7 @@ NewReview.propTypes = {
   changeTab: PropTypes.func.isRequired,
   dispatch: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired,
+  isLogin: PropTypes.bool.isRequired,
   list: PropTypes.array.isRequired,
   sake: PropTypes.object.isRequired,
   update: PropTypes.func.isRequired,

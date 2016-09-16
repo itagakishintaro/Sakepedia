@@ -1,18 +1,19 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 // actions
-import { setAuthStatus } from '../actions/auth'
+import { setAuthStatus } from '../actions/isLogin'
 // css
 import classes from '../../public/stylesheets/scss/app.scss'
 // components
 import Header from '../components/Header'
 
 class App extends React.Component {
-  componentDidMount(){
+  constructor(props) {
+    super(props)
     if( document.getElementById( 'id' ).innerHTML ) {
-      this.dispatch( setAuthStatus( true ) )
+      this.props.dispatch( setAuthStatus( true ) )
     } else {
-      this.dispatch( setAuthStatus( false ) )
+      this.props.dispatch( setAuthStatus( false ) )
     }
   }
   render() {
@@ -29,8 +30,9 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  children: React.PropTypes.element.isRequired,
-  isLogin: React.PropTypes.bool.isRequired,
+  children: PropTypes.element.isRequired,
+  dispatch: PropTypes.func.isRequired,
+  isLogin: PropTypes.bool.isRequired,
 }
 
 const mapStateToProps = state => state
