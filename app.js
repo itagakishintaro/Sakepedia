@@ -7,7 +7,6 @@ let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 
 let sakesApi = require('./routes/api/sakesApi');
-let reviewsApi = require('./routes/api/reviewsApi');
 let screen = require('./routes/screen');
 // passport
 let twitter = require('./routes/auth/twitter');
@@ -30,7 +29,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/sakes', sakesApi);
-app.use('/api/reviews', reviewsApi);
 app.use('/', screen);
 // passport
 app.use(twitter.session({

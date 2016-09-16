@@ -45,7 +45,7 @@ class Header extends React.Component{
         />
         <Drawer open={this.state.open} docked={false} onRequestChange={(open) => this.setState({open})}>
           <Link to={'/'} style={styles.link}><MenuItem onTouchTap={() => this.setState({open: false})}>トップ</MenuItem></Link>
-          <Link to={'/sake/new'} style={styles.link}><MenuItem onTouchTap={() => this.setState({open: false})}>銘柄登録</MenuItem></Link>
+          <Link to={'/sake/new'} style={styles.link}><MenuItem onTouchTap={() => this.setState({open: false})} disabled={!this.isLogin}>銘柄登録</MenuItem></Link>
           <Link to={'/login'} style={styles.link}><MenuItem onTouchTap={() => this.setState({open: false})} disabled={this.isLogin}>ログイン</MenuItem></Link>
           <MenuItem href='/auth/logout' disabled={!this.isLogin}>ログアウト</MenuItem>
         </Drawer>

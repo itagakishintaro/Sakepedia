@@ -29046,7 +29046,7 @@
 	
 	var _reactRouter = __webpack_require__(/*! react-router */ 201);
 	
-	var _App = __webpack_require__(/*! ./components/App */ 262);
+	var _App = __webpack_require__(/*! ./containers/App */ 671);
 	
 	var _App2 = _interopRequireDefault(_App);
 	
@@ -29079,57 +29079,7 @@
 	exports.default = Routes;
 
 /***/ },
-/* 262 */
-/*!*******************************!*\
-  !*** ./src/components/App.js ***!
-  \*******************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(/*! react */ 166);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _app = __webpack_require__(/*! ../../public/stylesheets/scss/app.scss */ 263);
-	
-	var _app2 = _interopRequireDefault(_app);
-	
-	var _Header = __webpack_require__(/*! ./Header */ 267);
-	
-	var _Header2 = _interopRequireDefault(_Header);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// css
-	
-	
-	var App = _react2.default.createClass({
-	  displayName: 'App',
-	
-	  propTypes: {
-	    children: _react2.default.PropTypes.element.isRequired
-	  },
-	
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: _app2.default.content },
-	      _react2.default.createElement(_Header2.default, null),
-	      this.props.children
-	    );
-	  }
-	});
-	// components
-	
-	
-	exports.default = App;
-
-/***/ },
+/* 262 */,
 /* 263 */
 /*!******************************************!*\
   !*** ./public/stylesheets/scss/app.scss ***!
@@ -29605,7 +29555,7 @@
 	              _materialUi.MenuItem,
 	              { onTouchTap: function onTouchTap() {
 	                  return _this2.setState({ open: false });
-	                } },
+	                }, disabled: !this.isLogin },
 	              '銘柄登録'
 	            )
 	          ),
@@ -71694,6 +71644,57 @@
 	thunk.withExtraArgument = createThunkMiddleware;
 	
 	exports['default'] = thunk;
+
+/***/ },
+/* 671 */
+/*!*******************************!*\
+  !*** ./src/containers/App.js ***!
+  \*******************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 166);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _app = __webpack_require__(/*! ../../public/stylesheets/scss/app.scss */ 263);
+	
+	var _app2 = _interopRequireDefault(_app);
+	
+	var _Header = __webpack_require__(/*! ../components/Header */ 267);
+	
+	var _Header2 = _interopRequireDefault(_Header);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// css
+	
+	
+	var App = _react2.default.createClass({
+	  displayName: 'App',
+	
+	  propTypes: {
+	    children: _react2.default.PropTypes.element.isRequired
+	  },
+	
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: _app2.default.content },
+	      _react2.default.createElement(_Header2.default, null),
+	      this.props.children
+	    );
+	  }
+	});
+	// components
+	
+	
+	exports.default = App;
 
 /***/ }
 /******/ ]);
