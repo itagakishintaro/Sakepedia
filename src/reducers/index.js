@@ -6,10 +6,10 @@ import koubos from './koubos'
 import prefectures from './prefectures'
 import rices from './rices'
 import sake from './sake'
-import reviews from './reviews'
+import auth from './auth'
 
 const app = combineReducers( {
-  list, brands, breweries, koubos, prefectures, rices, sake, reviews
+  list, brands, breweries, koubos, prefectures, rices, sake, auth
 } )
 
 export default app

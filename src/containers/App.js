@@ -1,18 +1,24 @@
 import React from 'react'
+import { connect } from 'react-redux'
+// actions
+import { setAuthStatus } from '../actions/auth'
 // css
 import classes from '../../public/stylesheets/scss/app.scss'
 // components
 import Header from '../components/Header'
 
-const App = React.createClass({
-  propTypes: {
-    children: React.PropTypes.element.isRequired
-  },
-
+class App extends React.Component {
+  componentDidMount(){
+    if( document.getElementById( 'id' ).innerHTML ) {
+      this.dispatch( setAuthStatus( true ) )
+    } else {
+      this.dispatch( setAuthStatus( false ) )
+    }
+  }
   render() {
     return (
       <div className={classes.content}>
-        <Header />
+        <Header isLogin={this.props.isLogin}/>
 
         {/* add this */}
         {this.props.children}
@@ -20,6 +26,12 @@ const App = React.createClass({
       </div>
     )
   }
-})
+}
 
-export default App
+App.propTypes = {
+  children: React.PropTypes.element.isRequired,
+  isLogin: React.PropTypes.bool.isRequired,
+}
+
+const mapStateToProps = state => state
+export default connect( mapStateToProps )( App )

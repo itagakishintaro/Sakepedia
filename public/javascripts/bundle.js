@@ -23187,14 +23187,14 @@
 	
 	var _sake2 = _interopRequireDefault(_sake);
 	
-	var _reviews = __webpack_require__(/*! ./reviews */ 200);
+	var _auth = __webpack_require__(/*! ./auth */ 673);
 	
-	var _reviews2 = _interopRequireDefault(_reviews);
+	var _auth2 = _interopRequireDefault(_auth);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var app = (0, _redux.combineReducers)({
-	  list: _list2.default, brands: _brands2.default, breweries: _breweries2.default, koubos: _koubos2.default, prefectures: _prefectures2.default, rices: _rices2.default, sake: _sake2.default, reviews: _reviews2.default
+	  list: _list2.default, brands: _brands2.default, breweries: _breweries2.default, koubos: _koubos2.default, prefectures: _prefectures2.default, rices: _rices2.default, sake: _sake2.default, auth: _auth2.default
 	});
 	
 	exports.default = app;
@@ -23382,32 +23382,7 @@
 	exports.default = sake;
 
 /***/ },
-/* 200 */
-/*!*********************************!*\
-  !*** ./src/reducers/reviews.js ***!
-  \*********************************/
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var reviews = function reviews() {
-	  var state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
-	  var action = arguments[1];
-	
-	  switch (action.type) {
-	    case 'SETREVIEWS':
-	      return action.reviews;
-	    default:
-	      return state;
-	  }
-	};
-	
-	exports.default = reviews;
-
-/***/ },
+/* 200 */,
 /* 201 */
 /*!*************************************!*\
   !*** ./~/react-router/lib/index.js ***!
@@ -29499,7 +29474,6 @@
 	    _this.state = {
 	      open: false
 	    };
-	    _this.isLogin = false;
 	    return _this;
 	  }
 	
@@ -29507,13 +29481,6 @@
 	    key: 'toggleMenu',
 	    value: function toggleMenu() {
 	      this.setState({ open: !this.state.open });
-	    }
-	  }, {
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      if (document.getElementById('id').innerHTML) {
-	        this.isLogin = true;
-	      }
 	    }
 	  }, {
 	    key: 'render',
@@ -29555,7 +29522,7 @@
 	              _materialUi.MenuItem,
 	              { onTouchTap: function onTouchTap() {
 	                  return _this2.setState({ open: false });
-	                }, disabled: !this.isLogin },
+	                }, disabled: !this.props.isLogin },
 	              '銘柄登録'
 	            )
 	          ),
@@ -29566,13 +29533,13 @@
 	              _materialUi.MenuItem,
 	              { onTouchTap: function onTouchTap() {
 	                  return _this2.setState({ open: false });
-	                }, disabled: this.isLogin },
+	                }, disabled: this.props.isLogin },
 	              'ログイン'
 	            )
 	          ),
 	          _react2.default.createElement(
 	            _materialUi.MenuItem,
-	            { href: '/auth/logout', disabled: !this.isLogin },
+	            { href: '/auth/logout', disabled: !this.props.isLogin },
 	            'ログアウト'
 	          )
 	        )
@@ -29582,6 +29549,10 @@
 	
 	  return Header;
 	}(_react2.default.Component);
+	
+	Header.propTypes = {
+	  isLogin: _react.PropTypes.bool.isRequired
+	};
 	
 	exports.default = Header;
 
@@ -71658,9 +71629,15 @@
 	  value: true
 	});
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
 	var _react = __webpack_require__(/*! react */ 166);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
+	
+	var _auth = __webpack_require__(/*! ../actions/auth */ 672);
 	
 	var _app = __webpack_require__(/*! ../../public/stylesheets/scss/app.scss */ 263);
 	
@@ -71672,29 +71649,105 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// actions
+	
 	// css
 	
-	
-	var App = _react2.default.createClass({
-	  displayName: 'App',
-	
-	  propTypes: {
-	    children: _react2.default.PropTypes.element.isRequired
-	  },
-	
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: _app2.default.content },
-	      _react2.default.createElement(_Header2.default, null),
-	      this.props.children
-	    );
-	  }
-	});
 	// components
 	
 	
-	exports.default = App;
+	var App = function (_React$Component) {
+	  _inherits(App, _React$Component);
+	
+	  function App() {
+	    _classCallCheck(this, App);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
+	  }
+	
+	  _createClass(App, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      if (document.getElementById('id').innerHTML) {
+	        this.dispatch((0, _auth.setAuthStatus)(true));
+	      } else {
+	        this.dispatch((0, _auth.setAuthStatus)(false));
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: _app2.default.content },
+	        _react2.default.createElement(_Header2.default, { isLogin: this.props.isLogin }),
+	        this.props.children
+	      );
+	    }
+	  }]);
+	
+	  return App;
+	}(_react2.default.Component);
+	
+	App.propTypes = {
+	  children: _react2.default.PropTypes.element.isRequired,
+	  isLogin: _react2.default.PropTypes.bool.isRequired
+	};
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return state;
+	};
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(App);
+
+/***/ },
+/* 672 */
+/*!*****************************!*\
+  !*** ./src/actions/auth.js ***!
+  \*****************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var setAuthStatus = exports.setAuthStatus = function setAuthStatus(status) {
+	  return {
+	    type: 'SET_AUTH_STATUS',
+	    status: status
+	  };
+	};
+
+/***/ },
+/* 673 */
+/*!******************************!*\
+  !*** ./src/reducers/auth.js ***!
+  \******************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var auth = function auth() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
+	  var action = arguments[1];
+	
+	  switch (action.type) {
+	    case 'SET_AUTH_STATUS':
+	      return action;
+	    default:
+	      return state;
+	  }
+	};
+	
+	exports.default = auth;
 
 /***/ }
 /******/ ]);
