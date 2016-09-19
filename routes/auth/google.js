@@ -21,6 +21,11 @@ passport.use(new GoogleStrategy({
   }
 ));
 
+router.get( '/', ( req, res, next ) => {
+  session.from = req.query.from;
+  next();
+} );
+
 router.get('/',
   passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] }));
 
@@ -28,7 +33,10 @@ router.get('/callback',
   passport.authenticate('google', { failureRedirect: '/#/login' }),
   (req, res) => {
     session.user = { id: req.user.id, name: req.user.displayName }
-    res.redirect('/');
-  });
+    if( session.from ) {
+      res.redirect( session.from );
+    } else {
+      res.redirect('/');
+    }  });
 
 module.exports = { passport, router, session } ;

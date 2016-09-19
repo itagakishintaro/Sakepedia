@@ -71350,7 +71350,7 @@
 	          null,
 	          _react2.default.createElement(
 	            'a',
-	            { href: '/auth/facebook' },
+	            { href: '/auth/facebook?from=%2F%23%2Fsake%2F' + this.props.location.query.sakeId },
 	            _react2.default.createElement(_RaisedButton2.default, { label: 'Facebookでログイン', style: styles.button, backgroundColor: '#3B579D', labelColor: 'white' })
 	          )
 	        ),
@@ -71359,7 +71359,7 @@
 	          null,
 	          _react2.default.createElement(
 	            'a',
-	            { href: '/auth/google' },
+	            { href: '/auth/google?from=%2F%23%2Fsake%2F' + this.props.location.query.sakeId },
 	            _react2.default.createElement(_RaisedButton2.default, { label: 'Googleでログイン', style: styles.button, backgroundColor: '#DC4A38', labelColor: 'white' })
 	          )
 	        )

@@ -21,10 +21,18 @@ passport.use(new FacebookStrategy({
   }
 ));
 
+router.get( '/', ( req, res, next ) => {
+  session.from = req.query.from;
+  next();
+} );
 router.get('/', passport.authenticate('facebook'));
 router.get( '/callback', passport.authenticate( 'facebook', {  failureRedirect: '/#/login' } ), (req, res) => {
   session.user = { id: req.user.id, name: req.user.displayName }
-  res.redirect('/#/'); // なぜか'/'だとうまくいかない
+  if( session.from ) {
+    res.redirect( session.from );
+  } else {
+    res.redirect('/#/'); // なぜか'/'だとうまくいかない
+  }
 } );
 
 module.exports = { passport, router, session } ;

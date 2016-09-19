@@ -29,11 +29,12 @@ passport.use(new TwitterStrategy({
   }
 ));
 
-router.get('/', (req, res) => {
+router.get( '/', ( req, res, next ) => {
   session.from = req.query.from;
-  passport.authenticate('twitter');
-  res.redirect('/auth/twitter/callback');
-});
+  next();
+} );
+
+router.get('/',  passport.authenticate('twitter'));
 router.get( '/callback', passport.authenticate( 'twitter', {  failureRedirect: '/#/login' } ), (req, res) => {
   session.user = { id: req.user.id, name: req.user.displayName }
   if( session.from ) {
