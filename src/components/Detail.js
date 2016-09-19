@@ -118,8 +118,8 @@ class Detail extends React.Component{
               isLogin={this.props.isLogin}
              />
            <div style={styles.visible}>
-             ログインしてください。
-             <Link to={'/login'}><RaisedButton label="ログイン" /></Link>
+             <p>ログインしてください。</p>
+             <Link to={'/login'} query={{ sakeId: this.props.sake._id }}><RaisedButton label="ログイン" /></Link>
            </div>
           </Tab>
         </Tabs>

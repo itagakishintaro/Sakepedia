@@ -30,6 +30,7 @@ class DetailContainer extends React.Component{
 DetailContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
   isLogin: PropTypes.bool.isRequired,
+  location: PropTypes.object,
   params: PropTypes.object.isRequired,
   sake: PropTypes.object.isRequired,
 }
