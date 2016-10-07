@@ -191,7 +191,7 @@ herokuへデータをインポート
 $ heroku login
 $ heroku config | grep MONGODB_URI
 MONGODB_URI => mongodb://heroku_12345678:random_password@ds029017.mLab.com:29017/heroku_12345678
-$ mongoimport --host ds029017.mLab.com --port 37017 --username heroku_12345678 --password random_password --collection sake --db heroku_12345678 --file SakeData_Sake.json
+$ mongoimport --host ds029017.mLab.com --port 29017 --username heroku_12345678 --password random_password --collection sake --db heroku_12345678 --file SakeData_Sake.json
 ```
 
 https://devcenter.heroku.com/articles/mongolab
