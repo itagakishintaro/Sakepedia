@@ -29132,6 +29132,10 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(App).call(this, props));
 	
 	    if (document.getElementById('id').innerHTML) {
+	      window.localStorage.setItem('id', document.getElementById('id').innerHTML);
+	      window.localStorage.setItem('name', document.getElementById('name').innerHTML);
+	      _this.props.dispatch((0, _isLogin.setAuthStatus)(true));
+	    } else if (window.localStorage.getItem('id')) {
 	      _this.props.dispatch((0, _isLogin.setAuthStatus)(true));
 	    } else {
 	      _this.props.dispatch((0, _isLogin.setAuthStatus)(false));
@@ -29613,6 +29617,11 @@
 	      this.setState({ open: !this.state.open });
 	    }
 	  }, {
+	    key: 'logout',
+	    value: function logout() {
+	      window.localStorage.clear();
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _this2 = this;
@@ -29669,7 +29678,7 @@
 	          ),
 	          _react2.default.createElement(
 	            _materialUi.MenuItem,
-	            { href: '/auth/logout', disabled: !this.props.isLogin },
+	            { href: '/auth/logout', disabled: !this.props.isLogin, onTouchTap: this.logout },
 	            'ログアウト'
 	          )
 	        )
