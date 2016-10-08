@@ -22,7 +22,7 @@
   "prefectures": "山口県",
   "starterCulture": "速醸",
   "acidity": "1.1",
-  "taste": "新鮮果実の上立ち香と含み香。滑らかな甘味とスッキリとした酸味が特徴。ほのかな旨味も中盤から展開。 ",
+  "discription": "新鮮果実の上立ち香と含み香。滑らかな甘味とスッキリとした酸味が特徴。ほのかな旨味も中盤から展開。 ",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -49,7 +49,7 @@
   "prefectures": "新潟県",
   "starterCulture": "速醸",
   "acidity": "1.0",
-  "taste": "シンプルで爽やかな香りが主体。スムーズな飲み口にスッキリとした味わいでドライな後味が余韻に残る。 ",
+  "discription": "シンプルで爽やかな香りが主体。スムーズな飲み口にスッキリとした味わいでドライな後味が余韻に残る。 ",
   "riceForMakingKoji": "山田錦・五百万石・他"
 }
 {
@@ -75,7 +75,7 @@
   "prefectures": "石川県",
   "starterCulture": "生酛",
   "acidity": "1.1",
-  "taste": "熟成感も加わった非常に濃醇な山廃純米酒。強い酸味と旨味の余韻が特徴。 ",
+  "discription": "熟成感も加わった非常に濃醇な山廃純米酒。強い酸味と旨味の余韻が特徴。 ",
   "riceForMakingKoji": "-"
 }
 {
@@ -102,7 +102,7 @@
   "prefectures": "福島県",
   "starterCulture": "生もと",
   "acidity": "1.8",
-  "taste": "奥ゆきのある豊かな味わいの生もと純米酒。クリーミーな香りと余韻の長い旨味が特徴。 ",
+  "discription": "奥ゆきのある豊かな味わいの生もと純米酒。クリーミーな香りと余韻の長い旨味が特徴。 ",
   "riceForMakingKoji": "五百万石"
 }
 {
@@ -129,7 +129,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "ブレンド(生酛・速醸)",
   "acidity": "1.6",
-  "taste": "炊きたての米などを思わせる原料のふくよかな香りが主体。厚みのある飲み口でボリューム感のある味わい。 ",
+  "discription": "炊きたての米などを思わせる原料のふくよかな香りが主体。厚みのある飲み口でボリューム感のある味わい。 ",
   "riceForMakingKoji": "兵庫県特Ａ地区産山田錦"
 }
 {
@@ -156,7 +156,7 @@
   "prefectures": "高知県",
   "starterCulture": "速醸",
   "acidity": "1.9",
-  "taste": "黄桃やバナナを思わせる明確な吟醸香が特徴。スムーズな飲み口で明確な甘味と酸味が広がる。 ",
+  "discription": "黄桃やバナナを思わせる明確な吟醸香が特徴。スムーズな飲み口で明確な甘味と酸味が広がる。 ",
   "riceForMakingKoji": "八反錦"
 }
 {
@@ -183,7 +183,7 @@
   "prefectures": "京都府",
   "starterCulture": "速醸",
   "acidity": "1.7",
-  "taste": "落ち着いた吟醸香。軽快ながらも密度の高い味わい。深みのある純米大吟醸酒 ",
+  "discription": "落ち着いた吟醸香。軽快ながらも密度の高い味わい。深みのある純米大吟醸酒 ",
   "riceForMakingKoji": "備前雄町"
 }
 {
@@ -210,7 +210,7 @@
   "prefectures": "新潟県",
   "starterCulture": "速醸",
   "acidity": "1.3",
-  "taste": "白桃のようなフルーティーな香り。ソフトな飲み口。優しい甘味と旨味が特徴。中辛口 ",
+  "discription": "白桃のようなフルーティーな香り。ソフトな飲み口。優しい甘味と旨味が特徴。中辛口 ",
   "riceForMakingKoji": "越路早生、こしいぶき"
 }
 {
@@ -237,7 +237,7 @@
   "prefectures": "石川県",
   "starterCulture": "協会1号",
   "acidity": "1.1",
-  "taste": "非常に軽快な味わい。サラリとした飲み口とスッキリした後味。中辛口 ",
+  "discription": "非常に軽快な味わい。サラリとした飲み口とスッキリした後味。中辛口 ",
   "riceForMakingKoji": "五百万石"
 }
 {
@@ -264,7 +264,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "速醸",
   "acidity": "1.6",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -291,7 +291,7 @@
   "prefectures": "山口県",
   "starterCulture": "速醸",
   "acidity": "",
-  "taste": "甘い果実のような香りが主体。なめらかな飲み口と後味に広がる甘味が特徴。華やかな印象の味わい。 ",
+  "discription": "甘い果実のような香りが主体。なめらかな飲み口と後味に広がる甘味が特徴。華やかな印象の味わい。 ",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -318,7 +318,7 @@
   "prefectures": "新潟県",
   "starterCulture": "速醸",
   "acidity": "1.2",
-  "taste": "控えめなながら果実や花などの吟醸香が特徴。なめらかで軽快、まとまりのある味わい。 ",
+  "discription": "控えめなながら果実や花などの吟醸香が特徴。なめらかで軽快、まとまりのある味わい。 ",
   "riceForMakingKoji": "美山錦他"
 }
 {
@@ -344,7 +344,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "白桃のようなフルーティーな香気。アタックで広がるソフトな甘味と、後味の引き締まったキレのよさが特徴。 "
+  "discription": "白桃のようなフルーティーな香気。アタックで広がるソフトな甘味と、後味の引き締まったキレのよさが特徴。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/14",
@@ -368,7 +368,7 @@
   "prefectures": "栃木県",
   "starterCulture": "",
   "acidity": "",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/15",
@@ -392,7 +392,7 @@
   "prefectures": "富山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/16",
@@ -418,7 +418,7 @@
   "prefectures": "福島県",
   "starterCulture": "速醸",
   "acidity": "1.1～1.2",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "山田錦・雪化粧"
 }
 {
@@ -445,7 +445,7 @@
   "prefectures": "秋田県",
   "starterCulture": "山廃",
   "acidity": "1.9",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "美山錦"
 }
 {
@@ -471,7 +471,7 @@
   "prefectures": "石川県",
   "starterCulture": "山廃",
   "acidity": "",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/19",
@@ -496,7 +496,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "速醸",
   "acidity": "1.6",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -523,7 +523,7 @@
   "prefectures": "山形県",
   "starterCulture": "速醸",
   "acidity": "1.5",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "出羽の里"
 }
 {
@@ -550,7 +550,7 @@
   "prefectures": "佐賀県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -577,7 +577,7 @@
   "prefectures": "埼玉県",
   "starterCulture": "速醸",
   "acidity": "1.5",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -604,7 +604,7 @@
   "prefectures": "山形県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "出羽燦々"
 }
 {
@@ -629,7 +629,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "速醸",
   "acidity": "1.2",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/25",
@@ -654,7 +654,7 @@
   "prefectures": "宮城県",
   "starterCulture": "速醸",
   "acidity": "",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/26",
@@ -680,7 +680,7 @@
   "prefectures": "秋田県",
   "starterCulture": "速醸",
   "acidity": "1.7",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "秋田酒こまち"
 }
 {
@@ -707,7 +707,7 @@
   "prefectures": "福井県",
   "starterCulture": "速醸",
   "acidity": "1.3",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "五百万石"
 }
 {
@@ -734,7 +734,7 @@
   "prefectures": "神奈川県",
   "starterCulture": "速醸",
   "acidity": "1.6",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -761,7 +761,7 @@
   "prefectures": "宮城県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "宮城県産ササニシキ"
 }
 {
@@ -788,7 +788,7 @@
   "prefectures": "大分県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "ヒノヒカリ"
 }
 {
@@ -813,7 +813,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "生酛",
   "acidity": "",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/32",
@@ -838,7 +838,7 @@
   "prefectures": "広島県",
   "starterCulture": "速醸",
   "acidity": "",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/33",
@@ -864,7 +864,7 @@
   "prefectures": "宮城県",
   "starterCulture": "速醸",
   "acidity": "",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "トヨニシキ他"
 }
 {
@@ -891,7 +891,7 @@
   "prefectures": "新潟県",
   "starterCulture": "速醸",
   "acidity": "1.2",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "越淡麗"
 }
 {
@@ -917,7 +917,7 @@
   "prefectures": "新潟県",
   "starterCulture": "速醸",
   "acidity": "1.1",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/36",
@@ -942,7 +942,7 @@
   "prefectures": "秋田県",
   "starterCulture": "速醸",
   "acidity": "",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/37",
@@ -967,7 +967,7 @@
   "prefectures": "福島県",
   "starterCulture": "生酛",
   "acidity": "1.4",
-  "taste": "華やかで果実のような甘さを思わせる香りに原料香や乳製品の香りが融合。軽快ながら長い余韻が特徴。 ",
+  "discription": "華やかで果実のような甘さを思わせる香りに原料香や乳製品の香りが融合。軽快ながら長い余韻が特徴。 ",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -993,7 +993,7 @@
   "prefectures": "岐阜県",
   "starterCulture": "",
   "acidity": "",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/39",
@@ -1019,7 +1019,7 @@
   "prefectures": "北海道",
   "starterCulture": "速醸",
   "acidity": "",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "美山錦"
 }
 {
@@ -1046,7 +1046,7 @@
   "prefectures": "島根県",
   "starterCulture": "",
   "acidity": "1.6",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -1073,7 +1073,7 @@
   "prefectures": "石川県",
   "starterCulture": "速醸",
   "acidity": "1.3",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "石川門"
 }
 {
@@ -1100,7 +1100,7 @@
   "prefectures": "高知県",
   "starterCulture": "速醸",
   "acidity": "1.7",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "愛媛県産松山三井"
 }
 {
@@ -1127,7 +1127,7 @@
   "prefectures": "三重県",
   "starterCulture": "速醸",
   "acidity": "1.2",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "三重県伊賀産山田錦"
 }
 {
@@ -1153,7 +1153,7 @@
   "prefectures": "東京都",
   "starterCulture": "速醸",
   "acidity": "1.5",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/45",
@@ -1179,7 +1179,7 @@
   "prefectures": "福井県",
   "starterCulture": "速醸",
   "acidity": "1.5",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "山田錦・五百万石"
 }
 {
@@ -1206,7 +1206,7 @@
   "prefectures": "福島県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "会津産チヨニシキ"
 }
 {
@@ -1233,7 +1233,7 @@
   "prefectures": "福井県",
   "starterCulture": "速醸",
   "acidity": "1.2",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -1258,7 +1258,7 @@
   "prefectures": "茨城県",
   "starterCulture": "速醸",
   "acidity": "",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/49",
@@ -1282,7 +1282,7 @@
   "prefectures": "広島県",
   "starterCulture": "速醸",
   "acidity": "",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/50",
@@ -1306,7 +1306,7 @@
   "prefectures": "宮城県",
   "starterCulture": "速醸",
   "acidity": "",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/51",
@@ -1332,7 +1332,7 @@
   "prefectures": "福岡県",
   "starterCulture": "速醸",
   "acidity": "1.1～1.2",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -1358,7 +1358,7 @@
   "prefectures": "埼玉県",
   "starterCulture": "速醸",
   "acidity": "",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/53",
@@ -1383,7 +1383,7 @@
   "prefectures": "秋田県",
   "starterCulture": "速醸",
   "acidity": "1.3",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/54",
@@ -1409,7 +1409,7 @@
   "prefectures": "長野県",
   "starterCulture": "速醸",
   "acidity": "",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "金紋錦"
 }
 {
@@ -1436,7 +1436,7 @@
   "prefectures": "山梨県",
   "starterCulture": "速醸",
   "acidity": "1.6",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "雄町"
 }
 {
@@ -1462,7 +1462,7 @@
   "prefectures": "山形県",
   "starterCulture": "速醸",
   "acidity": "",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "出羽の里"
 }
 {
@@ -1487,7 +1487,7 @@
   "prefectures": "富山県",
   "starterCulture": "速醸",
   "acidity": "",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/58",
@@ -1513,7 +1513,7 @@
   "prefectures": "山形県",
   "starterCulture": "速醸",
   "acidity": "1.6～1.7",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "山形県産はえぬき"
 }
 {
@@ -1540,7 +1540,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "速醸",
   "acidity": "",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "兵庫県産五百万石"
 }
 {
@@ -1565,7 +1565,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "速醸",
   "acidity": "",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/61",
@@ -1591,7 +1591,7 @@
   "prefectures": "山形県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "庄内産出羽燦々"
 }
 {
@@ -1617,7 +1617,7 @@
   "prefectures": "静岡県",
   "starterCulture": "速醸",
   "acidity": "",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/63",
@@ -1641,7 +1641,7 @@
   "prefectures": "山形県",
   "starterCulture": "速醸",
   "acidity": "",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/64",
@@ -1667,7 +1667,7 @@
   "prefectures": "山形県",
   "starterCulture": "速醸",
   "acidity": "1.1",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "はえぬき"
 }
 {
@@ -1694,7 +1694,7 @@
   "prefectures": "愛知県",
   "starterCulture": "速醸",
   "acidity": "",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "若水"
 }
 {
@@ -1721,7 +1721,7 @@
   "prefectures": "島根県",
   "starterCulture": "速醸",
   "acidity": "1.7",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -1747,7 +1747,7 @@
   "prefectures": "東京都",
   "starterCulture": "",
   "acidity": "",
-  "taste": ""
+  "discription": ""
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/68",
@@ -1773,7 +1773,7 @@
   "prefectures": "和歌山県",
   "starterCulture": "速醸",
   "acidity": "2.0",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -1800,7 +1800,7 @@
   "prefectures": "新潟県",
   "starterCulture": "生酛",
   "acidity": "5.0",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "こしひかり"
 }
 {
@@ -1827,7 +1827,7 @@
   "prefectures": "石川県",
   "starterCulture": "速醸",
   "acidity": "1.7",
-  "taste": "",
+  "discription": "",
   "riceForMakingKoji": "兵庫県口吉川特別A地区産山田錦"
 }
 {
@@ -1852,7 +1852,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "華やかで気品高い吟醸香。やや軽快な酒質で、綿菓子様の甘味と米由来の旨味が下支えしている。やや辛口。 "
+  "discription": "華やかで気品高い吟醸香。やや軽快な酒質で、綿菓子様の甘味と米由来の旨味が下支えしている。やや辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/73",
@@ -1876,7 +1876,7 @@
   "prefectures": "愛知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "赤ワインのような色調とベリー系のフルーティーな香り。ワイン的な甘酸っぱいテイストの中に、米由来のほのかな旨味が潜む "
+  "discription": "赤ワインのような色調とベリー系のフルーティーな香り。ワイン的な甘酸っぱいテイストの中に、米由来のほのかな旨味が潜む "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/74",
@@ -1900,7 +1900,7 @@
   "prefectures": "愛知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "豊かなコクを思わせる香り。酸味、旨味、アルコール感が一体となり力強く、ふくよかなtasteを造りだす "
+  "discription": "豊かなコクを思わせる香り。酸味、旨味、アルコール感が一体となり力強く、ふくよかなdiscriptionを造りだす "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/75",
@@ -1924,7 +1924,7 @@
   "prefectures": "愛知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "発泡性のピリピリした刺激と、米粒の残った食感が特徴。味わいは酸味が高く、後味は軽快。クドさのないにごり酒 "
+  "discription": "発泡性のピリピリした刺激と、米粒の残った食感が特徴。味わいは酸味が高く、後味は軽快。クドさのないにごり酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/76",
@@ -1948,7 +1948,7 @@
   "prefectures": "愛知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "alcoholContentの非常に高い古酒。10年以上の熟成期間を経て変化した複雑で多彩な香気 "
+  "discription": "alcoholContentの非常に高い古酒。10年以上の熟成期間を経て変化した複雑で多彩な香気 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/77",
@@ -1972,7 +1972,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "山廃特有のふくよかな香りと、コクのある豊かな味わいが特徴。深みをもたらす酸味、キレをもたらす酸味が共存 "
+  "discription": "山廃特有のふくよかな香りと、コクのある豊かな味わいが特徴。深みをもたらす酸味、キレをもたらす酸味が共存 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/78",
@@ -1998,7 +1998,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "コクと甘味が控えめなきれいな酒質で、丸みのある飲み口。香りも味もソフト。 ",
+  "discription": "コクと甘味が控えめなきれいな酒質で、丸みのある飲み口。香りも味もソフト。 ",
   "riceForMakingKoji": "祝"
 }
 {
@@ -2023,7 +2023,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ソフトな飲み口と軽快な味わいが特徴。キレのよい苦味がアクセントとなりドライテイストをつくりだす "
+  "discription": "ソフトな飲み口と軽快な味わいが特徴。キレのよい苦味がアクセントとなりドライテイストをつくりだす "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/80",
@@ -2047,7 +2047,7 @@
   "prefectures": "島根県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "島根県の地酒らしく、旨味が明確で、典型的なコクのある味わいの純米酒。 "
+  "discription": "島根県の地酒らしく、旨味が明確で、典型的なコクのある味わいの純米酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/81",
@@ -2071,7 +2071,7 @@
   "prefectures": "島根県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "生酒特有の新鮮な香りと、米麹のような原料香が主体。軽快で柔らかな味わい。やや辛口。 "
+  "discription": "生酒特有の新鮮な香りと、米麹のような原料香が主体。軽快で柔らかな味わい。やや辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/82",
@@ -2095,7 +2095,7 @@
   "prefectures": "島根県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "しぼりたて生原酒ならではの多様な味わいながら、軽快で引き締まった後味が特徴。含み香の華やかさも持ち味 "
+  "discription": "しぼりたて生原酒ならではの多様な味わいながら、軽快で引き締まった後味が特徴。含み香の華やかさも持ち味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/83",
@@ -2119,7 +2119,7 @@
   "prefectures": "高知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "完熟果実を思わせる華やかな吟醸香と、酸味と苦味がもたらすキレのよい味わいが特徴 "
+  "discription": "完熟果実を思わせる華やかな吟醸香と、酸味と苦味がもたらすキレのよい味わいが特徴 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/84",
@@ -2133,7 +2133,7 @@
   "volume": "",
   "sakeMeterValue": "",
   "imageUrl": "http://www.sake-sennin.com/fbo/web/uploads/images/product/542ce1f18bdd5.jpg",
-  "mariage": "食事の後に楽しみたいtaste。ブルーチーズ＆ハチミツ、ウオッシュチーズ＆ナッツ、和菓子全般などと好相性 ",
+  "mariage": "食事の後に楽しみたいdiscription。ブルーチーズ＆ハチミツ、ウオッシュチーズ＆ナッツ、和菓子全般などと好相性 ",
   "type": "普通酒",
   "sakeBrewery": "若鶴酒造",
   "breweryYear": "",
@@ -2143,7 +2143,7 @@
   "prefectures": "富山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ビターチョコレートのような甘美な香り。とろりとした食感、甘味の強さが特徴だが、シャープな酸味と苦味が後味を引き締める "
+  "discription": "ビターチョコレートのような甘美な香り。とろりとした食感、甘味の強さが特徴だが、シャープな酸味と苦味が後味を引き締める "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/85",
@@ -2167,7 +2167,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "生クリームのようなクリーミーさと、炊き立ての米のようなふくよかさが融合。甘味と旨味が明確な芳醇な味わい "
+  "discription": "生クリームのようなクリーミーさと、炊き立ての米のようなふくよかさが融合。甘味と旨味が明確な芳醇な味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/86",
@@ -2191,7 +2191,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ふくよかな原料香と、甘味と酸味を伴う旨味が特徴ながら、後味のキレよく、余韻は爽やか "
+  "discription": "ふくよかな原料香と、甘味と酸味を伴う旨味が特徴ながら、後味のキレよく、余韻は爽やか "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/87",
@@ -2215,7 +2215,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "醇酒タイプながらも、軽快な酸味と苦味がキレのよさを醸しだすスッキリテイスト。山田錦ならではのしなやかなボディ "
+  "discription": "醇酒タイプながらも、軽快な酸味と苦味がキレのよさを醸しだすスッキリテイスト。山田錦ならではのしなやかなボディ "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/95",
@@ -2241,7 +2241,7 @@
   "prefectures": "東京都",
   "starterCulture": "",
   "acidity": "",
-  "taste": "清涼な吟醸香。スムーズな飲み口。心地よい甘味とキレのよい苦味。軽快な辛口 ",
+  "discription": "清涼な吟醸香。スムーズな飲み口。心地よい甘味とキレのよい苦味。軽快な辛口 ",
   "riceForMakingKoji": "国産米"
 }
 {
@@ -2266,7 +2266,7 @@
   "prefectures": "福井県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "果実らしい甘やかな香りと酸味の爽やかさのある軽い味わい "
+  "discription": "果実らしい甘やかな香りと酸味の爽やかさのある軽い味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/107",
@@ -2290,7 +2290,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ほのかな香りとはっきりした酸味と甘味 "
+  "discription": "ほのかな香りとはっきりした酸味と甘味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/117",
@@ -2314,7 +2314,7 @@
   "prefectures": "山梨県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "軽めのふくよかな香り、軽いアタック、後味の苦味のドライテイスト "
+  "discription": "軽めのふくよかな香り、軽いアタック、後味の苦味のドライテイスト "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/118",
@@ -2338,7 +2338,7 @@
   "prefectures": "三重県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "青リンゴ、メロンを思わせるフルーティな香りが主体。すっきりした酸とドライ感が特徴 "
+  "discription": "青リンゴ、メロンを思わせるフルーティな香りが主体。すっきりした酸とドライ感が特徴 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/120",
@@ -2362,7 +2362,7 @@
   "prefectures": "三重県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "リンゴ酸がもたらす甘酸っぱい香りと味わいの中に、日本酒らしい米麹由来のふくよかさが加わる "
+  "discription": "リンゴ酸がもたらす甘酸っぱい香りと味わいの中に、日本酒らしい米麹由来のふくよかさが加わる "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/121",
@@ -2386,7 +2386,7 @@
   "prefectures": "三重県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "典型的な熟成タイプ。18年古酒ならではの重厚かつ凝縮感の高いtaste "
+  "discription": "典型的な熟成タイプ。18年古酒ならではの重厚かつ凝縮感の高いdiscription "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/122",
@@ -2410,7 +2410,7 @@
   "prefectures": "福井県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "上品で繊細なtasteの大吟醸酒。和製果実や花を思わせるフルテーィーさが特徴 "
+  "discription": "上品で繊細なdiscriptionの大吟醸酒。和製果実や花を思わせるフルテーィーさが特徴 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/123",
@@ -2434,7 +2434,7 @@
   "prefectures": "福井県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ミネラル感のある香り、控えめな甘みと酸味、軽快でスムースな味わい、余韻は短い "
+  "discription": "ミネラル感のある香り、控えめな甘みと酸味、軽快でスムースな味わい、余韻は短い "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/124",
@@ -2458,7 +2458,7 @@
   "prefectures": "福井県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "軽快な旨味を持つ純米酒。突出した要素のない優しい飲み口 "
+  "discription": "軽快な旨味を持つ純米酒。突出した要素のない優しい飲み口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/125",
@@ -2482,7 +2482,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料米の軽快な香りに、清涼なスダチ様の香りが加わり、綺麗で繊細な旨味が特徴 "
+  "discription": "原料米の軽快な香りに、清涼なスダチ様の香りが加わり、綺麗で繊細な旨味が特徴 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/126",
@@ -2506,7 +2506,7 @@
   "prefectures": "山形県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "柔らかく艶のある純米大吟醸酒。とろりとした口当たりとフルーティーな吟醸香が楽しめます。 "
+  "discription": "柔らかく艶のある純米大吟醸酒。とろりとした口当たりとフルーティーな吟醸香が楽しめます。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/127",
@@ -2530,7 +2530,7 @@
   "prefectures": "宮城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "華やかな甘味のある吟醸香と味わい。原酒12度でアルコールの刺激がなくさまざまなフレンチの食材に寄り添う。 "
+  "discription": "華やかな甘味のある吟醸香と味わい。原酒12度でアルコールの刺激がなくさまざまなフレンチの食材に寄り添う。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/128",
@@ -2554,7 +2554,7 @@
   "prefectures": "宮城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "硬質で清透感ある甘み。それに麹由来の旨みとリンゴのようなさわやかな酸味が寄り添う。 "
+  "discription": "硬質で清透感ある甘み。それに麹由来の旨みとリンゴのようなさわやかな酸味が寄り添う。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/130",
@@ -2578,7 +2578,7 @@
   "prefectures": "宮城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "完熟メロン、青りんご、パイナップル、はちみつ、干しブドウ、生クリーム、フルーツケーキなど緻密で凝縮感ある甘味と生クリームのようななめらかさ "
+  "discription": "完熟メロン、青りんご、パイナップル、はちみつ、干しブドウ、生クリーム、フルーツケーキなど緻密で凝縮感ある甘味と生クリームのようななめらかさ "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/131",
@@ -2602,7 +2602,7 @@
   "prefectures": "宮城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "瑞々しく、瓜などの甘い水菓子の様な味と香り、石清水の様なミネラル感 "
+  "discription": "瑞々しく、瓜などの甘い水菓子の様な味と香り、石清水の様なミネラル感 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/132",
@@ -2626,7 +2626,7 @@
   "prefectures": "宮城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "完熟した果実や濃縮感ある甘み。麹由来の旨み。 "
+  "discription": "完熟した果実や濃縮感ある甘み。麹由来の旨み。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/133",
@@ -2650,7 +2650,7 @@
   "prefectures": "岐阜県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "青菜野菜を思わせる味わいと果実と乳のようなまろやかで華やかな香り "
+  "discription": "青菜野菜を思わせる味わいと果実と乳のようなまろやかで華やかな香り "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/134",
@@ -2674,7 +2674,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "山廃ながら柑橘系の軽快な香り、山廃ならではの芳醇な旨み "
+  "discription": "山廃ながら柑橘系の軽快な香り、山廃ならではの芳醇な旨み "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/135",
@@ -2698,7 +2698,7 @@
   "prefectures": "山形県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "濃醇でコクがあり、密度の高いしっかりした酸を持つ "
+  "discription": "濃醇でコクがあり、密度の高いしっかりした酸を持つ "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/136",
@@ -2722,7 +2722,7 @@
   "prefectures": "奈良県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "熟成感のある濃密な香りと芯のしっかりとした旨み、まろやかな酸味、苦味が広がるが軽やかさも同居。 "
+  "discription": "熟成感のある濃密な香りと芯のしっかりとした旨み、まろやかな酸味、苦味が広がるが軽やかさも同居。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/137",
@@ -2746,7 +2746,7 @@
   "prefectures": "奈良県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "上品な杉樽の香りと軽やかな味わいの中にも雄町のふくらみと山廃独特の酸味、旨み、苦味がある。 "
+  "discription": "上品な杉樽の香りと軽やかな味わいの中にも雄町のふくらみと山廃独特の酸味、旨み、苦味がある。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/138",
@@ -2770,7 +2770,7 @@
   "prefectures": "奈良県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "華やかな吟醸香と繊細できれいな酸味と旨み、わずかに苦味もあり淡麗辛口。 "
+  "discription": "華やかな吟醸香と繊細できれいな酸味と旨み、わずかに苦味もあり淡麗辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/139",
@@ -2794,7 +2794,7 @@
   "prefectures": "山形県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "香りは控え目ながら原料の米を想わせる旨さ、ふくよかさとしっかりとした酸味があり、やや辛口。 "
+  "discription": "香りは控え目ながら原料の米を想わせる旨さ、ふくよかさとしっかりとした酸味があり、やや辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/140",
@@ -2818,7 +2818,7 @@
   "prefectures": "福島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "シンプルで口当たりがよく、丸くふくよかな味わい。キレがよくやや辛口。 "
+  "discription": "シンプルで口当たりがよく、丸くふくよかな味わい。キレがよくやや辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/141",
@@ -2842,7 +2842,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "上品な旨みと酸味、苦味のバランスがよく、爽やかでかつふくよかさもある。 "
+  "discription": "上品な旨みと酸味、苦味のバランスがよく、爽やかでかつふくよかさもある。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/142",
@@ -2866,7 +2866,7 @@
   "prefectures": "東京都",
   "starterCulture": "",
   "acidity": "",
-  "taste": "香り控え目、シンプルでコンパクトな味わい。軽快な酸味が後味を締め、辛口にキレる。 "
+  "discription": "香り控え目、シンプルでコンパクトな味わい。軽快な酸味が後味を締め、辛口にキレる。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/143",
@@ -2890,7 +2890,7 @@
   "prefectures": "山梨県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "清涼な吟醸香、なめらかな甘味、含みでわずかな酸味と旨み、軽快でキレのよい余韻。 "
+  "discription": "清涼な吟醸香、なめらかな甘味、含みでわずかな酸味と旨み、軽快でキレのよい余韻。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/144",
@@ -2914,7 +2914,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "非常に軽快で淡麗。透明感のある味わい。アルコール分が低めで、飲みやすい。香りはフレッシュで華やか "
+  "discription": "非常に軽快で淡麗。透明感のある味わい。アルコール分が低めで、飲みやすい。香りはフレッシュで華やか "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/145",
@@ -2938,7 +2938,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "日本酒らしいどっしりとした香りと味わい。脂の強い個性的な料理にも負けない酒質。余韻は中程度でやや濃醇 "
+  "discription": "日本酒らしいどっしりとした香りと味わい。脂の強い個性的な料理にも負けない酒質。余韻は中程度でやや濃醇 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/146",
@@ -2962,7 +2962,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "紹興酒のような複雑な香り。シロップ様の強い甘味と熟成した醤油のような旨味が非常に複雑で個性的な味わい "
+  "discription": "紹興酒のような複雑な香り。シロップ様の強い甘味と熟成した醤油のような旨味が非常に複雑で個性的な味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/147",
@@ -2986,7 +2986,7 @@
   "prefectures": "秋田県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "華やかさと爽やかさが同居する香り。甘味とアルコール由来の苦味が程良くバランス。余韻は短くドライ "
+  "discription": "華やかさと爽やかさが同居する香り。甘味とアルコール由来の苦味が程良くバランス。余韻は短くドライ "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/148",
@@ -3010,7 +3010,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ミルキーな酸を思わせる香りと白玉団子のような原料由来の甘味が主体。余韻はやや短く、味わいは淡麗 "
+  "discription": "ミルキーな酸を思わせる香りと白玉団子のような原料由来の甘味が主体。余韻はやや短く、味わいは淡麗 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/149",
@@ -3034,7 +3034,7 @@
   "prefectures": "岩手県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "爽やかで上品な香りと味わい。派手さはないが、バランスの取れた商品。ほのかなだが確かな余韻がある中辛口 "
+  "discription": "爽やかで上品な香りと味わい。派手さはないが、バランスの取れた商品。ほのかなだが確かな余韻がある中辛口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/150",
@@ -3058,7 +3058,7 @@
   "prefectures": "北海道",
   "starterCulture": "",
   "acidity": "",
-  "taste": "香りのトーンは低めでほのかな甘みを思わせる。味わいはフラットでドライ。余韻は短く淡麗。 "
+  "discription": "香りのトーンは低めでほのかな甘みを思わせる。味わいはフラットでドライ。余韻は短く淡麗。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/151",
@@ -3082,7 +3082,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ふくよかさのあるが、苦みと酸味がしっかりとしているドライな味わい "
+  "discription": "ふくよかさのあるが、苦みと酸味がしっかりとしているドライな味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/152",
@@ -3106,7 +3106,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ふくよかで柔らかい厚みのある旨味持つが、キレ良く後口がすっきりしている "
+  "discription": "ふくよかで柔らかい厚みのある旨味持つが、キレ良く後口がすっきりしている "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/153",
@@ -3130,7 +3130,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "まろやかで柔らかい味わいだが、苦みがしっかりしていて後口がキレイ "
+  "discription": "まろやかで柔らかい味わいだが、苦みがしっかりしていて後口がキレイ "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/154",
@@ -3154,7 +3154,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "柔らかくふくよかな味わいだが、引き締まった苦味がお酒の味を調えている "
+  "discription": "柔らかくふくよかな味わいだが、引き締まった苦味がお酒の味を調えている "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/155",
@@ -3178,7 +3178,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "シャープできれいな典型的な淡麗辛口 "
+  "discription": "シャープできれいな典型的な淡麗辛口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/156",
@@ -3202,7 +3202,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "柔らかく膨らみのある味わいだが、スッキリとしたキレがある "
+  "discription": "柔らかく膨らみのある味わいだが、スッキリとしたキレがある "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/157",
@@ -3226,7 +3226,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ふわりとした米の旨味が出ていて、サラリと清々しい苦味とスッキリとした酸を出すことで、キレイなお酒に仕上がっている "
+  "discription": "ふわりとした米の旨味が出ていて、サラリと清々しい苦味とスッキリとした酸を出すことで、キレイなお酒に仕上がっている "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/158",
@@ -3252,7 +3252,7 @@
   "prefectures": "新潟県",
   "starterCulture": "速醸",
   "acidity": "1.6",
-  "taste": "米本来の丸みのある柔らかさと切れ味の良い酸によりバランスの取れた味になっている ",
+  "discription": "米本来の丸みのある柔らかさと切れ味の良い酸によりバランスの取れた味になっている ",
   "riceForMakingKoji": "こしいぶき"
 }
 {
@@ -3277,7 +3277,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "柔らかくまろやかだが、清々しくキレイな味わい "
+  "discription": "柔らかくまろやかだが、清々しくキレイな味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/160",
@@ -3301,7 +3301,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "厚みがある味わいだが酸がしっかりしていて意外に飲みやすい "
+  "discription": "厚みがある味わいだが酸がしっかりしていて意外に飲みやすい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/161",
@@ -3325,7 +3325,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "上品な原料香と果物香。和のテイストを備えた落ち着いた印象が特徴 "
+  "discription": "上品な原料香と果物香。和のテイストを備えた落ち着いた印象が特徴 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/162",
@@ -3349,7 +3349,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ふくよかな香りが感じられる純米吟醸酒。米由来の旨味と軽快な酸味が特徴 "
+  "discription": "ふくよかな香りが感じられる純米吟醸酒。米由来の旨味と軽快な酸味が特徴 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/163",
@@ -3373,7 +3373,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "深い旨味と酸味のバランスが味わえる生酛仕込み純米酒 "
+  "discription": "深い旨味と酸味のバランスが味わえる生酛仕込み純米酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/164",
@@ -3397,7 +3397,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ほんのりとした甘味。柔らかな旨味。スッキリとした後味が特徴のソフトテイストな純米酒 "
+  "discription": "ほんのりとした甘味。柔らかな旨味。スッキリとした後味が特徴のソフトテイストな純米酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/165",
@@ -3421,7 +3421,7 @@
   "prefectures": "島根県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "山廃仕込みの純米吟醸酒。、フルーティーさとふくよかさが同居する多層な酒質 "
+  "discription": "山廃仕込みの純米吟醸酒。、フルーティーさとふくよかさが同居する多層な酒質 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/166",
@@ -3445,7 +3445,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "白麹がもたらすクエン酸の甘酸っぱさは、まるで果実酒のような爽やかさ。今までにない個性的な1本 "
+  "discription": "白麹がもたらすクエン酸の甘酸っぱさは、まるで果実酒のような爽やかさ。今までにない個性的な1本 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/167",
@@ -3469,7 +3469,7 @@
   "prefectures": "鳥取県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "熟した果実のようなフルーティな香り。軽やかなあっ磁歪で、清涼な甘味と酸味が特徴。 "
+  "discription": "熟した果実のようなフルーティな香り。軽やかなあっ磁歪で、清涼な甘味と酸味が特徴。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/168",
@@ -3493,7 +3493,7 @@
   "prefectures": "福島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "甘やかな香りとほのかなコク。さらりとした飲み口。苦味のドライ感。余韻は短い。 "
+  "discription": "甘やかな香りとほのかなコク。さらりとした飲み口。苦味のドライ感。余韻は短い。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/169",
@@ -3517,7 +3517,7 @@
   "prefectures": "福島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "果実系の香りとコンパクにまとまった甘味酸味。きれいな酸味によるドライ感と短い余韻。 "
+  "discription": "果実系の香りとコンパクにまとまった甘味酸味。きれいな酸味によるドライ感と短い余韻。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/170",
@@ -3541,7 +3541,7 @@
   "prefectures": "福島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "香りも味も甘い要素が中心。きれいな酸味が味を引き締め、余韻は短い。 "
+  "discription": "香りも味も甘い要素が中心。きれいな酸味が味を引き締め、余韻は短い。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/171",
@@ -3565,7 +3565,7 @@
   "prefectures": "埼玉県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "まろやかな口当たりだが、ミネラル感ある原酒ならではのしっかりした骨太な味わい。ピリッと辛口の後味すっきり系。 "
+  "discription": "まろやかな口当たりだが、ミネラル感ある原酒ならではのしっかりした骨太な味わい。ピリッと辛口の後味すっきり系。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/172",
@@ -3589,7 +3589,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "”山田錦”のふくよかさと”雄町”のシャープさを兼ね備えた、キレある味わい　中辛口 "
+  "discription": "”山田錦”のふくよかさと”雄町”のシャープさを兼ね備えた、キレある味わい　中辛口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/173",
@@ -3613,7 +3613,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "一夏超えで、味が乗った純米吟醸酒　やや強めの酸味が特徴　やや辛口 "
+  "discription": "一夏超えで、味が乗った純米吟醸酒　やや強めの酸味が特徴　やや辛口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/174",
@@ -3637,7 +3637,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "酒造好適米”山田錦と吟のさと”を活かした、”華やか香りとふくらみのある味わい”　やや辛口。 "
+  "discription": "酒造好適米”山田錦と吟のさと”を活かした、”華やか香りとふくらみのある味わい”　やや辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/175",
@@ -3661,7 +3661,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "酒造好適米。山田錦で醸した”ふくらみのある香りとふくよかな旨味”の一品。やや甘めの旨口。 "
+  "discription": "酒造好適米。山田錦で醸した”ふくらみのある香りとふくよかな旨味”の一品。やや甘めの旨口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/176",
@@ -3685,7 +3685,7 @@
   "prefectures": "福島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "きめが細かくシルキーな飲み口。ふくよかな米の旨みがふんわり口中に広がり白ブドウのような爽やかな香りが抜ける。バランスの良い中口。 "
+  "discription": "きめが細かくシルキーな飲み口。ふくよかな米の旨みがふんわり口中に広がり白ブドウのような爽やかな香りが抜ける。バランスの良い中口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/177",
@@ -3709,7 +3709,7 @@
   "prefectures": "福島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "清涼感あふれるスパークリング。甘みを感じる香りとドライな後味。柔らかな酸味が全体を包む。 "
+  "discription": "清涼感あふれるスパークリング。甘みを感じる香りとドライな後味。柔らかな酸味が全体を包む。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/178",
@@ -3733,7 +3733,7 @@
   "prefectures": "埼玉県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "リンゴジャムのような濃縮された甘味がいっぱいに広がるが爽やかな酸が後口を軽快な印象にしてくれる。貴醸酒タイプの甘口。 "
+  "discription": "リンゴジャムのような濃縮された甘味がいっぱいに広がるが爽やかな酸が後口を軽快な印象にしてくれる。貴醸酒タイプの甘口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/179",
@@ -3757,7 +3757,7 @@
   "prefectures": "埼玉県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "優しい甘味と丸みのある飲み心地。ほのかな米麹の甘味を感じる香り。厚みのある旨みが口中に広がり、豊かな酸が後味をスッキリしてくれる。 "
+  "discription": "優しい甘味と丸みのある飲み心地。ほのかな米麹の甘味を感じる香り。厚みのある旨みが口中に広がり、豊かな酸が後味をスッキリしてくれる。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/180",
@@ -3781,7 +3781,7 @@
   "prefectures": "埼玉県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "山廃ならではの深みある味わいながらすっきりした後味で洗練された印象。香りは控えめながら飲み飽きないキレのある辛口。 "
+  "discription": "山廃ならではの深みある味わいながらすっきりした後味で洗練された印象。香りは控えめながら飲み飽きないキレのある辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/181",
@@ -3805,7 +3805,7 @@
   "prefectures": "広島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "お米の味わいが豊か 昔ながらの純米酒 "
+  "discription": "お米の味わいが豊か 昔ながらの純米酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/182",
@@ -3829,7 +3829,7 @@
   "prefectures": "広島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "コクがあるが後味がすっきりとした濁り酒 "
+  "discription": "コクがあるが後味がすっきりとした濁り酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/183",
@@ -3853,7 +3853,7 @@
   "prefectures": "徳島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "初心者向けの飲みやすい熟成酒 "
+  "discription": "初心者向けの飲みやすい熟成酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/184",
@@ -3877,7 +3877,7 @@
   "prefectures": "高知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "すっきり辛口、米のふくよかな香りが特徴 "
+  "discription": "すっきり辛口、米のふくよかな香りが特徴 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/185",
@@ -3901,7 +3901,7 @@
   "prefectures": "高知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "青りんごや青菜を思わせる爽やかな香り。キレのよい後味。ほどよい苦味とほのかな旨味も存在。 "
+  "discription": "青りんごや青菜を思わせる爽やかな香り。キレのよい後味。ほどよい苦味とほのかな旨味も存在。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/186",
@@ -3925,7 +3925,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "黒砂糖を思わせる香りとほのかな甘さ。上品な熟成感。ふくらみのある個性的な香気 "
+  "discription": "黒砂糖を思わせる香りとほのかな甘さ。上品な熟成感。ふくらみのある個性的な香気 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/187",
@@ -3949,7 +3949,7 @@
   "prefectures": "佐賀県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "平均的な醇酒。桜餅、ワラビ餅のようなふくよかな香りと、なめらかな味わい "
+  "discription": "平均的な醇酒。桜餅、ワラビ餅のようなふくよかな香りと、なめらかな味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/188",
@@ -3973,7 +3973,7 @@
   "prefectures": "佐賀県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "一口目に甘味を感じるが苦味と酸味が余韻として残る。サッパリした爽やかなtaste "
+  "discription": "一口目に甘味を感じるが苦味と酸味が余韻として残る。サッパリした爽やかなdiscription "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/189",
@@ -3997,7 +3997,7 @@
   "prefectures": "北海道",
   "starterCulture": "",
   "acidity": "",
-  "taste": "スッキリシンプルな味わいの典型的な辛口爽酒 "
+  "discription": "スッキリシンプルな味わいの典型的な辛口爽酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/190",
@@ -4021,7 +4021,7 @@
   "prefectures": "宮城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "スッキリとした香りとほのかな吟醸香が特徴。爽酒タイプ "
+  "discription": "スッキリとした香りとほのかな吟醸香が特徴。爽酒タイプ "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/191",
@@ -4045,7 +4045,7 @@
   "prefectures": "宮城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "スッキリした爽快感とほのかな吟醸香が楽しめる辛口の爽薫酒 "
+  "discription": "スッキリした爽快感とほのかな吟醸香が楽しめる辛口の爽薫酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/192",
@@ -4069,7 +4069,7 @@
   "prefectures": "宮城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "スッキリとした味わいかつ、しっとりとした米の旨味を感じる爽醇酒タイプ "
+  "discription": "スッキリとした味わいかつ、しっとりとした米の旨味を感じる爽醇酒タイプ "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/193",
@@ -4093,7 +4093,7 @@
   "prefectures": "宮城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "スッキリとした味わい。原酒である分アルコールが高くドライな味わいになっている "
+  "discription": "スッキリとした味わい。原酒である分アルコールが高くドライな味わいになっている "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/194",
@@ -4117,7 +4117,7 @@
   "prefectures": "山形県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "全体的にはスッキリとした味わいながら、米の旨味を備えた薫酒タイプ。淡く濁った色調も特徴 "
+  "discription": "全体的にはスッキリとした味わいながら、米の旨味を備えた薫酒タイプ。淡く濁った色調も特徴 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/195",
@@ -4143,7 +4143,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "1.6",
-  "taste": "上新粉などの軽やかな原料香に、軽快でスッキリとした味わい。後味は酸味と苦味のドライテイスト。 ",
+  "discription": "上新粉などの軽やかな原料香に、軽快でスッキリとした味わい。後味は酸味と苦味のドライテイスト。 ",
   "riceForMakingKoji": "新潟県産米"
 }
 {
@@ -4168,7 +4168,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "華やかでフルーティな香りと味わい "
+  "discription": "華やかでフルーティな香りと味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/197",
@@ -4192,7 +4192,7 @@
   "prefectures": "富山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "華やかで爽やか、ドライな辛口 "
+  "discription": "華やかで爽やか、ドライな辛口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/198",
@@ -4216,7 +4216,7 @@
   "prefectures": "富山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "フルーティーな香り、清涼な酸味、ふんわりとした甘味と旨味 "
+  "discription": "フルーティーな香り、清涼な酸味、ふんわりとした甘味と旨味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/199",
@@ -4240,7 +4240,7 @@
   "prefectures": "石川県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "警戒ですっきりとした飲み口 "
+  "discription": "警戒ですっきりとした飲み口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/200",
@@ -4264,7 +4264,7 @@
   "prefectures": "奈良県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "しっかりとした熟成香、高い酸、炊きたての米、香ばしいナッツ類、スパイスの香りが重層的に続く。やや甘口 "
+  "discription": "しっかりとした熟成香、高い酸、炊きたての米、香ばしいナッツ類、スパイスの香りが重層的に続く。やや甘口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/201",
@@ -4288,7 +4288,7 @@
   "prefectures": "奈良県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "キリッとした酸味とかすかな熟成香、穏やかな旨みが隠れている。やや辛口 "
+  "discription": "キリッとした酸味とかすかな熟成香、穏やかな旨みが隠れている。やや辛口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/202",
@@ -4312,7 +4312,7 @@
   "prefectures": "和歌山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "シャープな高い酸が主体だが柔らかな熟した果物の甘い香りもあり、全体に複雑な香りが特徴。やや辛口。 "
+  "discription": "シャープな高い酸が主体だが柔らかな熟した果物の甘い香りもあり、全体に複雑な香りが特徴。やや辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/203",
@@ -4326,7 +4326,7 @@
   "volume": "",
   "sakeMeterValue": "",
   "imageUrl": "http://www.sake-sennin.com/fbo/web/uploads/images/product/5433574feaadc.jpg",
-  "mariage": "taste、味わいに刺激のある料理。生ハム、燻製ソーセージ、クレソンなどの香草を使った魚料理やサラダなど ",
+  "mariage": "discription、味わいに刺激のある料理。生ハム、燻製ソーセージ、クレソンなどの香草を使った魚料理やサラダなど ",
   "type": "純米酒",
   "sakeBrewery": "吉村秀雄商店",
   "breweryYear": "",
@@ -4336,7 +4336,7 @@
   "prefectures": "和歌山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "シャープな酸味、木の子や草のような爽やかな印象。やや辛口 "
+  "discription": "シャープな酸味、木の子や草のような爽やかな印象。やや辛口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/204",
@@ -4360,7 +4360,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "純米吟醸だが乳製品のようなふくよかな香りを持ち、豊かな酸味が特徴的なキリリとした濃醇な味わい "
+  "discription": "純米吟醸だが乳製品のようなふくよかな香りを持ち、豊かな酸味が特徴的なキリリとした濃醇な味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/205",
@@ -4385,7 +4385,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "純米大吟醸だが旨味を思わせるチーズや穀物類のふくよかな香りが豊か。やや濃醇な味わいだがあくまでも上品で繊細。コクはあるがキレがいい ",
+  "discription": "純米大吟醸だが旨味を思わせるチーズや穀物類のふくよかな香りが豊か。やや濃醇な味わいだがあくまでも上品で繊細。コクはあるがキレがいい ",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -4410,7 +4410,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "メロンや洋梨など熟した果物の華やかな香りが豊か。味わいは軽快で、序盤の爽やかな甘味と酸味から終盤は一転ドライに変わる。 "
+  "discription": "メロンや洋梨など熟した果物の華やかな香りが豊か。味わいは軽快で、序盤の爽やかな甘味と酸味から終盤は一転ドライに変わる。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/207",
@@ -4434,7 +4434,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "白玉粉のような上品な原料香の中にメロン、バナナなどの熟した果物の華やかな香りがほのかに香る "
+  "discription": "白玉粉のような上品な原料香の中にメロン、バナナなどの熟した果物の華やかな香りがほのかに香る "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/208",
@@ -4458,7 +4458,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "熟したミカンの香りの中にドライフルーツの凝縮感のある香り。口当たりはなめらかだが、序盤には濃厚な甘味、中盤から芳醇な酸味が立ち上がり余韻まで続く。梅酒のテイストを持った酒 "
+  "discription": "熟したミカンの香りの中にドライフルーツの凝縮感のある香り。口当たりはなめらかだが、序盤には濃厚な甘味、中盤から芳醇な酸味が立ち上がり余韻まで続く。梅酒のテイストを持った酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/209",
@@ -4482,7 +4482,7 @@
   "prefectures": "鳥取県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "強い酸味と旨みの余韻が特徴 "
+  "discription": "強い酸味と旨みの余韻が特徴 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/210",
@@ -4506,7 +4506,7 @@
   "prefectures": "島根県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "熟成感のあるほのかな甘みのやや辛口 "
+  "discription": "熟成感のあるほのかな甘みのやや辛口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/211",
@@ -4530,7 +4530,7 @@
   "prefectures": "島根県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "フルーティーな香りと口当たりの良さのやや甘口 "
+  "discription": "フルーティーな香りと口当たりの良さのやや甘口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/212",
@@ -4554,7 +4554,7 @@
   "prefectures": "福井県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "洋酒のような熟成感もある複雑な香りとボリューム感とドライ感のある味わい。 "
+  "discription": "洋酒のような熟成感もある複雑な香りとボリューム感とドライ感のある味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/213",
@@ -4578,7 +4578,7 @@
   "prefectures": "福井県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "やや複雑な香りと旨味苦味酸味のしっかりしたどっしりとした味わい。 "
+  "discription": "やや複雑な香りと旨味苦味酸味のしっかりしたどっしりとした味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/214",
@@ -4602,7 +4602,7 @@
   "prefectures": "山梨県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "甘味とアルコールのしっかりしたアタックに始まり、さっと引く短い余韻に終わる味わい。 "
+  "discription": "甘味とアルコールのしっかりしたアタックに始まり、さっと引く短い余韻に終わる味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/220",
@@ -4628,7 +4628,7 @@
   "prefectures": "山形県",
   "starterCulture": "生もと",
   "acidity": "1.7",
-  "taste": "乳製品のようなふくよかな香り。ミディアムボディ～フルボディテイスト。しっかりした酸味が特徴 ",
+  "discription": "乳製品のようなふくよかな香り。ミディアムボディ～フルボディテイスト。しっかりした酸味が特徴 ",
   "riceForMakingKoji": "ササニシキ"
 }
 {
@@ -4655,7 +4655,7 @@
   "prefectures": "滋賀県",
   "starterCulture": "生もと",
   "acidity": "1.8",
-  "taste": "乳製品のようなクリーミーな香り。まろやかな飲み口。辛口ながら酸味や甘味がアクセントになった味わい ",
+  "discription": "乳製品のようなクリーミーな香り。まろやかな飲み口。辛口ながら酸味や甘味がアクセントになった味わい ",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -4682,7 +4682,7 @@
   "prefectures": "宮城県",
   "starterCulture": "山廃",
   "acidity": "1.8",
-  "taste": "輝く山吹の色調。木質、乳製品のような穏やかな香り。やや濃醇な味わい。後味は爽やか ",
+  "discription": "輝く山吹の色調。木質、乳製品のような穏やかな香り。やや濃醇な味わい。後味は爽やか ",
   "riceForMakingKoji": "ささろまん"
 }
 {
@@ -4709,7 +4709,7 @@
   "prefectures": "北海道",
   "starterCulture": "生もと",
   "acidity": "1.8",
-  "taste": "生もと系純米酒の中では軽快な味わい。飲み口を引き締めるシャープな酸味と、キリリとしたドライな後味が特徴 ",
+  "discription": "生もと系純米酒の中では軽快な味わい。飲み口を引き締めるシャープな酸味と、キリリとしたドライな後味が特徴 ",
   "riceForMakingKoji": "美山錦"
 }
 {
@@ -4736,7 +4736,7 @@
   "prefectures": "秋田県",
   "starterCulture": "生もと",
   "acidity": "1.8",
-  "taste": "甘味と酸味が明確。甘やかなでクリーミーな香り。チャーミングな味わいの生もと系純米酒。 ",
+  "discription": "甘味と酸味が明確。甘やかなでクリーミーな香り。チャーミングな味わいの生もと系純米酒。 ",
   "riceForMakingKoji": "秋田酒こまち"
 }
 {
@@ -4763,7 +4763,7 @@
   "prefectures": "徳島県",
   "starterCulture": "山廃",
   "acidity": "1.4",
-  "taste": "磯の香りを持つ純米酒。ふくよかな旨味が特徴だが、アタックの甘味、後味のドライ感が融合 ",
+  "discription": "磯の香りを持つ純米酒。ふくよかな旨味が特徴だが、アタックの甘味、後味のドライ感が融合 ",
   "riceForMakingKoji": "阿波山田錦"
 }
 {
@@ -4790,7 +4790,7 @@
   "prefectures": "石川県",
   "starterCulture": "山廃",
   "acidity": "1.8",
-  "taste": "山廃造りの濃醇さが楽しめる一本。コクのある辛口。 ",
+  "discription": "山廃造りの濃醇さが楽しめる一本。コクのある辛口。 ",
   "riceForMakingKoji": "五百万石"
 }
 {
@@ -4817,7 +4817,7 @@
   "prefectures": "福島県",
   "starterCulture": "速醸",
   "acidity": "1.1",
-  "taste": "純米酒の中では軽快なテイスト。酸味と旨味バランスよし。やや辛口。 ",
+  "discription": "純米酒の中では軽快なテイスト。酸味と旨味バランスよし。やや辛口。 ",
   "riceForMakingKoji": "美山錦"
 }
 {
@@ -4844,7 +4844,7 @@
   "prefectures": "栃木県",
   "starterCulture": "速醸",
   "acidity": "1.5",
-  "taste": "原料の米由来の香りは軽快。穏やかな旨味が特徴の純米酒。やや辛口。 ",
+  "discription": "原料の米由来の香りは軽快。穏やかな旨味が特徴の純米酒。やや辛口。 ",
   "riceForMakingKoji": "あさひの夢"
 }
 {
@@ -4871,7 +4871,7 @@
   "prefectures": "岡山県",
   "starterCulture": "速醸",
   "acidity": "1.3",
-  "taste": "まろやかな米の香りと、明確な甘味が特徴。やや軽快な酒質。 ",
+  "discription": "まろやかな米の香りと、明確な甘味が特徴。やや軽快な酒質。 ",
   "riceForMakingKoji": "アケボノ・アキヒカリ"
 }
 {
@@ -4898,7 +4898,7 @@
   "prefectures": "石川県",
   "starterCulture": "速醸",
   "acidity": "1.6",
-  "taste": "どっしりとした香りと味わいが特徴。骨太の酸味としっかりした旨味、苦味が調和。辛口。 ",
+  "discription": "どっしりとした香りと味わいが特徴。骨太の酸味としっかりした旨味、苦味が調和。辛口。 ",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -4925,7 +4925,7 @@
   "prefectures": "",
   "starterCulture": "速醸",
   "acidity": "1.50",
-  "taste": "軽快な酒質の純米酒。スッキリとした旨味が特徴。後味はドライ ",
+  "discription": "軽快な酒質の純米酒。スッキリとした旨味が特徴。後味はドライ ",
   "riceForMakingKoji": "あきたこまち"
 }
 {
@@ -4952,7 +4952,7 @@
   "prefectures": "愛媛県",
   "starterCulture": "速醸",
   "acidity": "1.6",
-  "taste": "軽快な苦味が主体のドライテイスト。ほどよい旨味が特徴 ",
+  "discription": "軽快な苦味が主体のドライテイスト。ほどよい旨味が特徴 ",
   "riceForMakingKoji": "八反錦・愛のゆめ"
 }
 {
@@ -4979,7 +4979,7 @@
   "prefectures": "高知県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "軽快でドライな味わいの純米酒。土佐酒らしい個性が表現された酒質。やや辛口。 ",
+  "discription": "軽快でドライな味わいの純米酒。土佐酒らしい個性が表現された酒質。やや辛口。 ",
   "riceForMakingKoji": "松山三井・アケボノ"
 }
 {
@@ -5006,7 +5006,7 @@
   "prefectures": "北海道",
   "starterCulture": "速醸",
   "acidity": "1.5",
-  "taste": "軽快なテイストの純米酒。バランスのとれた酸味と苦味が特徴。やや辛口 ",
+  "discription": "軽快なテイストの純米酒。バランスのとれた酸味と苦味が特徴。やや辛口 ",
   "riceForMakingKoji": "美山錦"
 }
 {
@@ -5032,7 +5032,7 @@
   "prefectures": "栃木県",
   "starterCulture": "",
   "acidity": "1.8",
-  "taste": "ふっくらと炊き上がったご飯のような印象の純米酒。ほどよい旨味が特徴。最初に甘味も感じるが、後味は辛口に。 "
+  "discription": "ふっくらと炊き上がったご飯のような印象の純米酒。ほどよい旨味が特徴。最初に甘味も感じるが、後味は辛口に。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/237",
@@ -5058,7 +5058,7 @@
   "prefectures": "栃木県",
   "starterCulture": "速醸",
   "acidity": "1.8",
-  "taste": "原酒ならではのコクとキレを持った純米酒。後味の力強い辛口感が特徴 ",
+  "discription": "原酒ならではのコクとキレを持った純米酒。後味の力強い辛口感が特徴 ",
   "riceForMakingKoji": "あさひの夢・ひとごごち"
 }
 {
@@ -5085,7 +5085,7 @@
   "prefectures": "静岡県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "原酒らしいコクとキレを持つ特別純米酒。後味のキレのよさが特徴 ",
+  "discription": "原酒らしいコクとキレを持つ特別純米酒。後味のキレのよさが特徴 ",
   "riceForMakingKoji": "あいちのかおり"
 }
 {
@@ -5112,7 +5112,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "速醸",
   "acidity": "1.7",
-  "taste": "柔らかな甘味を持つ純米酒。軽快で上品、なめらかな飲み口が特徴 ",
+  "discription": "柔らかな甘味を持つ純米酒。軽快で上品、なめらかな飲み口が特徴 ",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -5139,7 +5139,7 @@
   "prefectures": "山形県",
   "starterCulture": "速醸",
   "acidity": "1.25",
-  "taste": "非常に軽快なtasteの純米酒。スッキリとしたドライテイスト。 ",
+  "discription": "非常に軽快なdiscriptionの純米酒。スッキリとしたドライテイスト。 ",
   "riceForMakingKoji": "はえぬき"
 }
 {
@@ -5166,7 +5166,7 @@
   "prefectures": "千葉県",
   "starterCulture": "速醸",
   "acidity": "1.7",
-  "taste": "軽快でスムーズな味わいの純米酒。カジュアルに楽しめるキャラクター ",
+  "discription": "軽快でスムーズな味わいの純米酒。カジュアルに楽しめるキャラクター ",
   "riceForMakingKoji": "五百万石"
 }
 {
@@ -5193,7 +5193,7 @@
   "prefectures": "山口県",
   "starterCulture": "高温糖化",
   "acidity": "1.6",
-  "taste": "軽快でなめらかな香り。酸味と苦味が主体のドライテイスト。やや辛口 ",
+  "discription": "軽快でなめらかな香り。酸味と苦味が主体のドライテイスト。やや辛口 ",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -5220,7 +5220,7 @@
   "prefectures": "高知県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "青い葉のようなキリッとした香りと控えめながら乳製品のような甘い香りが隠れている。やや辛口 ",
+  "discription": "青い葉のようなキリッとした香りと控えめながら乳製品のような甘い香りが隠れている。やや辛口 ",
   "riceForMakingKoji": "土佐錦"
 }
 {
@@ -5247,7 +5247,7 @@
   "prefectures": "長野県",
   "starterCulture": "速醸",
   "acidity": "1.5",
-  "taste": "やや濃醇な酒質で、後味は辛口。ふっくらとした飲み口も特徴 ",
+  "discription": "やや濃醇な酒質で、後味は辛口。ふっくらとした飲み口も特徴 ",
   "riceForMakingKoji": "美山錦"
 }
 {
@@ -5274,7 +5274,7 @@
   "prefectures": "岡山県",
   "starterCulture": "速醸",
   "acidity": "1.25",
-  "taste": "優しい甘味が持ち味の軽快な特別純米酒。サラリとした優しい味わいが特徴 ",
+  "discription": "優しい甘味が持ち味の軽快な特別純米酒。サラリとした優しい味わいが特徴 ",
   "riceForMakingKoji": "アケボノ・アキヒカリ"
 }
 {
@@ -5301,7 +5301,7 @@
   "prefectures": "広島県",
   "starterCulture": "速醸",
   "acidity": "1.8",
-  "taste": "柔らかな甘みのある純米酒。平均的な醇酒タイプ ",
+  "discription": "柔らかな甘みのある純米酒。平均的な醇酒タイプ ",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -5328,7 +5328,7 @@
   "prefectures": "岐阜県",
   "starterCulture": "速醸",
   "acidity": "1.6",
-  "taste": "濃醇な旨味を持つ純米酒。余韻の長さと原料米に由来するふくよかな香りが特徴 ",
+  "discription": "濃醇な旨味を持つ純米酒。余韻の長さと原料米に由来するふくよかな香りが特徴 ",
   "riceForMakingKoji": "ひだほまれ"
 }
 {
@@ -5355,7 +5355,7 @@
   "prefectures": "宮城県",
   "starterCulture": "速醸",
   "acidity": "1.5",
-  "taste": "軽快な穀物香と柔らかな甘味とほんのりとした旨味が特徴。ややコクのあるタイプ ",
+  "discription": "軽快な穀物香と柔らかな甘味とほんのりとした旨味が特徴。ややコクのあるタイプ ",
   "riceForMakingKoji": "ササニシキ"
 }
 {
@@ -5382,7 +5382,7 @@
   "prefectures": "山形県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "サラリとした飲み口。シンプルな味わい。飲み飽きのしないシンプルテイスト ",
+  "discription": "サラリとした飲み口。シンプルな味わい。飲み飽きのしないシンプルテイスト ",
   "riceForMakingKoji": "はえぬき"
 }
 {
@@ -5409,7 +5409,7 @@
   "prefectures": "熊本県",
   "starterCulture": "高温糖化",
   "acidity": "1.6",
-  "taste": "輪郭がはっきりした純米酒 ",
+  "discription": "輪郭がはっきりした純米酒 ",
   "riceForMakingKoji": "神力"
 }
 {
@@ -5436,7 +5436,7 @@
   "prefectures": "岡山県",
   "starterCulture": "速醸",
   "acidity": "1.2",
-  "taste": "軽やか ",
+  "discription": "軽やか ",
   "riceForMakingKoji": "雄町"
 }
 {
@@ -5463,7 +5463,7 @@
   "prefectures": "新潟県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "典型的な新潟淡麗辛口テイスト。菜類を思わせる爽やかな香りと、スッキリとしたドライな味わいが特徴。 ",
+  "discription": "典型的な新潟淡麗辛口テイスト。菜類を思わせる爽やかな香りと、スッキリとしたドライな味わいが特徴。 ",
   "riceForMakingKoji": "五百万石"
 }
 {
@@ -5490,7 +5490,7 @@
   "prefectures": "宮城県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "爽快でみずみずしい香り。なめらかなテクスチャー。ほどよい旨味を持つ。やや辛口。 ",
+  "discription": "爽快でみずみずしい香り。なめらかなテクスチャー。ほどよい旨味を持つ。やや辛口。 ",
   "riceForMakingKoji": "蔵の華"
 }
 {
@@ -5517,7 +5517,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "速醸",
   "acidity": "1.5",
-  "taste": "山吹の色調。軽快な穀物香が主体。軽快でドライな味わい ",
+  "discription": "山吹の色調。軽快な穀物香が主体。軽快でドライな味わい ",
   "riceForMakingKoji": "兵庫北錦"
 }
 {
@@ -5544,7 +5544,7 @@
   "prefectures": "高知県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "ほどよい旨味を持つ純米酒。後味のキレは非常によい。やや厚みのあるドライテイスト ",
+  "discription": "ほどよい旨味を持つ純米酒。後味のキレは非常によい。やや厚みのあるドライテイスト ",
   "riceForMakingKoji": "松山三井"
 }
 {
@@ -5571,7 +5571,7 @@
   "prefectures": "島根県",
   "starterCulture": "速醸",
   "acidity": "1.6",
-  "taste": "まろやかなテクスチャーと甘味が特徴。ミディアムボディの酒質。やや軽快ながら旨味の余韻が長い。 ",
+  "discription": "まろやかなテクスチャーと甘味が特徴。ミディアムボディの酒質。やや軽快ながら旨味の余韻が長い。 ",
   "riceForMakingKoji": "五百万石"
 }
 {
@@ -5598,7 +5598,7 @@
   "prefectures": "東京都",
   "starterCulture": "速醸",
   "acidity": "1.8",
-  "taste": "ほどよいコクを持った辛口タイプの純米酒 ",
+  "discription": "ほどよいコクを持った辛口タイプの純米酒 ",
   "riceForMakingKoji": "ふさおとめ"
 }
 {
@@ -5625,7 +5625,7 @@
   "prefectures": "青森県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "落ち着いた穀物香。なめらかなテクスチャー。バランスよくまとまった味わいの構成。 ",
+  "discription": "落ち着いた穀物香。なめらかなテクスチャー。バランスよくまとまった味わいの構成。 ",
   "riceForMakingKoji": "華吹雪"
 }
 {
@@ -5652,7 +5652,7 @@
   "prefectures": "長野県",
   "starterCulture": "速醸",
   "acidity": "1.7",
-  "taste": "濃厚な旨味を持つ純米酒。ふくよかな穀物香と余韻の長い旨味が特徴。 ",
+  "discription": "濃厚な旨味を持つ純米酒。ふくよかな穀物香と余韻の長い旨味が特徴。 ",
   "riceForMakingKoji": "美山錦"
 }
 {
@@ -5679,7 +5679,7 @@
   "prefectures": "鳥取県",
   "starterCulture": "速醸",
   "acidity": "2",
-  "taste": "木質系の引き締まった香り。厚みのある苦味を中心とした個性的な味わい ",
+  "discription": "木質系の引き締まった香り。厚みのある苦味を中心とした個性的な味わい ",
   "riceForMakingKoji": "玉栄"
 }
 {
@@ -5706,7 +5706,7 @@
   "prefectures": "奈良県",
   "starterCulture": "速醸",
   "acidity": "1.8",
-  "taste": "和菓子や日本製果物を思わせる甘酸っぱい香り。豊かなな米由来の甘味と、梅のような酸味が余韻まで続く。 ",
+  "discription": "和菓子や日本製果物を思わせる甘酸っぱい香り。豊かなな米由来の甘味と、梅のような酸味が余韻まで続く。 ",
   "riceForMakingKoji": "ヒノヒカリ"
 }
 {
@@ -5733,7 +5733,7 @@
   "prefectures": "山形県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "シンプルで水のようになめらかな味わい。後味はドライでスッキリとした酒質。 ",
+  "discription": "シンプルで水のようになめらかな味わい。後味はドライでスッキリとした酒質。 ",
   "riceForMakingKoji": "はえぬき"
 }
 {
@@ -5760,7 +5760,7 @@
   "prefectures": "京都府",
   "starterCulture": "速醸",
   "acidity": "1.5",
-  "taste": "キリリと引き締まった香りから一転し、味わいはなめらかな甘味が特徴。やや甘口ながら軽快なtaste。 ",
+  "discription": "キリリと引き締まった香りから一転し、味わいはなめらかな甘味が特徴。やや甘口ながら軽快なdiscription。 ",
   "riceForMakingKoji": "五百万石・日本晴"
 }
 {
@@ -5787,7 +5787,7 @@
   "prefectures": "石川県",
   "starterCulture": "速醸",
   "acidity": "1.7",
-  "taste": "香草のような清涼な香り。上品で繊細な味わい。コンパクトながらバランスのよい酒質 ",
+  "discription": "香草のような清涼な香り。上品で繊細な味わい。コンパクトながらバランスのよい酒質 ",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -5814,7 +5814,7 @@
   "prefectures": "山梨県",
   "starterCulture": "速醸",
   "acidity": "1.6",
-  "taste": "まろやかな甘味、角のない酸味を苦味が取りまとめる、オーソドックスな日本酒の味わい ",
+  "discription": "まろやかな甘味、角のない酸味を苦味が取りまとめる、オーソドックスな日本酒の味わい ",
   "riceForMakingKoji": "あさひの夢"
 }
 {
@@ -5841,7 +5841,7 @@
   "prefectures": "愛媛県",
   "starterCulture": "速醸",
   "acidity": "1.3",
-  "taste": "軽快で優しいtaste。ハーブのような爽やかな香りと、なめらかなテクスチャーが特徴。 ",
+  "discription": "軽快で優しいdiscription。ハーブのような爽やかな香りと、なめらかなテクスチャーが特徴。 ",
   "riceForMakingKoji": "雄町"
 }
 {
@@ -5868,7 +5868,7 @@
   "prefectures": "福島県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "コンパクトながら味わいが多様な酒質。なめらかなテクスチャーと果実のような華やかな香りが特徴 ",
+  "discription": "コンパクトながら味わいが多様な酒質。なめらかなテクスチャーと果実のような華やかな香りが特徴 ",
   "riceForMakingKoji": "あきたこまち"
 }
 {
@@ -5895,7 +5895,7 @@
   "prefectures": "石川県",
   "starterCulture": "速醸",
   "acidity": "1.7",
-  "taste": "濃醇な味わいの純米酒。旨味の余韻が長さが特徴。ぬる燗にすると真価を発揮。 ",
+  "discription": "濃醇な味わいの純米酒。旨味の余韻が長さが特徴。ぬる燗にすると真価を発揮。 ",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -5922,7 +5922,7 @@
   "prefectures": "長野県",
   "starterCulture": "速醸",
   "acidity": "1.5",
-  "taste": "個性が強い酒ではないが、香りと味わいのバランス、旨味や苦味を中心とした５味のバランスがいい ",
+  "discription": "個性が強い酒ではないが、香りと味わいのバランス、旨味や苦味を中心とした５味のバランスがいい ",
   "riceForMakingKoji": "美山錦"
 }
 {
@@ -5949,7 +5949,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "速醸",
   "acidity": "1.5",
-  "taste": "ナッツ類のようなふくよかな香りが主体。甘味と酸味を感じるが、中盤から旨味と苦味が広がり、余韻まで続く ",
+  "discription": "ナッツ類のようなふくよかな香りが主体。甘味と酸味を感じるが、中盤から旨味と苦味が広がり、余韻まで続く ",
   "riceForMakingKoji": "キヌヒカリ"
 }
 {
@@ -5976,7 +5976,7 @@
   "prefectures": "石川県",
   "starterCulture": "速醸",
   "acidity": "1.5",
-  "taste": "香草のような爽やかな香り。スッキリとした上品な味わい。涼やかな印象を持つ純米酒 ",
+  "discription": "香草のような爽やかな香り。スッキリとした上品な味わい。涼やかな印象を持つ純米酒 ",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -6003,7 +6003,7 @@
   "prefectures": "東京都",
   "starterCulture": "速醸",
   "acidity": "1.7",
-  "taste": "香り、味とも、純米酒らしいふくよかさ。コクのある辛口。 ",
+  "discription": "香り、味とも、純米酒らしいふくよかさ。コクのある辛口。 ",
   "riceForMakingKoji": "ふさおとめ"
 }
 {
@@ -6030,7 +6030,7 @@
   "prefectures": "京都府",
   "starterCulture": "速醸",
   "acidity": "1.7",
-  "taste": "甘やかな原料香。柔らかで刺激的要素の少ない味わいが特徴。アタックで感じる甘味が明確 ",
+  "discription": "甘やかな原料香。柔らかで刺激的要素の少ない味わいが特徴。アタックで感じる甘味が明確 ",
   "riceForMakingKoji": "五百万石"
 }
 {
@@ -6057,7 +6057,7 @@
   "prefectures": "山形県",
   "starterCulture": "速醸",
   "acidity": "1.5",
-  "taste": "ドライな後味が特徴の純米酒。キレのよい飲み口が特徴 ",
+  "discription": "ドライな後味が特徴の純米酒。キレのよい飲み口が特徴 ",
   "riceForMakingKoji": "はえぬき"
 }
 {
@@ -6084,7 +6084,7 @@
   "prefectures": "北海道",
   "starterCulture": "速醸",
   "acidity": "1.5",
-  "taste": "飲み飽きのしないシンプルテイストの純米酒。ソフトな飲み口とキレのよい後味が特徴 ",
+  "discription": "飲み飽きのしないシンプルテイストの純米酒。ソフトな飲み口とキレのよい後味が特徴 ",
   "riceForMakingKoji": "美山錦"
 }
 {
@@ -6111,7 +6111,7 @@
   "prefectures": "宮城県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "典型的な淡麗辛口。スッキリとした飲み口、ドライな後味が特徴 ",
+  "discription": "典型的な淡麗辛口。スッキリとした飲み口、ドライな後味が特徴 ",
   "riceForMakingKoji": "蔵の華"
 }
 {
@@ -6138,7 +6138,7 @@
   "prefectures": "高知県",
   "starterCulture": "速醸",
   "acidity": "1.5",
-  "taste": "ソフトでスムーズな味わい。香りのトーンも上品。スッキリとしたドライテイスト ",
+  "discription": "ソフトでスムーズな味わい。香りのトーンも上品。スッキリとしたドライテイスト ",
   "riceForMakingKoji": "土佐錦"
 }
 {
@@ -6165,7 +6165,7 @@
   "prefectures": "山形県",
   "starterCulture": "速醸",
   "acidity": "1.6",
-  "taste": "軽快な原料香と菜類のような爽やかな香り。まろやかな飲み口。伸びやかな旨味が特徴 ",
+  "discription": "軽快な原料香と菜類のような爽やかな香り。まろやかな飲み口。伸びやかな旨味が特徴 ",
   "riceForMakingKoji": "美山錦"
 }
 {
@@ -6192,7 +6192,7 @@
   "prefectures": "長野県",
   "starterCulture": "速醸",
   "acidity": "1.3",
-  "taste": "上品かつ繊細な味わいの純米酒。キメの細やかな甘味と旨味が特徴。最後はスッキリとしたドライフィニッシュ ",
+  "discription": "上品かつ繊細な味わいの純米酒。キメの細やかな甘味と旨味が特徴。最後はスッキリとしたドライフィニッシュ ",
   "riceForMakingKoji": "美山錦・ひとごこち"
 }
 {
@@ -6219,7 +6219,7 @@
   "prefectures": "高知県",
   "starterCulture": "速醸",
   "acidity": "1.45",
-  "taste": "純米酒らしい旨味を持ちながらも、後味のキレのよい味わい。土佐の地酒らしいキャラクターを感じさせる ",
+  "discription": "純米酒らしい旨味を持ちながらも、後味のキレのよい味わい。土佐の地酒らしいキャラクターを感じさせる ",
   "riceForMakingKoji": "松山三井・山田錦"
 }
 {
@@ -6246,7 +6246,7 @@
   "prefectures": "山形県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "シンプルでスッキリとした味わい。後味がキリリと引き締まった辛口テイスト ",
+  "discription": "シンプルでスッキリとした味わい。後味がキリリと引き締まった辛口テイスト ",
   "riceForMakingKoji": "はえぬき"
 }
 {
@@ -6273,7 +6273,7 @@
   "prefectures": "島根県",
   "starterCulture": "速醸",
   "acidity": "1.9",
-  "taste": "原料米由来のふくよかな香りと旨味が明確な純米酒。非常にコクのある味わいで、余韻も長いフルボディテイスト ",
+  "discription": "原料米由来のふくよかな香りと旨味が明確な純米酒。非常にコクのある味わいで、余韻も長いフルボディテイスト ",
   "riceForMakingKoji": "改良雄町・山田錦"
 }
 {
@@ -6300,7 +6300,7 @@
   "prefectures": "岩手県",
   "starterCulture": "速醸",
   "acidity": "1.6",
-  "taste": "ソフトな飲み口と柔らかな旨味が特徴。非常に軽快な味わいながら、後味のキレはよい純米酒 ",
+  "discription": "ソフトな飲み口と柔らかな旨味が特徴。非常に軽快な味わいながら、後味のキレはよい純米酒 ",
   "riceForMakingKoji": "ひとめぼれ"
 }
 {
@@ -6327,7 +6327,7 @@
   "prefectures": "長野県",
   "starterCulture": "速醸",
   "acidity": "1.6",
-  "taste": "まろやかな飲み口。柔らかな甘味と旨味が特徴。後味のキレはよい軽快な純米酒 ",
+  "discription": "まろやかな飲み口。柔らかな甘味と旨味が特徴。後味のキレはよい軽快な純米酒 ",
   "riceForMakingKoji": "美山錦"
 }
 {
@@ -6354,7 +6354,7 @@
   "prefectures": "島根県",
   "starterCulture": "速醸",
   "acidity": "1.6",
-  "taste": "明るい山吹の色調。ふくよかな原料香が主体。非常にまろやかか印象。ボリューム感の高い豊かな味わい ",
+  "discription": "明るい山吹の色調。ふくよかな原料香が主体。非常にまろやかか印象。ボリューム感の高い豊かな味わい ",
   "riceForMakingKoji": "五百万石"
 }
 {
@@ -6381,7 +6381,7 @@
   "prefectures": "佐賀県",
   "starterCulture": "高温糖化",
   "acidity": "1.5",
-  "taste": "花のような華やかな香りと砂糖菓子の甘味を思わせる香りが特徴。軽快な甘味と酸味が味わいを形成する。 ",
+  "discription": "花のような華やかな香りと砂糖菓子の甘味を思わせる香りが特徴。軽快な甘味と酸味が味わいを形成する。 ",
   "riceForMakingKoji": "佐賀の華"
 }
 {
@@ -6408,7 +6408,7 @@
   "prefectures": "京都府",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "砂糖菓子の甘味を思わせるふんわりとした原料由来の香りと、ソフトな甘味が味わいの特徴。 ",
+  "discription": "砂糖菓子の甘味を思わせるふんわりとした原料由来の香りと、ソフトな甘味が味わいの特徴。 ",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -6435,7 +6435,7 @@
   "prefectures": "大分県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "炊いた米などの原料由来の重みのある香り。どっしりとした甘味と旨味が主体の濃厚な味わい。 ",
+  "discription": "炊いた米などの原料由来の重みのある香り。どっしりとした甘味と旨味が主体の濃厚な味わい。 ",
   "riceForMakingKoji": "ヒノヒカリ・八反錦"
 }
 {
@@ -6451,7 +6451,7 @@
   "sakeRiceExceptForKojiMaking": "こいもみじ・中生新千本",
   "sakeMeterValue": "+1.5",
   "imageUrl": "http://www.sake-sennin.com/fbo/web/uploads/images/product/52bbce6e4378e.png",
-  "mariage": "シーフードサラダ、生牡蠣レモン添え、サーモンのタルタルなど新鮮な魚介類を生かすtasteをもつ。 ",
+  "mariage": "シーフードサラダ、生牡蠣レモン添え、サーモンのタルタルなど新鮮な魚介類を生かすdiscriptionをもつ。 ",
   "type": "特別純米酒",
   "ricePolishiingRate": "60",
   "sakeBrewery": "榎酒造",
@@ -6462,7 +6462,7 @@
   "prefectures": "広島県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "軽快で優しいtaste。ふんわりとしたマシュマロのような甘味を思わせる香りと、とろみのあるテクスチャーが特徴。 ",
+  "discription": "軽快で優しいdiscription。ふんわりとしたマシュマロのような甘味を思わせる香りと、とろみのあるテクスチャーが特徴。 ",
   "riceForMakingKoji": "こいもみじ・中生新千本"
 }
 {
@@ -6489,7 +6489,7 @@
   "prefectures": "",
   "starterCulture": "速醸",
   "acidity": "1.6",
-  "taste": "やさしさを与える甘味。角のない酸味と苦味のドライテイスト。後味に残る旨味も特徴。 ",
+  "discription": "やさしさを与える甘味。角のない酸味と苦味のドライテイスト。後味に残る旨味も特徴。 ",
   "riceForMakingKoji": "めんこいな"
 }
 {
@@ -6516,7 +6516,7 @@
   "prefectures": "茨城県",
   "starterCulture": "速醸",
   "acidity": "1.1",
-  "taste": "乳製品を思わせるふくよかで複雑な香り、苦味と旨味によるボリューム感のある味わい。 ",
+  "discription": "乳製品を思わせるふくよかで複雑な香り、苦味と旨味によるボリューム感のある味わい。 ",
   "riceForMakingKoji": "ゆめひたち"
 }
 {
@@ -6543,7 +6543,7 @@
   "prefectures": "新潟県",
   "starterCulture": "速醸",
   "acidity": "1.3",
-  "taste": "コンパクトにまとまったtaste。香草を思わせる爽やかな香りで、味わいはドライテイスト。 ",
+  "discription": "コンパクトにまとまったdiscription。香草を思わせる爽やかな香りで、味わいはドライテイスト。 ",
   "riceForMakingKoji": "こしいぶき"
 }
 {
@@ -6570,7 +6570,7 @@
   "prefectures": "長野県",
   "starterCulture": "速醸",
   "acidity": "1.5",
-  "taste": "ふくよかで落ちつきのある香りとドライテイストな味わいが特徴。燗にすることにより旨味が広がる。 ",
+  "discription": "ふくよかで落ちつきのある香りとドライテイストな味わいが特徴。燗にすることにより旨味が広がる。 ",
   "riceForMakingKoji": "美山錦"
 }
 {
@@ -6597,7 +6597,7 @@
   "prefectures": "北海道",
   "starterCulture": "速醸",
   "acidity": "1.5",
-  "taste": "ふくよかな香り。ドライな味わい。旨味を伴った厚みのある酸味が特徴。 ",
+  "discription": "ふくよかな香り。ドライな味わい。旨味を伴った厚みのある酸味が特徴。 ",
   "riceForMakingKoji": "美山錦"
 }
 {
@@ -6624,7 +6624,7 @@
   "prefectures": "秋田県",
   "starterCulture": "山廃",
   "acidity": "1.5",
-  "taste": "淡い山吹色の色調。ふくよかな香り。味わいはドライで、カスタードクリームを思わせる含み香が高いことが特徴。 ",
+  "discription": "淡い山吹色の色調。ふくよかな香り。味わいはドライで、カスタードクリームを思わせる含み香が高いことが特徴。 ",
   "riceForMakingKoji": "美山錦"
 }
 {
@@ -6651,7 +6651,7 @@
   "prefectures": "福島県",
   "starterCulture": "生もと",
   "acidity": "1.6",
-  "taste": "生クリームや金平糖などの上品な香り。味わいは酸味と苦味が主体のドライテイスト。 ",
+  "discription": "生クリームや金平糖などの上品な香り。味わいは酸味と苦味が主体のドライテイスト。 ",
   "riceForMakingKoji": "五百万石"
 }
 {
@@ -6678,7 +6678,7 @@
   "prefectures": "東京都",
   "starterCulture": "速醸",
   "acidity": "1.5",
-  "taste": "引き締まったシャープなtaste。後味のキレがよいドライテイスト。 ",
+  "discription": "引き締まったシャープなdiscription。後味のキレがよいドライテイスト。 ",
   "riceForMakingKoji": "アキヒカリ"
 }
 {
@@ -6705,7 +6705,7 @@
   "prefectures": "岐阜県",
   "starterCulture": "速醸",
   "acidity": "1.9",
-  "taste": "乳製品やキノコ類を思わせる熟成した香りに反して味わいは軽やか。キレのある苦味が特徴。 ",
+  "discription": "乳製品やキノコ類を思わせる熟成した香りに反して味わいは軽やか。キレのある苦味が特徴。 ",
   "riceForMakingKoji": "ひだほまれ・ひとめぼれ"
 }
 {
@@ -6732,7 +6732,7 @@
   "prefectures": "熊本県",
   "starterCulture": "速醸",
   "acidity": "1.2",
-  "taste": "乾燥させた稲穂などの原料由来の香りに、酸味と苦味によるドライテイストな味わいは典型的な淡麗辛口タイプ。 ",
+  "discription": "乾燥させた稲穂などの原料由来の香りに、酸味と苦味によるドライテイストな味わいは典型的な淡麗辛口タイプ。 ",
   "riceForMakingKoji": "レイホウ"
 }
 {
@@ -6759,7 +6759,7 @@
   "prefectures": "茨城県",
   "starterCulture": "速醸",
   "acidity": "1.05",
-  "taste": "軽快で辛口タイプの本醸造酒。サッパリとした口当たりとキレのよい後味が特徴 ",
+  "discription": "軽快で辛口タイプの本醸造酒。サッパリとした口当たりとキレのよい後味が特徴 ",
   "riceForMakingKoji": "ゆめひたち"
 }
 {
@@ -6786,7 +6786,7 @@
   "prefectures": "福島県",
   "starterCulture": "速醸",
   "acidity": "1.3",
-  "taste": "なめらかな飲み口と味わいが特徴。軽快でキレのよい後味。気軽に楽しめるキャラクター ",
+  "discription": "なめらかな飲み口と味わいが特徴。軽快でキレのよい後味。気軽に楽しめるキャラクター ",
   "riceForMakingKoji": "一般米"
 }
 {
@@ -6813,7 +6813,7 @@
   "prefectures": "宮城県",
   "starterCulture": "速醸",
   "acidity": "1.1",
-  "taste": "非常にスムーズでシンプルな味わい。後味の軽やかなキレが特徴 ",
+  "discription": "非常にスムーズでシンプルな味わい。後味の軽やかなキレが特徴 ",
   "riceForMakingKoji": "トヨニシキ"
 }
 {
@@ -6840,7 +6840,7 @@
   "prefectures": "山形県",
   "starterCulture": "速醸",
   "acidity": "1.1",
-  "taste": "スッキリとした軽快な香り。優しい飲み口。シンプルな味わい。後味は軽快でドライ ",
+  "discription": "スッキリとした軽快な香り。優しい飲み口。シンプルな味わい。後味は軽快でドライ ",
   "riceForMakingKoji": "はえぬき"
 }
 {
@@ -6867,7 +6867,7 @@
   "prefectures": "愛媛県",
   "starterCulture": "速醸",
   "acidity": "1.2",
-  "taste": "穏やかな原料香とハーブや白い花のような香りが主体。柔らかな飲み口。軽快でなめらかな甘味と旨味が特徴。後味はドライ ",
+  "discription": "穏やかな原料香とハーブや白い花のような香りが主体。柔らかな飲み口。軽快でなめらかな甘味と旨味が特徴。後味はドライ ",
   "riceForMakingKoji": "玉栄"
 }
 {
@@ -6894,7 +6894,7 @@
   "prefectures": "宮城県",
   "starterCulture": "速醸",
   "acidity": "1.2",
-  "taste": "淡くソフトな原料香が主体。なめらかな飲み口。やや軽快でシンプルな味わい。ほどよい旨味が広がる。後味はドライ ",
+  "discription": "淡くソフトな原料香が主体。なめらかな飲み口。やや軽快でシンプルな味わい。ほどよい旨味が広がる。後味はドライ ",
   "riceForMakingKoji": "まなむすめ"
 }
 {
@@ -6921,7 +6921,7 @@
   "prefectures": "大分県",
   "starterCulture": "速醸",
   "acidity": "1.1",
-  "taste": "甘い穀物を思わせるふくよかな香りが主体。やわらかく優しい味わい。中盤から旨味と共に甘味が感じられる。後味はややドライ ",
+  "discription": "甘い穀物を思わせるふくよかな香りが主体。やわらかく優しい味わい。中盤から旨味と共に甘味が感じられる。後味はややドライ ",
   "riceForMakingKoji": "ヒノヒカリ"
 }
 {
@@ -6948,7 +6948,7 @@
   "prefectures": "新潟県",
   "starterCulture": "速醸",
   "acidity": "1.2",
-  "taste": "非常にスムーズな飲み口。みずみずしく爽やかな味わい。軽快な苦味が主体のドライテイスト ",
+  "discription": "非常にスムーズな飲み口。みずみずしく爽やかな味わい。軽快な苦味が主体のドライテイスト ",
   "riceForMakingKoji": "こしいぶき"
 }
 {
@@ -6975,7 +6975,7 @@
   "prefectures": "宮城県",
   "starterCulture": "速醸",
   "acidity": "1.3",
-  "taste": "超辛口テイスト。非常に軽快でシャープな味わい。シンプルの極み ",
+  "discription": "超辛口テイスト。非常に軽快でシャープな味わい。シンプルの極み ",
   "riceForMakingKoji": "トヨニシキ"
 }
 {
@@ -7002,7 +7002,7 @@
   "prefectures": "宮城県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "スッキリとした飲み口。みずみずしく、スリムな印象の旨味。軽快な苦味が主体のドライテイスト ",
+  "discription": "スッキリとした飲み口。みずみずしく、スリムな印象の旨味。軽快な苦味が主体のドライテイスト ",
   "riceForMakingKoji": "はえぬき"
 }
 {
@@ -7029,7 +7029,7 @@
   "prefectures": "高知県",
   "starterCulture": "速醸",
   "acidity": "1.5",
-  "taste": "軽快な穀物香が主体。キリリと引き締まった飲み口。酸味と苦味が主体のドライテイスト ",
+  "discription": "軽快な穀物香が主体。キリリと引き締まった飲み口。酸味と苦味が主体のドライテイスト ",
   "riceForMakingKoji": "アキツホ・松山三井"
 }
 {
@@ -7056,7 +7056,7 @@
   "prefectures": "山口県",
   "starterCulture": "高温糖化",
   "acidity": "1.5",
-  "taste": "軽快な穀物香と乳製品のような香り。なめらかな飲み口とスッキリとしたドライな後味が融合。バランスのよい味わい ",
+  "discription": "軽快な穀物香と乳製品のような香り。なめらかな飲み口とスッキリとしたドライな後味が融合。バランスのよい味わい ",
   "riceForMakingKoji": "日本晴"
 }
 {
@@ -7083,7 +7083,7 @@
   "prefectures": "京都府",
   "starterCulture": "速醸",
   "acidity": "1.7",
-  "taste": "原料米に由来する香りが主体。なめらかな飲み口。アタックで広がるソフトな甘味が印象的。ふくよかな味わい ",
+  "discription": "原料米に由来する香りが主体。なめらかな飲み口。アタックで広がるソフトな甘味が印象的。ふくよかな味わい ",
   "riceForMakingKoji": "五百万石・日本晴"
 }
 {
@@ -7110,7 +7110,7 @@
   "prefectures": "京都府",
   "starterCulture": "速醸",
   "acidity": "1.2",
-  "taste": "穀物、乳製品、ミネラルを思わせる豊かな香り。なめらかなアタックが特徴だが、ドライな後味が融合し、最終的には辛口テイストに ",
+  "discription": "穀物、乳製品、ミネラルを思わせる豊かな香り。なめらかなアタックが特徴だが、ドライな後味が融合し、最終的には辛口テイストに ",
   "riceForMakingKoji": "一般米"
 }
 {
@@ -7137,7 +7137,7 @@
   "prefectures": "奈良県",
   "starterCulture": "速醸",
   "acidity": "1.3",
-  "taste": "軽快な原料香と乳製品のような香り。なめらかな飲み口。中盤からほどよい旨味が展開する。後味はドライ ",
+  "discription": "軽快な原料香と乳製品のような香り。なめらかな飲み口。中盤からほどよい旨味が展開する。後味はドライ ",
   "riceForMakingKoji": "ひとめぼれ"
 }
 {
@@ -7164,7 +7164,7 @@
   "prefectures": "長野県",
   "starterCulture": "速醸",
   "acidity": "1.4",
-  "taste": "穀物、乳製品を思わせるふくよかな香り。酸味と苦味とアルコール感が主体のドライテイスト ",
+  "discription": "穀物、乳製品を思わせるふくよかな香り。酸味と苦味とアルコール感が主体のドライテイスト ",
   "riceForMakingKoji": "ひとごこち"
 }
 {
@@ -7191,7 +7191,7 @@
   "prefectures": "高知県",
   "starterCulture": "速醸",
   "acidity": "1.3",
-  "taste": "シャープな飲み口。スッキリとした旨味と、刺激性の高いドライな後味が特徴。超辛口テイスト ",
+  "discription": "シャープな飲み口。スッキリとした旨味と、刺激性の高いドライな後味が特徴。超辛口テイスト ",
   "riceForMakingKoji": "アキツホ・松山三井"
 }
 {
@@ -7218,7 +7218,7 @@
   "prefectures": "静岡県",
   "starterCulture": "速醸",
   "acidity": "1.3",
-  "taste": "複雑で多様な香り。重厚で力強い味わい。アルコール感の高さからくる厚みのあるドライテイスト ",
+  "discription": "複雑で多様な香り。重厚で力強い味わい。アルコール感の高さからくる厚みのあるドライテイスト ",
   "riceForMakingKoji": "あいちのかおり"
 }
 {
@@ -7243,7 +7243,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "乳製品を思わせるまろやかな香り。厚みのある口当たり濃醇な味わい。後味はしっかりとした苦味がシャープさを残す。 "
+  "discription": "乳製品を思わせるまろやかな香り。厚みのある口当たり濃醇な味わい。後味はしっかりとした苦味がシャープさを残す。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/323",
@@ -7267,7 +7267,7 @@
   "prefectures": "秋田県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "花や果実のような甘い香りが特徴。さらりとした口当たりに、含み香には林檎、白桃、バラの様な香りも感じられる。ドライでシャープな余韻が残る。 "
+  "discription": "花や果実のような甘い香りが特徴。さらりとした口当たりに、含み香には林檎、白桃、バラの様な香りも感じられる。ドライでシャープな余韻が残る。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/324",
@@ -7291,7 +7291,7 @@
   "prefectures": "富山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ふくよかな原料香といきいきとした酸味が溶け合う個性ある味わい。 "
+  "discription": "ふくよかな原料香といきいきとした酸味が溶け合う個性ある味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/325",
@@ -7315,7 +7315,7 @@
   "prefectures": "石川県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "まろやかなテクスチャー。コクと旨味が芳醇な味わいを醸し出す。 "
+  "discription": "まろやかなテクスチャー。コクと旨味が芳醇な味わいを醸し出す。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/326",
@@ -7334,12 +7334,12 @@
   "sakeBrewery": "大谷酒造",
   "breweryYear": "",
   "matchDrinkingVessel": "ラッパ型グラス、ワイングラス、花柄入りの磁器 ",
-  "matchDrinkingSceneAndTarget": "特に春から初夏にかけて清涼感ある季節に同調する酒質。華やかなtasteのお酒、癖のない万人向けといえる ",
+  "matchDrinkingSceneAndTarget": "特に春から初夏にかけて清涼感ある季節に同調する酒質。華やかなdiscriptionのお酒、癖のない万人向けといえる ",
   "matchDrinkingTemperature": "15℃前後",
   "prefectures": "鳥取県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "柔らかいさらりとした口当たり。華やかで甘味を思わせる香りが主体。味わいはスッキリとしており余韻にキレがある。 "
+  "discription": "柔らかいさらりとした口当たり。華やかで甘味を思わせる香りが主体。味わいはスッキリとしており余韻にキレがある。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/327",
@@ -7363,7 +7363,7 @@
   "prefectures": "広島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "絹のようななめらかな甘味と酸味が特徴。含み香で熟したリンゴのような果実香を感じる。旬の果実を思わせる瑞々しい印象。 "
+  "discription": "絹のようななめらかな甘味と酸味が特徴。含み香で熟したリンゴのような果実香を感じる。旬の果実を思わせる瑞々しい印象。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/328",
@@ -7387,7 +7387,7 @@
   "prefectures": "山口県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "なめらかな口当たりとシュマロのような砂糖菓子の穏やかな香りが特徴。味わいは軽快でシンプル、スッキリとした味わい。 "
+  "discription": "なめらかな口当たりとシュマロのような砂糖菓子の穏やかな香りが特徴。味わいは軽快でシンプル、スッキリとした味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/329",
@@ -7411,7 +7411,7 @@
   "prefectures": "北海道",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ほんのりと果実を思わせる香りや桜餅を思わせるかおりが感じられる。柔らかい味わいで甘味と酸味も穏やか。スッキリとした余韻が残る。 "
+  "discription": "ほんのりと果実を思わせる香りや桜餅を思わせるかおりが感じられる。柔らかい味わいで甘味と酸味も穏やか。スッキリとした余韻が残る。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/331",
@@ -7435,7 +7435,7 @@
   "prefectures": "北海道",
   "starterCulture": "",
   "acidity": "",
-  "taste": "滑らかさとキリッとしたひきしまった飲み口が印象的。甘味と酸味のバランスが良く中盤から広がる苦味が後味をドライテイストに仕上げる "
+  "discription": "滑らかさとキリッとしたひきしまった飲み口が印象的。甘味と酸味のバランスが良く中盤から広がる苦味が後味をドライテイストに仕上げる "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/332",
@@ -7459,7 +7459,7 @@
   "prefectures": "岩手県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "軽やかな原料香、ほんのりとした甘味と軽快な酸味、苦みでスッキリとした味わい。 "
+  "discription": "軽やかな原料香、ほんのりとした甘味と軽快な酸味、苦みでスッキリとした味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/333",
@@ -7483,7 +7483,7 @@
   "prefectures": "宮城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料の米をお思わせるふくよかな香りが特徴。落ち着いた甘味と引き締まった酸味が調和しまろやかな味わい。 "
+  "discription": "原料の米をお思わせるふくよかな香りが特徴。落ち着いた甘味と引き締まった酸味が調和しまろやかな味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/334",
@@ -7507,7 +7507,7 @@
   "prefectures": "",
   "starterCulture": "",
   "acidity": "",
-  "taste": "上新粉を思わせる原料香、軽快な甘味と引き締まった酸味のドライテイストタイプ。 "
+  "discription": "上新粉を思わせる原料香、軽快な甘味と引き締まった酸味のドライテイストタイプ。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/335",
@@ -7531,7 +7531,7 @@
   "prefectures": "秋田県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "フルーティで華やかな香りが特徴。味わいは軽やかな甘味と酸味が爽やかさを感じさせる。後半に強調される味が後味をドライテイストに仕上げる。 "
+  "discription": "フルーティで華やかな香りが特徴。味わいは軽やかな甘味と酸味が爽やかさを感じさせる。後半に強調される味が後味をドライテイストに仕上げる。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/336",
@@ -7555,7 +7555,7 @@
   "prefectures": "",
   "starterCulture": "",
   "acidity": "",
-  "taste": "瑞々しさのあるフルーティな香りにすがすがしさを感じる。軽快な酸味が味わいをスッキリとまとめる。 "
+  "discription": "瑞々しさのあるフルーティな香りにすがすがしさを感じる。軽快な酸味が味わいをスッキリとまとめる。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/337",
@@ -7579,7 +7579,7 @@
   "prefectures": "",
   "starterCulture": "",
   "acidity": "",
-  "taste": "リンゴやメロンを思わせる甘く華やかな香りが特徴。滑らかな飲み口に爽やかな甘味と酸味、苦味が味わいを引き締める。 "
+  "discription": "リンゴやメロンを思わせる甘く華やかな香りが特徴。滑らかな飲み口に爽やかな甘味と酸味、苦味が味わいを引き締める。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/338",
@@ -7603,7 +7603,7 @@
   "prefectures": "",
   "starterCulture": "",
   "acidity": "",
-  "taste": "全体的に穏やかな香りと味わい。香りは白玉などの上品な原料香が感じられ、味わいは軽快な酸味によりスッキリとしている。 "
+  "discription": "全体的に穏やかな香りと味わい。香りは白玉などの上品な原料香が感じられ、味わいは軽快な酸味によりスッキリとしている。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/339",
@@ -7627,7 +7627,7 @@
   "prefectures": "",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ドライプルーンやカラメルを思わせる複雑な熟成香が特徴。しっかりとしたボリューム感のある酸味が印象的。 "
+  "discription": "ドライプルーンやカラメルを思わせる複雑な熟成香が特徴。しっかりとしたボリューム感のある酸味が印象的。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/340",
@@ -7651,7 +7651,7 @@
   "prefectures": "茨城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "リンゴやパイナップルを思わせる明るい華やかな香りが印象的。キレを感じさせる苦味がフレッシュな味わいをもたらす。 "
+  "discription": "リンゴやパイナップルを思わせる明るい華やかな香りが印象的。キレを感じさせる苦味がフレッシュな味わいをもたらす。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/341",
@@ -7675,7 +7675,7 @@
   "prefectures": "東京都",
   "starterCulture": "",
   "acidity": "",
-  "taste": "つきたての餅を思わせるふくよかな香り。深みがありまろやかな飲み口。ドライでキレの良い後味。 "
+  "discription": "つきたての餅を思わせるふくよかな香り。深みがありまろやかな飲み口。ドライでキレの良い後味。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/342",
@@ -7699,7 +7699,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "豊かな穀物を思わせるふくよかな香り。まろやかな飲み口。余韻にキレの良い酸味が残る。 "
+  "discription": "豊かな穀物を思わせるふくよかな香り。まろやかな飲み口。余韻にキレの良い酸味が残る。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/343",
@@ -7723,7 +7723,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "清々しく清楚な果実を思わせる香り。柔らかい飲み口にすっきりとキレイな後味が印象的。 "
+  "discription": "清々しく清楚な果実を思わせる香り。柔らかい飲み口にすっきりとキレイな後味が印象的。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/344",
@@ -7747,7 +7747,7 @@
   "prefectures": "鳥取県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "日本酒本来のふくよかな香り。なめらかな飲み口。キレの良い後口。 "
+  "discription": "日本酒本来のふくよかな香り。なめらかな飲み口。キレの良い後口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/345",
@@ -7771,7 +7771,7 @@
   "prefectures": "島根県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "丸みのあるふくよかな香り。甘味と酸味のバランスが良い味わい。後半に展開する苦味が後味をスッキリとさせる。 "
+  "discription": "丸みのあるふくよかな香り。甘味と酸味のバランスが良い味わい。後半に展開する苦味が後味をスッキリとさせる。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/346",
@@ -7795,7 +7795,7 @@
   "prefectures": "岡山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "米や乳製品を思わせるふくよかな香りが特徴。味わいは柔らかくまろやかな甘味と旨味の余韻が長い。 "
+  "discription": "米や乳製品を思わせるふくよかな香りが特徴。味わいは柔らかくまろやかな甘味と旨味の余韻が長い。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/347",
@@ -7819,7 +7819,7 @@
   "prefectures": "岡山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "爽やかな果実を思わせる香り。繊細で丸みのある飲み口。後味はスッキリドライテイスト。 "
+  "discription": "爽やかな果実を思わせる香り。繊細で丸みのある飲み口。後味はスッキリドライテイスト。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/348",
@@ -7843,7 +7843,7 @@
   "prefectures": "岡山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料の米を思わせるふくよかな香りに柔らかくまろやかな飲み口が特徴。後味は爽やかですっきりしたとしている。 "
+  "discription": "原料の米を思わせるふくよかな香りに柔らかくまろやかな飲み口が特徴。後味は爽やかですっきりしたとしている。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/349",
@@ -7867,7 +7867,7 @@
   "prefectures": "岡山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "炊いた米や乳製品を思わせるふくよかな香りと味わい。後味はキレイで余韻は長め。 "
+  "discription": "炊いた米や乳製品を思わせるふくよかな香りと味わい。後味はキレイで余韻は長め。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/350",
@@ -7891,7 +7891,7 @@
   "prefectures": "広島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "爽やかな果実を思わせる香り。シンプルで柔らかみのある飲み口。さっぱりとしたキレイな後味。 "
+  "discription": "爽やかな果実を思わせる香り。シンプルで柔らかみのある飲み口。さっぱりとしたキレイな後味。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/351",
@@ -7915,7 +7915,7 @@
   "prefectures": "香川県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料の米を思わせるふくよかで柔らかい香り。柔らかくスッキリとした飲み口。キレ良くスッキリとした後口 "
+  "discription": "原料の米を思わせるふくよかで柔らかい香り。柔らかくスッキリとした飲み口。キレ良くスッキリとした後口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/352",
@@ -7939,7 +7939,7 @@
   "prefectures": "徳島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "米のふくよかで柔らかい香り。ふくよかですっきりした飲み口。清々しくドライ感のある後口 "
+  "discription": "米のふくよかで柔らかい香り。ふくよかですっきりした飲み口。清々しくドライ感のある後口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/353",
@@ -7963,7 +7963,7 @@
   "prefectures": "青森県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "軽快でみずみずしい香りとほんのりとしたお米の香り。しっかりとした酸がドライな後味をつくりだす。 "
+  "discription": "軽快でみずみずしい香りとほんのりとしたお米の香り。しっかりとした酸がドライな後味をつくりだす。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/354",
@@ -7987,7 +7987,7 @@
   "prefectures": "福井県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "蜜入りのゴールデンデリシャスやメロンバナナなど甘い香りが主体で華やか。味わいはドライでしっかりとした酸によるキレを感じさせる。 "
+  "discription": "蜜入りのゴールデンデリシャスやメロンバナナなど甘い香りが主体で華やか。味わいはドライでしっかりとした酸によるキレを感じさせる。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/355",
@@ -8011,7 +8011,7 @@
   "prefectures": "福井県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "炊き立てご飯やコンデンスミルク、乳製品の香り。ふくよかで酸味がしっかりしていてキレが良いすっきりとした辛口。 "
+  "discription": "炊き立てご飯やコンデンスミルク、乳製品の香り。ふくよかで酸味がしっかりしていてキレが良いすっきりとした辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/356",
@@ -8035,7 +8035,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "青りんごやライム、レモングラスのような爽やかな香り。酸味もしっかりしていてバランスが良い。 "
+  "discription": "青りんごやライム、レモングラスのような爽やかな香り。酸味もしっかりしていてバランスが良い。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/357",
@@ -8059,7 +8059,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "炊き立てご飯のふくよかな香りが印象的。丸みのある甘味と旨味がコクを感じさせる味わい。 "
+  "discription": "炊き立てご飯のふくよかな香りが印象的。丸みのある甘味と旨味がコクを感じさせる味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/358",
@@ -8083,7 +8083,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "炊き立てご飯の香り。コンテチーズなど乳製品を思わせる香り。全体的にふくよかな味わいで後味はドライテイスト。 "
+  "discription": "炊き立てご飯の香り。コンテチーズなど乳製品を思わせる香り。全体的にふくよかな味わいで後味はドライテイスト。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/359",
@@ -8107,7 +8107,7 @@
   "prefectures": "奈良県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "穏やかな香りの発現性、洋ナシや白桃を思わせる香りとお米の香りが上品にバランスを取っている。味わいいは滑らかで後味はドライテイスト。 "
+  "discription": "穏やかな香りの発現性、洋ナシや白桃を思わせる香りとお米の香りが上品にバランスを取っている。味わいいは滑らかで後味はドライテイスト。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/360",
@@ -8131,7 +8131,7 @@
   "prefectures": "奈良県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "清流を思わせる爽やかな香りとミネラル感。にほんのりとした炊き立てのご飯の香り。さらりとした爽やかな味わい。 "
+  "discription": "清流を思わせる爽やかな香りとミネラル感。にほんのりとした炊き立てのご飯の香り。さらりとした爽やかな味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/361",
@@ -8155,7 +8155,7 @@
   "prefectures": "和歌山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "青りんごやライムピールを思わせる爽やかな香り。シャープな酸味がキレの良い後味をつくりだす。 "
+  "discription": "青りんごやライムピールを思わせる爽やかな香り。シャープな酸味がキレの良い後味をつくりだす。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/362",
@@ -8179,7 +8179,7 @@
   "prefectures": "和歌山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "爽やかな香り。米由来の甘味と酸味のバランスに優れる。軽快ながら、ややふくよかさも感じられる。ドライフィニッシュ。 "
+  "discription": "爽やかな香り。米由来の甘味と酸味のバランスに優れる。軽快ながら、ややふくよかさも感じられる。ドライフィニッシュ。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/363",
@@ -8203,7 +8203,7 @@
   "prefectures": "和歌山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料の米の香りを思わせるふくよかな香り。りんごやバナナなどの香りもある。酸味のバランスよく旨口のフィニッシュ。 "
+  "discription": "原料の米の香りを思わせるふくよかな香り。りんごやバナナなどの香りもある。酸味のバランスよく旨口のフィニッシュ。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/364",
@@ -8227,7 +8227,7 @@
   "prefectures": "青森県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "花やハーブを思わせる爽やかな香りと優しい飲み口が特徴。シンプルで親しみやすい味わい。 "
+  "discription": "花やハーブを思わせる爽やかな香りと優しい飲み口が特徴。シンプルで親しみやすい味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/365",
@@ -8251,7 +8251,7 @@
   "prefectures": "青森県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "炊いた米などのふくよかな原料香と乳製品を思わせるまろやかな香りが融合。味わいはスマートながら後味にしっかりとした苦味が残る。 "
+  "discription": "炊いた米などのふくよかな原料香と乳製品を思わせるまろやかな香りが融合。味わいはスマートながら後味にしっかりとした苦味が残る。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/366",
@@ -8275,7 +8275,7 @@
   "prefectures": "栃木県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "穏やかでふくらみのある熟成香。厚みのある酸味と旨味が特徴。やや甘口 "
+  "discription": "穏やかでふくらみのある熟成香。厚みのある酸味と旨味が特徴。やや甘口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/367",
@@ -8299,7 +8299,7 @@
   "prefectures": "埼玉県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "濃厚な原料香。味わいある旨味とスッキリした苦味が特徴。 "
+  "discription": "濃厚な原料香。味わいある旨味とスッキリした苦味が特徴。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/368",
@@ -8323,7 +8323,7 @@
   "prefectures": "埼玉県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ふくよかな原料香。ソフトな旨味と刺激の強い苦味が特徴。 "
+  "discription": "ふくよかな原料香。ソフトな旨味と刺激の強い苦味が特徴。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/369",
@@ -8347,7 +8347,7 @@
   "prefectures": "埼玉県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ふくよかな材料香。甘・酸・苦・旨味のバランスの良さが特徴。甘辛中庸。 "
+  "discription": "ふくよかな材料香。甘・酸・苦・旨味のバランスの良さが特徴。甘辛中庸。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/370",
@@ -8371,7 +8371,7 @@
   "prefectures": "埼玉県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "爽やかな果実の香り、柔らかな甘味、スッキリした酸味と全体を締める苦味が特徴。やや辛口 "
+  "discription": "爽やかな果実の香り、柔らかな甘味、スッキリした酸味と全体を締める苦味が特徴。やや辛口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/371",
@@ -8395,7 +8395,7 @@
   "prefectures": "千葉県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "果実を思わせる柔らかな香りと、甘味、全体を引き締める苦味が特徴。やや辛口。 "
+  "discription": "果実を思わせる柔らかな香りと、甘味、全体を引き締める苦味が特徴。やや辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/372",
@@ -8419,7 +8419,7 @@
   "prefectures": "千葉県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "穏やかでふくよかな香り、柔らかな甘味、全体を引き締める苦味が特徴。やや辛口。 "
+  "discription": "穏やかでふくよかな香り、柔らかな甘味、全体を引き締める苦味が特徴。やや辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/373",
@@ -8443,7 +8443,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "華やかさと穏やかを併せ持つ香りと、シャープでキレのある味わいが特徴。やや辛口。 "
+  "discription": "華やかさと穏やかを併せ持つ香りと、シャープでキレのある味わいが特徴。やや辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/374",
@@ -8467,7 +8467,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "華やかな中に爽やかな香りを含み、甘味、酸味と苦味のバランスの良さが特徴。中程度。 "
+  "discription": "華やかな中に爽やかな香りを含み、甘味、酸味と苦味のバランスの良さが特徴。中程度。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/375",
@@ -8491,7 +8491,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "爽やかな香り、甘味、酸味、苦味、旨味のバランスの良さが特徴。中程度。 "
+  "discription": "爽やかな香り、甘味、酸味、苦味、旨味のバランスの良さが特徴。中程度。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/376",
@@ -8515,7 +8515,7 @@
   "prefectures": "山口県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "生酛造りの特徴ある材料香。熟酒の様な旨味と味のある酸味が特徴。 "
+  "discription": "生酛造りの特徴ある材料香。熟酒の様な旨味と味のある酸味が特徴。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/377",
@@ -8539,7 +8539,7 @@
   "prefectures": "青森県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "つきたての餅のような柔らかな原料香。厚みのあるテクスチャー。濃醇ながらキレのよい味わい "
+  "discription": "つきたての餅のような柔らかな原料香。厚みのあるテクスチャー。濃醇ながらキレのよい味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/378",
@@ -8563,7 +8563,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "生クリームなどの原料香がふくよかさと、酸味、苦味が爽快さのバランスが心地よい。全体的にはシンプルな淡麗辛口。 "
+  "discription": "生クリームなどの原料香がふくよかさと、酸味、苦味が爽快さのバランスが心地よい。全体的にはシンプルな淡麗辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/379",
@@ -8587,7 +8587,7 @@
   "prefectures": "宮城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "爽やかなでほのかに甘い青いバナナの香りとすっきりした酸味がのどごし良く清涼感を与えてくれる "
+  "discription": "爽やかなでほのかに甘い青いバナナの香りとすっきりした酸味がのどごし良く清涼感を与えてくれる "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/380",
@@ -8611,7 +8611,7 @@
   "prefectures": "福島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "甘味、酸味、苦味のバランスが良く呑みごたえがありながらもキレが抜群な食前食中酒 "
+  "discription": "甘味、酸味、苦味のバランスが良く呑みごたえがありながらもキレが抜群な食前食中酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/381",
@@ -8635,7 +8635,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ミネラルなどの穏やかな原料香、甘み酸味、苦味が強調されず、きわめてシンプル。スムーズな飲み口が爽快さを与える。 "
+  "discription": "ミネラルなどの穏やかな原料香、甘み酸味、苦味が強調されず、きわめてシンプル。スムーズな飲み口が爽快さを与える。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/382",
@@ -8659,7 +8659,7 @@
   "prefectures": "富山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "まろやかなテクスチャー、かすかに感じる甘味、酸味と苦みがバランス良く穏やな味わい。 "
+  "discription": "まろやかなテクスチャー、かすかに感じる甘味、酸味と苦みがバランス良く穏やな味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/383",
@@ -8683,7 +8683,7 @@
   "prefectures": "福井県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "柔らかなアタック、爽やかでバランスのとれた原料のやさしい米の旨みを感じる味わい。 "
+  "discription": "柔らかなアタック、爽やかでバランスのとれた原料のやさしい米の旨みを感じる味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/384",
@@ -8707,7 +8707,7 @@
   "prefectures": "福井県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "しっかりと厚みのある飲み口。はっきりとした酸味とに苦みを感じる。原料由来のふくよかさを感じる。余韻は長く印象的。 "
+  "discription": "しっかりと厚みのある飲み口。はっきりとした酸味とに苦みを感じる。原料由来のふくよかさを感じる。余韻は長く印象的。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/385",
@@ -8731,7 +8731,7 @@
   "prefectures": "広島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "華やかな果実を思わせる甘い香りと、爽やかな飲み口が特徴。味わいは滑らかでバランスが取れている。 "
+  "discription": "華やかな果実を思わせる甘い香りと、爽やかな飲み口が特徴。味わいは滑らかでバランスが取れている。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/386",
@@ -8755,7 +8755,7 @@
   "prefectures": "徳島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "穏やかな米由来の香りに落ち着きを憶える。軽やかで飲み飽きしない味わいはまさに和の癒しの一杯。 "
+  "discription": "穏やかな米由来の香りに落ち着きを憶える。軽やかで飲み飽きしない味わいはまさに和の癒しの一杯。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/387",
@@ -8779,7 +8779,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "軽快で爽やか清涼感あふれる中に優しい旨みも兼ねそなえた充実した味わい。 "
+  "discription": "軽快で爽やか清涼感あふれる中に優しい旨みも兼ねそなえた充実した味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/388",
@@ -8803,7 +8803,7 @@
   "prefectures": "北海道",
   "starterCulture": "",
   "acidity": "",
-  "taste": "繊細かつ上品な吟醸香。シャープな酸味が引き締まった味わい。すっきりした辛口。 "
+  "discription": "繊細かつ上品な吟醸香。シャープな酸味が引き締まった味わい。すっきりした辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/389",
@@ -8827,7 +8827,7 @@
   "prefectures": "福島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "上品で優しく香る吟醸香。ふくよかで丸みのある柔らかな酸味。きめが細かくシルキータッチな飲み口。 "
+  "discription": "上品で優しく香る吟醸香。ふくよかで丸みのある柔らかな酸味。きめが細かくシルキータッチな飲み口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/390",
@@ -8851,7 +8851,7 @@
   "prefectures": "福島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "淡い山吹色をした色調が印象的。華やかな吟醸香と可憐な甘みを感じるまろやかな味わい。 "
+  "discription": "淡い山吹色をした色調が印象的。華やかな吟醸香と可憐な甘みを感じるまろやかな味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/391",
@@ -8875,7 +8875,7 @@
   "prefectures": "茨城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "穏やかな原料の米を思わせる香り、柔らかく角のないふくよかな味わいが特徴。 "
+  "discription": "穏やかな原料の米を思わせる香り、柔らかく角のないふくよかな味わいが特徴。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/392",
@@ -8899,7 +8899,7 @@
   "prefectures": "愛媛県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "控えめながら柑橘類を思わせる爽やかな香り。さらりとした軽快な甘味と酸味が特徴の味わい "
+  "discription": "控えめながら柑橘類を思わせる爽やかな香り。さらりとした軽快な甘味と酸味が特徴の味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/393",
@@ -8923,7 +8923,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "フレッシュな果実を思わせる繊細な吟醸香。柔らかな酸と苦みが主体。シャープですっきりした辛口。 "
+  "discription": "フレッシュな果実を思わせる繊細な吟醸香。柔らかな酸と苦みが主体。シャープですっきりした辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/394",
@@ -8947,7 +8947,7 @@
   "prefectures": "佐賀県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "華やかな若々しいすっきりしている吟醸香。すっきりした酸と共にふくらみのある旨みある味わい。 "
+  "discription": "華やかな若々しいすっきりしている吟醸香。すっきりした酸と共にふくらみのある旨みある味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/395",
@@ -8971,7 +8971,7 @@
   "prefectures": "長崎県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "穏やかな香りとまろやかな甘みと苦みが主体。ミネラル感があり海の幸を呼ぶ味わい。 "
+  "discription": "穏やかな香りとまろやかな甘みと苦みが主体。ミネラル感があり海の幸を呼ぶ味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/396",
@@ -8995,7 +8995,7 @@
   "prefectures": "熊本県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "控えめな原料香が心地よく程よい旨みが印象を残す。軽快な酸ですっきりとした後味で飲み飽きない味わい。 "
+  "discription": "控えめな原料香が心地よく程よい旨みが印象を残す。軽快な酸ですっきりとした後味で飲み飽きない味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/397",
@@ -9019,7 +9019,7 @@
   "prefectures": "栃木県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "厚みのある南国フルーツや穀物の香りが複雑に展開。やや甘さと酸味を感じさせる凝縮感のある繊細で複雑な味わい。 "
+  "discription": "厚みのある南国フルーツや穀物の香りが複雑に展開。やや甘さと酸味を感じさせる凝縮感のある繊細で複雑な味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/398",
@@ -9043,7 +9043,7 @@
   "prefectures": "宮城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "乳製品を思わせるクリーミーな香り、味わいは爽やかな酸味と苦味のドライテイスト。 "
+  "discription": "乳製品を思わせるクリーミーな香り、味わいは爽やかな酸味と苦味のドライテイスト。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/399",
@@ -9067,7 +9067,7 @@
   "prefectures": "秋田県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "果実や花のような華やかな香りが特徴。アタックの甘味とスッキリとした酸味、繊細でドライな味わい。 "
+  "discription": "果実や花のような華やかな香りが特徴。アタックの甘味とスッキリとした酸味、繊細でドライな味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/400",
@@ -9091,7 +9091,7 @@
   "prefectures": "山形県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "香りは上新粉やマシュマロを思わせる軽快な原料香が主体。スッキリとしたドライな味わいが特徴。 "
+  "discription": "香りは上新粉やマシュマロを思わせる軽快な原料香が主体。スッキリとしたドライな味わいが特徴。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/401",
@@ -9115,7 +9115,7 @@
   "prefectures": "群馬県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "稲わらや炊いたお米のような穀物香が主体。味わいはしっかりとした旨味と酸味、苦味がボリューム感をつくりだす複雑な味わい。 "
+  "discription": "稲わらや炊いたお米のような穀物香が主体。味わいはしっかりとした旨味と酸味、苦味がボリューム感をつくりだす複雑な味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/402",
@@ -9139,7 +9139,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "軽快な穀物香に、少しミネラル香を感じる。軽快で瑞々しい味わい。 "
+  "discription": "軽快な穀物香に、少しミネラル香を感じる。軽快で瑞々しい味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/403",
@@ -9163,7 +9163,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "果実や花のような華やかな香りに軽快な原料香が加わる。爽やかな酸味と苦味が印象を残す。 "
+  "discription": "果実や花のような華やかな香りに軽快な原料香が加わる。爽やかな酸味と苦味が印象を残す。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/404",
@@ -9187,7 +9187,7 @@
   "prefectures": "広島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "果実や花のような華やかな香りが特徴。上品で丸みのある口当たりに優しい甘味と酸味が心地よい。後味は苦味が主体のドライテイスト。 "
+  "discription": "果実や花のような華やかな香りが特徴。上品で丸みのある口当たりに優しい甘味と酸味が心地よい。後味は苦味が主体のドライテイスト。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/405",
@@ -9211,7 +9211,7 @@
   "prefectures": "山形県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "華やかで爽やかな甘い香り、甘味の旨さが主体。やや辛口。 "
+  "discription": "華やかで爽やかな甘い香り、甘味の旨さが主体。やや辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/406",
@@ -9235,7 +9235,7 @@
   "prefectures": "山梨県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "爽やかなほのかな甘い香り、甘味、苦味の旨さが主体の味わい。 "
+  "discription": "爽やかなほのかな甘い香り、甘味、苦味の旨さが主体の味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/407",
@@ -9259,7 +9259,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "爽快な酸味と旨味が主体のドライテイスト。コクのある旨味成分が余韻に残る。 "
+  "discription": "爽快な酸味と旨味が主体のドライテイスト。コクのある旨味成分が余韻に残る。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/408",
@@ -9283,7 +9283,7 @@
   "prefectures": "石川県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "爽快な酸味と旨味が主体のドライテイスト。コクのある旨味成分が余韻に残る。 "
+  "discription": "爽快な酸味と旨味が主体のドライテイスト。コクのある旨味成分が余韻に残る。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/409",
@@ -9307,7 +9307,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "華やかで爽やかな甘い香り、明確な甘味がるが余韻はドライテイスト。旨味もほのかに感じられる。 "
+  "discription": "華やかで爽やかな甘い香り、明確な甘味がるが余韻はドライテイスト。旨味もほのかに感じられる。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/410",
@@ -9331,7 +9331,7 @@
   "prefectures": "大分県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "キリリと引き締まったドライな飲み口。爽快な酸味と苦味が主体のドライテイスト。 "
+  "discription": "キリリと引き締まったドライな飲み口。爽快な酸味と苦味が主体のドライテイスト。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/411",
@@ -9355,7 +9355,7 @@
   "prefectures": "岩手県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "フルーツを思わせる華やかさやハーブを思わせる爽やかさ、原料由来の穀物などさまざまな香りを楽しめる。豊かな香りとスッキリとした飲み口が特徴。 "
+  "discription": "フルーツを思わせる華やかさやハーブを思わせる爽やかさ、原料由来の穀物などさまざまな香りを楽しめる。豊かな香りとスッキリとした飲み口が特徴。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/412",
@@ -9379,7 +9379,7 @@
   "prefectures": "",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ヨーグルトなどを思わせる乳製品をおもわせるふくよかな香り。アタックは滑らかだが引き締まった味わいで後味わいはドライ。 "
+  "discription": "ヨーグルトなどを思わせる乳製品をおもわせるふくよかな香り。アタックは滑らかだが引き締まった味わいで後味わいはドライ。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/413",
@@ -9403,7 +9403,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "クリームチーズを思わせる乳製品のミルキーな香りが印象的。サラリとした口当たりに軽快な酸味が心地よく余韻にキレがある。 "
+  "discription": "クリームチーズを思わせる乳製品のミルキーな香りが印象的。サラリとした口当たりに軽快な酸味が心地よく余韻にキレがある。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/414",
@@ -9427,7 +9427,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "炊きたての米を思わせる香り、味わいはなめらかなテクスチャーに白砂糖を思わせるような甘みが印象を残す。 "
+  "discription": "炊きたての米を思わせる香り、味わいはなめらかなテクスチャーに白砂糖を思わせるような甘みが印象を残す。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/415",
@@ -9451,7 +9451,7 @@
   "prefectures": "滋賀県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "しょうがを思わせるすっきりとした爽やかさと、麹や木を思わせる芳醇な香りも感じられる。スッキリとした後味が心地よい。 "
+  "discription": "しょうがを思わせるすっきりとした爽やかさと、麹や木を思わせる芳醇な香りも感じられる。スッキリとした後味が心地よい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/416",
@@ -9475,7 +9475,7 @@
   "prefectures": "山口県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ユリなどを思わせる華やかな香りが特徴。味わいはサラッとした口当たりに清冽な酸味が冷涼感を与える。後味はドライ。 "
+  "discription": "ユリなどを思わせる華やかな香りが特徴。味わいはサラッとした口当たりに清冽な酸味が冷涼感を与える。後味はドライ。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/417",
@@ -9499,7 +9499,7 @@
   "prefectures": "北海道",
   "starterCulture": "",
   "acidity": "",
-  "taste": "香りにはほのかに華やかな香りがあり、甘味と酸味がせめぎあう味わい "
+  "discription": "香りにはほのかに華やかな香りがあり、甘味と酸味がせめぎあう味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/418",
@@ -9523,7 +9523,7 @@
   "prefectures": "青森県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "軽快でフレッシュな原料香にトロリとした甘味に苦味がアクセントを添えるフレッシュな味わい "
+  "discription": "軽快でフレッシュな原料香にトロリとした甘味に苦味がアクセントを添えるフレッシュな味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/419",
@@ -9547,7 +9547,7 @@
   "prefectures": "岩手県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "フレッシュな原料香がいきいきとしており、なめらかな甘味を苦味、酸味が引き締めるフレッシュな味わい "
+  "discription": "フレッシュな原料香がいきいきとしており、なめらかな甘味を苦味、酸味が引き締めるフレッシュな味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/420",
@@ -9571,7 +9571,7 @@
   "prefectures": "宮城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "おだやかなリンゴのような華やかな香り。甘味と酸味がバランスをとる優しい味わい "
+  "discription": "おだやかなリンゴのような華やかな香り。甘味と酸味がバランスをとる優しい味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/421",
@@ -9595,7 +9595,7 @@
   "prefectures": "群馬県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "軽快な原料香とほのかな熟成香。甘味を中心に酸味と旨味がサポートする味わい "
+  "discription": "軽快な原料香とほのかな熟成香。甘味を中心に酸味と旨味がサポートする味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/422",
@@ -9619,7 +9619,7 @@
   "prefectures": "埼玉県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "フレッシュな味わい。なめらかな甘味が特徴的で後半の苦味が味わいにコクを与える。 "
+  "discription": "フレッシュな味わい。なめらかな甘味が特徴的で後半の苦味が味わいにコクを与える。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/423",
@@ -9643,7 +9643,7 @@
   "prefectures": "神奈川県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "リンゴのような華やかな香り。持続性のある甘味を清涼な苦味が味わいを引き締める "
+  "discription": "リンゴのような華やかな香り。持続性のある甘味を清涼な苦味が味わいを引き締める "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/424",
@@ -9667,7 +9667,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "メロンのような華やかな吟醸香が特徴。やさしい甘味と苦味がバランスをとる味わい。 "
+  "discription": "メロンのような華やかな吟醸香が特徴。やさしい甘味と苦味がバランスをとる味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/425",
@@ -9691,7 +9691,7 @@
   "prefectures": "岐阜県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ふくよかな原料香、重厚な酸味と濃密な甘味が特徴の濃醇な味わい "
+  "discription": "ふくよかな原料香、重厚な酸味と濃密な甘味が特徴の濃醇な味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/426",
@@ -9715,7 +9715,7 @@
   "prefectures": "三重県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "稲穂などを思わせるふくよかな香り。味わいはやさしい甘味と酸味が主体。 "
+  "discription": "稲穂などを思わせるふくよかな香り。味わいはやさしい甘味と酸味が主体。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/427",
@@ -9739,7 +9739,7 @@
   "prefectures": "香川県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "香りはふくよかで小さくきれいにまとまった味わい "
+  "discription": "香りはふくよかで小さくきれいにまとまった味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/428",
@@ -9763,7 +9763,7 @@
   "prefectures": "徳島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ヨーグルトをおもわせるふくよかな香りに、原料の米を思わせる香りが印象的。まろやかな酸味が味わいの主体をなし余韻もやや長め。 "
+  "discription": "ヨーグルトをおもわせるふくよかな香りに、原料の米を思わせる香りが印象的。まろやかな酸味が味わいの主体をなし余韻もやや長め。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/429",
@@ -9787,7 +9787,7 @@
   "prefectures": "",
   "starterCulture": "",
   "acidity": "",
-  "taste": "キリリと引き締まったテクスチャー。厚みのある酸味と苦みの辛口テイスト。 "
+  "discription": "キリリと引き締まったテクスチャー。厚みのある酸味と苦みの辛口テイスト。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/430",
@@ -9811,7 +9811,7 @@
   "prefectures": "広島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "柔らかなテクスチャー。爽やかな甘味と苦みのバランスがよい上品な味わい。 "
+  "discription": "柔らかなテクスチャー。爽やかな甘味と苦みのバランスがよい上品な味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/431",
@@ -9835,7 +9835,7 @@
   "prefectures": "広島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "なめらかな飲み口、ふくよかな旨味のまろやかテイスト。料理が進む食中酒。 "
+  "discription": "なめらかな飲み口、ふくよかな旨味のまろやかテイスト。料理が進む食中酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/432",
@@ -9859,7 +9859,7 @@
   "prefectures": "岩手県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "なめらかな飲み口、ふくよかな旨味のまろやかテイスト。料理が進む食中酒。 "
+  "discription": "なめらかな飲み口、ふくよかな旨味のまろやかテイスト。料理が進む食中酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/433",
@@ -9883,7 +9883,7 @@
   "prefectures": "北海道",
   "starterCulture": "",
   "acidity": "",
-  "taste": "なめらかでスッキリとした飲み口。コンパクトで軽快、バランスの良い味わい。 "
+  "discription": "なめらかでスッキリとした飲み口。コンパクトで軽快、バランスの良い味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/434",
@@ -9907,7 +9907,7 @@
   "prefectures": "岩手県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "みずみずしく優しい飲み口。ほんのりと上品な甘味のソフトなテイスト。 "
+  "discription": "みずみずしく優しい飲み口。ほんのりと上品な甘味のソフトなテイスト。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/435",
@@ -9931,7 +9931,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "サラリとしてスッキリとした飲み口。ほんのりとした甘味と軽快な酸味・苦味が心地よい爽やかな日本酒。 "
+  "discription": "サラリとしてスッキリとした飲み口。ほんのりとした甘味と軽快な酸味・苦味が心地よい爽やかな日本酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/436",
@@ -9955,7 +9955,7 @@
   "prefectures": "熊本県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "なめらかな飲み口。まろやかな甘味とシャープな苦味で辛口な後味。 "
+  "discription": "なめらかな飲み口。まろやかな甘味とシャープな苦味で辛口な後味。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/437",
@@ -9979,7 +9979,7 @@
   "prefectures": "長崎県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "フルーティーで華やかな吟醸香。爽やかな甘味とドライな後味。高級感のある味わい。 "
+  "discription": "フルーティーで華やかな吟醸香。爽やかな甘味とドライな後味。高級感のある味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/438",
@@ -10003,7 +10003,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "みずみずしく爽やかな飲み口。ほんのりとした甘味が主体のスッキリとした味わい。 "
+  "discription": "みずみずしく爽やかな飲み口。ほんのりとした甘味が主体のスッキリとした味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/439",
@@ -10027,7 +10027,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "キリリとした飲み口。厚みのある酸味・苦味と甘みのバランスが良い旨口の日本酒 "
+  "discription": "キリリとした飲み口。厚みのある酸味・苦味と甘みのバランスが良い旨口の日本酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/440",
@@ -10051,7 +10051,7 @@
   "prefectures": "三重県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "みずみずしい飲み口。ほんのりとした甘さが主体のスッキリ、爽やかテイスト。 "
+  "discription": "みずみずしい飲み口。ほんのりとした甘さが主体のスッキリ、爽やかテイスト。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/441",
@@ -10075,7 +10075,7 @@
   "prefectures": "広島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料米や乳製品を思わさせるふくよかな香り、滑らかな飲み口が優しい後味を残す。 "
+  "discription": "原料米や乳製品を思わさせるふくよかな香り、滑らかな飲み口が優しい後味を残す。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/442",
@@ -10099,7 +10099,7 @@
   "prefectures": "島根県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "リンゴ、白桃、桜餅、メロンの様な華やかな香り。第一印象は軽快ながらほんのりとした旨味が上品さを感じさせる味わい。 "
+  "discription": "リンゴ、白桃、桜餅、メロンの様な華やかな香り。第一印象は軽快ながらほんのりとした旨味が上品さを感じさせる味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/443",
@@ -10123,7 +10123,7 @@
   "prefectures": "島根県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "バナナ、リンゴ、梨、桜餅を思わせる華やかな香り。滑らかなテクスチャーに穏やかながらしっとりとした甘味が感じられる。後味はドライ。 "
+  "discription": "バナナ、リンゴ、梨、桜餅を思わせる華やかな香り。滑らかなテクスチャーに穏やかながらしっとりとした甘味が感じられる。後味はドライ。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/444",
@@ -10147,7 +10147,7 @@
   "prefectures": "島根県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "引き締まった厚みのあるテクスチャー。甘味、酸味、苦味がバランスよくまとまった味わい。 "
+  "discription": "引き締まった厚みのあるテクスチャー。甘味、酸味、苦味がバランスよくまとまった味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/445",
@@ -10171,7 +10171,7 @@
   "prefectures": "東京都",
   "starterCulture": "",
   "acidity": "",
-  "taste": "キリリとした厚みのある引き締まったテクスチャー。重厚な酸味がボリューム感のある味わいをもたらす。 "
+  "discription": "キリリとした厚みのある引き締まったテクスチャー。重厚な酸味がボリューム感のある味わいをもたらす。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/446",
@@ -10195,7 +10195,7 @@
   "prefectures": "静岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "シャープで引き締まったテクスチャー。爽快な酸味と苦味が主体のドライテイスト。 "
+  "discription": "シャープで引き締まったテクスチャー。爽快な酸味と苦味が主体のドライテイスト。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/447",
@@ -10219,7 +10219,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "香り穏やかで爽やかな酸味と甘味、苦味が調和した旨さがある。 "
+  "discription": "香り穏やかで爽やかな酸味と甘味、苦味が調和した旨さがある。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/448",
@@ -10243,7 +10243,7 @@
   "prefectures": "山梨県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "香り穏やかで味わいの調和した安定した味わい。軽やかで飲み飽きしない味わいの構成を持つ。 "
+  "discription": "香り穏やかで味わいの調和した安定した味わい。軽やかで飲み飽きしない味わいの構成を持つ。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/449",
@@ -10267,7 +10267,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料の米を思わせる香りが穏やかに感じられる。軽快な酸味と苦味が主体のドライティスト。 "
+  "discription": "原料の米を思わせる香りが穏やかに感じられる。軽快な酸味と苦味が主体のドライティスト。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/450",
@@ -10291,7 +10291,7 @@
   "prefectures": "",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料のお米を思わせるふくよかな香りが特徴。味わいは軽快な酸味と苦味が主体のドライティスト。 "
+  "discription": "原料のお米を思わせるふくよかな香りが特徴。味わいは軽快な酸味と苦味が主体のドライティスト。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/451",
@@ -10315,7 +10315,7 @@
   "prefectures": "岩手県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "米の柔らかくふくよかな香りが特徴。まろやかな飲み口ながら後味はスッキリとしている。 "
+  "discription": "米の柔らかくふくよかな香りが特徴。まろやかな飲み口ながら後味はスッキリとしている。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/452",
@@ -10339,7 +10339,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "すっきりシャープで引き締まった味わい。全体にバランスの取れた典型的な爽酒、まさに越淡麗 "
+  "discription": "すっきりシャープで引き締まった味わい。全体にバランスの取れた典型的な爽酒、まさに越淡麗 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/453",
@@ -10363,7 +10363,7 @@
   "prefectures": "富山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ふくよかな香りと若干の根菜類を思わせる香り、柔らかくスッキリとした飲み口、清々しいキレイな後口 "
+  "discription": "ふくよかな香りと若干の根菜類を思わせる香り、柔らかくスッキリとした飲み口、清々しいキレイな後口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/454",
@@ -10387,7 +10387,7 @@
   "prefectures": "福井県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "しっとりとふくよかな香り、ふくよかでしっとりとした飲み口、後味はドライでキレが良い "
+  "discription": "しっとりとふくよかな香り、ふくよかでしっとりとした飲み口、後味はドライでキレが良い "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/455",
@@ -10411,7 +10411,7 @@
   "prefectures": "岐阜県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "果実を思わせるようなフレッシュな香り、滑らかな飲み口、柔らかく清々しい後味が印象的。 "
+  "discription": "果実を思わせるようなフレッシュな香り、滑らかな飲み口、柔らかく清々しい後味が印象的。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/456",
@@ -10435,7 +10435,7 @@
   "prefectures": "愛知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料の米を思わせるふくよかな香り、なめらかでまろやかな飲み口、後味はキレ良くスッキリとしている。 "
+  "discription": "原料の米を思わせるふくよかな香り、なめらかでまろやかな飲み口、後味はキレ良くスッキリとしている。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/457",
@@ -10459,7 +10459,7 @@
   "prefectures": "滋賀県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "清楚な果実を思わせるさわやかな香り、柔らかくスッキリとした飲み口、すっきりキレイな後味 "
+  "discription": "清楚な果実を思わせるさわやかな香り、柔らかくスッキリとした飲み口、すっきりキレイな後味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/458",
@@ -10483,7 +10483,7 @@
   "prefectures": "和歌山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "米のふくよかな香りと凝縮した果実のような香り、なめらかでキレイな飲み口、すっきりキレイな後味 "
+  "discription": "米のふくよかな香りと凝縮した果実のような香り、なめらかでキレイな飲み口、すっきりキレイな後味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/459",
@@ -10507,7 +10507,7 @@
   "prefectures": "広島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ふくよかな原料香に香と淡いハーブの香り、滑らかで柔らかい飲み口、後味はキレイで清々しい "
+  "discription": "ふくよかな原料香に香と淡いハーブの香り、滑らかで柔らかい飲み口、後味はキレイで清々しい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/460",
@@ -10531,7 +10531,7 @@
   "prefectures": "佐賀県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ふくよかでハーブを思わせる香り、滑らかでキレイな飲み口、後味はさっぱりキレイ "
+  "discription": "ふくよかでハーブを思わせる香り、滑らかでキレイな飲み口、後味はさっぱりキレイ "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/461",
@@ -10555,7 +10555,7 @@
   "prefectures": "大分県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ふくよかな原料香に根菜類を思わせる香りがアクセントとなる。ふわりと丸みのある飲み口で後味は厚みがある。 "
+  "discription": "ふくよかな原料香に根菜類を思わせる香りがアクセントとなる。ふわりと丸みのある飲み口で後味は厚みがある。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/462",
@@ -10579,7 +10579,7 @@
   "prefectures": "岐阜県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "お燗にすることで原料の米を思わせる豊かな香りが心地よい和をイメージさせる味わい。 "
+  "discription": "お燗にすることで原料の米を思わせる豊かな香りが心地よい和をイメージさせる味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/463",
@@ -10603,7 +10603,7 @@
   "prefectures": "高知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "サラリとした口当たりとスムーズな味わい。後味は酸味と苦味を主体としたドライテイストで、夏に冷やして楽しめる純米酒 "
+  "discription": "サラリとした口当たりとスムーズな味わい。後味は酸味と苦味を主体としたドライテイストで、夏に冷やして楽しめる純米酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/464",
@@ -10627,7 +10627,7 @@
   "prefectures": "香川県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料に由来するふくよかな香りが日本酒らしさをイメージさせる。味わいは酸味と苦味のドライテイストでキレがある。 "
+  "discription": "原料に由来するふくよかな香りが日本酒らしさをイメージさせる。味わいは酸味と苦味のドライテイストでキレがある。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/465",
@@ -10651,7 +10651,7 @@
   "prefectures": "広島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "優しい飲み口で白ワインのよう。ミルキーな料理とご一緒に冷やからぬる燗まで様々な温度帯で楽しめます。 "
+  "discription": "優しい飲み口で白ワインのよう。ミルキーな料理とご一緒に冷やからぬる燗まで様々な温度帯で楽しめます。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/466",
@@ -10675,7 +10675,7 @@
   "prefectures": "静岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "なめらかでシルキーで優しい飲み口冷やからぬる燗まで様々な温度帯で楽しめます "
+  "discription": "なめらかでシルキーで優しい飲み口冷やからぬる燗まで様々な温度帯で楽しめます "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/467",
@@ -10699,7 +10699,7 @@
   "prefectures": "群馬県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "米粉や新米など軽快な原料香が特徴。シャープな飲み口で味わいは酸味と苦味が主体のドライテイスト。 "
+  "discription": "米粉や新米など軽快な原料香が特徴。シャープな飲み口で味わいは酸味と苦味が主体のドライテイスト。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/468",
@@ -10723,7 +10723,7 @@
   "prefectures": "山形県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料由来のふくよかな香りと乳製品様のまろやかなかろりが主体となる。ボリューム感ある味わいで余韻にハッキリとした旨味が残る。 "
+  "discription": "原料由来のふくよかな香りと乳製品様のまろやかなかろりが主体となる。ボリューム感ある味わいで余韻にハッキリとした旨味が残る。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/469",
@@ -10747,7 +10747,7 @@
   "prefectures": "埼玉県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "穏やかな原料に由来する香りが主体となる。味わいはスムーズで爽やかな酸味が印象的。 "
+  "discription": "穏やかな原料に由来する香りが主体となる。味わいはスムーズで爽やかな酸味が印象的。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/470",
@@ -10771,7 +10771,7 @@
   "prefectures": "愛知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "稲わらやカッテージチーズなどのふくよかな香りが感じられる。厚みのある酸味と旨味がコクを生む。余韻も長く強さがある。 "
+  "discription": "稲わらやカッテージチーズなどのふくよかな香りが感じられる。厚みのある酸味と旨味がコクを生む。余韻も長く強さがある。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/471",
@@ -10795,7 +10795,7 @@
   "prefectures": "群馬県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "軽快な香りと味わい。酸味と苦味が主体のドライテストでキレがある。 "
+  "discription": "軽快な香りと味わい。酸味と苦味が主体のドライテストでキレがある。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/472",
@@ -10819,7 +10819,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "軽快な原料香に白い花を思わせる香りがそっとアクセントを添える。なめらかな甘味を中心に五味が一つにまとまった上品な熟成酒 "
+  "discription": "軽快な原料香に白い花を思わせる香りがそっとアクセントを添える。なめらかな甘味を中心に五味が一つにまとまった上品な熟成酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/473",
@@ -10843,7 +10843,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "旨味を感じさせる原料香が中心。ふくらみのある飲み口で、中盤から味わいが広がり旨味の余韻が残る。米の旨味が心地よい辛口 "
+  "discription": "旨味を感じさせる原料香が中心。ふくらみのある飲み口で、中盤から味わいが広がり旨味の余韻が残る。米の旨味が心地よい辛口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/474",
@@ -10867,7 +10867,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "力強い原料香に旨味を思わせる熟成香が深みを与える。飲み口はなめらかだが、中盤から五味が主張し始め余韻まで続く。熱めの燗に最適 "
+  "discription": "力強い原料香に旨味を思わせる熟成香が深みを与える。飲み口はなめらかだが、中盤から五味が主張し始め余韻まで続く。熱めの燗に最適 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/475",
@@ -10891,7 +10891,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "梨を思わせる香りは華美ではなく、柔らかな甘味を中盤から立ち上がる清涼な苦味が引き締める。味わいのある純米大吟醸 "
+  "discription": "梨を思わせる香りは華美ではなく、柔らかな甘味を中盤から立ち上がる清涼な苦味が引き締める。味わいのある純米大吟醸 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/476",
@@ -10915,7 +10915,7 @@
   "prefectures": "和歌山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "茶褐色の色合いが熟成の長さを示す。焦がしたカラメルのような香りと力強いが一体感ある味わいはいずれも複雑で凝縮感がある "
+  "discription": "茶褐色の色合いが熟成の長さを示す。焦がしたカラメルのような香りと力強いが一体感ある味わいはいずれも複雑で凝縮感がある "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/477",
@@ -10939,7 +10939,7 @@
   "prefectures": "和歌山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "バナナやライチを思わせる華やかな香り。飲み口はとろりとなめらかで、中盤から立ち上がる柔らかな苦味がコクを与える "
+  "discription": "バナナやライチを思わせる華やかな香り。飲み口はとろりとなめらかで、中盤から立ち上がる柔らかな苦味がコクを与える "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/478",
@@ -10963,7 +10963,7 @@
   "prefectures": "高知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "甘味を思わせる原料香と根菜類を思わせる穏やかな香り。フレッシュな酸味となめらかな甘味をアルコールが引き締める。キレのいい辛口 "
+  "discription": "甘味を思わせる原料香と根菜類を思わせる穏やかな香り。フレッシュな酸味となめらかな甘味をアルコールが引き締める。キレのいい辛口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/479",
@@ -10987,7 +10987,7 @@
   "prefectures": "高知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ハーブを思わせる香りはとても控え目。飲み口はサラリと優しく、清涼な酸味と爽やかな苦味がバランスする、飲み飽きしない辛口 "
+  "discription": "ハーブを思わせる香りはとても控え目。飲み口はサラリと優しく、清涼な酸味と爽やかな苦味がバランスする、飲み飽きしない辛口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/480",
@@ -11011,7 +11011,7 @@
   "prefectures": "高知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "酸味を思わせる控え目な香り。スムーズな飲み口で、爽やかな酸味に根菜類を思わせる苦味がコクを与える。残糖感を感じさせない辛口 "
+  "discription": "酸味を思わせる控え目な香り。スムーズな飲み口で、爽やかな酸味に根菜類を思わせる苦味がコクを与える。残糖感を感じさせない辛口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/481",
@@ -11035,7 +11035,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "酸味、甘味、苦みの旨味のバランスのよいドライティスト。芳醇な辛口タイプ。 "
+  "discription": "酸味、甘味、苦みの旨味のバランスのよいドライティスト。芳醇な辛口タイプ。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/482",
@@ -11059,7 +11059,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "なめらかでスッキリとした飲み口。新米のような柔らかさ、ハーブのような爽やかさも感じられる軽快な味わい。 "
+  "discription": "なめらかでスッキリとした飲み口。新米のような柔らかさ、ハーブのような爽やかさも感じられる軽快な味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/483",
@@ -11083,7 +11083,7 @@
   "prefectures": "山形県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "香り穏やかでスッキリした酸味が特徴。甘味、苦味、旨味のバランスも良いドライティスト。 "
+  "discription": "香り穏やかでスッキリした酸味が特徴。甘味、苦味、旨味のバランスも良いドライティスト。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/484",
@@ -11107,7 +11107,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "フルーティーで爽やか。心地よい飲み口。みずみずしく、後味もスッキリとしている。 "
+  "discription": "フルーティーで爽やか。心地よい飲み口。みずみずしく、後味もスッキリとしている。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/485",
@@ -11131,7 +11131,7 @@
   "prefectures": "高知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "サラサラとした飲み口。フルーティーな味わいで後味はスッキリとドライ。爽やかな純米大吟醸酒。 "
+  "discription": "サラサラとした飲み口。フルーティーな味わいで後味はスッキリとドライ。爽やかな純米大吟醸酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/486",
@@ -11155,7 +11155,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ハーブのように爽やかで、みずみずしい飲み口。シャープでクリーンな酸味と苦味が魅力の爽やかなひやおろし純米吟醸酒。 "
+  "discription": "ハーブのように爽やかで、みずみずしい飲み口。シャープでクリーンな酸味と苦味が魅力の爽やかなひやおろし純米吟醸酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/487",
@@ -11179,7 +11179,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "サラリとしてシャープな飲み口。フレッシュで引き締まった酸味とふくらみのある苦みが魅力的。大人の辛口純米。 "
+  "discription": "サラリとしてシャープな飲み口。フレッシュで引き締まった酸味とふくらみのある苦みが魅力的。大人の辛口純米。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/488",
@@ -11203,7 +11203,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "みずみずしいハーブのような爽やかさ。キリリとしてスッキリとした後味の爽快な日本酒。 "
+  "discription": "みずみずしいハーブのような爽やかさ。キリリとしてスッキリとした後味の爽快な日本酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/489",
@@ -11227,7 +11227,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "なめらかな飲み口、爽やかな香り。スッキリとした苦味が心地よい辛口酒。 "
+  "discription": "なめらかな飲み口、爽やかな香り。スッキリとした苦味が心地よい辛口酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/490",
@@ -11251,7 +11251,7 @@
   "prefectures": "山形県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "白バラや白桃、マスクメロンを思わせる華やかで爽やかな甘い香りが主体。甘味を伴った旨さの余韻が印象的。 "
+  "discription": "白バラや白桃、マスクメロンを思わせる華やかで爽やかな甘い香りが主体。甘味を伴った旨さの余韻が印象的。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/492",
@@ -11275,7 +11275,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "果実を思わせるような芳香が高い。奥ゆかしくも上質な旨味を伴いながら、後味がスッキリとしている。 "
+  "discription": "果実を思わせるような芳香が高い。奥ゆかしくも上質な旨味を伴いながら、後味がスッキリとしている。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/494",
@@ -11299,7 +11299,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料由来の深みを感じさせる香りが印象的。ソフトな飲み口で酸味と旨味に複雑さを感じる。 "
+  "discription": "原料由来の深みを感じさせる香りが印象的。ソフトな飲み口で酸味と旨味に複雑さを感じる。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/495",
@@ -11323,7 +11323,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "淡い山吹色の色調が和のイメージをもたらし、上品で華やかな香りと柔らかな旨味が調和した吟醸酒。 "
+  "discription": "淡い山吹色の色調が和のイメージをもたらし、上品で華やかな香りと柔らかな旨味が調和した吟醸酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/496",
@@ -11347,7 +11347,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "格調高い香りと軽快な味わいとのバランスが際立つ純米吟醸酒。持ち味の爽快さが心地よい味わい。 "
+  "discription": "格調高い香りと軽快な味わいとのバランスが際立つ純米吟醸酒。持ち味の爽快さが心地よい味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/497",
@@ -11371,7 +11371,7 @@
   "prefectures": "福井県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "新酒のフレッシュさを感じさせ均衡のとれた味わいで飲み飽きしない。 "
+  "discription": "新酒のフレッシュさを感じさせ均衡のとれた味わいで飲み飽きしない。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/498",
@@ -11395,7 +11395,7 @@
   "prefectures": "山梨県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "穏やかな原料香にクリーミーな香りが加わる。サラリとした飲み口でスッキリとした味わいのドライテストタイプ。 "
+  "discription": "穏やかな原料香にクリーミーな香りが加わる。サラリとした飲み口でスッキリとした味わいのドライテストタイプ。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/499",
@@ -11419,7 +11419,7 @@
   "prefectures": "石川県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "やや熟成感の感じられるふくよかな香り。味わいはしっかりとした飲み口で旨味を伴う酸味が特徴。余韻にソフトさが残る。 "
+  "discription": "やや熟成感の感じられるふくよかな香り。味わいはしっかりとした飲み口で旨味を伴う酸味が特徴。余韻にソフトさが残る。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/500",
@@ -11443,7 +11443,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "もぎたての果実のようなフレッシュな香り、　やさしい甘みと旨みが特徴。飲みあきしない清涼感あふれる軽快な純米吟醸の生酒。 "
+  "discription": "もぎたての果実のようなフレッシュな香り、　やさしい甘みと旨みが特徴。飲みあきしない清涼感あふれる軽快な純米吟醸の生酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/501",
@@ -11467,7 +11467,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "梨や白桃を思わせるさわやかで品のある香り、米の旨みを引き出したコクを感じさせる味わい。すばらしいバランスの取れた純米大吟醸酒です。 "
+  "discription": "梨や白桃を思わせるさわやかで品のある香り、米の旨みを引き出したコクを感じさせる味わい。すばらしいバランスの取れた純米大吟醸酒です。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/502",
@@ -11491,7 +11491,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "すがすがしい香りが爽やかな純米吟醸。ほのかな甘みとそれを少し上回る酸味とバランスがよく、軽快な飲み口は飲み飽きしない味わい。 "
+  "discription": "すがすがしい香りが爽やかな純米吟醸。ほのかな甘みとそれを少し上回る酸味とバランスがよく、軽快な飲み口は飲み飽きしない味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/503",
@@ -11515,7 +11515,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "穏やかな原料に由来する香りが主体。軽快なアタックだが、やさしいコクと旨みのある味わい。お燗にすることでいっそう旨みが引き立つ。 "
+  "discription": "穏やかな原料に由来する香りが主体。軽快なアタックだが、やさしいコクと旨みのある味わい。お燗にすることでいっそう旨みが引き立つ。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/504",
@@ -11539,7 +11539,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ミネラルなどの穏やかな原料香、甘み酸味、苦味が強調されず、きわめてシンプル。爽快でスムーズで飲みあきしない本醸造酒 "
+  "discription": "ミネラルなどの穏やかな原料香、甘み酸味、苦味が強調されず、きわめてシンプル。爽快でスムーズで飲みあきしない本醸造酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/505",
@@ -11563,7 +11563,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "角のないまろやかな飲み口。華やかさと米の酒らしいふっくらとしたtasteを併せ持つ個性的な味わい。 "
+  "discription": "角のないまろやかな飲み口。華やかさと米の酒らしいふっくらとしたdiscriptionを併せ持つ個性的な味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/506",
@@ -11587,7 +11587,7 @@
   "prefectures": "茨城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "きめ細かいシャープな飲み口。すっきり軽快だがしっかりとした心地よい苦味があり果実のような華やかな香りも感じられる。 "
+  "discription": "きめ細かいシャープな飲み口。すっきり軽快だがしっかりとした心地よい苦味があり果実のような華やかな香りも感じられる。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/507",
@@ -11611,7 +11611,7 @@
   "prefectures": "茨城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "まろやかな飲み口。味わいの要素をバランスよく持った純米大吟醸。甘く華やかなtasteに自然なままの色と味わいを残した滋味のある地酒。 "
+  "discription": "まろやかな飲み口。味わいの要素をバランスよく持った純米大吟醸。甘く華やかなdiscriptionに自然なままの色と味わいを残した滋味のある地酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/508",
@@ -11635,7 +11635,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "シャープな飲み口。清涼感、軽快感のある味わいに甘さを思わせる華やかな香りがふわりと香る。瑞々しく華やかで辛口な味わいの一本。 "
+  "discription": "シャープな飲み口。清涼感、軽快感のある味わいに甘さを思わせる華やかな香りがふわりと香る。瑞々しく華やかで辛口な味わいの一本。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/509",
@@ -11659,7 +11659,7 @@
   "prefectures": "静岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "淡い山吹の色調。乳製品のようなふくよかな香り。酸味と甘みのバランスがとれた味わい。 "
+  "discription": "淡い山吹の色調。乳製品のようなふくよかな香り。酸味と甘みのバランスがとれた味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/510",
@@ -11683,7 +11683,7 @@
   "prefectures": "静岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "透明感ある淡い黄金色。熟した果物や花のような華やかな香り、スッキリとしたキレの良い味わい。 "
+  "discription": "透明感ある淡い黄金色。熟した果物や花のような華やかな香り、スッキリとしたキレの良い味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/511",
@@ -11707,7 +11707,7 @@
   "prefectures": "静岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "透明感ある淡い黄色の色調。果実のような華やかさと乳製品のようなまろやかな香り。辛口でしっかりとした味わい。 "
+  "discription": "透明感ある淡い黄色の色調。果実のような華やかさと乳製品のようなまろやかな香り。辛口でしっかりとした味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/512",
@@ -11731,7 +11731,7 @@
   "prefectures": "静岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "輝く淡い山吹の色調。果実や花を思わせる華やかな香り。キレのある酸、優しい甘みが特徴。 "
+  "discription": "輝く淡い山吹の色調。果実や花を思わせる華やかな香り。キレのある酸、優しい甘みが特徴。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/513",
@@ -11755,7 +11755,7 @@
   "prefectures": "静岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "明るい山吹の色調、清涼感を伴った華やかな果実香。上品な味、余韻は長い。 "
+  "discription": "明るい山吹の色調、清涼感を伴った華やかな果実香。上品な味、余韻は長い。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/514",
@@ -11779,7 +11779,7 @@
   "prefectures": "広島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "黄色みのかかった山吹色が特徴。香り穏やかな古酒を思わさせる熟成感。目でも楽しめる日本酒。芳醇辛口。 "
+  "discription": "黄色みのかかった山吹色が特徴。香り穏やかな古酒を思わさせる熟成感。目でも楽しめる日本酒。芳醇辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/515",
@@ -11803,7 +11803,7 @@
   "prefectures": "広島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "キリリと引き締まったドライな飲み口。爽快な酸味と苦味が主体のドライテイスト。まろやかな酸味の熟成感の旨さの辛口。 "
+  "discription": "キリリと引き締まったドライな飲み口。爽快な酸味と苦味が主体のドライテイスト。まろやかな酸味の熟成感の旨さの辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/516",
@@ -11827,7 +11827,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "果実を思わせる華やかで爽やかな香りが特徴。柔らかい飲み口で軽快な味わい。 "
+  "discription": "果実を思わせる華やかで爽やかな香りが特徴。柔らかい飲み口で軽快な味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/517",
@@ -11851,7 +11851,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "香り穏やかでスッキリとしている。爽やかな酸味と甘味のバランスの良い上品な味わい。 "
+  "discription": "香り穏やかでスッキリとしている。爽やかな酸味と甘味のバランスの良い上品な味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/518",
@@ -11875,7 +11875,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "香り穏やかでハーヴ様の爽やかさがある。スッキリ爽やかな酸味と甘味と苦味のバランスがよい上品な味わい。 "
+  "discription": "香り穏やかでハーヴ様の爽やかさがある。スッキリ爽やかな酸味と甘味と苦味のバランスがよい上品な味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/519",
@@ -11899,7 +11899,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "爽快な酸味と苦味が主体のドライテイスト。コクのある旨味成分が後を引く。やや辛口。 "
+  "discription": "爽快な酸味と苦味が主体のドライテイスト。コクのある旨味成分が後を引く。やや辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/520",
@@ -11923,7 +11923,7 @@
   "prefectures": "山形県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "香り穏やかで爽やかな酸味と甘味苦味の旨さ。常温で、ぬる燗で旨味が引き出す呑み飽きない純米酒。 "
+  "discription": "香り穏やかで爽やかな酸味と甘味苦味の旨さ。常温で、ぬる燗で旨味が引き出す呑み飽きない純米酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/521",
@@ -11947,7 +11947,7 @@
   "prefectures": "高知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "白バラやマスカットを思わせる華やかで爽やかな甘い香りが香り高い。サラリとした飲み口で軽快な味わい。 "
+  "discription": "白バラやマスカットを思わせる華やかで爽やかな甘い香りが香り高い。サラリとした飲み口で軽快な味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/522",
@@ -11971,7 +11971,7 @@
   "prefectures": "福島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "夏らしいと爽やかなクールミント系の香りの中に、ほんのりと梅の酸味,甘味を思わせる香りが少し感じられる。 "
+  "discription": "夏らしいと爽やかなクールミント系の香りの中に、ほんのりと梅の酸味,甘味を思わせる香りが少し感じられる。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/523",
@@ -11990,12 +11990,12 @@
   "sakeBrewery": "榮川酒造",
   "breweryYear": "",
   "matchDrinkingVessel": "ガラス製や薄手のお猪口で涼しさを感じながら飲むのもよいですが、お好みの酒器でいただけます。 ",
-  "matchDrinkingSceneAndTarget": "強い香りや、米ぬか的な風味など、日本酒独特のtasteが苦手な人や、日本酒初心者の方に。 ",
+  "matchDrinkingSceneAndTarget": "強い香りや、米ぬか的な風味など、日本酒独特のdiscriptionが苦手な人や、日本酒初心者の方に。 ",
   "matchDrinkingTemperature": "スッキリ軽いので、キンキンに冷やしてもよい",
   "prefectures": "福島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "香りは穏やか。かいわれのような苦味を思わせる爽やかな香りと、綿あめのような甘味を思わせるな香りが感じられる。 "
+  "discription": "香りは穏やか。かいわれのような苦味を思わせる爽やかな香りと、綿あめのような甘味を思わせるな香りが感じられる。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/524",
@@ -12019,7 +12019,7 @@
   "prefectures": "茨城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "きなこをまぶしたわらび餅のような、優しい穏やかなtasteが印象的 "
+  "discription": "きなこをまぶしたわらび餅のような、優しい穏やかなdiscriptionが印象的 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/525",
@@ -12043,7 +12043,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "なめらかでとろりとした飲み口。バナナやメロンを思わせる華やかな香り。とろりとした甘味と清涼な酸味主体のバランスのいい味わい "
+  "discription": "なめらかでとろりとした飲み口。バナナやメロンを思わせる華やかな香り。とろりとした甘味と清涼な酸味主体のバランスのいい味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/526",
@@ -12067,7 +12067,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "果物や花を思わせる華やかな香りと菜類を思わせる穏やかな香り。サラリとした甘味と冴えた酸味に爽快な苦味がコクを与える "
+  "discription": "果物や花を思わせる華やかな香りと菜類を思わせる穏やかな香り。サラリとした甘味と冴えた酸味に爽快な苦味がコクを与える "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/527",
@@ -12092,7 +12092,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "菜類を思わせる穏やかな香りに花を思わせる香りがアクセントを添える 。柔らかな甘味と爽やかな酸味に清涼な苦味がコクを与える "
+  "discription": "菜類を思わせる穏やかな香りに花を思わせる香りがアクセントを添える 。柔らかな甘味と爽やかな酸味に清涼な苦味がコクを与える "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/528",
@@ -12116,7 +12116,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "清涼感ある菜類の香りに花を思わせる香りがアクセントを添える。きめの細かい飲み口で、みずみずしい酸味が全体を引っぱる "
+  "discription": "清涼感ある菜類の香りに花を思わせる香りがアクセントを添える。きめの細かい飲み口で、みずみずしい酸味が全体を引っぱる "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/529",
@@ -12140,7 +12140,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "清涼感あるハーブの香りに白い花の香りがアクセントを添える。きめの細かい飲み口で、五味が溶け合ってバランスがいい味わい "
+  "discription": "清涼感あるハーブの香りに白い花の香りがアクセントを添える。きめの細かい飲み口で、五味が溶け合ってバランスがいい味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/530",
@@ -12164,7 +12164,7 @@
   "prefectures": "鳥取県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "バナナやオレンジの花を思わせる華やかな香り。柔らかな甘味と酸味を中盤からの清涼な苦味が引き締めるバランスのいい味わい "
+  "discription": "バナナやオレンジの花を思わせる華やかな香り。柔らかな甘味と酸味を中盤からの清涼な苦味が引き締めるバランスのいい味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/531",
@@ -12188,7 +12188,7 @@
   "prefectures": "鳥取県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "軽快な原料香に果物の華やかな香りがアクセントとなる。清涼な甘味を爽やかな酸味と苦味が追いかける、味わいのある酒 "
+  "discription": "軽快な原料香に果物の華やかな香りがアクセントとなる。清涼な甘味を爽やかな酸味と苦味が追いかける、味わいのある酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/532",
@@ -12212,7 +12212,7 @@
   "prefectures": "鳥取県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "乳製品や穀物を思わせるふくよかな香り。溶け合った甘味と酸味に根菜類の苦味と練れた旨味がコクを与える。これぞ強力米の酒 "
+  "discription": "乳製品や穀物を思わせるふくよかな香り。溶け合った甘味と酸味に根菜類の苦味と練れた旨味がコクを与える。これぞ強力米の酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/533",
@@ -12236,7 +12236,7 @@
   "prefectures": "鳥取県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "つきたての餅やカッテージチーズなど、ふくよかな香りの純米吟醸。なめらかな飲み口で、中盤からの苦味と旨味が味を引き締める。 "
+  "discription": "つきたての餅やカッテージチーズなど、ふくよかな香りの純米吟醸。なめらかな飲み口で、中盤からの苦味と旨味が味を引き締める。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/534",
@@ -12260,7 +12260,7 @@
   "prefectures": "鳥取県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ふくらみのある力強い飲み口。凝縮感のある旨味を感じさせる原料香。五味が一体化したボリューム感のある味わい。燗上がりする酒。 "
+  "discription": "ふくらみのある力強い飲み口。凝縮感のある旨味を感じさせる原料香。五味が一体化したボリューム感のある味わい。燗上がりする酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/535",
@@ -12284,7 +12284,7 @@
   "prefectures": "鳥取県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "無濾過生のフレッシュ感とほどよく寝かせたまろやかさが絶妙のバランスで、袋吊りのきれいな酒質を引き立てる味のある純米吟醸。 "
+  "discription": "無濾過生のフレッシュ感とほどよく寝かせたまろやかさが絶妙のバランスで、袋吊りのきれいな酒質を引き立てる味のある純米吟醸。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/536",
@@ -12308,7 +12308,7 @@
   "prefectures": "岐阜県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料米に由来するふくよかな香り、やわらかな飲み口。穏やかな甘味にふくよかな旨味。後味のキレのある苦味が特徴。やや辛口。 "
+  "discription": "原料米に由来するふくよかな香り、やわらかな飲み口。穏やかな甘味にふくよかな旨味。後味のキレのある苦味が特徴。やや辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/537",
@@ -12332,7 +12332,7 @@
   "prefectures": "岐阜県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "華やかな香りとなめらかな飲み口。果実の様な甘味と穏やかな酸味が主体。ふくよかな旨味とドライな後味が印象的。 "
+  "discription": "華やかな香りとなめらかな飲み口。果実の様な甘味と穏やかな酸味が主体。ふくよかな旨味とドライな後味が印象的。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/538",
@@ -12356,7 +12356,7 @@
   "prefectures": "広島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "軽快な原料香とサラリとした飲み口。ほんのりした甘味と弱い酸味が主体。穏やかな旨味、僅かにヨーグルトの味わいが感じられる。 "
+  "discription": "軽快な原料香とサラリとした飲み口。ほんのりした甘味と弱い酸味が主体。穏やかな旨味、僅かにヨーグルトの味わいが感じられる。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/539",
@@ -12380,7 +12380,7 @@
   "prefectures": "広島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "厚みのある原料香とまろやか飲み口。甘味の後に重量感のある酸味、苦味、旨味が波状に現れるのが印象的。やや辛口。 "
+  "discription": "厚みのある原料香とまろやか飲み口。甘味の後に重量感のある酸味、苦味、旨味が波状に現れるのが印象的。やや辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/540",
@@ -12404,7 +12404,7 @@
   "prefectures": "福島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "穏やかな原料香とサラサラした飲み口。ミネラル感に、ほんのりした甘味と穏やかな旨味が主体。やや辛口。 "
+  "discription": "穏やかな原料香とサラサラした飲み口。ミネラル感に、ほんのりした甘味と穏やかな旨味が主体。やや辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/541",
@@ -12428,7 +12428,7 @@
   "prefectures": "福島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "穏やかな原料香となめらかな飲み口。ほんのりした甘味と穏やかな旨味が主体、後味のキリリとした苦味が特徴。やや辛口。 "
+  "discription": "穏やかな原料香となめらかな飲み口。ほんのりした甘味と穏やかな旨味が主体、後味のキリリとした苦味が特徴。やや辛口。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/542",
@@ -12452,7 +12452,7 @@
   "prefectures": "和歌山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "熟成酒らしい凝縮した原料香、柔らかくなめらかな飲み口、後味のキレがよく上品な味わい。 "
+  "discription": "熟成酒らしい凝縮した原料香、柔らかくなめらかな飲み口、後味のキレがよく上品な味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/543",
@@ -12476,7 +12476,7 @@
   "prefectures": "和歌山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体で、淡い柑橘系の香りを含んだ香り。ふくよかな飲み口、後味はドライでスッキリとしている。 "
+  "discription": "原料香主体で、淡い柑橘系の香りを含んだ香り。ふくよかな飲み口、後味はドライでスッキリとしている。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/544",
@@ -12500,7 +12500,7 @@
   "prefectures": "和歌山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体で、淡い果実香がある。すっきりキレイな飲み口、すっきり爽やかな後味、味わいとまとまっている。 "
+  "discription": "原料香主体で、淡い果実香がある。すっきりキレイな飲み口、すっきり爽やかな後味、味わいとまとまっている。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/545",
@@ -12524,7 +12524,7 @@
   "prefectures": "和歌山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体で、淡いハーブ系の香りも感じられる。なめらかな飲み口、すっきりキレイな後味。 "
+  "discription": "原料香主体で、淡いハーブ系の香りも感じられる。なめらかな飲み口、すっきりキレイな後味。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/546",
@@ -12548,7 +12548,7 @@
   "prefectures": "和歌山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体とし淡く爽やかな果実香も感じられる。やわらかい飲み口、スッキリとした甘味と酸味が爽快さを生む。後味はドライ。 "
+  "discription": "原料香主体とし淡く爽やかな果実香も感じられる。やわらかい飲み口、スッキリとした甘味と酸味が爽快さを生む。後味はドライ。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/547",
@@ -12572,7 +12572,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体とし清楚な果実香がほんのり感じられる。飲み口は軽やかで爽やかさが特徴。後味のキレもよい。 "
+  "discription": "原料香主体とし清楚な果実香がほんのり感じられる。飲み口は軽やかで爽やかさが特徴。後味のキレもよい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/548",
@@ -12596,7 +12596,7 @@
   "prefectures": "福井県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体とし花や果実の香りも感じられる。なめらかでスッキリした飲み口、後味はキレ良くさっぱりとしている。 "
+  "discription": "原料香主体とし花や果実の香りも感じられる。なめらかでスッキリした飲み口、後味はキレ良くさっぱりとしている。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/549",
@@ -12620,7 +12620,7 @@
   "prefectures": "福井県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体で淡い根菜類やハーブの香り有り、まろやかな飲み口、スッキリとした後味が特徴。 "
+  "discription": "原料香主体で淡い根菜類やハーブの香り有り、まろやかな飲み口、スッキリとした後味が特徴。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/550",
@@ -12644,7 +12644,7 @@
   "prefectures": "福井県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体で凝縮した根菜系の香りもある。なめらかな飲み口、ドライでキレの良い後味。 "
+  "discription": "原料香主体で凝縮した根菜系の香りもある。なめらかな飲み口、ドライでキレの良い後味。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/551",
@@ -12668,7 +12668,7 @@
   "prefectures": "福井県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体で淡い果実香が感じられる。なめらかな飲み口、キレ良く爽やかな後味、爽やかでキレイな味わいが上品さを与える。 "
+  "discription": "原料香主体で淡い果実香が感じられる。なめらかな飲み口、キレ良く爽やかな後味、爽やかでキレイな味わいが上品さを与える。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/552",
@@ -12692,7 +12692,7 @@
   "prefectures": "高知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "米粉や白玉粉を思わせる原料香が主体。滑らかな飲み口で穏やかな甘味と酸味が主張する。後味は酸味と苦味のドライテイスト。 "
+  "discription": "米粉や白玉粉を思わせる原料香が主体。滑らかな飲み口で穏やかな甘味と酸味が主張する。後味は酸味と苦味のドライテイスト。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/553",
@@ -12716,7 +12716,7 @@
   "prefectures": "高知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "マスカットを思わせる華やかな吟醸香が印象的。軽やかな甘味と酸味にキレのある余韻が残る。 "
+  "discription": "マスカットを思わせる華やかな吟醸香が印象的。軽やかな甘味と酸味にキレのある余韻が残る。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/554",
@@ -12740,7 +12740,7 @@
   "prefectures": "高知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ブドウを思わせる華やかな香りに少し白玉粉をなどの原料香も感じられる。サラリとしたテクスチャーで軽快な甘味と酸味が特徴。 "
+  "discription": "ブドウを思わせる華やかな香りに少し白玉粉をなどの原料香も感じられる。サラリとしたテクスチャーで軽快な甘味と酸味が特徴。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/555",
@@ -12764,7 +12764,7 @@
   "prefectures": "高知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "落ち着いた吟醸香に原料香が加わる。アタックにハッキリとした甘味を感じ、後味は酸味と苦味のドライテイスト。 "
+  "discription": "落ち着いた吟醸香に原料香が加わる。アタックにハッキリとした甘味を感じ、後味は酸味と苦味のドライテイスト。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/556",
@@ -12788,7 +12788,7 @@
   "prefectures": "秋田県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "まろやかな飲み口。フレッシュな柑橘類のような華やかで爽やかな香りが個性的。味わいはみずみずしい酸味が特徴。 "
+  "discription": "まろやかな飲み口。フレッシュな柑橘類のような華やかで爽やかな香りが個性的。味わいはみずみずしい酸味が特徴。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/557",
@@ -12812,7 +12812,7 @@
   "prefectures": "山形県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "さらりとした飲み口。軽快だがまとまりのいい味わい。吟醸香はおだやかで旨味が余韻まで残る「味吟醸」 "
+  "discription": "さらりとした飲み口。軽快だがまとまりのいい味わい。吟醸香はおだやかで旨味が余韻まで残る「味吟醸」 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/558",
@@ -12836,7 +12836,7 @@
   "prefectures": "山形県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ややまろやかな飲み口。リンゴ、洋梨のような吟醸香が華やか。甘味と酸味のバランスがよい味わい。 "
+  "discription": "ややまろやかな飲み口。リンゴ、洋梨のような吟醸香が華やか。甘味と酸味のバランスがよい味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/559",
@@ -12860,7 +12860,7 @@
   "prefectures": "神奈川県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "なめらかな飲み口。クリーミーな香り。やさしくまとまった五味の中から爽快な苦味が立ち上がる味わい。 "
+  "discription": "なめらかな飲み口。クリーミーな香り。やさしくまとまった五味の中から爽快な苦味が立ち上がる味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/560",
@@ -12884,7 +12884,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "すっきりした飲み口。味わいはバランスはよく、爽やかな酸味とミネラル感のある苦味がコクを与える。 "
+  "discription": "すっきりした飲み口。味わいはバランスはよく、爽やかな酸味とミネラル感のある苦味がコクを与える。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/561",
@@ -12908,7 +12908,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "みずみずしい飲み口。フレッシュな柑橘類のような華やかで爽やかな香りが特徴。 "
+  "discription": "みずみずしい飲み口。フレッシュな柑橘類のような華やかで爽やかな香りが特徴。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/562",
@@ -12932,7 +12932,7 @@
   "prefectures": "静岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "絹のような飲み口。香りはおだやかだが五味が一体化した深い味わい。 "
+  "discription": "絹のような飲み口。香りはおだやかだが五味が一体化した深い味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/563",
@@ -12956,7 +12956,7 @@
   "prefectures": "静岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "さらりとした飲み口。優しい甘味に根菜類のような苦味が中盤からアクセントを与える味わい。 "
+  "discription": "さらりとした飲み口。優しい甘味に根菜類のような苦味が中盤からアクセントを与える味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/564",
@@ -12980,7 +12980,7 @@
   "prefectures": "滋賀県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "爽やかな飲み口。柑橘系フルーツのフレッシュなtasteを持つ個性的な日本酒。 "
+  "discription": "爽やかな飲み口。柑橘系フルーツのフレッシュなdiscriptionを持つ個性的な日本酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/565",
@@ -13004,7 +13004,7 @@
   "prefectures": "広島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "引き締まった飲み口。ふくよかな香りと旨味を中心としたコクのある味わい。 "
+  "discription": "引き締まった飲み口。ふくよかな香りと旨味を中心としたコクのある味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/566",
@@ -13028,7 +13028,7 @@
   "prefectures": "山口県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "爽やかな飲み口。キリリとした酸味がやわらかな甘味を引き締める味わい。 "
+  "discription": "爽やかな飲み口。キリリとした酸味がやわらかな甘味を引き締める味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/567",
@@ -13052,7 +13052,7 @@
   "prefectures": "滋賀県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "なめらかな飲み口。華やかだが若干熟成感のある香り。まろやかな甘味と酸味を余韻の苦味が引きしめる味わい。 "
+  "discription": "なめらかな飲み口。華やかだが若干熟成感のある香り。まろやかな甘味と酸味を余韻の苦味が引きしめる味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/570",
@@ -13076,7 +13076,7 @@
   "prefectures": "福島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "サラリとして引締った飲み口。シャープな酸味と軽快な苦味でスッキリとした後味。爽やかな純米酒。 "
+  "discription": "サラリとして引締った飲み口。シャープな酸味と軽快な苦味でスッキリとした後味。爽やかな純米酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/571",
@@ -13100,7 +13100,7 @@
   "prefectures": "東京都",
   "starterCulture": "",
   "acidity": "",
-  "taste": "なめらかなテクスチャーでみずみずしい味わい。柔らかな甘さが主体。爽やかな大吟醸酒。 "
+  "discription": "なめらかなテクスチャーでみずみずしい味わい。柔らかな甘さが主体。爽やかな大吟醸酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/572",
@@ -13124,7 +13124,7 @@
   "prefectures": "石川県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "みずみずしくすべりの良い飲み口。軽快で爽やかな苦みが主体のスッキリテイスト。ほのかな甘味が魅力的。 "
+  "discription": "みずみずしくすべりの良い飲み口。軽快で爽やかな苦みが主体のスッキリテイスト。ほのかな甘味が魅力的。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/573",
@@ -13148,7 +13148,7 @@
   "prefectures": "石川県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "なめらかな飲み口。やや甘さを思わせる香りに対し、スッキリとした酸味と苦みが主体のさっぱりとした後味。 "
+  "discription": "なめらかな飲み口。やや甘さを思わせる香りに対し、スッキリとした酸味と苦みが主体のさっぱりとした後味。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/574",
@@ -13172,7 +13172,7 @@
   "prefectures": "大阪府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ソフトな飲み口。ほのかな甘味とふくらみのある苦味・旨味が伸びる旨口の日本酒。 "
+  "discription": "ソフトな飲み口。ほのかな甘味とふくらみのある苦味・旨味が伸びる旨口の日本酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/575",
@@ -13196,7 +13196,7 @@
   "prefectures": "山口県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "華やかな香りとスッキリとした飲み口。爽やかな甘味でドライなアフターテイストの大吟醸酒。 "
+  "discription": "華やかな香りとスッキリとした飲み口。爽やかな甘味でドライなアフターテイストの大吟醸酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/576",
@@ -13220,7 +13220,7 @@
   "prefectures": "愛媛県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "みずみずしく爽やかな飲み口。ほのかな甘味が心地よい爽やかな味わい。後味はスッキリとドライテイスト。 "
+  "discription": "みずみずしく爽やかな飲み口。ほのかな甘味が心地よい爽やかな味わい。後味はスッキリとドライテイスト。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/577",
@@ -13244,7 +13244,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "なめらかな飲み口。味のバランスが良い旨口の日本酒。 "
+  "discription": "なめらかな飲み口。味のバランスが良い旨口の日本酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/578",
@@ -13268,7 +13268,7 @@
   "prefectures": "福岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ややとろみのあるまったりとした飲み口。枯れて穏やかな熟成感のある味わい。 "
+  "discription": "ややとろみのあるまったりとした飲み口。枯れて穏やかな熟成感のある味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/579",
@@ -13292,7 +13292,7 @@
   "prefectures": "佐賀県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "爽やか、スッキリとした飲み口。華やかな香りと爽やかな甘味・苦味が主体の軽快な味わい。 "
+  "discription": "爽やか、スッキリとした飲み口。華やかな香りと爽やかな甘味・苦味が主体の軽快な味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/580",
@@ -13316,7 +13316,7 @@
   "prefectures": "岩手県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "果実の様な華やかな風味。柔らかな優しい飲み口。穀物原料と思えない上品な味わい。 "
+  "discription": "果実の様な華やかな風味。柔らかな優しい飲み口。穀物原料と思えない上品な味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/581",
@@ -13340,7 +13340,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "日本酒の個性のバランスが非常に整った味わい。きりっと引き締まった飲み口。新潟を代表する淡麗辛口の酒。 "
+  "discription": "日本酒の個性のバランスが非常に整った味わい。きりっと引き締まった飲み口。新潟を代表する淡麗辛口の酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/582",
@@ -13364,7 +13364,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "米の酒らしいふくよかな香り。穏やかでまったりとした飲み口。兵庫の酒らしい力強い旨味を持つ男酒。 "
+  "discription": "米の酒らしいふくよかな香り。穏やかでまったりとした飲み口。兵庫の酒らしい力強い旨味を持つ男酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/583",
@@ -13388,7 +13388,7 @@
   "prefectures": "岡山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "完熟したりんごの様な甘く華やかな香り。柔らかく絹のようななめらかな飲み口。香り立つ上品で華やかな吟醸の日本酒。 "
+  "discription": "完熟したりんごの様な甘く華やかな香り。柔らかく絹のようななめらかな飲み口。香り立つ上品で華やかな吟醸の日本酒。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/584",
@@ -13412,7 +13412,7 @@
   "prefectures": "岡山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "米原料の香ばしさ、甘さを思わせる香り。角のないなめらかな飲み口。米の酒らしい旨味が主体のコクのあるタイプ。 "
+  "discription": "米原料の香ばしさ、甘さを思わせる香り。角のないなめらかな飲み口。米の酒らしい旨味が主体のコクのあるタイプ。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/585",
@@ -13436,7 +13436,7 @@
   "prefectures": "宮城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "米の柔らかさを思わせる自然な甘い香り。ふわりとすっきり爽やかな飲み口でキレ良い後味 "
+  "discription": "米の柔らかさを思わせる自然な甘い香り。ふわりとすっきり爽やかな飲み口でキレ良い後味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/586",
@@ -13460,7 +13460,7 @@
   "prefectures": "茨城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香中心で、やや熟成した香り。なめらかで柔らかいテクスチャー。キリリとした引き締まった後味 "
+  "discription": "原料香中心で、やや熟成した香り。なめらかで柔らかいテクスチャー。キリリとした引き締まった後味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/587",
@@ -13484,7 +13484,7 @@
   "prefectures": "栃木県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料が中心ながら、柑橘系の香りが加わる香り。なめらかでふわりとしたテクスチャー。清々しく、キレイな後味 "
+  "discription": "原料が中心ながら、柑橘系の香りが加わる香り。なめらかでふわりとしたテクスチャー。清々しく、キレイな後味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/588",
@@ -13508,7 +13508,7 @@
   "prefectures": "群馬県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香中心のふくよかな香り。ハーブや根菜系の香りも含む。なめらかなテクスチャー。キレのよい後味 "
+  "discription": "原料香中心のふくよかな香り。ハーブや根菜系の香りも含む。なめらかなテクスチャー。キレのよい後味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/589",
@@ -13527,12 +13527,12 @@
   "sakeBrewery": "熊澤酒造",
   "breweryYear": "",
   "matchDrinkingVessel": "切子や錫の猪口、ショットグラスなど ",
-  "matchDrinkingSceneAndTarget": "ヘルシーな野菜料理などと好相性。夏向きの爽やかな酒質。清涼感の高いtasteは女性におススメ ",
+  "matchDrinkingSceneAndTarget": "ヘルシーな野菜料理などと好相性。夏向きの爽やかな酒質。清涼感の高いdiscriptionは女性におススメ ",
   "matchDrinkingTemperature": "10℃前後",
   "prefectures": "神奈川県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "米のふくよかな香りと若干ハーブを思わせる香りが特徴。スッキリとした軽快な飲み口。シャープな酸味がもたらすドライテイスト "
+  "discription": "米のふくよかな香りと若干ハーブを思わせる香りが特徴。スッキリとした軽快な飲み口。シャープな酸味がもたらすドライテイスト "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/590",
@@ -13556,7 +13556,7 @@
   "prefectures": "岐阜県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ふくよかな原料が主体で、ハーブ香が加わった香り。ふわりとした飲み口。軽やかな旨味。スッキリとした後味 "
+  "discription": "ふくよかな原料が主体で、ハーブ香が加わった香り。ふわりとした飲み口。軽やかな旨味。スッキリとした後味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/591",
@@ -13580,7 +13580,7 @@
   "prefectures": "滋賀県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "明確な原料香とほどよい熟成香が主体。厚みと広がりのあるテクスチャー。ふくよかな旨味を感じさせながらも、キレのよい後味 "
+  "discription": "明確な原料香とほどよい熟成香が主体。厚みと広がりのあるテクスチャー。ふくよかな旨味を感じさせながらも、キレのよい後味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/592",
@@ -13604,7 +13604,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "クリーミーで優しい香り。まろやかな飲み口。なめらかな甘味と旨味 "
+  "discription": "クリーミーで優しい香り。まろやかな飲み口。なめらかな甘味と旨味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/593",
@@ -13628,7 +13628,7 @@
   "prefectures": "京都府",
   "starterCulture": "",
   "acidity": "",
-  "taste": "控えめな原料香と淡い果実香が特徴。シャープで清々しい飲み口。スッキリした酸味と苦味が主体のドライテイスト "
+  "discription": "控えめな原料香と淡い果実香が特徴。シャープで清々しい飲み口。スッキリした酸味と苦味が主体のドライテイスト "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/594",
@@ -13652,7 +13652,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "華やかな果実の香りが主体。原料由来香も感じられる。柔らかな飲み口。繊細でしっとりとした旨味。スッキリ爽やかな後味 "
+  "discription": "華やかな果実の香りが主体。原料由来香も感じられる。柔らかな飲み口。繊細でしっとりとした旨味。スッキリ爽やかな後味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/595",
@@ -13676,7 +13676,7 @@
   "prefectures": "奈良県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "深みのある琥珀色。凝縮感の高い熟成香。まろやかでとろみのある飲み口。しっとりとしたなめらかな甘味と旨味 "
+  "discription": "深みのある琥珀色。凝縮感の高い熟成香。まろやかでとろみのある飲み口。しっとりとしたなめらかな甘味と旨味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/596",
@@ -13700,7 +13700,7 @@
   "prefectures": "山口県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "淡い果実香を伴う原料香が主体。柔らかで緻密なテクスチャー。丸みのある甘味と旨味が主体 "
+  "discription": "淡い果実香を伴う原料香が主体。柔らかで緻密なテクスチャー。丸みのある甘味と旨味が主体 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/597",
@@ -13724,7 +13724,7 @@
   "prefectures": "佐賀県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "3 "
+  "discription": "3 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/598",
@@ -13748,7 +13748,7 @@
   "prefectures": "熊本県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "控えめながらハーブのような爽やかな吟醸香。軽やかでスッキリした飲み口。爽やかな酸味と苦味が主体のドライテイスト "
+  "discription": "控えめながらハーブのような爽やかな吟醸香。軽やかでスッキリした飲み口。爽やかな酸味と苦味が主体のドライテイスト "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/599",
@@ -13772,7 +13772,7 @@
   "prefectures": "大分県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "淡い原料香とハーブを思わせる香り。シンプルでスッキリとした飲み口。コンパクトにまとまった清々しい味わい。ドライな後味 "
+  "discription": "淡い原料香とハーブを思わせる香り。シンプルでスッキリとした飲み口。コンパクトにまとまった清々しい味わい。ドライな後味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/600",
@@ -13796,7 +13796,7 @@
   "prefectures": "青森県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "果実や花のような華やかな香り。シャープで引き締まったテクスチャー。爽快な酸味 "
+  "discription": "果実や花のような華やかな香り。シャープで引き締まったテクスチャー。爽快な酸味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/601",
@@ -13815,12 +13815,12 @@
   "sakeBrewery": "魚沼酒造",
   "breweryYear": "",
   "matchDrinkingVessel": "小口の陶器類。備前焼の様な厚みのある陶器 ",
-  "matchDrinkingSceneAndTarget": "季節問わず楽しめるtaste。常温とぬる燗で楽しめる。 ",
+  "matchDrinkingSceneAndTarget": "季節問わず楽しめるdiscription。常温とぬる燗で楽しめる。 ",
   "matchDrinkingTemperature": "20℃又は40℃前後",
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "酸味、苦味が主体のドライテイスト。まろやかな飲み口。やや熟成感のある味わい "
+  "discription": "酸味、苦味が主体のドライテイスト。まろやかな飲み口。やや熟成感のある味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/602",
@@ -13844,7 +13844,7 @@
   "prefectures": "栃木県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香とミネラル香。まろやかな甘味と酸味。ほどよい旨味 "
+  "discription": "原料香とミネラル香。まろやかな甘味と酸味。ほどよい旨味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/603",
@@ -13868,7 +13868,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "軽やかな原料香。シャープで引き締まったテクスチャー。爽快な酸味と苦味が主体 "
+  "discription": "軽やかな原料香。シャープで引き締まったテクスチャー。爽快な酸味と苦味が主体 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/604",
@@ -13892,7 +13892,7 @@
   "prefectures": "石川県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "軽快な穀物香と、穏やかなミネラル香。サラリとしたテクスチャー。開会な酸味と甘みが主体 "
+  "discription": "軽快な穀物香と、穏やかなミネラル香。サラリとしたテクスチャー。開会な酸味と甘みが主体 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/605",
@@ -13916,7 +13916,7 @@
   "prefectures": "静岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "淡い山吹色の色調。原料の米そのものを思わせるふくよかな香り。コクのある豊かな味わい "
+  "discription": "淡い山吹色の色調。原料の米そのものを思わせるふくよかな香り。コクのある豊かな味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/606",
@@ -13940,7 +13940,7 @@
   "prefectures": "愛知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "穏やかながら、果実を思わせる香り、シャープで引き締まったクスクチャー、豪快な酸味、甘みが主体 "
+  "discription": "穏やかながら、果実を思わせる香り、シャープで引き締まったクスクチャー、豪快な酸味、甘みが主体 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/607",
@@ -13964,7 +13964,7 @@
   "prefectures": "滋賀県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "淡い山吹色。アタックで広がるまろやかな酸味と甘味。旨味の余韻の長さ "
+  "discription": "淡い山吹色。アタックで広がるまろやかな酸味と甘味。旨味の余韻の長さ "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/608",
@@ -13988,7 +13988,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "穏やかな果実や花の様な香り。サラリとしたテクスチャー。軽快な甘味、酸味が主体 "
+  "discription": "穏やかな果実や花の様な香り。サラリとしたテクスチャー。軽快な甘味、酸味が主体 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/609",
@@ -14012,7 +14012,7 @@
   "prefectures": "兵庫県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料の米そのものを思わせるふくよかな香り。まろやかなテクスチャー。旨味と共に、酸味と苦味が展開し、骨格を形成している "
+  "discription": "原料の米そのものを思わせるふくよかな香り。まろやかなテクスチャー。旨味と共に、酸味と苦味が展開し、骨格を形成している "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/610",
@@ -14036,7 +14036,7 @@
   "prefectures": "広島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料の米そのものを思わせるふくよかな香り。軽やかな飲み口。爽快な酸味と旨味が主体 "
+  "discription": "原料の米そのものを思わせるふくよかな香り。軽やかな飲み口。爽快な酸味と旨味が主体 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/611",
@@ -14055,12 +14055,12 @@
   "sakeBrewery": "中野酒造",
   "breweryYear": "",
   "matchDrinkingVessel": "中型のワイングラス、ラッパ型グラスなど ",
-  "matchDrinkingSceneAndTarget": "特に女性向きのtaste特性を持つ。イタリアン、フレンチなどとも楽しめる。ワイングラスでの飲用にも適する ",
+  "matchDrinkingSceneAndTarget": "特に女性向きのdiscription特性を持つ。イタリアン、フレンチなどとも楽しめる。ワイングラスでの飲用にも適する ",
   "matchDrinkingTemperature": "10～15℃",
   "prefectures": "大分県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "果実や花の様な香りが主体。軽快な飲み口。優しい味わい。上品な甘味と酸味が特徴 "
+  "discription": "果実や花の様な香りが主体。軽快な飲み口。優しい味わい。上品な甘味と酸味が特徴 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/612",
@@ -14080,12 +14080,12 @@
   "sakeBrewery": "夢心酒造",
   "breweryYear": "",
   "matchDrinkingVessel": "小振りのワイングラスや切子のグラス、うすはりグラス、大振りの平盃 ",
-  "matchDrinkingSceneAndTarget": "この手のtasteが苦手でなれれば、初心者、上級者を問わない。春から初夏にかけての季節感と合う ",
+  "matchDrinkingSceneAndTarget": "この手のdiscriptionが苦手でなれれば、初心者、上級者を問わない。春から初夏にかけての季節感と合う ",
   "matchDrinkingTemperature": "15℃前後",
   "prefectures": "福島県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "柔らかでスムーズな飲み口。オレンジの花のような華やかな香りとミントのような爽やかな香りが中心。五味がクリアにまとまった心地よい味わい "
+  "discription": "柔らかでスムーズな飲み口。オレンジの花のような華やかな香りとミントのような爽やかな香りが中心。五味がクリアにまとまった心地よい味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/613",
@@ -14111,7 +14111,7 @@
   "prefectures": "栃木県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "柔らかでまるみのある飲み口。軽やかな穀物香が中心だが、爽やかなミネラル香も感じられる。みずみずしい酸味と軽やかな旨味を中盤からの苦味が引き締める味わい ",
+  "discription": "柔らかでまるみのある飲み口。軽やかな穀物香が中心だが、爽やかなミネラル香も感じられる。みずみずしい酸味と軽やかな旨味を中盤からの苦味が引き締める味わい ",
   "riceForMakingKoji": "五百万石"
 }
 {
@@ -14137,7 +14137,7 @@
   "prefectures": "千葉県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "力強く引き締まった飲み口。ぬか漬けのような乳酸発酵や原料米に由来する個性的でふくよかな香り。引き締まった酸味と厚みのある苦味がコクのある旨味を作り出す "
+  "discription": "力強く引き締まった飲み口。ぬか漬けのような乳酸発酵や原料米に由来する個性的でふくよかな香り。引き締まった酸味と厚みのある苦味がコクのある旨味を作り出す "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/616",
@@ -14163,7 +14163,7 @@
   "prefectures": "東京都",
   "starterCulture": "",
   "acidity": "",
-  "taste": "キリリとしたシャープな飲み口。ハーブや根菜類を思わせる穏やかな香りが中心。清涼な酸味と軽やかな旨味に爽快な苦味がコクを与え、全体の味わいをアルコールが引き締める ",
+  "discription": "キリリとしたシャープな飲み口。ハーブや根菜類を思わせる穏やかな香りが中心。清涼な酸味と軽やかな旨味に爽快な苦味がコクを与え、全体の味わいをアルコールが引き締める ",
   "riceForMakingKoji": "無濾過原酒、八反錦"
 }
 {
@@ -14188,7 +14188,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "1.4",
-  "taste": "シャープできめの細かい飲み口。タクアンを思わせる原料米由来のふくよかな香り。爽やかな甘味、苦味とソフトな旨味がバランスする味わい "
+  "discription": "シャープできめの細かい飲み口。タクアンを思わせる原料米由来のふくよかな香り。爽やかな甘味、苦味とソフトな旨味がバランスする味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/618",
@@ -14213,7 +14213,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "なめらかな飲み口。バラやリンゴなど花や果物を思わせる華やかな香り。コンパクトにまとまった味わいに中盤からの苦味がコクを与える "
+  "discription": "なめらかな飲み口。バラやリンゴなど花や果物を思わせる華やかな香り。コンパクトにまとまった味わいに中盤からの苦味がコクを与える "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/619",
@@ -14238,7 +14238,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "すべりのよいさらりとした飲み口。原料米に由来するふくよかな香り。酸味、苦味、旨味がシンプルにまとまった味わい "
+  "discription": "すべりのよいさらりとした飲み口。原料米に由来するふくよかな香り。酸味、苦味、旨味がシンプルにまとまった味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/620",
@@ -14263,7 +14263,7 @@
   "prefectures": "三重県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "なめらかな飲み口。花や果物を思わせる華やかな香りと原料米に由来するふくよかな香り。さわやかな甘味と酸味がバランスする柔らかな味わい "
+  "discription": "なめらかな飲み口。花や果物を思わせる華やかな香りと原料米に由来するふくよかな香り。さわやかな甘味と酸味がバランスする柔らかな味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/621",
@@ -14288,7 +14288,7 @@
   "prefectures": "静岡県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "みずみずしくスムーズな飲み口。原料米に由来するふくよかな香り。五味がコンパクトにまとまった味わい "
+  "discription": "みずみずしくスムーズな飲み口。原料米に由来するふくよかな香り。五味がコンパクトにまとまった味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/622",
@@ -14314,7 +14314,7 @@
   "prefectures": "大阪府",
   "starterCulture": "",
   "acidity": "2.3",
-  "taste": "キリリとした力強い飲み口。原料米や乳酸菌に由来するふくよかな香り。芳醇な酸味と苦味をコクのある旨味が受け止める味わい ",
+  "discription": "キリリとした力強い飲み口。原料米や乳酸菌に由来するふくよかな香り。芳醇な酸味と苦味をコクのある旨味が受け止める味わい ",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -14336,12 +14336,12 @@
   "sakeBrewery": "村重酒造",
   "breweryYear": "",
   "matchDrinkingVessel": "小振りのガラス製か磁器の酒器 ",
-  "matchDrinkingSceneAndTarget": "初心者から上級者まで受け入れられる酒質。飲用温度帯が広くニュートラルなtasteを持つ究極の食中酒 ",
+  "matchDrinkingSceneAndTarget": "初心者から上級者まで受け入れられる酒質。飲用温度帯が広くニュートラルなdiscriptionを持つ究極の食中酒 ",
   "matchDrinkingTemperature": "10-15℃前後、常温、35-40℃前後",
   "prefectures": "山口県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "2 ",
+  "discription": "2 ",
   "riceForMakingKoji": "西都の雫"
 }
 {
@@ -14367,7 +14367,7 @@
   "prefectures": "長崎県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "スムーズでやわらかな飲み口。軽快な原料香とさわやかな香草系の香りが中心。軽快な酸味と爽快な苦味中心のシンプルな味わい "
+  "discription": "スムーズでやわらかな飲み口。軽快な原料香とさわやかな香草系の香りが中心。軽快な酸味と爽快な苦味中心のシンプルな味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/625",
@@ -14392,7 +14392,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料のお米に由来するふくよかな味わいや香りが特徴。まろやかな口当たりで、うまみが感じられます。 "
+  "discription": "原料のお米に由来するふくよかな味わいや香りが特徴。まろやかな口当たりで、うまみが感じられます。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/626",
@@ -14417,7 +14417,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ゆりやりんごのような華やかな香り。 酸味と苦みがバランスよくすっきりとした味わい。 "
+  "discription": "ゆりやりんごのような華やかな香り。 酸味と苦みがバランスよくすっきりとした味わい。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/627",
@@ -14443,7 +14443,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ヨーグルトのような風味が特徴で、まろやかな口当たり、さわやかな酸味が感じられます。 ",
+  "discription": "ヨーグルトのような風味が特徴で、まろやかな口当たり、さわやかな酸味が感じられます。 ",
   "riceForMakingKoji": "越淡麗"
 }
 {
@@ -14468,7 +14468,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ドライかつシャープな後口で、辛口な味わい ややヨーグルトのような風味がある。 "
+  "discription": "ドライかつシャープな後口で、辛口な味わい ややヨーグルトのような風味がある。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/629",
@@ -14494,7 +14494,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "果実や花のような華やかな香り 柔らかな口当たりとほんのりした甘みが特徴 ",
+  "discription": "果実や花のような華やかな香り 柔らかな口当たりとほんのりした甘みが特徴 ",
   "riceForMakingKoji": "長野県産美山錦"
 }
 {
@@ -14520,7 +14520,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "透明度高く、淡い黄色、炊きたてのご飯のような穏やかな香り。酸味と甘味が心地よく食中酒として幅広く対応 "
+  "discription": "透明度高く、淡い黄色、炊きたてのご飯のような穏やかな香り。酸味と甘味が心地よく食中酒として幅広く対応 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/631",
@@ -14546,7 +14546,7 @@
   "prefectures": "秋田県",
   "starterCulture": "",
   "acidity": "1.3",
-  "taste": "透明感高い、淡いレモンイエローの色調、華やかな花や果実の香り、キレのある酸と長い余韻が特徴。 ",
+  "discription": "透明感高い、淡いレモンイエローの色調、華やかな花や果実の香り、キレのある酸と長い余韻が特徴。 ",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -14573,7 +14573,7 @@
   "prefectures": "山形県",
   "starterCulture": "",
   "acidity": "1.2",
-  "taste": "淡い黄色の色調。つきたての餅のようなふくよかな香り。甘・酸のバランスがとれた味、食中酒として最適 ",
+  "discription": "淡い黄色の色調。つきたての餅のようなふくよかな香り。甘・酸のバランスがとれた味、食中酒として最適 ",
   "riceForMakingKoji": "出羽の里"
 }
 {
@@ -14599,7 +14599,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "1.4",
-  "taste": "透明感のある淡い黄色、清涼感ある柑橘の香り、上品でスッキリとした味。 "
+  "discription": "透明感のある淡い黄色、清涼感ある柑橘の香り、上品でスッキリとした味。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/634",
@@ -14624,7 +14624,7 @@
   "prefectures": "山形県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "極淡い山吹の色調。青々しい爽やかな香り。上品で穏やかな甘味と酸味 "
+  "discription": "極淡い山吹の色調。青々しい爽やかな香り。上品で穏やかな甘味と酸味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/635",
@@ -14649,7 +14649,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "極淡い山吹色。軽快な原料香。爽やかな酸味と、まろやかな甘味と旨味 "
+  "discription": "極淡い山吹色。軽快な原料香。爽やかな酸味と、まろやかな甘味と旨味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/636",
@@ -14675,7 +14675,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "軽快で爽やかな吟醸香。スッキリとした爽やかな飲み口。上品で繊細なキャラクター ",
+  "discription": "軽快で爽やかな吟醸香。スッキリとした爽やかな飲み口。上品で繊細なキャラクター ",
   "riceForMakingKoji": "魚沼産コシヒカリ"
 }
 {
@@ -14701,7 +14701,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "青々しい吟醸香。柔らかな飲み口。軽快でスッキリとした上品な味わい "
+  "discription": "青々しい吟醸香。柔らかな飲み口。軽快でスッキリとした上品な味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/638",
@@ -14727,7 +14727,7 @@
   "prefectures": "広島県",
   "starterCulture": "",
   "acidity": "3.5",
-  "taste": "美しい琥珀の色調。非常に濃厚な甘口テイスト。深みがありながらも上品さ、繊細さを兼ね備えた酒質 ",
+  "discription": "美しい琥珀の色調。非常に濃厚な甘口テイスト。深みがありながらも上品さ、繊細さを兼ね備えた酒質 ",
   "riceForMakingKoji": "中生新千本"
 }
 {
@@ -14753,7 +14753,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "軽快な穀物香。シンプルでニュートラルな味わい "
+  "discription": "軽快な穀物香。シンプルでニュートラルな味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/640",
@@ -14777,7 +14777,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "軽やかな香り。柔らかな飲み口。穏やかな甘味と酸味。軽快な旨味。バランスのよいtaste "
+  "discription": "軽やかな香り。柔らかな飲み口。穏やかな甘味と酸味。軽快な旨味。バランスのよいdiscription "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/641",
@@ -14802,7 +14802,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "青々しく爽やかな香り。シャープな飲み口。軽快で爽やかな味わい "
+  "discription": "青々しく爽やかな香り。シャープな飲み口。軽快で爽やかな味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/642",
@@ -14828,7 +14828,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "柑橘系果実と香草のような清涼な香り。まろやかな飲み口。コンパクトにまとまった軽快な味わい ",
+  "discription": "柑橘系果実と香草のような清涼な香り。まろやかな飲み口。コンパクトにまとまった軽快な味わい ",
   "riceForMakingKoji": "越淡麗"
 }
 {
@@ -14853,7 +14853,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "乾燥した穀物のような香りが主体。ややシャープな飲み口。軽快な旨味が主体のシンプルな味わい "
+  "discription": "乾燥した穀物のような香りが主体。ややシャープな飲み口。軽快な旨味が主体のシンプルな味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/644",
@@ -14878,7 +14878,7 @@
   "prefectures": "宮城県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体、控えめで清楚な香り有り、なめらかでふわりとした飲み口、後味はサラリとすっきりしている "
+  "discription": "原料香主体、控えめで清楚な香り有り、なめらかでふわりとした飲み口、後味はサラリとすっきりしている "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/645",
@@ -14903,7 +14903,7 @@
   "prefectures": "大阪府",
   "starterCulture": "",
   "acidity": "3.3",
-  "taste": "原料香主体、発酵食品を思わせる香りを含んだ、ふくよかで芳醇、甘口の飲み口、後味のキレはよい "
+  "discription": "原料香主体、発酵食品を思わせる香りを含んだ、ふくよかで芳醇、甘口の飲み口、後味のキレはよい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/646",
@@ -14928,7 +14928,7 @@
   "prefectures": "埼玉県",
   "starterCulture": "",
   "acidity": "1.2",
-  "taste": "原料香主体、凝縮した果実香有り、シャープで清々しい飲み口、後味のキレも良くスッキリした味わい "
+  "discription": "原料香主体、凝縮した果実香有り、シャープで清々しい飲み口、後味のキレも良くスッキリした味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/647",
@@ -14953,7 +14953,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体で淡く清楚な香り有り、すっきりシャープで清々しい飲み口、後味はすっきり爽やか "
+  "discription": "原料香主体で淡く清楚な香り有り、すっきりシャープで清々しい飲み口、後味はすっきり爽やか "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/648",
@@ -14979,7 +14979,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "1.9",
-  "taste": "原料香主体、淡い乳製品の香り有り、やわらかくふわりとした飲み口、キレ良くスッキリとした後口 ",
+  "discription": "原料香主体、淡い乳製品の香り有り、やわらかくふわりとした飲み口、キレ良くスッキリとした後口 ",
   "riceForMakingKoji": "しらかば錦"
 }
 {
@@ -15005,7 +15005,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "1.6",
-  "taste": "原料香主体、やや土壌を感じさせる香り有り、柔らかくスッキリとした飲み口、後味はキレ良くスッキリしている "
+  "discription": "原料香主体、やや土壌を感じさせる香り有り、柔らかくスッキリとした飲み口、後味はキレ良くスッキリしている "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/650",
@@ -15029,7 +15029,7 @@
   "prefectures": "",
   "starterCulture": "",
   "acidity": "",
-  "taste": "濃い原料香主体、熟成香有り、濃醇でなめらかな飲み口、後味のキレはよい "
+  "discription": "濃い原料香主体、熟成香有り、濃醇でなめらかな飲み口、後味のキレはよい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/651",
@@ -15055,7 +15055,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体、淡いハーブの香り有り、まろやかでシャープな飲み口、後味はさわやかでスッキリしている ",
+  "discription": "原料香主体、淡いハーブの香り有り、まろやかでシャープな飲み口、後味はさわやかでスッキリしている ",
   "riceForMakingKoji": "越淡麗"
 }
 {
@@ -15081,7 +15081,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体、淡いミント系の香り有り、なめらかでスッキリとした飲み口、後味はスッキリしている "
+  "discription": "原料香主体、淡いミント系の香り有り、なめらかでスッキリとした飲み口、後味はスッキリしている "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/653",
@@ -15106,7 +15106,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "1.7",
-  "taste": "原料香主体、柔らかい乳製品の香り有り、ふくらみがありスッキリとした飲み口、非常にキレ良い後口 "
+  "discription": "原料香主体、柔らかい乳製品の香り有り、ふくらみがありスッキリとした飲み口、非常にキレ良い後口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/654",
@@ -15131,7 +15131,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "1.7",
-  "taste": "原料香主体、淡いハーブの香り有り、スッキリとシャープな飲み口、後味スパッとキレる "
+  "discription": "原料香主体、淡いハーブの香り有り、スッキリとシャープな飲み口、後味スパッとキレる "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/655",
@@ -15156,7 +15156,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体、淡いハーブの香り有り、なめらかでシャープな飲み口、後味はスパッとキレる "
+  "discription": "原料香主体、淡いハーブの香り有り、なめらかでシャープな飲み口、後味はスパッとキレる "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/656",
@@ -15181,7 +15181,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体、淡いハーブの香り有り、柔らかくスッキリとした飲み口、サラリとすっきりとした後味 "
+  "discription": "原料香主体、淡いハーブの香り有り、柔らかくスッキリとした飲み口、サラリとすっきりとした後味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/657",
@@ -15207,7 +15207,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体、清楚な果実香有り、シンプルでスッキリとした飲み口、サラリと清々しい後味 ",
+  "discription": "原料香主体、清楚な果実香有り、シンプルでスッキリとした飲み口、サラリと清々しい後味 ",
   "riceForMakingKoji": "越淡麗"
 }
 {
@@ -15233,7 +15233,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体、すっきりした果実香と淡いハーブの香り有り、柔らかくスッキリした飲み口、すっきり爽やかな後口 "
+  "discription": "原料香主体、すっきりした果実香と淡いハーブの香り有り、柔らかくスッキリした飲み口、すっきり爽やかな後口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/659",
@@ -15257,7 +15257,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体、淡いハーブの香り有り、すっきりシャープな飲み口、後味はすっきり爽やか "
+  "discription": "原料香主体、淡いハーブの香り有り、すっきりシャープな飲み口、後味はすっきり爽やか "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/660",
@@ -15282,7 +15282,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体、淡いハーブの香り有り、すっきり爽やかな飲み口、すっきりキレ良い後口 "
+  "discription": "原料香主体、淡いハーブの香り有り、すっきり爽やかな飲み口、すっきりキレ良い後口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/661",
@@ -15307,7 +15307,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体、淡いハーブの香り有り、清々しくなめらかな飲み口、後味はキレ良くさっぱりとしている "
+  "discription": "原料香主体、淡いハーブの香り有り、清々しくなめらかな飲み口、後味はキレ良くさっぱりとしている "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/662",
@@ -15332,7 +15332,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体、淡いハーブの香り有り、キレ良くスッキリとした飲み口、後味は清々しくキレる "
+  "discription": "原料香主体、淡いハーブの香り有り、キレ良くスッキリとした飲み口、後味は清々しくキレる "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/663",
@@ -15357,7 +15357,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料香主体、淡いハーブ香と淡い柑橘系の香り有り、シンプルでスッキリとした飲み口、後味はキレイでスッキリとしている "
+  "discription": "原料香主体、淡いハーブ香と淡い柑橘系の香り有り、シンプルでスッキリとした飲み口、後味はキレイでスッキリとしている "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/664",
@@ -15382,7 +15382,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "上品でしなやかな香りを放ちながら、キレの良い飲み口 "
+  "discription": "上品でしなやかな香りを放ちながら、キレの良い飲み口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/665",
@@ -15407,7 +15407,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "飲み応えと旨みがある純米吟醸酒 "
+  "discription": "飲み応えと旨みがある純米吟醸酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/666",
@@ -15433,7 +15433,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "華やかな芳香が高く、しっかりとした味わい ",
+  "discription": "華やかな芳香が高く、しっかりとした味わい ",
   "riceForMakingKoji": "美山錦"
 }
 {
@@ -15459,7 +15459,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "華やかな芳香が高く、豊かな味わいを醸している "
+  "discription": "華やかな芳香が高く、豊かな味わいを醸している "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/668",
@@ -15484,7 +15484,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "軽快な香りとスッキリとした酒質で、飲み飽きのないお酒 "
+  "discription": "軽快な香りとスッキリとした酒質で、飲み飽きのないお酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/669",
@@ -15509,7 +15509,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "軽快な香りと力強い味わいが共存するタイプ "
+  "discription": "軽快な香りと力強い味わいが共存するタイプ "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/670",
@@ -15535,7 +15535,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "すっきりとした味わいの純米吟醸酒 ",
+  "discription": "すっきりとした味わいの純米吟醸酒 ",
   "riceForMakingKoji": "美山錦"
 }
 {
@@ -15562,7 +15562,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "2",
-  "taste": "熟した甘味と酸味のボリューム感が楽しめるお酒 ",
+  "discription": "熟した甘味と酸味のボリューム感が楽しめるお酒 ",
   "riceForMakingKoji": "信州産ひとごこち"
 }
 {
@@ -15588,7 +15588,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "柔らかな飲み口、バランスの良い味わい "
+  "discription": "柔らかな飲み口、バランスの良い味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/673",
@@ -15613,7 +15613,7 @@
   "prefectures": "愛知県",
   "starterCulture": "",
   "acidity": "1.5",
-  "taste": "滑らかな飲み口、柔らかな酸味と軽快な苦味 "
+  "discription": "滑らかな飲み口、柔らかな酸味と軽快な苦味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/674",
@@ -15638,7 +15638,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "サラリとした飲み口、軽快な酸味と苦味 "
+  "discription": "サラリとした飲み口、軽快な酸味と苦味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/675",
@@ -15663,7 +15663,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "シンプルな飲み口、柔らかな甘味、酸味と爽快な苦味 "
+  "discription": "シンプルな飲み口、柔らかな甘味、酸味と爽快な苦味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/676",
@@ -15689,7 +15689,7 @@
   "prefectures": "三重県",
   "starterCulture": "",
   "acidity": "1.4",
-  "taste": "丸みのある飲み口、柔らかな甘味と強い苦味、ドライテイスト ",
+  "discription": "丸みのある飲み口、柔らかな甘味と強い苦味、ドライテイスト ",
   "riceForMakingKoji": "三重県産山田錦"
 }
 {
@@ -15715,7 +15715,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "シャープな飲み口、柔らかな甘味、酸味とキリリとした苦味、ドライテイスト "
+  "discription": "シャープな飲み口、柔らかな甘味、酸味とキリリとした苦味、ドライテイスト "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/678",
@@ -15741,7 +15741,7 @@
   "prefectures": "秋田県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "なめらかな飲み口、サラリとした甘味、強い苦味、ドライテイスト ",
+  "discription": "なめらかな飲み口、サラリとした甘味、強い苦味、ドライテイスト ",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -15768,7 +15768,7 @@
   "prefectures": "山形県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "角のない飲み口。スッキリした甘味・酸味と刺激のある苦味。ドライテイスト。 ",
+  "discription": "角のない飲み口。スッキリした甘味・酸味と刺激のある苦味。ドライテイスト。 ",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -15794,7 +15794,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "シンプルな飲み口、柔らかな甘味、酸味とスッキリした苦味。 "
+  "discription": "シンプルな飲み口、柔らかな甘味、酸味とスッキリした苦味。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/681",
@@ -15820,7 +15820,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "サラサラした飲み口、スッキリした酸味と苦味 ",
+  "discription": "サラサラした飲み口、スッキリした酸味と苦味 ",
   "riceForMakingKoji": "信州伊那谷産美山錦"
 }
 {
@@ -15847,7 +15847,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "サラリとした飲み口。酸味と苦味、旨みのバランスの良さ。 ",
+  "discription": "サラリとした飲み口。酸味と苦味、旨みのバランスの良さ。 ",
   "riceForMakingKoji": "長野県産美山錦"
 }
 {
@@ -15873,7 +15873,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "サラサラした飲み口、酸味と苦味のバランスの良さ。 "
+  "discription": "サラサラした飲み口、酸味と苦味のバランスの良さ。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/684",
@@ -15899,7 +15899,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "サラリとした飲み口。甘、酸、旨みのバランスよく、全体を締める苦味 ",
+  "discription": "サラリとした飲み口。甘、酸、旨みのバランスよく、全体を締める苦味 ",
   "riceForMakingKoji": "五百万石"
 }
 {
@@ -15924,7 +15924,7 @@
   "prefectures": "",
   "starterCulture": "",
   "acidity": "",
-  "taste": "滑らかで厚みのある飲み口。厚みのある甘味・酸味、控えめに拡がる苦味・旨味。 "
+  "discription": "滑らかで厚みのある飲み口。厚みのある甘味・酸味、控えめに拡がる苦味・旨味。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/686",
@@ -15950,7 +15950,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "2.3",
-  "taste": "滑らかなな飲み口。甘・酸・苦・旨味のバランスが良さ。 ",
+  "discription": "滑らかなな飲み口。甘・酸・苦・旨味のバランスが良さ。 ",
   "riceForMakingKoji": "長野県産ひとごごち"
 }
 {
@@ -15976,7 +15976,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "とろりとしてなめらかな飲み口。穀物や乳製品を思わせる原料香とハーブを思わせる発酵由来の香り。ふくらみのある酸味に根菜類を思わせる苦味がコクを与える "
+  "discription": "とろりとしてなめらかな飲み口。穀物や乳製品を思わせる原料香とハーブを思わせる発酵由来の香り。ふくらみのある酸味に根菜類を思わせる苦味がコクを与える "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/688",
@@ -16002,7 +16002,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "なめらかな飲み口。花をイメージさせる華やかな香りと果物や香草をイメージさせる爽やかな香り。まろやかな甘味と酸味をふくらみのある苦味が引き締める味わい。 ",
+  "discription": "なめらかな飲み口。花をイメージさせる華やかな香りと果物や香草をイメージさせる爽やかな香り。まろやかな甘味と酸味をふくらみのある苦味が引き締める味わい。 ",
   "riceForMakingKoji": "長野県産美山錦"
 }
 {
@@ -16029,7 +16029,7 @@
   "prefectures": "青森県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "柔らかできめが細かい飲み口。果物や花をイメージさせる華やかな香り。甘味、酸味、苦味がコンパクトにまとまる味わい ",
+  "discription": "柔らかできめが細かい飲み口。果物や花をイメージさせる華やかな香り。甘味、酸味、苦味がコンパクトにまとまる味わい ",
   "riceForMakingKoji": "青森県産華想い"
 }
 {
@@ -16055,7 +16055,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "力強くふくらみがある飲み口。カラメルや干し椎茸などの複雑で凝縮感がある熟成香。芳醇な酸味とそれに対峙する甘味、熟成香に同調する旨味が骨格を形作り、後半を苦味が引き締める "
+  "discription": "力強くふくらみがある飲み口。カラメルや干し椎茸などの複雑で凝縮感がある熟成香。芳醇な酸味とそれに対峙する甘味、熟成香に同調する旨味が骨格を形作り、後半を苦味が引き締める "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/691",
@@ -16080,7 +16080,7 @@
   "prefectures": "愛知県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "キリリとした飲み口。チーズや干した稲穂など旨味を思わせる香り。苦味、渋みを中心に甘味、酸味、旨味が脇を固める "
+  "discription": "キリリとした飲み口。チーズや干した稲穂など旨味を思わせる香り。苦味、渋みを中心に甘味、酸味、旨味が脇を固める "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/692",
@@ -16105,7 +16105,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "やわらかできめの細かい飲み口。穀物や乳製品を思わせる原料香。味わい後半の爽やかな苦味と軽やかな旨味がアクセント "
+  "discription": "やわらかできめの細かい飲み口。穀物や乳製品を思わせる原料香。味わい後半の爽やかな苦味と軽やかな旨味がアクセント "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/693",
@@ -16130,7 +16130,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "きめの細かい飲み口。チーズや干した稲穂など、穀物や乳製品を思わせる原料香。味わいの中心に華やかな酸味と苦味。 "
+  "discription": "きめの細かい飲み口。チーズや干した稲穂など、穀物や乳製品を思わせる原料香。味わいの中心に華やかな酸味と苦味。 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/694",
@@ -16156,7 +16156,7 @@
   "prefectures": "山形県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "なめらかな飲み口。洋梨やリンゴを思わせる華やかな香り。バランスのよい甘みと酸味に後から苦味がコクを与える ",
+  "discription": "なめらかな飲み口。洋梨やリンゴを思わせる華やかな香り。バランスのよい甘みと酸味に後から苦味がコクを与える ",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -16183,7 +16183,7 @@
   "prefectures": "和歌山県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "柔らかで丸みのある飲み口。梨や黄色いリンゴをイメージさせる華やかな香り。落ち着いた甘みを爽やかな酸味が追いかけ、最後に苦味が引き締める味わい。 ",
+  "discription": "柔らかで丸みのある飲み口。梨や黄色いリンゴをイメージさせる華やかな香り。落ち着いた甘みを爽やかな酸味が追いかけ、最後に苦味が引き締める味わい。 ",
   "riceForMakingKoji": "山田錦"
 }
 {
@@ -16210,7 +16210,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "ナッツ類を思わせる爽やかな香りと、乳製品を思わせるふくよかな香り。甘みと酸味、苦味、渋みがバランスよくまとまる ",
+  "discription": "ナッツ類を思わせる爽やかな香りと、乳製品を思わせるふくよかな香り。甘みと酸味、苦味、渋みがバランスよくまとまる ",
   "riceForMakingKoji": "たかね錦"
 }
 {
@@ -16237,7 +16237,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "桃をイメージさせる華やかな香りと、旨みをイメージさせる原料香が共存。冴えた酸味に苦味がアクセントを添える味わい ",
+  "discription": "桃をイメージさせる華やかな香りと、旨みをイメージさせる原料香が共存。冴えた酸味に苦味がアクセントを添える味わい ",
   "riceForMakingKoji": "長野県産ひとごごち"
 }
 {
@@ -16263,7 +16263,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "1.2",
-  "taste": "シャープで引き締まった飲み口。軽快でシンプルな香り、スッキリとした味わい新潟の酒らしい淡麗辛口の酒 "
+  "discription": "シャープで引き締まった飲み口。軽快でシンプルな香り、スッキリとした味わい新潟の酒らしい淡麗辛口の酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/699",
@@ -16288,7 +16288,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "1.3",
-  "taste": "柔らかく角のない飲み口。軽快でシンプルな香り、華やかな香りも顔を出す爽やかな味わい "
+  "discription": "柔らかく角のない飲み口。軽快でシンプルな香り、華やかな香りも顔を出す爽やかな味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/700",
@@ -16313,7 +16313,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "1.4",
-  "taste": "軽快できりっとした口当たり。軽快でシンプルな香り、乳製品の様な香りもあり切れの良い淡麗辛口の酒 "
+  "discription": "軽快できりっとした口当たり。軽快でシンプルな香り、乳製品の様な香りもあり切れの良い淡麗辛口の酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/701",
@@ -16338,7 +16338,7 @@
   "prefectures": "鳥取県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "厚みのある重厚な口当たり。茶色がかった琥珀色の色調、ドライフルーツのような凝縮した重厚で複雑な味わい "
+  "discription": "厚みのある重厚な口当たり。茶色がかった琥珀色の色調、ドライフルーツのような凝縮した重厚で複雑な味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/702",
@@ -16364,7 +16364,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "1.6",
-  "taste": "非常にスムーズな口当たり。果実のような華やかな香り、スッキリドライな味わい。花や果実を連想させる米果実酒 ",
+  "discription": "非常にスムーズな口当たり。果実のような華やかな香り、スッキリドライな味わい。花や果実を連想させる米果実酒 ",
   "riceForMakingKoji": "長野県産しらかば錦"
 }
 {
@@ -16390,7 +16390,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "1",
-  "taste": "柔らかく角のない飲み口。原料や乳製品を思わせるふくよかな香り、穏やかふくよかな穀物的な米の酒らしさ溢れるお酒 "
+  "discription": "柔らかく角のない飲み口。原料や乳製品を思わせるふくよかな香り、穏やかふくよかな穀物的な米の酒らしさ溢れるお酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/704",
@@ -16416,7 +16416,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "1.1",
-  "taste": "柔らかく軽快感のある飲み口。瑞々しい爽やかな果実香、爽やかですっきり軽快な味わい。飲みやす淡麗辛口酒。 ",
+  "discription": "柔らかく軽快感のある飲み口。瑞々しい爽やかな果実香、爽やかですっきり軽快な味わい。飲みやす淡麗辛口酒。 ",
   "riceForMakingKoji": "木島平村産ひとごごち"
 }
 {
@@ -16443,7 +16443,7 @@
   "prefectures": "広島県",
   "starterCulture": "",
   "acidity": "1.6",
-  "taste": "滑らか、まろやかな飲み口。原料や乳製品を思わせるふくよかな香り。甘・旨・酸・苦が程よく広がるミディアムボディ ",
+  "discription": "滑らか、まろやかな飲み口。原料や乳製品を思わせるふくよかな香り。甘・旨・酸・苦が程よく広がるミディアムボディ ",
   "riceForMakingKoji": "広島県産　中生新千本"
 }
 {
@@ -16470,7 +16470,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "1.5",
-  "taste": "柔らかな※の旨み、スッキリした苦味が主体のドライテイスト ",
+  "discription": "柔らかな※の旨み、スッキリした苦味が主体のドライテイスト ",
   "riceForMakingKoji": "長野県産美山錦"
 }
 {
@@ -16496,7 +16496,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "とろりとして濃厚な飲み口。甘みと酸味に軽快な苦味が味を引き締める "
+  "discription": "とろりとして濃厚な飲み口。甘みと酸味に軽快な苦味が味を引き締める "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/708",
@@ -16522,7 +16522,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "1.6",
-  "taste": "香りはやや控えめ。すっきりした酸と甘みと旨みがふくらみ、後味はドライテイスト ",
+  "discription": "香りはやや控えめ。すっきりした酸と甘みと旨みがふくらみ、後味はドライテイスト ",
   "riceForMakingKoji": "新潟県産五百万石"
 }
 {
@@ -16548,7 +16548,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "シャープで硬質な端麗辛口。掲載な酸と苦味が主体のドライテイスト。控えめな和のイメージの吟醸香 ",
+  "discription": "シャープで硬質な端麗辛口。掲載な酸と苦味が主体のドライテイスト。控えめな和のイメージの吟醸香 ",
   "riceForMakingKoji": "兵庫県産山田錦"
 }
 {
@@ -16575,7 +16575,7 @@
   "prefectures": "北海道",
   "starterCulture": "",
   "acidity": "",
-  "taste": "香りは控えめで厚みのある味わい。甘みと苦味がバランスよく、生酒ならではの青みのある香りと滑らかな飲み口が味わえる ",
+  "discription": "香りは控えめで厚みのある味わい。甘みと苦味がバランスよく、生酒ならではの青みのある香りと滑らかな飲み口が味わえる ",
   "riceForMakingKoji": "吟風"
 }
 {
@@ -16601,7 +16601,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "1.2〜1.4",
-  "taste": "おだやかな菜類、木系の香り。優しい甘みと苦味が主体。凛としたあじわいでバランスが良い "
+  "discription": "おだやかな菜類、木系の香り。優しい甘みと苦味が主体。凛としたあじわいでバランスが良い "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/712",
@@ -16626,7 +16626,7 @@
   "prefectures": "長野県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "香ばしさに酸味、甘み、苦味が一体になったやや複雑な味わい。もち米四段仕込によるみりんのような甘み "
+  "discription": "香ばしさに酸味、甘み、苦味が一体になったやや複雑な味わい。もち米四段仕込によるみりんのような甘み "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/713",
@@ -16652,7 +16652,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "まろやかでサラリとしたテクスチャー。香りは控えめで軽快なアルコール感のある本醸造らしい味わい ",
+  "discription": "まろやかでサラリとしたテクスチャー。香りは控えめで軽快なアルコール感のある本醸造らしい味わい ",
   "riceForMakingKoji": "越端麗"
 }
 {
@@ -16679,7 +16679,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "1.7",
-  "taste": "まろやかでサラリとしたテクスチャー。軽快な酸味と苦味が主体。端麗で優しい味わいの辛口 ",
+  "discription": "まろやかでサラリとしたテクスチャー。軽快な酸味と苦味が主体。端麗で優しい味わいの辛口 ",
   "riceForMakingKoji": "五百万石"
 }
 {
@@ -16704,7 +16704,7 @@
   "prefectures": "新潟県",
   "starterCulture": "",
   "acidity": "",
-  "taste": "まろやかですっきりした飲み口。軽快な甘みと酸、柔らかな後口の苦みが味わいを引き締める "
+  "discription": "まろやかですっきりした飲み口。軽快な甘みと酸、柔らかな後口の苦みが味わいを引き締める "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/716",
@@ -16728,7 +16728,7 @@
   "prefectures": "東京都",
   "starterCulture": "",
   "acidity": "",
-  "taste": "果実や花のようなフルーティーな香り。シャープなテクスチャー。上品で繊細な味わい。ドライな後味 "
+  "discription": "果実や花のようなフルーティーな香り。シャープなテクスチャー。上品で繊細な味わい。ドライな後味 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/717",
@@ -16752,7 +16752,7 @@
   "prefectures": "東京都",
   "starterCulture": "",
   "acidity": "",
-  "taste": "軽快な旨味と、キレのよい後味が持ち味の純米酒 "
+  "discription": "軽快な旨味と、キレのよい後味が持ち味の純米酒 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/718",
@@ -16776,7 +16776,7 @@
   "prefectures": "東京都",
   "starterCulture": "",
   "acidity": "",
-  "taste": "原料米と乳製品を思わせるふくよかな香り。厚みのある酸味とふくよかな旨味。濃醇な味わい "
+  "discription": "原料米と乳製品を思わせるふくよかな香り。厚みのある酸味とふくよかな旨味。濃醇な味わい "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/719",
@@ -16800,7 +16800,7 @@
   "prefectures": "東京都",
   "starterCulture": "",
   "acidity": "",
-  "taste": "明るい黄金の色調。カラメル、干し杏のような凝縮感の高い熟成香。複雑で厚みのある味わい（古酒としてはやや軽快） "
+  "discription": "明るい黄金の色調。カラメル、干し杏のような凝縮感の高い熟成香。複雑で厚みのある味わい（古酒としてはやや軽快） "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/720",
@@ -16824,7 +16824,7 @@
   "prefectures": "東京都",
   "starterCulture": "",
   "acidity": "",
-  "taste": "生酒特有の軽快でフレッシュな香り。スッキリとした軽快な味わい。スルスル飲める角のない飲み口 "
+  "discription": "生酒特有の軽快でフレッシュな香り。スッキリとした軽快な味わい。スルスル飲める角のない飲み口 "
 }
 {
   "url": "http://www.sake-sennin.com/fbo/web/app.php/user/product/721",
@@ -16848,5 +16848,5 @@
   "prefectures": "東京都",
   "starterCulture": "",
   "acidity": "",
-  "taste": "清涼感の高い香り。スムーズで軽快な飲み口。スッキリとした味わい。キリリと引き締まった辛口 "
+  "discription": "清涼感の高い香り。スムーズで軽快な飲み口。スッキリとした味わい。キリリと引き締まった辛口 "
 }
