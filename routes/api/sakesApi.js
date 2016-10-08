@@ -21,13 +21,13 @@ router.all( '/*', ( req, res, next ) => {
 router.get( '/', ( req, res ) => {
   let query = {}
   if ( req.query.prefecture ) {
-    query['都道府県'] = new RegExp( req.query.prefecture );
+    query['prefectures'] = new RegExp( req.query.prefecture );
   }
   if ( req.query.brewrey ) {
-    query['蔵元'] = new RegExp( req.query.brewrey );
+    query['sakeBrewery'] = new RegExp( req.query.brewrey );
   }
   if ( req.query.brand ) {
-    query['銘柄名'] = new RegExp( req.query.brand );
+    query['name'] = new RegExp( req.query.brand );
   }
   collection( 'sake' ).find( query ).limit( LIMIT ).toArray( ( err, docs ) => {
     res.send( docs );
@@ -36,29 +36,29 @@ router.get( '/', ( req, res ) => {
 
 // GET find brands
 router.get( '/brands', ( req, res ) => {
-  collection( 'sake' ).distinct( '銘柄名', ( err, docs ) => { res.send( docs) } );
+  collection( 'sake' ).distinct( 'name', ( err, docs ) => { res.send( docs) } );
 } );
 
 // GET find breweries
 router.get( '/breweries', ( req, res ) => {
-  collection( 'sake' ).distinct( '蔵元', ( err, docs ) => { res.send( docs) } );
+  collection( 'sake' ).distinct( 'sakeBrewery', ( err, docs ) => { res.send( docs) } );
 } );
 
 // GET find koubos
 router.get( '/koubos', ( req, res ) => {
-  collection( 'sake' ).distinct( '酵母', ( err, docs ) => { res.send( docs) } );
+  collection( 'sake' ).distinct( 'sakeYeast', ( err, docs ) => { res.send( docs) } );
 } );
 
 // GET find prefectures
 router.get( '/prefectures', ( req, res ) => {
-  collection( 'sake' ).distinct( '都道府県', ( err, docs ) => { res.send( docs) } );
+  collection( 'sake' ).distinct( 'prefectures', ( err, docs ) => { res.send( docs) } );
 } );
 
 // GET find rices
 router.get( '/rices', ( req, res ) => {
-  collection( 'sake' ).distinct( '麹米', ( err, docs ) => {
+  collection( 'sake' ).distinct( 'riceForMakingKoji', ( err, docs ) => {
     let riceOfKoujis = docs
-    collection( 'sake' ).distinct( '掛米', ( err, docs ) => {
+    collection( 'sake' ).distinct( 'sakeRiceExceptForKojiMaking', ( err, docs ) => {
       let riceOfKakes = docs
       let rices = [ ...riceOfKoujis, ...riceOfKakes ].filter( ( x, i, self ) => self.indexOf( x ) === i );
       res.send( rices )
@@ -87,7 +87,7 @@ router.put( '/:id/add/review', ( req, res ) => {
   collection( 'sake' ).findAndModify(
     { _id: new ObjectID( req.params.id ) },
     [ [ '_id', 1 ] ],
-    { $push: { 'レビュー': req.body } },
+    { $push: { 'reviews': req.body } },
     { upsert: true },
     function ( err, r ) {
       res.send( r );

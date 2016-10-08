@@ -36,22 +36,22 @@ class NewReview extends React.Component {
       return
     }
     axios.put( `/api/sakes/${ this.props.sake._id }/add/review`, {
-      '日時': new Date(),
-      '評価': this.state.evaluation,
-      'コメント': document.getElementById('comment').value,
-      '香り': this.state.flavor,
-      '味': this.state.taste,
-      '熟成': this.state.maturation,
-      '温度': {
-        '一番冷たい(5度位)': document.getElementById('temp5').checked,
-        'やや冷たい(10度位)': document.getElementById('temp10').checked,
-        '常温(15度位)': document.getElementById('temp15').checked,
-        'ぬる燗(40度位)': document.getElementById('temp40').checked,
-        '熱燗(50度位)': document.getElementById('temp50').checked,
+      'tasting_date': new Date(),
+      'review': this.state.evaluation,
+      'comment': document.getElementById('comment').value,
+      'flavor': this.state.flavor,
+      'taste': this.state.taste,
+      'maturation': this.state.maturation,
+      'temperature': {
+        'temp5': document.getElementById('temp5').checked,
+        'temp10': document.getElementById('temp10').checked,
+        'temp15': document.getElementById('temp15').checked,
+        'temp40': document.getElementById('temp40').checked,
+        'temp50': document.getElementById('temp50').checked,
       },
-      '相性のよい料理': document.getElementById('matched').value,
-      'ユーザーID': window.localStorage.getItem( 'id' ),
-      'ユーザー名': window.localStorage.getItem( 'name' ),
+      'mariage': document.getElementById('matched').value,
+      'userId': window.localStorage.getItem( 'id' ),
+      'userName': window.localStorage.getItem( 'name' ),
     })
     .then( () => {
       this.props.update()

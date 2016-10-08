@@ -102,7 +102,7 @@ class Detail extends React.Component{
             onClick={ () => { this.changeTab('reviews') } }
             value="reviews"
           >
-          <Reviews reviews={this.props.sake.レビュー} />
+          <Reviews reviews={this.props.sake.reviews} />
           </Tab>
           <Tab
             id="createReview"

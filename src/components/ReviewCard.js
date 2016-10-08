@@ -41,26 +41,26 @@ class ReviewCard extends React.Component {
     }
     return (
       <Card style={ styles.card }>
-        <div style={ styles.date }>{ dateFormat(this.props.review.日時 , 'yyyy/mm/dd HH:MM')}</div>
+        <div style={ styles.date }>{ dateFormat(this.props.review.tasting_date , 'yyyy/mm/dd HH:MM')}</div>
         <CardHeader
-          title={ <Stars evaluation={this.props.review.評価} /> }
-          subtitle={ this.props.review.ユーザー名 }
+          title={ <Stars evaluation={this.props.review.review} /> }
+          subtitle={ this.props.review.userName }
         />
         <CardText>
-          <div style={ styles.comment }>{ this.props.review.コメント }</div>
+          <div style={ styles.comment }>{ this.props.review.comment }</div>
 
           <div style={ styles.type }>
             <TypeMark review={ this.props.review } />
             <Badge
-              badgeContent={ this.props.review.香り }
+              badgeContent={ this.props.review.flavor }
               secondary={true}
             >香り</Badge>
             <Badge
-              badgeContent={ this.props.review.味 }
+              badgeContent={ this.props.review.taste }
               secondary={true}
             >味</Badge>
             <Badge
-              badgeContent={ this.props.review.熟成 }
+              badgeContent={ this.props.review.maturation }
               secondary={true}
             >熟成</Badge>
           </div>
@@ -68,34 +68,34 @@ class ReviewCard extends React.Component {
           <div style={ styles.label }>適した温度</div>
           <div style={ styles.content }>
               <Checkbox
-                checked={ this.props.review.温度['一番冷たい(5度位)'] }
+                checked={ this.props.review.temperature['temp5'] }
                 disabled={true}
                 label="一番冷たい(5度位)"
               />
               <Checkbox
-                checked={ this.props.review.温度['やや冷たい(10度位)'] }
+                checked={ this.props.review.temperature['temp10'] }
                 disabled={true}
                 label="やや冷たい(10度位)"
               />
               <Checkbox
-                checked={ this.props.review.温度['常温(15度位)'] }
+                checked={ this.props.review.temperature['temp15'] }
                 disabled={true}
                 label="常温(15度位)"
               />
               <Checkbox
-                checked={ this.props.review.温度['ぬる燗(40度位)'] }
+                checked={ this.props.review.temperature['temp40'] }
                 disabled={true}
                 label="ぬる燗(40度位)"
               />
               <Checkbox
-                checked={ this.props.review.温度['熱燗(50度位)'] }
+                checked={ this.props.review.temperature['temp50'] }
                 disabled={true}
                 label="熱燗(50度位)"
               />
           </div>
 
           <div style={ styles.label }>相性のよい料理</div>
-          <div style={ styles.content }>{ this.props.review.相性のよい料理 }</div>
+          <div style={ styles.content }>{ this.props.review.mariage }</div>
         </CardText>
       </Card>
     )
