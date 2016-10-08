@@ -78,18 +78,18 @@ class SakeCard extends React.Component {
     return (
       <Link to={`/sake/${this.props.sake._id}`} style={styles.link}>
         <Card style={ styles.card }>
-          <TypeMark review={ this.averageReview( this.props.sake.レビュー ) } style={ styles.typeMark } />
+          <TypeMark review={ this.averageReview( this.props.sake.review ) } style={ styles.typeMark } />
           <CardHeader
-            title={ `${this.props.sake.銘柄名} ( ${this.props.sake.種類} )` }
-            subtitle={ `${this.props.sake.蔵元} ( ${this.props.sake.都道府県} ) ` }
+            title={ `${this.props.sake.name} ( ${this.props.sake.type} )` }
+            subtitle={ `${this.props.sake.sakeBrewery} ( ${this.props.sake.prefectures} ) ` }
           />
           <CardText style={ styles.cardText }>
             <div style={ styles.picture }>
-              <img src={ this.props.sake.画像URL } style={ styles.img } />
+              <img src={ this.props.sake.imageUrl } style={ styles.img } />
             </div>
             <div style={ styles.description }>
               <Stars evaluation={ this.averageEvaluation( this.props.sake.レビュー ) } />
-              <div>{ this.props.sake.説明 }</div>
+              <div>{ this.props.sake.discription }</div>
             </div>
           </CardText>
         </Card>

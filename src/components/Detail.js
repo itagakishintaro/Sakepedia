@@ -38,22 +38,22 @@ class Detail extends React.Component{
       styles.visible.display = 'block'
     }
     const items = [
-      '銘柄名',
-      '種類',
-      '酒母',
-      'その他',
-      'メーカーURL',
-      '蔵元',
-      '都道府県',
-      '麹米',
-      '掛米',
-      '酵母',
-      '精米歩合',
-      'アルコール度数',
-      '日本酒度',
-      '酸度',
-      'アミノ酸度',
-      '説明',
+      'name',
+      'type',
+      'sakeYeast',
+      'memo',
+      'url',
+      'sakeBrewery',
+      'prefectures',
+      'sakeRiceExceptForKojiMaking',
+      'riceForMakingKoji',
+      'starterCulture',
+      'ricePolishiingRate',
+      'alcoholContent',
+      'sakeMeterValue',
+      'acidity',
+      'aminoAcidContent',
+      'discription',
     ]
     let setAnchor = ( input ) => {
       if( /http/.test( input ) ){
@@ -64,10 +64,10 @@ class Detail extends React.Component{
     return (
       <div>
         <div className={classes.header}>
-          <img src={ this.props.sake.画像URL } className={classes.image} />
+          <img src={ this.props.sake.imageUrl } className={classes.image} />
           <div>
-            <div><span className={classes.title}>{this.props.sake.銘柄名}</span>( {this.props.sake.種類} )</div>
-            <div>{this.props.sake.蔵元} ( {this.props.sake.都道府県} )</div>
+            <div><span className={classes.title}>{this.props.sake.name}</span>( {this.props.sake.type} )</div>
+            <div>{this.props.sake.sakeBrewery} ( {this.props.sake.prefectures} )</div>
           </div>
         </div>
 
