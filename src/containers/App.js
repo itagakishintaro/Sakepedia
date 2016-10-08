@@ -11,8 +11,13 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     if( document.getElementById( 'id' ).innerHTML ) {
+      window.localStorage.setItem('id', document.getElementById( 'id' ).innerHTML)
+      window.localStorage.setItem('name', document.getElementById( 'name' ).innerHTML)
       this.props.dispatch( setAuthStatus( true ) )
-    } else {
+    } else if ( window.localStorage.getItem( 'id' ) ) {
+      this.props.dispatch( setAuthStatus( true ) )
+    }
+    else {
       this.props.dispatch( setAuthStatus( false ) )
     }
   }
