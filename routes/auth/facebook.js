@@ -22,7 +22,11 @@ passport.use(new FacebookStrategy({
 ));
 
 router.get( '/', ( req, res, next ) => {
-  session.from = req.query.from;
+  if( req.query.from == '/' ){
+    session.from = '/#/';
+  } else {
+    session.from = req.query.from;
+  }
   next();
 } );
 router.get('/', passport.authenticate('facebook'));

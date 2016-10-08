@@ -50,8 +50,8 @@ class NewReview extends React.Component {
         '熱燗(50度位)': document.getElementById('temp50').checked,
       },
       '相性のよい料理': document.getElementById('matched').value,
-      'ユーザーID': 'user id',
-      'ユーザー名': 'user name',
+      'ユーザーID': window.localStorage.getItem( 'id' ),
+      'ユーザー名': window.localStorage.getItem( 'name' ),
     })
     .then( () => {
       this.props.update()
