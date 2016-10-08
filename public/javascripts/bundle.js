@@ -68491,8 +68491,8 @@
 	          '熱燗(50度位)': document.getElementById('temp50').checked
 	        },
 	        '相性のよい料理': document.getElementById('matched').value,
-	        'ユーザーID': 'user id',
-	        'ユーザー名': 'user name'
+	        'ユーザーID': window.localStorage.getItem('id'),
+	        'ユーザー名': window.localStorage.getItem('name')
 	      }).then(function () {
 	        _this2.props.update();
 	        _this2.props.changeTab('reviews');
@@ -70098,7 +70098,9 @@
 	        'アミノ酸度': this.state.aminoRate,
 	        '説明': document.getElementById('description').value,
 	        '画像URL': document.getElementById('snap').src,
-	        snackbarOpen: false
+	        '日時': new Date(),
+	        'ユーザーID': window.localStorage.getItem('id'),
+	        'ユーザー名': window.localStorage.getItem('name')
 	      }).then(function () {
 	        window.location.href = '/';
 	      }).catch(function (error) {

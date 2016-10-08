@@ -65,7 +65,9 @@ class NewSake extends React.Component {
       'アミノ酸度': this.state.aminoRate,
       '説明': document.getElementById('description').value,
       '画像URL': document.getElementById('snap').src,
-      snackbarOpen: false,
+      '日時': new Date(),
+      'ユーザーID': window.localStorage.getItem( 'id' ),
+      'ユーザー名': window.localStorage.getItem( 'name' ),
     })
     .then( () => {
       window.location.href ='/'
