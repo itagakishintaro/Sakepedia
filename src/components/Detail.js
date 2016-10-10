@@ -55,6 +55,24 @@ class Detail extends React.Component{
       'aminoAcidContent',
       'discription',
     ]
+    const items_label = {
+      'name':'名前',
+      'type':'種類',
+      'sakeYeast':'酵母',
+      'memo':'メモ',
+      'url':'URL',
+      'sakeBrewery':'蔵元',
+      'prefectures':'都道府県',
+      'sakeRiceExceptForKojiMaking':'掛米',
+      'riceForMakingKoji':'麹米',
+      'starterCulture':'酒母',
+      'ricePolishiingRate':'精米歩合',
+      'alcoholContent':'アルコール度数',
+      'sakeMeterValue':'日本酒度',
+      'acidity':'酸度',
+      'aminoAcidContent':'アミノ酸度',
+      'discription':'説明',
+    }
     let setAnchor = ( input ) => {
       if( /http/.test( input ) ){
         return <a href={input} target="_blank">{input}</a>
@@ -86,7 +104,7 @@ class Detail extends React.Component{
                   { items.map( key => {
                     return(
                       <tr className={classes.tr}>
-                        <th className={classes.th} width="25%">{ key }</th>
+                        <th className={classes.th} width="25%">{ items_label[key] }</th>
                         <td className={classes.td}>
                             { setAnchor( this.props.sake[key] ) }
                         </td>
