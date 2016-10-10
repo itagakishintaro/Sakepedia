@@ -1,17 +1,4 @@
 import React, { PropTypes } from 'react'
-// material-ui
-import { AppBar, IconButton} from 'material-ui'
-import MenuIcon from 'material-ui/svg-icons/navigation/menu'
-
-const styles = {
-  appbar: {
-    marginBottom: '1rem',
-  },
-  link: {
-    color: '#000',
-    textDecoration: 'none',
-  }
-}
 
 class Footer extends React.Component{
   constructor(props) {
