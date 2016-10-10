@@ -136,7 +136,7 @@ class NewSake extends React.Component {
             id="process"
             errorText={this.state.errorText.process}
             floatingLabelFixed={true}
-            floatingLabelText="製法*"
+            floatingLabelText="製法"
             fullWidth={true}
             value={this.state.process}
             onChange={ (event, index, value) => this.setState( { process: value } ) } >

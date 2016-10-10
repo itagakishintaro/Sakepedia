@@ -2,7 +2,6 @@ const validate = ( state ) => {
   state.error = false
   validateBrand( state )
   validateCategory( state )
-  validateProcess( state )
   validateBrewery( state )
   validatePrefecture( state )
   validateUrl( state )
