@@ -6,6 +6,7 @@ import { setAuthStatus } from '../actions/isLogin'
 import classes from '../../public/stylesheets/scss/app.scss'
 // components
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 class App extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class App extends React.Component {
         {/* add this */}
         {this.props.children}
 
+        <Footer isLogin={this.props.isLogin}/>
       </div>
     )
   }
