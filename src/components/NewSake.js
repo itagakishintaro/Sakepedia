@@ -20,22 +20,22 @@ class NewSake extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      acidRate: '',
-      alcoholRate: '',
-      aminoRate: '',
+      acidity: '',
+      alcoholContent: '',
+      aminoAcidContent: '',
       brands: [],
       breweries: [],
-      category: '',
+      type: '',
       error: false,
       errorText: {},
-      koubo: [],
-      polishRate: '',
+      sakeYeast: [],
+      ricePolishRate: '',
       prefecture: '',
       prefectures: [],
-      process: '',
-      riceOfKake: [],
-      riceOfKouji: [],
-      sakeRate: '',
+      starterCulture: '',
+      sakeRiceExceptForKojiMaking: [],
+      riceForMakingKoji: [],
+      sakeMeterValue: '',
       snackbarOpen: false,
     }
   }
@@ -48,26 +48,26 @@ class NewSake extends React.Component {
       return
     }
     axios.post( '/api/sakes' , {
-      '銘柄名': document.getElementById('brand').value,
-      '種類': this.state.category,
-      '酒母': this.state.process,
-      'その他': document.getElementById('subname').value,
-      'メーカーURL': document.getElementById('url').value,
-      '蔵元': document.getElementById('brewery').value,
-      '都道府県': this.state.prefecture,
-      '麹米': document.getElementById('riceOfKouji').value,
-      '掛米': document.getElementById('riceOfKake').value,
-      '酵母': document.getElementById('koubo').value,
-      '精米歩合': this.state.polishRate,
-      'アルコール度数': this.state.alcoholRate,
-      '日本酒度': this.state.sakeRate,
-      '酸度': this.state.acidRate,
-      'アミノ酸度': this.state.aminoRate,
-      '説明': document.getElementById('description').value,
-      '画像URL': document.getElementById('snap').src,
-      '日時': new Date(),
-      'ユーザーID': window.localStorage.getItem( 'id' ),
-      'ユーザー名': window.localStorage.getItem( 'name' ),
+      brand : document.getElementById('brand').value,
+      subname: document.getElementById('subname').value,
+      type: this.state.type,
+      prefecture: this.state.prefecture,
+      brewery: document.getElementById('brewery').value,
+      url: document.getElementById('url').value,
+      description: document.getElementById('description').value,
+      starterCulture: this.state.starterCulture,
+      sakeYeast: document.getElementById('sakeYeast').value,
+      sakeRiceExceptForKojiMaking: document.getElementById('sakeRiceExceptForKojiMaking').value,
+      riceForMakingKoji: document.getElementById('riceForMakingKoji').value,
+      ricePolishiingRate: document.getElementById('ricePolishRate').value,
+      alcoholContent: document.getElementById('alcoholContent').value,
+      sakeMeterValue: document.getElementById('sakeMeterValue').value,
+      acidity: document.getElementById('acidity').value,
+      aminoAcidContent: document.getElementById('aminoAcidContent').value,
+      imageUrl: document.getElementById('snap').src,
+      date: new Date(),
+      userid: window.localStorage.getItem( 'userid' ),
+      username: window.localStorage.getItem( 'username' ),
     })
     .then( () => {
       window.location.href ='/'
@@ -114,14 +114,20 @@ class NewSake extends React.Component {
             fullWidth={true}
             required={true}
           />
+          <TextField
+            id="subname"
+            floatingLabelFixed={true}
+            floatingLabelText="副名"
+            fullWidth={true}
+          />
           <SelectField
-            id="category"
-            errorText={this.state.errorText.category}
+            id="type"
+            errorText={this.state.errorText.type}
             floatingLabelFixed={true}
             floatingLabelText="分類*"
             fullWidth={true}
-            value={this.state.category}
-            onChange={ (event, index, value) => this.setState( { category: value } ) } >
+            value={this.state.type}
+            onChange={ (event, index, value) => this.setState( { type: value } ) } >
             <MenuItem value="純米大吟醸" primaryText="純米大吟醸" />
             <MenuItem value="大吟醸" primaryText="大吟醸" />
             <MenuItem value="純米吟醸" primaryText="純米吟醸" />
@@ -132,31 +138,10 @@ class NewSake extends React.Component {
             <MenuItem value="本醸造" primaryText="本醸造" />
             <MenuItem value="普通" primaryText="普通" />
           </SelectField>
-          <SelectField
-            id="process"
-            errorText={this.state.errorText.process}
-            floatingLabelFixed={true}
-            floatingLabelText="製法"
-            fullWidth={true}
-            value={this.state.process}
-            onChange={ (event, index, value) => this.setState( { process: value } ) } >
-            <MenuItem value="速醸酛"  primaryText="速醸酛" />
-            <MenuItem value="山廃酛" primaryText="山廃酛" />
-            <MenuItem value="生酛" primaryText="生酛" />
-          </SelectField>
-          <TextField
-            id="subname"
-            floatingLabelFixed={true}
-            floatingLabelText="その他（銘柄、分類以外の副名）"
-            fullWidth={true}
-          />
-          <TextField
-            id="url"
-            errorText={this.state.errorText.url}
-            floatingLabelFixed={true}
-            floatingLabelText="メーカーURL"
-            fullWidth={true}
-            type="url"
+          <Prefectures
+            errorText={this.state.errorText.prefecture}
+            label="都道府県*"
+            setPrefecture={this.setPrefecture.bind(this)}
           />
           <AutoComplete
             id="brewery"
@@ -167,38 +152,58 @@ class NewSake extends React.Component {
             fullWidth={true}
             required={true}
           />
-
-        <Prefectures
-          errorText={this.state.errorText.prefecture}
-          label="都道府県*"
-          setPrefecture={this.setPrefecture.bind(this)}
-        />
-
-          <AutoComplete
-            id="riceOfKouji"
+          <TextField
+            id="url"
+            errorText={this.state.errorText.url}
             floatingLabelFixed={true}
-            floatingLabelText="麹米"
-            dataSource={this.props.rices}
+            floatingLabelText="メーカーURL"
+            fullWidth={true}
+            type="url"
+          />
+          <TextField
+            id="description"
+            floatingLabelFixed={true}
+            floatingLabelText="説明"
+            fullWidth={true}
+            multiLine={true}
+            rows={3}
+          />
+          <SelectField
+            id="starterCulture"
+            errorText={this.state.errorText.starterCulture}
+            floatingLabelFixed={true}
+            floatingLabelText="酒母"
+            fullWidth={true}
+            value={this.state.starterCulture}
+            onChange={ (event, index, value) => this.setState( { starterCulture: value } ) } >
+            <MenuItem value="速醸酛"  primaryText="速醸酛" />
+            <MenuItem value="山廃酛" primaryText="山廃酛" />
+            <MenuItem value="生酛" primaryText="生酛" />
+          </SelectField>
+          <AutoComplete
+            id="sakeYeast"
+            floatingLabelFixed={true}
+            floatingLabelText="酵母"
+            dataSource={this.props.sakeYeasts}
             fullWidth={true}
           />
           <AutoComplete
-            id="riceOfKake"
+            id="sakeRiceExceptForKojiMaking"
             floatingLabelFixed={true}
             floatingLabelText="掛米"
             dataSource={this.props.rices}
             fullWidth={true}
           />
           <AutoComplete
-            id="koubo"
+            id="riceForMakingKoji"
             floatingLabelFixed={true}
-            floatingLabelText="酵母"
-            dataSource={this.props.koubos}
+            floatingLabelText="麹米"
+            dataSource={this.props.rices}
             fullWidth={true}
           />
-
           <TextField
-            id="polishRate"
-            errorText={this.state.errorText.polishRate}
+            id="ricePolishRate"
+            errorText={this.state.errorText.ricePolishRate}
             floatingLabelFixed={true}
             floatingLabelText="精米歩合(%)"
             fullWidth={true}
@@ -206,8 +211,8 @@ class NewSake extends React.Component {
             type="number"
           />
           <TextField
-            id="alcoholRate"
-            errorText={this.state.errorText.alcoholRate}
+            id="alcoholContent"
+            errorText={this.state.errorText.alcoholContent}
             floatingLabelFixed={true}
             floatingLabelText="アルコール度数(%)"
             fullWidth={true}
@@ -215,8 +220,8 @@ class NewSake extends React.Component {
             type="number"
           />
           <TextField
-            id="sakeRate"
-            errorText={this.state.errorText.sakeRate}
+            id="sakeMeterValue"
+            errorText={this.state.errorText.sakeMeterValue}
             floatingLabelFixed={true}
             floatingLabelText="日本酒度"
             fullWidth={true}
@@ -224,8 +229,8 @@ class NewSake extends React.Component {
             type="number"
           />
           <TextField
-            id="acidRate"
-            errorText={this.state.errorText.acidRate}
+            id="acidity"
+            errorText={this.state.errorText.acidity}
             floatingLabelFixed={true}
             floatingLabelText="酸度"
             fullWidth={true}
@@ -233,20 +238,15 @@ class NewSake extends React.Component {
             type="number"
           />
           <TextField
-            id="aminoRate"
-            errorText={this.state.errorText.aminoRate}
+            id="aminoAcidContent"
+            errorText={this.state.errorText.aminoAcidContent}
             floatingLabelFixed={true}
             floatingLabelText="アミノ酸度"
             fullWidth={true}
             step="0.1"
             type="number"
           />
-          <TextField
-            id="description"
-            floatingLabelFixed={true}
-            floatingLabelText="説明"
-            fullWidth={true}
-          />
+
         <Camera />
 
           <RaisedButton label="登録" primary={true} style={styles.button} onClick={this.send.bind(this)} />
@@ -260,7 +260,7 @@ NewSake.propTypes = {
   breweries: PropTypes.array.isRequired,
   brands: PropTypes.array.isRequired,
   dispatch: PropTypes.func.isRequired,
-  koubos: PropTypes.array.isRequired,
+  sakeYeasts: PropTypes.array.isRequired,
   list: PropTypes.array.isRequired,
   rices: PropTypes.array.isRequired,
 }

@@ -38,22 +38,22 @@ class Detail extends React.Component{
       styles.visible.display = 'block'
     }
     const items = {
-      name: '名前',
-      type: '種類',
-      sakeYeast: '酵母',
-      memo: 'メモ',
+      brand: '銘柄',
+      subname: '副名',
+      type: '分類',
+      prefecture: '都道府県',
+      brewery: '蔵元',
       url: 'URL',
-      sakeBrewery: '蔵元',
-      prefectures: '都道府県',
+      description: '説明',
+      starterCulture: '酒母',
+      sakeYeast: '酵母',
       sakeRiceExceptForKojiMaking: '掛米',
       riceForMakingKoji: '麹米',
-      starterCulture: '酒母',
       ricePolishiingRate: '精米歩合',
       alcoholContent: 'アルコール度数',
       sakeMeterValue: '日本酒度',
       acidity: '酸度',
       aminoAcidContent: 'アミノ酸度',
-      discription: '説明',
     }
     let setAnchor = ( input ) => {
       if( /http/.test( input ) ){
@@ -66,8 +66,8 @@ class Detail extends React.Component{
         <div className={classes.header}>
           <img src={ this.props.sake.imageUrl } className={classes.image} />
           <div>
-            <div><span className={classes.title}>{this.props.sake.name}</span>( {this.props.sake.type} )</div>
-            <div>{this.props.sake.sakeBrewery} ( {this.props.sake.prefectures} )</div>
+            <div><span className={classes.title}>{this.props.sake.brand}</span>( {this.props.sake.type} )</div>
+            <div>{this.props.sake.brewery} ( {this.props.sake.prefecture} )</div>
           </div>
         </div>
 

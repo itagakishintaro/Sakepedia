@@ -94,7 +94,7 @@ class ReviewCard extends React.Component {
               />
           </div>
 
-          <div style={ styles.label }>相性のよい料理</div>
+          <div style={ styles.label }>マリアージュ</div>
           <div style={ styles.content }>{ this.props.review.mariage }</div>
         </CardText>
       </Card>

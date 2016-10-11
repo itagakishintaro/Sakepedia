@@ -28,10 +28,10 @@ export const setBreweries = ( breweries ) => {
   }
 }
 
-export const setKoubos = ( koubos ) => {
+export const setSakeYeasts = ( sakeYeasts ) => {
   return {
     type: 'SETKOUBOS',
-    koubos,
+    sakeYeasts,
   }
 }
 
@@ -92,10 +92,10 @@ export const getBreweries = ( dispatch ) => {
     })
 }
 
-export const getKoubos = ( dispatch ) => {
-  axios.get( '/api/sakes/koubos' )
+export const getSakeYeasts = ( dispatch ) => {
+  axios.get( '/api/sakes/sakeYeasts' )
     .then( res => {
-      dispatch( setKoubos( res.data ) )
+      dispatch( setSakeYeasts( res.data ) )
     })
     .catch( error => {
       console.log( error )
