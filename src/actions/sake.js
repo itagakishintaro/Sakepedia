@@ -14,10 +14,10 @@ export const setSake = ( sake ) => {
   }
 }
 
-export const setNames = ( names ) => {
+export const setBrands = ( brands ) => {
   return {
-    type: 'SETNAMES',
-    names,
+    type: 'SETBRANDS',
+    brands,
   }
 }
 
@@ -28,10 +28,17 @@ export const setBreweries = ( breweries ) => {
   }
 }
 
-export const setPrefectures = ( prefectures ) => {
+export const setKoubos = ( koubos ) => {
   return {
-    type: 'SETPREFECTURES',
-    prefectures,
+    type: 'SETKOUBOS',
+    koubos,
+  }
+}
+
+export const setRices = ( rices ) => {
+  return {
+    type: 'SETRICES',
+    rices,
   }
 }
 
@@ -43,8 +50,8 @@ export const getSakeList = ( dispatch, words ) => {
   if( words.brewrey ) {
     query = `${query}&brewrey=${words.brewrey}`
   }
-  if( words.name ) {
-    query = `${query}&name=${words.name}`
+  if( words.brand ) {
+    query = `${query}&brand=${words.brand}`
   }
   axios.get( `/api/sakes?${query}` )
     .then( res => {
@@ -65,10 +72,10 @@ export const getSake = ( dispatch, id ) => {
     })
 }
 
-export const getNames = ( dispatch ) => {
-  axios.get( '/api/sakes/names' )
+export const getBrands = ( dispatch ) => {
+  axios.get( '/api/sakes/brands' )
     .then( res => {
-      dispatch( setNames( res.data ) )
+      dispatch( setBrands( res.data ) )
     })
     .catch( error => {
       console.log( error )
@@ -85,10 +92,20 @@ export const getBreweries = ( dispatch ) => {
     })
 }
 
-export const getPrefectures = ( dispatch ) => {
-  axios.get( '/api/sakes/prefectures' )
+export const getKoubos = ( dispatch ) => {
+  axios.get( '/api/sakes/koubos' )
     .then( res => {
-      dispatch( setPrefectures( res.data ) )
+      dispatch( setKoubos( res.data ) )
+    })
+    .catch( error => {
+      console.log( error )
+    })
+}
+
+export const getRices = ( dispatch ) => {
+  axios.get( '/api/sakes/rices' )
+    .then( res => {
+      dispatch( setRices( res.data ) )
     })
     .catch( error => {
       console.log( error )

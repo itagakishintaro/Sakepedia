@@ -22,13 +22,13 @@ class Search extends React.Component {
       {
         prefecture: this.state.prefecture,
         brewrey: document.getElementById('brewrey').value,
-        name: document.getElementById('name').value,
+        brand: document.getElementById('brand').value,
       }
    )
   }
 
-  search( name ) {
-    this.props.search( { name } )
+  search( brand ) {
+    this.props.search( { brand } )
   }
 
   setPrefecture(pref) {
@@ -50,7 +50,7 @@ class Search extends React.Component {
           <Tab label="銘柄検索" >
             <AutoComplete
               hintText={ <span><FontIcon className="material-icons" style={styles.icon}>search</FontIcon>銘柄</span> }
-              dataSource={ this.props.names }
+              dataSource={ this.props.brands }
               fullWidth={true}
               onNewRequest={ this.search }
             />
@@ -65,10 +65,10 @@ class Search extends React.Component {
               fullWidth={true}
             />
             <AutoComplete
-              id="name"
+              id="brand"
               floatingLabelFixed={true}
               floatingLabelText="銘柄"
-              dataSource={ this.props.names }
+              dataSource={ this.props.brands }
               fullWidth={true}
             />
           <RaisedButton
@@ -84,9 +84,8 @@ class Search extends React.Component {
 
 Search.propTypes = {
   detailSearch: PropTypes.func.isRequired,
-  names: PropTypes.array.isRequired,
+  brands: PropTypes.array.isRequired,
   breweries: PropTypes.array.isRequired,
-  prefectures: PropTypes.array.isRequired,
   search: PropTypes.func.isRequired,
 }
 

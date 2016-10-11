@@ -12,7 +12,7 @@ import axios from 'axios'
 // validation
 import validate from './NewReviewValidation'
 // util
-import smoothScroll from '../util/SmoothScroll'
+import smoothScroll from '../util/smoothScroll'
 
 class NewReview extends React.Component {
   constructor(props) {
@@ -35,26 +35,26 @@ class NewReview extends React.Component {
       smoothScroll( document.getElementById('newReview'), 1000 )
       return
     }
-    axios.post( '/api/reviews' , {
-      sakeId: this.props.sakeId,
-      date: new Date(),
-      evaluation: this.state.evaluation,
-      comment: document.getElementById('comment').value,
-      flavor: this.state.flavor,
-      taste: this.state.taste,
-      maturation: this.state.maturation,
-      temperature: {
-        '5': document.getElementById('temp5').checked,
-        '10': document.getElementById('temp10').checked,
-        '15': document.getElementById('temp15').checked,
-        '40': document.getElementById('temp40').checked,
-        '50': document.getElementById('temp50').checked,
+    axios.put( `/api/sakes/${ this.props.sake._id }/add/review`, {
+      'tasting_date': new Date(),
+      'review': this.state.evaluation,
+      'comment': document.getElementById('comment').value,
+      'flavor': this.state.flavor,
+      'taste': this.state.taste,
+      'maturation': this.state.maturation,
+      'temperature': {
+        'temp5': document.getElementById('temp5').checked,
+        'temp10': document.getElementById('temp10').checked,
+        'temp15': document.getElementById('temp15').checked,
+        'temp40': document.getElementById('temp40').checked,
+        'temp50': document.getElementById('temp50').checked,
       },
-      userId: 'user id',
-      userName: 'user name',
-      matched: document.getElementById('matched').value,
+      'mariage': document.getElementById('matched').value,
+      'userId': window.localStorage.getItem( 'id' ),
+      'userName': window.localStorage.getItem( 'name' ),
     })
     .then( () => {
+      this.props.update()
       this.props.changeTab('reviews')
     })
     .catch( error => {
@@ -80,10 +80,16 @@ class NewReview extends React.Component {
       label: {
         color:  grey400,
         fontSize: '0.8em',
-      }
+      },
+      visible: {
+        display: 'none',
+      },
+    }
+    if( this.props.isLogin ) {
+      styles.visible.display = 'block'
     }
     return (
-      <div id="newReview">
+      <div id="newReview" style={styles.visible}>
         <Snackbar
           open={this.state.snackbarOpen}
           message="送信しました"
@@ -196,8 +202,10 @@ NewReview.propTypes = {
   changeTab: PropTypes.func.isRequired,
   dispatch: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired,
+  isLogin: PropTypes.bool.isRequired,
   list: PropTypes.array.isRequired,
-  sakeId: PropTypes.string.isRequired,
+  sake: PropTypes.object.isRequired,
+  update: PropTypes.func.isRequired,
 }
 
 export default NewReview

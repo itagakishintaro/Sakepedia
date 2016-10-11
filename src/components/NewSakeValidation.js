@@ -2,7 +2,6 @@ const validate = ( state ) => {
   state.error = false
   validateBrand( state )
   validateCategory( state )
-  validateProcess( state )
   validateBrewery( state )
   validatePrefecture( state )
   validateUrl( state )
@@ -29,15 +28,6 @@ const validateCategory = ( state ) => {
     state.errorText.category = '分類は必須です'
   } else {
     state.errorText.category = ''
-  }
-}
-
-const validateProcess = ( state ) => {
-  if ( !state.process ) {
-    state.error = true
-    state.errorText.process = '製法は必須です'
-  } else {
-    state.errorText.process = ''
   }
 }
 

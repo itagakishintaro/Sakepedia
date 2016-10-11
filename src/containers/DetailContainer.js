@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 // actions
 import { getSake } from '../actions/sake'
-import { getReviews } from '../actions/review'
 // components
 import Detail from '../components/Detail'
 
@@ -10,31 +9,30 @@ class DetailContainer extends React.Component{
   constructor(props) {
     super(props)
     getSake( this.props.dispatch, this.props.params.sakeId )
-    getReviews( this.props.dispatch, this.props.params.sakeId )
   }
 
-  changeTab( tab ) {
-    if( tab === 'reviews' ) {
-      getReviews( this.props.dispatch, this.props.params.sakeId )
-    }
+  update() {
+    getSake( this.props.dispatch, this.props.params.sakeId )
   }
 
   render() {
     return (
       <Detail
-        changeTab={this.changeTab.bind(this)}
-        initialTab="details"
+        initialTab="detail"
+        isLogin={this.props.isLogin}
         sake={this.props.sake}
-        reviews={this.props.reviews} />
+        update={this.update.bind(this)}
+      />
     )
   }
 }
 
 DetailContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  isLogin: PropTypes.bool.isRequired,
+  location: PropTypes.object,
   params: PropTypes.object.isRequired,
   sake: PropTypes.object.isRequired,
-  reviews: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = state => state

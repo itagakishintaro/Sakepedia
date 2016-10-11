@@ -1,7 +1,9 @@
 import React, { PropTypes } from 'react'
+import { Link } from 'react-router'
 // material-ui
 import {Tabs, Tab} from 'material-ui/Tabs'
 import FontIcon from 'material-ui/FontIcon'
+import RaisedButton from 'material-ui/RaisedButton'
 // css
 import classes from '../../public/stylesheets/scss/detail.scss'
 // components
@@ -17,7 +19,6 @@ class Detail extends React.Component{
   }
 
   changeTab( tab ) {
-    this.props.changeTab( tab )
     this.setState({ tab })
   }
 
@@ -29,25 +30,31 @@ class Detail extends React.Component{
       tabItemContainer: {
         'backgroundColor': 'lightgray',
       },
+      visible: {
+        display: 'none',
+      },
     }
-    const items = [
-      '銘柄名',
-      '種類',
-      '酒母',
-      'その他',
-      'メーカーURL',
-      '蔵元',
-      '都道府県',
-      '麹米',
-      '掛米',
-      '酵母',
-      '精米歩合',
-      'アルコール度数',
-      '日本酒度',
-      '酸度',
-      'アミノ酸度',
-      '説明',
-    ]
+    if( !this.props.isLogin ) {
+      styles.visible.display = 'block'
+    }
+    const items = {
+      name: '名前',
+      type: '種類',
+      sakeYeast: '酵母',
+      memo: 'メモ',
+      url: 'URL',
+      sakeBrewery: '蔵元',
+      prefectures: '都道府県',
+      sakeRiceExceptForKojiMaking: '掛米',
+      riceForMakingKoji: '麹米',
+      starterCulture: '酒母',
+      ricePolishiingRate: '精米歩合',
+      alcoholContent: 'アルコール度数',
+      sakeMeterValue: '日本酒度',
+      acidity: '酸度',
+      aminoAcidContent: 'アミノ酸度',
+      discription: '説明',
+    }
     let setAnchor = ( input ) => {
       if( /http/.test( input ) ){
         return <a href={input} target="_blank">{input}</a>
@@ -57,10 +64,10 @@ class Detail extends React.Component{
     return (
       <div>
         <div className={classes.header}>
-          <img src={ this.props.sake.画像URL } className={classes.image} />
+          <img src={ this.props.sake.imageUrl } className={classes.image} />
           <div>
-            <div><span className={classes.title}>{this.props.sake.銘柄名}</span>( {this.props.sake.種類} )</div>
-            <div>{this.props.sake.蔵元} ( {this.props.sake.都道府県} )</div>
+            <div><span className={classes.title}>{this.props.sake.name}</span>( {this.props.sake.type} )</div>
+            <div>{this.props.sake.sakeBrewery} ( {this.props.sake.prefectures} )</div>
           </div>
         </div>
 
@@ -76,10 +83,10 @@ class Detail extends React.Component{
             value="detail"
           >
             <table className={classes.table}>
-                  { items.map( key => {
+                  { Object.keys( items ).map( key => {
                     return(
                       <tr className={classes.tr}>
-                        <th className={classes.th} width="25%">{ key }</th>
+                        <th className={classes.th} width="25%">{ items.key }</th>
                         <td className={classes.td}>
                             { setAnchor( this.props.sake[key] ) }
                         </td>
@@ -95,7 +102,7 @@ class Detail extends React.Component{
             onClick={ () => { this.changeTab('reviews') } }
             value="reviews"
           >
-          <Reviews reviews={this.props.reviews} />
+          <Reviews reviews={this.props.sake.reviews} />
           </Tab>
           <Tab
             id="createReview"
@@ -106,7 +113,14 @@ class Detail extends React.Component{
           >
             <NewReview
               changeTab={this.changeTab.bind(this)}
+              sake={this.props.sake}
+              update={this.props.update}
+              isLogin={this.props.isLogin}
              />
+           <div style={styles.visible}>
+             <p>ログインしてください。</p>
+             <Link to={'/login'} query={{ sakeId: this.props.sake._id }}><RaisedButton label="ログイン" /></Link>
+           </div>
           </Tab>
         </Tabs>
       </div>
@@ -115,10 +129,10 @@ class Detail extends React.Component{
 }
 
 Detail.propTypes = {
-  changeTab: PropTypes.func.isRequired,
   initialTab: PropTypes.string.isRequired,
+  isLogin: PropTypes.bool.isRequired,
   sake: PropTypes.object.isRequired,
-  reviews: PropTypes.object.isRequired,
+  update: PropTypes.func.isRequired,
 }
 
 export default Detail
