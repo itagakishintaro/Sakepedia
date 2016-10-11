@@ -9,7 +9,6 @@ import RaisedButton from 'material-ui/RaisedButton'
 // lib
 import axios from 'axios'
 // components
-import Camera from './Camera'
 import Prefectures from './Prefectures'
 // validation
 import validate from './NewSakeValidation'
@@ -64,7 +63,7 @@ class NewSake extends React.Component {
       sakeMeterValue: document.getElementById('sakeMeterValue').value,
       acidity: document.getElementById('acidity').value,
       aminoAcidContent: document.getElementById('aminoAcidContent').value,
-      imageUrl: document.getElementById('snap').src,
+      imageUrl: document.getElementById('imageUrl').value,
       date: new Date(),
       userid: window.localStorage.getItem( 'userid' ),
       username: window.localStorage.getItem( 'username' ),
@@ -95,6 +94,10 @@ class NewSake extends React.Component {
     const styles = {
       button: {
         margin: '1em 0',
+      },
+      imageHint: {
+        color: 'gray',
+        fontSize: '0.8em',
       },
     }
     return (
@@ -165,6 +168,7 @@ class NewSake extends React.Component {
             floatingLabelFixed={true}
             floatingLabelText="説明"
             fullWidth={true}
+            hintText="ラベルの説明、ホームページの解説など"
             multiLine={true}
             rows={3}
           />
@@ -246,9 +250,14 @@ class NewSake extends React.Component {
             step="0.1"
             type="number"
           />
-
-        <Camera />
-
+          <TextField
+            id="imageUrl"
+            floatingLabelFixed={true}
+            floatingLabelText="画像URL"
+            fullWidth={true}
+            hintText="Instagramや蔵元ホームページなどから"
+          />
+        <p style={styles.imageHint}>※Instagramの場合、URL末尾の「/?XXXXXX」部分を「/media/?size=t」に変えてください。</p>
           <RaisedButton label="登録" primary={true} style={styles.button} onClick={this.send.bind(this)} />
           <div id="error" className="error"></div>
       </div>
