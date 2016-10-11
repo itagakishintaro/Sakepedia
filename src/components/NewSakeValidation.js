@@ -31,15 +31,6 @@ const validateCategory = ( state ) => {
   }
 }
 
-const validateProcess = ( state ) => {
-  if ( !state.process ) {
-    state.error = true
-    state.errorText.process = '製法は必須です'
-  } else {
-    state.errorText.process = ''
-  }
-}
-
 const validateBrewery = ( state ) => {
   if (  !document.getElementById('brewery').validity.valid  ) {
     state.error = true
