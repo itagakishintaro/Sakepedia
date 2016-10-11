@@ -23171,7 +23171,7 @@
 	
 	var _breweries2 = _interopRequireDefault(_breweries);
 	
-	var _sakeYeasts = __webpack_require__(/*! ./sakeYeasts */ 672);
+	var _sakeYeasts = __webpack_require__(/*! ./sakeYeasts */ 196);
 	
 	var _sakeYeasts2 = _interopRequireDefault(_sakeYeasts);
 	
@@ -23278,7 +23278,32 @@
 	exports.default = breweries;
 
 /***/ },
-/* 196 */,
+/* 196 */
+/*!************************************!*\
+  !*** ./src/reducers/sakeYeasts.js ***!
+  \************************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var sakeYeasts = function sakeYeasts() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
+	  var action = arguments[1];
+	
+	  switch (action.type) {
+	    case 'SETKOUBOS':
+	      return action.sakeYeasts;
+	    default:
+	      return state;
+	  }
+	};
+	
+	exports.default = sakeYeasts;
+
+/***/ },
 /* 197 */
 /*!*************************************!*\
   !*** ./src/reducers/prefectures.js ***!
@@ -69999,10 +70024,6 @@
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
-	var _Camera = __webpack_require__(/*! ./Camera */ 655);
-	
-	var _Camera2 = _interopRequireDefault(_Camera);
-	
 	var _Prefectures = __webpack_require__(/*! ./Prefectures */ 656);
 	
 	var _Prefectures2 = _interopRequireDefault(_Prefectures);
@@ -70089,7 +70110,7 @@
 	        sakeMeterValue: document.getElementById('sakeMeterValue').value,
 	        acidity: document.getElementById('acidity').value,
 	        aminoAcidContent: document.getElementById('aminoAcidContent').value,
-	        imageUrl: document.getElementById('snap').src,
+	        imageUrl: document.getElementById('imageUrl').value,
 	        date: new Date(),
 	        userid: window.localStorage.getItem('userid'),
 	        username: window.localStorage.getItem('username')
@@ -70124,6 +70145,10 @@
 	      var styles = {
 	        button: {
 	          margin: '1em 0'
+	        },
+	        imageHint: {
+	          color: 'gray',
+	          fontSize: '0.8em'
 	        }
 	      };
 	      return _react2.default.createElement(
@@ -70284,7 +70309,18 @@
 	          step: '0.1',
 	          type: 'number'
 	        }),
-	        _react2.default.createElement(_Camera2.default, null),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'imageUrl',
+	          floatingLabelFixed: true,
+	          floatingLabelText: '画像URL',
+	          fullWidth: true,
+	          hintText: 'Instagramや蔵元ホームページなどから'
+	        }),
+	        _react2.default.createElement(
+	          'p',
+	          { style: styles.imageHint },
+	          '※Instagramの場合、URL末尾の「/?XXXXXX」部分を「/media/?size=t」に変えてください。'
+	        ),
 	        _react2.default.createElement(_RaisedButton2.default, { label: '登録', primary: true, style: styles.button, onClick: this.send.bind(this) }),
 	        _react2.default.createElement('div', { id: 'error', className: 'error' })
 	      );
@@ -70306,140 +70342,7 @@
 	exports.default = NewSake;
 
 /***/ },
-/* 655 */
-/*!**********************************!*\
-  !*** ./src/components/Camera.js ***!
-  \**********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 166);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 294);
-	
-	var _FontIcon2 = _interopRequireDefault(_FontIcon);
-	
-	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 567);
-	
-	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
-	
-	var _colors = __webpack_require__(/*! material-ui/styles/colors */ 521);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// material-ui
-	
-	
-	var Camera = function (_React$Component) {
-	  _inherits(Camera, _React$Component);
-	
-	  function Camera() {
-	    _classCallCheck(this, Camera);
-	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Camera).apply(this, arguments));
-	  }
-	
-	  _createClass(Camera, [{
-	    key: 'start',
-	
-	    // Plain JavaScript
-	    value: function start(elm) {
-	      navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-	
-	      if (navigator.getUserMedia) {
-	        navigator.getUserMedia({ video: true }, function (stream) {
-	          elm.src = window.URL.createObjectURL(stream);
-	          elm.onloadedmetadata = function () {
-	            elm.play();
-	          };
-	        }, function (err) {
-	          return err;
-	        });
-	      } else {
-	        return 'getUserMedia not supported';
-	      }
-	    }
-	  }, {
-	    key: 'capture',
-	    value: function capture(canvas, video) {
-	      var context = canvas.getContext('2d');
-	      if (video.videoHeight <= video.videoWidth) {
-	        // Landscape
-	        var cropWidth = video.videoHeight * canvas.width / canvas.height;
-	        var diffWidth = video.videoWidth - cropWidth;
-	        context.drawImage(video, diffWidth / 2, 0, video.videoWidth - diffWidth, video.videoHeight, 0, 0, canvas.width, canvas.height);
-	      } else {
-	        // Portrait
-	        context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight, 0, 0, canvas.width, canvas.height);
-	      }
-	      return canvas.toDataURL('mage/png');
-	    }
-	  }, {
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      this.start(document.getElementById('video'));
-	    }
-	  }, {
-	    key: 'startCamera',
-	    value: function startCamera() {
-	      document.getElementById('snap').src = this.capture(document.getElementById('canvas'), document.getElementById('video'));
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var styles = {
-	        picture: {
-	          fontSize: 'small',
-	          color: _colors.grey400
-	        },
-	        snap: {
-	          backgroundColor: _colors.grey400
-	        }
-	      };
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'div',
-	          { style: styles.picture },
-	          '写真'
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement('canvas', { id: 'canvas', width: '120', height: '160', hidden: true }),
-	          _react2.default.createElement('video', { width: '120', height: '160', id: 'video' }),
-	          _react2.default.createElement('img', { id: 'snap', style: styles.snap })
-	        ),
-	        _react2.default.createElement(_RaisedButton2.default, { label: '', onClick: this.startCamera.bind(this), icon: _react2.default.createElement(
-	            _FontIcon2.default,
-	            { className: 'material-icons' },
-	            'photo_camera'
-	          ) })
-	      );
-	    }
-	  }]);
-	
-	  return Camera;
-	}(_react2.default.Component);
-	
-	exports.default = Camera;
-
-/***/ },
+/* 655 */,
 /* 656 */
 /*!***************************************!*\
   !*** ./src/components/Prefectures.js ***!
@@ -71786,32 +71689,6 @@
 	thunk.withExtraArgument = createThunkMiddleware;
 	
 	exports['default'] = thunk;
-
-/***/ },
-/* 672 */
-/*!************************************!*\
-  !*** ./src/reducers/sakeYeasts.js ***!
-  \************************************/
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var sakeYeasts = function sakeYeasts() {
-	  var state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
-	  var action = arguments[1];
-	
-	  switch (action.type) {
-	    case 'SETKOUBOS':
-	      return action.sakeYeasts;
-	    default:
-	      return state;
-	  }
-	};
-	
-	exports.default = sakeYeasts;
 
 /***/ }
 /******/ ]);
