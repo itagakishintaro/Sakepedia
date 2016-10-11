@@ -30,7 +30,6 @@ class App extends React.Component {
         {/* add this */}
         {this.props.children}
 
-        <Footer isLogin={this.props.isLogin}/>
       </div>
     )
   }

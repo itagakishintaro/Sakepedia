@@ -29154,8 +29154,7 @@
 	        'div',
 	        { className: _app2.default.content },
 	        _react2.default.createElement(_Header2.default, { isLogin: this.props.isLogin }),
-	        this.props.children,
-	        _react2.default.createElement(_Footer2.default, { isLogin: this.props.isLogin })
+	        this.props.children
 	      );
 	    }
 	  }]);
@@ -66608,7 +66607,7 @@
   \**********************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -66619,6 +66618,12 @@
 	var _react = __webpack_require__(/*! react */ 166);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _FlatButton = __webpack_require__(/*! material-ui/FlatButton */ 374);
+	
+	var _FlatButton2 = _interopRequireDefault(_FlatButton);
+	
+	var _Toolbar = __webpack_require__(/*! material-ui/Toolbar */ 613);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -66634,34 +66639,31 @@
 	  function Footer(props) {
 	    _classCallCheck(this, Footer);
 	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Footer).call(this, props));
-	
-	    _this.state = {
-	      open: false
-	    };
-	    return _this;
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Footer).call(this, props));
 	  }
 	
 	  _createClass(Footer, [{
-	    key: "toggleMenu",
-	    value: function toggleMenu() {
-	      this.setState({ open: !this.state.open });
-	    }
-	  }, {
-	    key: "logout",
-	    value: function logout() {
-	      window.localStorage.clear();
-	    }
-	  }, {
-	    key: "render",
+	    key: 'render',
 	    value: function render() {
+	      var styles = {
+	        footer: {
+	          backgroundColor: 'black',
+	          height: '3em',
+	          lineHeight: '3em',
+	          width: '100%'
+	        },
+	        link: {
+	          color: 'white',
+	          textDecoration: 'none'
+	        }
+	      };
 	      return _react2.default.createElement(
-	        "div",
-	        null,
+	        'div',
+	        { style: styles.footer },
 	        _react2.default.createElement(
-	          "a",
-	          { href: "https://github.com/itagakishintaro/Sakepedia/issues" },
-	          "ご意見・ご要望など"
+	          'a',
+	          { style: styles.link, href: 'https://github.com/itagakishintaro/Sakepedia/issues', target: '_blank' },
+	          'ご意見・ご要望'
 	        )
 	      );
 	    }
@@ -66669,10 +66671,6 @@
 	
 	  return Footer;
 	}(_react2.default.Component);
-	
-	Footer.propTypes = {
-	  isLogin: _react.PropTypes.bool.isRequired
-	};
 	
 	exports.default = Footer;
 
