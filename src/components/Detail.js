@@ -86,7 +86,7 @@ class Detail extends React.Component{
                   { Object.keys( items ).map( key => {
                     return(
                       <tr className={classes.tr}>
-                        <th className={classes.th} width="25%">{ items.key }</th>
+                        <th className={classes.th} width="25%">{ items[key] }</th>
                         <td className={classes.td}>
                             { setAnchor( this.props.sake[key] ) }
                         </td>

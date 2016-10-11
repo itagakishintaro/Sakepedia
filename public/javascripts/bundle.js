@@ -69,11 +69,11 @@
 	
 	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 	
-	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 666);
+	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 665);
 	
 	var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
 	
-	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 672);
+	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 671);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
@@ -29050,19 +29050,19 @@
 	
 	var _App2 = _interopRequireDefault(_App);
 	
-	var _DetailContainer = __webpack_require__(/*! ./containers/DetailContainer */ 619);
+	var _DetailContainer = __webpack_require__(/*! ./containers/DetailContainer */ 618);
 	
 	var _DetailContainer2 = _interopRequireDefault(_DetailContainer);
 	
-	var _NewSakeContainer = __webpack_require__(/*! ./containers/NewSakeContainer */ 654);
+	var _NewSakeContainer = __webpack_require__(/*! ./containers/NewSakeContainer */ 653);
 	
 	var _NewSakeContainer2 = _interopRequireDefault(_NewSakeContainer);
 	
-	var _SearchContainer = __webpack_require__(/*! ./containers/SearchContainer */ 659);
+	var _SearchContainer = __webpack_require__(/*! ./containers/SearchContainer */ 658);
 	
 	var _SearchContainer2 = _interopRequireDefault(_SearchContainer);
 	
-	var _Login = __webpack_require__(/*! ./components/Login */ 665);
+	var _Login = __webpack_require__(/*! ./components/Login */ 664);
 	
 	var _Login2 = _interopRequireDefault(_Login);
 	
@@ -29108,10 +29108,6 @@
 	var _Header = __webpack_require__(/*! ../components/Header */ 268);
 	
 	var _Header2 = _interopRequireDefault(_Header);
-	
-	var _Footer = __webpack_require__(/*! ../components/Footer */ 618);
-	
-	var _Footer2 = _interopRequireDefault(_Footer);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -66602,80 +66598,6 @@
 
 /***/ },
 /* 618 */
-/*!**********************************!*\
-  !*** ./src/components/Footer.js ***!
-  \**********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 166);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _FlatButton = __webpack_require__(/*! material-ui/FlatButton */ 374);
-	
-	var _FlatButton2 = _interopRequireDefault(_FlatButton);
-	
-	var _Toolbar = __webpack_require__(/*! material-ui/Toolbar */ 613);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Footer = function (_React$Component) {
-	  _inherits(Footer, _React$Component);
-	
-	  function Footer(props) {
-	    _classCallCheck(this, Footer);
-	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Footer).call(this, props));
-	  }
-	
-	  _createClass(Footer, [{
-	    key: 'render',
-	    value: function render() {
-	      var styles = {
-	        footer: {
-	          backgroundColor: 'black',
-	          height: '3em',
-	          lineHeight: '3em',
-	          width: '100%'
-	        },
-	        link: {
-	          color: 'white',
-	          textDecoration: 'none'
-	        }
-	      };
-	      return _react2.default.createElement(
-	        'div',
-	        { style: styles.footer },
-	        _react2.default.createElement(
-	          'a',
-	          { style: styles.link, href: 'https://github.com/itagakishintaro/Sakepedia/issues', target: '_blank' },
-	          'ご意見・ご要望'
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return Footer;
-	}(_react2.default.Component);
-	
-	exports.default = Footer;
-
-/***/ },
-/* 619 */
 /*!*******************************************!*\
   !*** ./src/containers/DetailContainer.js ***!
   \*******************************************/
@@ -66695,9 +66617,9 @@
 	
 	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
 	
-	var _sake = __webpack_require__(/*! ../actions/sake */ 620);
+	var _sake = __webpack_require__(/*! ../actions/sake */ 619);
 	
-	var _Detail = __webpack_require__(/*! ../components/Detail */ 640);
+	var _Detail = __webpack_require__(/*! ../components/Detail */ 639);
 	
 	var _Detail2 = _interopRequireDefault(_Detail);
 	
@@ -66759,7 +66681,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(DetailContainer);
 
 /***/ },
-/* 620 */
+/* 619 */
 /*!*****************************!*\
   !*** ./src/actions/sake.js ***!
   \*****************************/
@@ -66772,7 +66694,7 @@
 	});
 	exports.getRices = exports.getKoubos = exports.getBreweries = exports.getBrands = exports.getSake = exports.getSakeList = exports.setRices = exports.setKoubos = exports.setBreweries = exports.setBrands = exports.setSake = exports.setSakeList = undefined;
 	
-	var _axios = __webpack_require__(/*! axios */ 621);
+	var _axios = __webpack_require__(/*! axios */ 620);
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
@@ -66879,16 +66801,16 @@
 	};
 
 /***/ },
-/* 621 */
+/* 620 */
 /*!**************************!*\
   !*** ./~/axios/index.js ***!
   \**************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(/*! ./lib/axios */ 622);
+	module.exports = __webpack_require__(/*! ./lib/axios */ 621);
 
 /***/ },
-/* 622 */
+/* 621 */
 /*!******************************!*\
   !*** ./~/axios/lib/axios.js ***!
   \******************************/
@@ -66896,14 +66818,14 @@
 
 	'use strict';
 	
-	var defaults = __webpack_require__(/*! ./defaults */ 623);
-	var utils = __webpack_require__(/*! ./utils */ 624);
-	var dispatchRequest = __webpack_require__(/*! ./core/dispatchRequest */ 626);
-	var InterceptorManager = __webpack_require__(/*! ./core/InterceptorManager */ 635);
-	var isAbsoluteURL = __webpack_require__(/*! ./helpers/isAbsoluteURL */ 636);
-	var combineURLs = __webpack_require__(/*! ./helpers/combineURLs */ 637);
-	var bind = __webpack_require__(/*! ./helpers/bind */ 638);
-	var transformData = __webpack_require__(/*! ./helpers/transformData */ 630);
+	var defaults = __webpack_require__(/*! ./defaults */ 622);
+	var utils = __webpack_require__(/*! ./utils */ 623);
+	var dispatchRequest = __webpack_require__(/*! ./core/dispatchRequest */ 625);
+	var InterceptorManager = __webpack_require__(/*! ./core/InterceptorManager */ 634);
+	var isAbsoluteURL = __webpack_require__(/*! ./helpers/isAbsoluteURL */ 635);
+	var combineURLs = __webpack_require__(/*! ./helpers/combineURLs */ 636);
+	var bind = __webpack_require__(/*! ./helpers/bind */ 637);
+	var transformData = __webpack_require__(/*! ./helpers/transformData */ 629);
 	
 	function Axios(defaultConfig) {
 	  this.defaults = utils.merge({}, defaultConfig);
@@ -66992,7 +66914,7 @@
 	axios.all = function all(promises) {
 	  return Promise.all(promises);
 	};
-	axios.spread = __webpack_require__(/*! ./helpers/spread */ 639);
+	axios.spread = __webpack_require__(/*! ./helpers/spread */ 638);
 	
 	// Provide aliases for supported request methods
 	utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
@@ -67020,7 +66942,7 @@
 
 
 /***/ },
-/* 623 */
+/* 622 */
 /*!*********************************!*\
   !*** ./~/axios/lib/defaults.js ***!
   \*********************************/
@@ -67028,8 +66950,8 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./utils */ 624);
-	var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ 625);
+	var utils = __webpack_require__(/*! ./utils */ 623);
+	var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ 624);
 	
 	var PROTECTION_PREFIX = /^\)\]\}',?\n/;
 	var DEFAULT_CONTENT_TYPE = {
@@ -67101,7 +67023,7 @@
 
 
 /***/ },
-/* 624 */
+/* 623 */
 /*!******************************!*\
   !*** ./~/axios/lib/utils.js ***!
   \******************************/
@@ -67387,7 +67309,7 @@
 
 
 /***/ },
-/* 625 */
+/* 624 */
 /*!****************************************************!*\
   !*** ./~/axios/lib/helpers/normalizeHeaderName.js ***!
   \****************************************************/
@@ -67395,7 +67317,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ../utils */ 624);
+	var utils = __webpack_require__(/*! ../utils */ 623);
 	
 	module.exports = function normalizeHeaderName(headers, normalizedName) {
 	  utils.forEach(headers, function processHeader(value, name) {
@@ -67408,7 +67330,7 @@
 
 
 /***/ },
-/* 626 */
+/* 625 */
 /*!*********************************************!*\
   !*** ./~/axios/lib/core/dispatchRequest.js ***!
   \*********************************************/
@@ -67433,10 +67355,10 @@
 	        adapter = config.adapter;
 	      } else if (typeof XMLHttpRequest !== 'undefined') {
 	        // For browsers use XHR adapter
-	        adapter = __webpack_require__(/*! ../adapters/xhr */ 627);
+	        adapter = __webpack_require__(/*! ../adapters/xhr */ 626);
 	      } else if (typeof process !== 'undefined') {
 	        // For node use HTTP adapter
-	        adapter = __webpack_require__(/*! ../adapters/http */ 627);
+	        adapter = __webpack_require__(/*! ../adapters/http */ 626);
 	      }
 	
 	      if (typeof adapter === 'function') {
@@ -67452,7 +67374,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 627 */
+/* 626 */
 /*!*************************************!*\
   !*** ./~/axios/lib/adapters/xhr.js ***!
   \*************************************/
@@ -67460,13 +67382,13 @@
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
-	var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ 628);
-	var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ 629);
-	var transformData = __webpack_require__(/*! ./../helpers/transformData */ 630);
-	var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ 631);
-	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(/*! ./../helpers/btoa */ 632);
-	var settle = __webpack_require__(/*! ../helpers/settle */ 633);
+	var utils = __webpack_require__(/*! ./../utils */ 623);
+	var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ 627);
+	var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ 628);
+	var transformData = __webpack_require__(/*! ./../helpers/transformData */ 629);
+	var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ 630);
+	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(/*! ./../helpers/btoa */ 631);
+	var settle = __webpack_require__(/*! ../helpers/settle */ 632);
 	
 	module.exports = function xhrAdapter(resolve, reject, config) {
 	  var requestData = config.data;
@@ -67563,7 +67485,7 @@
 	  // This is only done if running in a standard browser environment.
 	  // Specifically not if we're in a web worker, or react-native.
 	  if (utils.isStandardBrowserEnv()) {
-	    var cookies = __webpack_require__(/*! ./../helpers/cookies */ 634);
+	    var cookies = __webpack_require__(/*! ./../helpers/cookies */ 633);
 	
 	    // Add xsrf header
 	    var xsrfValue = config.withCredentials || isURLSameOrigin(config.url) ?
@@ -67624,7 +67546,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 628 */
+/* 627 */
 /*!*****************************************!*\
   !*** ./~/axios/lib/helpers/buildURL.js ***!
   \*****************************************/
@@ -67632,7 +67554,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
+	var utils = __webpack_require__(/*! ./../utils */ 623);
 	
 	function encode(val) {
 	  return encodeURIComponent(val).
@@ -67701,7 +67623,7 @@
 
 
 /***/ },
-/* 629 */
+/* 628 */
 /*!*********************************************!*\
   !*** ./~/axios/lib/helpers/parseHeaders.js ***!
   \*********************************************/
@@ -67709,7 +67631,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
+	var utils = __webpack_require__(/*! ./../utils */ 623);
 	
 	/**
 	 * Parse headers into an object
@@ -67747,7 +67669,7 @@
 
 
 /***/ },
-/* 630 */
+/* 629 */
 /*!**********************************************!*\
   !*** ./~/axios/lib/helpers/transformData.js ***!
   \**********************************************/
@@ -67755,7 +67677,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
+	var utils = __webpack_require__(/*! ./../utils */ 623);
 	
 	/**
 	 * Transform the data for a request or a response
@@ -67776,7 +67698,7 @@
 
 
 /***/ },
-/* 631 */
+/* 630 */
 /*!************************************************!*\
   !*** ./~/axios/lib/helpers/isURLSameOrigin.js ***!
   \************************************************/
@@ -67784,7 +67706,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
+	var utils = __webpack_require__(/*! ./../utils */ 623);
 	
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -67853,7 +67775,7 @@
 
 
 /***/ },
-/* 632 */
+/* 631 */
 /*!*************************************!*\
   !*** ./~/axios/lib/helpers/btoa.js ***!
   \*************************************/
@@ -67898,7 +67820,7 @@
 
 
 /***/ },
-/* 633 */
+/* 632 */
 /*!***************************************!*\
   !*** ./~/axios/lib/helpers/settle.js ***!
   \***************************************/
@@ -67925,7 +67847,7 @@
 
 
 /***/ },
-/* 634 */
+/* 633 */
 /*!****************************************!*\
   !*** ./~/axios/lib/helpers/cookies.js ***!
   \****************************************/
@@ -67933,7 +67855,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
+	var utils = __webpack_require__(/*! ./../utils */ 623);
 	
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -67987,7 +67909,7 @@
 
 
 /***/ },
-/* 635 */
+/* 634 */
 /*!************************************************!*\
   !*** ./~/axios/lib/core/InterceptorManager.js ***!
   \************************************************/
@@ -67995,7 +67917,7 @@
 
 	'use strict';
 	
-	var utils = __webpack_require__(/*! ./../utils */ 624);
+	var utils = __webpack_require__(/*! ./../utils */ 623);
 	
 	function InterceptorManager() {
 	  this.handlers = [];
@@ -68048,7 +67970,7 @@
 
 
 /***/ },
-/* 636 */
+/* 635 */
 /*!**********************************************!*\
   !*** ./~/axios/lib/helpers/isAbsoluteURL.js ***!
   \**********************************************/
@@ -68071,7 +67993,7 @@
 
 
 /***/ },
-/* 637 */
+/* 636 */
 /*!********************************************!*\
   !*** ./~/axios/lib/helpers/combineURLs.js ***!
   \********************************************/
@@ -68092,7 +68014,7 @@
 
 
 /***/ },
-/* 638 */
+/* 637 */
 /*!*************************************!*\
   !*** ./~/axios/lib/helpers/bind.js ***!
   \*************************************/
@@ -68112,7 +68034,7 @@
 
 
 /***/ },
-/* 639 */
+/* 638 */
 /*!***************************************!*\
   !*** ./~/axios/lib/helpers/spread.js ***!
   \***************************************/
@@ -68148,7 +68070,7 @@
 
 
 /***/ },
-/* 640 */
+/* 639 */
 /*!**********************************!*\
   !*** ./src/components/Detail.js ***!
   \**********************************/
@@ -68178,15 +68100,15 @@
 	
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 	
-	var _detail = __webpack_require__(/*! ../../public/stylesheets/scss/detail.scss */ 641);
+	var _detail = __webpack_require__(/*! ../../public/stylesheets/scss/detail.scss */ 640);
 	
 	var _detail2 = _interopRequireDefault(_detail);
 	
-	var _NewReview = __webpack_require__(/*! ./NewReview */ 643);
+	var _NewReview = __webpack_require__(/*! ./NewReview */ 642);
 	
 	var _NewReview2 = _interopRequireDefault(_NewReview);
 	
-	var _Reviews = __webpack_require__(/*! ./Reviews */ 646);
+	var _Reviews = __webpack_require__(/*! ./Reviews */ 645);
 	
 	var _Reviews2 = _interopRequireDefault(_Reviews);
 	
@@ -68333,7 +68255,7 @@
 	                  _react2.default.createElement(
 	                    'th',
 	                    { className: _detail2.default.th, width: '25%' },
-	                    items.key
+	                    items[key]
 	                  ),
 	                  _react2.default.createElement(
 	                    'td',
@@ -68415,7 +68337,7 @@
 	exports.default = Detail;
 
 /***/ },
-/* 641 */
+/* 640 */
 /*!*********************************************!*\
   !*** ./public/stylesheets/scss/detail.scss ***!
   \*********************************************/
@@ -68424,7 +68346,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./detail.scss */ 642);
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./detail.scss */ 641);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 267)(content, {});
@@ -68444,7 +68366,7 @@
 	}
 
 /***/ },
-/* 642 */
+/* 641 */
 /*!****************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/detail.scss ***!
   \****************************************************************************************************************/
@@ -68468,7 +68390,7 @@
 	};
 
 /***/ },
-/* 643 */
+/* 642 */
 /*!*************************************!*\
   !*** ./src/components/NewReview.js ***!
   \*************************************/
@@ -68512,15 +68434,15 @@
 	
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 	
-	var _axios = __webpack_require__(/*! axios */ 621);
+	var _axios = __webpack_require__(/*! axios */ 620);
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
-	var _NewReviewValidation = __webpack_require__(/*! ./NewReviewValidation */ 644);
+	var _NewReviewValidation = __webpack_require__(/*! ./NewReviewValidation */ 643);
 	
 	var _NewReviewValidation2 = _interopRequireDefault(_NewReviewValidation);
 	
-	var _smoothScroll = __webpack_require__(/*! ../util/smoothScroll */ 645);
+	var _smoothScroll = __webpack_require__(/*! ../util/smoothScroll */ 644);
 	
 	var _smoothScroll2 = _interopRequireDefault(_smoothScroll);
 	
@@ -68768,7 +68690,7 @@
 	exports.default = NewReview;
 
 /***/ },
-/* 644 */
+/* 643 */
 /*!***********************************************!*\
   !*** ./src/components/NewReviewValidation.js ***!
   \***********************************************/
@@ -68837,7 +68759,7 @@
 	exports.default = validate;
 
 /***/ },
-/* 645 */
+/* 644 */
 /*!**********************************!*\
   !*** ./src/util/smoothScroll.js ***!
   \**********************************/
@@ -68870,7 +68792,7 @@
 	exports.default = smoothScroll;
 
 /***/ },
-/* 646 */
+/* 645 */
 /*!***********************************!*\
   !*** ./src/components/Reviews.js ***!
   \***********************************/
@@ -68888,7 +68810,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _ReviewCard = __webpack_require__(/*! ./ReviewCard */ 647);
+	var _ReviewCard = __webpack_require__(/*! ./ReviewCard */ 646);
 	
 	var _ReviewCard2 = _interopRequireDefault(_ReviewCard);
 	
@@ -68953,7 +68875,7 @@
 	exports.default = Reviews;
 
 /***/ },
-/* 647 */
+/* 646 */
 /*!**************************************!*\
   !*** ./src/components/ReviewCard.js ***!
   \**************************************/
@@ -68981,11 +68903,11 @@
 	
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 	
-	var _Stars = __webpack_require__(/*! ./Stars */ 648);
+	var _Stars = __webpack_require__(/*! ./Stars */ 647);
 	
 	var _Stars2 = _interopRequireDefault(_Stars);
 	
-	var _TypeMark = __webpack_require__(/*! ./TypeMark */ 649);
+	var _TypeMark = __webpack_require__(/*! ./TypeMark */ 648);
 	
 	var _TypeMark2 = _interopRequireDefault(_TypeMark);
 	
@@ -69002,7 +68924,7 @@
 	
 	
 	// lib
-	var dateFormat = __webpack_require__(/*! dateformat */ 653);
+	var dateFormat = __webpack_require__(/*! dateformat */ 652);
 	
 	var ReviewCard = function (_React$Component) {
 	  _inherits(ReviewCard, _React$Component);
@@ -69152,7 +69074,7 @@
 	exports.default = ReviewCard;
 
 /***/ },
-/* 648 */
+/* 647 */
 /*!*********************************!*\
   !*** ./src/components/Stars.js ***!
   \*********************************/
@@ -69232,7 +69154,7 @@
 	exports.default = Stars;
 
 /***/ },
-/* 649 */
+/* 648 */
 /*!************************************!*\
   !*** ./src/components/TypeMark.js ***!
   \************************************/
@@ -69250,7 +69172,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Chip = __webpack_require__(/*! material-ui/Chip */ 650);
+	var _Chip = __webpack_require__(/*! material-ui/Chip */ 649);
 	
 	var _Chip2 = _interopRequireDefault(_Chip);
 	
@@ -69349,7 +69271,7 @@
 	exports.default = TypeMark;
 
 /***/ },
-/* 650 */
+/* 649 */
 /*!*************************************!*\
   !*** ./~/material-ui/Chip/index.js ***!
   \*************************************/
@@ -69362,7 +69284,7 @@
 	});
 	exports.default = undefined;
 	
-	var _Chip = __webpack_require__(/*! ./Chip */ 651);
+	var _Chip = __webpack_require__(/*! ./Chip */ 650);
 	
 	var _Chip2 = _interopRequireDefault(_Chip);
 	
@@ -69371,7 +69293,7 @@
 	exports.default = _Chip2.default;
 
 /***/ },
-/* 651 */
+/* 650 */
 /*!************************************!*\
   !*** ./~/material-ui/Chip/Chip.js ***!
   \************************************/
@@ -69405,7 +69327,7 @@
 	
 	var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
 	
-	var _cancel = __webpack_require__(/*! ../svg-icons/navigation/cancel */ 652);
+	var _cancel = __webpack_require__(/*! ../svg-icons/navigation/cancel */ 651);
 	
 	var _cancel2 = _interopRequireDefault(_cancel);
 	
@@ -69699,7 +69621,7 @@
 	exports.default = Chip;
 
 /***/ },
-/* 652 */
+/* 651 */
 /*!******************************************************!*\
   !*** ./~/material-ui/svg-icons/navigation/cancel.js ***!
   \******************************************************/
@@ -69739,7 +69661,7 @@
 	exports.default = NavigationCancel;
 
 /***/ },
-/* 653 */
+/* 652 */
 /*!****************************************!*\
   !*** ./~/dateformat/lib/dateformat.js ***!
   \****************************************/
@@ -69974,7 +69896,7 @@
 
 
 /***/ },
-/* 654 */
+/* 653 */
 /*!********************************************!*\
   !*** ./src/containers/NewSakeContainer.js ***!
   \********************************************/
@@ -69994,9 +69916,9 @@
 	
 	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
 	
-	var _sake = __webpack_require__(/*! ../actions/sake */ 620);
+	var _sake = __webpack_require__(/*! ../actions/sake */ 619);
 	
-	var _NewSake = __webpack_require__(/*! ../components/NewSake */ 655);
+	var _NewSake = __webpack_require__(/*! ../components/NewSake */ 654);
 	
 	var _NewSake2 = _interopRequireDefault(_NewSake);
 	
@@ -70056,7 +69978,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(NewSakeContainer);
 
 /***/ },
-/* 655 */
+/* 654 */
 /*!***********************************!*\
   !*** ./src/components/NewSake.js ***!
   \***********************************/
@@ -70098,23 +70020,23 @@
 	
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 	
-	var _axios = __webpack_require__(/*! axios */ 621);
+	var _axios = __webpack_require__(/*! axios */ 620);
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
-	var _Camera = __webpack_require__(/*! ./Camera */ 656);
+	var _Camera = __webpack_require__(/*! ./Camera */ 655);
 	
 	var _Camera2 = _interopRequireDefault(_Camera);
 	
-	var _Prefectures = __webpack_require__(/*! ./Prefectures */ 657);
+	var _Prefectures = __webpack_require__(/*! ./Prefectures */ 656);
 	
 	var _Prefectures2 = _interopRequireDefault(_Prefectures);
 	
-	var _NewSakeValidation = __webpack_require__(/*! ./NewSakeValidation */ 658);
+	var _NewSakeValidation = __webpack_require__(/*! ./NewSakeValidation */ 657);
 	
 	var _NewSakeValidation2 = _interopRequireDefault(_NewSakeValidation);
 	
-	var _smoothScroll = __webpack_require__(/*! ../util/smoothScroll */ 645);
+	var _smoothScroll = __webpack_require__(/*! ../util/smoothScroll */ 644);
 	
 	var _smoothScroll2 = _interopRequireDefault(_smoothScroll);
 	
@@ -70407,7 +70329,7 @@
 	exports.default = NewSake;
 
 /***/ },
-/* 656 */
+/* 655 */
 /*!**********************************!*\
   !*** ./src/components/Camera.js ***!
   \**********************************/
@@ -70541,7 +70463,7 @@
 	exports.default = Camera;
 
 /***/ },
-/* 657 */
+/* 656 */
 /*!***************************************!*\
   !*** ./src/components/Prefectures.js ***!
   \***************************************/
@@ -70679,7 +70601,7 @@
 	exports.default = Prefectures;
 
 /***/ },
-/* 658 */
+/* 657 */
 /*!*********************************************!*\
   !*** ./src/components/NewSakeValidation.js ***!
   \*********************************************/
@@ -70798,7 +70720,7 @@
 	exports.default = validate;
 
 /***/ },
-/* 659 */
+/* 658 */
 /*!*******************************************!*\
   !*** ./src/containers/SearchContainer.js ***!
   \*******************************************/
@@ -70818,13 +70740,13 @@
 	
 	var _reactRedux = __webpack_require__(/*! react-redux */ 164);
 	
-	var _sake = __webpack_require__(/*! ../actions/sake */ 620);
+	var _sake = __webpack_require__(/*! ../actions/sake */ 619);
 	
-	var _List = __webpack_require__(/*! ../Components/List */ 660);
+	var _List = __webpack_require__(/*! ../Components/List */ 659);
 	
 	var _List2 = _interopRequireDefault(_List);
 	
-	var _Search = __webpack_require__(/*! ../components/Search */ 664);
+	var _Search = __webpack_require__(/*! ../components/Search */ 663);
 	
 	var _Search2 = _interopRequireDefault(_Search);
 	
@@ -70893,7 +70815,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(SearchContainer);
 
 /***/ },
-/* 660 */
+/* 659 */
 /*!********************************!*\
   !*** ./src/Components/List.js ***!
   \********************************/
@@ -70911,11 +70833,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 661);
+	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 660);
 	
 	var _list2 = _interopRequireDefault(_list);
 	
-	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 663);
+	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 662);
 	
 	var _SakeCard2 = _interopRequireDefault(_SakeCard);
 	
@@ -70984,7 +70906,7 @@
 	exports.default = List;
 
 /***/ },
-/* 661 */
+/* 660 */
 /*!*******************************************!*\
   !*** ./public/stylesheets/scss/list.scss ***!
   \*******************************************/
@@ -70993,7 +70915,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./list.scss */ 662);
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./list.scss */ 661);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 267)(content, {});
@@ -71013,7 +70935,7 @@
 	}
 
 /***/ },
-/* 662 */
+/* 661 */
 /*!**************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/list.scss ***!
   \**************************************************************************************************************/
@@ -71032,7 +70954,7 @@
 	};
 
 /***/ },
-/* 663 */
+/* 662 */
 /*!************************************!*\
   !*** ./src/components/SakeCard.js ***!
   \************************************/
@@ -71054,11 +70976,11 @@
 	
 	var _Card = __webpack_require__(/*! material-ui/Card */ 351);
 	
-	var _Stars = __webpack_require__(/*! ./Stars */ 648);
+	var _Stars = __webpack_require__(/*! ./Stars */ 647);
 	
 	var _Stars2 = _interopRequireDefault(_Stars);
 	
-	var _TypeMark = __webpack_require__(/*! ./TypeMark */ 649);
+	var _TypeMark = __webpack_require__(/*! ./TypeMark */ 648);
 	
 	var _TypeMark2 = _interopRequireDefault(_TypeMark);
 	
@@ -71219,7 +71141,7 @@
 	exports.default = SakeCard;
 
 /***/ },
-/* 664 */
+/* 663 */
 /*!**********************************!*\
   !*** ./src/components/Search.js ***!
   \**********************************/
@@ -71251,7 +71173,7 @@
 	
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 	
-	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 657);
+	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 656);
 	
 	var _Prefectures2 = _interopRequireDefault(_Prefectures);
 	
@@ -71379,7 +71301,7 @@
 	exports.default = Search;
 
 /***/ },
-/* 665 */
+/* 664 */
 /*!*********************************!*\
   !*** ./src/components/Login.js ***!
   \*********************************/
@@ -71477,14 +71399,14 @@
 	exports.default = Login;
 
 /***/ },
-/* 666 */
+/* 665 */
 /*!**************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/injectTapEventPlugin.js ***!
   \**************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 667);
-	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 668);
+	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 666);
+	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 667);
 	
 	var alreadyInjected = false;
 	
@@ -71506,14 +71428,14 @@
 	  alreadyInjected = true;
 	
 	  __webpack_require__(/*! react/lib/EventPluginHub */ 14).injection.injectEventPluginsByName({
-	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 669)(shouldRejectClick)
+	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 668)(shouldRejectClick)
 	  });
 	};
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 667 */
+/* 666 */
 /*!**********************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/invariant.js ***!
   \**********************************************************/
@@ -71571,7 +71493,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 668 */
+/* 667 */
 /*!***********************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/defaultClickRejectionStrategy.js ***!
   \***********************************************************************/
@@ -71585,7 +71507,7 @@
 
 
 /***/ },
-/* 669 */
+/* 668 */
 /*!********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TapEventPlugin.js ***!
   \********************************************************/
@@ -71616,10 +71538,10 @@
 	var EventPluginUtils = __webpack_require__(/*! react/lib/EventPluginUtils */ 16);
 	var EventPropagators = __webpack_require__(/*! react/lib/EventPropagators */ 13);
 	var SyntheticUIEvent = __webpack_require__(/*! react/lib/SyntheticUIEvent */ 53);
-	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 670);
+	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 669);
 	var ViewportMetrics = __webpack_require__(/*! react/lib/ViewportMetrics */ 54);
 	
-	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 671);
+	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 670);
 	var topLevelTypes = EventConstants.topLevelTypes;
 	
 	var isStartish = EventPluginUtils.isStartish;
@@ -71764,7 +71686,7 @@
 
 
 /***/ },
-/* 670 */
+/* 669 */
 /*!*********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TouchEventUtils.js ***!
   \*********************************************************/
@@ -71815,7 +71737,7 @@
 
 
 /***/ },
-/* 671 */
+/* 670 */
 /*!******************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/keyOf.js ***!
   \******************************************************/
@@ -71858,7 +71780,7 @@
 	module.exports = keyOf;
 
 /***/ },
-/* 672 */
+/* 671 */
 /*!************************************!*\
   !*** ./~/redux-thunk/lib/index.js ***!
   \************************************/
