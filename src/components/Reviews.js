@@ -9,8 +9,8 @@ class Reviews extends React.Component{
       reviews = []
     }
     reviews.sort( (a, b) => {
-      if (a.日時 > b.日時) { return -1 }
-      if (a.日時 < b.日時) { return 1 }
+      if (a.date > b.date) { return -1 }
+      if (a.date < b.date) { return 1 }
       return 0
     })
     const styles = {

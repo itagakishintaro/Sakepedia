@@ -1,15 +1,15 @@
 const validate = ( state ) => {
   state.error = false
   validateBrand( state )
-  validateCategory( state )
+  validateType( state )
   validateBrewery( state )
   validatePrefecture( state )
   validateUrl( state )
-  validatePolishRate( state )
-  validateSakeRate( state )
-  validateAlcoholRate( state )
-  validateAcidRate( state )
-  validateAminoRate( state )
+  validateRicePolishRate( state )
+  validateSakeMeterValue( state )
+  validateAlcoholContent( state )
+  validateAcidity( state )
+  validateAminoAcidContent( state )
   return state
 }
 
@@ -22,12 +22,12 @@ const validateBrand = ( state ) => {
   }
 }
 
-const validateCategory = ( state ) => {
-  if ( !state.category ) {
+const validateType = ( state ) => {
+  if ( !state.type ) {
     state.error = true
-    state.errorText.category = '分類は必須です'
+    state.errorText.type = '分類は必須です'
   } else {
-    state.errorText.category = ''
+    state.errorText.type = ''
   }
 }
 
@@ -58,48 +58,48 @@ const validateUrl = ( state ) => {
   }
 }
 
-const validatePolishRate = ( state ) => {
-  if ( !document.getElementById('polishRate').validity.valid ) {
+const validateRicePolishRate = ( state ) => {
+  if ( !document.getElementById('ricePolishRate').validity.valid ) {
     state.error = true
-    state.errorText.polishRate = '数値を入力してください'
+    state.errorText.ricePolishRate = '数値を入力してください'
   } else {
-    state.errorText.polishRate = ''
+    state.errorText.ricePolishRate = ''
   }
 }
 
-const validateAlcoholRate = ( state ) => {
-  if ( !document.getElementById('alcoholRate').validity.valid ) {
+const validateAlcoholContent = ( state ) => {
+  if ( !document.getElementById('alcoholContent').validity.valid ) {
     state.error = true
-    state.errorText.alcoholRate = '数値を入力してください'
+    state.errorText.alcoholContent = '数値を入力してください'
   } else {
-    state.errorText.alcoholRate = ''
+    state.errorText.alcoholContent = ''
   }
 }
 
-const validateSakeRate = ( state ) => {
-  if ( !document.getElementById('sakeRate').validity.valid ) {
+const validateSakeMeterValue = ( state ) => {
+  if ( !document.getElementById('sakeMeterValue').validity.valid ) {
     state.error = true
-    state.errorText.sakeRate = '数値を入力してください'
+    state.errorText.sakeMeterValue = '数値を入力してください'
   } else {
-    state.errorText.sakeRate = ''
+    state.errorText.sakeMeterValue = ''
   }
 }
 
-const validateAcidRate = ( state ) => {
-  if ( !document.getElementById('acidRate').validity.valid ) {
+const validateAcidity = ( state ) => {
+  if ( !document.getElementById('acidity').validity.valid ) {
     state.error = true
-    state.errorText.acidRate = '数値を入力してください'
+    state.errorText.acidity = '数値を入力してください'
   } else {
-    state.errorText.acidRate = ''
+    state.errorText.acidity = ''
   }
 }
 
-const validateAminoRate = ( state ) => {
-  if ( !document.getElementById('aminoRate').validity.valid ) {
+const validateAminoAcidContent = ( state ) => {
+  if ( !document.getElementById('aminoAcidContent').validity.valid ) {
     state.error = true
-    state.errorText.aminoRate = '数値を入力してください'
+    state.errorText.aminoAcidContent = '数値を入力してください'
   } else {
-    state.errorText.aminoRate = ''
+    state.errorText.aminoAcidContent = ''
   }
 }
 

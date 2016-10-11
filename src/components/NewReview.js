@@ -36,22 +36,22 @@ class NewReview extends React.Component {
       return
     }
     axios.put( `/api/sakes/${ this.props.sake._id }/add/review`, {
-      'tasting_date': new Date(),
-      'review': this.state.evaluation,
-      'comment': document.getElementById('comment').value,
-      'flavor': this.state.flavor,
-      'taste': this.state.taste,
-      'maturation': this.state.maturation,
-      'temperature': {
-        'temp5': document.getElementById('temp5').checked,
-        'temp10': document.getElementById('temp10').checked,
-        'temp15': document.getElementById('temp15').checked,
-        'temp40': document.getElementById('temp40').checked,
-        'temp50': document.getElementById('temp50').checked,
+      date: new Date(),
+      review: this.state.evaluation,
+      comment: document.getElementById('comment').value,
+      flavor: this.state.flavor,
+      taste: this.state.taste,
+      maturation: this.state.maturation,
+      temperature: {
+        temp5: document.getElementById('temp5').checked,
+        temp10: document.getElementById('temp10').checked,
+        temp15: document.getElementById('temp15').checked,
+        temp40: document.getElementById('temp40').checked,
+        temp50: document.getElementById('temp50').checked,
       },
-      'mariage': document.getElementById('matched').value,
-      'userId': window.localStorage.getItem( 'id' ),
-      'userName': window.localStorage.getItem( 'name' ),
+      mariage: document.getElementById('mariage').value,
+      userId: window.localStorage.getItem( 'userid' ),
+      userName: window.localStorage.getItem( 'username' ),
     })
     .then( () => {
       this.props.update()
@@ -185,9 +185,9 @@ class NewReview extends React.Component {
           />
 
           <TextField
-            id="matched"
+            id="mariage"
             floatingLabelFixed={true}
-            floatingLabelText="相性のよい料理"
+            floatingLabelText="マリアージュ"
             fullWidth={true}
           />
 

@@ -10,11 +10,11 @@ import Header from '../components/Header'
 class App extends React.Component {
   constructor(props) {
     super(props)
-    if( document.getElementById( 'id' ).innerHTML ) {
-      window.localStorage.setItem('id', document.getElementById( 'id' ).innerHTML)
-      window.localStorage.setItem('name', document.getElementById( 'name' ).innerHTML)
+    if( document.getElementById( 'userid' ).innerHTML ) {
+      window.localStorage.setItem('userid', document.getElementById( 'userid' ).innerHTML)
+      window.localStorage.setItem('username', document.getElementById( 'username' ).innerHTML)
       this.props.dispatch( setAuthStatus( true ) )
-    } else if ( window.localStorage.getItem( 'id' ) ) {
+    } else if ( window.localStorage.getItem( 'userid' ) ) {
       this.props.dispatch( setAuthStatus( true ) )
     }
     else {

@@ -21,13 +21,13 @@ router.all( '/*', ( req, res, next ) => {
 router.get( '/', ( req, res ) => {
   let query = {}
   if ( req.query.prefecture ) {
-    query['prefectures'] = new RegExp( req.query.prefecture );
+    query['prefecture'] = new RegExp( req.query.prefecture );
   }
   if ( req.query.brewrey ) {
-    query['sakeBrewery'] = new RegExp( req.query.brewrey );
+    query['brewery'] = new RegExp( req.query.brewrey );
   }
   if ( req.query.brand ) {
-    query['name'] = new RegExp( req.query.brand );
+    query['brand'] = new RegExp( req.query.brand );
   }
   collection( 'sake' ).find( query ).limit( LIMIT ).toArray( ( err, docs ) => {
     res.send( docs );
@@ -36,22 +36,22 @@ router.get( '/', ( req, res ) => {
 
 // GET find brands
 router.get( '/brands', ( req, res ) => {
-  collection( 'sake' ).distinct( 'name', ( err, docs ) => { res.send( docs) } );
+  collection( 'sake' ).distinct( 'brand', ( err, docs ) => { res.send( docs) } );
 } );
 
 // GET find breweries
 router.get( '/breweries', ( req, res ) => {
-  collection( 'sake' ).distinct( 'sakeBrewery', ( err, docs ) => { res.send( docs) } );
+  collection( 'sake' ).distinct( 'brewery', ( err, docs ) => { res.send( docs) } );
 } );
 
 // GET find koubos
-router.get( '/koubos', ( req, res ) => {
+router.get( '/sakeYeasts', ( req, res ) => {
   collection( 'sake' ).distinct( 'sakeYeast', ( err, docs ) => { res.send( docs) } );
 } );
 
 // GET find prefectures
 router.get( '/prefectures', ( req, res ) => {
-  collection( 'sake' ).distinct( 'prefectures', ( err, docs ) => { res.send( docs) } );
+  collection( 'sake' ).distinct( 'prefecture', ( err, docs ) => { res.send( docs) } );
 } );
 
 // GET find rices
