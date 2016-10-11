@@ -69,11 +69,11 @@
 	
 	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 	
-	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 665);
+	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 664);
 	
 	var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
 	
-	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 671);
+	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 670);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
@@ -29058,11 +29058,11 @@
 	
 	var _NewSakeContainer2 = _interopRequireDefault(_NewSakeContainer);
 	
-	var _SearchContainer = __webpack_require__(/*! ./containers/SearchContainer */ 658);
+	var _SearchContainer = __webpack_require__(/*! ./containers/SearchContainer */ 657);
 	
 	var _SearchContainer2 = _interopRequireDefault(_SearchContainer);
 	
-	var _Login = __webpack_require__(/*! ./components/Login */ 664);
+	var _Login = __webpack_require__(/*! ./components/Login */ 663);
 	
 	var _Login2 = _interopRequireDefault(_Login);
 	
@@ -70024,11 +70024,11 @@
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
-	var _Prefectures = __webpack_require__(/*! ./Prefectures */ 656);
+	var _Prefectures = __webpack_require__(/*! ./Prefectures */ 655);
 	
 	var _Prefectures2 = _interopRequireDefault(_Prefectures);
 	
-	var _NewSakeValidation = __webpack_require__(/*! ./NewSakeValidation */ 657);
+	var _NewSakeValidation = __webpack_require__(/*! ./NewSakeValidation */ 656);
 	
 	var _NewSakeValidation2 = _interopRequireDefault(_NewSakeValidation);
 	
@@ -70224,6 +70224,7 @@
 	          floatingLabelFixed: true,
 	          floatingLabelText: '説明',
 	          fullWidth: true,
+	          hintText: 'ラベルの説明、ホームページの解説など',
 	          multiLine: true,
 	          rows: 3
 	        }),
@@ -70342,8 +70343,7 @@
 	exports.default = NewSake;
 
 /***/ },
-/* 655 */,
-/* 656 */
+/* 655 */
 /*!***************************************!*\
   !*** ./src/components/Prefectures.js ***!
   \***************************************/
@@ -70481,7 +70481,7 @@
 	exports.default = Prefectures;
 
 /***/ },
-/* 657 */
+/* 656 */
 /*!*********************************************!*\
   !*** ./src/components/NewSakeValidation.js ***!
   \*********************************************/
@@ -70600,7 +70600,7 @@
 	exports.default = validate;
 
 /***/ },
-/* 658 */
+/* 657 */
 /*!*******************************************!*\
   !*** ./src/containers/SearchContainer.js ***!
   \*******************************************/
@@ -70622,11 +70622,11 @@
 	
 	var _sake = __webpack_require__(/*! ../actions/sake */ 619);
 	
-	var _List = __webpack_require__(/*! ../Components/List */ 659);
+	var _List = __webpack_require__(/*! ../Components/List */ 658);
 	
 	var _List2 = _interopRequireDefault(_List);
 	
-	var _Search = __webpack_require__(/*! ../components/Search */ 663);
+	var _Search = __webpack_require__(/*! ../components/Search */ 662);
 	
 	var _Search2 = _interopRequireDefault(_Search);
 	
@@ -70695,7 +70695,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(SearchContainer);
 
 /***/ },
-/* 659 */
+/* 658 */
 /*!********************************!*\
   !*** ./src/Components/List.js ***!
   \********************************/
@@ -70713,11 +70713,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 660);
+	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 659);
 	
 	var _list2 = _interopRequireDefault(_list);
 	
-	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 662);
+	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 661);
 	
 	var _SakeCard2 = _interopRequireDefault(_SakeCard);
 	
@@ -70786,7 +70786,7 @@
 	exports.default = List;
 
 /***/ },
-/* 660 */
+/* 659 */
 /*!*******************************************!*\
   !*** ./public/stylesheets/scss/list.scss ***!
   \*******************************************/
@@ -70795,7 +70795,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./list.scss */ 661);
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./list.scss */ 660);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 267)(content, {});
@@ -70815,7 +70815,7 @@
 	}
 
 /***/ },
-/* 661 */
+/* 660 */
 /*!**************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/list.scss ***!
   \**************************************************************************************************************/
@@ -70834,7 +70834,7 @@
 	};
 
 /***/ },
-/* 662 */
+/* 661 */
 /*!************************************!*\
   !*** ./src/components/SakeCard.js ***!
   \************************************/
@@ -71021,7 +71021,7 @@
 	exports.default = SakeCard;
 
 /***/ },
-/* 663 */
+/* 662 */
 /*!**********************************!*\
   !*** ./src/components/Search.js ***!
   \**********************************/
@@ -71053,7 +71053,7 @@
 	
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 	
-	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 656);
+	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 655);
 	
 	var _Prefectures2 = _interopRequireDefault(_Prefectures);
 	
@@ -71181,7 +71181,7 @@
 	exports.default = Search;
 
 /***/ },
-/* 664 */
+/* 663 */
 /*!*********************************!*\
   !*** ./src/components/Login.js ***!
   \*********************************/
@@ -71279,14 +71279,14 @@
 	exports.default = Login;
 
 /***/ },
-/* 665 */
+/* 664 */
 /*!**************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/injectTapEventPlugin.js ***!
   \**************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 666);
-	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 667);
+	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 665);
+	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 666);
 	
 	var alreadyInjected = false;
 	
@@ -71308,14 +71308,14 @@
 	  alreadyInjected = true;
 	
 	  __webpack_require__(/*! react/lib/EventPluginHub */ 14).injection.injectEventPluginsByName({
-	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 668)(shouldRejectClick)
+	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 667)(shouldRejectClick)
 	  });
 	};
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 666 */
+/* 665 */
 /*!**********************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/invariant.js ***!
   \**********************************************************/
@@ -71373,7 +71373,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 667 */
+/* 666 */
 /*!***********************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/defaultClickRejectionStrategy.js ***!
   \***********************************************************************/
@@ -71387,7 +71387,7 @@
 
 
 /***/ },
-/* 668 */
+/* 667 */
 /*!********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TapEventPlugin.js ***!
   \********************************************************/
@@ -71418,10 +71418,10 @@
 	var EventPluginUtils = __webpack_require__(/*! react/lib/EventPluginUtils */ 16);
 	var EventPropagators = __webpack_require__(/*! react/lib/EventPropagators */ 13);
 	var SyntheticUIEvent = __webpack_require__(/*! react/lib/SyntheticUIEvent */ 53);
-	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 669);
+	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 668);
 	var ViewportMetrics = __webpack_require__(/*! react/lib/ViewportMetrics */ 54);
 	
-	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 670);
+	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 669);
 	var topLevelTypes = EventConstants.topLevelTypes;
 	
 	var isStartish = EventPluginUtils.isStartish;
@@ -71566,7 +71566,7 @@
 
 
 /***/ },
-/* 669 */
+/* 668 */
 /*!*********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TouchEventUtils.js ***!
   \*********************************************************/
@@ -71617,7 +71617,7 @@
 
 
 /***/ },
-/* 670 */
+/* 669 */
 /*!******************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/keyOf.js ***!
   \******************************************************/
@@ -71660,7 +71660,7 @@
 	module.exports = keyOf;
 
 /***/ },
-/* 671 */
+/* 670 */
 /*!************************************!*\
   !*** ./~/redux-thunk/lib/index.js ***!
   \************************************/

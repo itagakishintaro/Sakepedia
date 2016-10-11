@@ -168,6 +168,7 @@ class NewSake extends React.Component {
             floatingLabelFixed={true}
             floatingLabelText="説明"
             fullWidth={true}
+            hintText="ラベルの説明、ホームページの解説など"
             multiLine={true}
             rows={3}
           />
