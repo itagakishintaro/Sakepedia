@@ -58,7 +58,7 @@ class Detail extends React.Component{
       sakeYeast: '酵母',
       sakeRiceExceptForKojiMaking: '掛米',
       riceForMakingKoji: '麹米',
-      ricePolishiingRate: '精米歩合',
+      ricePolishingRate: '精米歩合',
       alcoholContent: 'アルコール度数',
       sakeMeterValue: '日本酒度',
       acidity: '酸度',

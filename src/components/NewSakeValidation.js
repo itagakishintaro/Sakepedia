@@ -5,7 +5,7 @@ const validate = ( state ) => {
   validateBrewery( state )
   validatePrefecture( state )
   validateUrl( state )
-  validateRicePolishRate( state )
+  validateRicePolishingRate( state )
   validateSakeMeterValue( state )
   validateAlcoholContent( state )
   validateAcidity( state )
@@ -58,12 +58,12 @@ const validateUrl = ( state ) => {
   }
 }
 
-const validateRicePolishRate = ( state ) => {
-  if ( !document.getElementById('ricePolishRate').validity.valid ) {
+const validateRicePolishingRate = ( state ) => {
+  if ( !document.getElementById('ricePolishingRate').validity.valid ) {
     state.error = true
-    state.errorText.ricePolishRate = '数値を入力してください'
+    state.errorText.ricePolishingRate = '数値を入力してください'
   } else {
-    state.errorText.ricePolishRate = ''
+    state.errorText.ricePolishingRate = ''
   }
 }
 

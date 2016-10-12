@@ -19,23 +19,35 @@ class NewSake extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      acidity: '',
-      alcoholContent: '',
-      aminoAcidContent: '',
-      brands: [],
-      breweries: [],
-      type: '',
+      type: this.props.sake.type,
       error: false,
       errorText: {},
-      sakeYeast: [],
-      ricePolishRate: '',
-      prefecture: '',
-      prefectures: [],
-      starterCulture: '',
-      sakeRiceExceptForKojiMaking: [],
-      riceForMakingKoji: [],
-      sakeMeterValue: '',
+      prefecture: this.props.sake.prefecture,
+      starterCulture: this.props.sake.starterCulture,
       snackbarOpen: false,
+    }
+    this.btnLabel = '登録'
+    if( this.props.sake._id ){
+      this.btnLabel = '更新'
+    }
+  }
+
+  componentDidMount(){
+    if( this.props.sake._id ){
+      document.getElementById('brand').value = this.props.sake.brand
+      document.getElementById('subname').value = this.props.sake.subname
+      document.getElementById('brewery').value = this.props.sake.brewery
+      document.getElementById('url').value = this.props.sake.url
+      document.getElementById('description').value = this.props.sake.description
+      document.getElementById('sakeYeast').value = this.props.sake.sakeYeast
+      document.getElementById('sakeRiceExceptForKojiMaking').value = this.props.sake.sakeRiceExceptForKojiMaking
+      document.getElementById('riceForMakingKoji').value = this.props.sake.riceForMakingKoji
+      document.getElementById('ricePolishingRate').value = this.props.sake.ricePolishingRate
+      document.getElementById('alcoholContent').value = this.props.sake.alcoholContent
+      document.getElementById('sakeMeterValue').value = this.props.sake.sakeMeterValue
+      document.getElementById('acidity').value = this.props.sake.acidity
+      document.getElementById('aminoAcidContent').value = this.props.sake.aminoAcidContent
+      document.getElementById('imageUrl').value = this.props.sake.imageUrl
     }
   }
 
@@ -46,7 +58,7 @@ class NewSake extends React.Component {
       smoothScroll( document.getElementById('newSake'), 1000 )
       return
     }
-    axios.post( '/api/sakes' , {
+    let data = {
       brand : document.getElementById('brand').value,
       subname: document.getElementById('subname').value,
       type: this.state.type,
@@ -58,7 +70,7 @@ class NewSake extends React.Component {
       sakeYeast: document.getElementById('sakeYeast').value,
       sakeRiceExceptForKojiMaking: document.getElementById('sakeRiceExceptForKojiMaking').value,
       riceForMakingKoji: document.getElementById('riceForMakingKoji').value,
-      ricePolishiingRate: document.getElementById('ricePolishRate').value,
+      ricePolishingRate: document.getElementById('ricePolishingRate').value,
       alcoholContent: document.getElementById('alcoholContent').value,
       sakeMeterValue: document.getElementById('sakeMeterValue').value,
       acidity: document.getElementById('acidity').value,
@@ -67,14 +79,26 @@ class NewSake extends React.Component {
       date: new Date(),
       userid: window.localStorage.getItem( 'userid' ),
       username: window.localStorage.getItem( 'username' ),
-    })
-    .then( () => {
-      window.location.href ='/'
-    })
-    .catch( error => {
-      document.getElementById('error').textContent = JSON.stringify(error)
-      smoothScroll( document.getElementById('error'), 100)
-    })
+    }
+    if( this.props.sake._id ){ // update
+      axios.put( '/api/sakes/' + this.props.sake._id , data)
+      .then( () => {
+        window.location.href ='/'
+      })
+      .catch( error => {
+        document.getElementById('error').textContent = JSON.stringify(error)
+        smoothScroll( document.getElementById('error'), 100)
+      })
+    } else { // insert
+      axios.post( '/api/sakes' , data)
+      .then( () => {
+        window.location.href ='/'
+      })
+      .catch( error => {
+        document.getElementById('error').textContent = JSON.stringify(error)
+        smoothScroll( document.getElementById('error'), 100)
+      })
+    }
     this.openSnackbar()
   }
 
@@ -145,6 +169,7 @@ class NewSake extends React.Component {
             errorText={this.state.errorText.prefecture}
             label="都道府県*"
             setPrefecture={this.setPrefecture.bind(this)}
+            value={this.props.sake.prefecture}
           />
           <AutoComplete
             id="brewery"
@@ -159,8 +184,9 @@ class NewSake extends React.Component {
             id="url"
             errorText={this.state.errorText.url}
             floatingLabelFixed={true}
-            floatingLabelText="メーカーURL"
+            floatingLabelText="URL"
             fullWidth={true}
+            hintText="商品のホームページなど"
             type="url"
           />
           <TextField
@@ -206,8 +232,8 @@ class NewSake extends React.Component {
             fullWidth={true}
           />
           <TextField
-            id="ricePolishRate"
-            errorText={this.state.errorText.ricePolishRate}
+            id="ricePolishingRate"
+            errorText={this.state.errorText.ricePolishingRate}
             floatingLabelFixed={true}
             floatingLabelText="精米歩合(%)"
             fullWidth={true}
@@ -258,7 +284,7 @@ class NewSake extends React.Component {
             hintText="Instagramや蔵元ホームページなどから"
           />
         <p style={styles.imageHint}>※Instagramの場合、URL末尾の「/?XXXXXX」部分を「/media/?size=t」に変えてください。</p>
-          <RaisedButton label="登録" primary={true} style={styles.button} onClick={this.send.bind(this)} />
+          <RaisedButton label={this.btnLabel} primary={true} style={styles.button} onClick={this.send.bind(this)} />
           <div id="error" className="error"></div>
       </div>
     )
@@ -269,6 +295,7 @@ NewSake.propTypes = {
   breweries: PropTypes.array.isRequired,
   brands: PropTypes.array.isRequired,
   dispatch: PropTypes.func.isRequired,
+  sake: PropTypes.Object,
   sakeYeasts: PropTypes.array.isRequired,
   list: PropTypes.array.isRequired,
   rices: PropTypes.array.isRequired,

@@ -97,11 +97,15 @@ router.put( '/:id/add/review', ( req, res ) => {
 
 // PUT update data
 router.put( '/:id', ( req, res ) => {
-  collection( 'sake' ).findOneAndUpdate( {
-    _id: new ObjectID( req.params.id )
-  }, req.body, {}, function ( err, r ) {
-    res.send( r );
-  } );
+  collection( 'sake' ).findAndModify(
+    { _id: new ObjectID( req.params.id ) },
+    [ [ '_id', 1 ] ],
+    req.body,
+    { upsert: true },
+    function ( err, r ) {
+      res.send( r );
+    }
+  );
 } );
 
 module.exports = router;
