@@ -1,24 +1,5 @@
 @import 'common';
 
-$border: 1px solid $grey300;
-
-.table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.th {
-  background-color: $grey200;
-  border: $border;
-  font-weight: normal;
-  text-align: left;
-}
-
-.td {
-  border: $border;
-  word-break: break-all;
-}
-
 .header {
   display: flex;
 
