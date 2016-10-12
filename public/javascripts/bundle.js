@@ -68151,18 +68151,27 @@
 	      var _this2 = this;
 	
 	      var styles = {
+	        button: {
+	          margin: '1em 0'
+	        },
 	        contentContainer: {
 	          'margin': '1em 0'
 	        },
 	        tabItemContainer: {
 	          'backgroundColor': 'lightgray'
 	        },
-	        visible: {
+	        displayWhenLoggedIn: {
+	          display: 'block'
+	        },
+	        displayWhenLoggedOut: {
 	          display: 'none'
 	        }
 	      };
+	      if (this.props.isLogin) {
+	        styles.displayWhenLoggedIn.display = 'block';
+	      }
 	      if (!this.props.isLogin) {
-	        styles.visible.display = 'block';
+	        styles.displayWhenLoggedOut.display = 'block';
 	      }
 	      var items = {
 	        brand: '銘柄',
@@ -68264,6 +68273,15 @@
 	                  )
 	                );
 	              })
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { style: styles.displayWhenLoggedIn },
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/sake/new', query: { sakeId: this.props.sake._id } },
+	                _react2.default.createElement(_RaisedButton2.default, { label: '更新', primary: true, style: styles.button })
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -68306,7 +68324,7 @@
 	            }),
 	            _react2.default.createElement(
 	              'div',
-	              { style: styles.visible },
+	              { style: styles.displayWhenLoggedOut },
 	              _react2.default.createElement(
 	                'p',
 	                null,

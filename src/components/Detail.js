@@ -24,18 +24,27 @@ class Detail extends React.Component{
 
   render() {
     const styles = {
+      button: {
+        margin: '1em 0',
+      },
       contentContainer: {
         'margin': '1em 0',
       },
       tabItemContainer: {
         'backgroundColor': 'lightgray',
       },
-      visible: {
+      displayWhenLoggedIn: {
+        display: 'block',
+      },
+      displayWhenLoggedOut: {
         display: 'none',
       },
     }
+    if( this.props.isLogin ) {
+      styles.displayWhenLoggedIn.display = 'block'
+    }
     if( !this.props.isLogin ) {
-      styles.visible.display = 'block'
+      styles.displayWhenLoggedOut.display = 'block'
     }
     const items = {
       brand: '銘柄',
@@ -94,6 +103,9 @@ class Detail extends React.Component{
                     )
                   } ) }
             </table>
+            <div style={styles.displayWhenLoggedIn}>
+              <Link to={'/sake/new'} query={{ sakeId: this.props.sake._id }}><RaisedButton label="更新" primary={true} style={styles.button} /></Link>
+            </div>
           </Tab>
           <Tab
             id="reviews"
@@ -117,7 +129,7 @@ class Detail extends React.Component{
               update={this.props.update}
               isLogin={this.props.isLogin}
              />
-           <div style={styles.visible}>
+           <div style={styles.displayWhenLoggedOut}>
              <p>ログインしてください。</p>
              <Link to={'/login'} query={{ sakeId: this.props.sake._id }}><RaisedButton label="ログイン" /></Link>
            </div>
