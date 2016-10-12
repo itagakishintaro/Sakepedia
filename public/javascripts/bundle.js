@@ -68161,7 +68161,7 @@
 	          'backgroundColor': 'lightgray'
 	        },
 	        displayWhenLoggedIn: {
-	          display: 'block'
+	          display: 'none'
 	        },
 	        displayWhenLoggedOut: {
 	          display: 'none'
