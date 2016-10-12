@@ -29571,8 +29571,6 @@
 	
 	var _reactRouter = __webpack_require__(/*! react-router */ 201);
 	
-	var _sake = __webpack_require__(/*! ../actions/sake */ 619);
-	
 	var _materialUi = __webpack_require__(/*! material-ui */ 269);
 	
 	var _menu = __webpack_require__(/*! material-ui/svg-icons/navigation/menu */ 297);
@@ -29586,8 +29584,6 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// actions
-	
 	// material-ui
 	
 	
@@ -69927,10 +69923,13 @@
 	  _createClass(NewSakeContainer, [{
 	    key: 'render',
 	    value: function render() {
+	      if (this.props.location.query.sakeId) {
+	        this.sake = this.props.sake;
+	      }
 	      return _react2.default.createElement(_NewSake2.default, {
 	        brands: this.props.brands,
 	        breweries: this.props.breweries,
-	        sake: this.props.sake,
+	        sake: this.sake,
 	        sakeYeasts: this.props.sakeYeasts,
 	        rices: this.props.rices
 	      });

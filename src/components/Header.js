@@ -1,7 +1,5 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
-// actions
-import { setSake } from '../actions/sake'
 // material-ui
 import { AppBar, IconButton, Drawer, MenuItem } from 'material-ui'
 import MenuIcon from 'material-ui/svg-icons/navigation/menu'

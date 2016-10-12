@@ -16,11 +16,14 @@ class NewSakeContainer extends React.Component {
   }
 
   render() {
+    if( this.props.location.query.sakeId ) {
+      this.sake = this.props.sake
+    }
     return (
       <NewSake
         brands = {this.props.brands}
         breweries = {this.props.breweries}
-        sake = {this.props.sake}
+        sake = {this.sake}
         sakeYeasts = {this.props.sakeYeasts}
         rices = {this.props.rices}
       />
