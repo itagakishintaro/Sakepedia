@@ -29608,6 +29608,8 @@
 	    _this.state = {
 	      open: false
 	    };
+	    _this.close = _this.close.bind(_this);
+	    _this.toggleMenu = _this.toggleMenu.bind(_this);
 	    return _this;
 	  }
 	
@@ -29622,10 +29624,13 @@
 	      window.localStorage.clear();
 	    }
 	  }, {
+	    key: 'close',
+	    value: function close() {
+	      this.setState({ open: false });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var _this2 = this;
-	
 	      return _react2.default.createElement(
 	        'div',
 	        null,
@@ -29633,24 +29638,20 @@
 	          title: 'Sakepedia',
 	          iconElementLeft: _react2.default.createElement(
 	            _materialUi.IconButton,
-	            { onClick: this.toggleMenu.bind(this) },
+	            { onClick: this.toggleMenu },
 	            _react2.default.createElement(_menu2.default, { color: '#fff' })
 	          ),
 	          style: styles.appbar
 	        }),
 	        _react2.default.createElement(
 	          _materialUi.Drawer,
-	          { open: this.state.open, docked: false, onRequestChange: function onRequestChange(open) {
-	              return _this2.setState({ open: open });
-	            } },
+	          { open: this.state.open, docked: false, onRequestChange: this.close },
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/', style: styles.link },
 	            _react2.default.createElement(
 	              _materialUi.MenuItem,
-	              { onTouchTap: function onTouchTap() {
-	                  return _this2.setState({ open: false });
-	                } },
+	              { onTouchTap: this.close },
 	              'トップ'
 	            )
 	          ),
@@ -29659,9 +29660,7 @@
 	            { to: '/sake/new', style: styles.link },
 	            _react2.default.createElement(
 	              _materialUi.MenuItem,
-	              { onTouchTap: function onTouchTap() {
-	                  return _this2.setState({ open: false });
-	                }, disabled: !this.props.isLogin },
+	              { onTouchTap: this.close, disabled: !this.props.isLogin },
 	              '銘柄登録'
 	            )
 	          ),
@@ -29670,9 +29669,7 @@
 	            { to: '/login', style: styles.link },
 	            _react2.default.createElement(
 	              _materialUi.MenuItem,
-	              { onTouchTap: function onTouchTap() {
-	                  return _this2.setState({ open: false });
-	                }, disabled: this.props.isLogin },
+	              { onTouchTap: this.close, disabled: this.props.isLogin },
 	              'ログイン'
 	            )
 	          ),
@@ -68104,6 +68101,10 @@
 	
 	var _detail2 = _interopRequireDefault(_detail);
 	
+	var _DetailInfo = __webpack_require__(/*! ./DetailInfo */ 671);
+	
+	var _DetailInfo2 = _interopRequireDefault(_DetailInfo);
+	
 	var _NewReview = __webpack_require__(/*! ./NewReview */ 642);
 	
 	var _NewReview2 = _interopRequireDefault(_NewReview);
@@ -68161,7 +68162,7 @@
 	          'backgroundColor': 'lightgray'
 	        },
 	        displayWhenLoggedIn: {
-	          display: 'block'
+	          display: 'none'
 	        },
 	        displayWhenLoggedOut: {
 	          display: 'none'
@@ -68173,34 +68174,7 @@
 	      if (!this.props.isLogin) {
 	        styles.displayWhenLoggedOut.display = 'block';
 	      }
-	      var items = {
-	        brand: '銘柄',
-	        subname: '副名',
-	        type: '分類',
-	        prefecture: '都道府県',
-	        brewery: '蔵元',
-	        url: 'URL',
-	        description: '説明',
-	        starterCulture: '酒母',
-	        sakeYeast: '酵母',
-	        sakeRiceExceptForKojiMaking: '掛米',
-	        riceForMakingKoji: '麹米',
-	        ricePolishingRate: '精米歩合',
-	        alcoholContent: 'アルコール度数',
-	        sakeMeterValue: '日本酒度',
-	        acidity: '酸度',
-	        aminoAcidContent: 'アミノ酸度'
-	      };
-	      var setAnchor = function setAnchor(input) {
-	        if (/http/.test(input)) {
-	          return _react2.default.createElement(
-	            'a',
-	            { href: input, target: '_blank' },
-	            input
-	          );
-	        }
-	        return input;
-	      };
+	
 	      return _react2.default.createElement(
 	        'div',
 	        null,
@@ -68254,26 +68228,7 @@
 	              },
 	              value: 'detail'
 	            },
-	            _react2.default.createElement(
-	              'table',
-	              { className: _detail2.default.table },
-	              Object.keys(items).map(function (key) {
-	                return _react2.default.createElement(
-	                  'tr',
-	                  { className: _detail2.default.tr },
-	                  _react2.default.createElement(
-	                    'th',
-	                    { className: _detail2.default.th, width: '25%' },
-	                    items[key]
-	                  ),
-	                  _react2.default.createElement(
-	                    'td',
-	                    { className: _detail2.default.td },
-	                    setAnchor(_this2.props.sake[key])
-	                  )
-	                );
-	              })
-	            ),
+	            _react2.default.createElement(_DetailInfo2.default, { sake: this.props.sake }),
 	            _react2.default.createElement(
 	              'div',
 	              { style: styles.displayWhenLoggedIn },
@@ -68395,13 +68350,10 @@
 	
 	
 	// module
-	exports.push([module.id, "._2-fi9Iwrwd3YRtzIg1b2Zr {\n  border-collapse: collapse;\n  width: 100%; }\n\n._25k5ugQnWORAe2oEY2IIU1 {\n  background-color: #eee;\n  border: 1px solid #e0e0e0;\n  font-weight: normal;\n  text-align: left; }\n\n._1ZWnjABlkjhLa3ex2zrUG_ {\n  border: 1px solid #e0e0e0;\n  word-break: break-all; }\n\n._3DMalhqR9_-mh8K_2Ojm2J {\n  display: flex; }\n  ._3DMalhqR9_-mh8K_2Ojm2J ._2NQngWCqZELrSA9_zgjWGP {\n    height: 100px;\n    margin: 0 1em 1em; }\n  ._3DMalhqR9_-mh8K_2Ojm2J ._1PZlXYJlaryIj50bTeo1A7 {\n    font-size: 1.5em; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/public/stylesheets/scss/detail.scss","/./public/stylesheets/scss/public/stylesheets/scss/_common.scss"],"names":[],"mappings":"AAIA;EACE,0BAA0B;EAC1B,YAAY,EACb;;AAED;EACE,uBCVY;EDWZ,0BCVe;EDWf,oBAAoB;EACpB,iBAAiB,EAClB;;AAED;EACE,0BChBe;EDiBf,sBAAsB,EACvB;;AAED;EACE,cAAc,EAUf;EAXD;IAII,cAAc;IACd,kBAAkB,EACnB;EANH;IASI,iBAAiB,EAClB","file":"detail.scss","sourcesContent":["@import 'common';\n\n$border: 1px solid $grey300;\n\n.table {\n  border-collapse: collapse;\n  width: 100%;\n}\n\n.th {\n  background-color: $grey200;\n  border: $border;\n  font-weight: normal;\n  text-align: left;\n}\n\n.td {\n  border: $border;\n  word-break: break-all;\n}\n\n.header {\n  display: flex;\n\n  .image {\n    height: 100px;\n    margin: 0 1em 1em;\n  }\n\n  .title {\n    font-size: 1.5em;\n  }\n}\n","$grey200: #eee;\n$grey300: #e0e0e0;\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "._3DMalhqR9_-mh8K_2Ojm2J {\n  display: flex; }\n  ._3DMalhqR9_-mh8K_2Ojm2J ._2NQngWCqZELrSA9_zgjWGP {\n    height: 100px;\n    margin: 0 1em 1em; }\n  ._3DMalhqR9_-mh8K_2Ojm2J ._1PZlXYJlaryIj50bTeo1A7 {\n    font-size: 1.5em; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/public/stylesheets/scss/detail.scss"],"names":[],"mappings":"AAEA;EACE,cAAc,EAUf;EAXD;IAII,cAAc;IACd,kBAAkB,EACnB;EANH;IASI,iBAAiB,EAClB","file":"detail.scss","sourcesContent":["@import 'common';\n\n.header {\n  display: flex;\n\n  .image {\n    height: 100px;\n    margin: 0 1em 1em;\n  }\n\n  .title {\n    font-size: 1.5em;\n  }\n}\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 	exports.locals = {
-		"table": "_2-fi9Iwrwd3YRtzIg1b2Zr",
-		"th": "_25k5ugQnWORAe2oEY2IIU1",
-		"td": "_1ZWnjABlkjhLa3ex2zrUG_",
 		"header": "_3DMalhqR9_-mh8K_2Ojm2J",
 		"image": "_2NQngWCqZELrSA9_zgjWGP",
 		"title": "_1PZlXYJlaryIj50bTeo1A7"
@@ -69965,19 +69917,19 @@
 	    (0, _sake.getRices)(_this.props.dispatch);
 	    (0, _sake.getSakeYeasts)(_this.props.dispatch);
 	    _this.sake = {};
-	    if (_this.props.location.query.sakeId) {
-	      (0, _sake.getSake)(_this.props.dispatch, _this.props.location.query.sakeId);
-	    }
 	    return _this;
 	  }
 	
 	  _createClass(NewSakeContainer, [{
 	    key: 'render',
 	    value: function render() {
+	      if (this.props.location.query.sakeId) {
+	        this.sake = this.props.sake;
+	      }
 	      return _react2.default.createElement(_NewSake2.default, {
 	        brands: this.props.brands,
 	        breweries: this.props.breweries,
-	        sake: this.props.sake,
+	        sake: this.sake,
 	        sakeYeasts: this.props.sakeYeasts,
 	        rices: this.props.rices
 	      });
@@ -70105,20 +70057,46 @@
 	  _createClass(NewSake, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      if (this.props.sake._id) {
+	      if (this.props.sake.brand) {
 	        document.getElementById('brand').value = this.props.sake.brand;
+	      }
+	      if (this.props.sake.subname) {
 	        document.getElementById('subname').value = this.props.sake.subname;
+	      }
+	      if (this.props.sake.brewery) {
 	        document.getElementById('brewery').value = this.props.sake.brewery;
+	      }
+	      if (this.props.sake.url) {
 	        document.getElementById('url').value = this.props.sake.url;
+	      }
+	      if (this.props.sake.description) {
 	        document.getElementById('description').value = this.props.sake.description;
+	      }
+	      if (this.props.sake.sakeYeast) {
 	        document.getElementById('sakeYeast').value = this.props.sake.sakeYeast;
+	      }
+	      if (this.props.sake.sakeRiceExceptForKojiMaking) {
 	        document.getElementById('sakeRiceExceptForKojiMaking').value = this.props.sake.sakeRiceExceptForKojiMaking;
+	      }
+	      if (this.props.sake.riceForMakingKoji) {
 	        document.getElementById('riceForMakingKoji').value = this.props.sake.riceForMakingKoji;
+	      }
+	      if (this.props.sake.ricePolishingRate) {
 	        document.getElementById('ricePolishingRate').value = this.props.sake.ricePolishingRate;
+	      }
+	      if (this.props.sake.alcoholContent) {
 	        document.getElementById('alcoholContent').value = this.props.sake.alcoholContent;
+	      }
+	      if (this.props.sake.sakeMeterValue) {
 	        document.getElementById('sakeMeterValue').value = this.props.sake.sakeMeterValue;
+	      }
+	      if (this.props.sake.acidity) {
 	        document.getElementById('acidity').value = this.props.sake.acidity;
+	      }
+	      if (this.props.sake.aminoAcidContent) {
 	        document.getElementById('aminoAcidContent').value = this.props.sake.aminoAcidContent;
+	      }
+	      if (this.props.sake.imageUrl) {
 	        document.getElementById('imageUrl').value = this.props.sake.imageUrl;
 	      }
 	    }
@@ -71743,6 +71721,163 @@
 	thunk.withExtraArgument = createThunkMiddleware;
 	
 	exports['default'] = thunk;
+
+/***/ },
+/* 671 */
+/*!**************************************!*\
+  !*** ./src/components/DetailInfo.js ***!
+  \**************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 166);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _detailInfo = __webpack_require__(/*! ../../public/stylesheets/scss/detailInfo.scss */ 672);
+	
+	var _detailInfo2 = _interopRequireDefault(_detailInfo);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// css
+	
+	
+	var DetailInfo = function (_React$Component) {
+	  _inherits(DetailInfo, _React$Component);
+	
+	  function DetailInfo(props) {
+	    _classCallCheck(this, DetailInfo);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(DetailInfo).call(this, props));
+	  }
+	
+	  _createClass(DetailInfo, [{
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      var items = {
+	        brand: '銘柄',
+	        subname: '副名',
+	        type: '分類',
+	        prefecture: '都道府県',
+	        brewery: '蔵元',
+	        url: 'URL',
+	        description: '説明',
+	        starterCulture: '酒母',
+	        sakeYeast: '酵母',
+	        sakeRiceExceptForKojiMaking: '掛米',
+	        riceForMakingKoji: '麹米',
+	        ricePolishingRate: '精米歩合',
+	        alcoholContent: 'アルコール度数',
+	        sakeMeterValue: '日本酒度',
+	        acidity: '酸度',
+	        aminoAcidContent: 'アミノ酸度'
+	      };
+	      var setAnchor = function setAnchor(input) {
+	        if (/http/.test(input)) {
+	          return _react2.default.createElement(
+	            'a',
+	            { href: input, target: '_blank' },
+	            input
+	          );
+	        }
+	        return input;
+	      };
+	      return _react2.default.createElement(
+	        'table',
+	        { className: _detailInfo2.default.table },
+	        Object.keys(items).map(function (key) {
+	          return _react2.default.createElement(
+	            'tr',
+	            { className: _detailInfo2.default.tr },
+	            _react2.default.createElement(
+	              'th',
+	              { className: _detailInfo2.default.th, width: '25%' },
+	              items[key]
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              { className: _detailInfo2.default.td },
+	              setAnchor(_this2.props.sake[key])
+	            )
+	          );
+	        })
+	      );
+	    }
+	  }]);
+	
+	  return DetailInfo;
+	}(_react2.default.Component);
+	
+	DetailInfo.propTypes = {
+	  sake: _react.PropTypes.object.isRequired
+	};
+	
+	exports.default = DetailInfo;
+
+/***/ },
+/* 672 */
+/*!*************************************************!*\
+  !*** ./public/stylesheets/scss/detailInfo.scss ***!
+  \*************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./detailInfo.scss */ 673);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 267)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules!./../../../node_modules/sass-loader/index.js?sourceMap&modules!./detailInfo.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules!./../../../node_modules/sass-loader/index.js?sourceMap&modules!./detailInfo.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 673 */
+/*!********************************************************************************************************************!*\
+  !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/detailInfo.scss ***!
+  \********************************************************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 266)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "._2m80wY5FnWrrVYR8UPsDCm {\n  border-collapse: collapse;\n  width: 100%; }\n\n._3haoEWarN8Ee79IDfHPbRO {\n  background-color: #eee;\n  border: 1px solid #e0e0e0;\n  font-weight: normal;\n  text-align: left; }\n\n._1QOXdyNYx62Gi8PbWeeZNn {\n  border: 1px solid #e0e0e0;\n  word-break: break-all; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/public/stylesheets/scss/detailInfo.scss","/./public/stylesheets/scss/public/stylesheets/scss/_common.scss"],"names":[],"mappings":"AAIA;EACE,0BAA0B;EAC1B,YAAY,EACb;;AAED;EACE,uBCVY;EDWZ,0BCVe;EDWf,oBAAoB;EACpB,iBAAiB,EAClB;;AAED;EACE,0BChBe;EDiBf,sBAAsB,EACvB","file":"detailInfo.scss","sourcesContent":["@import 'common';\n\n$border: 1px solid $grey300;\n\n.table {\n  border-collapse: collapse;\n  width: 100%;\n}\n\n.th {\n  background-color: $grey200;\n  border: $border;\n  font-weight: normal;\n  text-align: left;\n}\n\n.td {\n  border: $border;\n  word-break: break-all;\n}\n","$grey200: #eee;\n$grey300: #e0e0e0;\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+	exports.locals = {
+		"table": "_2m80wY5FnWrrVYR8UPsDCm",
+		"th": "_3haoEWarN8Ee79IDfHPbRO",
+		"td": "_1QOXdyNYx62Gi8PbWeeZNn"
+	};
 
 /***/ }
 /******/ ]);

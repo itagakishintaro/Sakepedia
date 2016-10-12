@@ -33,20 +33,46 @@ class NewSake extends React.Component {
   }
 
   componentDidMount(){
-    if( this.props.sake._id ){
+    if( this.props.sake.brand ){
       document.getElementById('brand').value = this.props.sake.brand
+    }
+    if( this.props.sake.subname ){
       document.getElementById('subname').value = this.props.sake.subname
+    }
+    if( this.props.sake.brewery ){
       document.getElementById('brewery').value = this.props.sake.brewery
+    }
+    if( this.props.sake.url ){
       document.getElementById('url').value = this.props.sake.url
+    }
+    if( this.props.sake.description ){
       document.getElementById('description').value = this.props.sake.description
+    }
+    if( this.props.sake.sakeYeast ){
       document.getElementById('sakeYeast').value = this.props.sake.sakeYeast
+    }
+    if( this.props.sake.sakeRiceExceptForKojiMaking ){
       document.getElementById('sakeRiceExceptForKojiMaking').value = this.props.sake.sakeRiceExceptForKojiMaking
+    }
+    if( this.props.sake.riceForMakingKoji ){
       document.getElementById('riceForMakingKoji').value = this.props.sake.riceForMakingKoji
+    }
+    if( this.props.sake.ricePolishingRate ){
       document.getElementById('ricePolishingRate').value = this.props.sake.ricePolishingRate
+    }
+    if( this.props.sake.alcoholContent ){
       document.getElementById('alcoholContent').value = this.props.sake.alcoholContent
+    }
+    if( this.props.sake.sakeMeterValue ){
       document.getElementById('sakeMeterValue').value = this.props.sake.sakeMeterValue
+    }
+    if( this.props.sake.acidity ){
       document.getElementById('acidity').value = this.props.sake.acidity
+    }
+    if( this.props.sake.aminoAcidContent ){
       document.getElementById('aminoAcidContent').value = this.props.sake.aminoAcidContent
+    }
+    if( this.props.sake.imageUrl ){
       document.getElementById('imageUrl').value = this.props.sake.imageUrl
     }
   }

@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 // actions
-import { getBrands, getBreweries, getSake, getSakeYeasts, getRices } from '../actions/sake'
+import { getBrands, getBreweries, getSakeYeasts, getRices } from '../actions/sake'
 // components
 import NewSake from '../components/NewSake'
 
@@ -13,17 +13,17 @@ class NewSakeContainer extends React.Component {
     getRices( this.props.dispatch )
     getSakeYeasts( this.props.dispatch )
     this.sake = {}
-    if( this.props.location.query.sakeId ) {
-      getSake( this.props.dispatch, this.props.location.query.sakeId )
-    }
   }
 
   render() {
+    if( this.props.location.query.sakeId ) {
+      this.sake = this.props.sake
+    }
     return (
       <NewSake
         brands = {this.props.brands}
         breweries = {this.props.breweries}
-        sake = {this.props.sake}
+        sake = {this.sake}
         sakeYeasts = {this.props.sakeYeasts}
         rices = {this.props.rices}
       />
