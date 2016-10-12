@@ -7,7 +7,7 @@ class Prefectures extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      prefecture: '',
+      prefecture: this.props.value,
     }
   }
 
@@ -86,6 +86,7 @@ Prefectures.propTypes = {
   errorText: PropTypes.string,
   setPrefecture: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
+  value: PropTypes.string,
 }
 
 export default Prefectures

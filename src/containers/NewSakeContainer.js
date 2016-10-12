@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 // actions
-import { getBrands, getBreweries, getSakeYeasts, getRices } from '../actions/sake'
+import { getBrands, getBreweries, getSake, getSakeYeasts, getRices } from '../actions/sake'
 // components
 import NewSake from '../components/NewSake'
 
@@ -12,6 +12,10 @@ class NewSakeContainer extends React.Component {
     getBreweries( this.props.dispatch )
     getRices( this.props.dispatch )
     getSakeYeasts( this.props.dispatch )
+    this.sake = {}
+    if( this.props.location.query.sakeId ) {
+      getSake( this.props.dispatch, this.props.location.query.sakeId )
+    }
   }
 
   render() {
@@ -19,6 +23,7 @@ class NewSakeContainer extends React.Component {
       <NewSake
         brands = {this.props.brands}
         breweries = {this.props.breweries}
+        sake = {this.props.sake}
         sakeYeasts = {this.props.sakeYeasts}
         rices = {this.props.rices}
       />
@@ -27,11 +32,13 @@ class NewSakeContainer extends React.Component {
 }
 
 NewSakeContainer.propTypes = {
-  dispatch: PropTypes.func.isRequired,
   brands: PropTypes.array.isRequired,
   breweries: PropTypes.array.isRequired,
-  sakeYeasts: PropTypes.array.isRequired,
+  dispatch: PropTypes.func.isRequired,
+  location: PropTypes.Object,
   rices: PropTypes.array.isRequired,
+  sake: PropTypes.Object,
+  sakeYeasts: PropTypes.array.isRequired,
 }
 
 const mapStateToProps = state => state

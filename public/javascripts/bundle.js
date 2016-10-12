@@ -68151,18 +68151,27 @@
 	      var _this2 = this;
 	
 	      var styles = {
+	        button: {
+	          margin: '1em 0'
+	        },
 	        contentContainer: {
 	          'margin': '1em 0'
 	        },
 	        tabItemContainer: {
 	          'backgroundColor': 'lightgray'
 	        },
-	        visible: {
+	        displayWhenLoggedIn: {
+	          display: 'block'
+	        },
+	        displayWhenLoggedOut: {
 	          display: 'none'
 	        }
 	      };
+	      if (this.props.isLogin) {
+	        styles.displayWhenLoggedIn.display = 'block';
+	      }
 	      if (!this.props.isLogin) {
-	        styles.visible.display = 'block';
+	        styles.displayWhenLoggedOut.display = 'block';
 	      }
 	      var items = {
 	        brand: '銘柄',
@@ -68176,7 +68185,7 @@
 	        sakeYeast: '酵母',
 	        sakeRiceExceptForKojiMaking: '掛米',
 	        riceForMakingKoji: '麹米',
-	        ricePolishiingRate: '精米歩合',
+	        ricePolishingRate: '精米歩合',
 	        alcoholContent: 'アルコール度数',
 	        sakeMeterValue: '日本酒度',
 	        acidity: '酸度',
@@ -68264,6 +68273,15 @@
 	                  )
 	                );
 	              })
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { style: styles.displayWhenLoggedIn },
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/sake/new', query: { sakeId: this.props.sake._id } },
+	                _react2.default.createElement(_RaisedButton2.default, { label: '更新', primary: true, style: styles.button })
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -68306,7 +68324,7 @@
 	            }),
 	            _react2.default.createElement(
 	              'div',
-	              { style: styles.visible },
+	              { style: styles.displayWhenLoggedOut },
 	              _react2.default.createElement(
 	                'p',
 	                null,
@@ -69946,6 +69964,10 @@
 	    (0, _sake.getBreweries)(_this.props.dispatch);
 	    (0, _sake.getRices)(_this.props.dispatch);
 	    (0, _sake.getSakeYeasts)(_this.props.dispatch);
+	    _this.sake = {};
+	    if (_this.props.location.query.sakeId) {
+	      (0, _sake.getSake)(_this.props.dispatch, _this.props.location.query.sakeId);
+	    }
 	    return _this;
 	  }
 	
@@ -69955,6 +69977,7 @@
 	      return _react2.default.createElement(_NewSake2.default, {
 	        brands: this.props.brands,
 	        breweries: this.props.breweries,
+	        sake: this.props.sake,
 	        sakeYeasts: this.props.sakeYeasts,
 	        rices: this.props.rices
 	      });
@@ -69965,11 +69988,13 @@
 	}(_react2.default.Component);
 	
 	NewSakeContainer.propTypes = {
-	  dispatch: _react.PropTypes.func.isRequired,
 	  brands: _react.PropTypes.array.isRequired,
 	  breweries: _react.PropTypes.array.isRequired,
-	  sakeYeasts: _react.PropTypes.array.isRequired,
-	  rices: _react.PropTypes.array.isRequired
+	  dispatch: _react.PropTypes.func.isRequired,
+	  location: _react.PropTypes.Object,
+	  rices: _react.PropTypes.array.isRequired,
+	  sake: _react.PropTypes.Object,
+	  sakeYeasts: _react.PropTypes.array.isRequired
 	};
 	
 	var mapStateToProps = function mapStateToProps(state) {
@@ -70063,28 +70088,41 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(NewSake).call(this, props));
 	
 	    _this.state = {
-	      acidity: '',
-	      alcoholContent: '',
-	      aminoAcidContent: '',
-	      brands: [],
-	      breweries: [],
-	      type: '',
+	      type: _this.props.sake.type,
 	      error: false,
 	      errorText: {},
-	      sakeYeast: [],
-	      ricePolishRate: '',
-	      prefecture: '',
-	      prefectures: [],
-	      starterCulture: '',
-	      sakeRiceExceptForKojiMaking: [],
-	      riceForMakingKoji: [],
-	      sakeMeterValue: '',
+	      prefecture: _this.props.sake.prefecture,
+	      starterCulture: _this.props.sake.starterCulture,
 	      snackbarOpen: false
 	    };
+	    _this.btnLabel = '登録';
+	    if (_this.props.sake._id) {
+	      _this.btnLabel = '更新';
+	    }
 	    return _this;
 	  }
 	
 	  _createClass(NewSake, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      if (this.props.sake._id) {
+	        document.getElementById('brand').value = this.props.sake.brand;
+	        document.getElementById('subname').value = this.props.sake.subname;
+	        document.getElementById('brewery').value = this.props.sake.brewery;
+	        document.getElementById('url').value = this.props.sake.url;
+	        document.getElementById('description').value = this.props.sake.description;
+	        document.getElementById('sakeYeast').value = this.props.sake.sakeYeast;
+	        document.getElementById('sakeRiceExceptForKojiMaking').value = this.props.sake.sakeRiceExceptForKojiMaking;
+	        document.getElementById('riceForMakingKoji').value = this.props.sake.riceForMakingKoji;
+	        document.getElementById('ricePolishingRate').value = this.props.sake.ricePolishingRate;
+	        document.getElementById('alcoholContent').value = this.props.sake.alcoholContent;
+	        document.getElementById('sakeMeterValue').value = this.props.sake.sakeMeterValue;
+	        document.getElementById('acidity').value = this.props.sake.acidity;
+	        document.getElementById('aminoAcidContent').value = this.props.sake.aminoAcidContent;
+	        document.getElementById('imageUrl').value = this.props.sake.imageUrl;
+	      }
+	    }
+	  }, {
 	    key: 'send',
 	    value: function send() {
 	      var validation = (0, _NewSakeValidation2.default)(this.state);
@@ -70093,7 +70131,7 @@
 	        (0, _smoothScroll2.default)(document.getElementById('newSake'), 1000);
 	        return;
 	      }
-	      _axios2.default.post('/api/sakes', {
+	      var data = {
 	        brand: document.getElementById('brand').value,
 	        subname: document.getElementById('subname').value,
 	        type: this.state.type,
@@ -70105,7 +70143,7 @@
 	        sakeYeast: document.getElementById('sakeYeast').value,
 	        sakeRiceExceptForKojiMaking: document.getElementById('sakeRiceExceptForKojiMaking').value,
 	        riceForMakingKoji: document.getElementById('riceForMakingKoji').value,
-	        ricePolishiingRate: document.getElementById('ricePolishRate').value,
+	        ricePolishingRate: document.getElementById('ricePolishingRate').value,
 	        alcoholContent: document.getElementById('alcoholContent').value,
 	        sakeMeterValue: document.getElementById('sakeMeterValue').value,
 	        acidity: document.getElementById('acidity').value,
@@ -70114,12 +70152,24 @@
 	        date: new Date(),
 	        userid: window.localStorage.getItem('userid'),
 	        username: window.localStorage.getItem('username')
-	      }).then(function () {
-	        window.location.href = '/';
-	      }).catch(function (error) {
-	        document.getElementById('error').textContent = JSON.stringify(error);
-	        (0, _smoothScroll2.default)(document.getElementById('error'), 100);
-	      });
+	      };
+	      if (this.props.sake._id) {
+	        // update
+	        _axios2.default.put('/api/sakes/' + this.props.sake._id, data).then(function () {
+	          window.location.href = '/';
+	        }).catch(function (error) {
+	          document.getElementById('error').textContent = JSON.stringify(error);
+	          (0, _smoothScroll2.default)(document.getElementById('error'), 100);
+	        });
+	      } else {
+	        // insert
+	        _axios2.default.post('/api/sakes', data).then(function () {
+	          window.location.href = '/';
+	        }).catch(function (error) {
+	          document.getElementById('error').textContent = JSON.stringify(error);
+	          (0, _smoothScroll2.default)(document.getElementById('error'), 100);
+	        });
+	      }
 	      this.openSnackbar();
 	    }
 	  }, {
@@ -70200,7 +70250,8 @@
 	        _react2.default.createElement(_Prefectures2.default, {
 	          errorText: this.state.errorText.prefecture,
 	          label: '都道府県*',
-	          setPrefecture: this.setPrefecture.bind(this)
+	          setPrefecture: this.setPrefecture.bind(this),
+	          value: this.props.sake.prefecture
 	        }),
 	        _react2.default.createElement(_AutoComplete2.default, {
 	          id: 'brewery',
@@ -70215,8 +70266,9 @@
 	          id: 'url',
 	          errorText: this.state.errorText.url,
 	          floatingLabelFixed: true,
-	          floatingLabelText: 'メーカーURL',
+	          floatingLabelText: 'URL',
 	          fullWidth: true,
+	          hintText: '商品のホームページなど',
 	          type: 'url'
 	        }),
 	        _react2.default.createElement(_TextField2.default, {
@@ -70266,8 +70318,8 @@
 	          fullWidth: true
 	        }),
 	        _react2.default.createElement(_TextField2.default, {
-	          id: 'ricePolishRate',
-	          errorText: this.state.errorText.ricePolishRate,
+	          id: 'ricePolishingRate',
+	          errorText: this.state.errorText.ricePolishingRate,
 	          floatingLabelFixed: true,
 	          floatingLabelText: '精米歩合(%)',
 	          fullWidth: true,
@@ -70322,7 +70374,7 @@
 	          { style: styles.imageHint },
 	          '※Instagramの場合、URL末尾の「/?XXXXXX」部分を「/media/?size=t」に変えてください。'
 	        ),
-	        _react2.default.createElement(_RaisedButton2.default, { label: '登録', primary: true, style: styles.button, onClick: this.send.bind(this) }),
+	        _react2.default.createElement(_RaisedButton2.default, { label: this.btnLabel, primary: true, style: styles.button, onClick: this.send.bind(this) }),
 	        _react2.default.createElement('div', { id: 'error', className: 'error' })
 	      );
 	    }
@@ -70335,6 +70387,7 @@
 	  breweries: _react.PropTypes.array.isRequired,
 	  brands: _react.PropTypes.array.isRequired,
 	  dispatch: _react.PropTypes.func.isRequired,
+	  sake: _react.PropTypes.Object,
 	  sakeYeasts: _react.PropTypes.array.isRequired,
 	  list: _react.PropTypes.array.isRequired,
 	  rices: _react.PropTypes.array.isRequired
@@ -70388,7 +70441,7 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Prefectures).call(this, props));
 	
 	    _this.state = {
-	      prefecture: ''
+	      prefecture: _this.props.value
 	    };
 	    return _this;
 	  }
@@ -70475,7 +70528,8 @@
 	Prefectures.propTypes = {
 	  errorText: _react.PropTypes.string,
 	  setPrefecture: _react.PropTypes.func.isRequired,
-	  label: _react.PropTypes.string.isRequired
+	  label: _react.PropTypes.string.isRequired,
+	  value: _react.PropTypes.string
 	};
 	
 	exports.default = Prefectures;
@@ -70499,7 +70553,7 @@
 	  validateBrewery(state);
 	  validatePrefecture(state);
 	  validateUrl(state);
-	  validateRicePolishRate(state);
+	  validateRicePolishingRate(state);
 	  validateSakeMeterValue(state);
 	  validateAlcoholContent(state);
 	  validateAcidity(state);
@@ -70552,12 +70606,12 @@
 	  }
 	};
 	
-	var validateRicePolishRate = function validateRicePolishRate(state) {
-	  if (!document.getElementById('ricePolishRate').validity.valid) {
+	var validateRicePolishingRate = function validateRicePolishingRate(state) {
+	  if (!document.getElementById('ricePolishingRate').validity.valid) {
 	    state.error = true;
-	    state.errorText.ricePolishRate = '数値を入力してください';
+	    state.errorText.ricePolishingRate = '数値を入力してください';
 	  } else {
-	    state.errorText.ricePolishRate = '';
+	    state.errorText.ricePolishingRate = '';
 	  }
 	};
 	
