@@ -21,7 +21,7 @@ passport.deserializeUser( (user, done) => {
 passport.use(new TwitterStrategy({
   consumerKey: 'WOcQv6Oumgdt0ZSSImN2tM70u',
   consumerSecret: '59ELSChlyWqCtbqCH29IwZhz5x4QCSW8S1XsFZKxxll0hbZbQh',
-  callbackURL: `//${constants.hostname}/auth/twitter/callback` },
+  callbackURL: `${constants.host}/auth/twitter/callback` },
   ( token, tokenSecret, profile, done ) => {
     process.nextTick( () => {
       return done(null, profile);

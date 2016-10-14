@@ -13,7 +13,7 @@ let passport = require('passport')
 passport.use(new FacebookStrategy({
   clientID: '164983513944480',
   clientSecret: 'e1639b96c2ab304c9851bf295c20ec97',
-  callbackURL: `//${constants.hostname}/auth/facebook/callback` },
+  callbackURL: `${constants.host}/auth/facebook/callback` },
   ( token, tokenSecret, profile, done ) => {
     process.nextTick( () => {
       return done(null, profile);

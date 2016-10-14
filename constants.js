@@ -1,4 +1,4 @@
 const constants = {};
-constants.hostname = 'localhost:3000';
-// constants.hostname = 'sakepedia.herokuapp.com';
+constants.host = 'http://localhost:3000';
+// constants.host = 'https://sakepedia.herokuapp.com';
 module.exports = constants;
