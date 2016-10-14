@@ -310,7 +310,7 @@ class NewSake extends React.Component {
             hintText="Instagramや蔵元ホームページなどから"
           />
         <p style={styles.imageHint}>※Instagramの場合、URL末尾の「/?XXXXXX」部分を「/media/?size=t」に変えてください。</p>
-          <RaisedButton label={this.btnLabel} primary={true} style={styles.button} onClick={this.send.bind(this)} />
+          <RaisedButton label={this.btnLabel} primary={true} style={styles.button} onTouchTap={this.send.bind(this)} />
           <div id="error" className="error"></div>
       </div>
     )

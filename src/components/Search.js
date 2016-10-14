@@ -74,7 +74,7 @@ class Search extends React.Component {
           <RaisedButton
             label="検索"
             primary={true}
-            onClick={ this.detailSearch } />
+            onTouchTap={ this.detailSearch } />
           </Tab>
         </Tabs>
       </div>
