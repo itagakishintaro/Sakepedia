@@ -29610,6 +29610,7 @@
 	    };
 	    _this.close = _this.close.bind(_this);
 	    _this.toggleMenu = _this.toggleMenu.bind(_this);
+	    _this.preventWhenLoggedin = _this.preventWhenLoggedin.bind(_this);
 	    return _this;
 	  }
 	
@@ -29627,6 +29628,13 @@
 	    key: 'close',
 	    value: function close() {
 	      this.setState({ open: false });
+	    }
+	  }, {
+	    key: 'preventWhenLoggedin',
+	    value: function preventWhenLoggedin(e) {
+	      if (this.props.isLogin) {
+	        e.preventDefault();
+	      }
 	    }
 	  }, {
 	    key: 'render',
@@ -29666,7 +29674,7 @@
 	          ),
 	          _react2.default.createElement(
 	            _reactRouter.Link,
-	            { to: '/login', style: styles.link },
+	            { to: '/login', style: styles.link, onTouchTap: this.preventWhenLoggedin },
 	            _react2.default.createElement(
 	              _materialUi.MenuItem,
 	              { onTouchTap: this.close, disabled: this.props.isLogin },
