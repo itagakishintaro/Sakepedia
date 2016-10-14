@@ -42,7 +42,7 @@ class Header extends React.Component{
         <AppBar
           title="Sakepedia"
           iconElementLeft={
-            <IconButton onClick={ this.toggleMenu } ><MenuIcon color={'#fff'} /></IconButton>
+            <IconButton onTouchTap={ this.toggleMenu } ><MenuIcon color={'#fff'} /></IconButton>
           }
           style={ styles.appbar }
         />

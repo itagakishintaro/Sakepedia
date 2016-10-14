@@ -29638,7 +29638,7 @@
 	          title: 'Sakepedia',
 	          iconElementLeft: _react2.default.createElement(
 	            _materialUi.IconButton,
-	            { onClick: this.toggleMenu },
+	            { onTouchTap: this.toggleMenu },
 	            _react2.default.createElement(_menu2.default, { color: '#fff' })
 	          ),
 	          style: styles.appbar
@@ -68223,7 +68223,7 @@
 	                'details'
 	              ),
 	              label: '詳細',
-	              onClick: function onClick() {
+	              onTouchTap: function onTouchTap() {
 	                _this2.changeTab('detail');
 	              },
 	              value: 'detail'
@@ -68249,7 +68249,7 @@
 	                'people'
 	              ),
 	              label: 'レビュー',
-	              onClick: function onClick() {
+	              onTouchTap: function onTouchTap() {
 	                _this2.changeTab('reviews');
 	              },
 	              value: 'reviews'
@@ -68266,7 +68266,7 @@
 	                'chat_bubble_outline'
 	              ),
 	              label: 'レビューする',
-	              onClick: function onClick() {
+	              onTouchTap: function onTouchTap() {
 	                _this2.changeTab('createReview');
 	              },
 	              value: 'createReview'
@@ -68795,7 +68795,7 @@
 	          floatingLabelText: 'マリアージュ',
 	          fullWidth: true
 	        }),
-	        _react2.default.createElement(_RaisedButton2.default, { label: '登録', primary: true, style: styles.button, onClick: this.send.bind(this) }),
+	        _react2.default.createElement(_RaisedButton2.default, { label: '登録', primary: true, style: styles.button, onTouchTap: this.send.bind(this) }),
 	        _react2.default.createElement('div', { id: 'error', className: 'error' })
 	      );
 	    }
@@ -70509,7 +70509,7 @@
 	          { style: styles.imageHint },
 	          '※Instagramの場合、URL末尾の「/?XXXXXX」部分を「/media/?size=t」に変えてください。'
 	        ),
-	        _react2.default.createElement(_RaisedButton2.default, { label: this.btnLabel, primary: true, style: styles.button, onClick: this.send.bind(this) }),
+	        _react2.default.createElement(_RaisedButton2.default, { label: this.btnLabel, primary: true, style: styles.button, onTouchTap: this.send.bind(this) }),
 	        _react2.default.createElement('div', { id: 'error', className: 'error' })
 	      );
 	    }
@@ -71350,7 +71350,7 @@
 	            _react2.default.createElement(_RaisedButton2.default, {
 	              label: '検索',
 	              primary: true,
-	              onClick: this.detailSearch })
+	              onTouchTap: this.detailSearch })
 	          )
 	        )
 	      );
