@@ -1,8 +1,8 @@
 'use strict';
 let express = require( 'express' );
 let router = express.Router();
-
-let session = require('express-session')
+let session = require('express-session');
+const constants = require('../../constants');
 /**
  * pssport twitter
  * http://passportjs.org/docs/twitter
@@ -21,7 +21,7 @@ passport.deserializeUser( (user, done) => {
 passport.use(new TwitterStrategy({
   consumerKey: 'WOcQv6Oumgdt0ZSSImN2tM70u',
   consumerSecret: '59ELSChlyWqCtbqCH29IwZhz5x4QCSW8S1XsFZKxxll0hbZbQh',
-  callbackURL: '/auth/twitter/callback' },
+  callbackURL: `//${constants.hostname}/auth/twitter/callback` },
   ( token, tokenSecret, profile, done ) => {
     process.nextTick( () => {
       return done(null, profile);
