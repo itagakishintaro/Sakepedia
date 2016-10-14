@@ -51,7 +51,7 @@ class Detail extends React.Component{
     return (
       <div>
         <div className={classes.header}>
-          <img src={ this.props.sake.imageUrl } className={classes.image} />
+          <img src={ this.props.sake.image } className={classes.image} />
           <div>
             <div><span className={classes.title}>{this.props.sake.brand}</span>( {this.props.sake.type} )</div>
             <div>{this.props.sake.brewery} ( {this.props.sake.prefecture} )</div>

@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react'
 // material-ui
 import AutoComplete from 'material-ui/AutoComplete'
+import { grey400 } from 'material-ui/styles/colors'
+import FontIcon from 'material-ui/FontIcon'
 import MenuItem from 'material-ui/MenuItem'
 import SelectField from 'material-ui/SelectField'
 import Snackbar from 'material-ui/Snackbar'
@@ -72,8 +74,8 @@ class NewSake extends React.Component {
     if( this.props.sake.aminoAcidContent ){
       document.getElementById('aminoAcidContent').value = this.props.sake.aminoAcidContent
     }
-    if( this.props.sake.imageUrl ){
-      document.getElementById('imageUrl').value = this.props.sake.imageUrl
+    if( this.props.sake.image ){
+      document.getElementById('image').value = this.props.sake.image
     }
   }
 
@@ -101,7 +103,7 @@ class NewSake extends React.Component {
       sakeMeterValue: document.getElementById('sakeMeterValue').value,
       acidity: document.getElementById('acidity').value,
       aminoAcidContent: document.getElementById('aminoAcidContent').value,
-      imageUrl: document.getElementById('imageUrl').value,
+      image: document.getElementById('image').value,
       date: new Date(),
       userid: window.localStorage.getItem( 'userid' ),
       username: window.localStorage.getItem( 'username' ),
@@ -140,13 +142,44 @@ class NewSake extends React.Component {
     this.setState({ snackbarOpen: false })
   }
 
+  handleFile() {
+    let file = document.getElementById('file').files[0]
+    let reader = new FileReader()
+    reader.onloadend = () => {
+      document.getElementById('image').value = reader.result
+    }
+    if (file) {
+      reader.readAsDataURL(file)
+    }
+  }
+
   render() {
     const styles = {
       button: {
         margin: '1em 0',
       },
+      camera: {
+        border: '10px',
+        borderRadius: '2px',
+        boxShadow: 'rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px',
+        boxSizing: 'border-box',
+        display: 'inline-block',
+        height: '36px',
+        lineHeight: '36px',
+        margin: '.5em .5em 0 0',
+        padding: '.5em 0',
+        textAlign: 'center',
+        width: '5em',
+      },
+      file: {
+        display: 'none',
+      },
       imageHint: {
         color: 'gray',
+        fontSize: '0.8em',
+      },
+      label: {
+        color:  grey400,
         fontSize: '0.8em',
       },
     }
@@ -302,14 +335,21 @@ class NewSake extends React.Component {
             step="0.1"
             type="number"
           />
-          <TextField
-            id="imageUrl"
+        <label htmlFor="file">
+          <div style={styles.label}>画像</div>
+          <div style={styles.camera}>
+            <FontIcon className="material-icons">photo_camera</FontIcon>
+          </div>
+          <input type="file" id="file" accept="image/*" capture="camera" style={styles.file} onChange={this.handleFile}/>
+        </label>
+        <TextField
+            id="image"
             floatingLabelFixed={true}
-            floatingLabelText="画像URL"
             fullWidth={true}
-            hintText="Instagramや蔵元ホームページなどから"
+            hintText="画像のURLを入力してもOK"
           />
         <p style={styles.imageHint}>※Instagramの場合、URL末尾の「/?XXXXXX」部分を「/media/?size=t」に変えてください。</p>
+
           <RaisedButton label={this.btnLabel} primary={true} style={styles.button} onTouchTap={this.send.bind(this)} />
           <div id="error" className="error"></div>
       </div>

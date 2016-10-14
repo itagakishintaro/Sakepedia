@@ -68189,7 +68189,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: _detail2.default.header },
-	          _react2.default.createElement('img', { src: this.props.sake.imageUrl, className: _detail2.default.image }),
+	          _react2.default.createElement('img', { src: this.props.sake.image, className: _detail2.default.image }),
 	          _react2.default.createElement(
 	            'div',
 	            null,
@@ -70142,6 +70142,12 @@
 	
 	var _AutoComplete2 = _interopRequireDefault(_AutoComplete);
 	
+	var _colors = __webpack_require__(/*! material-ui/styles/colors */ 521);
+	
+	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 294);
+	
+	var _FontIcon2 = _interopRequireDefault(_FontIcon);
+	
 	var _MenuItem = __webpack_require__(/*! material-ui/MenuItem */ 328);
 	
 	var _MenuItem2 = _interopRequireDefault(_MenuItem);
@@ -70261,8 +70267,8 @@
 	      if (this.props.sake.aminoAcidContent) {
 	        document.getElementById('aminoAcidContent').value = this.props.sake.aminoAcidContent;
 	      }
-	      if (this.props.sake.imageUrl) {
-	        document.getElementById('imageUrl').value = this.props.sake.imageUrl;
+	      if (this.props.sake.image) {
+	        document.getElementById('image').value = this.props.sake.image;
 	      }
 	    }
 	  }, {
@@ -70291,7 +70297,7 @@
 	        sakeMeterValue: document.getElementById('sakeMeterValue').value,
 	        acidity: document.getElementById('acidity').value,
 	        aminoAcidContent: document.getElementById('aminoAcidContent').value,
-	        imageUrl: document.getElementById('imageUrl').value,
+	        image: document.getElementById('image').value,
 	        date: new Date(),
 	        userid: window.localStorage.getItem('userid'),
 	        username: window.localStorage.getItem('username')
@@ -70331,6 +70337,18 @@
 	      this.setState({ snackbarOpen: false });
 	    }
 	  }, {
+	    key: 'handleFile',
+	    value: function handleFile() {
+	      var file = document.getElementById('file').files[0];
+	      var reader = new FileReader();
+	      reader.onloadend = function () {
+	        document.getElementById('image').value = reader.result;
+	      };
+	      if (file) {
+	        reader.readAsDataURL(file);
+	      }
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _this2 = this;
@@ -70339,8 +70357,28 @@
 	        button: {
 	          margin: '1em 0'
 	        },
+	        camera: {
+	          border: '10px',
+	          borderRadius: '2px',
+	          boxShadow: 'rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px',
+	          boxSizing: 'border-box',
+	          display: 'inline-block',
+	          height: '36px',
+	          lineHeight: '36px',
+	          margin: '.5em .5em 0 0',
+	          padding: '.5em 0',
+	          textAlign: 'center',
+	          width: '5em'
+	        },
+	        file: {
+	          display: 'none'
+	        },
 	        imageHint: {
 	          color: 'gray',
+	          fontSize: '0.8em'
+	        },
+	        label: {
+	          color: _colors.grey400,
 	          fontSize: '0.8em'
 	        }
 	      };
@@ -70505,12 +70543,30 @@
 	          step: '0.1',
 	          type: 'number'
 	        }),
+	        _react2.default.createElement(
+	          'label',
+	          { htmlFor: 'file' },
+	          _react2.default.createElement(
+	            'div',
+	            { style: styles.label },
+	            '画像'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { style: styles.camera },
+	            _react2.default.createElement(
+	              _FontIcon2.default,
+	              { className: 'material-icons' },
+	              'photo_camera'
+	            )
+	          ),
+	          _react2.default.createElement('input', { type: 'file', id: 'file', accept: 'image/*', capture: 'camera', style: styles.file, onChange: this.handleFile })
+	        ),
 	        _react2.default.createElement(_TextField2.default, {
-	          id: 'imageUrl',
+	          id: 'image',
 	          floatingLabelFixed: true,
-	          floatingLabelText: '画像URL',
 	          fullWidth: true,
-	          hintText: 'Instagramや蔵元ホームページなどから'
+	          hintText: '画像のURLを入力してもOK'
 	        }),
 	        _react2.default.createElement(
 	          'p',
@@ -71190,7 +71246,7 @@
 	            _react2.default.createElement(
 	              'div',
 	              { style: styles.picture },
-	              _react2.default.createElement('img', { src: this.props.sake.imageUrl, style: styles.img })
+	              _react2.default.createElement('img', { src: this.props.sake.image, style: styles.img })
 	            ),
 	            _react2.default.createElement(
 	              'div',

@@ -85,7 +85,7 @@ class SakeCard extends React.Component {
           />
           <CardText style={ styles.cardText }>
             <div style={ styles.picture }>
-              <img src={ this.props.sake.imageUrl } style={ styles.img } />
+              <img src={ this.props.sake.image } style={ styles.img } />
             </div>
             <div style={ styles.description }>
               <Stars evaluation={ this.averageEvaluation( this.props.sake.レビュー ) } />
