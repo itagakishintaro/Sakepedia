@@ -22,6 +22,7 @@ class Header extends React.Component{
     }
     this.close = this.close.bind(this)
     this.toggleMenu = this.toggleMenu.bind(this)
+    this.preventWhenLoggedin = this.preventWhenLoggedin.bind(this)
   }
 
   toggleMenu(){
@@ -36,6 +37,12 @@ class Header extends React.Component{
     this.setState({open: false})
   }
 
+  preventWhenLoggedin(e){
+    if(this.props.isLogin) {
+      e.preventDefault()
+    }
+  }
+
   render() {
     return (
       <div>
@@ -48,8 +55,8 @@ class Header extends React.Component{
         />
       <Drawer open={this.state.open} docked={false} onRequestChange={ this.close }>
           <Link to={'/'} style={styles.link}><MenuItem onTouchTap={ this.close }>トップ</MenuItem></Link>
-          <Link to={'/sake/new'} style={styles.link}><MenuItem onTouchTap={this.close} disabled={!this.props.isLogin}>銘柄登録</MenuItem></Link>
-          <Link to={'/login'} style={styles.link}><MenuItem onTouchTap={ this.close } disabled={this.props.isLogin}>ログイン</MenuItem></Link>
+          <Link to={'/sake/new'} style={styles.link}><MenuItem onTouchTap={ this.close } disabled={!this.props.isLogin}>銘柄登録</MenuItem></Link>
+          <Link to={'/login'} style={styles.link} onTouchTap={this.preventWhenLoggedin}><MenuItem onTouchTap={ this.close } disabled={this.props.isLogin}>ログイン</MenuItem></Link>
           <MenuItem href='/auth/logout' disabled={!this.props.isLogin} onTouchTap={ this.logout }>ログアウト</MenuItem>
         </Drawer>
       </div>
