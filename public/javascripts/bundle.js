@@ -71181,7 +71181,7 @@
 	          { style: styles.card },
 	          _react2.default.createElement(_TypeMark2.default, { review: this.averageReview(this.props.sake.review), style: styles.typeMark }),
 	          _react2.default.createElement(_Card.CardHeader, {
-	            title: this.props.sake.brand + ' ( ' + this.props.sake.type + ' )',
+	            title: this.props.sake.brand + ' ' + this.props.sake.subname + ' ( ' + this.props.sake.type + ' )',
 	            subtitle: this.props.sake.brewery + ' ( ' + this.props.sake.prefecture + ' ) '
 	          }),
 	          _react2.default.createElement(
