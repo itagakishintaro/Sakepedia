@@ -66,7 +66,7 @@ class Detail extends React.Component{
              id="detail"
             icon={<FontIcon className="material-icons">details</FontIcon>}
             label="詳細"
-            onTouchTap={ () => { this.changeTab('detail') } }
+            onActive={ () => { this.changeTab('detail') } }
             value="detail"
           >
             <DetailInfo sake={this.props.sake}/>
@@ -78,7 +78,7 @@ class Detail extends React.Component{
             id="reviews"
             icon={<FontIcon className="material-icons">people</FontIcon>}
             label="レビュー"
-            onTouchTap={ () => { this.changeTab('reviews') } }
+            onActive={ () => { this.changeTab('reviews') } }
             value="reviews"
           >
           <Reviews reviews={this.props.sake.reviews} />
@@ -87,7 +87,7 @@ class Detail extends React.Component{
             id="createReview"
             icon={<FontIcon className="material-icons">chat_bubble_outline</FontIcon>}
             label="レビューする"
-            onTouchTap={ () => { this.changeTab('createReview') } }
+            onActive={ () => { this.changeTab('createReview') } }
             value="createReview"
           >
             <NewReview

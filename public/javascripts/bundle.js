@@ -68231,7 +68231,7 @@
 	                'details'
 	              ),
 	              label: '詳細',
-	              onTouchTap: function onTouchTap() {
+	              onActive: function onActive() {
 	                _this2.changeTab('detail');
 	              },
 	              value: 'detail'
@@ -68257,7 +68257,7 @@
 	                'people'
 	              ),
 	              label: 'レビュー',
-	              onTouchTap: function onTouchTap() {
+	              onActive: function onActive() {
 	                _this2.changeTab('reviews');
 	              },
 	              value: 'reviews'
@@ -68274,7 +68274,7 @@
 	                'chat_bubble_outline'
 	              ),
 	              label: 'レビューする',
-	              onTouchTap: function onTouchTap() {
+	              onActive: function onActive() {
 	                _this2.changeTab('createReview');
 	              },
 	              value: 'createReview'
