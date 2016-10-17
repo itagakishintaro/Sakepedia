@@ -69313,6 +69313,10 @@
 	
 	var _colors = __webpack_require__(/*! material-ui/styles/colors */ 521);
 	
+	var _concatObj = __webpack_require__(/*! ../util/concatObj */ 675);
+	
+	var _concatObj2 = _interopRequireDefault(_concatObj);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -69321,6 +69325,8 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	// material-ui
+	
+	// util
 	
 	
 	var TypeMark = function (_React$Component) {
@@ -69335,38 +69341,38 @@
 	  _createClass(TypeMark, [{
 	    key: 'judgeType',
 	    value: function judgeType(review) {
-	      if (!(review.香り && review.味 && review.熟成)) {
+	      if (!(review.flabor && review.taste && review.maturation)) {
 	        return '';
 	      }
-	      if (review.香り <= 2 & review.味 <= 2) {
+	      if (review.flabor <= 2 & review.taste <= 2) {
 	        return _react2.default.createElement(
 	          _Chip2.default,
 	          { backgroundColor: _colors.blue200 },
 	          '爽酒'
 	        );
 	      }
-	      if (review.香り <= 2 & 2 <= review.味) {
+	      if (review.flabor <= 2 & 2 <= review.taste) {
 	        return _react2.default.createElement(
 	          _Chip2.default,
 	          { backgroundColor: _colors.orange200 },
 	          '醇酒'
 	        );
 	      }
-	      if (2 <= review.香り & review.味 <= 2) {
+	      if (2 <= review.flabor & review.taste <= 2) {
 	        return _react2.default.createElement(
 	          _Chip2.default,
 	          { backgroundColor: _colors.green200 },
 	          '薫酒'
 	        );
 	      }
-	      if (2 <= review.香り & 2 <= review.味 & 2 <= review.熟成) {
+	      if (2 <= review.flabor & 2 <= review.taste & 2 <= review.maturation) {
 	        return _react2.default.createElement(
 	          _Chip2.default,
 	          { backgroundColor: _colors.brown200 },
 	          '熟酒'
 	        );
 	      }
-	      if (2 <= review.香り & 2 <= review.味 & review.熟成 <= 2) {
+	      if (2 <= review.flabor & 2 <= review.taste & review.maturation <= 2) {
 	        return _react2.default.createElement(
 	          _Chip2.default,
 	          { backgroundColor: _colors.purple200 },
@@ -69389,7 +69395,7 @@
 	      };
 	      return _react2.default.createElement(
 	        'div',
-	        { style: Object.assign(styles.typeMark, this.props.style) },
+	        { style: (0, _concatObj2.default)(styles.typeMark, this.props.style) },
 	        this.judgeType(this.props.review)
 	      );
 	    }
@@ -69399,7 +69405,7 @@
 	}(_react2.default.Component);
 	
 	TypeMark.propTypes = {
-	  review: _react.PropTypes.number.isRequired,
+	  review: _react.PropTypes.object.isRequired,
 	  style: _react.PropTypes.object
 	};
 	
@@ -70180,11 +70186,11 @@
 	
 	var _NewSakeValidation2 = _interopRequireDefault(_NewSakeValidation);
 	
-	var _SmoothScroll = __webpack_require__(/*! ../util/SmoothScroll */ 680);
+	var _smoothScroll = __webpack_require__(/*! ../util/smoothScroll */ 647);
 	
-	var _SmoothScroll2 = _interopRequireDefault(_SmoothScroll);
+	var _smoothScroll2 = _interopRequireDefault(_smoothScroll);
 	
-	var _ImageHandler = __webpack_require__(/*! ../util/ImageHandler */ 681);
+	var _ImageHandler = __webpack_require__(/*! ../util/ImageHandler */ 660);
 	
 	var _ImageHandler2 = _interopRequireDefault(_ImageHandler);
 	
@@ -70281,7 +70287,7 @@
 	      var validation = (0, _NewSakeValidation2.default)(this.state);
 	      this.setState({ errorText: validation.errorText });
 	      if (validation.error) {
-	        (0, _SmoothScroll2.default)(document.getElementById('newSake'), 1000);
+	        (0, _smoothScroll2.default)(document.getElementById('newSake'), 1000);
 	        return;
 	      }
 	      var data = {
@@ -70312,7 +70318,7 @@
 	          window.location.href = '/';
 	        }).catch(function (error) {
 	          document.getElementById('error').textContent = JSON.stringify(error);
-	          (0, _SmoothScroll2.default)(document.getElementById('error'), 100);
+	          (0, _smoothScroll2.default)(document.getElementById('error'), 100);
 	        });
 	      } else {
 	        // insert
@@ -70320,7 +70326,7 @@
 	          window.location.href = '/';
 	        }).catch(function (error) {
 	          document.getElementById('error').textContent = JSON.stringify(error);
-	          (0, _SmoothScroll2.default)(document.getElementById('error'), 100);
+	          (0, _smoothScroll2.default)(document.getElementById('error'), 100);
 	        });
 	      }
 	      this.openSnackbar();
@@ -70853,7 +70859,63 @@
 	exports.default = validate;
 
 /***/ },
-/* 660 */,
+/* 660 */
+/*!**********************************!*\
+  !*** ./src/util/ImageHandler.js ***!
+  \**********************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var handleImage = function handleImage(file) {
+	  var max = arguments.length <= 1 || arguments[1] === undefined ? 200 : arguments[1];
+	
+	  var reader = new FileReader();
+	  reader.onload = function (readerEvent) {
+	    var image = new Image();
+	    image.onload = function () {
+	      // Resize the image
+	      var canvas = document.createElement('canvas');
+	      var width = image.width;
+	      var height = image.height;
+	      if (width > height) {
+	        if (width > max) {
+	          height *= max / width;
+	          width = max;
+	        }
+	      } else {
+	        if (height > max) {
+	          width *= max / height;
+	          height = max;
+	        }
+	      }
+	      canvas.width = width;
+	      canvas.height = height;
+	      var ctx = canvas.getContext('2d');
+	      ctx.save();
+	      if (height < width) {
+	        canvas.height = width;
+	        canvas.width = height;
+	        ctx.rotate(90 * Math.PI / 180);
+	        ctx.translate(0, -height);
+	      }
+	      ctx.drawImage(image, 0, 0, width, height);
+	      ctx.restore();
+	      document.getElementById('image').value = canvas.toDataURL('image/png');
+	      document.getElementById('thumbnail').src = canvas.toDataURL('image/png');
+	    };
+	    image.src = readerEvent.target.result;
+	  };
+	  if (file) {
+	    reader.readAsDataURL(file);
+	  }
+	};
+	exports.default = handleImage;
+
+/***/ },
 /* 661 */
 /*!*******************************************!*\
   !*** ./src/containers/SearchContainer.js ***!
@@ -71010,6 +71072,7 @@
 	          flexWrap: 'wrap'
 	        }
 	      };
+	
 	      return _react2.default.createElement(
 	        'div',
 	        null,
@@ -71151,7 +71214,7 @@
 	        return 0;
 	      }
 	      return reviews.map(function (r) {
-	        return Number(r.評価);
+	        return Number(r.evaluation);
 	      }).reduce(function (p, c) {
 	        return p + c;
 	      }) / reviews.length;
@@ -71163,21 +71226,21 @@
 	        return {};
 	      }
 	      var flavor = reviews.map(function (r) {
-	        return Number(r.香り);
+	        return Number(r.flavor);
 	      }).reduce(function (p, c) {
 	        return p + c;
 	      }) / reviews.length;
 	      var taste = reviews.map(function (r) {
-	        return Number(r.味);
+	        return Number(r.taste);
 	      }).reduce(function (p, c) {
 	        return p + c;
 	      }) / reviews.length;
 	      var maturation = reviews.map(function (r) {
-	        return Number(r.熟成);
+	        return Number(r.maturation);
 	      }).reduce(function (p, c) {
 	        return p + c;
 	      }) / reviews.length;
-	      return { 香り: flavor, 味: taste, 熟成: maturation };
+	      return { flavor: flavor, taste: taste, maturation: maturation };
 	    }
 	  }, {
 	    key: 'resizeWidth',
@@ -71230,13 +71293,14 @@
 	          marginRight: '1em'
 	        }
 	      };
+	
 	      return _react2.default.createElement(
 	        _reactRouter.Link,
 	        { to: '/sake/' + this.props.sake._id, style: styles.link },
 	        _react2.default.createElement(
 	          _Card.Card,
 	          { style: styles.card },
-	          _react2.default.createElement(_TypeMark2.default, { review: this.averageReview(this.props.sake.review), style: styles.typeMark }),
+	          _react2.default.createElement(_TypeMark2.default, { review: this.averageReview(this.props.sake.reviews), style: styles.typeMark }),
 	          _react2.default.createElement(_Card.CardHeader, {
 	            title: this.props.sake.brand + ' ' + this.props.sake.subname + ' ( ' + this.props.sake.type + ' )',
 	            subtitle: this.props.sake.brewery + ' ( ' + this.props.sake.prefecture + ' ) '
@@ -71252,7 +71316,7 @@
 	            _react2.default.createElement(
 	              'div',
 	              { style: styles.description },
-	              _react2.default.createElement(_Stars2.default, { evaluation: this.averageEvaluation(this.props.sake.レビュー) }),
+	              _react2.default.createElement(_Stars2.default, { evaluation: this.averageEvaluation(this.props.sake.reviews) }),
 	              _react2.default.createElement(
 	                'div',
 	                null,
@@ -71945,99 +72009,28 @@
 	exports['default'] = thunk;
 
 /***/ },
-/* 675 */,
-/* 676 */,
-/* 677 */,
-/* 678 */,
-/* 679 */,
-/* 680 */
-/*!**********************************!*\
-  !*** ./src/util/SmoothScroll.js ***!
-  \**********************************/
+/* 675 */
+/*!*******************************!*\
+  !*** ./src/util/concatObj.js ***!
+  \*******************************/
 /***/ function(module, exports) {
 
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	// http://dongzhang.github.io/blog/Smooth-Scroll-Without-jQuery/
-	var smoothScroll = function smoothScroll(target, time) {
-	  var start = new Date().getTime();
-	  var startPosition = document.body['scrollTop'];
-	
-	  // set an interval to update scrollTop attribute every 25 ms
-	  var timer = setInterval(function () {
-	    // calculate the step, i.e the degree of completion of the smooth scroll
-	    var step = Math.min(1, (new Date().getTime() - start) / time);
-	
-	    // calculate the scroll distance and update the scrollTop
-	    document.body['scrollTop'] -= step * (startPosition - target.offsetTop);
-	
-	    // end interval if the scroll is completed
-	    if (step == 1) {
-	      clearInterval(timer);
-	    }
-	  }, 25);
-	};
-	exports.default = smoothScroll;
-
-/***/ },
-/* 681 */
-/*!**********************************!*\
-  !*** ./src/util/ImageHandler.js ***!
-  \**********************************/
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var handleImage = function handleImage(file) {
-	  var max = arguments.length <= 1 || arguments[1] === undefined ? 200 : arguments[1];
-	
-	  var reader = new FileReader();
-	  reader.onload = function (readerEvent) {
-	    var image = new Image();
-	    image.onload = function () {
-	      // Resize the image
-	      var canvas = document.createElement('canvas');
-	      var width = image.width;
-	      var height = image.height;
-	      if (width > height) {
-	        if (width > max) {
-	          height *= max / width;
-	          width = max;
-	        }
-	      } else {
-	        if (height > max) {
-	          width *= max / height;
-	          height = max;
-	        }
-	      }
-	      canvas.width = width;
-	      canvas.height = height;
-	      var ctx = canvas.getContext('2d');
-	      ctx.save();
-	      if (height < width) {
-	        canvas.height = width;
-	        canvas.width = height;
-	        ctx.rotate(90 * Math.PI / 180);
-	        ctx.translate(0, -height);
-	      }
-	      ctx.drawImage(image, 0, 0, width, height);
-	      ctx.restore();
-	      document.getElementById('image').value = canvas.toDataURL('image/png');
-	      document.getElementById('thumbnail').src = canvas.toDataURL('image/png');
-	    };
-	    image.src = readerEvent.target.result;
-	  };
-	  if (file) {
-	    reader.readAsDataURL(file);
+	var concatObj = function concatObj(o1, o2) {
+	  var o = {};
+	  for (var key in o1) {
+	    o[key] = o1[key];
 	  }
+	  for (var _key in o2) {
+	    o[_key] = o2[_key];
+	  }
+	  return o;
 	};
-	exports.default = handleImage;
+	exports.default = concatObj;
 
 /***/ }
 /******/ ]);

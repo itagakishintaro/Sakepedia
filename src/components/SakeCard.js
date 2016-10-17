@@ -17,16 +17,16 @@ class SakeCard extends React.Component {
     if( !reviews ) {
       return 0
     }
-    return reviews.map( r => Number( r.評価 ) ).reduce( ( p, c ) => p + c ) / reviews.length
+    return reviews.map( r => Number( r.evaluation ) ).reduce( ( p, c ) => p + c ) / reviews.length
   }
   averageReview( reviews ) {
     if( !reviews ) {
       return {}
     }
-    let flavor = reviews.map( r => Number( r.香り ) ).reduce( ( p, c ) => p + c ) / reviews.length
-    let taste = reviews.map( r => Number( r.味 ) ).reduce( ( p, c ) => p + c ) / reviews.length
-    let maturation = reviews.map( r => Number( r.熟成 ) ).reduce( ( p, c ) => p + c ) / reviews.length
-    return { 香り: flavor, 味: taste, 熟成: maturation }
+    let flavor = reviews.map( r => Number( r.flavor ) ).reduce( ( p, c ) => p + c ) / reviews.length
+    let taste = reviews.map( r => Number( r.taste ) ).reduce( ( p, c ) => p + c ) / reviews.length
+    let maturation = reviews.map( r => Number( r.maturation ) ).reduce( ( p, c ) => p + c ) / reviews.length
+    return { flavor, taste, maturation }
   }
   resizeWidth() {
     this.width = window.innerWidth - 16 + 'px'
@@ -75,10 +75,11 @@ class SakeCard extends React.Component {
         marginRight: '1em',
       }
     }
+
     return (
       <Link to={`/sake/${this.props.sake._id}`} style={styles.link}>
         <Card style={ styles.card }>
-          <TypeMark review={ this.averageReview( this.props.sake.review ) } style={ styles.typeMark } />
+          <TypeMark review={ this.averageReview( this.props.sake.reviews ) } style={ styles.typeMark } />
           <CardHeader
             title={ `${this.props.sake.brand} ${this.props.sake.subname} ( ${this.props.sake.type} )` }
             subtitle={ `${this.props.sake.brewery} ( ${this.props.sake.prefecture} ) ` }
@@ -88,7 +89,7 @@ class SakeCard extends React.Component {
               <img src={ this.props.sake.image } style={ styles.img } />
             </div>
             <div style={ styles.description }>
-              <Stars evaluation={ this.averageEvaluation( this.props.sake.レビュー ) } />
+              <Stars evaluation={ this.averageEvaluation( this.props.sake.reviews ) } />
               <div>{ this.props.sake.discription }</div>
             </div>
           </CardText>

@@ -15,7 +15,7 @@ import Prefectures from './Prefectures'
 // validation
 import validate from './NewSakeValidation'
 // util
-import smoothScroll from '../util/SmoothScroll'
+import smoothScroll from '../util/smoothScroll'
 import handleImage from '../util/ImageHandler'
 
 class NewSake extends React.Component {

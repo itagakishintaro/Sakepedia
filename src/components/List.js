@@ -17,11 +17,12 @@ class List extends React.Component {
         flexWrap: 'wrap',
       },
     }
+
     return (
       <div>
         <div className={classes.alert}>{ alertMessage }</div>
         <div style={ styles.list }>
-          { this.props.list.map( sake => <SakeCard sake={ sake } />  ) }
+          { this.props.list.map( sake => <SakeCard sake={sake} /> ) }
         </div>
       </div>
     )
