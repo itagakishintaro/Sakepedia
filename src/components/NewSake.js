@@ -15,7 +15,8 @@ import Prefectures from './Prefectures'
 // validation
 import validate from './NewSakeValidation'
 // util
-import smoothScroll from '../util/smoothScroll'
+import smoothScroll from '../util/SmoothScroll'
+import handleImage from '../util/ImageHandler'
 
 class NewSake extends React.Component {
   constructor(props) {
@@ -144,13 +145,7 @@ class NewSake extends React.Component {
 
   handleFile() {
     let file = document.getElementById('file').files[0]
-    let reader = new FileReader()
-    reader.onloadend = () => {
-      document.getElementById('image').value = reader.result
-    }
-    if (file) {
-      reader.readAsDataURL(file)
-    }
+    handleImage( file, 200 )
   }
 
   render() {
@@ -349,9 +344,10 @@ class NewSake extends React.Component {
             hintText="画像のURLを入力してもOK"
           />
         <p style={styles.imageHint}>※Instagramの場合、URL末尾の「/?XXXXXX」部分を「/media/?size=t」に変えてください。</p>
-
-          <RaisedButton label={this.btnLabel} primary={true} style={styles.button} onTouchTap={this.send.bind(this)} />
-          <div id="error" className="error"></div>
+        <img id="thumbnail" src="" />
+        <br />
+        <RaisedButton label={this.btnLabel} primary={true} style={styles.button} onTouchTap={this.send.bind(this)} />
+        <div id="error" className="error"></div>
       </div>
     )
   }

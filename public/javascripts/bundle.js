@@ -69,11 +69,11 @@
 	
 	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 	
-	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 667);
+	var _reactTapEventPlugin = __webpack_require__(/*! react-tap-event-plugin */ 668);
 	
 	var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
 	
-	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 673);
+	var _reduxThunk = __webpack_require__(/*! redux-thunk */ 674);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
@@ -29058,11 +29058,11 @@
 	
 	var _NewSakeContainer2 = _interopRequireDefault(_NewSakeContainer);
 	
-	var _SearchContainer = __webpack_require__(/*! ./containers/SearchContainer */ 660);
+	var _SearchContainer = __webpack_require__(/*! ./containers/SearchContainer */ 661);
 	
 	var _SearchContainer2 = _interopRequireDefault(_SearchContainer);
 	
-	var _Login = __webpack_require__(/*! ./components/Login */ 666);
+	var _Login = __webpack_require__(/*! ./components/Login */ 667);
 	
 	var _Login2 = _interopRequireDefault(_Login);
 	
@@ -70180,9 +70180,13 @@
 	
 	var _NewSakeValidation2 = _interopRequireDefault(_NewSakeValidation);
 	
-	var _smoothScroll = __webpack_require__(/*! ../util/smoothScroll */ 647);
+	var _SmoothScroll = __webpack_require__(/*! ../util/SmoothScroll */ 680);
 	
-	var _smoothScroll2 = _interopRequireDefault(_smoothScroll);
+	var _SmoothScroll2 = _interopRequireDefault(_SmoothScroll);
+	
+	var _ImageHandler = __webpack_require__(/*! ../util/ImageHandler */ 681);
+	
+	var _ImageHandler2 = _interopRequireDefault(_ImageHandler);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -70277,7 +70281,7 @@
 	      var validation = (0, _NewSakeValidation2.default)(this.state);
 	      this.setState({ errorText: validation.errorText });
 	      if (validation.error) {
-	        (0, _smoothScroll2.default)(document.getElementById('newSake'), 1000);
+	        (0, _SmoothScroll2.default)(document.getElementById('newSake'), 1000);
 	        return;
 	      }
 	      var data = {
@@ -70308,7 +70312,7 @@
 	          window.location.href = '/';
 	        }).catch(function (error) {
 	          document.getElementById('error').textContent = JSON.stringify(error);
-	          (0, _smoothScroll2.default)(document.getElementById('error'), 100);
+	          (0, _SmoothScroll2.default)(document.getElementById('error'), 100);
 	        });
 	      } else {
 	        // insert
@@ -70316,7 +70320,7 @@
 	          window.location.href = '/';
 	        }).catch(function (error) {
 	          document.getElementById('error').textContent = JSON.stringify(error);
-	          (0, _smoothScroll2.default)(document.getElementById('error'), 100);
+	          (0, _SmoothScroll2.default)(document.getElementById('error'), 100);
 	        });
 	      }
 	      this.openSnackbar();
@@ -70340,13 +70344,7 @@
 	    key: 'handleFile',
 	    value: function handleFile() {
 	      var file = document.getElementById('file').files[0];
-	      var reader = new FileReader();
-	      reader.onloadend = function () {
-	        document.getElementById('image').value = reader.result;
-	      };
-	      if (file) {
-	        reader.readAsDataURL(file);
-	      }
+	      (0, _ImageHandler2.default)(file, 200);
 	    }
 	  }, {
 	    key: 'render',
@@ -70573,6 +70571,8 @@
 	          { style: styles.imageHint },
 	          '※Instagramの場合、URL末尾の「/?XXXXXX」部分を「/media/?size=t」に変えてください。'
 	        ),
+	        _react2.default.createElement('img', { id: 'thumbnail', src: '' }),
+	        _react2.default.createElement('br', null),
 	        _react2.default.createElement(_RaisedButton2.default, { label: this.btnLabel, primary: true, style: styles.button, onTouchTap: this.send.bind(this) }),
 	        _react2.default.createElement('div', { id: 'error', className: 'error' })
 	      );
@@ -70853,7 +70853,8 @@
 	exports.default = validate;
 
 /***/ },
-/* 660 */
+/* 660 */,
+/* 661 */
 /*!*******************************************!*\
   !*** ./src/containers/SearchContainer.js ***!
   \*******************************************/
@@ -70875,11 +70876,11 @@
 	
 	var _sake = __webpack_require__(/*! ../actions/sake */ 619);
 	
-	var _List = __webpack_require__(/*! ../Components/List */ 661);
+	var _List = __webpack_require__(/*! ../Components/List */ 662);
 	
 	var _List2 = _interopRequireDefault(_List);
 	
-	var _Search = __webpack_require__(/*! ../components/Search */ 665);
+	var _Search = __webpack_require__(/*! ../components/Search */ 666);
 	
 	var _Search2 = _interopRequireDefault(_Search);
 	
@@ -70948,7 +70949,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(SearchContainer);
 
 /***/ },
-/* 661 */
+/* 662 */
 /*!********************************!*\
   !*** ./src/Components/List.js ***!
   \********************************/
@@ -70966,11 +70967,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 662);
+	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 663);
 	
 	var _list2 = _interopRequireDefault(_list);
 	
-	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 664);
+	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 665);
 	
 	var _SakeCard2 = _interopRequireDefault(_SakeCard);
 	
@@ -71039,7 +71040,7 @@
 	exports.default = List;
 
 /***/ },
-/* 662 */
+/* 663 */
 /*!*******************************************!*\
   !*** ./public/stylesheets/scss/list.scss ***!
   \*******************************************/
@@ -71048,7 +71049,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./list.scss */ 663);
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./list.scss */ 664);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 267)(content, {});
@@ -71068,7 +71069,7 @@
 	}
 
 /***/ },
-/* 663 */
+/* 664 */
 /*!**************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/list.scss ***!
   \**************************************************************************************************************/
@@ -71087,7 +71088,7 @@
 	};
 
 /***/ },
-/* 664 */
+/* 665 */
 /*!************************************!*\
   !*** ./src/components/SakeCard.js ***!
   \************************************/
@@ -71274,7 +71275,7 @@
 	exports.default = SakeCard;
 
 /***/ },
-/* 665 */
+/* 666 */
 /*!**********************************!*\
   !*** ./src/components/Search.js ***!
   \**********************************/
@@ -71434,7 +71435,7 @@
 	exports.default = Search;
 
 /***/ },
-/* 666 */
+/* 667 */
 /*!*********************************!*\
   !*** ./src/components/Login.js ***!
   \*********************************/
@@ -71532,14 +71533,14 @@
 	exports.default = Login;
 
 /***/ },
-/* 667 */
+/* 668 */
 /*!**************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/injectTapEventPlugin.js ***!
   \**************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 668);
-	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 669);
+	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 669);
+	var defaultClickRejectionStrategy = __webpack_require__(/*! ./defaultClickRejectionStrategy */ 670);
 	
 	var alreadyInjected = false;
 	
@@ -71561,14 +71562,14 @@
 	  alreadyInjected = true;
 	
 	  __webpack_require__(/*! react/lib/EventPluginHub */ 14).injection.injectEventPluginsByName({
-	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 670)(shouldRejectClick)
+	    'TapEventPlugin':       __webpack_require__(/*! ./TapEventPlugin.js */ 671)(shouldRejectClick)
 	  });
 	};
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 668 */
+/* 669 */
 /*!**********************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/invariant.js ***!
   \**********************************************************/
@@ -71626,7 +71627,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 669 */
+/* 670 */
 /*!***********************************************************************!*\
   !*** ./~/react-tap-event-plugin/src/defaultClickRejectionStrategy.js ***!
   \***********************************************************************/
@@ -71640,7 +71641,7 @@
 
 
 /***/ },
-/* 670 */
+/* 671 */
 /*!********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TapEventPlugin.js ***!
   \********************************************************/
@@ -71671,10 +71672,10 @@
 	var EventPluginUtils = __webpack_require__(/*! react/lib/EventPluginUtils */ 16);
 	var EventPropagators = __webpack_require__(/*! react/lib/EventPropagators */ 13);
 	var SyntheticUIEvent = __webpack_require__(/*! react/lib/SyntheticUIEvent */ 53);
-	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 671);
+	var TouchEventUtils = __webpack_require__(/*! ./TouchEventUtils */ 672);
 	var ViewportMetrics = __webpack_require__(/*! react/lib/ViewportMetrics */ 54);
 	
-	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 672);
+	var keyOf = __webpack_require__(/*! fbjs/lib/keyOf */ 673);
 	var topLevelTypes = EventConstants.topLevelTypes;
 	
 	var isStartish = EventPluginUtils.isStartish;
@@ -71819,7 +71820,7 @@
 
 
 /***/ },
-/* 671 */
+/* 672 */
 /*!*********************************************************!*\
   !*** ./~/react-tap-event-plugin/src/TouchEventUtils.js ***!
   \*********************************************************/
@@ -71870,7 +71871,7 @@
 
 
 /***/ },
-/* 672 */
+/* 673 */
 /*!******************************************************!*\
   !*** ./~/react-tap-event-plugin/~/fbjs/lib/keyOf.js ***!
   \******************************************************/
@@ -71913,7 +71914,7 @@
 	module.exports = keyOf;
 
 /***/ },
-/* 673 */
+/* 674 */
 /*!************************************!*\
   !*** ./~/redux-thunk/lib/index.js ***!
   \************************************/
@@ -71942,6 +71943,101 @@
 	thunk.withExtraArgument = createThunkMiddleware;
 	
 	exports['default'] = thunk;
+
+/***/ },
+/* 675 */,
+/* 676 */,
+/* 677 */,
+/* 678 */,
+/* 679 */,
+/* 680 */
+/*!**********************************!*\
+  !*** ./src/util/SmoothScroll.js ***!
+  \**********************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// http://dongzhang.github.io/blog/Smooth-Scroll-Without-jQuery/
+	var smoothScroll = function smoothScroll(target, time) {
+	  var start = new Date().getTime();
+	  var startPosition = document.body['scrollTop'];
+	
+	  // set an interval to update scrollTop attribute every 25 ms
+	  var timer = setInterval(function () {
+	    // calculate the step, i.e the degree of completion of the smooth scroll
+	    var step = Math.min(1, (new Date().getTime() - start) / time);
+	
+	    // calculate the scroll distance and update the scrollTop
+	    document.body['scrollTop'] -= step * (startPosition - target.offsetTop);
+	
+	    // end interval if the scroll is completed
+	    if (step == 1) {
+	      clearInterval(timer);
+	    }
+	  }, 25);
+	};
+	exports.default = smoothScroll;
+
+/***/ },
+/* 681 */
+/*!**********************************!*\
+  !*** ./src/util/ImageHandler.js ***!
+  \**********************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var handleImage = function handleImage(file) {
+	  var max = arguments.length <= 1 || arguments[1] === undefined ? 200 : arguments[1];
+	
+	  var reader = new FileReader();
+	  reader.onload = function (readerEvent) {
+	    var image = new Image();
+	    image.onload = function () {
+	      // Resize the image
+	      var canvas = document.createElement('canvas');
+	      var width = image.width;
+	      var height = image.height;
+	      if (width > height) {
+	        if (width > max) {
+	          height *= max / width;
+	          width = max;
+	        }
+	      } else {
+	        if (height > max) {
+	          width *= max / height;
+	          height = max;
+	        }
+	      }
+	      canvas.width = width;
+	      canvas.height = height;
+	      var ctx = canvas.getContext('2d');
+	      ctx.save();
+	      if (height < width) {
+	        canvas.height = width;
+	        canvas.width = height;
+	        ctx.rotate(90 * Math.PI / 180);
+	        ctx.translate(0, -height);
+	      }
+	      ctx.drawImage(image, 0, 0, width, height);
+	      ctx.restore();
+	      document.getElementById('image').value = canvas.toDataURL('image/png');
+	      document.getElementById('thumbnail').src = canvas.toDataURL('image/png');
+	    };
+	    image.src = readerEvent.target.result;
+	  };
+	  if (file) {
+	    reader.readAsDataURL(file);
+	  }
+	};
+	exports.default = handleImage;
 
 /***/ }
 /******/ ]);
