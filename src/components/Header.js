@@ -63,9 +63,13 @@ class Header extends React.Component{
           <Link to={'/sake/new'} style={styles.link}><MenuItem onTouchTap={ this.close } disabled={!this.props.isLogin}>銘柄登録</MenuItem></Link>
           <Link to={'/login'} style={styles.link} onTouchTap={this.preventWhenLoggedin}><MenuItem onTouchTap={ this.close } disabled={this.props.isLogin}>ログイン</MenuItem></Link>
           <MenuItem href='/auth/logout' disabled={!this.props.isLogin} onTouchTap={ this.logout }>ログアウト</MenuItem>
+          <MenuItem>
+            <div className="fb-share-button" data-href="https://sakepedia.herokuapp.com/" data-layout="button" data-size="large" data-mobile-iframe="true"><a className="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsakepedia.herokuapp.com%2F&amp;src=sdkpreparse">シェア</a></div>
+          </MenuItem>
           <MenuItem><a href="https://twitter.com/share"
             className="twitter-share-button"
             data-lang="ja"
+            data-size="large"
             data-hashtags="sakepedia"
           >
             Tweet
