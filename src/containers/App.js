@@ -6,6 +6,7 @@ import { setAuthStatus } from '../actions/isLogin'
 import classes from '../../public/stylesheets/scss/app.scss'
 // components
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 class App extends React.Component {
   constructor(props) {
@@ -22,13 +23,24 @@ class App extends React.Component {
     }
   }
   render() {
+    const windowHeight = window.innerHeight
+    const headerHeight = 64 + 16 + 16 // height, margin-bottom, root margin
+    const footerHeight = 36 + 8 + 4 // height, margin, padding
+    const styles = {
+      content: {
+        minHeight: windowHeight - headerHeight - footerHeight,
+      },
+    }
     return (
-      <div className={classes.content}>
+      <div className={classes.app}>
         <Header isLogin={this.props.isLogin}/>
 
         {/* add this */}
-        {this.props.children}
+        <div style={styles.content}>
+          {this.props.children}
+        </div>
 
+        <Footer />
       </div>
     )
   }
