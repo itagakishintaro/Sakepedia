@@ -43,6 +43,10 @@ class Header extends React.Component{
     }
   }
 
+  toHome() {
+    location.href='/'
+  }
+
   render() {
     return (
       <div>
@@ -51,6 +55,7 @@ class Header extends React.Component{
           iconElementLeft={
             <IconButton onTouchTap={ this.toggleMenu } ><MenuIcon color={'#fff'} /></IconButton>
           }
+          onTitleTouchTap={ this.toHome }
           style={ styles.appbar }
         />
       <Drawer open={this.state.open} docked={false} onRequestChange={ this.close }>

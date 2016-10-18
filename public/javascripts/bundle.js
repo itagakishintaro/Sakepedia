@@ -70243,6 +70243,11 @@
 	      }
 	    }
 	  }, {
+	    key: 'toHome',
+	    value: function toHome() {
+	      location.href = '/';
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -70255,6 +70260,7 @@
 	            { onTouchTap: this.toggleMenu },
 	            _react2.default.createElement(_menu2.default, { color: '#fff' })
 	          ),
+	          onTitleTouchTap: this.toHome,
 	          style: styles.appbar
 	        }),
 	        _react2.default.createElement(
