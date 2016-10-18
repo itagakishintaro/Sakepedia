@@ -7,8 +7,12 @@ let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 
 let sakesApi = require('./routes/api/sakesApi');
-let reviewsApi = require('./routes/api/reviewsApi');
 let screen = require('./routes/screen');
+// passport
+let twitter = require('./routes/auth/twitter');
+let facebook = require('./routes/auth/facebook');
+let google = require('./routes/auth/google');
+let logout = require('./routes/auth/logout');
 
 let app = express();
 
@@ -25,8 +29,19 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/sakes', sakesApi);
-app.use('/api/reviews', reviewsApi);
 app.use('/', screen);
+// passport
+app.use(twitter.session({
+  secret: 'itagaki',
+  resave: false,
+  saveUninitialized: false
+}));
+app.use(twitter.passport.initialize());
+app.use(twitter.passport.session());
+app.use('/auth/twitter', twitter.router);
+app.use('/auth/facebook', facebook.router);
+app.use('/auth/google', google.router);
+app.use('/auth/logout', logout);
 
 // catch 404 and forward to error handler
 app.use( (req, res, next) => {

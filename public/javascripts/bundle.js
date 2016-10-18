@@ -23684,30 +23684,38 @@
 	
 	var _list2 = _interopRequireDefault(_list);
 	
-	var _names = __webpack_require__(/*! ./names */ 200);
+	var _brands = __webpack_require__(/*! ./brands */ 665);
 	
-	var _names2 = _interopRequireDefault(_names);
+	var _brands2 = _interopRequireDefault(_brands);
 	
 	var _breweries = __webpack_require__(/*! ./breweries */ 201);
 	
 	var _breweries2 = _interopRequireDefault(_breweries);
 	
+	var _sakeYeasts = __webpack_require__(/*! ./sakeYeasts */ 666);
+	
+	var _sakeYeasts2 = _interopRequireDefault(_sakeYeasts);
+	
 	var _prefectures = __webpack_require__(/*! ./prefectures */ 202);
 	
 	var _prefectures2 = _interopRequireDefault(_prefectures);
+	
+	var _rices = __webpack_require__(/*! ./rices */ 667);
+	
+	var _rices2 = _interopRequireDefault(_rices);
 	
 	var _sake = __webpack_require__(/*! ./sake */ 203);
 	
 	var _sake2 = _interopRequireDefault(_sake);
 	
-	var _reviews = __webpack_require__(/*! ./reviews */ 204);
+	var _isLogin = __webpack_require__(/*! ./isLogin */ 668);
 	
-	var _reviews2 = _interopRequireDefault(_reviews);
+	var _isLogin2 = _interopRequireDefault(_isLogin);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var app = (0, _redux.combineReducers)({
-	  list: _list2.default, names: _names2.default, breweries: _breweries2.default, prefectures: _prefectures2.default, sake: _sake2.default, reviews: _reviews2.default
+	  list: _list2.default, brands: _brands2.default, breweries: _breweries2.default, sakeYeasts: _sakeYeasts2.default, prefectures: _prefectures2.default, rices: _rices2.default, sake: _sake2.default, isLogin: _isLogin2.default
 	});
 	
 	exports.default = app;
@@ -23739,32 +23747,7 @@
 	exports.default = list;
 
 /***/ },
-/* 200 */
-/*!*******************************!*\
-  !*** ./src/reducers/names.js ***!
-  \*******************************/
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var names = function names() {
-	  var state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
-	  var action = arguments[1];
-	
-	  switch (action.type) {
-	    case 'SETNAMES':
-	      return action.names;
-	    default:
-	      return state;
-	  }
-	};
-	
-	exports.default = names;
-
-/***/ },
+/* 200 */,
 /* 201 */
 /*!***********************************!*\
   !*** ./src/reducers/breweries.js ***!
@@ -23843,32 +23826,7 @@
 	exports.default = sake;
 
 /***/ },
-/* 204 */
-/*!*********************************!*\
-  !*** ./src/reducers/reviews.js ***!
-  \*********************************/
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var reviews = function reviews() {
-	  var state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
-	  var action = arguments[1];
-	
-	  switch (action.type) {
-	    case 'SETREVIEWS':
-	      return action.reviews;
-	    default:
-	      return state;
-	  }
-	};
-	
-	exports.default = reviews;
-
-/***/ },
+/* 204 */,
 /* 205 */
 /*!*************************************!*\
   !*** ./~/react-router/lib/index.js ***!
@@ -29574,81 +29532,40 @@
 	
 	var _reactRouter = __webpack_require__(/*! react-router */ 205);
 	
-	var _App = __webpack_require__(/*! ./components/App */ 267);
+	var _App = __webpack_require__(/*! ./containers/App */ 669);
 	
 	var _App2 = _interopRequireDefault(_App);
 	
-	var _Search = __webpack_require__(/*! ./containers/Search */ 623);
+	var _DetailContainer = __webpack_require__(/*! ./containers/DetailContainer */ 672);
 	
-	var _Search2 = _interopRequireDefault(_Search);
+	var _DetailContainer2 = _interopRequireDefault(_DetailContainer);
 	
-	var _NewSake = __webpack_require__(/*! ./containers/NewSake */ 648);
+	var _NewSakeContainer = __webpack_require__(/*! ./containers/NewSakeContainer */ 683);
 	
-	var _NewSake2 = _interopRequireDefault(_NewSake);
+	var _NewSakeContainer2 = _interopRequireDefault(_NewSakeContainer);
 	
-	var _Detail = __webpack_require__(/*! ./containers/Detail */ 649);
+	var _SearchContainer = __webpack_require__(/*! ./containers/SearchContainer */ 688);
 	
-	var _Detail2 = _interopRequireDefault(_Detail);
+	var _SearchContainer2 = _interopRequireDefault(_SearchContainer);
+	
+	var _Login = __webpack_require__(/*! ./components/Login */ 691);
+	
+	var _Login2 = _interopRequireDefault(_Login);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Routes = _react2.default.createElement(
 	  _reactRouter.Route,
 	  { path: '/', component: _App2.default },
-	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Search2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: 'sake/new', component: _NewSake2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: 'sake/:sakeId', component: _Detail2.default })
+	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _SearchContainer2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: 'sake/new', component: _NewSakeContainer2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: 'sake/:sakeId', component: _DetailContainer2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: 'login', component: _Login2.default })
 	);
 	exports.default = Routes;
 
 /***/ },
-/* 267 */
-/*!*******************************!*\
-  !*** ./src/components/App.js ***!
-  \*******************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(/*! react */ 170);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _app = __webpack_require__(/*! ../../public/stylesheets/scss/app.scss */ 268);
-	
-	var _app2 = _interopRequireDefault(_app);
-	
-	var _Header = __webpack_require__(/*! ../containers/Header */ 272);
-	
-	var _Header2 = _interopRequireDefault(_Header);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// css
-	var App = _react2.default.createClass({
-	  displayName: 'App',
-	
-	  propTypes: {
-	    children: _react2.default.PropTypes.element.isRequired
-	  },
-	
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: _app2.default.content },
-	      _react2.default.createElement(_Header2.default, null),
-	      this.props.children
-	    );
-	  }
-	});
-	// components
-	exports.default = App;
-
-/***/ },
+/* 267 */,
 /* 268 */
 /*!******************************************!*\
   !*** ./public/stylesheets/scss/app.scss ***!
@@ -29689,7 +29606,7 @@
 	
 	
 	// module
-	exports.push([module.id, "@charset \"UTF-8\";\n._2BAio1zFRsomJhLzT_neW0 {\n  font-family: \"\\6E38\\30B4\\30B7\\30C3\\30AF\\4F53\", \"Yu Gothic\", YuGothic, \"\\30D2\\30E9\\30AE\\30CE\\89D2\\30B4   Pro\", \"Hiragino Kaku Gothic Pro\", \"\\30E1\\30A4\\30EA\\30AA\", \"Meiryo\", sans-serif; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/app.scss","/./public/stylesheets/scss/public/stylesheets/scss/app.scss"],"names":[],"mappings":"AAAA,iBAAiB;ACAjB;EACE,uLAAa,EAAA","file":"app.scss","sourcesContent":["@charset \"UTF-8\";\n.content {\n  font-family: \"游ゴシック体\", \"Yu Gothic\", YuGothic, \"ヒラギノ角ゴ Pro\", \"Hiragino Kaku Gothic Pro\", \"メイリオ\", \"Meiryo\", sans-serif; }\n",".content {\r\n  font-family: \"游ゴシック体\", \"Yu Gothic\", YuGothic, \"ヒラギノ角ゴ Pro\", \"Hiragino Kaku Gothic Pro\", \"メイリオ\", \"Meiryo\", sans-serif;\r\n}\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "@charset \"UTF-8\";\n._2BAio1zFRsomJhLzT_neW0 {\n  font-family: \"\\6E38\\30B4\\30B7\\30C3\\30AF\\4F53\", \"Yu Gothic\", YuGothic, \"\\30D2\\30E9\\30AE\\30CE\\89D2\\30B4   Pro\", \"Hiragino Kaku Gothic Pro\", \"\\30E1\\30A4\\30EA\\30AA\", \"Meiryo\", sans-serif;\n  margin-bottom: 100px; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/app.scss","/./public/stylesheets/scss/public/stylesheets/scss/app.scss"],"names":[],"mappings":"AAAA,iBAAiB;ACAjB;EACE,uLAAa;EACb,qBAAqB,EACtB","file":"app.scss","sourcesContent":["@charset \"UTF-8\";\n.content {\n  font-family: \"游ゴシック体\", \"Yu Gothic\", YuGothic, \"ヒラギノ角ゴ Pro\", \"Hiragino Kaku Gothic Pro\", \"メイリオ\", \"Meiryo\", sans-serif;\n  margin-bottom: 100px; }\n",".content {\r\n  font-family: \"游ゴシック体\", \"Yu Gothic\", YuGothic, \"ヒラギノ角ゴ Pro\", \"Hiragino Kaku Gothic Pro\", \"メイリオ\", \"Meiryo\", sans-serif;\r\n  margin-bottom: 100px;\r\n}\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 	exports.locals = {
@@ -30011,127 +29928,7 @@
 
 
 /***/ },
-/* 272 */
-/*!**********************************!*\
-  !*** ./src/containers/Header.js ***!
-  \**********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 170);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRouter = __webpack_require__(/*! react-router */ 205);
-	
-	var _materialUi = __webpack_require__(/*! material-ui */ 273);
-	
-	var _menu = __webpack_require__(/*! material-ui/svg-icons/navigation/menu */ 302);
-	
-	var _menu2 = _interopRequireDefault(_menu);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// material-ui
-	
-	
-	var styles = {
-	  appbar: {
-	    marginBottom: '1rem'
-	  },
-	  link: {
-	    color: '#000',
-	    textDecoration: 'none'
-	  }
-	};
-	
-	var Header = function (_React$Component) {
-	  _inherits(Header, _React$Component);
-	
-	  function Header(props) {
-	    _classCallCheck(this, Header);
-	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Header).call(this, props));
-	
-	    _this.state = { open: false };
-	    return _this;
-	  }
-	
-	  _createClass(Header, [{
-	    key: 'toggleMenu',
-	    value: function toggleMenu() {
-	      this.setState({ open: !this.state.open });
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-	
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(_materialUi.AppBar, {
-	          title: 'Sakepedia',
-	          iconElementLeft: _react2.default.createElement(
-	            _materialUi.IconButton,
-	            { onClick: this.toggleMenu.bind(this) },
-	            _react2.default.createElement(_menu2.default, { color: '#fff' })
-	          ),
-	          style: styles.appbar
-	        }),
-	        _react2.default.createElement(
-	          _materialUi.Drawer,
-	          { open: this.state.open, docked: false, onRequestChange: function onRequestChange(open) {
-	              return _this2.setState({ open: open });
-	            } },
-	          _react2.default.createElement(
-	            _materialUi.MenuItem,
-	            { onTouchTap: function onTouchTap() {
-	                return _this2.setState({ open: false });
-	              } },
-	            _react2.default.createElement(
-	              _reactRouter.Link,
-	              { to: '/', style: styles.link },
-	              'トップ'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            _materialUi.MenuItem,
-	            { onTouchTap: function onTouchTap() {
-	                return _this2.setState({ open: false });
-	              } },
-	            _react2.default.createElement(
-	              _reactRouter.Link,
-	              { to: '/sake/new', style: styles.link },
-	              '銘柄登録'
-	            )
-	          ),
-	          _react2.default.createElement(_materialUi.MenuItem, { onTouchTap: function onTouchTap() {
-	              return _this2.setState({ open: false });
-	            }, primaryText: 'YYY' })
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return Header;
-	}(_react2.default.Component);
-	
-	exports.default = Header;
-
-/***/ },
+/* 272 */,
 /* 273 */
 /*!********************************!*\
   !*** ./~/material-ui/index.js ***!
@@ -67538,285 +67335,8 @@
 	exports.default = ToolbarTitle;
 
 /***/ },
-/* 623 */
-/*!**********************************!*\
-  !*** ./src/containers/Search.js ***!
-  \**********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 170);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRedux = __webpack_require__(/*! react-redux */ 168);
-	
-	var _AutoComplete = __webpack_require__(/*! material-ui/AutoComplete */ 316);
-	
-	var _AutoComplete2 = _interopRequireDefault(_AutoComplete);
-	
-	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 299);
-	
-	var _FontIcon2 = _interopRequireDefault(_FontIcon);
-	
-	var _List = __webpack_require__(/*! ./List */ 624);
-	
-	var _List2 = _interopRequireDefault(_List);
-	
-	var _Tabs = __webpack_require__(/*! material-ui/Tabs */ 593);
-	
-	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 572);
-	
-	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
-	
-	var _sake = __webpack_require__(/*! ../actions/sake */ 628);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// material-ui
-	
-	// actions
-	
-	
-	var Search = function (_React$Component) {
-	  _inherits(Search, _React$Component);
-	
-	  function Search(props) {
-	    _classCallCheck(this, Search);
-	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Search).call(this, props));
-	
-	    (0, _sake.getNames)(_this.props.dispatch);
-	    (0, _sake.getBreweries)(_this.props.dispatch);
-	    (0, _sake.getPrefectures)(_this.props.dispatch);
-	    return _this;
-	  }
-	
-	  _createClass(Search, [{
-	    key: 'detailSearch',
-	    value: function detailSearch() {
-	      this.search(this.props.dispatch, {
-	        prefecture: document.getElementById('prefecture').value,
-	        brewrey: document.getElementById('brewrey').value,
-	        name: document.getElementById('name').value
-	      });
-	    }
-	  }, {
-	    key: 'search',
-	    value: function search(dispatch, query) {
-	      (0, _sake.getSakeList)(dispatch, query);
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-	
-	      var styles = {
-	        icon: {
-	          color: 'gray'
-	        },
-	        tabItemContainer: {
-	          'backgroundColor': 'lightgray'
-	        }
-	      };
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          _Tabs.Tabs,
-	          { tabItemContainerStyle: styles.tabItemContainer },
-	          _react2.default.createElement(
-	            _Tabs.Tab,
-	            { label: '銘柄検索' },
-	            _react2.default.createElement(_AutoComplete2.default, {
-	              hintText: _react2.default.createElement(
-	                'span',
-	                null,
-	                _react2.default.createElement(
-	                  _FontIcon2.default,
-	                  { className: 'material-icons', style: styles.icon },
-	                  'search'
-	                ),
-	                '銘柄'
-	              ),
-	              dataSource: this.props.names,
-	              fullWidth: true,
-	              onNewRequest: function onNewRequest(name) {
-	                _this2.search(_this2.props.dispatch, { name: name });
-	              }
-	            })
-	          ),
-	          _react2.default.createElement(
-	            _Tabs.Tab,
-	            { label: '詳細検索' },
-	            _react2.default.createElement(_AutoComplete2.default, {
-	              id: 'prefecture',
-	              hintText: _react2.default.createElement(
-	                'span',
-	                null,
-	                _react2.default.createElement(
-	                  _FontIcon2.default,
-	                  { className: 'material-icons', style: styles.icon },
-	                  'search'
-	                ),
-	                '都道府県'
-	              ),
-	              dataSource: this.props.prefectures,
-	              fullWidth: true
-	            }),
-	            _react2.default.createElement(_AutoComplete2.default, {
-	              id: 'brewrey',
-	              hintText: _react2.default.createElement(
-	                'span',
-	                null,
-	                _react2.default.createElement(
-	                  _FontIcon2.default,
-	                  { className: 'material-icons', style: styles.icon },
-	                  'search'
-	                ),
-	                '蔵元'
-	              ),
-	              dataSource: this.props.breweries,
-	              fullWidth: true
-	            }),
-	            _react2.default.createElement(_AutoComplete2.default, {
-	              id: 'name',
-	              hintText: _react2.default.createElement(
-	                'span',
-	                null,
-	                _react2.default.createElement(
-	                  _FontIcon2.default,
-	                  { className: 'material-icons', style: styles.icon },
-	                  'search'
-	                ),
-	                '銘柄'
-	              ),
-	              dataSource: this.props.names,
-	              fullWidth: true
-	            }),
-	            _react2.default.createElement(_RaisedButton2.default, { label: '検索', primary: true, onClick: this.detailSearch.bind(this) })
-	          )
-	        ),
-	        _react2.default.createElement(_List2.default, null)
-	      );
-	    }
-	  }]);
-	
-	  return Search;
-	}(_react2.default.Component);
-	
-	Search.propTypes = {
-	  dispatch: _react.PropTypes.func.isRequired,
-	  list: _react.PropTypes.array.isRequired,
-	  names: _react.PropTypes.array.isRequired,
-	  breweries: _react.PropTypes.array.isRequired,
-	  prefectures: _react.PropTypes.array.isRequired
-	};
-	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return state;
-	};
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Search);
-
-/***/ },
-/* 624 */
-/*!********************************!*\
-  !*** ./src/containers/List.js ***!
-  \********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 170);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRedux = __webpack_require__(/*! react-redux */ 168);
-	
-	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 625);
-	
-	var _list2 = _interopRequireDefault(_list);
-	
-	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 627);
-	
-	var _SakeCard2 = _interopRequireDefault(_SakeCard);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// css
-	
-	// components
-	
-	
-	var List = function (_React$Component) {
-	  _inherits(List, _React$Component);
-	
-	  function List() {
-	    _classCallCheck(this, List);
-	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(List).apply(this, arguments));
-	  }
-	
-	  _createClass(List, [{
-	    key: 'render',
-	    value: function render() {
-	      var MAX = 100;
-	      var alertMessage = '';
-	      if (MAX <= this.props.list.length) {
-	        alertMessage = '検索結果が多すぎるため、' + MAX + '件のみ表示しています。検索条件を絞り込んでください。';
-	      }
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'div',
-	          { className: _list2.default.alert },
-	          alertMessage
-	        ),
-	        this.props.list.map(function (sake) {
-	          return _react2.default.createElement(_SakeCard2.default, { sake: sake });
-	        })
-	      );
-	    }
-	  }]);
-	
-	  return List;
-	}(_react2.default.Component);
-	
-	List.propTypes = {
-	  dispatch: _react.PropTypes.func.isRequired,
-	  list: _react.PropTypes.array.isRequired
-	};
-	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return state;
-	};
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(List);
-
-/***/ },
+/* 623 */,
+/* 624 */,
 /* 625 */
 /*!*******************************************!*\
   !*** ./public/stylesheets/scss/list.scss ***!
@@ -67887,6 +67407,14 @@
 	
 	var _Card = __webpack_require__(/*! material-ui/Card */ 357);
 	
+	var _Stars = __webpack_require__(/*! ./Stars */ 656);
+	
+	var _Stars2 = _interopRequireDefault(_Stars);
+	
+	var _TypeMark = __webpack_require__(/*! ./TypeMark */ 681);
+	
+	var _TypeMark2 = _interopRequireDefault(_TypeMark);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -67896,51 +67424,139 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	// material-ui
 	
+	// components
+	
 	
 	var SakeCard = function (_React$Component) {
 	  _inherits(SakeCard, _React$Component);
 	
-	  function SakeCard() {
+	  function SakeCard(props) {
 	    _classCallCheck(this, SakeCard);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(SakeCard).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SakeCard).call(this, props));
+	
+	    _this.width = window.innerWidth - 16 + 'px';
+	    _this.resizeWidth();
+	    window.addEventListener('resize', _this.resizeWidth);
+	    return _this;
 	  }
 	
 	  _createClass(SakeCard, [{
+	    key: 'averageEvaluation',
+	    value: function averageEvaluation(reviews) {
+	      if (!reviews) {
+	        return 0;
+	      }
+	      return reviews.map(function (r) {
+	        return Number(r.evaluation);
+	      }).reduce(function (p, c) {
+	        return p + c;
+	      }) / reviews.length;
+	    }
+	  }, {
+	    key: 'averageReview',
+	    value: function averageReview(reviews) {
+	      if (!reviews) {
+	        return {};
+	      }
+	      var flavor = reviews.map(function (r) {
+	        return Number(r.flavor);
+	      }).reduce(function (p, c) {
+	        return p + c;
+	      }) / reviews.length;
+	      var taste = reviews.map(function (r) {
+	        return Number(r.taste);
+	      }).reduce(function (p, c) {
+	        return p + c;
+	      }) / reviews.length;
+	      var maturation = reviews.map(function (r) {
+	        return Number(r.maturation);
+	      }).reduce(function (p, c) {
+	        return p + c;
+	      }) / reviews.length;
+	      return { flavor: flavor, taste: taste, maturation: maturation };
+	    }
+	  }, {
+	    key: 'resizeWidth',
+	    value: function resizeWidth() {
+	      this.width = window.innerWidth - 16 + 'px';
+	      if (414 < window.innerWidth) {
+	        this.width = '360px';
+	      }
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var styles = {
 	        card: {
-	          'marginTop': '1em'
+	          marginTop: '1em',
+	          width: this.width
+	        },
+	        cardText: {
+	          display: 'flex'
+	        },
+	        description: {
+	          paddingLeft: '1em',
+	          width: '80%'
 	        },
 	        img: {
-	          'height': '100px',
-	          'marginLeft': '1em'
+	          height: '100%',
+	          left: '50%',
+	          position: 'relative',
+	          top: '50%',
+	          transform: 'translate(-50%, -50%)',
+	          width: 'auto'
 	        },
 	        link: {
 	          color: '#000',
 	          textDecoration: 'none'
+	        },
+	        picture: {
+	          height: '100px',
+	          maxWidth: '100px',
+	          overflow: 'hidden',
+	          width: '20%'
+	        },
+	        review: {
+	          display: 'flex',
+	          justifyContent: 'space-between',
+	          padding: '0 0 0 1em'
+	        },
+	        typeMark: {
+	          float: 'right',
+	          marginRight: '1em'
 	        }
 	      };
+	
 	      return _react2.default.createElement(
 	        _reactRouter.Link,
 	        { to: '/sake/' + this.props.sake._id, style: styles.link },
 	        _react2.default.createElement(
 	          _Card.Card,
 	          { style: styles.card },
+	          _react2.default.createElement(_TypeMark2.default, { review: this.averageReview(this.props.sake.reviews), style: styles.typeMark }),
 	          _react2.default.createElement(_Card.CardHeader, {
-	            title: this.props.sake.名前 + ' ( ' + this.props.sake.種類 + ' )',
-	            subtitle: this.props.sake.蔵元 + ' ( ' + this.props.sake.都道府県 + ' ) '
+	            title: this.props.sake.brand + ' ' + this.props.sake.subname + ' ( ' + this.props.sake.type + ' )',
+	            subtitle: this.props.sake.brewery + ' ( ' + this.props.sake.prefecture + ' ) '
 	          }),
 	          _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement('img', { src: this.props.sake.画像URL, style: styles.img })
-	          ),
-	          _react2.default.createElement(
 	            _Card.CardText,
-	            null,
-	            this.props.sake.香味
+	            { style: styles.cardText },
+	            _react2.default.createElement(
+	              'div',
+	              { style: styles.picture },
+	              _react2.default.createElement('img', { src: this.props.sake.image, style: styles.img })
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { style: styles.description },
+	              _react2.default.createElement(_Stars2.default, { evaluation: this.averageEvaluation(this.props.sake.reviews) }),
+	              _react2.default.createElement(
+	                'div',
+	                null,
+	                this.props.sake.discription
+	              )
+	            )
 	          )
 	        )
 	      );
@@ -67968,7 +67584,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.getPrefectures = exports.getBreweries = exports.getNames = exports.getSake = exports.getSakeList = exports.setPrefectures = exports.setBreweries = exports.setNames = exports.setSake = exports.setSakeList = undefined;
+	exports.getRices = exports.getSakeYeasts = exports.getBreweries = exports.getBrands = exports.getSake = exports.getSakeList = exports.setRices = exports.setSakeYeasts = exports.setBreweries = exports.setBrands = exports.setSake = exports.setSakeList = undefined;
 	
 	var _axios = __webpack_require__(/*! axios */ 629);
 	
@@ -67990,10 +67606,10 @@
 	  };
 	};
 	
-	var setNames = exports.setNames = function setNames(names) {
+	var setBrands = exports.setBrands = function setBrands(brands) {
 	  return {
-	    type: 'SETNAMES',
-	    names: names
+	    type: 'SETBRANDS',
+	    brands: brands
 	  };
 	};
 	
@@ -68004,10 +67620,17 @@
 	  };
 	};
 	
-	var setPrefectures = exports.setPrefectures = function setPrefectures(prefectures) {
+	var setSakeYeasts = exports.setSakeYeasts = function setSakeYeasts(sakeYeasts) {
 	  return {
-	    type: 'SETPREFECTURES',
-	    prefectures: prefectures
+	    type: 'SETKOUBOS',
+	    sakeYeasts: sakeYeasts
+	  };
+	};
+	
+	var setRices = exports.setRices = function setRices(rices) {
+	  return {
+	    type: 'SETRICES',
+	    rices: rices
 	  };
 	};
 	
@@ -68019,8 +67642,8 @@
 	  if (words.brewrey) {
 	    query = query + '&brewrey=' + words.brewrey;
 	  }
-	  if (words.name) {
-	    query = query + '&name=' + words.name;
+	  if (words.brand) {
+	    query = query + '&brand=' + words.brand;
 	  }
 	  _axios2.default.get('/api/sakes?' + query).then(function (res) {
 	    dispatch(setSakeList(res.data));
@@ -68037,9 +67660,9 @@
 	  });
 	};
 	
-	var getNames = exports.getNames = function getNames(dispatch) {
-	  _axios2.default.get('/api/sakes/names').then(function (res) {
-	    dispatch(setNames(res.data));
+	var getBrands = exports.getBrands = function getBrands(dispatch) {
+	  _axios2.default.get('/api/sakes/brands').then(function (res) {
+	    dispatch(setBrands(res.data));
 	  }).catch(function (error) {
 	    console.log(error);
 	  });
@@ -68053,9 +67676,17 @@
 	  });
 	};
 	
-	var getPrefectures = exports.getPrefectures = function getPrefectures(dispatch) {
-	  _axios2.default.get('/api/sakes/prefectures').then(function (res) {
-	    dispatch(setPrefectures(res.data));
+	var getSakeYeasts = exports.getSakeYeasts = function getSakeYeasts(dispatch) {
+	  _axios2.default.get('/api/sakes/sakeYeasts').then(function (res) {
+	    dispatch(setSakeYeasts(res.data));
+	  }).catch(function (error) {
+	    console.log(error);
+	  });
+	};
+	
+	var getRices = exports.getRices = function getRices(dispatch) {
+	  _axios2.default.get('/api/sakes/rices').then(function (res) {
+	    dispatch(setRices(res.data));
 	  }).catch(function (error) {
 	    console.log(error);
 	  });
@@ -69331,465 +68962,8 @@
 
 
 /***/ },
-/* 648 */
-/*!***********************************!*\
-  !*** ./src/containers/NewSake.js ***!
-  \***********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 170);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRedux = __webpack_require__(/*! react-redux */ 168);
-	
-	var _AutoComplete = __webpack_require__(/*! material-ui/AutoComplete */ 316);
-	
-	var _AutoComplete2 = _interopRequireDefault(_AutoComplete);
-	
-	var _MenuItem = __webpack_require__(/*! material-ui/MenuItem */ 333);
-	
-	var _MenuItem2 = _interopRequireDefault(_MenuItem);
-	
-	var _SelectField = __webpack_require__(/*! material-ui/SelectField */ 576);
-	
-	var _SelectField2 = _interopRequireDefault(_SelectField);
-	
-	var _TextField = __webpack_require__(/*! material-ui/TextField */ 318);
-	
-	var _TextField2 = _interopRequireDefault(_TextField);
-	
-	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 572);
-	
-	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
-	
-	var _axios = __webpack_require__(/*! axios */ 629);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// material-ui
-	
-	// lib
-	
-	
-	var NewSake = function (_React$Component) {
-	  _inherits(NewSake, _React$Component);
-	
-	  function NewSake(props) {
-	    _classCallCheck(this, NewSake);
-	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(NewSake).call(this, props));
-	
-	    _this.state = {
-	      acidRate: '',
-	      alcoholRate: '',
-	      aminoRate: '',
-	      brands: [],
-	      breweries: [],
-	      category: '',
-	      koubo: [],
-	      polishRate: '',
-	      prefectures: [],
-	      process: '',
-	      riceOfKake: [],
-	      riceOfKouji: [],
-	      sakeRate: ''
-	    };
-	    return _this;
-	  }
-	
-	  _createClass(NewSake, [{
-	    key: 'send',
-	    value: function send() {
-	      _axios2.default.post('/api/sakes', {
-	        brand: document.getElementById('brand').value,
-	        category: this.state.category,
-	        process: this.state.process,
-	        subname: document.getElementById('subname').value,
-	        url: document.getElementById('url').value,
-	        brewery: document.getElementById('brewery').value,
-	        prefecture: document.getElementById('prefecture').value,
-	        riceOfKouji: document.getElementById('riceOfKouji').value,
-	        riceOfKake: document.getElementById('riceOfKake').value,
-	        koubo: document.getElementById('koubo').value,
-	        polishRate: this.state.polishRate,
-	        alcoholRate: this.state.alcoholRate,
-	        sakeRate: this.state.sakeRate,
-	        acidRate: this.state.acidRate,
-	        aminoRate: this.state.aminoRate,
-	        picture: ''
-	      }).then(function (res) {
-	        console.log(res);
-	      }).catch(function (error) {
-	        console.log(error);
-	      });
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-	
-	      var styles = {
-	        button: {
-	          margin: '1em 0'
-	        }
-	      };
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(_AutoComplete2.default, {
-	          id: 'brand',
-	          floatingLabelFixed: true,
-	          floatingLabelText: '銘柄*',
-	          dataSource: this.state.brands,
-	          fullWidth: true
-	        }),
-	        _react2.default.createElement(
-	          _SelectField2.default,
-	          {
-	            id: 'category',
-	            floatingLabelFixed: true,
-	            floatingLabelText: '分類*',
-	            fullWidth: true,
-	            value: this.state.category,
-	            onChange: function onChange(event, index, value) {
-	              return _this2.setState({ category: value });
-	            } },
-	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '純米大吟醸' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: '大吟醸' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: '純米吟醸' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: '吟醸' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 5, primaryText: '特別純米' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 6, primaryText: '特別本醸造' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 7, primaryText: '純米' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 8, primaryText: '本醸造' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 9, primaryText: '普通' })
-	        ),
-	        _react2.default.createElement(
-	          _SelectField2.default,
-	          {
-	            id: 'process',
-	            floatingLabelFixed: true,
-	            floatingLabelText: '製法*',
-	            fullWidth: true,
-	            value: this.state.process,
-	            onChange: function onChange(event, index, value) {
-	              return _this2.setState({ process: value });
-	            } },
-	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '速醸酛' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: '山廃酛' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: '生酛' })
-	        ),
-	        _react2.default.createElement(_TextField2.default, {
-	          id: 'subname',
-	          floatingLabelFixed: true,
-	          floatingLabelText: 'その他（銘柄、分類以外の副名）',
-	          fullWidth: true
-	        }),
-	        _react2.default.createElement(_TextField2.default, {
-	          id: 'url',
-	          floatingLabelFixed: true,
-	          floatingLabelText: 'メーカーURL',
-	          fullWidth: true
-	        }),
-	        _react2.default.createElement(_AutoComplete2.default, {
-	          id: 'brewery',
-	          floatingLabelFixed: true,
-	          floatingLabelText: '蔵元*',
-	          dataSource: this.state.breweries,
-	          fullWidth: true
-	        }),
-	        _react2.default.createElement(_AutoComplete2.default, {
-	          id: 'prefecture',
-	          floatingLabelFixed: true,
-	          floatingLabelText: '都道府県*',
-	          dataSource: this.state.prefectures,
-	          fullWidth: true
-	        }),
-	        _react2.default.createElement(_AutoComplete2.default, {
-	          id: 'riceOfKouji',
-	          floatingLabelFixed: true,
-	          floatingLabelText: '麹米',
-	          dataSource: this.state.riceOfKouji,
-	          fullWidth: true
-	        }),
-	        _react2.default.createElement(_AutoComplete2.default, {
-	          id: 'riceOfKake',
-	          floatingLabelFixed: true,
-	          floatingLabelText: '掛米',
-	          dataSource: this.state.riceOfKake,
-	          fullWidth: true
-	        }),
-	        _react2.default.createElement(_AutoComplete2.default, {
-	          id: 'koubo',
-	          floatingLabelFixed: true,
-	          floatingLabelText: '酵母',
-	          dataSource: this.state.koubo,
-	          fullWidth: true
-	        }),
-	        _react2.default.createElement(_TextField2.default, {
-	          id: 'polishRate',
-	          floatingLabelFixed: true,
-	          floatingLabelText: '精米歩合',
-	          fullWidth: true
-	        }),
-	        _react2.default.createElement(_TextField2.default, {
-	          id: 'alcoholRate',
-	          floatingLabelFixed: true,
-	          floatingLabelText: 'アルコール度数(%)',
-	          fullWidth: true
-	        }),
-	        _react2.default.createElement(_TextField2.default, {
-	          id: 'sakeRate',
-	          floatingLabelFixed: true,
-	          floatingLabelText: '日本酒度',
-	          fullWidth: true
-	        }),
-	        _react2.default.createElement(_TextField2.default, {
-	          id: 'acidRate',
-	          floatingLabelFixed: true,
-	          floatingLabelText: '酸度',
-	          fullWidth: true
-	        }),
-	        _react2.default.createElement(_TextField2.default, {
-	          id: 'aminoRate',
-	          floatingLabelFixed: true,
-	          floatingLabelText: 'アミノ酸度',
-	          fullWidth: true
-	        }),
-	        _react2.default.createElement(
-	          'div',
-	          { id: 'picture' },
-	          '画像（準備中）'
-	        ),
-	        _react2.default.createElement(_RaisedButton2.default, { label: '登録', primary: true, style: styles.button, onClick: this.send.bind(this) })
-	      );
-	    }
-	  }]);
-	
-	  return NewSake;
-	}(_react2.default.Component);
-	
-	NewSake.propTypes = {
-	  dispatch: _react.PropTypes.func.isRequired,
-	  list: _react.PropTypes.array.isRequired
-	};
-	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return state;
-	};
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(NewSake);
-
-/***/ },
-/* 649 */
-/*!**********************************!*\
-  !*** ./src/containers/Detail.js ***!
-  \**********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 170);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRedux = __webpack_require__(/*! react-redux */ 168);
-	
-	var _Tabs = __webpack_require__(/*! material-ui/Tabs */ 593);
-	
-	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 299);
-	
-	var _FontIcon2 = _interopRequireDefault(_FontIcon);
-	
-	var _detail = __webpack_require__(/*! ../../public/stylesheets/scss/detail.scss */ 650);
-	
-	var _detail2 = _interopRequireDefault(_detail);
-	
-	var _sake = __webpack_require__(/*! ../actions/sake */ 628);
-	
-	var _NewReview = __webpack_require__(/*! ./NewReview */ 652);
-	
-	var _NewReview2 = _interopRequireDefault(_NewReview);
-	
-	var _Reviews = __webpack_require__(/*! ./Reviews */ 653);
-	
-	var _Reviews2 = _interopRequireDefault(_Reviews);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// material-ui
-	
-	// css
-	
-	// actions
-	
-	// components
-	
-	
-	var Detail = function (_React$Component) {
-	  _inherits(Detail, _React$Component);
-	
-	  function Detail(props) {
-	    _classCallCheck(this, Detail);
-	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Detail).call(this, props));
-	
-	    (0, _sake.getSake)(_this.props.dispatch, _this.props.params.sakeId);
-	    return _this;
-	  }
-	
-	  _createClass(Detail, [{
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-	
-	      var styles = {
-	        contentContainer: {
-	          'margin': '1em 0'
-	        },
-	        tabItemContainer: {
-	          'backgroundColor': 'lightgray'
-	        }
-	      };
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'div',
-	          { className: _detail2.default.header },
-	          _react2.default.createElement('img', { src: this.props.sake.画像URL, className: _detail2.default.image }),
-	          _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement(
-	              'div',
-	              null,
-	              _react2.default.createElement(
-	                'span',
-	                { className: _detail2.default.title },
-	                this.props.sake.名前
-	              ),
-	              '( ',
-	              this.props.sake.種類,
-	              ' )'
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              null,
-	              this.props.sake.蔵元,
-	              ' ( ',
-	              this.props.sake.都道府県,
-	              ' )'
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          _Tabs.Tabs,
-	          { tabItemContainerStyle: styles.tabItemContainer, contentContainerStyle: styles.contentContainer },
-	          _react2.default.createElement(
-	            _Tabs.Tab,
-	            {
-	              id: 'detail',
-	              icon: _react2.default.createElement(
-	                _FontIcon2.default,
-	                { className: 'material-icons' },
-	                'details'
-	              ),
-	              label: '詳細'
-	            },
-	            _react2.default.createElement(
-	              'table',
-	              { className: _detail2.default.table },
-	              Object.keys(this.props.sake).map(function (key) {
-	                return _react2.default.createElement(
-	                  'tr',
-	                  { className: _detail2.default.tr },
-	                  _react2.default.createElement(
-	                    'th',
-	                    { className: _detail2.default.th },
-	                    key
-	                  ),
-	                  _react2.default.createElement(
-	                    'td',
-	                    { className: _detail2.default.td },
-	                    _this2.props.sake[key]
-	                  )
-	                );
-	              })
-	            )
-	          ),
-	          _react2.default.createElement(
-	            _Tabs.Tab,
-	            {
-	              id: 'reviews',
-	              icon: _react2.default.createElement(
-	                _FontIcon2.default,
-	                { className: 'material-icons' },
-	                'people'
-	              ),
-	              label: 'レビュー'
-	            },
-	            _react2.default.createElement(_Reviews2.default, { sakeId: this.props.sake._id })
-	          ),
-	          _react2.default.createElement(
-	            _Tabs.Tab,
-	            {
-	              id: 'createReview',
-	              icon: _react2.default.createElement(
-	                _FontIcon2.default,
-	                { className: 'material-icons' },
-	                'chat_bubble_outline'
-	              ),
-	              label: 'レビューする'
-	            },
-	            _react2.default.createElement(_NewReview2.default, { sakeId: this.props.sake._id })
-	          )
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return Detail;
-	}(_react2.default.Component);
-	
-	Detail.propTypes = {
-	  dispatch: _react.PropTypes.func.isRequired,
-	  params: _react.PropTypes.object.isRequired,
-	  sake: _react.PropTypes.object.isRequired
-	};
-	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return state;
-	};
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Detail);
-
-/***/ },
+/* 648 */,
+/* 649 */,
 /* 650 */
 /*!*********************************************!*\
   !*** ./public/stylesheets/scss/detail.scss ***!
@@ -69830,377 +69004,19 @@
 	
 	
 	// module
-	exports.push([module.id, "._2cMOhmxigVqMqoLoeOmGJ2 {\n  border-collapse: collapse;\n  width: 100%; }\n\n._2tH8Uut7cIwjsJP0E3bX3l {\n  background-color: #eee;\n  border: 1px solid #e0e0e0;\n  font-weight: normal;\n  text-align: left; }\n\n.aq7n4jgN736F9AAszhbwm {\n  border: 1px solid #e0e0e0;\n  word-break: break-all; }\n\n._37soP-CgkV47HJHHPN-0wt {\n  display: flex; }\n  ._37soP-CgkV47HJHHPN-0wt ._-aclf8JvETKAr3DoLPF3R {\n    height: 100px;\n    margin: 0 1em 1em; }\n  ._37soP-CgkV47HJHHPN-0wt .d-p7X-iJno14UzotpbGc7 {\n    font-size: 1.5em; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/public/stylesheets/scss/detail.scss","/./public/stylesheets/scss/public/stylesheets/scss/_common.scss"],"names":[],"mappings":"AAIA;EACE,0BAA0B;EAC1B,YAAY,EACb;;AAED;EACE,uBCVY;EDWZ,0BCVe;EDWf,oBAAoB;EACpB,iBAAiB,EAClB;;AAED;EACE,0BChBe;EDiBf,sBAAsB,EACvB;;AAED;EACE,cAAc,EAUf;EAXD;IAII,cAAc;IACd,kBAAkB,EACnB;EANH;IASI,iBAAiB,EAClB","file":"detail.scss","sourcesContent":["@import 'common';\r\n\r\n$border: 1px solid $grey300;\r\n\r\n.table {\r\n  border-collapse: collapse;\r\n  width: 100%;\r\n}\r\n\r\n.th {\r\n  background-color: $grey200;\r\n  border: $border;\r\n  font-weight: normal;\r\n  text-align: left;\r\n}\r\n\r\n.td {\r\n  border: $border;\r\n  word-break: break-all;\r\n}\r\n\r\n.header {\r\n  display: flex;\r\n\r\n  .image {\r\n    height: 100px;\r\n    margin: 0 1em 1em;\r\n  }\r\n\r\n  .title {\r\n    font-size: 1.5em;\r\n  }\r\n}\r\n","$grey200: #eee;\r\n$grey300: #e0e0e0;\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "._37soP-CgkV47HJHHPN-0wt {\n  display: flex; }\n  ._37soP-CgkV47HJHHPN-0wt ._-aclf8JvETKAr3DoLPF3R {\n    height: 100px;\n    margin: 0 1em 1em; }\n  ._37soP-CgkV47HJHHPN-0wt .d-p7X-iJno14UzotpbGc7 {\n    font-size: 1.5em; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/public/stylesheets/scss/detail.scss"],"names":[],"mappings":"AAEA;EACE,cAAc,EAUf;EAXD;IAII,cAAc;IACd,kBAAkB,EACnB;EANH;IASI,iBAAiB,EAClB","file":"detail.scss","sourcesContent":["@import 'common';\r\n\r\n.header {\r\n  display: flex;\r\n\r\n  .image {\r\n    height: 100px;\r\n    margin: 0 1em 1em;\r\n  }\r\n\r\n  .title {\r\n    font-size: 1.5em;\r\n  }\r\n}\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 	exports.locals = {
-		"table": "_2cMOhmxigVqMqoLoeOmGJ2",
-		"th": "_2tH8Uut7cIwjsJP0E3bX3l",
-		"td": "aq7n4jgN736F9AAszhbwm",
 		"header": "_37soP-CgkV47HJHHPN-0wt",
 		"image": "_-aclf8JvETKAr3DoLPF3R",
 		"title": "d-p7X-iJno14UzotpbGc7"
 	};
 
 /***/ },
-/* 652 */
-/*!*************************************!*\
-  !*** ./src/containers/NewReview.js ***!
-  \*************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 170);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRedux = __webpack_require__(/*! react-redux */ 168);
-	
-	var _MenuItem = __webpack_require__(/*! material-ui/MenuItem */ 333);
-	
-	var _MenuItem2 = _interopRequireDefault(_MenuItem);
-	
-	var _SelectField = __webpack_require__(/*! material-ui/SelectField */ 576);
-	
-	var _SelectField2 = _interopRequireDefault(_SelectField);
-	
-	var _TextField = __webpack_require__(/*! material-ui/TextField */ 318);
-	
-	var _TextField2 = _interopRequireDefault(_TextField);
-	
-	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 572);
-	
-	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
-	
-	var _axios = __webpack_require__(/*! axios */ 629);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// material-ui
-	
-	// lib
-	
-	
-	var NewReview = function (_React$Component) {
-	  _inherits(NewReview, _React$Component);
-	
-	  function NewReview(props) {
-	    _classCallCheck(this, NewReview);
-	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(NewReview).call(this, props));
-	
-	    _this.state = {
-	      evaluation: '',
-	      flavor: '',
-	      lowerTemperature: '',
-	      maturation: '',
-	      sakeRate: '',
-	      taste: '',
-	      upperTemperature: ''
-	    };
-	    return _this;
-	  }
-	
-	  _createClass(NewReview, [{
-	    key: 'send',
-	    value: function send() {
-	      _axios2.default.post('/api/reviews', {
-	        sakeId: this.props.sakeId,
-	        date: new Date(),
-	        evaluation: this.state.evaluation,
-	        comment: document.getElementById('comment').value,
-	        flavor: this.state.flavor,
-	        taste: this.state.taste,
-	        maturation: this.state.maturation,
-	        lowerTemperature: this.state.lowerTemperature,
-	        upperTemperature: this.state.upperTemperature,
-	        userId: 'user id',
-	        userName: 'user name',
-	        matched: document.getElementById('matched').value
-	      }).then(function (res) {
-	        console.log(res);
-	      }).catch(function (error) {
-	        console.log(error);
-	      });
-	
-	      location.reload();
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-	
-	      var styles = {
-	        button: {
-	          margin: '1em 0'
-	        }
-	      };
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          _SelectField2.default,
-	          {
-	            id: 'evaluation',
-	            floatingLabelFixed: true,
-	            floatingLabelText: '評価*',
-	            fullWidth: true,
-	            value: this.state.evaluation,
-	            onChange: function onChange(event, index, value) {
-	              return _this2.setState({ evaluation: value });
-	            } },
-	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: 'もう飲まない' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: '好んでは飲まない' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: 'また飲んでもいい' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: 'また飲みたい' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 5, primaryText: '定番にしたい' })
-	        ),
-	        _react2.default.createElement(_TextField2.default, {
-	          id: 'comment',
-	          floatingLabelFixed: true,
-	          floatingLabelText: '香味*',
-	          fullWidth: true,
-	          multiLine: true,
-	          rows: '3'
-	        }),
-	        _react2.default.createElement(
-	          _SelectField2.default,
-	          {
-	            id: 'flavor',
-	            floatingLabelFixed: true,
-	            floatingLabelText: '香り*',
-	            fullWidth: true,
-	            value: this.state.flavor,
-	            onChange: function onChange(event, index, value) {
-	              return _this2.setState({ flavor: value });
-	            } },
-	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '低い' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: 'やや低い' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: 'やや高い' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: '高い' })
-	        ),
-	        _react2.default.createElement(
-	          _SelectField2.default,
-	          {
-	            id: 'taste',
-	            floatingLabelFixed: true,
-	            floatingLabelText: '味*',
-	            fullWidth: true,
-	            value: this.state.taste,
-	            onChange: function onChange(event, index, value) {
-	              return _this2.setState({ taste: value });
-	            } },
-	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '淡い' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: 'やや淡い' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: 'やや濃い' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: '濃い' })
-	        ),
-	        _react2.default.createElement(
-	          _SelectField2.default,
-	          {
-	            id: 'maturation',
-	            floatingLabelFixed: true,
-	            floatingLabelText: '熟成*',
-	            fullWidth: true,
-	            value: this.state.maturation,
-	            onChange: function onChange(event, index, value) {
-	              return _this2.setState({ maturation: value });
-	            } },
-	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: 'フレッシュ' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: 'ややフレッシュ' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: 'やや熟成' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: '熟成' })
-	        ),
-	        _react2.default.createElement(
-	          _SelectField2.default,
-	          {
-	            id: 'lowerTemperature',
-	            floatingLabelFixed: true,
-	            floatingLabelText: '温度（下限）',
-	            fullWidth: true,
-	            value: this.state.lowerTemperature,
-	            onChange: function onChange(event, index, value) {
-	              return _this2.setState({ lowerTemperature: value });
-	            } },
-	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '一番冷たい(5度位)' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: 'やや冷たい(10度位)' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: '常温(15度位)' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: 'ぬる燗(40度位)' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 5, primaryText: '熱燗(50度位)' })
-	        ),
-	        _react2.default.createElement(
-	          _SelectField2.default,
-	          {
-	            id: 'upperTemperature',
-	            floatingLabelFixed: true,
-	            floatingLabelText: '温度（上限）',
-	            fullWidth: true,
-	            value: this.state.upperTemperature,
-	            onChange: function onChange(event, index, value) {
-	              return _this2.setState({ upperTemperature: value });
-	            } },
-	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '一番冷たい(5度位)' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: 'やや冷たい(10度位)' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: '常温(15度位)' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: 'ぬる燗(40度位)' }),
-	          _react2.default.createElement(_MenuItem2.default, { value: 5, primaryText: '熱燗(50度位)' })
-	        ),
-	        _react2.default.createElement(_TextField2.default, {
-	          id: 'matched',
-	          floatingLabelFixed: true,
-	          floatingLabelText: '相性のよい料理',
-	          fullWidth: true
-	        }),
-	        _react2.default.createElement(_RaisedButton2.default, { label: '登録', primary: true, style: styles.button, onClick: this.send.bind(this) })
-	      );
-	    }
-	  }]);
-	
-	  return NewReview;
-	}(_react2.default.Component);
-	
-	NewReview.propTypes = {
-	  dispatch: _react.PropTypes.func.isRequired,
-	  history: _react.PropTypes.object.isRequired,
-	  list: _react.PropTypes.array.isRequired,
-	  sakeId: _react.PropTypes.string.isRequired
-	};
-	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return state;
-	};
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(NewReview);
-
-/***/ },
-/* 653 */
-/*!***********************************!*\
-  !*** ./src/containers/Reviews.js ***!
-  \***********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 170);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRedux = __webpack_require__(/*! react-redux */ 168);
-	
-	var _review = __webpack_require__(/*! ../actions/review */ 654);
-	
-	var _ReviewCard = __webpack_require__(/*! ../components/ReviewCard */ 655);
-	
-	var _ReviewCard2 = _interopRequireDefault(_ReviewCard);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// material-ui
-	// css
-	// actions
-	
-	// components
-	
-	
-	var Reviews = function (_React$Component) {
-	  _inherits(Reviews, _React$Component);
-	
-	  function Reviews() {
-	    _classCallCheck(this, Reviews);
-	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Reviews).apply(this, arguments));
-	  }
-	
-	  _createClass(Reviews, [{
-	    key: 'render',
-	    value: function render() {
-	      if (this.props.sakeId && this.props.reviews !== undefined) {
-	        (0, _review.getReviews)(this.props.dispatch, this.props.sakeId);
-	      }
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        this.props.reviews.map(function (review) {
-	          return _react2.default.createElement(_ReviewCard2.default, { review: review });
-	        })
-	      );
-	    }
-	  }]);
-	
-	  return Reviews;
-	}(_react2.default.Component);
-	
-	Reviews.propTypes = {
-	  dispatch: _react.PropTypes.func.isRequired,
-	  reviews: _react.PropTypes.array.isRequired,
-	  sakeId: _react.PropTypes.string.isRequired
-	};
-	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return state;
-	};
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Reviews);
-
-/***/ },
-/* 654 */
-/*!*******************************!*\
-  !*** ./src/actions/review.js ***!
-  \*******************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.getReviews = exports.setReviews = undefined;
-	
-	var _axios = __webpack_require__(/*! axios */ 629);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var setReviews = exports.setReviews = function setReviews(reviews) {
-	  return {
-	    type: 'SETREVIEWS',
-	    reviews: reviews
-	  };
-	};
-	
-	var getReviews = exports.getReviews = function getReviews(dispatch, sakeId) {
-	  _axios2.default.get('/api/reviews?sakeId=' + sakeId).then(function (res) {
-	    dispatch(setReviews(res.data));
-	  }).catch(function (error) {
-	    console.log(error);
-	  });
-	};
-
-/***/ },
+/* 652 */,
+/* 653 */,
+/* 654 */,
 /* 655 */
 /*!**************************************!*\
   !*** ./src/components/ReviewCard.js ***!
@@ -70225,15 +69041,17 @@
 	
 	var _Card = __webpack_require__(/*! material-ui/Card */ 357);
 	
-	var _Chip = __webpack_require__(/*! material-ui/Chip */ 372);
+	var _Checkbox = __webpack_require__(/*! material-ui/Checkbox */ 367);
 	
-	var _Chip2 = _interopRequireDefault(_Chip);
-	
-	var _colors = __webpack_require__(/*! material-ui/styles/colors */ 527);
+	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 	
 	var _Stars = __webpack_require__(/*! ./Stars */ 656);
 	
 	var _Stars2 = _interopRequireDefault(_Stars);
+	
+	var _TypeMark = __webpack_require__(/*! ./TypeMark */ 681);
+	
+	var _TypeMark2 = _interopRequireDefault(_TypeMark);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -70250,72 +69068,44 @@
 	// lib
 	var dateFormat = __webpack_require__(/*! dateformat */ 657);
 	
-	var Review = function (_React$Component) {
-	  _inherits(Review, _React$Component);
+	var ReviewCard = function (_React$Component) {
+	  _inherits(ReviewCard, _React$Component);
 	
-	  function Review() {
-	    _classCallCheck(this, Review);
+	  function ReviewCard() {
+	    _classCallCheck(this, ReviewCard);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Review).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(ReviewCard).apply(this, arguments));
 	  }
 	
-	  _createClass(Review, [{
-	    key: 'judgeType',
-	    value: function judgeType(review) {
-	      if (review.flavor <= 2 & review.taste <= 2) {
-	        return _react2.default.createElement(
-	          _Chip2.default,
-	          { backgroundColor: _colors.blue200 },
-	          '爽酒'
-	        );
-	      }
-	      if (review.flavor <= 2 & 2 <= review.taste) {
-	        return _react2.default.createElement(
-	          _Chip2.default,
-	          { backgroundColor: _colors.orange200 },
-	          '醇酒'
-	        );
-	      }
-	      if (2 <= review.flavor & review.taste <= 2) {
-	        return _react2.default.createElement(
-	          _Chip2.default,
-	          { backgroundColor: _colors.green200 },
-	          '薫酒'
-	        );
-	      }
-	      if (2 <= review.flavor & 2 <= review.taste & 2 <= review.maturation) {
-	        return _react2.default.createElement(
-	          _Chip2.default,
-	          { backgroundColor: _colors.brown200 },
-	          '熟酒'
-	        );
-	      }
-	      if (2 <= review.flavor & 2 <= review.taste & review.maturation <= 2) {
-	        return _react2.default.createElement(
-	          _Chip2.default,
-	          { backgroundColor: _colors.purple200 },
-	          '薫醇酒'
-	        );
-	      }
-	    }
-	  }, {
+	  _createClass(ReviewCard, [{
 	    key: 'render',
 	    value: function render() {
 	      var styles = {
 	        card: {
-	          'marginBottom': '1em'
+	          marginBottom: '1em',
+	          maxWidth: '414px',
+	          width: '100%'
+	        },
+	        comment: {
+	          marginBottom: '.5em'
+	        },
+	        content: {
+	          marginLeft: '1em'
 	        },
 	        date: {
 	          float: 'right',
 	          fontSize: '.5em',
 	          padding: '.5em'
 	        },
+	        label: {
+	          marginTop: '1em'
+	        },
 	        type: {
 	          display: 'flex',
 	          flexWrap: 'wrap'
 	        },
 	        typeMark: {
-	          margin: '1em 0 0'
+	          margin: '1em 0 0 0'
 	        }
 	      };
 	      return _react2.default.createElement(
@@ -70324,10 +69114,10 @@
 	        _react2.default.createElement(
 	          'div',
 	          { style: styles.date },
-	          dateFormat(this.props.review.date, 'yyyy/mm/dd HH:MM')
+	          dateFormat(this.props.review.tasting_date, 'yyyy/mm/dd HH:MM')
 	        ),
 	        _react2.default.createElement(_Card.CardHeader, {
-	          title: _react2.default.createElement(_Stars2.default, { evaluation: this.props.review.evaluation }),
+	          title: _react2.default.createElement(_Stars2.default, { evaluation: this.props.review.review }),
 	          subtitle: this.props.review.userName
 	        }),
 	        _react2.default.createElement(
@@ -70335,17 +69125,13 @@
 	          null,
 	          _react2.default.createElement(
 	            'div',
-	            null,
+	            { style: styles.comment },
 	            this.props.review.comment
 	          ),
 	          _react2.default.createElement(
 	            'div',
 	            { style: styles.type },
-	            _react2.default.createElement(
-	              'div',
-	              { style: styles.typeMark },
-	              this.judgeType(this.props.review)
-	            ),
+	            _react2.default.createElement(_TypeMark2.default, { review: this.props.review }),
 	            _react2.default.createElement(
 	              _Badge2.default,
 	              {
@@ -70373,31 +69159,61 @@
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            null,
-	            _react2.default.createElement(
-	              'span',
-	              null,
-	              '相性のよい料理：'
-	            ),
-	            _react2.default.createElement(
-	              'span',
-	              null,
-	              this.props.review.matched
-	            )
+	            { style: styles.label },
+	            '適した温度'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { style: styles.content },
+	            _react2.default.createElement(_Checkbox2.default, {
+	              checked: this.props.review.temperature['temp5'],
+	              disabled: true,
+	              label: '一番冷たい(5度位)'
+	            }),
+	            _react2.default.createElement(_Checkbox2.default, {
+	              checked: this.props.review.temperature['temp10'],
+	              disabled: true,
+	              label: 'やや冷たい(10度位)'
+	            }),
+	            _react2.default.createElement(_Checkbox2.default, {
+	              checked: this.props.review.temperature['temp15'],
+	              disabled: true,
+	              label: '常温(15度位)'
+	            }),
+	            _react2.default.createElement(_Checkbox2.default, {
+	              checked: this.props.review.temperature['temp40'],
+	              disabled: true,
+	              label: 'ぬる燗(40度位)'
+	            }),
+	            _react2.default.createElement(_Checkbox2.default, {
+	              checked: this.props.review.temperature['temp50'],
+	              disabled: true,
+	              label: '熱燗(50度位)'
+	            })
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { style: styles.label },
+	            'マリアージュ'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { style: styles.content },
+	            this.props.review.mariage
 	          )
 	        )
 	      );
 	    }
 	  }]);
 	
-	  return Review;
+	  return ReviewCard;
 	}(_react2.default.Component);
 	
-	Review.propTypes = {
+	ReviewCard.propTypes = {
 	  review: _react.PropTypes.object.isRequired
 	};
 	
-	exports.default = Review;
+	exports.default = ReviewCard;
 
 /***/ },
 /* 656 */
@@ -70448,14 +69264,14 @@
 	    value: function render() {
 	      var MAX = 5;
 	      var stars = [];
-	      for (var i = 0; i < this.props.evaluation; i++) {
+	      for (var i = 0; i < Math.round(this.props.evaluation); i++) {
 	        stars.push(_react2.default.createElement(
 	          _FontIcon2.default,
 	          { className: 'material-icons', color: _colors.yellow500 },
 	          'star'
 	        ));
 	      }
-	      for (var _i = 0; _i < MAX - this.props.evaluation; _i++) {
+	      for (var _i = 0; _i < Math.round(MAX - this.props.evaluation); _i++) {
 	        stars.push(_react2.default.createElement(
 	          _FontIcon2.default,
 	          { className: 'material-icons', color: _colors.grey100 },
@@ -71125,6 +69941,2810 @@
 	thunk.withExtraArgument = createThunkMiddleware;
 	
 	exports['default'] = thunk;
+
+/***/ },
+/* 665 */
+/*!********************************!*\
+  !*** ./src/reducers/brands.js ***!
+  \********************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var brands = function brands() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
+	  var action = arguments[1];
+	
+	  switch (action.type) {
+	    case 'SETBRANDS':
+	      return action.brands;
+	    default:
+	      return state;
+	  }
+	};
+	
+	exports.default = brands;
+
+/***/ },
+/* 666 */
+/*!************************************!*\
+  !*** ./src/reducers/sakeYeasts.js ***!
+  \************************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var sakeYeasts = function sakeYeasts() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
+	  var action = arguments[1];
+	
+	  switch (action.type) {
+	    case 'SETKOUBOS':
+	      return action.sakeYeasts;
+	    default:
+	      return state;
+	  }
+	};
+	
+	exports.default = sakeYeasts;
+
+/***/ },
+/* 667 */
+/*!*******************************!*\
+  !*** ./src/reducers/rices.js ***!
+  \*******************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var rices = function rices() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
+	  var action = arguments[1];
+	
+	  switch (action.type) {
+	    case 'SETRICES':
+	      return action.rices;
+	    default:
+	      return state;
+	  }
+	};
+	
+	exports.default = rices;
+
+/***/ },
+/* 668 */
+/*!*********************************!*\
+  !*** ./src/reducers/isLogin.js ***!
+  \*********************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var isLogin = function isLogin() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
+	  var action = arguments[1];
+	
+	  switch (action.type) {
+	    case 'SET_AUTH_STATUS':
+	      return action.isLogin;
+	    default:
+	      return state;
+	  }
+	};
+	
+	exports.default = isLogin;
+
+/***/ },
+/* 669 */
+/*!*******************************!*\
+  !*** ./src/containers/App.js ***!
+  \*******************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 170);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(/*! react-redux */ 168);
+	
+	var _isLogin = __webpack_require__(/*! ../actions/isLogin */ 670);
+	
+	var _app = __webpack_require__(/*! ../../public/stylesheets/scss/app.scss */ 268);
+	
+	var _app2 = _interopRequireDefault(_app);
+	
+	var _Header = __webpack_require__(/*! ../components/Header */ 671);
+	
+	var _Header2 = _interopRequireDefault(_Header);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// actions
+	
+	// css
+	
+	// components
+	
+	
+	var App = function (_React$Component) {
+	  _inherits(App, _React$Component);
+	
+	  function App(props) {
+	    _classCallCheck(this, App);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(App).call(this, props));
+	
+	    if (document.getElementById('userid').innerHTML) {
+	      window.localStorage.setItem('userid', document.getElementById('userid').innerHTML);
+	      window.localStorage.setItem('username', document.getElementById('username').innerHTML);
+	      _this.props.dispatch((0, _isLogin.setAuthStatus)(true));
+	    } else if (window.localStorage.getItem('userid')) {
+	      _this.props.dispatch((0, _isLogin.setAuthStatus)(true));
+	    } else {
+	      _this.props.dispatch((0, _isLogin.setAuthStatus)(false));
+	    }
+	    return _this;
+	  }
+	
+	  _createClass(App, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: _app2.default.content },
+	        _react2.default.createElement(_Header2.default, { isLogin: this.props.isLogin }),
+	        this.props.children
+	      );
+	    }
+	  }]);
+	
+	  return App;
+	}(_react2.default.Component);
+	
+	App.propTypes = {
+	  children: _react.PropTypes.element.isRequired,
+	  dispatch: _react.PropTypes.func.isRequired,
+	  isLogin: _react.PropTypes.bool.isRequired
+	};
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return state;
+	};
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(App);
+
+/***/ },
+/* 670 */
+/*!********************************!*\
+  !*** ./src/actions/isLogin.js ***!
+  \********************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var setAuthStatus = exports.setAuthStatus = function setAuthStatus(isLogin) {
+	  return {
+	    type: 'SET_AUTH_STATUS',
+	    isLogin: isLogin
+	  };
+	};
+
+/***/ },
+/* 671 */
+/*!**********************************!*\
+  !*** ./src/components/Header.js ***!
+  \**********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 170);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRouter = __webpack_require__(/*! react-router */ 205);
+	
+	var _materialUi = __webpack_require__(/*! material-ui */ 273);
+	
+	var _menu = __webpack_require__(/*! material-ui/svg-icons/navigation/menu */ 302);
+	
+	var _menu2 = _interopRequireDefault(_menu);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	
+	var styles = {
+	  appbar: {
+	    marginBottom: '1rem'
+	  },
+	  link: {
+	    color: '#000',
+	    textDecoration: 'none'
+	  }
+	};
+	
+	var Header = function (_React$Component) {
+	  _inherits(Header, _React$Component);
+	
+	  function Header(props) {
+	    _classCallCheck(this, Header);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Header).call(this, props));
+	
+	    _this.state = {
+	      open: false
+	    };
+	    _this.close = _this.close.bind(_this);
+	    _this.toggleMenu = _this.toggleMenu.bind(_this);
+	    _this.preventWhenLoggedin = _this.preventWhenLoggedin.bind(_this);
+	    return _this;
+	  }
+	
+	  _createClass(Header, [{
+	    key: 'toggleMenu',
+	    value: function toggleMenu() {
+	      this.setState({ open: !this.state.open });
+	    }
+	  }, {
+	    key: 'logout',
+	    value: function logout() {
+	      window.localStorage.clear();
+	    }
+	  }, {
+	    key: 'close',
+	    value: function close() {
+	      this.setState({ open: false });
+	    }
+	  }, {
+	    key: 'preventWhenLoggedin',
+	    value: function preventWhenLoggedin(e) {
+	      if (this.props.isLogin) {
+	        e.preventDefault();
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_materialUi.AppBar, {
+	          title: 'Sakepedia',
+	          iconElementLeft: _react2.default.createElement(
+	            _materialUi.IconButton,
+	            { onTouchTap: this.toggleMenu },
+	            _react2.default.createElement(_menu2.default, { color: '#fff' })
+	          ),
+	          style: styles.appbar
+	        }),
+	        _react2.default.createElement(
+	          _materialUi.Drawer,
+	          { open: this.state.open, docked: false, onRequestChange: this.close },
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/', style: styles.link },
+	            _react2.default.createElement(
+	              _materialUi.MenuItem,
+	              { onTouchTap: this.close },
+	              'トップ'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/sake/new', style: styles.link },
+	            _react2.default.createElement(
+	              _materialUi.MenuItem,
+	              { onTouchTap: this.close, disabled: !this.props.isLogin },
+	              '銘柄登録'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/login', style: styles.link, onTouchTap: this.preventWhenLoggedin },
+	            _react2.default.createElement(
+	              _materialUi.MenuItem,
+	              { onTouchTap: this.close, disabled: this.props.isLogin },
+	              'ログイン'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _materialUi.MenuItem,
+	            { href: '/auth/logout', disabled: !this.props.isLogin, onTouchTap: this.logout },
+	            'ログアウト'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Header;
+	}(_react2.default.Component);
+	
+	Header.propTypes = {
+	  isLogin: _react.PropTypes.bool.isRequired
+	};
+	
+	exports.default = Header;
+
+/***/ },
+/* 672 */
+/*!*******************************************!*\
+  !*** ./src/containers/DetailContainer.js ***!
+  \*******************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 170);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(/*! react-redux */ 168);
+	
+	var _sake = __webpack_require__(/*! ../actions/sake */ 628);
+	
+	var _Detail = __webpack_require__(/*! ../components/Detail */ 673);
+	
+	var _Detail2 = _interopRequireDefault(_Detail);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// actions
+	
+	// components
+	
+	
+	var DetailContainer = function (_React$Component) {
+	  _inherits(DetailContainer, _React$Component);
+	
+	  function DetailContainer(props) {
+	    _classCallCheck(this, DetailContainer);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(DetailContainer).call(this, props));
+	
+	    (0, _sake.getSake)(_this.props.dispatch, _this.props.params.sakeId);
+	    return _this;
+	  }
+	
+	  _createClass(DetailContainer, [{
+	    key: 'update',
+	    value: function update() {
+	      (0, _sake.getSake)(this.props.dispatch, this.props.params.sakeId);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(_Detail2.default, {
+	        initialTab: 'detail',
+	        isLogin: this.props.isLogin,
+	        sake: this.props.sake,
+	        update: this.update.bind(this)
+	      });
+	    }
+	  }]);
+	
+	  return DetailContainer;
+	}(_react2.default.Component);
+	
+	DetailContainer.propTypes = {
+	  dispatch: _react.PropTypes.func.isRequired,
+	  isLogin: _react.PropTypes.bool.isRequired,
+	  location: _react.PropTypes.object,
+	  params: _react.PropTypes.object.isRequired,
+	  sake: _react.PropTypes.object.isRequired
+	};
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return state;
+	};
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(DetailContainer);
+
+/***/ },
+/* 673 */
+/*!**********************************!*\
+  !*** ./src/components/Detail.js ***!
+  \**********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 170);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRouter = __webpack_require__(/*! react-router */ 205);
+	
+	var _Tabs = __webpack_require__(/*! material-ui/Tabs */ 593);
+	
+	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 299);
+	
+	var _FontIcon2 = _interopRequireDefault(_FontIcon);
+	
+	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 572);
+	
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+	
+	var _detail = __webpack_require__(/*! ../../public/stylesheets/scss/detail.scss */ 650);
+	
+	var _detail2 = _interopRequireDefault(_detail);
+	
+	var _DetailInfo = __webpack_require__(/*! ./DetailInfo */ 674);
+	
+	var _DetailInfo2 = _interopRequireDefault(_DetailInfo);
+	
+	var _NewReview = __webpack_require__(/*! ./NewReview */ 677);
+	
+	var _NewReview2 = _interopRequireDefault(_NewReview);
+	
+	var _Reviews = __webpack_require__(/*! ./Reviews */ 680);
+	
+	var _Reviews2 = _interopRequireDefault(_Reviews);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	// css
+	
+	// components
+	
+	
+	var Detail = function (_React$Component) {
+	  _inherits(Detail, _React$Component);
+	
+	  function Detail(props) {
+	    _classCallCheck(this, Detail);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Detail).call(this, props));
+	
+	    _this.state = {
+	      tab: _this.props.initialTab
+	    };
+	    return _this;
+	  }
+	
+	  _createClass(Detail, [{
+	    key: 'changeTab',
+	    value: function changeTab(tab) {
+	      this.setState({ tab: tab });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      var styles = {
+	        button: {
+	          margin: '1em 0'
+	        },
+	        contentContainer: {
+	          'margin': '1em 0'
+	        },
+	        tabItemContainer: {
+	          'backgroundColor': 'lightgray'
+	        },
+	        displayWhenLoggedIn: {
+	          display: 'none'
+	        },
+	        displayWhenLoggedOut: {
+	          display: 'none'
+	        }
+	      };
+	      if (this.props.isLogin) {
+	        styles.displayWhenLoggedIn.display = 'block';
+	      }
+	      if (!this.props.isLogin) {
+	        styles.displayWhenLoggedOut.display = 'block';
+	      }
+	
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { className: _detail2.default.header },
+	          _react2.default.createElement('img', { src: this.props.sake.image, className: _detail2.default.image }),
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'div',
+	              null,
+	              _react2.default.createElement(
+	                'span',
+	                { className: _detail2.default.title },
+	                this.props.sake.brand
+	              ),
+	              '( ',
+	              this.props.sake.type,
+	              ' )'
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              null,
+	              this.props.sake.brewery,
+	              ' ( ',
+	              this.props.sake.prefecture,
+	              ' )'
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          _Tabs.Tabs,
+	          {
+	            contentContainerStyle: styles.contentContainer,
+	            tabItemContainerStyle: styles.tabItemContainer,
+	            value: this.state.tab },
+	          _react2.default.createElement(
+	            _Tabs.Tab,
+	            {
+	              id: 'detail',
+	              icon: _react2.default.createElement(
+	                _FontIcon2.default,
+	                { className: 'material-icons' },
+	                'details'
+	              ),
+	              label: '詳細',
+	              onActive: function onActive() {
+	                _this2.changeTab('detail');
+	              },
+	              value: 'detail'
+	            },
+	            _react2.default.createElement(_DetailInfo2.default, { sake: this.props.sake }),
+	            _react2.default.createElement(
+	              'div',
+	              { style: styles.displayWhenLoggedIn },
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/sake/new', query: { sakeId: this.props.sake._id } },
+	                _react2.default.createElement(_RaisedButton2.default, { label: '更新', primary: true, style: styles.button })
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _Tabs.Tab,
+	            {
+	              id: 'reviews',
+	              icon: _react2.default.createElement(
+	                _FontIcon2.default,
+	                { className: 'material-icons' },
+	                'people'
+	              ),
+	              label: 'レビュー',
+	              onActive: function onActive() {
+	                _this2.changeTab('reviews');
+	              },
+	              value: 'reviews'
+	            },
+	            _react2.default.createElement(_Reviews2.default, { reviews: this.props.sake.reviews })
+	          ),
+	          _react2.default.createElement(
+	            _Tabs.Tab,
+	            {
+	              id: 'createReview',
+	              icon: _react2.default.createElement(
+	                _FontIcon2.default,
+	                { className: 'material-icons' },
+	                'chat_bubble_outline'
+	              ),
+	              label: 'レビューする',
+	              onActive: function onActive() {
+	                _this2.changeTab('createReview');
+	              },
+	              value: 'createReview'
+	            },
+	            _react2.default.createElement(_NewReview2.default, {
+	              changeTab: this.changeTab.bind(this),
+	              sake: this.props.sake,
+	              update: this.props.update,
+	              isLogin: this.props.isLogin
+	            }),
+	            _react2.default.createElement(
+	              'div',
+	              { style: styles.displayWhenLoggedOut },
+	              _react2.default.createElement(
+	                'p',
+	                null,
+	                'ログインしてください。'
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/login', query: { sakeId: this.props.sake._id } },
+	                _react2.default.createElement(_RaisedButton2.default, { label: 'ログイン' })
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Detail;
+	}(_react2.default.Component);
+	
+	Detail.propTypes = {
+	  initialTab: _react.PropTypes.string.isRequired,
+	  isLogin: _react.PropTypes.bool.isRequired,
+	  sake: _react.PropTypes.object.isRequired,
+	  update: _react.PropTypes.func.isRequired
+	};
+	
+	exports.default = Detail;
+
+/***/ },
+/* 674 */
+/*!**************************************!*\
+  !*** ./src/components/DetailInfo.js ***!
+  \**************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 170);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _detailInfo = __webpack_require__(/*! ../../public/stylesheets/scss/detailInfo.scss */ 675);
+	
+	var _detailInfo2 = _interopRequireDefault(_detailInfo);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// css
+	
+	
+	var DetailInfo = function (_React$Component) {
+	  _inherits(DetailInfo, _React$Component);
+	
+	  function DetailInfo(props) {
+	    _classCallCheck(this, DetailInfo);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(DetailInfo).call(this, props));
+	  }
+	
+	  _createClass(DetailInfo, [{
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      var items = {
+	        brand: '銘柄',
+	        subname: '副名',
+	        type: '分類',
+	        prefecture: '都道府県',
+	        brewery: '蔵元',
+	        url: 'URL',
+	        description: '説明',
+	        starterCulture: '酒母',
+	        sakeYeast: '酵母',
+	        sakeRiceExceptForKojiMaking: '掛米',
+	        riceForMakingKoji: '麹米',
+	        ricePolishingRate: '精米歩合',
+	        alcoholContent: 'アルコール度数',
+	        sakeMeterValue: '日本酒度',
+	        acidity: '酸度',
+	        aminoAcidContent: 'アミノ酸度'
+	      };
+	      var setAnchor = function setAnchor(input) {
+	        if (/http/.test(input)) {
+	          return _react2.default.createElement(
+	            'a',
+	            { href: input, target: '_blank' },
+	            input
+	          );
+	        }
+	        return input;
+	      };
+	      return _react2.default.createElement(
+	        'table',
+	        { className: _detailInfo2.default.table },
+	        Object.keys(items).map(function (key) {
+	          return _react2.default.createElement(
+	            'tr',
+	            { className: _detailInfo2.default.tr },
+	            _react2.default.createElement(
+	              'th',
+	              { className: _detailInfo2.default.th, width: '25%' },
+	              items[key]
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              { className: _detailInfo2.default.td },
+	              setAnchor(_this2.props.sake[key])
+	            )
+	          );
+	        })
+	      );
+	    }
+	  }]);
+	
+	  return DetailInfo;
+	}(_react2.default.Component);
+	
+	DetailInfo.propTypes = {
+	  sake: _react.PropTypes.object.isRequired
+	};
+	
+	exports.default = DetailInfo;
+
+/***/ },
+/* 675 */
+/*!*************************************************!*\
+  !*** ./public/stylesheets/scss/detailInfo.scss ***!
+  \*************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./detailInfo.scss */ 676);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 271)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules!./../../../node_modules/sass-loader/index.js?sourceMap&modules!./detailInfo.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules!./../../../node_modules/sass-loader/index.js?sourceMap&modules!./detailInfo.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 676 */
+/*!********************************************************************************************************************!*\
+  !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/detailInfo.scss ***!
+  \********************************************************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 270)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".HqZb6oqoqCXoXRVtiMsTb {\n  border-collapse: collapse;\n  width: 100%; }\n\n._2_jq7FiMLvDGlKVFYLt3Um {\n  background-color: #eee;\n  border: 1px solid #e0e0e0;\n  font-weight: normal;\n  text-align: left; }\n\n._1cCXTTKmrr4_cXCWTLitPv {\n  border: 1px solid #e0e0e0;\n  word-break: break-all; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/public/stylesheets/scss/detailInfo.scss","/./public/stylesheets/scss/public/stylesheets/scss/_common.scss"],"names":[],"mappings":"AAIA;EACE,0BAA0B;EAC1B,YAAY,EACb;;AAED;EACE,uBCVY;EDWZ,0BCVe;EDWf,oBAAoB;EACpB,iBAAiB,EAClB;;AAED;EACE,0BChBe;EDiBf,sBAAsB,EACvB","file":"detailInfo.scss","sourcesContent":["@import 'common';\r\n\r\n$border: 1px solid $grey300;\r\n\r\n.table {\r\n  border-collapse: collapse;\r\n  width: 100%;\r\n}\r\n\r\n.th {\r\n  background-color: $grey200;\r\n  border: $border;\r\n  font-weight: normal;\r\n  text-align: left;\r\n}\r\n\r\n.td {\r\n  border: $border;\r\n  word-break: break-all;\r\n}\r\n","$grey200: #eee;\r\n$grey300: #e0e0e0;\r\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+	exports.locals = {
+		"table": "HqZb6oqoqCXoXRVtiMsTb",
+		"th": "_2_jq7FiMLvDGlKVFYLt3Um",
+		"td": "_1cCXTTKmrr4_cXCWTLitPv"
+	};
+
+/***/ },
+/* 677 */
+/*!*************************************!*\
+  !*** ./src/components/NewReview.js ***!
+  \*************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 170);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Checkbox = __webpack_require__(/*! material-ui/Checkbox */ 367);
+	
+	var _Checkbox2 = _interopRequireDefault(_Checkbox);
+	
+	var _MenuItem = __webpack_require__(/*! material-ui/MenuItem */ 333);
+	
+	var _MenuItem2 = _interopRequireDefault(_MenuItem);
+	
+	var _SelectField = __webpack_require__(/*! material-ui/SelectField */ 576);
+	
+	var _SelectField2 = _interopRequireDefault(_SelectField);
+	
+	var _Snackbar = __webpack_require__(/*! material-ui/Snackbar */ 589);
+	
+	var _Snackbar2 = _interopRequireDefault(_Snackbar);
+	
+	var _colors = __webpack_require__(/*! material-ui/styles/colors */ 527);
+	
+	var _TextField = __webpack_require__(/*! material-ui/TextField */ 318);
+	
+	var _TextField2 = _interopRequireDefault(_TextField);
+	
+	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 572);
+	
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+	
+	var _axios = __webpack_require__(/*! axios */ 629);
+	
+	var _axios2 = _interopRequireDefault(_axios);
+	
+	var _NewReviewValidation = __webpack_require__(/*! ./NewReviewValidation */ 678);
+	
+	var _NewReviewValidation2 = _interopRequireDefault(_NewReviewValidation);
+	
+	var _smoothScroll = __webpack_require__(/*! ../util/smoothScroll */ 679);
+	
+	var _smoothScroll2 = _interopRequireDefault(_smoothScroll);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	// lib
+	
+	// validation
+	
+	// util
+	
+	
+	var NewReview = function (_React$Component) {
+	  _inherits(NewReview, _React$Component);
+	
+	  function NewReview(props) {
+	    _classCallCheck(this, NewReview);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(NewReview).call(this, props));
+	
+	    _this.state = {
+	      errorText: {},
+	      evaluation: '',
+	      flavor: '',
+	      maturation: '',
+	      sakeRate: '',
+	      taste: '',
+	      snackbarOpen: false
+	    };
+	    return _this;
+	  }
+	
+	  _createClass(NewReview, [{
+	    key: 'send',
+	    value: function send() {
+	      var _this2 = this;
+	
+	      var validation = (0, _NewReviewValidation2.default)(this.state);
+	      this.setState({ errorText: validation.errorText });
+	      if (validation.error) {
+	        (0, _smoothScroll2.default)(document.getElementById('newReview'), 1000);
+	        return;
+	      }
+	      _axios2.default.put('/api/sakes/' + this.props.sake._id + '/add/review', {
+	        date: new Date(),
+	        review: this.state.evaluation,
+	        comment: document.getElementById('comment').value,
+	        flavor: this.state.flavor,
+	        taste: this.state.taste,
+	        maturation: this.state.maturation,
+	        temperature: {
+	          temp5: document.getElementById('temp5').checked,
+	          temp10: document.getElementById('temp10').checked,
+	          temp15: document.getElementById('temp15').checked,
+	          temp40: document.getElementById('temp40').checked,
+	          temp50: document.getElementById('temp50').checked
+	        },
+	        mariage: document.getElementById('mariage').value,
+	        userId: window.localStorage.getItem('userid'),
+	        userName: window.localStorage.getItem('username')
+	      }).then(function () {
+	        _this2.props.update();
+	        _this2.props.changeTab('reviews');
+	      }).catch(function (error) {
+	        document.getElementById('error').textContent = JSON.stringify(error);
+	        (0, _smoothScroll2.default)(document.getElementById('error'), 100);
+	      });
+	      this.openSnackbar();
+	    }
+	  }, {
+	    key: 'openSnackbar',
+	    value: function openSnackbar() {
+	      this.setState({ snackbarOpen: true });
+	    }
+	  }, {
+	    key: 'closeSnackbar',
+	    value: function closeSnackbar() {
+	      this.setState({ snackbarOpen: false });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this3 = this;
+	
+	      var styles = {
+	        button: {
+	          margin: '1em 0'
+	        },
+	        label: {
+	          color: _colors.grey400,
+	          fontSize: '0.8em'
+	        },
+	        visible: {
+	          display: 'none'
+	        }
+	      };
+	      if (this.props.isLogin) {
+	        styles.visible.display = 'block';
+	      }
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'newReview', style: styles.visible },
+	        _react2.default.createElement(_Snackbar2.default, {
+	          open: this.state.snackbarOpen,
+	          message: '送信しました',
+	          autoHideDuration: 1000,
+	          onRequestClose: this.closeSnackbar.bind(this)
+	        }),
+	        _react2.default.createElement(
+	          _SelectField2.default,
+	          {
+	            id: 'evaluation',
+	            errorText: this.state.errorText.evaluation,
+	            floatingLabelFixed: true,
+	            floatingLabelText: '評価*',
+	            fullWidth: true,
+	            value: this.state.evaluation,
+	            onChange: function onChange(event, index, value) {
+	              return _this3.setState({ evaluation: value });
+	            } },
+	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: 'もう飲まない' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: '好んでは飲まない' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: 'また飲んでもいい' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: 'また飲みたい' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 5, primaryText: '定番にしたい' })
+	        ),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'comment',
+	          errorText: this.state.errorText.comment,
+	          floatingLabelFixed: true,
+	          floatingLabelText: '香味*',
+	          fullWidth: true,
+	          multiLine: true,
+	          required: true,
+	          rows: '3'
+	        }),
+	        _react2.default.createElement(
+	          _SelectField2.default,
+	          {
+	            id: 'flavor',
+	            errorText: this.state.errorText.flavor,
+	            floatingLabelFixed: true,
+	            floatingLabelText: '香り*',
+	            fullWidth: true,
+	            value: this.state.flavor,
+	            onChange: function onChange(event, index, value) {
+	              return _this3.setState({ flavor: value });
+	            } },
+	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '低い' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: 'やや低い' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: 'やや高い' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: '高い' })
+	        ),
+	        _react2.default.createElement(
+	          _SelectField2.default,
+	          {
+	            id: 'taste',
+	            errorText: this.state.errorText.taste,
+	            floatingLabelFixed: true,
+	            floatingLabelText: '味*',
+	            fullWidth: true,
+	            value: this.state.taste,
+	            onChange: function onChange(event, index, value) {
+	              return _this3.setState({ taste: value });
+	            } },
+	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: '淡い' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: 'やや淡い' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: 'やや濃い' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: '濃い' })
+	        ),
+	        _react2.default.createElement(
+	          _SelectField2.default,
+	          {
+	            id: 'maturation',
+	            errorText: this.state.errorText.maturation,
+	            floatingLabelFixed: true,
+	            floatingLabelText: '熟成*',
+	            fullWidth: true,
+	            value: this.state.maturation,
+	            onChange: function onChange(event, index, value) {
+	              return _this3.setState({ maturation: value });
+	            } },
+	          _react2.default.createElement(_MenuItem2.default, { value: 1, primaryText: 'フレッシュ' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 2, primaryText: 'ややフレッシュ' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 3, primaryText: 'やや熟成' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: 4, primaryText: '熟成' })
+	        ),
+	        _react2.default.createElement(
+	          'label',
+	          { style: styles.label },
+	          '適した温度'
+	        ),
+	        _react2.default.createElement(_Checkbox2.default, {
+	          id: 'temp5',
+	          label: '一番冷たい(5度位)'
+	        }),
+	        _react2.default.createElement(_Checkbox2.default, {
+	          id: 'temp10',
+	          label: 'やや冷たい(10度位)'
+	        }),
+	        _react2.default.createElement(_Checkbox2.default, {
+	          id: 'temp15',
+	          label: '常温(15度位)'
+	        }),
+	        _react2.default.createElement(_Checkbox2.default, {
+	          id: 'temp40',
+	          label: 'ぬる燗(40度位)'
+	        }),
+	        _react2.default.createElement(_Checkbox2.default, {
+	          id: 'temp50',
+	          label: '熱燗(50度位)'
+	        }),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'mariage',
+	          floatingLabelFixed: true,
+	          floatingLabelText: 'マリアージュ',
+	          fullWidth: true
+	        }),
+	        _react2.default.createElement(_RaisedButton2.default, { label: '登録', primary: true, style: styles.button, onTouchTap: this.send.bind(this) }),
+	        _react2.default.createElement('div', { id: 'error', className: 'error' })
+	      );
+	    }
+	  }]);
+	
+	  return NewReview;
+	}(_react2.default.Component);
+	
+	NewReview.propTypes = {
+	  changeTab: _react.PropTypes.func.isRequired,
+	  dispatch: _react.PropTypes.func.isRequired,
+	  history: _react.PropTypes.object.isRequired,
+	  isLogin: _react.PropTypes.bool.isRequired,
+	  list: _react.PropTypes.array.isRequired,
+	  sake: _react.PropTypes.object.isRequired,
+	  update: _react.PropTypes.func.isRequired
+	};
+	
+	exports.default = NewReview;
+
+/***/ },
+/* 678 */
+/*!***********************************************!*\
+  !*** ./src/components/NewReviewValidation.js ***!
+  \***********************************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var validate = function validate(state) {
+	  state.error = false;
+	  validateEvaluation(state);
+	  validateComment(state);
+	  validateFlavor(state);
+	  validateTaste(state);
+	  validateMaturation(state);
+	  return state;
+	};
+	
+	var validateEvaluation = function validateEvaluation(state) {
+	  if (!state.evaluation) {
+	    state.error = true;
+	    state.errorText.evaluation = '評価は必須です';
+	  } else {
+	    state.errorText.evaluation = '';
+	  }
+	};
+	
+	var validateComment = function validateComment(state) {
+	  if (!document.getElementById('comment').validity.valid) {
+	    state.error = true;
+	    state.errorText.comment = '香味は必須です';
+	  } else {
+	    state.errorText.comment = '';
+	  }
+	};
+	
+	var validateFlavor = function validateFlavor(state) {
+	  if (!state.flavor) {
+	    state.error = true;
+	    state.errorText.flavor = '香りは必須です';
+	  } else {
+	    state.errorText.flavor = '';
+	  }
+	};
+	
+	var validateTaste = function validateTaste(state) {
+	  if (!state.taste) {
+	    state.error = true;
+	    state.errorText.taste = '味は必須です';
+	  } else {
+	    state.errorText.taste = '';
+	  }
+	};
+	
+	var validateMaturation = function validateMaturation(state) {
+	  if (!state.maturation) {
+	    state.error = true;
+	    state.errorText.maturation = '熟成は必須です';
+	  } else {
+	    state.errorText.maturation = '';
+	  }
+	};
+	
+	exports.default = validate;
+
+/***/ },
+/* 679 */
+/*!**********************************!*\
+  !*** ./src/util/smoothScroll.js ***!
+  \**********************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// http://dongzhang.github.io/blog/Smooth-Scroll-Without-jQuery/
+	var smoothScroll = function smoothScroll(target, time) {
+	  var start = new Date().getTime();
+	  var startPosition = document.body['scrollTop'];
+	
+	  // set an interval to update scrollTop attribute every 25 ms
+	  var timer = setInterval(function () {
+	    // calculate the step, i.e the degree of completion of the smooth scroll
+	    var step = Math.min(1, (new Date().getTime() - start) / time);
+	
+	    // calculate the scroll distance and update the scrollTop
+	    document.body['scrollTop'] -= step * (startPosition - target.offsetTop);
+	
+	    // end interval if the scroll is completed
+	    if (step == 1) {
+	      clearInterval(timer);
+	    }
+	  }, 25);
+	};
+	exports.default = smoothScroll;
+
+/***/ },
+/* 680 */
+/*!***********************************!*\
+  !*** ./src/components/Reviews.js ***!
+  \***********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 170);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _ReviewCard = __webpack_require__(/*! ./ReviewCard */ 655);
+	
+	var _ReviewCard2 = _interopRequireDefault(_ReviewCard);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// components
+	
+	
+	var Reviews = function (_React$Component) {
+	  _inherits(Reviews, _React$Component);
+	
+	  function Reviews() {
+	    _classCallCheck(this, Reviews);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Reviews).apply(this, arguments));
+	  }
+	
+	  _createClass(Reviews, [{
+	    key: 'render',
+	    value: function render() {
+	      var reviews = this.props.reviews;
+	      if (!reviews) {
+	        reviews = [];
+	      }
+	      reviews.sort(function (a, b) {
+	        if (a.date > b.date) {
+	          return -1;
+	        }
+	        if (a.date < b.date) {
+	          return 1;
+	        }
+	        return 0;
+	      });
+	      var styles = {
+	        reviews: {
+	          display: 'flex',
+	          flexWrap: 'wrap'
+	        }
+	      };
+	      return _react2.default.createElement(
+	        'div',
+	        { style: styles.reviews },
+	        reviews.map(function (review) {
+	          return _react2.default.createElement(_ReviewCard2.default, { review: review });
+	        })
+	      );
+	    }
+	  }]);
+	
+	  return Reviews;
+	}(_react2.default.Component);
+	
+	Reviews.propTypes = {
+	  reviews: _react.PropTypes.array.isRequired
+	};
+	
+	exports.default = Reviews;
+
+/***/ },
+/* 681 */
+/*!************************************!*\
+  !*** ./src/components/TypeMark.js ***!
+  \************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 170);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Chip = __webpack_require__(/*! material-ui/Chip */ 372);
+	
+	var _Chip2 = _interopRequireDefault(_Chip);
+	
+	var _colors = __webpack_require__(/*! material-ui/styles/colors */ 527);
+	
+	var _concatObj = __webpack_require__(/*! ../util/concatObj */ 682);
+	
+	var _concatObj2 = _interopRequireDefault(_concatObj);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	// util
+	
+	
+	var TypeMark = function (_React$Component) {
+	  _inherits(TypeMark, _React$Component);
+	
+	  function TypeMark() {
+	    _classCallCheck(this, TypeMark);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(TypeMark).apply(this, arguments));
+	  }
+	
+	  _createClass(TypeMark, [{
+	    key: 'judgeType',
+	    value: function judgeType(review) {
+	      if (!(review.flabor && review.taste && review.maturation)) {
+	        return '';
+	      }
+	      if (review.flabor <= 2 & review.taste <= 2) {
+	        return _react2.default.createElement(
+	          _Chip2.default,
+	          { backgroundColor: _colors.blue200 },
+	          '爽酒'
+	        );
+	      }
+	      if (review.flabor <= 2 & 2 <= review.taste) {
+	        return _react2.default.createElement(
+	          _Chip2.default,
+	          { backgroundColor: _colors.orange200 },
+	          '醇酒'
+	        );
+	      }
+	      if (2 <= review.flabor & review.taste <= 2) {
+	        return _react2.default.createElement(
+	          _Chip2.default,
+	          { backgroundColor: _colors.green200 },
+	          '薫酒'
+	        );
+	      }
+	      if (2 <= review.flabor & 2 <= review.taste & 2 <= review.maturation) {
+	        return _react2.default.createElement(
+	          _Chip2.default,
+	          { backgroundColor: _colors.brown200 },
+	          '熟酒'
+	        );
+	      }
+	      if (2 <= review.flabor & 2 <= review.taste & review.maturation <= 2) {
+	        return _react2.default.createElement(
+	          _Chip2.default,
+	          { backgroundColor: _colors.purple200 },
+	          '薫醇酒'
+	        );
+	      }
+	    }
+	  }, {
+	    key: 'type',
+	    value: function type() {
+	      return '爽酒';
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var styles = {
+	        typeMark: {
+	          margin: '1em 0 0 0'
+	        }
+	      };
+	      return _react2.default.createElement(
+	        'div',
+	        { style: (0, _concatObj2.default)(styles.typeMark, this.props.style) },
+	        this.judgeType(this.props.review)
+	      );
+	    }
+	  }]);
+	
+	  return TypeMark;
+	}(_react2.default.Component);
+	
+	TypeMark.propTypes = {
+	  review: _react.PropTypes.object.isRequired,
+	  style: _react.PropTypes.object
+	};
+	
+	exports.default = TypeMark;
+
+/***/ },
+/* 682 */
+/*!*******************************!*\
+  !*** ./src/util/concatObj.js ***!
+  \*******************************/
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var concatObj = function concatObj(o1, o2) {
+	  var o = {};
+	  for (var key in o1) {
+	    o[key] = o1[key];
+	  }
+	  for (var _key in o2) {
+	    o[_key] = o2[_key];
+	  }
+	  return o;
+	};
+	exports.default = concatObj;
+
+/***/ },
+/* 683 */
+/*!********************************************!*\
+  !*** ./src/containers/NewSakeContainer.js ***!
+  \********************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 170);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(/*! react-redux */ 168);
+	
+	var _sake = __webpack_require__(/*! ../actions/sake */ 628);
+	
+	var _NewSake = __webpack_require__(/*! ../components/NewSake */ 684);
+	
+	var _NewSake2 = _interopRequireDefault(_NewSake);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// actions
+	
+	// components
+	
+	
+	var NewSakeContainer = function (_React$Component) {
+	  _inherits(NewSakeContainer, _React$Component);
+	
+	  function NewSakeContainer(props) {
+	    _classCallCheck(this, NewSakeContainer);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(NewSakeContainer).call(this, props));
+	
+	    (0, _sake.getBrands)(_this.props.dispatch);
+	    (0, _sake.getBreweries)(_this.props.dispatch);
+	    (0, _sake.getRices)(_this.props.dispatch);
+	    (0, _sake.getSakeYeasts)(_this.props.dispatch);
+	    _this.sake = {};
+	    return _this;
+	  }
+	
+	  _createClass(NewSakeContainer, [{
+	    key: 'render',
+	    value: function render() {
+	      if (this.props.location.query.sakeId) {
+	        this.sake = this.props.sake;
+	      }
+	      return _react2.default.createElement(_NewSake2.default, {
+	        brands: this.props.brands,
+	        breweries: this.props.breweries,
+	        sake: this.sake,
+	        sakeYeasts: this.props.sakeYeasts,
+	        rices: this.props.rices
+	      });
+	    }
+	  }]);
+	
+	  return NewSakeContainer;
+	}(_react2.default.Component);
+	
+	NewSakeContainer.propTypes = {
+	  brands: _react.PropTypes.array.isRequired,
+	  breweries: _react.PropTypes.array.isRequired,
+	  dispatch: _react.PropTypes.func.isRequired,
+	  location: _react.PropTypes.Object,
+	  rices: _react.PropTypes.array.isRequired,
+	  sake: _react.PropTypes.Object,
+	  sakeYeasts: _react.PropTypes.array.isRequired
+	};
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return state;
+	};
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(NewSakeContainer);
+
+/***/ },
+/* 684 */
+/*!***********************************!*\
+  !*** ./src/components/NewSake.js ***!
+  \***********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 170);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _AutoComplete = __webpack_require__(/*! material-ui/AutoComplete */ 316);
+	
+	var _AutoComplete2 = _interopRequireDefault(_AutoComplete);
+	
+	var _colors = __webpack_require__(/*! material-ui/styles/colors */ 527);
+	
+	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 299);
+	
+	var _FontIcon2 = _interopRequireDefault(_FontIcon);
+	
+	var _MenuItem = __webpack_require__(/*! material-ui/MenuItem */ 333);
+	
+	var _MenuItem2 = _interopRequireDefault(_MenuItem);
+	
+	var _SelectField = __webpack_require__(/*! material-ui/SelectField */ 576);
+	
+	var _SelectField2 = _interopRequireDefault(_SelectField);
+	
+	var _Snackbar = __webpack_require__(/*! material-ui/Snackbar */ 589);
+	
+	var _Snackbar2 = _interopRequireDefault(_Snackbar);
+	
+	var _TextField = __webpack_require__(/*! material-ui/TextField */ 318);
+	
+	var _TextField2 = _interopRequireDefault(_TextField);
+	
+	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 572);
+	
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+	
+	var _axios = __webpack_require__(/*! axios */ 629);
+	
+	var _axios2 = _interopRequireDefault(_axios);
+	
+	var _Prefectures = __webpack_require__(/*! ./Prefectures */ 685);
+	
+	var _Prefectures2 = _interopRequireDefault(_Prefectures);
+	
+	var _NewSakeValidation = __webpack_require__(/*! ./NewSakeValidation */ 686);
+	
+	var _NewSakeValidation2 = _interopRequireDefault(_NewSakeValidation);
+	
+	var _smoothScroll = __webpack_require__(/*! ../util/smoothScroll */ 679);
+	
+	var _smoothScroll2 = _interopRequireDefault(_smoothScroll);
+	
+	var _ImageHandler = __webpack_require__(/*! ../util/ImageHandler */ 687);
+	
+	var _ImageHandler2 = _interopRequireDefault(_ImageHandler);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	// lib
+	
+	// components
+	
+	// validation
+	
+	// util
+	
+	
+	var NewSake = function (_React$Component) {
+	  _inherits(NewSake, _React$Component);
+	
+	  function NewSake(props) {
+	    _classCallCheck(this, NewSake);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(NewSake).call(this, props));
+	
+	    _this.state = {
+	      type: _this.props.sake.type,
+	      error: false,
+	      errorText: {},
+	      prefecture: _this.props.sake.prefecture,
+	      starterCulture: _this.props.sake.starterCulture,
+	      snackbarOpen: false
+	    };
+	    _this.btnLabel = '登録';
+	    if (_this.props.sake._id) {
+	      _this.btnLabel = '更新';
+	    }
+	    return _this;
+	  }
+	
+	  _createClass(NewSake, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      if (this.props.sake.brand) {
+	        document.getElementById('brand').value = this.props.sake.brand;
+	      }
+	      if (this.props.sake.subname) {
+	        document.getElementById('subname').value = this.props.sake.subname;
+	      }
+	      if (this.props.sake.brewery) {
+	        document.getElementById('brewery').value = this.props.sake.brewery;
+	      }
+	      if (this.props.sake.url) {
+	        document.getElementById('url').value = this.props.sake.url;
+	      }
+	      if (this.props.sake.description) {
+	        document.getElementById('description').value = this.props.sake.description;
+	      }
+	      if (this.props.sake.sakeYeast) {
+	        document.getElementById('sakeYeast').value = this.props.sake.sakeYeast;
+	      }
+	      if (this.props.sake.sakeRiceExceptForKojiMaking) {
+	        document.getElementById('sakeRiceExceptForKojiMaking').value = this.props.sake.sakeRiceExceptForKojiMaking;
+	      }
+	      if (this.props.sake.riceForMakingKoji) {
+	        document.getElementById('riceForMakingKoji').value = this.props.sake.riceForMakingKoji;
+	      }
+	      if (this.props.sake.ricePolishingRate) {
+	        document.getElementById('ricePolishingRate').value = this.props.sake.ricePolishingRate;
+	      }
+	      if (this.props.sake.alcoholContent) {
+	        document.getElementById('alcoholContent').value = this.props.sake.alcoholContent;
+	      }
+	      if (this.props.sake.sakeMeterValue) {
+	        document.getElementById('sakeMeterValue').value = this.props.sake.sakeMeterValue;
+	      }
+	      if (this.props.sake.acidity) {
+	        document.getElementById('acidity').value = this.props.sake.acidity;
+	      }
+	      if (this.props.sake.aminoAcidContent) {
+	        document.getElementById('aminoAcidContent').value = this.props.sake.aminoAcidContent;
+	      }
+	      if (this.props.sake.image) {
+	        document.getElementById('image').value = this.props.sake.image;
+	      }
+	    }
+	  }, {
+	    key: 'send',
+	    value: function send() {
+	      var validation = (0, _NewSakeValidation2.default)(this.state);
+	      this.setState({ errorText: validation.errorText });
+	      if (validation.error) {
+	        (0, _smoothScroll2.default)(document.getElementById('newSake'), 1000);
+	        return;
+	      }
+	      var data = {
+	        brand: document.getElementById('brand').value,
+	        subname: document.getElementById('subname').value,
+	        type: this.state.type,
+	        prefecture: this.state.prefecture,
+	        brewery: document.getElementById('brewery').value,
+	        url: document.getElementById('url').value,
+	        description: document.getElementById('description').value,
+	        starterCulture: this.state.starterCulture,
+	        sakeYeast: document.getElementById('sakeYeast').value,
+	        sakeRiceExceptForKojiMaking: document.getElementById('sakeRiceExceptForKojiMaking').value,
+	        riceForMakingKoji: document.getElementById('riceForMakingKoji').value,
+	        ricePolishingRate: document.getElementById('ricePolishingRate').value,
+	        alcoholContent: document.getElementById('alcoholContent').value,
+	        sakeMeterValue: document.getElementById('sakeMeterValue').value,
+	        acidity: document.getElementById('acidity').value,
+	        aminoAcidContent: document.getElementById('aminoAcidContent').value,
+	        image: document.getElementById('image').value,
+	        date: new Date(),
+	        userid: window.localStorage.getItem('userid'),
+	        username: window.localStorage.getItem('username')
+	      };
+	      if (this.props.sake._id) {
+	        // update
+	        _axios2.default.put('/api/sakes/' + this.props.sake._id, data).then(function () {
+	          window.location.href = '/';
+	        }).catch(function (error) {
+	          document.getElementById('error').textContent = JSON.stringify(error);
+	          (0, _smoothScroll2.default)(document.getElementById('error'), 100);
+	        });
+	      } else {
+	        // insert
+	        _axios2.default.post('/api/sakes', data).then(function () {
+	          window.location.href = '/';
+	        }).catch(function (error) {
+	          document.getElementById('error').textContent = JSON.stringify(error);
+	          (0, _smoothScroll2.default)(document.getElementById('error'), 100);
+	        });
+	      }
+	      this.openSnackbar();
+	    }
+	  }, {
+	    key: 'setPrefecture',
+	    value: function setPrefecture(prefecture) {
+	      this.setState({ prefecture: prefecture });
+	    }
+	  }, {
+	    key: 'openSnackbar',
+	    value: function openSnackbar() {
+	      this.setState({ snackbarOpen: true });
+	    }
+	  }, {
+	    key: 'closeSnackbar',
+	    value: function closeSnackbar() {
+	      this.setState({ snackbarOpen: false });
+	    }
+	  }, {
+	    key: 'handleFile',
+	    value: function handleFile() {
+	      var file = document.getElementById('file').files[0];
+	      (0, _ImageHandler2.default)(file, 200);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      var styles = {
+	        button: {
+	          margin: '1em 0'
+	        },
+	        camera: {
+	          border: '10px',
+	          borderRadius: '2px',
+	          boxShadow: 'rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px',
+	          boxSizing: 'border-box',
+	          display: 'inline-block',
+	          height: '36px',
+	          lineHeight: '36px',
+	          margin: '.5em .5em 0 0',
+	          padding: '.5em 0',
+	          textAlign: 'center',
+	          width: '5em'
+	        },
+	        file: {
+	          display: 'none'
+	        },
+	        imageHint: {
+	          color: 'gray',
+	          fontSize: '0.8em'
+	        },
+	        label: {
+	          color: _colors.grey400,
+	          fontSize: '0.8em'
+	        }
+	      };
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'newSake' },
+	        _react2.default.createElement(_Snackbar2.default, {
+	          open: this.state.snackbarOpen,
+	          message: '送信しました',
+	          autoHideDuration: 1000,
+	          onRequestClose: this.closeSnackbar.bind(this)
+	        }),
+	        _react2.default.createElement(_AutoComplete2.default, {
+	          id: 'brand',
+	          dataSource: this.props.brands,
+	          errorText: this.state.errorText.brand,
+	          floatingLabelFixed: true,
+	          floatingLabelText: '銘柄*',
+	          fullWidth: true,
+	          required: true
+	        }),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'subname',
+	          floatingLabelFixed: true,
+	          floatingLabelText: '副名',
+	          fullWidth: true
+	        }),
+	        _react2.default.createElement(
+	          _SelectField2.default,
+	          {
+	            id: 'type',
+	            errorText: this.state.errorText.type,
+	            floatingLabelFixed: true,
+	            floatingLabelText: '分類*',
+	            fullWidth: true,
+	            value: this.state.type,
+	            onChange: function onChange(event, index, value) {
+	              return _this2.setState({ type: value });
+	            } },
+	          _react2.default.createElement(_MenuItem2.default, { value: '純米大吟醸', primaryText: '純米大吟醸' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '大吟醸', primaryText: '大吟醸' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '純米吟醸', primaryText: '純米吟醸' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '吟醸', primaryText: '吟醸' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '特別純米', primaryText: '特別純米' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '特別本醸造', primaryText: '特別本醸造' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '純米', primaryText: '純米' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '本醸造', primaryText: '本醸造' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '普通', primaryText: '普通' })
+	        ),
+	        _react2.default.createElement(_Prefectures2.default, {
+	          errorText: this.state.errorText.prefecture,
+	          label: '都道府県*',
+	          setPrefecture: this.setPrefecture.bind(this),
+	          value: this.props.sake.prefecture
+	        }),
+	        _react2.default.createElement(_AutoComplete2.default, {
+	          id: 'brewery',
+	          dataSource: this.props.breweries,
+	          errorText: this.state.errorText.brewery,
+	          floatingLabelFixed: true,
+	          floatingLabelText: '蔵元*',
+	          fullWidth: true,
+	          required: true
+	        }),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'url',
+	          errorText: this.state.errorText.url,
+	          floatingLabelFixed: true,
+	          floatingLabelText: 'URL',
+	          fullWidth: true,
+	          hintText: '商品のホームページなど',
+	          type: 'url'
+	        }),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'description',
+	          floatingLabelFixed: true,
+	          floatingLabelText: '説明',
+	          fullWidth: true,
+	          hintText: 'ラベルの説明、ホームページの解説など',
+	          multiLine: true,
+	          rows: 3
+	        }),
+	        _react2.default.createElement(
+	          _SelectField2.default,
+	          {
+	            id: 'starterCulture',
+	            errorText: this.state.errorText.starterCulture,
+	            floatingLabelFixed: true,
+	            floatingLabelText: '酒母',
+	            fullWidth: true,
+	            value: this.state.starterCulture,
+	            onChange: function onChange(event, index, value) {
+	              return _this2.setState({ starterCulture: value });
+	            } },
+	          _react2.default.createElement(_MenuItem2.default, { value: '速醸酛', primaryText: '速醸酛' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '山廃酛', primaryText: '山廃酛' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '生酛', primaryText: '生酛' })
+	        ),
+	        _react2.default.createElement(_AutoComplete2.default, {
+	          id: 'sakeYeast',
+	          floatingLabelFixed: true,
+	          floatingLabelText: '酵母',
+	          dataSource: this.props.sakeYeasts,
+	          fullWidth: true
+	        }),
+	        _react2.default.createElement(_AutoComplete2.default, {
+	          id: 'sakeRiceExceptForKojiMaking',
+	          floatingLabelFixed: true,
+	          floatingLabelText: '掛米',
+	          dataSource: this.props.rices,
+	          fullWidth: true
+	        }),
+	        _react2.default.createElement(_AutoComplete2.default, {
+	          id: 'riceForMakingKoji',
+	          floatingLabelFixed: true,
+	          floatingLabelText: '麹米',
+	          dataSource: this.props.rices,
+	          fullWidth: true
+	        }),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'ricePolishingRate',
+	          errorText: this.state.errorText.ricePolishingRate,
+	          floatingLabelFixed: true,
+	          floatingLabelText: '精米歩合(%)',
+	          fullWidth: true,
+	          step: '0.1',
+	          type: 'number'
+	        }),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'alcoholContent',
+	          errorText: this.state.errorText.alcoholContent,
+	          floatingLabelFixed: true,
+	          floatingLabelText: 'アルコール度数(%)',
+	          fullWidth: true,
+	          step: '0.1',
+	          type: 'number'
+	        }),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'sakeMeterValue',
+	          errorText: this.state.errorText.sakeMeterValue,
+	          floatingLabelFixed: true,
+	          floatingLabelText: '日本酒度',
+	          fullWidth: true,
+	          step: '0.1',
+	          type: 'number'
+	        }),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'acidity',
+	          errorText: this.state.errorText.acidity,
+	          floatingLabelFixed: true,
+	          floatingLabelText: '酸度',
+	          fullWidth: true,
+	          step: '0.1',
+	          type: 'number'
+	        }),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'aminoAcidContent',
+	          errorText: this.state.errorText.aminoAcidContent,
+	          floatingLabelFixed: true,
+	          floatingLabelText: 'アミノ酸度',
+	          fullWidth: true,
+	          step: '0.1',
+	          type: 'number'
+	        }),
+	        _react2.default.createElement(
+	          'label',
+	          { htmlFor: 'file' },
+	          _react2.default.createElement(
+	            'div',
+	            { style: styles.label },
+	            '画像'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { style: styles.camera },
+	            _react2.default.createElement(
+	              _FontIcon2.default,
+	              { className: 'material-icons' },
+	              'photo_camera'
+	            )
+	          ),
+	          _react2.default.createElement('input', { type: 'file', id: 'file', accept: 'image/*', capture: 'camera', style: styles.file, onChange: this.handleFile })
+	        ),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'image',
+	          floatingLabelFixed: true,
+	          fullWidth: true,
+	          hintText: '画像のURLを入力してもOK'
+	        }),
+	        _react2.default.createElement(
+	          'p',
+	          { style: styles.imageHint },
+	          '※Instagramの場合、URL末尾の「/?XXXXXX」部分を「/media/?size=t」に変えてください。'
+	        ),
+	        _react2.default.createElement('img', { id: 'thumbnail', src: '' }),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(_RaisedButton2.default, { label: this.btnLabel, primary: true, style: styles.button, onTouchTap: this.send.bind(this) }),
+	        _react2.default.createElement('div', { id: 'error', className: 'error' })
+	      );
+	    }
+	  }]);
+	
+	  return NewSake;
+	}(_react2.default.Component);
+	
+	NewSake.propTypes = {
+	  breweries: _react.PropTypes.array.isRequired,
+	  brands: _react.PropTypes.array.isRequired,
+	  dispatch: _react.PropTypes.func.isRequired,
+	  sake: _react.PropTypes.Object,
+	  sakeYeasts: _react.PropTypes.array.isRequired,
+	  list: _react.PropTypes.array.isRequired,
+	  rices: _react.PropTypes.array.isRequired
+	};
+	
+	exports.default = NewSake;
+
+/***/ },
+/* 685 */
+/*!***************************************!*\
+  !*** ./src/components/Prefectures.js ***!
+  \***************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 170);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _SelectField = __webpack_require__(/*! material-ui/SelectField */ 576);
+	
+	var _SelectField2 = _interopRequireDefault(_SelectField);
+	
+	var _MenuItem = __webpack_require__(/*! material-ui/MenuItem */ 333);
+	
+	var _MenuItem2 = _interopRequireDefault(_MenuItem);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	
+	var Prefectures = function (_React$Component) {
+	  _inherits(Prefectures, _React$Component);
+	
+	  function Prefectures(props) {
+	    _classCallCheck(this, Prefectures);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Prefectures).call(this, props));
+	
+	    _this.state = {
+	      prefecture: _this.props.value
+	    };
+	    return _this;
+	  }
+	
+	  _createClass(Prefectures, [{
+	    key: 'handleChange',
+	    value: function handleChange(event, index, value) {
+	      this.setState({ prefecture: value });
+	      this.props.setPrefecture(value);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          _SelectField2.default,
+	          {
+	            id: 'prefecture',
+	            errorText: this.props.errorText,
+	            floatingLabelFixed: true,
+	            floatingLabelText: this.props.label,
+	            fullWidth: true,
+	            value: this.state.prefecture,
+	            onChange: this.handleChange.bind(this)
+	          },
+	          _react2.default.createElement(_MenuItem2.default, { value: '', primaryText: '　' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '北海道', primaryText: '北海道' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '青森県', primaryText: '青森県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '岩手県', primaryText: '岩手県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '宮城県', primaryText: '宮城県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '秋田県', primaryText: '秋田県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '山形県', primaryText: '山形県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '福島県', primaryText: '福島県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '茨城県', primaryText: '茨城県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '栃木県', primaryText: '栃木県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '群馬県', primaryText: '群馬県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '埼玉県', primaryText: '埼玉県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '千葉県', primaryText: '千葉県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '東京都', primaryText: '東京都' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '神奈川県', primaryText: '神奈川県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '新潟県', primaryText: '新潟県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '富山県', primaryText: '富山県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '石川県', primaryText: '石川県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '福井県', primaryText: '福井県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '山梨県', primaryText: '山梨県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '長野県', primaryText: '長野県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '岐阜県', primaryText: '岐阜県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '静岡県', primaryText: '静岡県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '愛知県', primaryText: '愛知県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '三重県', primaryText: '三重県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '滋賀県', primaryText: '滋賀県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '京都府', primaryText: '京都府' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '大阪府', primaryText: '大阪府' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '兵庫県', primaryText: '兵庫県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '奈良県', primaryText: '奈良県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '和歌山県', primaryText: '和歌山県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '鳥取県', primaryText: '鳥取県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '島根県', primaryText: '島根県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '岡山県', primaryText: '岡山県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '広島県', primaryText: '広島県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '山口県', primaryText: '山口県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '徳島県', primaryText: '徳島県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '香川県', primaryText: '香川県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '愛媛県', primaryText: '愛媛県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '高知県', primaryText: '高知県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '福岡県', primaryText: '福岡県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '佐賀県', primaryText: '佐賀県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '長崎県', primaryText: '長崎県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '熊本県', primaryText: '熊本県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '大分県', primaryText: '大分県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '宮崎県', primaryText: '宮崎県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '鹿児島県', primaryText: '鹿児島県' }),
+	          _react2.default.createElement(_MenuItem2.default, { value: '沖縄県', primaryText: '沖縄県' })
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Prefectures;
+	}(_react2.default.Component);
+	
+	Prefectures.propTypes = {
+	  errorText: _react.PropTypes.string,
+	  setPrefecture: _react.PropTypes.func.isRequired,
+	  label: _react.PropTypes.string.isRequired,
+	  value: _react.PropTypes.string
+	};
+	
+	exports.default = Prefectures;
+
+/***/ },
+/* 686 */
+/*!*********************************************!*\
+  !*** ./src/components/NewSakeValidation.js ***!
+  \*********************************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var validate = function validate(state) {
+	  state.error = false;
+	  validateBrand(state);
+	  validateType(state);
+	  validateBrewery(state);
+	  validatePrefecture(state);
+	  validateUrl(state);
+	  validateRicePolishingRate(state);
+	  validateSakeMeterValue(state);
+	  validateAlcoholContent(state);
+	  validateAcidity(state);
+	  validateAminoAcidContent(state);
+	  return state;
+	};
+	
+	var validateBrand = function validateBrand(state) {
+	  if (!document.getElementById('brand').validity.valid) {
+	    state.error = true;
+	    state.errorText.brand = '銘柄は必須です';
+	  } else {
+	    state.errorText.brand = '';
+	  }
+	};
+	
+	var validateType = function validateType(state) {
+	  if (!state.type) {
+	    state.error = true;
+	    state.errorText.type = '分類は必須です';
+	  } else {
+	    state.errorText.type = '';
+	  }
+	};
+	
+	var validateBrewery = function validateBrewery(state) {
+	  if (!document.getElementById('brewery').validity.valid) {
+	    state.error = true;
+	    state.errorText.brewery = '蔵元は必須です';
+	  } else {
+	    state.errorText.brewery = '';
+	  }
+	};
+	
+	var validatePrefecture = function validatePrefecture(state) {
+	  if (!state.prefecture) {
+	    state.error = true;
+	    state.errorText.prefecture = '都道府県は必須です';
+	  } else {
+	    state.errorText.prefecture = '';
+	  }
+	};
+	
+	var validateUrl = function validateUrl(state) {
+	  if (!document.getElementById('url').validity.valid) {
+	    state.error = true;
+	    state.errorText.url = 'URLのフォーマットにしてください';
+	  } else {
+	    state.errorText.url = '';
+	  }
+	};
+	
+	var validateRicePolishingRate = function validateRicePolishingRate(state) {
+	  if (!document.getElementById('ricePolishingRate').validity.valid) {
+	    state.error = true;
+	    state.errorText.ricePolishingRate = '数値を入力してください';
+	  } else {
+	    state.errorText.ricePolishingRate = '';
+	  }
+	};
+	
+	var validateAlcoholContent = function validateAlcoholContent(state) {
+	  if (!document.getElementById('alcoholContent').validity.valid) {
+	    state.error = true;
+	    state.errorText.alcoholContent = '数値を入力してください';
+	  } else {
+	    state.errorText.alcoholContent = '';
+	  }
+	};
+	
+	var validateSakeMeterValue = function validateSakeMeterValue(state) {
+	  if (!document.getElementById('sakeMeterValue').validity.valid) {
+	    state.error = true;
+	    state.errorText.sakeMeterValue = '数値を入力してください';
+	  } else {
+	    state.errorText.sakeMeterValue = '';
+	  }
+	};
+	
+	var validateAcidity = function validateAcidity(state) {
+	  if (!document.getElementById('acidity').validity.valid) {
+	    state.error = true;
+	    state.errorText.acidity = '数値を入力してください';
+	  } else {
+	    state.errorText.acidity = '';
+	  }
+	};
+	
+	var validateAminoAcidContent = function validateAminoAcidContent(state) {
+	  if (!document.getElementById('aminoAcidContent').validity.valid) {
+	    state.error = true;
+	    state.errorText.aminoAcidContent = '数値を入力してください';
+	  } else {
+	    state.errorText.aminoAcidContent = '';
+	  }
+	};
+	
+	exports.default = validate;
+
+/***/ },
+/* 687 */
+/*!**********************************!*\
+  !*** ./src/util/ImageHandler.js ***!
+  \**********************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var handleImage = function handleImage(file) {
+	  var max = arguments.length <= 1 || arguments[1] === undefined ? 200 : arguments[1];
+	
+	  var reader = new FileReader();
+	  reader.onload = function (readerEvent) {
+	    var image = new Image();
+	    image.onload = function () {
+	      // Resize the image
+	      var canvas = document.createElement('canvas');
+	      var width = image.width;
+	      var height = image.height;
+	      if (width > height) {
+	        if (width > max) {
+	          height *= max / width;
+	          width = max;
+	        }
+	      } else {
+	        if (height > max) {
+	          width *= max / height;
+	          height = max;
+	        }
+	      }
+	      canvas.width = width;
+	      canvas.height = height;
+	      var ctx = canvas.getContext('2d');
+	      ctx.save();
+	      if (height < width) {
+	        canvas.height = width;
+	        canvas.width = height;
+	        ctx.rotate(90 * Math.PI / 180);
+	        ctx.translate(0, -height);
+	      }
+	      ctx.drawImage(image, 0, 0, width, height);
+	      ctx.restore();
+	      document.getElementById('image').value = canvas.toDataURL('image/png');
+	      document.getElementById('thumbnail').src = canvas.toDataURL('image/png');
+	    };
+	    image.src = readerEvent.target.result;
+	  };
+	  if (file) {
+	    reader.readAsDataURL(file);
+	  }
+	};
+	exports.default = handleImage;
+
+/***/ },
+/* 688 */
+/*!*******************************************!*\
+  !*** ./src/containers/SearchContainer.js ***!
+  \*******************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 170);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(/*! react-redux */ 168);
+	
+	var _sake = __webpack_require__(/*! ../actions/sake */ 628);
+	
+	var _List = __webpack_require__(/*! ../Components/List */ 689);
+	
+	var _List2 = _interopRequireDefault(_List);
+	
+	var _Search = __webpack_require__(/*! ../components/Search */ 690);
+	
+	var _Search2 = _interopRequireDefault(_Search);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// actions
+	
+	// material-ui
+	
+	// components
+	
+	
+	var SearchContainer = function (_React$Component) {
+	  _inherits(SearchContainer, _React$Component);
+	
+	  function SearchContainer(props) {
+	    _classCallCheck(this, SearchContainer);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SearchContainer).call(this, props));
+	
+	    _this.search = _this.search.bind(_this);
+	    (0, _sake.getBrands)(_this.props.dispatch);
+	    (0, _sake.getBreweries)(_this.props.dispatch);
+	    return _this;
+	  }
+	
+	  _createClass(SearchContainer, [{
+	    key: 'search',
+	    value: function search(query) {
+	      (0, _sake.getSakeList)(this.props.dispatch, query);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_Search2.default, {
+	          brands: this.props.brands,
+	          breweries: this.props.breweries,
+	          search: this.search
+	        }),
+	        _react2.default.createElement(_List2.default, { list: this.props.list })
+	      );
+	    }
+	  }]);
+	
+	  return SearchContainer;
+	}(_react2.default.Component);
+	
+	SearchContainer.propTypes = {
+	  dispatch: _react.PropTypes.func.isRequired,
+	  list: _react.PropTypes.array.isRequired,
+	  brands: _react.PropTypes.array.isRequired,
+	  breweries: _react.PropTypes.array.isRequired
+	};
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return state;
+	};
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(SearchContainer);
+
+/***/ },
+/* 689 */
+/*!********************************!*\
+  !*** ./src/Components/List.js ***!
+  \********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 170);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 625);
+	
+	var _list2 = _interopRequireDefault(_list);
+	
+	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 627);
+	
+	var _SakeCard2 = _interopRequireDefault(_SakeCard);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// css
+	
+	// components
+	
+	
+	var List = function (_React$Component) {
+	  _inherits(List, _React$Component);
+	
+	  function List() {
+	    _classCallCheck(this, List);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(List).apply(this, arguments));
+	  }
+	
+	  _createClass(List, [{
+	    key: 'render',
+	    value: function render() {
+	      var MAX = 100;
+	      var alertMessage = '';
+	      if (MAX <= this.props.list.length) {
+	        alertMessage = '検索結果が多すぎるため、' + MAX + '件のみ表示しています。検索条件を絞り込んでください。';
+	      }
+	      var styles = {
+	        list: {
+	          display: 'flex',
+	          flexWrap: 'wrap'
+	        }
+	      };
+	
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { className: _list2.default.alert },
+	          alertMessage
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { style: styles.list },
+	          this.props.list.map(function (sake) {
+	            return _react2.default.createElement(_SakeCard2.default, { sake: sake });
+	          })
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return List;
+	}(_react2.default.Component);
+	
+	List.propTypes = {
+	  dispatch: _react.PropTypes.func.isRequired,
+	  list: _react.PropTypes.array.isRequired
+	};
+	
+	exports.default = List;
+
+/***/ },
+/* 690 */
+/*!**********************************!*\
+  !*** ./src/components/Search.js ***!
+  \**********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 170);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _AutoComplete = __webpack_require__(/*! material-ui/AutoComplete */ 316);
+	
+	var _AutoComplete2 = _interopRequireDefault(_AutoComplete);
+	
+	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 299);
+	
+	var _FontIcon2 = _interopRequireDefault(_FontIcon);
+	
+	var _Tabs = __webpack_require__(/*! material-ui/Tabs */ 593);
+	
+	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 572);
+	
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+	
+	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 685);
+	
+	var _Prefectures2 = _interopRequireDefault(_Prefectures);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	// components
+	
+	
+	var Search = function (_React$Component) {
+	  _inherits(Search, _React$Component);
+	
+	  function Search(props) {
+	    _classCallCheck(this, Search);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Search).call(this, props));
+	
+	    _this.state = {
+	      prefecture: ''
+	    };
+	    _this.detailSearch = _this.detailSearch.bind(_this);
+	    _this.search = _this.search.bind(_this);
+	    return _this;
+	  }
+	
+	  _createClass(Search, [{
+	    key: 'detailSearch',
+	    value: function detailSearch() {
+	      this.props.search({
+	        prefecture: this.state.prefecture,
+	        brewrey: document.getElementById('brewrey').value,
+	        brand: document.getElementById('brand').value
+	      });
+	    }
+	  }, {
+	    key: 'search',
+	    value: function search(brand) {
+	      this.props.search({ brand: brand });
+	    }
+	  }, {
+	    key: 'setPrefecture',
+	    value: function setPrefecture(pref) {
+	      this.setState({ prefecture: pref });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var styles = {
+	        icon: {
+	          color: 'gray'
+	        },
+	        tabItemContainer: {
+	          'backgroundColor': 'lightgray'
+	        }
+	      };
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          _Tabs.Tabs,
+	          { tabItemContainerStyle: styles.tabItemContainer },
+	          _react2.default.createElement(
+	            _Tabs.Tab,
+	            { label: '銘柄検索' },
+	            _react2.default.createElement(_AutoComplete2.default, {
+	              hintText: _react2.default.createElement(
+	                'span',
+	                null,
+	                _react2.default.createElement(
+	                  _FontIcon2.default,
+	                  { className: 'material-icons', style: styles.icon },
+	                  'search'
+	                ),
+	                '銘柄'
+	              ),
+	              dataSource: this.props.brands,
+	              fullWidth: true,
+	              onNewRequest: this.search
+	            })
+	          ),
+	          _react2.default.createElement(
+	            _Tabs.Tab,
+	            { label: '詳細検索' },
+	            _react2.default.createElement(_Prefectures2.default, { label: '都道府県', setPrefecture: this.setPrefecture.bind(this) }),
+	            _react2.default.createElement(_AutoComplete2.default, {
+	              id: 'brewrey',
+	              floatingLabelFixed: true,
+	              floatingLabelText: '蔵元',
+	              dataSource: this.props.breweries,
+	              fullWidth: true
+	            }),
+	            _react2.default.createElement(_AutoComplete2.default, {
+	              id: 'brand',
+	              floatingLabelFixed: true,
+	              floatingLabelText: '銘柄',
+	              dataSource: this.props.brands,
+	              fullWidth: true
+	            }),
+	            _react2.default.createElement(_RaisedButton2.default, {
+	              label: '検索',
+	              primary: true,
+	              onTouchTap: this.detailSearch })
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Search;
+	}(_react2.default.Component);
+	
+	Search.propTypes = {
+	  detailSearch: _react.PropTypes.func.isRequired,
+	  brands: _react.PropTypes.array.isRequired,
+	  breweries: _react.PropTypes.array.isRequired,
+	  search: _react.PropTypes.func.isRequired
+	};
+	
+	exports.default = Search;
+
+/***/ },
+/* 691 */
+/*!*********************************!*\
+  !*** ./src/components/Login.js ***!
+  \*********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 170);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 572);
+	
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// material-ui
+	
+	
+	var Login = function (_React$Component) {
+	  _inherits(Login, _React$Component);
+	
+	  function Login(props) {
+	    _classCallCheck(this, Login);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Login).call(this, props));
+	  }
+	
+	  _createClass(Login, [{
+	    key: 'render',
+	    value: function render() {
+	      var styles = {
+	        button: {
+	          margin: '.5em 0',
+	          width: '100%'
+	        }
+	      };
+	      var from = '/';
+	      if (this.props.location.query.sakeId) {
+	        from = '%2F%23%2Fsake%2F' + this.props.location.query.sakeId;
+	      }
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'a',
+	            { href: '/auth/twitter?from=' + from },
+	            _react2.default.createElement(_RaisedButton2.default, { label: 'Twitterでログイン', style: styles.button, backgroundColor: '#1DA1F3', labelColor: 'white' })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'a',
+	            { href: '/auth/facebook?from=' + from },
+	            _react2.default.createElement(_RaisedButton2.default, { label: 'Facebookでログイン', style: styles.button, backgroundColor: '#3B579D', labelColor: 'white' })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'a',
+	            { href: '/auth/google?from=' + from },
+	            _react2.default.createElement(_RaisedButton2.default, { label: 'Googleでログイン', style: styles.button, backgroundColor: '#DC4A38', labelColor: 'white' })
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Login;
+	}(_react2.default.Component);
+	
+	Login.propTypes = {
+	  location: _react.PropTypes.object
+	};
+	
+	exports.default = Login;
 
 /***/ }
 /******/ ]);

@@ -14,9 +14,14 @@
     "dateformat": "^1.0.12",
     "debug": "~2.2.0",
     "express": "~4.13.4",
+    "express-session": "^1.14.1",
     "material-ui": "^0.15.1",
     "mongodb": "^2.1.18",
     "morgan": "~1.7.0",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth": "^1.0.0",
+    "passport-twitter": "^1.0.4",
     "pug": "^2.0.0-beta3",
     "react": "^15.2.0",
     "react-dom": "^15.2.0",
@@ -24,7 +29,8 @@
     "react-tap-event-plugin": "^1.0.0",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "webcamjs": "^1.0.15"
   },
   "devDependencies": {
     "babel-core": "^6.10.4",

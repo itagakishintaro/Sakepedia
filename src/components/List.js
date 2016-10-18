@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react'
-import { connect } from 'react-redux'
 // css
 import classes from '../../public/stylesheets/scss/list.scss'
 // components
@@ -12,10 +11,19 @@ class List extends React.Component {
     if ( MAX <= this.props.list.length ) {
       alertMessage = `検索結果が多すぎるため、${ MAX }件のみ表示しています。検索条件を絞り込んでください。`
     }
+    const styles = {
+      list: {
+        display: 'flex',
+        flexWrap: 'wrap',
+      },
+    }
+
     return (
       <div>
         <div className={classes.alert}>{ alertMessage }</div>
-        { this.props.list.map( sake => <SakeCard sake={ sake } />  ) }
+        <div style={ styles.list }>
+          { this.props.list.map( sake => <SakeCard sake={sake} /> ) }
+        </div>
       </div>
     )
   }
@@ -26,5 +34,4 @@ List.propTypes = {
   list: PropTypes.array.isRequired,
 }
 
-const mapStateToProps = state => state
-export default connect( mapStateToProps )( List )
+export default List

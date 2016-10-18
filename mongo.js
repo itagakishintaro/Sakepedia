@@ -1,4 +1,5 @@
 'use strict';
+const constants = require('./constants');
 /**
  * node-mongodbのドキュメント
  * http://mongodb.github.io/node-mongodb-native/2.1/
@@ -8,7 +9,7 @@ let MongoClient = require('mongodb').MongoClient;
 let assert = require('assert');
 
 // Connection URL
-const URL = 'mongodb://localhost:27017/Sakepedia';
+const URL = constants.mongourl;
 
 // Use connect method to connect to the Server
 MongoClient.connect(URL, (err, mongodb) => {

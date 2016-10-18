@@ -76,12 +76,10 @@ Sakenoteなどの個人が楽しむだけのアプリとは違って、
 ### 基礎データ
 - 名前（必須）
  - 銘柄名(brand)：サジェスト
- - 分類(category)：なし
- - 製法(process)：セレクト（速醸酛、山廃酛、生酛）
+ - 種類(category)：セレクト（純米大吟醸酒、、、）
+ - 酒母（酛）(moto)：セレクト（速醸酛、山廃酛、生酛）
  - その他（銘柄、分類以外の副名）(subname)：記述  
  「純米吟醸」などの種類が書かれている場合は切り出す  
-   ->「種類」の項目を自動で選択  
-   
 - メーカーURL(url)：記述
 - 蔵元(brewery)：セレクト
 - 都道府県(prefecture)：セレクト
@@ -98,10 +96,11 @@ Sakenoteなどの個人が楽しむだけのアプリとは違って、
 - 酸度(acidRate)：セレクト
 - アミノ酸度(aminoRate)：セレクト
 - 写真(picture)：画像データ
+- 説明(description)：記述
 
 # ユーザーデータ
 - 評価(evaluation)：セレクト（1-5）
-- 香味(comment)：自由記述
+- コメント(comment)：自由記述
 - 香り(flavor)：セレクト（1-4）
 - 味(taste)：セレクト（1-4）
 - 熟成(maturation)：セレクト（1-4）
@@ -117,3 +116,82 @@ Sakenoteなどの個人が楽しむだけのアプリとは違って、
 - メーカー希望小売価格
 - 容量
 - 製造年月日　　
+
+# コントリビュート
+## 環境準備
+### mongodbのインストール
+
+以下からインストール。
+http://www.mongodb.org/
+
+macの場合はbrewからインストールするといいかも。
+
+```
+brew install mongodb
+```
+
+brewでインストールすると、次のメッセージがでるので、lnとlaunchctlコマンドをうつ。
+（または、mongodコマンド）
+
+```
+To have launchd start mongodb at login:
+    ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
+Then to load mongodb now:
+    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
+Or, if you don't want/need launchctl, you can just run:
+    mongod --config /usr/local/etc/mongod.conf
+
+```
+
+### データインポート
+
+```
+mongoimport --db Sakepedia --collection sake --file SakeData_Sake.json
+```
+
+https://docs.mongodb.com/manual/reference/program/mongoimport/
+
+### npm
+
+```
+npm install
+```
+
+### 実行
+
+reactアプリのビルド
+
+```
+npm run dev-client
+```
+
+nodeサーバーの起動
+
+```
+npm run dev-server
+```
+
+アクセス
+
+http://localhost:3000
+
+### ステージング環境（Heroku）へのデプロイ
+
+`mongo.js`のURLに注意。
+
+```
+git checkout heroku
+git merge master
+git push heroku heroku:master
+```
+
+herokuへデータをインポート
+
+```
+$ heroku login
+$ heroku config | grep MONGODB_URI
+MONGODB_URI => mongodb://heroku_12345678:random_password@ds029017.mLab.com:29017/heroku_12345678
+$ mongoimport --host ds029017.mLab.com --port 29017 --username heroku_12345678 --password random_password --collection sake --db heroku_12345678 --file SakeData_Sake.json
+```
+
+https://devcenter.heroku.com/articles/mongolab

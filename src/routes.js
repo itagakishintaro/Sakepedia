@@ -1,16 +1,18 @@
 import React from 'react'
 import { Route, IndexRoute } from 'react-router'
 
-import App from './components/App'
-import Search from './containers/Search'
-import NewSake from './containers/NewSake'
-import Detail from './containers/Detail'
+import App from './containers/App'
+import DetailContainer from './containers/DetailContainer'
+import NewSakeContainer from './containers/NewSakeContainer'
+import SearchContainer from './containers/SearchContainer'
+import Login from './components/Login'
 
 const Routes = (
   <Route path='/' component={App}>
-    <IndexRoute component={Search} />
-    <Route path="sake/new" component={NewSake}/>
-    <Route path="sake/:sakeId" component={Detail}/>
+    <IndexRoute component={SearchContainer} />
+    <Route path="sake/new" component={NewSakeContainer}/>
+    <Route path="sake/:sakeId" component={DetailContainer}/>
+    <Route path="login" component={Login}/>
   </Route>
 );
 export default Routes;

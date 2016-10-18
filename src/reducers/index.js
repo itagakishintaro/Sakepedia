@@ -1,13 +1,15 @@
 import { combineReducers } from 'redux'
 import list from './list'
-import names from './names'
+import brands from './brands'
 import breweries from './breweries'
+import sakeYeasts from './sakeYeasts'
 import prefectures from './prefectures'
+import rices from './rices'
 import sake from './sake'
-import reviews from './reviews'
+import isLogin from './isLogin'
 
 const app = combineReducers( {
-  list, names, breweries, prefectures, sake, reviews
+  list, brands, breweries, sakeYeasts, prefectures, rices, sake, isLogin
 } )
 
 export default app
