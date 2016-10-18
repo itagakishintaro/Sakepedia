@@ -112,7 +112,7 @@ class NewSake extends React.Component {
     if( this.props.sake._id ){ // update
       axios.put( '/api/sakes/' + this.props.sake._id , data)
       .then( () => {
-        window.location.href ='/'
+        window.location.href = '/#/sake/' + this.props.sake._id
       })
       .catch( error => {
         document.getElementById('error').textContent = JSON.stringify(error)
@@ -120,8 +120,8 @@ class NewSake extends React.Component {
       })
     } else { // insert
       axios.post( '/api/sakes' , data)
-      .then( () => {
-        window.location.href ='/'
+      .then( ( r ) => {
+        window.location.href = '/#/sake/' + r.data
       })
       .catch( error => {
         document.getElementById('error').textContent = JSON.stringify(error)

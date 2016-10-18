@@ -77,9 +77,11 @@ router.get( '/:id', ( req, res ) => {
 
 // POST insert data
 router.post( '/', ( req, res ) => {
-  collection( 'sake' ).insertOne( req.body ).then( function ( r ) {
-    res.send( r );
-  } );
+  collection( 'sake' ).insertOne(
+    req.body,
+    function ( err, r ) {
+      res.send( r.insertedId );
+    } );
 } );
 
 // PUT add review
