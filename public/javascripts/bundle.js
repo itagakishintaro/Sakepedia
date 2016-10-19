@@ -67947,6 +67947,23 @@
 	  };
 	};
 	
+	var handleCashe = function handleCashe(url, hasRequestPending, func) {
+	  if ('caches' in window) {
+	    caches.match(url).then(function (response) {
+	      if (response) {
+	        response.json().then(function (json) {
+	          // Only update if the XHR is still pending, otherwise the XHR
+	          // has already returned and provided the latest data.
+	          if (hasRequestPending) {
+	            console.log('get from cache');
+	            func(json);
+	          }
+	        });
+	      }
+	    });
+	  }
+	};
+	
 	var getSakeList = exports.getSakeList = function getSakeList(dispatch, words) {
 	  var query = 'action=search';
 	  if (words.prefecture) {
@@ -67958,7 +67975,15 @@
 	  if (words.brand) {
 	    query = query + '&brand=' + words.brand;
 	  }
-	  _axios2.default.get('/api/sakes?' + query).then(function (res) {
+	  var url = '/api/sakes?' + query;
+	
+	  var hasRequestPending = true;
+	  handleCashe(url, hasRequestPending, function (data) {
+	    dispatch(setSakeList(data));
+	  });
+	
+	  _axios2.default.get(url).then(function (res) {
+	    hasRequestPending = false;
 	    dispatch(setSakeList(res.data));
 	  }).catch(function (error) {
 	    console.log(error);
@@ -67966,7 +67991,13 @@
 	};
 	
 	var getSake = exports.getSake = function getSake(dispatch, id) {
-	  _axios2.default.get('/api/sakes/' + id).then(function (res) {
+	  var url = '/api/sakes/' + id;
+	  var hasRequestPending = true;
+	  handleCashe(url, hasRequestPending, function (data) {
+	    dispatch(setSake(data));
+	  });
+	  _axios2.default.get(url).then(function (res) {
+	    hasRequestPending = false;
 	    dispatch(setSake(res.data));
 	  }).catch(function (error) {
 	    console.log(error);
@@ -67974,7 +68005,13 @@
 	};
 	
 	var getBrands = exports.getBrands = function getBrands(dispatch) {
-	  _axios2.default.get('/api/sakes/brands').then(function (res) {
+	  var url = '/api/sakes/brands';
+	  var hasRequestPending = true;
+	  handleCashe(url, hasRequestPending, function (data) {
+	    dispatch(setBrands(data));
+	  });
+	  _axios2.default.get(url).then(function (res) {
+	    hasRequestPending = false;
 	    dispatch(setBrands(res.data));
 	  }).catch(function (error) {
 	    console.log(error);
@@ -67982,7 +68019,13 @@
 	};
 	
 	var getBreweries = exports.getBreweries = function getBreweries(dispatch) {
-	  _axios2.default.get('/api/sakes/breweries').then(function (res) {
+	  var url = '/api/sakes/breweries';
+	  var hasRequestPending = true;
+	  handleCashe(url, hasRequestPending, function (data) {
+	    dispatch(setBreweries(data));
+	  });
+	  _axios2.default.get(url).then(function (res) {
+	    hasRequestPending = false;
 	    dispatch(setBreweries(res.data));
 	  }).catch(function (error) {
 	    console.log(error);
@@ -67990,7 +68033,13 @@
 	};
 	
 	var getSakeYeasts = exports.getSakeYeasts = function getSakeYeasts(dispatch) {
-	  _axios2.default.get('/api/sakes/sakeYeasts').then(function (res) {
+	  var url = '/api/sakes/sakeYeasts';
+	  var hasRequestPending = true;
+	  handleCashe(url, hasRequestPending, function (data) {
+	    dispatch(setSakeYeasts(data));
+	  });
+	  _axios2.default.get(url).then(function (res) {
+	    hasRequestPending = false;
 	    dispatch(setSakeYeasts(res.data));
 	  }).catch(function (error) {
 	    console.log(error);
@@ -67998,7 +68047,13 @@
 	};
 	
 	var getRices = exports.getRices = function getRices(dispatch) {
-	  _axios2.default.get('/api/sakes/rices').then(function (res) {
+	  var url = '/api/sakes/rices';
+	  var hasRequestPending = true;
+	  handleCashe(url, hasRequestPending, function (data) {
+	    dispatch(setRices(data));
+	  });
+	  _axios2.default.get(url).then(function (res) {
+	    hasRequestPending = false;
 	    dispatch(setRices(res.data));
 	  }).catch(function (error) {
 	    console.log(error);
