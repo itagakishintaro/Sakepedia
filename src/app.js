@@ -12,6 +12,8 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
 // for async process
 import thunk from 'redux-thunk'
+// for ie
+import 'babel-polyfill'
 
 let store = createStore(
   app,
