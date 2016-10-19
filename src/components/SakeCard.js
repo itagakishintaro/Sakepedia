@@ -39,6 +39,7 @@ class SakeCard extends React.Component {
       card: {
         marginTop: '1em',
         width: this.width,
+        height: '200px',
       },
       cardText: {
         display: 'flex',
@@ -70,6 +71,10 @@ class SakeCard extends React.Component {
         justifyContent: 'space-between',
         padding: '0 0 0 1em',
       },
+      text: {
+        height: '6em',
+        overflow: 'hidden',
+      },
       typeMark: {
         float: 'right',
         marginRight: '1em',
@@ -90,7 +95,7 @@ class SakeCard extends React.Component {
             </div>
             <div style={ styles.description }>
               <Stars evaluation={ this.averageEvaluation( this.props.sake.reviews ) } />
-              <div>{ this.props.sake.discription }</div>
+              <div style={ styles.text }>{ this.props.sake.description }</div>
             </div>
           </CardText>
         </Card>
