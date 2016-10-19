@@ -35,7 +35,7 @@ self.addEventListener('activate', function(e) {
 
 self.addEventListener('fetch', function(e) {
   console.log('[ServiceWorker] Fetch', e.request.url);
-  var dataUrl = 'https://sakepedia.herokuapp.com/';
+  var dataUrl = 'https://sakepedia.herokuapp.com/api/';
   if (e.request.url.indexOf(dataUrl) === 0) {
     e.respondWith(
       fetch(e.request)
