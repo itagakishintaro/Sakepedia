@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "dev-server": "node-dev ./bin/www",
     "dev-client": "webpack -d --progress --watch",
-    "deploy-client": "webpack -d --progress --optimize-minimize"
+    "production": "webpack -d --progress --optimize-minimize"
   },
   "dependencies": {
     "axios": "^0.12.0",
