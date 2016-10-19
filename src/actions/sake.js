@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { b64encode } from '../util/base64.js'
 
 export const setSakeList = ( list ) => {
   return {
@@ -62,13 +63,13 @@ const handleCashe = ( url, hasRequestPending, func ) => {
 export const getSakeList = ( dispatch, words ) => {
   let query = 'action=search'
   if( words.prefecture ) {
-    query = `${query}&prefecture=${words.prefecture}`
+    query = `${query}&prefecture=${b64encode(words.prefecture)}`
   }
   if( words.brewrey ) {
-    query = `${query}&brewrey=${words.brewrey}`
+    query = `${query}&brewrey=${b64encode(words.brewrey)}`
   }
   if( words.brand ) {
-    query = `${query}&brand=${words.brand}`
+    query = `${query}&brand=${b64encode(words.brand)}`
   }
   let url = `/api/sakes?${query}`
 
