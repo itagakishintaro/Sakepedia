@@ -1,12 +1,13 @@
 // https://developers.google.com/web/fundamentals/getting-started/codelabs/your-first-pwapp/
 
-var dataCacheName = 'Sakepedia-v1';
-var cacheName = 'Sakepedia';
+var dataCacheName = 'Sakepedia-data-v1';
+var cacheName = 'Sakepedia-v1';
 var filesToCache = [
   '/',
   '/app.js',
   '/javascripts/bundle.js',
-  '/javascripts/bundle.js.map'
+  '/javascripts/bundle.js.map',
+  '/stylesheets/font-awesome/css/font-awesome.min.css'
 ];
 
 self.addEventListener('install', function(e) {
