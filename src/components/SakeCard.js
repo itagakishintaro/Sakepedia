@@ -39,7 +39,7 @@ class SakeCard extends React.Component {
       card: {
         marginTop: '1em',
         width: this.width,
-        height: '200px',
+        height: '15em',
       },
       cardText: {
         display: 'flex',
