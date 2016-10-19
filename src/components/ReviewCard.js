@@ -13,12 +13,15 @@ class ReviewCard extends React.Component {
   render() {
     const styles = {
       card: {
+        height: '30em',
         marginBottom: '1em',
         maxWidth: '414px',
         width: '100%',
       },
       comment: {
+        height: '6em',
         marginBottom: '.5em',
+        overflow: 'scroll',
       },
       content:{
         marginLeft: '1em',
@@ -30,6 +33,11 @@ class ReviewCard extends React.Component {
       },
       label: {
         marginTop: '1em',
+      },
+      mariage:{
+        height: '4em',
+        marginLeft: '1em',
+        overflow: 'scroll',
       },
       type: {
         display: 'flex',
@@ -95,7 +103,7 @@ class ReviewCard extends React.Component {
           </div>
 
           <div style={ styles.label }>マリアージュ</div>
-          <div style={ styles.content }>{ this.props.review.mariage }</div>
+          <div style={ styles.mariage }>{ this.props.review.mariage }</div>
         </CardText>
       </Card>
     )

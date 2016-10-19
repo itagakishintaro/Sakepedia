@@ -70275,12 +70275,15 @@
 	    value: function render() {
 	      var styles = {
 	        card: {
+	          height: '30em',
 	          marginBottom: '1em',
 	          maxWidth: '414px',
 	          width: '100%'
 	        },
 	        comment: {
-	          marginBottom: '.5em'
+	          height: '6em',
+	          marginBottom: '.5em',
+	          overflow: 'scroll'
 	        },
 	        content: {
 	          marginLeft: '1em'
@@ -70292,6 +70295,11 @@
 	        },
 	        label: {
 	          marginTop: '1em'
+	        },
+	        mariage: {
+	          height: '4em',
+	          marginLeft: '1em',
+	          overflow: 'scroll'
 	        },
 	        type: {
 	          display: 'flex',
@@ -70391,7 +70399,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { style: styles.content },
+	            { style: styles.mariage },
 	            this.props.review.mariage
 	          )
 	        )
@@ -72093,7 +72101,7 @@
 	        card: {
 	          marginTop: '1em',
 	          width: this.width,
-	          height: '200px'
+	          height: '15em'
 	        },
 	        cardText: {
 	          display: 'flex'
