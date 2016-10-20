@@ -1,4 +1,5 @@
 // var ExtractTextPlugin = require( 'extract-text-webpack-plugin' ); // only need raw css
+const webpack = require('webpack')
 const path = require( 'path' );
 
 module.exports = {
@@ -29,5 +30,10 @@ module.exports = {
   },
   plugins: [
     // new ExtractTextPlugin( '../stylesheets/styles.css' ) // only need raw css
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    })
   ]
 };
