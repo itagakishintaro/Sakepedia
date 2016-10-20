@@ -7,6 +7,8 @@ import classes from '../../public/stylesheets/scss/app.scss'
 // components
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+// util
+import setTweet from '../util/twitter'
 
 class App extends React.Component {
   constructor(props) {
@@ -21,6 +23,9 @@ class App extends React.Component {
     else {
       this.props.dispatch( setAuthStatus( false ) )
     }
+  }
+  componentDidMount(){
+    setTweet()
   }
   render() {
     const windowHeight = window.innerHeight

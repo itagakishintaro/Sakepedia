@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import { getSake } from '../actions/sake'
 // components
 import Detail from '../components/Detail'
+// util
+import setTweet from '../util/twitter'
 
 class DetailContainer extends React.Component{
   constructor(props) {
@@ -13,6 +15,10 @@ class DetailContainer extends React.Component{
 
   update() {
     getSake( this.props.dispatch, this.props.params.sakeId )
+  }
+
+  componentDidMount(){
+    setTweet()
   }
 
   render() {

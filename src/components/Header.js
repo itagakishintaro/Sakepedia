@@ -66,14 +66,10 @@ class Header extends React.Component{
           <MenuItem>
             <div className="fb-share-button" data-href="https://sakepedia.herokuapp.com/" data-layout="button" data-size="large" data-mobile-iframe="true"><a className="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsakepedia.herokuapp.com%2F&amp;src=sdkpreparse">シェア</a></div>
           </MenuItem>
-          <MenuItem><a href="https://twitter.com/share"
-            className="twitter-share-button"
-            data-lang="ja"
-            data-size="large"
-            data-hashtags="sakepedia"
-          >
-            Tweet
-          </a></MenuItem>
+          <MenuItem>
+            <a href="https://twitter.com/share" className="twitter-share-button-template" data-url="http://dummy.com" data-hashtags="sakepedia" style={{display: 'none'}}>Tweet</a>
+            <div id="tweet-area"></div>
+          </MenuItem>
         </Drawer>
       </div>
     )
