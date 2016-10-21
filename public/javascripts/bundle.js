@@ -29136,7 +29136,7 @@
 	  }, {
 	    key: 'toHome',
 	    value: function toHome() {
-	      location.href = '/';
+	      location.href = '/#/';
 	    }
 	  }, {
 	    key: 'render',

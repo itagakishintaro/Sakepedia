@@ -44,7 +44,7 @@ class Header extends React.Component{
   }
 
   toHome() {
-    location.href='/'
+    location.href='/#/'
   }
 
   render() {
