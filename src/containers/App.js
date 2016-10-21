@@ -9,6 +9,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 // util
 import setTweet from '../util/twitter'
+import setFacebook from '../util/facebook'
 
 class App extends React.Component {
   constructor(props) {
@@ -24,9 +25,23 @@ class App extends React.Component {
       this.props.dispatch( setAuthStatus( false ) )
     }
   }
-  componentDidMount(){
+
+  componentDidMount() {
+    // load twitter sdk
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    // load facebook sdk
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=164983513944480';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'))
+
     setTweet()
+    setFacebook()
   }
+
   render() {
     const windowHeight = window.innerHeight
     const headerHeight = 64 + 16 + 16 // height, margin-bottom, root margin

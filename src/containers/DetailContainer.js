@@ -6,6 +6,7 @@ import { getSake } from '../actions/sake'
 import Detail from '../components/Detail'
 // util
 import setTweet from '../util/twitter'
+import setFacebook from '../util/facebook'
 
 class DetailContainer extends React.Component{
   constructor(props) {
@@ -17,11 +18,9 @@ class DetailContainer extends React.Component{
     getSake( this.props.dispatch, this.props.params.sakeId )
   }
 
-  componentDidMount(){
-    setTweet()
-  }
-
   render() {
+    setTweet()
+    setFacebook()
     return (
       <Detail
         initialTab="detail"
