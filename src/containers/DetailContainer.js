@@ -18,9 +18,15 @@ class DetailContainer extends React.Component{
     getSake( this.props.dispatch, this.props.params.sakeId )
   }
 
+  sns() {
+    if( document.getElementsByClassName('twitter-share-button').length && document.getElementsByClassName('facebook-share-button').length) {
+      setTweet()
+      setFacebook()
+    }
+  }
+
   render() {
-    setTweet()
-    setFacebook()
+    this.sns()
     return (
       <Detail
         initialTab="detail"

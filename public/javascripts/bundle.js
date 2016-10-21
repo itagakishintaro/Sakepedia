@@ -28555,15 +28555,15 @@
 	
 	var _Header2 = _interopRequireDefault(_Header);
 	
-	var _Footer = __webpack_require__(/*! ../components/Footer */ 614);
+	var _Footer = __webpack_require__(/*! ../components/Footer */ 612);
 	
 	var _Footer2 = _interopRequireDefault(_Footer);
 	
-	var _twitter = __webpack_require__(/*! ../util/twitter */ 612);
+	var _twitter = __webpack_require__(/*! ../util/twitter */ 613);
 	
 	var _twitter2 = _interopRequireDefault(_twitter);
 	
-	var _facebook = __webpack_require__(/*! ../util/facebook */ 613);
+	var _facebook = __webpack_require__(/*! ../util/facebook */ 614);
 	
 	var _facebook2 = _interopRequireDefault(_facebook);
 	
@@ -66049,57 +66049,6 @@
 
 /***/ },
 /* 612 */
-/*!*****************************!*\
-  !*** ./src/util/twitter.js ***!
-  \*****************************/
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var setTweet = function setTweet() {
-	  var url = location.href;
-	  document.getElementById('tw-area').innerHTML = '';
-	  var twbtn = '<a href="https://twitter.com/share" class="twitter-share-button" data-url="' + url + '" data-hashtags="sakepedia">Tweet</a>';
-	  document.getElementById('tw-area').innerHTML = twbtn;
-	
-	  if (window.twttr) {
-	    window.twttr.widgets.load(document.getElementById('tw-area'));
-	    window.twttr.widgets.load();
-	  }
-	};
-	
-	exports.default = setTweet;
-
-/***/ },
-/* 613 */
-/*!******************************!*\
-  !*** ./src/util/facebook.js ***!
-  \******************************/
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var setFaceook = function setFaceook() {
-	  var url = location.href;
-	  var fbhref = 'https://www.facebook.com/sharer/sharer.php?u=' + url + '&amp;src=sdkpreparse';
-	  document.getElementById('fb-area').innerHTML = '';
-	  var fbbtn = '<div class="fb-share-button" data-href="' + url + '" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="' + fbhref + '">シェア</a></div>';
-	  document.getElementById('fb-area').innerHTML = fbbtn;
-	
-	  if (window.FB) {
-	    window.FB.XFBML.parse(document.getElementById('fb-area'));
-	  }
-	};
-	exports.default = setFaceook;
-
-/***/ },
-/* 614 */
 /*!**********************************!*\
   !*** ./src/components/Footer.js ***!
   \**********************************/
@@ -66172,6 +66121,57 @@
 	exports.default = Footer;
 
 /***/ },
+/* 613 */
+/*!*****************************!*\
+  !*** ./src/util/twitter.js ***!
+  \*****************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var setTweet = function setTweet() {
+	  var url = location.href;
+	  document.getElementById('tw-area').innerHTML = '';
+	  var twbtn = '<a href="https://twitter.com/share" class="twitter-share-button" data-url="' + url + '" data-hashtags="sakepedia">Tweet</a>';
+	  document.getElementById('tw-area').innerHTML = twbtn;
+	
+	  if (window.twttr) {
+	    window.twttr.widgets.load(document.getElementById('tw-area'));
+	    window.twttr.widgets.load();
+	  }
+	};
+	
+	exports.default = setTweet;
+
+/***/ },
+/* 614 */
+/*!******************************!*\
+  !*** ./src/util/facebook.js ***!
+  \******************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var setFaceook = function setFaceook() {
+	  var url = location.href;
+	  var fbhref = 'https://www.facebook.com/sharer/sharer.php?u=' + url + '&amp;src=sdkpreparse';
+	  document.getElementById('fb-area').innerHTML = '';
+	  var fbbtn = '<div class="fb-share-button" data-href="' + url + '" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="' + fbhref + '">シェア</a></div>';
+	  document.getElementById('fb-area').innerHTML = fbbtn;
+	
+	  if (window.FB) {
+	    window.FB.XFBML.parse(document.getElementById('fb-area'));
+	  }
+	};
+	exports.default = setFaceook;
+
+/***/ },
 /* 615 */
 /*!*******************************************!*\
   !*** ./src/containers/DetailContainer.js ***!
@@ -66198,11 +66198,11 @@
 	
 	var _Detail2 = _interopRequireDefault(_Detail);
 	
-	var _twitter = __webpack_require__(/*! ../util/twitter */ 612);
+	var _twitter = __webpack_require__(/*! ../util/twitter */ 613);
 	
 	var _twitter2 = _interopRequireDefault(_twitter);
 	
-	var _facebook = __webpack_require__(/*! ../util/facebook */ 613);
+	var _facebook = __webpack_require__(/*! ../util/facebook */ 614);
 	
 	var _facebook2 = _interopRequireDefault(_facebook);
 	
@@ -66238,10 +66238,17 @@
 	      (0, _sake.getSake)(this.props.dispatch, this.props.params.sakeId);
 	    }
 	  }, {
+	    key: 'sns',
+	    value: function sns() {
+	      if (document.getElementsByClassName('twitter-share-button').length && document.getElementsByClassName('facebook-share-button').length) {
+	        (0, _twitter2.default)();
+	        (0, _facebook2.default)();
+	      }
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
-	      (0, _twitter2.default)();
-	      (0, _facebook2.default)();
+	      this.sns();
 	      return _react2.default.createElement(_Detail2.default, {
 	        initialTab: 'detail',
 	        isLogin: this.props.isLogin,
