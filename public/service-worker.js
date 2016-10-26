@@ -1,8 +1,8 @@
 // https://developers.google.com/web/fundamentals/getting-started/codelabs/your-first-pwapp/
+// https://github.com/kuu/the-offline-cookbook-ja/blob/master/ja.md
 var dataCacheName = 'Sakepedia-data-v1';
 var cacheName = 'Sakepedia-v1';
 var filesToCache = [
-  '/',
   '/app.js',
   '/javascripts/bundle.js',
   '/javascripts/bundle.js.map',
@@ -47,10 +47,10 @@ self.addEventListener('fetch', function(e) {
           });
         })
     );
-  } else {
+  } else { // Network falling back to cache
     e.respondWith(
-      caches.match(e.request).then(function(response) {
-        return response || fetch(e.request);
+      fetch(event.request).catch(function() {
+        return caches.match(event.request);
       })
     );
   }
