@@ -4,6 +4,9 @@ import { connect } from 'react-redux'
 import { getSake } from '../actions/sake'
 // components
 import Detail from '../components/Detail'
+// util
+import setTweet from '../util/twitter'
+import setFacebook from '../util/facebook'
 
 class DetailContainer extends React.Component{
   constructor(props) {
@@ -15,7 +18,15 @@ class DetailContainer extends React.Component{
     getSake( this.props.dispatch, this.props.params.sakeId )
   }
 
+  sns() {
+    if( document.getElementsByClassName('twitter-share-button').length && document.getElementsByClassName('facebook-share-button').length) {
+      setTweet()
+      setFacebook()
+    }
+  }
+
   render() {
+    this.sns()
     return (
       <Detail
         initialTab="detail"

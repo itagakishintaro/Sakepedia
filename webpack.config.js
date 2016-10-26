@@ -1,5 +1,5 @@
 // var ExtractTextPlugin = require( 'extract-text-webpack-plugin' ); // only need raw css
-const webpack = require("webpack")
+const webpack = require('webpack')
 const path = require( 'path' );
 
 module.exports = {

@@ -44,7 +44,7 @@ class Header extends React.Component{
   }
 
   toHome() {
-    location.href='/'
+    location.href='/#/'
   }
 
   render() {
@@ -63,13 +63,13 @@ class Header extends React.Component{
           <Link to={'/sake/new'} style={styles.link}><MenuItem onTouchTap={ this.close } disabled={!this.props.isLogin}>銘柄登録</MenuItem></Link>
           <Link to={'/login'} style={styles.link} onTouchTap={this.preventWhenLoggedin}><MenuItem onTouchTap={ this.close } disabled={this.props.isLogin}>ログイン</MenuItem></Link>
           <MenuItem href='/auth/logout' disabled={!this.props.isLogin} onTouchTap={ this.logout }>ログアウト</MenuItem>
-          <MenuItem><a href="https://twitter.com/share"
-            className="twitter-share-button"
-            data-lang="ja"
-            data-hashtags="sakepedia"
-          >
-            Tweet
-          </a></MenuItem>
+          <MenuItem>
+            <div id="fb-root"></div>
+            <div id="fb-area"></div>
+          </MenuItem>
+          <MenuItem>
+            <div id="tw-area"></div>
+          </MenuItem>
         </Drawer>
       </div>
     )
