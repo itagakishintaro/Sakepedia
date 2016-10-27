@@ -36,7 +36,6 @@ class TypeMark extends React.Component {
         margin: '1em 0 0 0',
       },
     }
-    console.log('REVIEW',this.props.review)
     return (
       <div style={ concatObj( styles.typeMark, this.props.style ) }>{ this.judgeType( this.props.review ) }</div>
     )

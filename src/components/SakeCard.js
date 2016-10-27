@@ -17,10 +17,9 @@ class SakeCard extends React.Component {
     if( !reviews ) {
       return 0
     }
-    return reviews.map( r => Number( r.evaluation ) ).reduce( ( p, c ) => p + c ) / reviews.length
+    return reviews.map( r => r.evaluation ? Number( r.evaluation ) : 0 ).reduce( ( p, c ) => p + c ) / reviews.length
   }
   averageReview( reviews ) {
-    console.log('AVERAGE REVIEW', reviews)
     if( !reviews ) {
       return {}
     }

@@ -70225,7 +70225,7 @@
 	      }
 	      _axios2.default.put('/api/sakes/' + this.props.sake._id + '/add/review', {
 	        date: new Date(),
-	        review: this.state.evaluation,
+	        evaluation: this.state.evaluation,
 	        comment: document.getElementById('comment').value,
 	        flavor: this.state.flavor,
 	        taste: this.state.taste,
@@ -70713,7 +70713,7 @@
 	          dateFormat(this.props.review.tasting_date, 'yyyy/mm/dd HH:MM')
 	        ),
 	        _react2.default.createElement(_Card.CardHeader, {
-	          title: _react2.default.createElement(_Stars2.default, { evaluation: this.props.review.review }),
+	          title: _react2.default.createElement(_Stars2.default, { evaluation: this.props.review.evaluation }),
 	          subtitle: this.props.review.userName
 	        }),
 	        _react2.default.createElement(
@@ -70996,7 +70996,6 @@
 	          margin: '1em 0 0 0'
 	        }
 	      };
-	      console.log('REVIEW', this.props.review);
 	      return _react2.default.createElement(
 	        'div',
 	        { style: (0, _concatObj2.default)(styles.typeMark, this.props.style) },
@@ -72844,7 +72843,7 @@
 	        return 0;
 	      }
 	      return reviews.map(function (r) {
-	        return Number(r.evaluation);
+	        return r.evaluation ? Number(r.evaluation) : 0;
 	      }).reduce(function (p, c) {
 	        return p + c;
 	      }) / reviews.length;
@@ -72852,7 +72851,6 @@
 	  }, {
 	    key: 'averageReview',
 	    value: function averageReview(reviews) {
-	      console.log('AVERAGE REVIEW', reviews);
 	      if (!reviews) {
 	        return {};
 	      }
