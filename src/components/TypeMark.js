@@ -7,22 +7,22 @@ import concatObj from '../util/concatObj'
 
 class TypeMark extends React.Component {
   judgeType( review ) {
-    if( !(review.flabor && review.taste && review.maturation) ) {
+    if( !(review.flavor && review.taste && review.maturation) ) {
       return ''
     }
-    if( review.flabor <= 2 & review.taste <= 2 ){
+    if( review.flavor <= 2 & review.taste <= 2 ){
       return <Chip backgroundColor={blue200}>爽酒</Chip>
     }
-    if( review.flabor <= 2 & 2 <= review.taste ){
+    if( review.flavor <= 2 & 2 <= review.taste ){
       return <Chip backgroundColor={orange200}>醇酒</Chip>
     }
-    if( 2 <= review.flabor & review.taste <= 2 ){
+    if( 2 <= review.flavor & review.taste <= 2 ){
       return <Chip backgroundColor={green200}>薫酒</Chip>
     }
-    if( 2 <= review.flabor & 2 <= review.taste &  2 <= review.maturation ){
+    if( 2 <= review.flavor & 2 <= review.taste &  2 <= review.maturation ){
       return <Chip backgroundColor={brown200}>熟酒</Chip>
     }
-    if( 2 <= review.flabor & 2 <= review.taste & review.maturation <= 2 ){
+    if( 2 <= review.flavor & 2 <= review.taste & review.maturation <= 2 ){
       return <Chip backgroundColor={purple200}>薫醇酒</Chip>
     }
   }
@@ -36,6 +36,7 @@ class TypeMark extends React.Component {
         margin: '1em 0 0 0',
       },
     }
+    console.log('REVIEW',this.props.review)
     return (
       <div style={ concatObj( styles.typeMark, this.props.style ) }>{ this.judgeType( this.props.review ) }</div>
     )

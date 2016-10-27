@@ -69792,7 +69792,9 @@
 	              _react2.default.createElement(
 	                'span',
 	                { className: _detail2.default.title },
-	                this.props.sake.brand
+	                this.props.sake.brand,
+	                ' ',
+	                this.props.sake.subname
 	              ),
 	              '( ',
 	              this.props.sake.type,
@@ -70942,38 +70944,38 @@
 	  _createClass(TypeMark, [{
 	    key: 'judgeType',
 	    value: function judgeType(review) {
-	      if (!(review.flabor && review.taste && review.maturation)) {
+	      if (!(review.flavor && review.taste && review.maturation)) {
 	        return '';
 	      }
-	      if (review.flabor <= 2 & review.taste <= 2) {
+	      if (review.flavor <= 2 & review.taste <= 2) {
 	        return _react2.default.createElement(
 	          _Chip2.default,
 	          { backgroundColor: _colors.blue200 },
 	          '爽酒'
 	        );
 	      }
-	      if (review.flabor <= 2 & 2 <= review.taste) {
+	      if (review.flavor <= 2 & 2 <= review.taste) {
 	        return _react2.default.createElement(
 	          _Chip2.default,
 	          { backgroundColor: _colors.orange200 },
 	          '醇酒'
 	        );
 	      }
-	      if (2 <= review.flabor & review.taste <= 2) {
+	      if (2 <= review.flavor & review.taste <= 2) {
 	        return _react2.default.createElement(
 	          _Chip2.default,
 	          { backgroundColor: _colors.green200 },
 	          '薫酒'
 	        );
 	      }
-	      if (2 <= review.flabor & 2 <= review.taste & 2 <= review.maturation) {
+	      if (2 <= review.flavor & 2 <= review.taste & 2 <= review.maturation) {
 	        return _react2.default.createElement(
 	          _Chip2.default,
 	          { backgroundColor: _colors.brown200 },
 	          '熟酒'
 	        );
 	      }
-	      if (2 <= review.flabor & 2 <= review.taste & review.maturation <= 2) {
+	      if (2 <= review.flavor & 2 <= review.taste & review.maturation <= 2) {
 	        return _react2.default.createElement(
 	          _Chip2.default,
 	          { backgroundColor: _colors.purple200 },
@@ -70994,6 +70996,7 @@
 	          margin: '1em 0 0 0'
 	        }
 	      };
+	      console.log('REVIEW', this.props.review);
 	      return _react2.default.createElement(
 	        'div',
 	        { style: (0, _concatObj2.default)(styles.typeMark, this.props.style) },
@@ -72849,6 +72852,7 @@
 	  }, {
 	    key: 'averageReview',
 	    value: function averageReview(reviews) {
+	      console.log('AVERAGE REVIEW', reviews);
 	      if (!reviews) {
 	        return {};
 	      }
