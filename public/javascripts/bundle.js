@@ -71919,28 +71919,28 @@
 	        (0, _smoothScroll2.default)(document.getElementById('newSake'), 1000);
 	        return;
 	      }
-	      var data = {
-	        brand: document.getElementById('brand').value,
-	        subname: document.getElementById('subname').value,
-	        type: this.state.type,
-	        prefecture: this.state.prefecture,
-	        brewery: document.getElementById('brewery').value,
-	        url: document.getElementById('url').value,
-	        description: document.getElementById('description').value,
-	        starterCulture: this.state.starterCulture,
-	        sakeYeast: document.getElementById('sakeYeast').value,
-	        sakeRiceExceptForKojiMaking: document.getElementById('sakeRiceExceptForKojiMaking').value,
-	        riceForMakingKoji: document.getElementById('riceForMakingKoji').value,
-	        ricePolishingRate: document.getElementById('ricePolishingRate').value,
-	        alcoholContent: document.getElementById('alcoholContent').value,
-	        sakeMeterValue: document.getElementById('sakeMeterValue').value,
-	        acidity: document.getElementById('acidity').value,
-	        aminoAcidContent: document.getElementById('aminoAcidContent').value,
-	        image: document.getElementById('image').value,
-	        date: new Date(),
-	        userid: window.localStorage.getItem('userid'),
-	        username: window.localStorage.getItem('username')
-	      };
+	      var data = this.props.sake;
+	      data.brand = document.getElementById('brand').value;
+	      data.subname = document.getElementById('subname').value;
+	      data.type = this.state.type;
+	      data.prefecture = this.state.prefecture;
+	      data.brewery = document.getElementById('brewery').value;
+	      data.url = document.getElementById('url').value;
+	      data.description = document.getElementById('description').value;
+	      data.starterCulture = this.state.starterCulture;
+	      data.sakeYeast = document.getElementById('sakeYeast').value;
+	      data.sakeRiceExceptForKojiMaking = document.getElementById('sakeRiceExceptForKojiMaking').value;
+	      data.riceForMakingKoji = document.getElementById('riceForMakingKoji').value;
+	      data.ricePolishingRate = document.getElementById('ricePolishingRate').value;
+	      data.alcoholContent = document.getElementById('alcoholContent').value;
+	      data.sakeMeterValue = document.getElementById('sakeMeterValue').value;
+	      data.acidity = document.getElementById('acidity').value;
+	      data.aminoAcidContent = document.getElementById('aminoAcidContent').value;
+	      data.image = document.getElementById('image').value;
+	      data.date = new Date();
+	      data.userid = window.localStorage.getItem('userid');
+	      data.username = window.localStorage.getItem('username');
+	      console.log('==========', data);
 	      if (this.props.sake._id) {
 	        // update
 	        _axios2.default.put('/api/sakes/' + this.props.sake._id, data).then(function () {
