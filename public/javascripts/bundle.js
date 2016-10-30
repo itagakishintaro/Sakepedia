@@ -71919,7 +71919,8 @@
 	        (0, _smoothScroll2.default)(document.getElementById('newSake'), 1000);
 	        return;
 	      }
-	      var data = this.props.sake;
+	      var data = {};
+	      data.reviews = this.props.sake.reviews;
 	      data.brand = document.getElementById('brand').value;
 	      data.subname = document.getElementById('subname').value;
 	      data.type = this.state.type;
@@ -71940,7 +71941,7 @@
 	      data.date = new Date();
 	      data.userid = window.localStorage.getItem('userid');
 	      data.username = window.localStorage.getItem('username');
-	      console.log('==========', data);
+	
 	      if (this.props.sake._id) {
 	        // update
 	        _axios2.default.put('/api/sakes/' + this.props.sake._id, data).then(function () {
