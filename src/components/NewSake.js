@@ -87,7 +87,8 @@ class NewSake extends React.Component {
       smoothScroll( document.getElementById('newSake'), 1000 )
       return
     }
-    let data = this.props.sake
+    let data = {}
+    data.reviews = this.props.sake.reviews
     data.brand = document.getElementById('brand').value
     data.subname = document.getElementById('subname').value
     data.type = this.state.type
