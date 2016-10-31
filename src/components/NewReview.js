@@ -37,7 +37,7 @@ class NewReview extends React.Component {
     }
     axios.put( `/api/sakes/${ this.props.sake._id }/add/review`, {
       date: new Date(),
-      review: this.state.evaluation,
+      evaluation: this.state.evaluation,
       comment: document.getElementById('comment').value,
       flavor: this.state.flavor,
       taste: this.state.taste,
