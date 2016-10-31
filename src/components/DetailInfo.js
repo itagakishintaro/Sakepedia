@@ -26,7 +26,7 @@ class DetailInfo extends React.Component{
       aminoAcidContent: 'アミノ酸度',
     }
     let setAnchor = ( input ) => {
-      if( /http/.test( input ) ){
+      if( /^http/.test( input ) ){
         return <a href={input} target="_blank">{input}</a>
       }
       return input
