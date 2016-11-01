@@ -19,7 +19,7 @@ class DetailContainer extends React.Component{
   }
 
   sns() {
-    if( document.getElementsByClassName('twitter-share-button').length && document.getElementsByClassName('facebook-share-button').length) {
+    if( document.getElementById( 'tw-area' ) && document.getElementById( 'fb-area' ) ){
       setTweet()
       setFacebook()
     }
