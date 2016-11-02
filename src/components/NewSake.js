@@ -137,6 +137,19 @@ class NewSake extends React.Component {
     } )
   }
 
+  handleOcr() {
+    let file = document.getElementById('ocr').files[0]
+    handleImage( file, 600, ( dataURL ) => {
+      axios.post( '/api/ocr/', { content: dataURL.replace(/^data:image\/(png|jpeg);base64,/, '') } )
+      .then( ( r ) => {
+        console.log( r.data.responses[0].textAnnotations[0].description )
+      })
+      .catch( error => {
+        console.log( errors )
+      })
+    } )
+  }
+
   render() {
     const styles = {
       button: {
@@ -243,6 +256,10 @@ class NewSake extends React.Component {
             multiLine={true}
             rows={3}
           />
+          <label htmlFor="ocr">
+            <div>写真から文字を読み取る</div>
+            <input type="file" id="ocr" accept="image/*" capture="camera" onChange={this.handleOcr}/>
+          </label>
           <SelectField
             id="starterCulture"
             errorText={this.state.errorText.starterCulture}

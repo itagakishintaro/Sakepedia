@@ -7,6 +7,7 @@ let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 
 let sakesApi = require('./routes/api/sakesApi');
+let ocrApi = require('./routes/api/ocrApi');
 let screen = require('./routes/screen');
 // passport
 let twitter = require('./routes/auth/twitter');
@@ -15,6 +16,10 @@ let google = require('./routes/auth/google');
 let logout = require('./routes/auth/logout');
 
 let app = express();
+
+// limit size
+app.use(bodyParser.json({limit: '5mb'}));
+app.use(bodyParser.urlencoded({limit: '5mb'}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -29,6 +34,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/sakes', sakesApi);
+app.use('/api/ocr', ocrApi);
 app.use('/', screen);
 // passport
 app.use(twitter.session({

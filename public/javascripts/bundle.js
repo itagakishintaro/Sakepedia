@@ -70103,6 +70103,18 @@
 	      });
 	    }
 	  }, {
+	    key: 'handleOcr',
+	    value: function handleOcr() {
+	      var file = document.getElementById('ocr').files[0];
+	      (0, _ImageHandler2.default)(file, 600, function (dataURL) {
+	        _axios2.default.post('/api/ocr/', { content: dataURL.replace(/^data:image\/(png|jpeg);base64,/, '') }).then(function (r) {
+	          console.log(r.data.responses[0].textAnnotations[0].description);
+	        }).catch(function (error) {
+	          console.log(errors);
+	        });
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _this3 = this;
@@ -70217,6 +70229,16 @@
 	          multiLine: true,
 	          rows: 3
 	        }),
+	        _react2.default.createElement(
+	          'label',
+	          { htmlFor: 'ocr' },
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            '写真から文字を読み取る'
+	          ),
+	          _react2.default.createElement('input', { type: 'file', id: 'ocr', accept: 'image/*', capture: 'camera', onChange: this.handleOcr })
+	        ),
 	        _react2.default.createElement(
 	          _SelectField2.default,
 	          {
