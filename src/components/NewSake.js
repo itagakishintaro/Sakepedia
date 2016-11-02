@@ -36,29 +36,14 @@ class NewSake extends React.Component {
   }
 
   componentDidMount(){
-    if( this.props.sake.brand ){
-      document.getElementById('brand').value = this.props.sake.brand
-    }
     if( this.props.sake.subname ){
       document.getElementById('subname').value = this.props.sake.subname
-    }
-    if( this.props.sake.brewery ){
-      document.getElementById('brewery').value = this.props.sake.brewery
     }
     if( this.props.sake.url ){
       document.getElementById('url').value = this.props.sake.url
     }
     if( this.props.sake.description ){
       document.getElementById('description').value = this.props.sake.description
-    }
-    if( this.props.sake.sakeYeast ){
-      document.getElementById('sakeYeast').value = this.props.sake.sakeYeast
-    }
-    if( this.props.sake.sakeRiceExceptForKojiMaking ){
-      document.getElementById('sakeRiceExceptForKojiMaking').value = this.props.sake.sakeRiceExceptForKojiMaking
-    }
-    if( this.props.sake.riceForMakingKoji ){
-      document.getElementById('riceForMakingKoji').value = this.props.sake.riceForMakingKoji
     }
     if( this.props.sake.ricePolishingRate ){
       document.getElementById('ricePolishingRate').value = this.props.sake.ricePolishingRate
@@ -121,7 +106,7 @@ class NewSake extends React.Component {
       })
     } else { // insert
       axios.post( '/api/sakes' , data)
-      .then( ( r ) => {
+      .then( r => {
         window.location.href = '/#/sake/' + r.data
       })
       .catch( error => {
@@ -146,7 +131,24 @@ class NewSake extends React.Component {
 
   handleFile() {
     let file = document.getElementById('file').files[0]
-    handleImage( file, 200 )
+    handleImage( file, 200, ( dataURL ) => {
+      document.getElementById( 'image' ).value = dataURL
+      document.getElementById( 'thumbnail' ).src = dataURL
+    } )
+  }
+
+  handleOcr() {
+    let file = document.getElementById('ocr').files[0]
+    handleImage( file, 600, ( dataURL ) => {
+      axios.post( '/api/ocr/', { content: dataURL.replace(/^data:image\/(png|jpeg);base64,/, '') } )
+      .then( r => {
+        document.getElementById('description').value = r.data.responses[0].textAnnotations[0].description
+      })
+      .catch( error => {
+        document.getElementById('error').textContent = JSON.stringify(error)
+        smoothScroll( document.getElementById('error'), 100)
+      })
+    } )
   }
 
   render() {
@@ -195,6 +197,7 @@ class NewSake extends React.Component {
             floatingLabelText="銘柄*"
             fullWidth={true}
             required={true}
+            searchText={this.props.sake.brand}
           />
           <TextField
             id="subname"
@@ -234,6 +237,7 @@ class NewSake extends React.Component {
             floatingLabelText="蔵元*"
             fullWidth={true}
             required={true}
+            searchText={this.props.sake.brewery}
           />
           <TextField
             id="url"
@@ -253,6 +257,13 @@ class NewSake extends React.Component {
             multiLine={true}
             rows={3}
           />
+          <label htmlFor="ocr">
+            <div style={styles.label}>写真から文字を読み取る</div>
+            <div style={styles.camera}>
+              <FontIcon className="material-icons">photo_camera</FontIcon>
+            </div>
+            <input type="file" id="ocr" accept="image/*" capture="camera" style={styles.file} onChange={this.handleOcr}/>
+          </label>
           <SelectField
             id="starterCulture"
             errorText={this.state.errorText.starterCulture}
@@ -271,6 +282,7 @@ class NewSake extends React.Component {
             floatingLabelText="酵母"
             dataSource={this.props.sakeYeasts}
             fullWidth={true}
+            searchText={this.props.sake.sakeYeast}
           />
           <AutoComplete
             id="sakeRiceExceptForKojiMaking"
@@ -278,6 +290,7 @@ class NewSake extends React.Component {
             floatingLabelText="掛米"
             dataSource={this.props.rices}
             fullWidth={true}
+            searchText={this.props.sake.sakeRiceExceptForKojiMaking}
           />
           <AutoComplete
             id="riceForMakingKoji"
@@ -285,6 +298,7 @@ class NewSake extends React.Component {
             floatingLabelText="麹米"
             dataSource={this.props.rices}
             fullWidth={true}
+            searchText={this.props.sake.riceForMakingKoji}
           />
           <TextField
             id="ricePolishingRate"

@@ -7,7 +7,6 @@ const setTweet = () => {
 
   if( window.twttr ){
     window.twttr.widgets.load( document.getElementById( 'tw-area' ) )
-    window.twttr.widgets.load()
   }
 }
 
