@@ -70097,7 +70097,10 @@
 	    key: 'handleFile',
 	    value: function handleFile() {
 	      var file = document.getElementById('file').files[0];
-	      (0, _ImageHandler2.default)(file, 200);
+	      (0, _ImageHandler2.default)(file, 200, function (dataURL) {
+	        document.getElementById('image').value = dataURL;
+	        document.getElementById('thumbnail').src = dataURL;
+	      });
 	    }
 	  }, {
 	    key: 'render',
@@ -70624,6 +70627,7 @@
 	});
 	var handleImage = function handleImage(file) {
 	  var max = arguments.length <= 1 || arguments[1] === undefined ? 200 : arguments[1];
+	  var func = arguments[2];
 	
 	  var reader = new FileReader();
 	  reader.onload = function (readerEvent) {
@@ -70656,8 +70660,7 @@
 	      }
 	      ctx.drawImage(image, 0, 0, width, height);
 	      ctx.restore();
-	      document.getElementById('image').value = canvas.toDataURL('image/png');
-	      document.getElementById('thumbnail').src = canvas.toDataURL('image/png');
+	      func(canvas.toDataURL('image/png'));
 	    };
 	    image.src = readerEvent.target.result;
 	  };

@@ -1,4 +1,4 @@
-const handleImage = ( file, max = 200 ) =>{
+const handleImage = ( file, max = 200, func ) =>{
   let reader = new FileReader()
   reader.onload = ( readerEvent ) => {
     let image = new Image()
@@ -30,8 +30,7 @@ const handleImage = ( file, max = 200 ) =>{
       }
       ctx.drawImage( image, 0, 0, width, height )
       ctx.restore()
-      document.getElementById( 'image' ).value = canvas.toDataURL( 'image/png' )
-      document.getElementById('thumbnail').src = canvas.toDataURL( 'image/png' )
+      func( canvas.toDataURL( 'image/png' ) )
     }
     image.src = readerEvent.target.result
   }
