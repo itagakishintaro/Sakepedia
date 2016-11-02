@@ -106,7 +106,7 @@ class NewSake extends React.Component {
       })
     } else { // insert
       axios.post( '/api/sakes' , data)
-      .then( ( r ) => {
+      .then( r => {
         window.location.href = '/#/sake/' + r.data
       })
       .catch( error => {
@@ -141,11 +141,12 @@ class NewSake extends React.Component {
     let file = document.getElementById('ocr').files[0]
     handleImage( file, 600, ( dataURL ) => {
       axios.post( '/api/ocr/', { content: dataURL.replace(/^data:image\/(png|jpeg);base64,/, '') } )
-      .then( ( r ) => {
-        console.log( r.data.responses[0].textAnnotations[0].description )
+      .then( r => {
+        document.getElementById('description').value = r.data.responses[0].textAnnotations[0].description
       })
       .catch( error => {
-        console.log( errors )
+        document.getElementById('error').textContent = JSON.stringify(error)
+        smoothScroll( document.getElementById('error'), 100)
       })
     } )
   }
@@ -257,8 +258,11 @@ class NewSake extends React.Component {
             rows={3}
           />
           <label htmlFor="ocr">
-            <div>写真から文字を読み取る</div>
-            <input type="file" id="ocr" accept="image/*" capture="camera" onChange={this.handleOcr}/>
+            <div style={styles.label}>写真から文字を読み取る</div>
+            <div style={styles.camera}>
+              <FontIcon className="material-icons">photo_camera</FontIcon>
+            </div>
+            <input type="file" id="ocr" accept="image/*" capture="camera" style={styles.file} onChange={this.handleOcr}/>
           </label>
           <SelectField
             id="starterCulture"
