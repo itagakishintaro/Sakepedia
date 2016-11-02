@@ -69997,29 +69997,14 @@
 	  _createClass(NewSake, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      if (this.props.sake.brand) {
-	        document.getElementById('brand').value = this.props.sake.brand;
-	      }
 	      if (this.props.sake.subname) {
 	        document.getElementById('subname').value = this.props.sake.subname;
-	      }
-	      if (this.props.sake.brewery) {
-	        document.getElementById('brewery').value = this.props.sake.brewery;
 	      }
 	      if (this.props.sake.url) {
 	        document.getElementById('url').value = this.props.sake.url;
 	      }
 	      if (this.props.sake.description) {
 	        document.getElementById('description').value = this.props.sake.description;
-	      }
-	      if (this.props.sake.sakeYeast) {
-	        document.getElementById('sakeYeast').value = this.props.sake.sakeYeast;
-	      }
-	      if (this.props.sake.sakeRiceExceptForKojiMaking) {
-	        document.getElementById('sakeRiceExceptForKojiMaking').value = this.props.sake.sakeRiceExceptForKojiMaking;
-	      }
-	      if (this.props.sake.riceForMakingKoji) {
-	        document.getElementById('riceForMakingKoji').value = this.props.sake.riceForMakingKoji;
 	      }
 	      if (this.props.sake.ricePolishingRate) {
 	        document.getElementById('ricePolishingRate').value = this.props.sake.ricePolishingRate;
@@ -70164,7 +70149,8 @@
 	          floatingLabelFixed: true,
 	          floatingLabelText: '銘柄*',
 	          fullWidth: true,
-	          required: true
+	          required: true,
+	          searchText: this.props.sake.brand
 	        }),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'subname',
@@ -70207,7 +70193,8 @@
 	          floatingLabelFixed: true,
 	          floatingLabelText: '蔵元*',
 	          fullWidth: true,
-	          required: true
+	          required: true,
+	          searchText: this.props.sake.brewery
 	        }),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'url',
@@ -70248,21 +70235,24 @@
 	          floatingLabelFixed: true,
 	          floatingLabelText: '酵母',
 	          dataSource: this.props.sakeYeasts,
-	          fullWidth: true
+	          fullWidth: true,
+	          searchText: this.props.sake.sakeYeast
 	        }),
 	        _react2.default.createElement(_AutoComplete2.default, {
 	          id: 'sakeRiceExceptForKojiMaking',
 	          floatingLabelFixed: true,
 	          floatingLabelText: '掛米',
 	          dataSource: this.props.rices,
-	          fullWidth: true
+	          fullWidth: true,
+	          searchText: this.props.sake.sakeRiceExceptForKojiMaking
 	        }),
 	        _react2.default.createElement(_AutoComplete2.default, {
 	          id: 'riceForMakingKoji',
 	          floatingLabelFixed: true,
 	          floatingLabelText: '麹米',
 	          dataSource: this.props.rices,
-	          fullWidth: true
+	          fullWidth: true,
+	          searchText: this.props.sake.riceForMakingKoji
 	        }),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'ricePolishingRate',
