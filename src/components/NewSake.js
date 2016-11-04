@@ -138,13 +138,16 @@ class NewSake extends React.Component {
   }
 
   handleOcr() {
+    document.getElementById('loading').style.display='block';
     let file = document.getElementById('ocr').files[0]
     handleImage( file, 600, ( dataURL ) => {
       axios.post( '/api/ocr/', { content: dataURL.replace(/^data:image\/(png|jpeg);base64,/, '') } )
       .then( r => {
+        document.getElementById('loading').style.display='none';
         document.getElementById('description').value = r.data.responses[0].textAnnotations[0].description
       })
       .catch( error => {
+        document.getElementById('loading').style.display='none';
         document.getElementById('error').textContent = JSON.stringify(error)
         smoothScroll( document.getElementById('error'), 100)
       })
