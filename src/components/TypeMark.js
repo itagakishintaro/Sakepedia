@@ -13,16 +13,16 @@ class TypeMark extends React.Component {
     if( review.flavor <= 2 & review.taste <= 2 ){
       return <Chip backgroundColor={blue200}>爽酒</Chip>
     }
-    if( review.flavor <= 2 & 2 <= review.taste ){
+    if( review.flavor <= 2 & 3 <= review.taste ){
       return <Chip backgroundColor={orange200}>醇酒</Chip>
     }
     if( 2 <= review.flavor & review.taste <= 2 ){
       return <Chip backgroundColor={green200}>薫酒</Chip>
     }
-    if( 2 <= review.flavor & 2 <= review.taste &  2 <= review.maturation ){
+    if( 2 <= review.flavor & 3 <= review.taste &  3 <= review.maturation ){
       return <Chip backgroundColor={brown200}>熟酒</Chip>
     }
-    if( 2 <= review.flavor & 2 <= review.taste & review.maturation <= 2 ){
+    if( 2 <= review.flavor & 3 <= review.taste & review.maturation <= 2 ){
       return <Chip backgroundColor={purple200}>薫醇酒</Chip>
     }
   }
