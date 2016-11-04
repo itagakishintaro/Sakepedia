@@ -28606,6 +28606,7 @@
 	  _createClass(App, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
+	      document.getElementById('loading').style.display = 'none';
 	      // load twitter sdk
 	      !function (d, s, id) {
 	        var js,
@@ -70126,11 +70127,14 @@
 	  }, {
 	    key: 'handleOcr',
 	    value: function handleOcr() {
+	      document.getElementById('loading').style.display = 'block';
 	      var file = document.getElementById('ocr').files[0];
 	      (0, _ImageHandler2.default)(file, 600, function (dataURL) {
 	        _axios2.default.post('/api/ocr/', { content: dataURL.replace(/^data:image\/(png|jpeg);base64,/, '') }).then(function (r) {
+	          document.getElementById('loading').style.display = 'none';
 	          document.getElementById('description').value = r.data.responses[0].textAnnotations[0].description;
 	        }).catch(function (error) {
+	          document.getElementById('loading').style.display = 'none';
 	          document.getElementById('error').textContent = JSON.stringify(error);
 	          (0, _smoothScroll2.default)(document.getElementById('error'), 100);
 	        });

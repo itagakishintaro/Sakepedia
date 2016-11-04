@@ -1,6 +1,10 @@
 extends layout
 
 block content
+  div#loading(style='position:absolute; top:0; bottom:0; left:0; right:0; margin:auto; width:166px; height: 166px')
+    img(src='img/loading.svg')
+  div#userid(hidden)= user.id
+  div#username(hidden)= user.name
   div#root
   script(src='/javascripts/bundle.js')
   script(src='/service-worker.js')
