@@ -131,7 +131,7 @@ class NewSake extends React.Component {
 
   handleFile() {
     let file = document.getElementById('file').files[0]
-    handleImage( file, 200, ( dataURL ) => {
+    handleImage( file, 400, ( dataURL ) => {
       document.getElementById( 'image' ).value = dataURL
       document.getElementById( 'thumbnail' ).src = dataURL
     } )
