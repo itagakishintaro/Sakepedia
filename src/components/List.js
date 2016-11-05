@@ -3,8 +3,18 @@ import React, { PropTypes } from 'react'
 import classes from '../../public/stylesheets/scss/list.scss'
 // components
 import SakeCard from '../components/SakeCard'
+// util
+import { averageEvaluation } from '../util/calcReviews'
 
 class List extends React.Component {
+  sortByEval( a, b ) {
+    if( averageEvaluation( a.reviews ) < averageEvaluation( b.reviews ) ){
+      return 1
+    } else {
+      return -1
+    }
+  }
+
   render() {
     const MAX = 100
     let alertMessage = ''
@@ -22,7 +32,9 @@ class List extends React.Component {
       <div>
         <div className={classes.alert}>{ alertMessage }</div>
         <div style={ styles.list }>
-          { this.props.list.map( sake => <SakeCard sake={sake} /> ) }
+          { this.props.list.sort( (a, b) => {
+            return this.sortByEval(a, b)
+          } ).map( sake => <SakeCard sake={sake} /> ) }
         </div>
       </div>
     )
