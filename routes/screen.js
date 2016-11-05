@@ -9,14 +9,17 @@ let google = require('./auth/google');
 /* GET home page. */
 router.get('/', (req, res) => {
   let user = {}
-  if ( twitter.session.user ) {
-    user = twitter.session.user
+  if ( twitter.session.user && twitter.session.user.id ) {
+    user = twitter.session.user;
+    twitter.session.user = {};
   }
-  if ( facebook.session.user ) {
-    user = facebook.session.user
+  if ( facebook.session.user && facebook.session.user.id ) {
+    user = facebook.session.user;
+    facebook.session.user = {};
   }
-  if ( google.session.user ) {
-    user = google.session.user
+  if ( google.session.user && google.session.user.id ) {
+    user = google.session.user;
+    google.session.user = {};
   }
   res.render('index', {
     title: 'Sakepedia',
