@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 // material-ui
 import AutoComplete from 'material-ui/AutoComplete'
+import Checkbox from 'material-ui/Checkbox'
 import FontIcon from 'material-ui/FontIcon'
 import {Tabs, Tab} from 'material-ui/Tabs'
 import RaisedButton from 'material-ui/RaisedButton'
@@ -18,13 +19,15 @@ class Search extends React.Component {
   }
 
   detailSearch() {
-    this.props.search(
-      {
-        prefecture: this.state.prefecture,
-        brewrey: document.getElementById('brewrey').value,
-        brand: document.getElementById('brand').value,
-      }
-   )
+    let query = {
+      prefecture: this.state.prefecture,
+      brewrey: document.getElementById('brewrey').value,
+      brand: document.getElementById('brand').value,
+    }
+    if( document.getElementById('self').checked ) {
+      query['reviews.userid'] = window.localStorage.getItem( 'userid' )
+    }
+    this.props.search( query )
   }
 
   search( brand ) {
@@ -37,6 +40,12 @@ class Search extends React.Component {
 
   render() {
     const styles = {
+      button: {
+        marginTop: '1em',
+      },
+      checkbox: {
+        color: 'gray',
+      },
       icon: {
         color: 'gray',
       },
@@ -71,10 +80,16 @@ class Search extends React.Component {
               dataSource={ this.props.brands }
               fullWidth={true}
             />
+          <Checkbox
+            id="self"
+            label="自分がレビューしたお酒"
+            labelStyle={ styles.checkbox }
+          />
           <RaisedButton
             label="検索"
             primary={true}
-            onTouchTap={ this.detailSearch } />
+            onTouchTap={ this.detailSearch }
+            style={ styles.button } />
           </Tab>
         </Tabs>
       </div>

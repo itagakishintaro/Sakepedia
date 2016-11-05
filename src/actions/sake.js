@@ -66,6 +66,9 @@ export const getSakeList = ( dispatch, words ) => {
   if( words.brand ) {
     query = `${query}&brand=${encodeURIComponent(words.brand)}`
   }
+  if( words['reviews.userid'] ) {
+    query = `${query}&reviews.userid=${encodeURIComponent(words['reviews.userid'])}`
+  }
   let url = `/api/sakes?${query}`
   axios.get( url )
     .then( res => {

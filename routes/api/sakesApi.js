@@ -21,13 +21,16 @@ router.all( '/*', ( req, res, next ) => {
 router.get( '/', ( req, res ) => {
   let query = {}
   if ( req.query.prefecture ) {
-    query['prefecture'] = new RegExp( decodeURIComponent (req.query.prefecture) );
+    query.prefecture = new RegExp( decodeURIComponent(req.query.prefecture) );
   }
   if ( req.query.brewrey ) {
-    query['brewery'] = new RegExp( decodeURIComponent (req.query.brewrey) );
+    query.brewery = new RegExp( decodeURIComponent(req.query.brewrey) );
   }
   if ( req.query.brand ) {
-    query['brand'] = new RegExp( decodeURIComponent (req.query.brand) );
+    query.brand = new RegExp( decodeURIComponent(req.query.brand) );
+  }
+  if ( req.query['reviews.userid'] ) {
+    query['reviews.userid'] = decodeURIComponent(req.query['reviews.userid']);
   }
   collection( 'sake' ).find( query ).limit( LIMIT ).toArray( ( err, docs ) => {
     res.send( docs );

@@ -50,8 +50,8 @@ class NewReview extends React.Component {
         temp50: document.getElementById('temp50').checked,
       },
       mariage: document.getElementById('mariage').value,
-      userId: window.localStorage.getItem( 'userid' ),
-      userName: window.localStorage.getItem( 'username' ),
+      userid: window.localStorage.getItem( 'userid' ),
+      username: window.localStorage.getItem( 'username' ),
     })
     .then( () => {
       this.props.update()
