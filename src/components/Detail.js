@@ -23,6 +23,14 @@ class Detail extends React.Component{
     this.setState({ tab })
   }
 
+  componentDidMount() {
+    document.querySelector( 'meta[property="og:image"]' ).setAttribute( 'content',  this.props.sake.image )
+  }
+
+  componentDidUpdate(){
+    document.querySelector( 'meta[property="og:image"]' ).setAttribute( 'content',  this.props.sake.image )
+  }
+
   render() {
     const styles = {
       button: {

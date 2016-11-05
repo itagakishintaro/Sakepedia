@@ -67902,6 +67902,16 @@
 	      this.setState({ tab: tab });
 	    }
 	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      document.querySelector('meta[property="og:image"]').setAttribute('content', this.props.sake.image);
+	    }
+	  }, {
+	    key: 'componentDidUpdate',
+	    value: function componentDidUpdate() {
+	      document.querySelector('meta[property="og:image"]').setAttribute('content', this.props.sake.image);
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _this2 = this;
@@ -69108,7 +69118,7 @@
 	          '爽酒'
 	        );
 	      }
-	      if (review.flavor <= 2 & 2 <= review.taste) {
+	      if (review.flavor <= 2 & 3 <= review.taste) {
 	        return _react2.default.createElement(
 	          _Chip2.default,
 	          { backgroundColor: _colors.orange200 },
@@ -69122,14 +69132,14 @@
 	          '薫酒'
 	        );
 	      }
-	      if (2 <= review.flavor & 2 <= review.taste & 2 <= review.maturation) {
+	      if (2 <= review.flavor & 3 <= review.taste & 3 <= review.maturation) {
 	        return _react2.default.createElement(
 	          _Chip2.default,
 	          { backgroundColor: _colors.brown200 },
 	          '熟酒'
 	        );
 	      }
-	      if (2 <= review.flavor & 2 <= review.taste & review.maturation <= 2) {
+	      if (2 <= review.flavor & 3 <= review.taste & review.maturation <= 2) {
 	        return _react2.default.createElement(
 	          _Chip2.default,
 	          { backgroundColor: _colors.purple200 },
@@ -70119,7 +70129,7 @@
 	    key: 'handleFile',
 	    value: function handleFile() {
 	      var file = document.getElementById('file').files[0];
-	      (0, _ImageHandler2.default)(file, 200, function (dataURL) {
+	      (0, _ImageHandler2.default)(file, 400, function (dataURL) {
 	        document.getElementById('image').value = dataURL;
 	        document.getElementById('thumbnail').src = dataURL;
 	      });
