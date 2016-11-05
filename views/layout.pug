@@ -1,10 +1,16 @@
 doctype html
-html(prefix='og: http://ogp.me/ns#')
+html(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#")
   head
     title= title
     <!-- Use minimum-scale=1 to enable GPU rasterization -->
     meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1")
+    <!-- OGP -->
+    meta(property="og:title" content="Sakepedia")
+    meta(property="og:type" content="website")
     meta(property="og:image" content="/icons/favicon-96x96.png")
+    meta(property="og:url" content="https://sakepedia.herokuapp.com")
+    meta(property="fb:app_id" content="164983513944480")
+
     link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
     link(rel='stylesheet', href='/stylesheets/font-awesome/css/font-awesome.min.css')
     link(rel='shortcut icon' href='/icons/favicon.ico')
