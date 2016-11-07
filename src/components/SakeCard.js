@@ -74,7 +74,7 @@ class SakeCard extends React.Component {
         <Card style={ styles.card }>
           <TypeMark review={ averageReview( this.props.sake.reviews ) } style={ styles.typeMark } />
           <CardHeader
-            title={ `${this.props.sake.brand} ${this.props.sake.subname} ( ${this.props.sake.type} )` }
+            title={ `${this.props.sake.brand}　${this.props.sake.subname} ( ${this.props.sake.type} )` }
             subtitle={ `${this.props.sake.brewery} ( ${this.props.sake.prefecture} ) ` }
           />
           <CardText style={ styles.cardText }>
