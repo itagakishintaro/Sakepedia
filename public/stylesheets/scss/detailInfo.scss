@@ -17,4 +17,5 @@ $border: 1px solid $grey300;
 .td {
   border: $border;
   word-break: break-all;
+  white-space: pre-wrap;
 }

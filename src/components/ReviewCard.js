@@ -8,6 +8,8 @@ import Stars from './Stars'
 import TypeMark from './TypeMark'
 // lib
 let dateFormat = require('dateformat')
+// css
+import classes from '../../public/stylesheets/scss/_common.scss'
 
 class ReviewCard extends React.Component {
   render() {
@@ -22,6 +24,7 @@ class ReviewCard extends React.Component {
         height: '6em',
         marginBottom: '.5em',
         overflow: 'scroll',
+        whiteSpace: 'pre-wrap',
       },
       content:{
         marginLeft: '1em',
@@ -55,7 +58,7 @@ class ReviewCard extends React.Component {
           subtitle={ this.props.review.username }
         />
         <CardText>
-          <div style={ styles.comment }>{ this.props.review.comment }</div>
+          <div style={ styles.comment } >{ this.props.review.comment }</div>
 
           <div style={ styles.type }>
             <TypeMark review={ this.props.review } />

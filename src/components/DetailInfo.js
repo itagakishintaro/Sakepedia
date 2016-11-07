@@ -37,7 +37,7 @@ class DetailInfo extends React.Component{
             return(
               <tr className={classes.tr}>
                 <th className={classes.th} width="25%">{ items[key] }</th>
-                <td className={classes.td}>
+                <td className={classes.td} >
                     { setAnchor( this.props.sake[key] ) }
                 </td>
               </tr>

@@ -115,7 +115,7 @@ class NewReview extends React.Component {
             id="comment"
             errorText={this.state.errorText.comment}
             floatingLabelFixed={true}
-            floatingLabelText="香味*"
+            floatingLabelText="コメント*"
             fullWidth={true}
             multiLine={true}
             required={true}
