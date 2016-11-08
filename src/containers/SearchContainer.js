@@ -16,6 +16,7 @@ class SearchContainer extends React.Component {
   }
 
   search( query ) {
+    this.setState( { list: {} } )
     getSakeList( this.props.dispatch, query )
   }
 

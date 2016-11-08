@@ -11,6 +11,7 @@ import setFacebook from '../util/facebook'
 class DetailContainer extends React.Component{
   constructor(props) {
     super(props)
+    this.setState( { sake: {} } )
     getSake( this.props.dispatch, this.props.params.sakeId )
   }
 

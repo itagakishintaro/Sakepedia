@@ -56,6 +56,7 @@ const handleCashe = ( url, func ) => {
 }
 
 export const getSakeList = ( dispatch, words ) => {
+  document.getElementById('loading').style.display = 'block'
   let query = 'action=search'
   if( words.prefecture ) {
     query = `${query}&prefecture=${encodeURIComponent(words.prefecture)}`
@@ -73,20 +74,25 @@ export const getSakeList = ( dispatch, words ) => {
   axios.get( url )
     .then( res => {
       dispatch( setSakeList( res.data ) )
+      document.getElementById('loading').style.display = 'none'
     })
     .catch( error => {
       handleCashe(url, ( data ) => { dispatch( setSakeList( data ) ) })
+      document.getElementById('loading').style.display = 'none'
     })
 }
 
 export const getSake = ( dispatch, id ) => {
+  document.getElementById('loading').style.display = 'block'
   let url = `/api/sakes/${id}`
   axios.get( url )
     .then( res => {
       dispatch( setSake( res.data ) )
+      document.getElementById('loading').style.display = 'none'
     })
     .catch( error => {
       handleCashe(url, ( data ) => { dispatch( setSake( data ) ) })
+      document.getElementById('loading').style.display = 'none'
     })
 }
 

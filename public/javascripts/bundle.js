@@ -66725,6 +66725,7 @@
 	
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(DetailContainer).call(this, props));
 	
+	    _this.setState({ sake: {} });
 	    (0, _sake.getSake)(_this.props.dispatch, _this.props.params.sakeId);
 	    return _this;
 	  }
@@ -66847,6 +66848,7 @@
 	};
 	
 	var getSakeList = exports.getSakeList = function getSakeList(dispatch, words) {
+	  document.getElementById('loading').style.display = 'block';
 	  var query = 'action=search';
 	  if (words.prefecture) {
 	    query = query + '&prefecture=' + encodeURIComponent(words.prefecture);
@@ -66863,21 +66865,26 @@
 	  var url = '/api/sakes?' + query;
 	  _axios2.default.get(url).then(function (res) {
 	    dispatch(setSakeList(res.data));
+	    document.getElementById('loading').style.display = 'none';
 	  }).catch(function (error) {
 	    handleCashe(url, function (data) {
 	      dispatch(setSakeList(data));
 	    });
+	    document.getElementById('loading').style.display = 'none';
 	  });
 	};
 	
 	var getSake = exports.getSake = function getSake(dispatch, id) {
+	  document.getElementById('loading').style.display = 'block';
 	  var url = '/api/sakes/' + id;
 	  _axios2.default.get(url).then(function (res) {
 	    dispatch(setSake(res.data));
+	    document.getElementById('loading').style.display = 'none';
 	  }).catch(function (error) {
 	    handleCashe(url, function (data) {
 	      dispatch(setSake(data));
 	    });
+	    document.getElementById('loading').style.display = 'none';
 	  });
 	};
 	
@@ -70823,6 +70830,7 @@
 	  _createClass(SearchContainer, [{
 	    key: 'search',
 	    value: function search(query) {
+	      this.setState({ list: {} });
 	      (0, _sake.getSakeList)(this.props.dispatch, query);
 	    }
 	  }, {
