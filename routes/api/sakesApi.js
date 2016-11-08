@@ -80,32 +80,44 @@ router.get( '/:id', ( req, res ) => {
   } );
 } );
 
+const returnNull = ( res ) =>{
+  res.contentType( 'image/png' );
+  res.end( null );
+}
+
+const getImage = ( res, r ) => {
+  axios.get( r.image, { responseType: 'arraybuffer' } )
+  .then( r => {
+    let buffer = new Buffer( r.data, 'binary' );
+    fs.writeFileSync( 'data.' + r.headers['content-type'].replace(/image\//, ''), buffer );
+    res.contentType( r.headers['content-type'] );
+    res.end( buffer );
+  })
+  .catch( () => {
+    returnNull( res );
+  });
+}
+
 // GET find image
 router.get( '/:id/image', ( req, res ) => {
   collection( 'sake' ).findOne( {
     _id: new ObjectID( req.params.id )
   }, {}, function ( err, r ) {
     const regex = /^data:.+\/(.+);base64,(.*)$/;
-    let matches = r.image.match( regex );
-    if( matches === null ) {
-      axios.get( r.image, { responseType: 'arraybuffer' } )
-      .then( r => {
-        let buffer = new Buffer( r.data, 'binary' );
-        fs.writeFileSync( 'data.' + r.headers['content-type'].replace(/image\//, ''), buffer );
-        res.contentType( r.headers['content-type'] );
-        res.end( buffer );
-      })
-      .catch( error => {
-        console.log( error );
-        res.send( 'error' );
-      });
+    if( r.image === undefined ){
+      returnNull( res );
     } else {
-      let ext = matches[1];
-      let data = matches[2];
-      let buffer = new Buffer( data, 'base64' );
-      fs.writeFileSync( 'data.' + ext, buffer );
-      res.contentType( 'image/' + ext );
-      res.end( buffer );
+      let matches = r.image.match( regex );
+      if( matches === null ) {
+        getImage( res, r );
+      } else {
+        let ext = matches[1];
+        let data = matches[2];
+        let buffer = new Buffer( data, 'base64' );
+        fs.writeFileSync( 'data.' + ext, buffer );
+        res.contentType( 'image/' + ext );
+        res.end( buffer );
+      }
     }
   } );
 } );
