@@ -66725,7 +66725,7 @@
 	
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(DetailContainer).call(this, props));
 	
-	    _this.setState({ sake: {} });
+	    (0, _sake.setSake)({});
 	    (0, _sake.getSake)(_this.props.dispatch, _this.props.params.sakeId);
 	    return _this;
 	  }
@@ -70821,6 +70821,7 @@
 	
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SearchContainer).call(this, props));
 	
+	    (0, _sake.setSakeList)({});
 	    _this.search = _this.search.bind(_this);
 	    (0, _sake.getBrands)(_this.props.dispatch);
 	    (0, _sake.getBreweries)(_this.props.dispatch);
@@ -70830,7 +70831,7 @@
 	  _createClass(SearchContainer, [{
 	    key: 'search',
 	    value: function search(query) {
-	      this.setState({ list: {} });
+	      (0, _sake.setSakeList)({});
 	      (0, _sake.getSakeList)(this.props.dispatch, query);
 	    }
 	  }, {

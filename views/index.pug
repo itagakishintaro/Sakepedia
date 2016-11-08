@@ -1,8 +1,8 @@
 extends layout
 
 block content
-  div#loading(style='position:absolute; top:0; bottom:0; left:0; right:0; margin:auto; width:166px; height: 166px')
-    img(src='img/loading.svg')
+  div#loading(style='position:absolute; top:0; bottom:0; left:0; right:0; margin:auto; width:100%; height: 9999px; z-index:9999; background-color: black; opacity: 0.1;')
+    img(src='img/loading.svg' style='position:absolute; top:0; bottom:0; left:0; right:0; margin:auto; width: 166px; height: 166px; z-index: 99999; opacity: 1;')
   div#userid(hidden)= user.id
   div#username(hidden)= user.name
   div#root

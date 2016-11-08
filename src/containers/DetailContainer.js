@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 // actions
-import { getSake } from '../actions/sake'
+import { getSake, setSake } from '../actions/sake'
 // components
 import Detail from '../components/Detail'
 // util
@@ -11,7 +11,7 @@ import setFacebook from '../util/facebook'
 class DetailContainer extends React.Component{
   constructor(props) {
     super(props)
-    this.setState( { sake: {} } )
+    setSake( {} )
     getSake( this.props.dispatch, this.props.params.sakeId )
   }
 
