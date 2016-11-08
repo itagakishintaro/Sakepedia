@@ -68319,7 +68319,7 @@
 	                'span',
 	                { className: _detail2.default.title },
 	                this.props.sake.brand,
-	                ' ',
+	                '　',
 	                this.props.sake.subname
 	              ),
 	              '( ',
@@ -71130,7 +71130,7 @@
 	          marginRight: '1em'
 	        }
 	      };
-	
+	      var imageURL = '//' + location.host + '/api/sakes/' + this.props.sake._id + '/image';
 	      return _react2.default.createElement(
 	        _reactRouter.Link,
 	        { to: '/sake/' + this.props.sake._id, style: styles.link },
@@ -71139,7 +71139,7 @@
 	          { style: styles.card },
 	          _react2.default.createElement(_TypeMark2.default, { review: (0, _calcReviews.averageReview)(this.props.sake.reviews), style: styles.typeMark }),
 	          _react2.default.createElement(_Card.CardHeader, {
-	            title: this.props.sake.brand + ' ' + this.props.sake.subname + ' ( ' + this.props.sake.type + ' )',
+	            title: this.props.sake.brand + '　' + this.props.sake.subname + ' ( ' + this.props.sake.type + ' )',
 	            subtitle: this.props.sake.brewery + ' ( ' + this.props.sake.prefecture + ' ) '
 	          }),
 	          _react2.default.createElement(
@@ -71148,7 +71148,7 @@
 	            _react2.default.createElement(
 	              'div',
 	              { style: styles.picture },
-	              _react2.default.createElement('img', { src: this.props.sake.image, style: styles.img })
+	              _react2.default.createElement('img', { src: imageURL, style: styles.img })
 	            ),
 	            _react2.default.createElement(
 	              'div',

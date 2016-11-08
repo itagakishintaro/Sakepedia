@@ -68,7 +68,7 @@ class SakeCard extends React.Component {
         marginRight: '1em',
       }
     }
-
+    const imageURL = '//' + location.host + '/api/sakes/' + this.props.sake._id + '/image'
     return (
       <Link to={`/sake/${this.props.sake._id}`} style={styles.link}>
         <Card style={ styles.card }>
@@ -79,7 +79,7 @@ class SakeCard extends React.Component {
           />
           <CardText style={ styles.cardText }>
             <div style={ styles.picture }>
-              <img src={ this.props.sake.image } style={ styles.img } />
+              <img src={ imageURL } style={ styles.img } />
             </div>
             <div style={ styles.description }>
               <Stars evaluation={ averageEvaluation( this.props.sake.reviews ) } />
