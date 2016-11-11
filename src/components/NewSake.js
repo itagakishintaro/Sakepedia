@@ -144,7 +144,34 @@ class NewSake extends React.Component {
       axios.post( '/api/ocr/', { content: dataURL.replace(/^data:image\/(png|jpeg);base64,/, '') } )
       .then( r => {
         document.getElementById('loading').style.display='none';
-        document.getElementById('description').value = r.data.responses[0].textAnnotations[0].description
+        let desc =  r.data.responses[0].textAnnotations[0].description
+        document.getElementById('description').value += '\n' + desc
+
+        let re
+        re = new RegExp( '(酵母)(.*)(\s)' )
+        if( !document.getElementById('sakeYeast').value && desc.match( re ) ){
+          document.getElementById('sakeYeast').value = RegExp.$2
+        }
+        re = new RegExp( '(精米歩合)([^0-9]*)([0-9]{2})' )
+        if( !document.getElementById('ricePolishingRate').value && desc.match( re ) ){
+          document.getElementById('ricePolishingRate').value = RegExp.$3
+        }
+        re = new RegExp( '(アルコール)([^0-9]*)([0-9]{1,2}\.*[0-9])' )
+        if( !document.getElementById('alcoholContent').value && desc.match( re ) ){
+          document.getElementById('alcoholContent').value = RegExp.$3
+        }
+        re = new RegExp( '(日本酒度)([^0-9\+-]*)([\+-]*)([0-9]{1,2}\.*[0-9])' )
+        if( !document.getElementById('sakeMeterValue').value && desc.match( re ) ){
+          document.getElementById('sakeMeterValue').value = RegExp.$3 + RegExp.$4
+        }
+        re = new RegExp( '([^アミノ]酸度)([^0-9]*)([0-9]{1,2}\.*[0-9])' )
+        if( !document.getElementById('acidity').value && desc.match( re ) ){
+          document.getElementById('acidity').value = RegExp.$3
+        }
+        re = new RegExp( '(アミノ酸)([^0-9]*)([0-9]{1,2}\.*[0-9])' )
+        if( !document.getElementById('aminoAcidContent').value && desc.match( re ) ){
+          document.getElementById('aminoAcidContent').value = RegExp.$3
+        }
       })
       .catch( error => {
         document.getElementById('loading').style.display='none';
