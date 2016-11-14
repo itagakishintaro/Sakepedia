@@ -17,6 +17,8 @@
     "es6-promise": "^4.0.5",
     "express": "~4.13.4",
     "express-session": "^1.14.1",
+    "google-auth-library": "^0.9.9",
+    "googleapis": "^14.2.0",
     "material-ui": "^0.15.1",
     "mongodb": "^2.1.18",
     "morgan": "~1.7.0",

@@ -91,3 +91,5 @@ $RECYCLE.BIN/
 
 # mongo
 mongo.txt
+# sheets api
+client_secret.json
