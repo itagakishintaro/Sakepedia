@@ -8,7 +8,7 @@ let bodyParser = require('body-parser');
 
 let sakesApi = require('./routes/api/sakesApi');
 let ocrApi = require('./routes/api/ocrApi');
-let sheetsApi = require('./routes/api/sheetsApi');
+let glossaryApi = require('./routes/api/glossaryApi');
 let screen = require('./routes/screen');
 // passport
 let twitter = require('./routes/auth/twitter');
@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/sakes', sakesApi);
 app.use('/api/ocr', ocrApi);
-app.use('/api/sheets', sheetsApi);
+app.use('/api/glossary', glossaryApi);
 app.use('/', screen);
 // passport
 app.use(twitter.session({

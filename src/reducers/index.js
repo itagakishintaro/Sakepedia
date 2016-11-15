@@ -7,9 +7,10 @@ import prefectures from './prefectures'
 import rices from './rices'
 import sake from './sake'
 import isLogin from './isLogin'
+import glossary from './glossary'
 
 const app = combineReducers( {
-  list, brands, breweries, sakeYeasts, prefectures, rices, sake, isLogin
+  list, brands, breweries, sakeYeasts, prefectures, rices, sake, isLogin, glossary
 } )
 
 export default app

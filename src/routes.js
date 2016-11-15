@@ -6,6 +6,7 @@ import DetailContainer from './containers/DetailContainer'
 import NewSakeContainer from './containers/NewSakeContainer'
 import SearchContainer from './containers/SearchContainer'
 import Login from './components/Login'
+import GlossaryContainer from './containers/GlossaryContainer'
 
 const Routes = (
   <Route path='/' component={App}>
@@ -13,6 +14,7 @@ const Routes = (
     <Route path="sake/new" component={NewSakeContainer}/>
     <Route path="sake/:sakeId" component={DetailContainer}/>
     <Route path="login" component={Login}/>
+    <Route path="glossary" component={GlossaryContainer}/>
   </Route>
 );
 export default Routes;
