@@ -29169,20 +29169,20 @@
 	          { open: this.state.open, docked: false, onRequestChange: this.close },
 	          _react2.default.createElement(
 	            _reactRouter.Link,
-	            { to: '/', style: styles.link },
-	            _react2.default.createElement(
-	              _materialUi.MenuItem,
-	              { onTouchTap: this.close },
-	              'トップ'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            _reactRouter.Link,
 	            { to: '/sake/new', style: styles.link },
 	            _react2.default.createElement(
 	              _materialUi.MenuItem,
 	              { onTouchTap: this.close, disabled: !this.props.isLogin },
 	              '銘柄登録'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/glossary', style: styles.link },
+	            _react2.default.createElement(
+	              _materialUi.MenuItem,
+	              { onTouchTap: this.close },
+	              '用語集'
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -80903,6 +80903,14 @@
 	
 	var _glossary2 = _interopRequireDefault(_glossary);
 	
+	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 290);
+	
+	var _FontIcon2 = _interopRequireDefault(_FontIcon);
+	
+	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 561);
+	
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -80911,6 +80919,8 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	// css
+	
+	// material-ui
 	
 	
 	var Glossary = function (_React$Component) {
@@ -80925,42 +80935,66 @@
 	  _createClass(Glossary, [{
 	    key: 'render',
 	    value: function render() {
+	      var styles = {
+	        button: {
+	          margin: '0 0 1em 0'
+	        }
+	      };
 	      return _react2.default.createElement(
-	        'table',
-	        { className: _glossary2.default.table },
-	        this.props.glossary.map(function (array, index) {
-	          if (index === 0) {
-	            return _react2.default.createElement(
-	              'tr',
-	              { className: _glossary2.default.tr },
-	              _react2.default.createElement(
-	                'th',
-	                { className: _glossary2.default.th, width: '25%' },
-	                array[0] + '\n(' + array[1] + ')'
-	              ),
-	              _react2.default.createElement(
-	                'th',
-	                { className: _glossary2.default.th },
-	                array[2]
-	              )
-	            );
-	          } else {
-	            return _react2.default.createElement(
-	              'tr',
-	              { className: _glossary2.default.tr },
-	              _react2.default.createElement(
-	                'td',
-	                { className: _glossary2.default.td, width: '25%' },
-	                array[0] + '\n(' + array[1] + ')'
-	              ),
-	              _react2.default.createElement(
-	                'td',
-	                { className: _glossary2.default.td },
-	                array[2]
-	              )
-	            );
-	          }
-	        })
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'a',
+	          { href: 'https://docs.google.com/spreadsheets/d/13xAtWg2neS0TF-8vY2BluIvd5Bbnbx5b0OUsCnnOg4k/edit?usp=sharing', target: '_blank' },
+	          _react2.default.createElement(_RaisedButton2.default, {
+	            label: '用語集を編集',
+	            labelPosition: 'before',
+	            primary: true,
+	            style: styles.button,
+	            icon: _react2.default.createElement(
+	              _FontIcon2.default,
+	              { className: 'material-icons' },
+	              'cloud_upload'
+	            )
+	          })
+	        ),
+	        _react2.default.createElement(
+	          'table',
+	          { className: _glossary2.default.table },
+	          this.props.glossary.map(function (array, index) {
+	            if (index === 0) {
+	              return _react2.default.createElement(
+	                'tr',
+	                { className: _glossary2.default.tr },
+	                _react2.default.createElement(
+	                  'th',
+	                  { className: _glossary2.default.th, width: '25%' },
+	                  array[0] + '\n(' + array[1] + ')'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  { className: _glossary2.default.th },
+	                  array[2]
+	                )
+	              );
+	            } else {
+	              return _react2.default.createElement(
+	                'tr',
+	                { className: _glossary2.default.tr },
+	                _react2.default.createElement(
+	                  'td',
+	                  { className: _glossary2.default.td, width: '25%' },
+	                  array[0] + '\n(' + array[1] + ')'
+	                ),
+	                _react2.default.createElement(
+	                  'td',
+	                  { className: _glossary2.default.td },
+	                  array[2]
+	                )
+	              );
+	            }
+	          })
+	        )
 	      );
 	    }
 	  }]);
