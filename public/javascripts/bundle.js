@@ -29134,6 +29134,7 @@
 	    _this.close = _this.close.bind(_this);
 	    _this.toggleMenu = _this.toggleMenu.bind(_this);
 	    _this.preventWhenLoggedin = _this.preventWhenLoggedin.bind(_this);
+	    _this.preventWhenLoggedout = _this.preventWhenLoggedout.bind(_this);
 	    return _this;
 	  }
 	
@@ -29156,6 +29157,13 @@
 	    key: 'preventWhenLoggedin',
 	    value: function preventWhenLoggedin(e) {
 	      if (this.props.isLogin) {
+	        e.preventDefault();
+	      }
+	    }
+	  }, {
+	    key: 'preventWhenLoggedout',
+	    value: function preventWhenLoggedout(e) {
+	      if (!this.props.isLogin) {
 	        e.preventDefault();
 	      }
 	    }
@@ -29187,7 +29195,7 @@
 	      } else {
 	        loginout = _react2.default.createElement(
 	          _reactRouter.Link,
-	          { to: '/login', style: styles.link, onTouchTap: this.preventWhenLoggedin },
+	          { to: '/login', style: styles.link },
 	          _react2.default.createElement(
 	            _materialUi.MenuItem,
 	            { onTouchTap: this.close },
@@ -29214,7 +29222,16 @@
 	          { open: this.state.open, docked: false, onRequestChange: this.close },
 	          _react2.default.createElement(
 	            _reactRouter.Link,
-	            { to: '/sake/new', style: styles.link },
+	            { to: '/mypage', style: styles.link, onTouchTap: this.preventWhenLoggedout },
+	            _react2.default.createElement(
+	              _materialUi.MenuItem,
+	              { onTouchTap: this.close, disabled: !this.props.isLogin },
+	              'マイページ'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/sake/new', style: styles.link, onTouchTap: this.preventWhenLoggedout },
 	            _react2.default.createElement(
 	              _materialUi.MenuItem,
 	              { onTouchTap: this.close, disabled: !this.props.isLogin },

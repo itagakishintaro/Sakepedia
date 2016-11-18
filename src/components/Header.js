@@ -13,6 +13,7 @@ class Header extends React.Component{
     this.close = this.close.bind(this)
     this.toggleMenu = this.toggleMenu.bind(this)
     this.preventWhenLoggedin = this.preventWhenLoggedin.bind(this)
+    this.preventWhenLoggedout = this.preventWhenLoggedout.bind(this)
   }
 
   toggleMenu(){
@@ -29,6 +30,12 @@ class Header extends React.Component{
 
   preventWhenLoggedin(e){
     if(this.props.isLogin) {
+      e.preventDefault()
+    }
+  }
+
+  preventWhenLoggedout(e){
+    if(!this.props.isLogin) {
       e.preventDefault()
     }
   }
@@ -51,7 +58,7 @@ class Header extends React.Component{
     if( this.props.isLogin ) {
       loginout = <MenuItem href='/auth/logout' onTouchTap={ this.logout }>ログアウト <i className="fa fa-sign-out" aria-hidden="true"></i></MenuItem>
     } else {
-      loginout = <Link to={'/login'} style={styles.link} onTouchTap={this.preventWhenLoggedin}><MenuItem onTouchTap={ this.close }>ログイン <i className="fa fa-sign-in" aria-hidden="true"></i></MenuItem></Link>
+      loginout = <Link to={'/login'} style={styles.link}><MenuItem onTouchTap={ this.close }>ログイン <i className="fa fa-sign-in" aria-hidden="true"></i></MenuItem></Link>
     }
     return (
       <div>
@@ -64,7 +71,8 @@ class Header extends React.Component{
           style={ styles.appbar }
         />
         <Drawer open={this.state.open} docked={false} onRequestChange={ this.close }>
-          <Link to={'/sake/new'} style={styles.link}><MenuItem onTouchTap={ this.close } disabled={!this.props.isLogin}>銘柄登録</MenuItem></Link>
+          <Link to={'/mypage'} style={styles.link} onTouchTap={this.preventWhenLoggedout}><MenuItem onTouchTap={ this.close } disabled={!this.props.isLogin}>マイページ</MenuItem></Link>
+          <Link to={'/sake/new'} style={styles.link} onTouchTap={this.preventWhenLoggedout}><MenuItem onTouchTap={ this.close } disabled={!this.props.isLogin}>銘柄登録</MenuItem></Link>
           <Link to={'/glossary'} style={styles.link}><MenuItem onTouchTap={ this.close }>用語集</MenuItem></Link>
           <MenuItem>
             <div id="fb-root"></div>
