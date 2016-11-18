@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 // css
 import classes from '../../public/stylesheets/scss/list.scss'
 // components
+import MySakeCard from '../components/MySakeCard'
 import SakeCard from '../components/SakeCard'
 // util
 import { averageEvaluation } from '../util/calcReviews'
@@ -36,7 +37,11 @@ class List extends React.Component {
             return this.sortByEval(a, b)
           } ).map( sake => {
             if( this.props.card === 'mycard' ){
-              return <SakeCard sake={sake} />
+              let filterdReviews = sake.reviews.filter( v => {
+                return v.userid === window.localStorage.getItem( 'userid' )
+              } )
+              sake.reviews = filterdReviews
+              return <MySakeCard sake={sake} />
             }
             return <SakeCard sake={sake} />
           } ) }
