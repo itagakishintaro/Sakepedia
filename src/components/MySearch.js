@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react'
 // material-ui
 import DatePicker from 'material-ui/DatePicker'
 import RaisedButton from 'material-ui/RaisedButton'
+// util
+import localISOString from '../util/time'
 
 class MySearch extends React.Component {
   constructor(props) {
@@ -23,10 +25,12 @@ class MySearch extends React.Component {
   }
 
   detailSearch() {
+    let toPlusOne = new Date( this.state.to )
+    toPlusOne.setDate(toPlusOne.getDate() + 1)
     let query = {
       'reviews.userid': window.localStorage.getItem( 'userid' ),
-      from: this.state.from.toISOString(),
-      to: this.state.to.toISOString(),
+      from: localISOString( this.state.from ),
+      to: localISOString( toPlusOne ),
     }
     this.props.search( query )
   }

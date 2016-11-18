@@ -31,20 +31,18 @@ router.get( '/', ( req, res ) => {
   if ( req.query.brand ) {
     query.brand = new RegExp( decodeURIComponent(req.query.brand) );
   }
+  let reviews = {}
   if ( req.query['reviews.userid'] ) {
-    query['reviews.userid'] = decodeURIComponent(req.query['reviews.userid']);
-  }
-  if ( req.query.from || req.query.to ) {
-    let reviewsDate ={};
+    reviews.userid = decodeURIComponent(req.query['reviews.userid']);
+    reviews.date = {}
     if ( req.query.from ) {
-      reviewsDate['$gt'] = decodeURIComponent(req.query.from)
+      reviews.date['$gt'] = decodeURIComponent(req.query.from);
     }
     if ( req.query.to ) {
-      reviewsDate['$lt'] = decodeURIComponent(req.query.to)
+      reviews.date['$lt'] = decodeURIComponent(req.query.to);
     }
-    query['reviews.date'] = reviewsDate
+    query['reviews'] = { '$elemMatch': reviews }
   }
-
   collection( 'sake' ).find( query ).sort([[ 'date', 1 ]]).project( { image: 0 } ).limit( LIMIT ).toArray( ( err, docs ) => {
     res.send( docs );
   } );

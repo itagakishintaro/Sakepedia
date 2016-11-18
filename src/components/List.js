@@ -34,7 +34,12 @@ class List extends React.Component {
         <div style={ styles.list }>
           { this.props.list.sort( (a, b) => {
             return this.sortByEval(a, b)
-          } ).map( sake => <SakeCard sake={sake} /> ) }
+          } ).map( sake => {
+            if( this.props.card === 'mycard' ){
+              return <SakeCard sake={sake} />
+            }
+            return <SakeCard sake={sake} />
+          } ) }
         </div>
       </div>
     )
@@ -42,6 +47,7 @@ class List extends React.Component {
 }
 
 List.propTypes = {
+  card: PropTypes.string,
   dispatch: PropTypes.func.isRequired,
   list: PropTypes.array.isRequired,
 }

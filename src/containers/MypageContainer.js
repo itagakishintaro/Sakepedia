@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 // actions
 import { getSakeList, setSakeList } from '../actions/sake'
 // material-ui
-import MyList from '../Components/MyList'
+import List from '../Components/List'
 // components
 import MySearch from '../components/MySearch'
 
@@ -25,7 +25,7 @@ class MypageContainer extends React.Component {
         <MySearch
           search = {this.search}
         />
-      <MyList list={this.props.list}/>
+      <List list={this.props.list} card="mycard"/>
       </div>
     )
   }
