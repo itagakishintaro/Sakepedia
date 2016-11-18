@@ -4,16 +4,6 @@ import { Link } from 'react-router'
 import { AppBar, IconButton, Drawer, MenuItem } from 'material-ui'
 import MenuIcon from 'material-ui/svg-icons/navigation/menu'
 
-const styles = {
-  appbar: {
-    marginBottom: '1rem',
-  },
-  link: {
-    color: '#000',
-    textDecoration: 'none',
-  }
-}
-
 class Header extends React.Component{
   constructor(props) {
     super(props)
@@ -48,6 +38,21 @@ class Header extends React.Component{
   }
 
   render() {
+    const styles = {
+      appbar: {
+        marginBottom: '1rem',
+      },
+      link: {
+        color: '#000',
+        textDecoration: 'none',
+      },
+    }
+    let loginout
+    if( this.props.isLogin ) {
+      loginout = <MenuItem href='/auth/logout' onTouchTap={ this.logout }>ログアウト <i className="fa fa-sign-out" aria-hidden="true"></i></MenuItem>
+    } else {
+      loginout = <Link to={'/login'} style={styles.link} onTouchTap={this.preventWhenLoggedin}><MenuItem onTouchTap={ this.close }>ログイン <i className="fa fa-sign-in" aria-hidden="true"></i></MenuItem></Link>
+    }
     return (
       <div>
         <AppBar
@@ -61,8 +66,6 @@ class Header extends React.Component{
         <Drawer open={this.state.open} docked={false} onRequestChange={ this.close }>
           <Link to={'/sake/new'} style={styles.link}><MenuItem onTouchTap={ this.close } disabled={!this.props.isLogin}>銘柄登録</MenuItem></Link>
           <Link to={'/glossary'} style={styles.link}><MenuItem onTouchTap={ this.close }>用語集</MenuItem></Link>
-          <Link to={'/login'} style={styles.link} onTouchTap={this.preventWhenLoggedin}><MenuItem onTouchTap={ this.close } disabled={this.props.isLogin}>ログイン</MenuItem></Link>
-          <MenuItem href='/auth/logout' disabled={!this.props.isLogin} onTouchTap={ this.logout }>ログアウト</MenuItem>
           <MenuItem>
             <div id="fb-root"></div>
             <div id="fb-area"></div>
@@ -70,6 +73,7 @@ class Header extends React.Component{
           <MenuItem>
             <div id="tw-area"></div>
           </MenuItem>
+          <div>{loginout}</div>
         </Drawer>
       </div>
     )
