@@ -34,7 +34,18 @@ router.get( '/', ( req, res ) => {
   if ( req.query['reviews.userid'] ) {
     query['reviews.userid'] = decodeURIComponent(req.query['reviews.userid']);
   }
-  collection( 'sake' ).find( query ).project( { image: 0 } ).limit( LIMIT ).toArray( ( err, docs ) => {
+  if ( req.query.from || req.query.to ) {
+    let reviewsDate ={};
+    if ( req.query.from ) {
+      reviewsDate['$gt'] = decodeURIComponent(req.query.from)
+    }
+    if ( req.query.to ) {
+      reviewsDate['$lt'] = decodeURIComponent(req.query.to)
+    }
+    query['reviews.date'] = reviewsDate
+  }
+
+  collection( 'sake' ).find( query ).sort([[ 'date', 1 ]]).project( { image: 0 } ).limit( LIMIT ).toArray( ( err, docs ) => {
     res.send( docs );
   } );
 } );

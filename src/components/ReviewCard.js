@@ -52,7 +52,7 @@ class ReviewCard extends React.Component {
     }
     return (
       <Card style={ styles.card }>
-        <div style={ styles.date }>{ dateFormat(this.props.review.tasting_date , 'yyyy/mm/dd HH:MM')}</div>
+        <div style={ styles.date }>{ dateFormat(this.props.review.date , 'yyyy/mm/dd HH:MM')}</div>
         <CardHeader
           title={ <Stars evaluation={this.props.review.evaluation} /> }
           subtitle={ this.props.review.username }
