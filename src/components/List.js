@@ -36,7 +36,7 @@ class List extends React.Component {
           { this.props.list.sort( (a, b) => {
             return this.sortByEval(a, b)
           } ).map( sake => {
-            if( this.props.card === 'mycard' ){
+            if( this.props.card === 'mycard' && sake.reviews ){
               let filterdReviews = sake.reviews.filter( v => {
                 return v.userid === window.localStorage.getItem( 'userid' )
               } )

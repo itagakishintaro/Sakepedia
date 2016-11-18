@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 // actions
-import { getSakeList, setSakeList } from '../actions/sake'
+import { getMySakeList, setMySakeList } from '../actions/sake'
 // material-ui
 import List from '../Components/List'
 // components
@@ -10,13 +10,13 @@ import MySearch from '../components/MySearch'
 class MypageContainer extends React.Component {
   constructor(props) {
     super(props)
-    setSakeList( {} )
+    setMySakeList( [] )
     this.search = this.search.bind(this)
   }
 
   search( query ) {
-    setSakeList( {} )
-    getSakeList( this.props.dispatch, query )
+    setMySakeList( [] )
+    getMySakeList( this.props.dispatch, query )
   }
 
   render() {
@@ -25,7 +25,7 @@ class MypageContainer extends React.Component {
         <MySearch
           search = {this.search}
         />
-      <List list={this.props.list} card="mycard"/>
+      <List list={this.props.mylist} card="mycard"/>
       </div>
     )
   }
@@ -33,7 +33,7 @@ class MypageContainer extends React.Component {
 
 MypageContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  list: PropTypes.array.isRequired,
+  mylist: PropTypes.array.isRequired,
 }
 
 const mapStateToProps = state => state

@@ -22643,6 +22643,10 @@
 	
 	var _list2 = _interopRequireDefault(_list);
 	
+	var _mylist = __webpack_require__(/*! ./mylist */ 983);
+	
+	var _mylist2 = _interopRequireDefault(_mylist);
+	
 	var _brands = __webpack_require__(/*! ./brands */ 190);
 	
 	var _brands2 = _interopRequireDefault(_brands);
@@ -22678,7 +22682,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var app = (0, _redux.combineReducers)({
-	  list: _list2.default, brands: _brands2.default, breweries: _breweries2.default, sakeYeasts: _sakeYeasts2.default, prefectures: _prefectures2.default, rices: _rices2.default, sake: _sake2.default, isLogin: _isLogin2.default, glossary: _glossary2.default
+	  list: _list2.default, mylist: _mylist2.default, brands: _brands2.default, breweries: _breweries2.default, sakeYeasts: _sakeYeasts2.default, prefectures: _prefectures2.default, rices: _rices2.default, sake: _sake2.default, isLogin: _isLogin2.default, glossary: _glossary2.default
 	});
 	
 	exports.default = app;
@@ -66354,7 +66358,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.getRices = exports.getSakeYeasts = exports.getBreweries = exports.getBrands = exports.getSake = exports.getSakeList = exports.setRices = exports.setSakeYeasts = exports.setBreweries = exports.setBrands = exports.setSake = exports.setSakeList = undefined;
+	exports.getRices = exports.getSakeYeasts = exports.getBreweries = exports.getBrands = exports.getSake = exports.getMySakeList = exports.getSakeList = exports.setRices = exports.setSakeYeasts = exports.setBreweries = exports.setBrands = exports.setSake = exports.setMySakeList = exports.setSakeList = undefined;
 	
 	var _axios = __webpack_require__(/*! axios */ 618);
 	
@@ -66365,6 +66369,13 @@
 	var setSakeList = exports.setSakeList = function setSakeList(list) {
 	  return {
 	    type: 'SETLIST',
+	    list: list
+	  };
+	};
+	
+	var setMySakeList = exports.setMySakeList = function setMySakeList(list) {
+	  return {
+	    type: 'SETMYLIST',
 	    list: list
 	  };
 	};
@@ -66429,6 +66440,21 @@
 	  if (words.brand) {
 	    query = query + '&brand=' + encodeURIComponent(words.brand);
 	  }
+	  var url = '/api/sakes?' + query;
+	  _axios2.default.get(url).then(function (res) {
+	    dispatch(setSakeList(res.data));
+	    document.getElementById('loading').style.display = 'none';
+	  }).catch(function (error) {
+	    handleCashe(url, function (data) {
+	      dispatch(setSakeList(data));
+	    });
+	    document.getElementById('loading').style.display = 'none';
+	  });
+	};
+	
+	var getMySakeList = exports.getMySakeList = function getMySakeList(dispatch, words) {
+	  document.getElementById('loading').style.display = 'block';
+	  var query = 'action=search';
 	  if (words['reviews.userid']) {
 	    query = query + '&reviews.userid=' + encodeURIComponent(words['reviews.userid']);
 	  }
@@ -66440,11 +66466,11 @@
 	  }
 	  var url = '/api/sakes?' + query;
 	  _axios2.default.get(url).then(function (res) {
-	    dispatch(setSakeList(res.data));
+	    dispatch(setMySakeList(res.data));
 	    document.getElementById('loading').style.display = 'none';
 	  }).catch(function (error) {
 	    handleCashe(url, function (data) {
-	      dispatch(setSakeList(data));
+	      dispatch(setMySakeList(data));
 	    });
 	    document.getElementById('loading').style.display = 'none';
 	  });
@@ -70942,7 +70968,7 @@
 	
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SearchContainer).call(this, props));
 	
-	    (0, _sake.setSakeList)({});
+	    (0, _sake.setSakeList)([]);
 	    _this.search = _this.search.bind(_this);
 	    (0, _sake.getBrands)(_this.props.dispatch);
 	    (0, _sake.getBreweries)(_this.props.dispatch);
@@ -70952,7 +70978,7 @@
 	  _createClass(SearchContainer, [{
 	    key: 'search',
 	    value: function search(query) {
-	      (0, _sake.setSakeList)({});
+	      (0, _sake.setSakeList)([]);
 	      (0, _sake.getSakeList)(this.props.dispatch, query);
 	    }
 	  }, {
@@ -71082,7 +71108,7 @@
 	          this.props.list.sort(function (a, b) {
 	            return _this2.sortByEval(a, b);
 	          }).map(function (sake) {
-	            if (_this2.props.card === 'mycard') {
+	            if (_this2.props.card === 'mycard' && sake.reviews) {
 	              var filterdReviews = sake.reviews.filter(function (v) {
 	                return v.userid === window.localStorage.getItem('userid');
 	              });
@@ -71545,10 +71571,6 @@
 	
 	var _AutoComplete2 = _interopRequireDefault(_AutoComplete);
 	
-	var _Checkbox = __webpack_require__(/*! material-ui/Checkbox */ 356);
-	
-	var _Checkbox2 = _interopRequireDefault(_Checkbox);
-	
 	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 291);
 	
 	var _FontIcon2 = _interopRequireDefault(_FontIcon);
@@ -71599,9 +71621,6 @@
 	        brewrey: document.getElementById('brewrey').value,
 	        brand: document.getElementById('brand').value
 	      };
-	      if (document.getElementById('self').checked) {
-	        query['reviews.userid'] = window.localStorage.getItem('userid');
-	      }
 	      this.props.search(query);
 	    }
 	  }, {
@@ -71673,11 +71692,6 @@
 	              floatingLabelText: '銘柄',
 	              dataSource: this.props.brands,
 	              fullWidth: true
-	            }),
-	            _react2.default.createElement(_Checkbox2.default, {
-	              id: 'self',
-	              label: '自分がレビューしたお酒',
-	              labelStyle: styles.checkbox
 	            }),
 	            _react2.default.createElement(_RaisedButton2.default, {
 	              label: '検索',
@@ -72159,7 +72173,7 @@
 	
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(MypageContainer).call(this, props));
 	
-	    (0, _sake.setSakeList)({});
+	    (0, _sake.setMySakeList)([]);
 	    _this.search = _this.search.bind(_this);
 	    return _this;
 	  }
@@ -72167,8 +72181,8 @@
 	  _createClass(MypageContainer, [{
 	    key: 'search',
 	    value: function search(query) {
-	      (0, _sake.setSakeList)({});
-	      (0, _sake.getSakeList)(this.props.dispatch, query);
+	      (0, _sake.setMySakeList)([]);
+	      (0, _sake.getMySakeList)(this.props.dispatch, query);
 	    }
 	  }, {
 	    key: 'render',
@@ -72179,7 +72193,7 @@
 	        _react2.default.createElement(_MySearch2.default, {
 	          search: this.search
 	        }),
-	        _react2.default.createElement(_List2.default, { list: this.props.list, card: 'mycard' })
+	        _react2.default.createElement(_List2.default, { list: this.props.mylist, card: 'mycard' })
 	      );
 	    }
 	  }]);
@@ -72189,7 +72203,7 @@
 	
 	MypageContainer.propTypes = {
 	  dispatch: _react.PropTypes.func.isRequired,
-	  list: _react.PropTypes.array.isRequired
+	  mylist: _react.PropTypes.array.isRequired
 	};
 	
 	var mapStateToProps = function mapStateToProps(state) {
@@ -81609,6 +81623,32 @@
 	    return String(it).replace(regExp, replacer);
 	  };
 	};
+
+/***/ },
+/* 983 */
+/*!********************************!*\
+  !*** ./src/reducers/mylist.js ***!
+  \********************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var mylist = function mylist() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
+	  var action = arguments[1];
+	
+	  switch (action.type) {
+	    case 'SETMYLIST':
+	      return action.list;
+	    default:
+	      return state;
+	  }
+	};
+	
+	exports.default = mylist;
 
 /***/ }
 /******/ ]);

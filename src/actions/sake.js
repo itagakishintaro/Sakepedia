@@ -7,6 +7,13 @@ export const setSakeList = ( list ) => {
   }
 }
 
+export const setMySakeList = ( list ) => {
+  return {
+    type: 'SETMYLIST',
+    list,
+  }
+}
+
 export const setSake = ( sake ) => {
   return {
     type: 'SETSAKE',
@@ -67,6 +74,21 @@ export const getSakeList = ( dispatch, words ) => {
   if( words.brand ) {
     query = `${query}&brand=${encodeURIComponent(words.brand)}`
   }
+  let url = `/api/sakes?${query}`
+  axios.get( url )
+    .then( res => {
+      dispatch( setSakeList( res.data ) )
+      document.getElementById('loading').style.display = 'none'
+    })
+    .catch( error => {
+      handleCashe(url, ( data ) => { dispatch( setSakeList( data ) ) })
+      document.getElementById('loading').style.display = 'none'
+    })
+}
+
+export const getMySakeList = ( dispatch, words ) => {
+  document.getElementById('loading').style.display = 'block'
+  let query = 'action=search'
   if( words['reviews.userid'] ) {
     query = `${query}&reviews.userid=${encodeURIComponent(words['reviews.userid'])}`
   }
@@ -79,11 +101,11 @@ export const getSakeList = ( dispatch, words ) => {
   let url = `/api/sakes?${query}`
   axios.get( url )
     .then( res => {
-      dispatch( setSakeList( res.data ) )
+      dispatch( setMySakeList( res.data ) )
       document.getElementById('loading').style.display = 'none'
     })
     .catch( error => {
-      handleCashe(url, ( data ) => { dispatch( setSakeList( data ) ) })
+      handleCashe(url, ( data ) => { dispatch( setMySakeList( data ) ) })
       document.getElementById('loading').style.display = 'none'
     })
 }

@@ -10,14 +10,14 @@ import Search from '../components/Search'
 class SearchContainer extends React.Component {
   constructor(props) {
     super(props)
-    setSakeList( {} )
+    setSakeList( [] )
     this.search = this.search.bind(this)
     getBrands( this.props.dispatch )
     getBreweries( this.props.dispatch )
   }
 
   search( query ) {
-    setSakeList( {} )
+    setSakeList( [] )
     getSakeList( this.props.dispatch, query )
   }
 
