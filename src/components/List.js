@@ -16,6 +16,10 @@ class List extends React.Component {
     }
   }
 
+  sortByReviewTime( a, b ) {
+    return Math.max.apply( null, a.reviews.map( r=> { return new Date( r.date ).getTime() } ) ) < Math.max.apply( null, b.reviews.map( r => { return new Date( r.date ).getTime() } ) )
+  }
+
   render() {
     const MAX = 100
     let alertMessage = ''
@@ -29,18 +33,27 @@ class List extends React.Component {
       },
     }
 
+    let sakelist = this.props.list
+    if( this.props.card === 'mycard' ) {
+      // filter review
+      sakelist = sakelist.map( sake => {
+        let myReviews = sake.reviews.filter( review => {
+          return review.userid === window.localStorage.getItem( 'userid' )
+        } )
+        sake.reviews = myReviews
+        return sake
+      } )
+      // sort
+      sakelist.sort( ( a, b ) => { return this.sortByReviewTime( a, b ) } )
+    } else {
+      sakelist.sort( ( a, b ) => { return this.sortByEval( a, b ) } )
+    }
     return (
       <div>
         <div className={classes.alert}>{ alertMessage }</div>
         <div style={ styles.list }>
-          { this.props.list.sort( (a, b) => {
-            return this.sortByEval(a, b)
-          } ).map( sake => {
-            if( this.props.card === 'mycard' && sake.reviews ){
-              let filterdReviews = sake.reviews.filter( v => {
-                return v.userid === window.localStorage.getItem( 'userid' )
-              } )
-              sake.reviews = filterdReviews
+          { sakelist.map( sake => {
+            if( this.props.card === 'mycard' ){
               return <MySakeCard sake={sake} />
             }
             return <SakeCard sake={sake} />
