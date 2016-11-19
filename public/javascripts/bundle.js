@@ -71106,11 +71106,15 @@
 	  }, {
 	    key: 'sortByReviewTime',
 	    value: function sortByReviewTime(a, b) {
-	      return Math.max.apply(null, a.reviews.map(function (r) {
+	      if (Math.max.apply(null, a.reviews.map(function (r) {
 	        return new Date(r.date).getTime();
 	      })) < Math.max.apply(null, b.reviews.map(function (r) {
 	        return new Date(r.date).getTime();
-	      }));
+	      }))) {
+	        return 1;
+	      } else {
+	        return -1;
+	      }
 	    }
 	  }, {
 	    key: 'render',
@@ -71309,7 +71313,7 @@
 	          marginTop: '1em',
 	          width: this.width,
 	          height: '15em',
-	          overflow: 'scroll'
+	          overflow: 'hidden'
 	        },
 	        date: {
 	          float: 'right',

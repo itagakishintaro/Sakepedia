@@ -17,7 +17,12 @@ class List extends React.Component {
   }
 
   sortByReviewTime( a, b ) {
-    return Math.max.apply( null, a.reviews.map( r=> { return new Date( r.date ).getTime() } ) ) < Math.max.apply( null, b.reviews.map( r => { return new Date( r.date ).getTime() } ) )
+    if( Math.max.apply( null, a.reviews.map( r=> { return new Date( r.date ).getTime() } ) )
+      < Math.max.apply( null, b.reviews.map( r => { return new Date( r.date ).getTime() } ) ) ) {
+      return 1
+    } else {
+      return -1
+    }
   }
 
   render() {

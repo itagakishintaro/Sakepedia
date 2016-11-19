@@ -30,7 +30,7 @@ class MySakeCard extends React.Component {
         marginTop: '1em',
         width: this.width,
         height: '15em',
-        overflow: 'scroll',
+        overflow: 'hidden',
       },
       date: {
         float: 'right',
