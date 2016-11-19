@@ -70232,6 +70232,7 @@
 	      }
 	      if (this.props.sake.image) {
 	        document.getElementById('image').value = this.props.sake.image;
+	        document.getElementById('thumbnail').src = this.props.sake.image;
 	      }
 	    }
 	  }, {
@@ -70317,11 +70318,15 @@
 	      document.getElementById('loading').style.display = 'block';
 	      var file = document.getElementById('ocr').files[0];
 	      (0, _ImageHandler2.default)(file, 600, function (dataURL) {
+	        document.getElementById('thumbnail2').src = dataURL;
 	        _axios2.default.post('/api/ocr/', { content: dataURL.replace(/^data:image\/(png|jpeg);base64,/, '') }).then(function (r) {
 	          document.getElementById('loading').style.display = 'none';
 	          var desc = r.data.responses[0].textAnnotations[0].description;
-	          document.getElementById('description').value += '\n' + desc;
-	
+	          if (document.getElementById('description').value) {
+	            document.getElementById('description').value += '\n' + desc;
+	          } else {
+	            document.getElementById('description').value = desc;
+	          }
 	          var re = void 0;
 	          re = new RegExp('(酵母)(.*)(\s)');
 	          if (!document.getElementById('sakeYeast').value && desc.match(re)) {
@@ -70369,6 +70374,7 @@
 	          boxShadow: 'rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px',
 	          boxSizing: 'border-box',
 	          display: 'inline-block',
+	          float: 'right',
 	          height: '36px',
 	          lineHeight: '36px',
 	          margin: '.5em .5em 0 0',
@@ -70451,32 +70457,40 @@
 	          required: true,
 	          searchText: this.props.sake.brewery
 	        }),
+	        _react2.default.createElement(
+	          'div',
+	          { style: styles.label },
+	          'ラベル写真'
+	        ),
+	        _react2.default.createElement(
+	          'label',
+	          { htmlFor: 'file' },
+	          _react2.default.createElement(
+	            'div',
+	            { style: styles.camera },
+	            _react2.default.createElement(
+	              _FontIcon2.default,
+	              { className: 'material-icons' },
+	              'photo_camera'
+	            )
+	          ),
+	          _react2.default.createElement('input', { type: 'file', id: 'file', accept: 'image/*', capture: 'camera', style: styles.file, onChange: this.handleFile })
+	        ),
 	        _react2.default.createElement(_TextField2.default, {
-	          id: 'url',
-	          errorText: this.state.errorText.url,
+	          id: 'image',
 	          floatingLabelFixed: true,
-	          floatingLabelText: 'URL',
 	          fullWidth: true,
-	          hintText: '商品のホームページなど',
-	          type: 'url'
+	          hintText: '画像のURLを入力してもOK'
 	        }),
-	        _react2.default.createElement(_TextField2.default, {
-	          id: 'description',
-	          floatingLabelFixed: true,
-	          floatingLabelText: '説明',
-	          fullWidth: true,
-	          hintText: 'ラベルの説明、ホームページの解説など',
-	          multiLine: true,
-	          rows: 3
-	        }),
+	        _react2.default.createElement('img', { id: 'thumbnail', src: '', width: '25%' }),
+	        _react2.default.createElement(
+	          'div',
+	          { style: styles.label },
+	          '裏ラベル写真(文字を読み取る)'
+	        ),
 	        _react2.default.createElement(
 	          'label',
 	          { htmlFor: 'ocr' },
-	          _react2.default.createElement(
-	            'div',
-	            { style: styles.label },
-	            '写真から文字を読み取る'
-	          ),
 	          _react2.default.createElement(
 	            'div',
 	            { style: styles.camera },
@@ -70488,6 +70502,15 @@
 	          ),
 	          _react2.default.createElement('input', { type: 'file', id: 'ocr', accept: 'image/*', capture: 'camera', style: styles.file, onChange: this.handleOcr })
 	        ),
+	        _react2.default.createElement('img', { id: 'thumbnail2', src: '', width: '100%' }),
+	        _react2.default.createElement(_TextField2.default, {
+	          id: 'description',
+	          floatingLabelFixed: true,
+	          floatingLabelText: '説明',
+	          fullWidth: true,
+	          hintText: '裏ラベル、ホームページの説明など',
+	          multiLine: true
+	        }),
 	        _react2.default.createElement(
 	          _SelectField2.default,
 	          {
@@ -70573,38 +70596,15 @@
 	          step: '0.1',
 	          type: 'number'
 	        }),
-	        _react2.default.createElement(
-	          'label',
-	          { htmlFor: 'file' },
-	          _react2.default.createElement(
-	            'div',
-	            { style: styles.label },
-	            '画像'
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { style: styles.camera },
-	            _react2.default.createElement(
-	              _FontIcon2.default,
-	              { className: 'material-icons' },
-	              'photo_camera'
-	            )
-	          ),
-	          _react2.default.createElement('input', { type: 'file', id: 'file', accept: 'image/*', capture: 'camera', style: styles.file, onChange: this.handleFile })
-	        ),
 	        _react2.default.createElement(_TextField2.default, {
-	          id: 'image',
+	          id: 'url',
+	          errorText: this.state.errorText.url,
 	          floatingLabelFixed: true,
+	          floatingLabelText: 'URL',
 	          fullWidth: true,
-	          hintText: '画像のURLを入力してもOK'
+	          hintText: '商品のホームページなど',
+	          type: 'url'
 	        }),
-	        _react2.default.createElement(
-	          'p',
-	          { style: styles.imageHint },
-	          '※Instagramの場合、URL末尾の「/?XXXXXX」部分を「/media/?size=t」に変えてください。'
-	        ),
-	        _react2.default.createElement('img', { id: 'thumbnail', src: '' }),
-	        _react2.default.createElement('br', null),
 	        _react2.default.createElement(_RaisedButton2.default, { label: this.btnLabel, primary: true, style: styles.button, onTouchTap: this.send.bind(this) }),
 	        _react2.default.createElement('div', { id: 'error', className: 'error' })
 	      );

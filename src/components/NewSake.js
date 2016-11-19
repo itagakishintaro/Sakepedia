@@ -62,6 +62,7 @@ class NewSake extends React.Component {
     }
     if( this.props.sake.image ){
       document.getElementById('image').value = this.props.sake.image
+      document.getElementById( 'thumbnail' ).src = this.props.sake.image
     }
   }
 
@@ -141,12 +142,16 @@ class NewSake extends React.Component {
     document.getElementById('loading').style.display='block';
     let file = document.getElementById('ocr').files[0]
     handleImage( file, 600, ( dataURL ) => {
+      document.getElementById( 'thumbnail2' ).src = dataURL
       axios.post( '/api/ocr/', { content: dataURL.replace(/^data:image\/(png|jpeg);base64,/, '') } )
       .then( r => {
         document.getElementById('loading').style.display='none';
         let desc =  r.data.responses[0].textAnnotations[0].description
-        document.getElementById('description').value += '\n' + desc
-
+        if( document.getElementById('description').value ) {
+          document.getElementById('description').value += '\n' + desc
+        } else {
+          document.getElementById('description').value = desc
+        }
         let re
         re = new RegExp( '(酵母)(.*)(\s)' )
         if( !document.getElementById('sakeYeast').value && desc.match( re ) ){
@@ -192,6 +197,7 @@ class NewSake extends React.Component {
         boxShadow: 'rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px',
         boxSizing: 'border-box',
         display: 'inline-block',
+        float: 'right',
         height: '36px',
         lineHeight: '36px',
         margin: '.5em .5em 0 0',
@@ -269,31 +275,37 @@ class NewSake extends React.Component {
             required={true}
             searchText={this.props.sake.brewery}
           />
+          <div style={styles.label}>ラベル写真</div>
+          <label htmlFor="file">
+            <div style={styles.camera}>
+              <FontIcon className="material-icons">photo_camera</FontIcon>
+            </div>
+            <input type="file" id="file" accept="image/*" capture="camera" style={styles.file} onChange={this.handleFile}/>
+          </label>
           <TextField
-            id="url"
-            errorText={this.state.errorText.url}
-            floatingLabelFixed={true}
-            floatingLabelText="URL"
-            fullWidth={true}
-            hintText="商品のホームページなど"
-            type="url"
-          />
-          <TextField
-            id="description"
-            floatingLabelFixed={true}
-            floatingLabelText="説明"
-            fullWidth={true}
-            hintText="ラベルの説明、ホームページの解説など"
-            multiLine={true}
-            rows={3}
-          />
+              id="image"
+              floatingLabelFixed={true}
+              fullWidth={true}
+              hintText="画像のURLを入力してもOK"
+            />
+          <img id="thumbnail" src="" width="25%"/>
+          <div style={styles.label}>裏ラベル写真(文字を読み取る)</div>
           <label htmlFor="ocr">
-            <div style={styles.label}>写真から文字を読み取る</div>
             <div style={styles.camera}>
               <FontIcon className="material-icons">photo_camera</FontIcon>
             </div>
             <input type="file" id="ocr" accept="image/*" capture="camera" style={styles.file} onChange={this.handleOcr}/>
           </label>
+          <img id="thumbnail2" src="" width="100%"/>
+
+          <TextField
+            id="description"
+            floatingLabelFixed={true}
+            floatingLabelText="説明"
+            fullWidth={true}
+            hintText="裏ラベル、ホームページの説明など"
+            multiLine={true}
+          />
           <SelectField
             id="starterCulture"
             errorText={this.state.errorText.starterCulture}
@@ -375,22 +387,16 @@ class NewSake extends React.Component {
             step="0.1"
             type="number"
           />
-        <label htmlFor="file">
-          <div style={styles.label}>画像</div>
-          <div style={styles.camera}>
-            <FontIcon className="material-icons">photo_camera</FontIcon>
-          </div>
-          <input type="file" id="file" accept="image/*" capture="camera" style={styles.file} onChange={this.handleFile}/>
-        </label>
-        <TextField
-            id="image"
+          <TextField
+            id="url"
+            errorText={this.state.errorText.url}
             floatingLabelFixed={true}
+            floatingLabelText="URL"
             fullWidth={true}
-            hintText="画像のURLを入力してもOK"
+            hintText="商品のホームページなど"
+            type="url"
           />
-        <p style={styles.imageHint}>※Instagramの場合、URL末尾の「/?XXXXXX」部分を「/media/?size=t」に変えてください。</p>
-        <img id="thumbnail" src="" />
-        <br />
+
         <RaisedButton label={this.btnLabel} primary={true} style={styles.button} onTouchTap={this.send.bind(this)} />
         <div id="error" className="error"></div>
       </div>
