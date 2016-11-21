@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 // css
-import classes from '../../public/stylesheets/scss/glossary.scss'
+import classes from '../../public/stylesheets/scss/sheets.scss'
 // material-ui
 import FontIcon from 'material-ui/FontIcon'
 import RaisedButton from 'material-ui/RaisedButton'

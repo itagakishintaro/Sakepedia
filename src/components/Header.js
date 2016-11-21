@@ -74,6 +74,7 @@ class Header extends React.Component{
           <Link to={'/mypage'} style={styles.link} onTouchTap={this.preventWhenLoggedout}><MenuItem onTouchTap={ this.close } disabled={!this.props.isLogin}>マイページ</MenuItem></Link>
           <Link to={'/sake/new'} style={styles.link} onTouchTap={this.preventWhenLoggedout}><MenuItem onTouchTap={ this.close } disabled={!this.props.isLogin}>銘柄登録</MenuItem></Link>
           <Link to={'/glossary'} style={styles.link}><MenuItem onTouchTap={ this.close }>用語集</MenuItem></Link>
+          <Link to={'/shoplist'} style={styles.link}><MenuItem onTouchTap={ this.close }>酒屋リスト</MenuItem></Link>
           <MenuItem>
             <div id="fb-root"></div>
             <div id="fb-area"></div>

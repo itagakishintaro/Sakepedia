@@ -6,7 +6,7 @@ let axios = require('axios');
 // for sheets api v4
 // https://developers.google.com/sheets/quickstart/nodejs
 // Sakepedia.Japan / Sakepedia
-// https://docs.google.com/spreadsheets/d/1VaVZhfL3qv4yLWvG1z-YX9YO2oRN36Rkady4Q1MYgL0/edit#gid=0
+// https://docs.google.com/spreadsheets/d/123Vd11ysIicEPNGpNF3lNcUjd1CqS_G3qRc_U8uwlhk/edit#gid=0
 let fs = require('fs');
 let readline = require('readline');
 let google = require('googleapis');
@@ -33,7 +33,7 @@ router.get( '/', ( req, res ) => {
     }
     // Authorize a client with the loaded credentials, then call the
     // Google Sheets API.
-    authorize(JSON.parse(content), returnGlossary);
+    authorize(JSON.parse(content), returnShoplist);
   });
 
   /**
@@ -53,11 +53,11 @@ router.get( '/', ( req, res ) => {
     callback( oauth2Client );
   }
 
-  function returnGlossary(auth) {
+  function returnShoplist(auth) {
     let sheets = google.sheets('v4');
     sheets.spreadsheets.values.get({
       auth: auth,
-      spreadsheetId: '1VaVZhfL3qv4yLWvG1z-YX9YO2oRN36Rkady4Q1MYgL0',
+      spreadsheetId: '123Vd11ysIicEPNGpNF3lNcUjd1CqS_G3qRc_U8uwlhk',
       range: 'public',
     }, function(err, response) {
       if (err) {

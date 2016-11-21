@@ -4,7 +4,6 @@ $border: 1px solid $grey300;
 
 .table {
   border-collapse: collapse;
-  width: 100%;
 }
 
 .th {
@@ -12,11 +11,13 @@ $border: 1px solid $grey300;
   border: $border;
   font-weight: normal;
   text-align: left;
+  vertical-align: top;
   white-space: pre-wrap;
 }
 
 .td {
   border: $border;
+  vertical-align: top;
   white-space: pre-wrap;
   word-break: break-all;
 }

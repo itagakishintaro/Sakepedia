@@ -7,6 +7,7 @@ import NewSakeContainer from './containers/NewSakeContainer'
 import SearchContainer from './containers/SearchContainer'
 import Login from './components/Login'
 import GlossaryContainer from './containers/GlossaryContainer'
+import ShoplistContainer from './containers/ShoplistContainer'
 import MypageContainer from './containers/MypageContainer'
 
 const Routes = (
@@ -16,6 +17,7 @@ const Routes = (
     <Route path="sake/:sakeId" component={DetailContainer}/>
     <Route path="login" component={Login}/>
     <Route path="glossary" component={GlossaryContainer}/>
+    <Route path="shoplist" component={ShoplistContainer}/>
     <Route path="mypage" component={MypageContainer}/>
   </Route>
 );
