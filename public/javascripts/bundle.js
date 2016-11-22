@@ -29286,6 +29286,15 @@
 	          { open: this.state.open, docked: false, onRequestChange: this.close },
 	          _react2.default.createElement(
 	            _reactRouter.Link,
+	            { to: '/', style: styles.link },
+	            _react2.default.createElement(
+	              _materialUi.MenuItem,
+	              { onTouchTap: this.close },
+	              'トップ'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
 	            { to: '/mypage', style: styles.link, onTouchTap: this.preventWhenLoggedout },
 	            _react2.default.createElement(
 	              _materialUi.MenuItem,
@@ -70415,6 +70424,9 @@
 	        label: {
 	          color: _colors.grey400,
 	          fontSize: '0.8em'
+	        },
+	        thumbnail: {
+	          minHeight: '5em'
 	        }
 	      };
 	      return _react2.default.createElement(
@@ -70503,9 +70515,10 @@
 	          id: 'image',
 	          floatingLabelFixed: true,
 	          fullWidth: true,
-	          hintText: '画像のURLを入力してもOK'
+	          hintText: '画像のURLを入力してもOK',
+	          style: { display: 'none' }
 	        }),
-	        _react2.default.createElement('img', { id: 'thumbnail', src: '', width: '25%' }),
+	        _react2.default.createElement('img', { id: 'thumbnail', src: '', width: '25%', style: styles.thumbnail }),
 	        _react2.default.createElement(
 	          'div',
 	          { style: styles.label },

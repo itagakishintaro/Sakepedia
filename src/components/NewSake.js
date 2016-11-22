@@ -216,6 +216,9 @@ class NewSake extends React.Component {
         color:  grey400,
         fontSize: '0.8em',
       },
+      thumbnail: {
+        minHeight: '5em',
+      },
     }
     return (
       <div id="newSake">
@@ -287,8 +290,9 @@ class NewSake extends React.Component {
               floatingLabelFixed={true}
               fullWidth={true}
               hintText="画像のURLを入力してもOK"
+              style={{display: 'none'}}
             />
-          <img id="thumbnail" src="" width="25%"/>
+          <img id="thumbnail" src="" width="25%" style={ styles.thumbnail }/>
           <div style={styles.label}>裏ラベル写真(文字を読み取る)</div>
           <label htmlFor="ocr">
             <div style={styles.camera}>
