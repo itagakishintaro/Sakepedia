@@ -68448,6 +68448,7 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Detail).call(this, props));
 	
 	    _this.state = {
+	      review: {},
 	      tab: _this.props.initialTab
 	    };
 	    return _this;
@@ -68457,6 +68458,11 @@
 	    key: 'changeTab',
 	    value: function changeTab(tab) {
 	      this.setState({ tab: tab });
+	    }
+	  }, {
+	    key: 'setReview',
+	    value: function setReview(review) {
+	      this.setState({ review: review });
 	    }
 	  }, {
 	    key: 'render',
@@ -68568,7 +68574,11 @@
 	              },
 	              value: 'reviews'
 	            },
-	            _react2.default.createElement(_Reviews2.default, { reviews: this.props.sake.reviews })
+	            _react2.default.createElement(_Reviews2.default, {
+	              reviews: this.props.sake.reviews,
+	              changeTab: this.changeTab.bind(this),
+	              setReview: this.setReview.bind(this)
+	            })
 	          ),
 	          _react2.default.createElement(
 	            _Tabs.Tab,
@@ -68589,7 +68599,8 @@
 	              changeTab: this.changeTab.bind(this),
 	              sake: this.props.sake,
 	              update: this.props.update,
-	              isLogin: this.props.isLogin
+	              isLogin: this.props.isLogin,
+	              review: this.state.review
 	            }),
 	            _react2.default.createElement(
 	              'div',
@@ -68916,6 +68927,11 @@
 	      evaluation: '',
 	      flavor: '',
 	      maturation: '',
+	      temp5: false,
+	      temp10: false,
+	      temp15: false,
+	      temp40: false,
+	      temp50: false,
 	      sakeRate: '',
 	      taste: '',
 	      snackbarOpen: false
@@ -68924,6 +68940,27 @@
 	  }
 	
 	  _createClass(NewReview, [{
+	    key: 'setReview',
+	    value: function setReview() {
+	      // reviewが空か、すでにセット済み（evaluationで確認）であれば何もしない
+	      if (Object.keys(this.props.review).length === 0 || this.state.evaluation !== '') {
+	        return;
+	      }
+	      document.getElementById('comment').value = this.props.review.comment;
+	      document.getElementById('mariage').value = this.props.review.mariage;
+	      this.setState({
+	        evaluation: this.props.review.evaluation,
+	        flavor: this.props.review.flavor,
+	        taste: this.props.review.taste,
+	        maturation: this.props.review.maturation,
+	        temp5: this.props.review.temperature.temp5,
+	        temp10: this.props.review.temperature.temp10,
+	        temp15: this.props.review.temperature.temp15,
+	        temp40: this.props.review.temperature.temp40,
+	        temp50: this.props.review.temperature.temp50
+	      });
+	    }
+	  }, {
 	    key: 'send',
 	    value: function send() {
 	      var _this2 = this;
@@ -68934,7 +68971,8 @@
 	        (0, _smoothScroll2.default)(document.getElementById('newReview'), 1000);
 	        return;
 	      }
-	      _axios2.default.put('/api/sakes/' + this.props.sake._id + '/add/review', {
+	
+	      var data = {
 	        date: new Date(),
 	        evaluation: this.state.evaluation,
 	        comment: document.getElementById('comment').value,
@@ -68951,7 +68989,13 @@
 	        mariage: document.getElementById('mariage').value,
 	        userid: window.localStorage.getItem('userid'),
 	        username: window.localStorage.getItem('username')
-	      }).then(function () {
+	      };
+	      var addOrUpdate = 'add';
+	      if (this.props.review.date) {
+	        data.originDate = this.props.review.date;
+	        addOrUpdate = 'update';
+	      }
+	      _axios2.default.put('/api/sakes/' + this.props.sake._id + '/' + addOrUpdate + '/review', data).then(function () {
 	        _this2.props.update();
 	        _this2.props.changeTab('reviews');
 	      }).catch(function (error) {
@@ -68989,6 +69033,11 @@
 	      };
 	      if (this.props.isLogin) {
 	        styles.visible.display = 'block';
+	      }
+	      this.setReview();
+	      var createOrUpdate = '登録';
+	      if (Object.keys(this.props.review).length) {
+	        createOrUpdate = '更新';
 	      }
 	      return _react2.default.createElement(
 	        'div',
@@ -69085,23 +69134,43 @@
 	        ),
 	        _react2.default.createElement(_Checkbox2.default, {
 	          id: 'temp5',
-	          label: '一番冷たい(5度位)'
+	          label: '一番冷たい(5度位)',
+	          checked: this.state.temp5,
+	          onCheck: function onCheck(event, isInputChecked) {
+	            _this3.setState({ temp5: isInputChecked });
+	          }
 	        }),
 	        _react2.default.createElement(_Checkbox2.default, {
 	          id: 'temp10',
-	          label: 'やや冷たい(10度位)'
+	          label: 'やや冷たい(10度位)',
+	          checked: this.state.temp10,
+	          onCheck: function onCheck(event, isInputChecked) {
+	            _this3.setState({ temp10: isInputChecked });
+	          }
 	        }),
 	        _react2.default.createElement(_Checkbox2.default, {
 	          id: 'temp15',
-	          label: '常温(15度位)'
+	          label: '常温(15度位)',
+	          checked: this.state.temp15,
+	          onCheck: function onCheck(event, isInputChecked) {
+	            _this3.setState({ temp15: isInputChecked });
+	          }
 	        }),
 	        _react2.default.createElement(_Checkbox2.default, {
 	          id: 'temp40',
-	          label: 'ぬる燗(40度位)'
+	          label: 'ぬる燗(40度位)',
+	          checked: this.state.temp40,
+	          onCheck: function onCheck(event, isInputChecked) {
+	            _this3.setState({ temp40: isInputChecked });
+	          }
 	        }),
 	        _react2.default.createElement(_Checkbox2.default, {
 	          id: 'temp50',
-	          label: '熱燗(50度位)'
+	          label: '熱燗(50度位)',
+	          checked: this.state.temp50,
+	          onCheck: function onCheck(event, isInputChecked) {
+	            _this3.setState({ temp50: isInputChecked });
+	          }
 	        }),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'mariage',
@@ -69109,7 +69178,7 @@
 	          floatingLabelText: 'マリアージュ',
 	          fullWidth: true
 	        }),
-	        _react2.default.createElement(_RaisedButton2.default, { label: '登録', primary: true, style: styles.button, onTouchTap: this.send.bind(this) }),
+	        _react2.default.createElement(_RaisedButton2.default, { label: createOrUpdate, primary: true, style: styles.button, onTouchTap: this.send.bind(this) }),
 	        _react2.default.createElement('div', { id: 'error', className: 'error' })
 	      );
 	    }
@@ -69125,7 +69194,8 @@
 	  isLogin: _react.PropTypes.bool.isRequired,
 	  list: _react.PropTypes.array.isRequired,
 	  sake: _react.PropTypes.object.isRequired,
-	  update: _react.PropTypes.func.isRequired
+	  update: _react.PropTypes.func.isRequired,
+	  review: _react.PropTypes.object.isRequired
 	};
 	
 	exports.default = NewReview;
@@ -69277,6 +69347,8 @@
 	  _createClass(Reviews, [{
 	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+	
 	      var reviews = this.props.reviews;
 	      if (!reviews) {
 	        reviews = [];
@@ -69300,7 +69372,7 @@
 	        'div',
 	        { style: styles.reviews },
 	        reviews.map(function (review) {
-	          return _react2.default.createElement(_ReviewCard2.default, { review: review });
+	          return _react2.default.createElement(_ReviewCard2.default, { review: review, changeTab: _this2.props.changeTab, setReview: _this2.props.setReview });
 	        })
 	      );
 	    }
@@ -69310,6 +69382,8 @@
 	}(_react2.default.Component);
 	
 	Reviews.propTypes = {
+	  changeTab: _react.PropTypes.func.isRequired,
+	  setReview: _react.PropTypes.func.isRequired,
 	  reviews: _react.PropTypes.array.isRequired
 	};
 	
@@ -69334,6 +69408,8 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactRouter = __webpack_require__(/*! react-router */ 200);
+	
 	var _Badge = __webpack_require__(/*! material-ui/Badge */ 349);
 	
 	var _Badge2 = _interopRequireDefault(_Badge);
@@ -69343,6 +69419,10 @@
 	var _Checkbox = __webpack_require__(/*! material-ui/Checkbox */ 361);
 	
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
+	
+	var _RaisedButton = __webpack_require__(/*! material-ui/RaisedButton */ 566);
+	
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 	
 	var _Stars = __webpack_require__(/*! ./Stars */ 652);
 	
@@ -69382,9 +69462,25 @@
 	  }
 	
 	  _createClass(ReviewCard, [{
+	    key: 'isMine',
+	    value: function isMine() {
+	      return this.props.review.userid === window.localStorage.getItem('userid');
+	    }
+	  }, {
+	    key: 'updateReview',
+	    value: function updateReview() {
+	      if (this.isMine()) {
+	        this.props.setReview(this.props.review);
+	        this.props.changeTab('createReview');
+	      }
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var styles = {
+	        button: {
+	          margin: '0'
+	        },
 	        card: {
 	          height: '30em',
 	          marginBottom: '1em',
@@ -69405,6 +69501,11 @@
 	          fontSize: '.5em',
 	          padding: '.5em'
 	        },
+	        updateBtn: {
+	          color: 'blue',
+	          display: 'none',
+	          marginLeft: '.5em'
+	        },
 	        label: {
 	          marginTop: '1em'
 	        },
@@ -69421,6 +69522,19 @@
 	          margin: '1em 0 0 0'
 	        }
 	      };
+	      if (this.isMine()) {
+	        styles.updateBtn.display = 'inline';
+	      }
+	      var subtitle = _react2.default.createElement(
+	        'span',
+	        null,
+	        _react2.default.createElement(
+	          'span',
+	          null,
+	          this.props.review.username
+	        ),
+	        _react2.default.createElement('i', { className: 'fa fa-pencil-square-o fa-2x', style: styles.updateBtn, onTouchTap: this.updateReview.bind(this) })
+	      );
 	      return _react2.default.createElement(
 	        _Card.Card,
 	        { style: styles.card },
@@ -69431,7 +69545,7 @@
 	        ),
 	        _react2.default.createElement(_Card.CardHeader, {
 	          title: _react2.default.createElement(_Stars2.default, { evaluation: this.props.review.evaluation }),
-	          subtitle: this.props.review.username
+	          subtitle: subtitle
 	        }),
 	        _react2.default.createElement(
 	          _Card.CardText,
@@ -69523,6 +69637,8 @@
 	}(_react2.default.Component);
 	
 	ReviewCard.propTypes = {
+	  changeTab: _react.PropTypes.func.isRequired,
+	  setReview: _react.PropTypes.func.isRequired,
 	  review: _react.PropTypes.object.isRequired
 	};
 	

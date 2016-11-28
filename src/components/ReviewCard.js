@@ -1,8 +1,10 @@
 import React, { PropTypes } from 'react'
+import { Link } from 'react-router'
 // material-ui
 import Badge from 'material-ui/Badge'
 import {Card, CardHeader, CardText} from 'material-ui/Card'
 import Checkbox from 'material-ui/Checkbox'
+import RaisedButton from 'material-ui/RaisedButton'
 // components
 import Stars from './Stars'
 import TypeMark from './TypeMark'
@@ -12,8 +14,21 @@ let dateFormat = require('dateformat')
 import classes from '../../public/stylesheets/scss/_common.scss'
 
 class ReviewCard extends React.Component {
+  isMine() {
+    return this.props.review.userid === window.localStorage.getItem( 'userid' )
+  }
+  updateReview(){
+    if( this.isMine() ) {
+      this.props.setReview( this.props.review )
+      this.props.changeTab( 'createReview' )
+    }
+  }
+
   render() {
     const styles = {
+      button: {
+        margin: '0',
+      },
       card: {
         height: '30em',
         marginBottom: '1em',
@@ -34,6 +49,11 @@ class ReviewCard extends React.Component {
         fontSize: '.5em',
         padding: '.5em',
       },
+      updateBtn: {
+        color: 'blue',
+        display: 'none',
+        marginLeft: '.5em',
+      },
       label: {
         marginTop: '1em',
       },
@@ -50,12 +70,16 @@ class ReviewCard extends React.Component {
         margin: '1em 0 0 0',
       },
     }
+    if( this.isMine() ) {
+      styles.updateBtn.display = 'inline'
+    }
+    let subtitle = <span><span>{this.props.review.username}</span><i className="fa fa-pencil-square-o fa-2x" style={styles.updateBtn} onTouchTap={this.updateReview.bind(this)}></i></span>
     return (
       <Card style={ styles.card }>
         <div style={ styles.date }>{ dateFormat(this.props.review.date , 'yyyy/mm/dd HH:MM')}</div>
         <CardHeader
           title={ <Stars evaluation={this.props.review.evaluation} /> }
-          subtitle={ this.props.review.username }
+          subtitle={ subtitle }
         />
         <CardText>
           <div style={ styles.comment } >{ this.props.review.comment }</div>
@@ -114,6 +138,8 @@ class ReviewCard extends React.Component {
 }
 
 ReviewCard.propTypes = {
+  changeTab: PropTypes.func.isRequired,
+  setReview: PropTypes.func.isRequired,
   review: PropTypes.object.isRequired,
 }
 

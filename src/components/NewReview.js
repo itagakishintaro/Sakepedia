@@ -22,10 +22,35 @@ class NewReview extends React.Component {
       evaluation: '',
       flavor: '',
       maturation: '',
+      temp5: false,
+      temp10: false,
+      temp15: false,
+      temp40: false,
+      temp50: false,
       sakeRate: '',
       taste: '',
       snackbarOpen: false,
     }
+  }
+
+  setReview(){
+    // reviewが空か、すでにセット済み（evaluationで確認）であれば何もしない
+    if ( Object.keys( this.props.review ).length === 0 || this.state.evaluation !== '' ){
+      return
+    }
+    document.getElementById('comment').value = this.props.review.comment
+    document.getElementById('mariage').value = this.props.review.mariage
+    this.setState({
+      evaluation: this.props.review.evaluation,
+      flavor: this.props.review.flavor,
+      taste: this.props.review.taste,
+      maturation: this.props.review.maturation,
+      temp5: this.props.review.temperature.temp5,
+      temp10: this.props.review.temperature.temp10,
+      temp15: this.props.review.temperature.temp15,
+      temp40: this.props.review.temperature.temp40,
+      temp50: this.props.review.temperature.temp50,
+    })
   }
 
   send(){
@@ -35,7 +60,8 @@ class NewReview extends React.Component {
       smoothScroll( document.getElementById('newReview'), 1000 )
       return
     }
-    axios.put( `/api/sakes/${ this.props.sake._id }/add/review`, {
+
+    let data = {
       date: new Date(),
       evaluation: this.state.evaluation,
       comment: document.getElementById('comment').value,
@@ -52,7 +78,13 @@ class NewReview extends React.Component {
       mariage: document.getElementById('mariage').value,
       userid: window.localStorage.getItem( 'userid' ),
       username: window.localStorage.getItem( 'username' ),
-    })
+    }
+    let addOrUpdate = 'add'
+    if( this.props.review.date ){
+      data.originDate = this.props.review.date
+      addOrUpdate = 'update'
+    }
+    axios.put( `/api/sakes/${ this.props.sake._id }/${ addOrUpdate }/review`, data)
     .then( () => {
       this.props.update()
       this.props.changeTab('reviews')
@@ -87,6 +119,11 @@ class NewReview extends React.Component {
     }
     if( this.props.isLogin ) {
       styles.visible.display = 'block'
+    }
+    this.setReview()
+    let createOrUpdate = '登録'
+    if ( Object.keys( this.props.review ).length ){
+      createOrUpdate = '更新'
     }
     return (
       <div id="newReview" style={styles.visible}>
@@ -166,22 +203,32 @@ class NewReview extends React.Component {
           <Checkbox
             id="temp5"
             label="一番冷たい(5度位)"
+            checked={this.state.temp5}
+            onCheck={ (event, isInputChecked) => { this.setState( { temp5: isInputChecked } ) } }
           />
           <Checkbox
             id="temp10"
             label="やや冷たい(10度位)"
+            checked={this.state.temp10}
+            onCheck={ (event, isInputChecked) => { this.setState( { temp10: isInputChecked } ) } }
           />
           <Checkbox
             id="temp15"
             label="常温(15度位)"
+            checked={this.state.temp15}
+            onCheck={ (event, isInputChecked) => { this.setState( { temp15: isInputChecked } ) } }
           />
           <Checkbox
             id="temp40"
             label="ぬる燗(40度位)"
+            checked={this.state.temp40}
+            onCheck={ (event, isInputChecked) => { this.setState( { temp40: isInputChecked } ) } }
           />
           <Checkbox
             id="temp50"
             label="熱燗(50度位)"
+            checked={this.state.temp50}
+            onCheck={ (event, isInputChecked) => { this.setState( { temp50: isInputChecked } ) } }
           />
 
           <TextField
@@ -191,7 +238,7 @@ class NewReview extends React.Component {
             fullWidth={true}
           />
 
-          <RaisedButton label="登録" primary={true} style={styles.button} onTouchTap={ this.send.bind(this) } />
+          <RaisedButton label={createOrUpdate} primary={true} style={styles.button} onTouchTap={ this.send.bind(this) } />
           <div id="error" className="error"></div>
       </div>
     )
@@ -206,6 +253,7 @@ NewReview.propTypes = {
   list: PropTypes.array.isRequired,
   sake: PropTypes.object.isRequired,
   update: PropTypes.func.isRequired,
+  review: PropTypes.object.isRequired,
 }
 
 export default NewReview

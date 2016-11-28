@@ -21,13 +21,15 @@ class Reviews extends React.Component{
     }
     return (
       <div style={ styles.reviews }>
-        { reviews.map( review => <ReviewCard review={ review } />  ) }
+        { reviews.map( review => <ReviewCard review={ review } changeTab={ this.props.changeTab } setReview={this.props.setReview} />  ) }
       </div>
     )
   }
 }
 
 Reviews.propTypes = {
+  changeTab: PropTypes.func.isRequired,
+  setReview: PropTypes.func.isRequired,
   reviews: PropTypes.array.isRequired,
 }
 

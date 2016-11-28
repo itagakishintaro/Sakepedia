@@ -15,12 +15,17 @@ class Detail extends React.Component{
   constructor(props) {
     super(props)
     this.state = {
+      review: {},
       tab: this.props.initialTab,
     }
   }
 
   changeTab( tab ) {
     this.setState({ tab })
+  }
+
+  setReview( review ) {
+    this.setState({ review })
   }
 
   render() {
@@ -81,7 +86,11 @@ class Detail extends React.Component{
             onActive={ () => { this.changeTab('reviews') } }
             value="reviews"
           >
-          <Reviews reviews={this.props.sake.reviews} />
+          <Reviews
+            reviews={this.props.sake.reviews}
+            changeTab={this.changeTab.bind(this)}
+            setReview={this.setReview.bind(this)}
+           />
           </Tab>
           <Tab
             id="createReview"
@@ -95,6 +104,7 @@ class Detail extends React.Component{
               sake={this.props.sake}
               update={this.props.update}
               isLogin={this.props.isLogin}
+              review={this.state.review}
              />
            <div style={styles.displayWhenLoggedOut}>
              <p>ログインしてください。</p>

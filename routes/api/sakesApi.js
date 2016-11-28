@@ -153,6 +153,21 @@ router.put( '/:id/add/review', ( req, res ) => {
   );
 } );
 
+// PUT update review
+router.put( '/:id/update/review', ( req, res ) => {
+  collection( 'sake' ).update(
+    { _id: new ObjectID( req.params.id ),
+      'reviews.date': req.body.originDate,
+      'reviews.userid': req.body.userid
+    },
+    { $set: { 'reviews.$': req.body } },
+    {},
+    function ( err, r ) {
+      res.send( r );
+    }
+  );
+} );
+
 // PUT update data
 router.put( '/:id', ( req, res ) => {
   collection( 'sake' ).findAndModify(
