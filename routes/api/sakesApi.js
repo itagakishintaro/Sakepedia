@@ -89,6 +89,15 @@ router.get( '/:id', ( req, res ) => {
   } );
 } );
 
+// GET find brand name
+router.get( '/brand/:name', ( req, res ) => {
+  collection( 'sake' ).findOne( {
+    brand: req.params.name
+  }, { fields: { image: 0, reviews: 0 } }, function ( err, r ) {
+    res.send( r );
+  } );
+} );
+
 const returnNull = ( res ) =>{
   res.contentType( 'image/png' );
   res.end( null );

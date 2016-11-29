@@ -185,6 +185,13 @@ class NewSake extends React.Component {
       })
     } )
   }
+  setPrefAndBrewery( brand, index ){
+    axios.get( '/api/sakes/brand/' + brand )
+    .then( r => {
+      this.setPrefecture( r.data.prefecture )
+      document.getElementById('brewery').value = r.data.brewery
+    })
+  }
 
   render() {
     const styles = {
@@ -235,6 +242,7 @@ class NewSake extends React.Component {
             floatingLabelFixed={true}
             floatingLabelText="銘柄*"
             fullWidth={true}
+            onNewRequest={this.setPrefAndBrewery.bind(this)}
             required={true}
             searchText={this.props.sake.brand}
           />
@@ -266,7 +274,7 @@ class NewSake extends React.Component {
             errorText={this.state.errorText.prefecture}
             label="都道府県*"
             setPrefecture={this.setPrefecture.bind(this)}
-            value={this.props.sake.prefecture}
+            value={this.state.prefecture}
           />
           <AutoComplete
             id="brewery"

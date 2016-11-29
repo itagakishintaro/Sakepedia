@@ -16,6 +16,9 @@ class Prefectures extends React.Component {
     this.props.setPrefecture( value )
   }
 
+  componentWillReceiveProps(nextProps){
+    this.setState( { prefecture: nextProps.value } )
+  }
   render()  {
     return(
     <div>

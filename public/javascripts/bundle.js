@@ -70508,9 +70508,19 @@
 	      });
 	    }
 	  }, {
+	    key: 'setPrefAndBrewery',
+	    value: function setPrefAndBrewery(brand, index) {
+	      var _this3 = this;
+	
+	      _axios2.default.get('/api/sakes/brand/' + brand).then(function (r) {
+	        _this3.setPrefecture(r.data.prefecture);
+	        document.getElementById('brewery').value = r.data.brewery;
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var _this3 = this;
+	      var _this4 = this;
 	
 	      var styles = {
 	        button: {
@@ -70561,6 +70571,7 @@
 	          floatingLabelFixed: true,
 	          floatingLabelText: '銘柄*',
 	          fullWidth: true,
+	          onNewRequest: this.setPrefAndBrewery.bind(this),
 	          required: true,
 	          searchText: this.props.sake.brand
 	        }),
@@ -70580,7 +70591,7 @@
 	            fullWidth: true,
 	            value: this.state.type,
 	            onChange: function onChange(event, index, value) {
-	              return _this3.setState({ type: value });
+	              return _this4.setState({ type: value });
 	            } },
 	          _react2.default.createElement(_MenuItem2.default, { value: '純米大吟醸', primaryText: '純米大吟醸' }),
 	          _react2.default.createElement(_MenuItem2.default, { value: '大吟醸', primaryText: '大吟醸' }),
@@ -70596,7 +70607,7 @@
 	          errorText: this.state.errorText.prefecture,
 	          label: '都道府県*',
 	          setPrefecture: this.setPrefecture.bind(this),
-	          value: this.props.sake.prefecture
+	          value: this.state.prefecture
 	        }),
 	        _react2.default.createElement(_AutoComplete2.default, {
 	          id: 'brewery',
@@ -70673,7 +70684,7 @@
 	            fullWidth: true,
 	            value: this.state.starterCulture,
 	            onChange: function onChange(event, index, value) {
-	              return _this3.setState({ starterCulture: value });
+	              return _this4.setState({ starterCulture: value });
 	            } },
 	          _react2.default.createElement(_MenuItem2.default, { value: '速醸酛', primaryText: '速醸酛' }),
 	          _react2.default.createElement(_MenuItem2.default, { value: '山廃酛', primaryText: '山廃酛' }),
@@ -70834,6 +70845,11 @@
 	    value: function handleChange(event, index, value) {
 	      this.setState({ prefecture: value });
 	      this.props.setPrefecture(value);
+	    }
+	  }, {
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      this.setState({ prefecture: nextProps.value });
 	    }
 	  }, {
 	    key: 'render',
