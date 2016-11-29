@@ -68492,14 +68492,14 @@
 	      if (!this.props.isLogin) {
 	        styles.displayWhenLoggedOut.display = 'block';
 	      }
-	
+	      var imageURL = '//' + location.host + '/api/sakes/' + this.props.sake._id + '/image';
 	      return _react2.default.createElement(
 	        'div',
 	        null,
 	        _react2.default.createElement(
 	          'div',
 	          { className: _detail2.default.header },
-	          _react2.default.createElement('img', { src: this.props.sake.image, className: _detail2.default.image }),
+	          _react2.default.createElement('img', { src: imageURL, className: _detail2.default.image }),
 	          _react2.default.createElement(
 	            'div',
 	            null,
@@ -71850,8 +71850,8 @@
 	    }
 	  }, {
 	    key: 'setPrefecture',
-	    value: function setPrefecture(pref) {
-	      this.setState({ prefecture: pref });
+	    value: function setPrefecture(prefecture) {
+	      this.setState({ prefecture: prefecture });
 	    }
 	  }, {
 	    key: 'render',
@@ -71898,7 +71898,11 @@
 	          _react2.default.createElement(
 	            _Tabs.Tab,
 	            { label: '詳細検索' },
-	            _react2.default.createElement(_Prefectures2.default, { label: '都道府県', setPrefecture: this.setPrefecture.bind(this) }),
+	            _react2.default.createElement(_Prefectures2.default, {
+	              label: '都道府県*',
+	              setPrefecture: this.setPrefecture.bind(this),
+	              value: this.state.prefecture
+	            }),
 	            _react2.default.createElement(_AutoComplete2.default, {
 	              id: 'brewrey',
 	              floatingLabelFixed: true,

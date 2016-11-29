@@ -84,7 +84,7 @@ router.get( '/rices', ( req, res ) => {
 router.get( '/:id', ( req, res ) => {
   collection( 'sake' ).findOne( {
     _id: new ObjectID( req.params.id )
-  }, {}, function ( err, r ) {
+  }, { fields: { image: 0 } }, function ( err, r ) {
     res.send( r );
   } );
 } );

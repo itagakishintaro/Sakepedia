@@ -30,8 +30,8 @@ class Search extends React.Component {
     this.props.search( { brand } )
   }
 
-  setPrefecture(pref) {
-    this.setState( { prefecture: pref } )
+  setPrefecture(prefecture) {
+    this.setState( { prefecture } )
   }
 
   render() {
@@ -61,7 +61,11 @@ class Search extends React.Component {
             />
           </Tab>
           <Tab label="詳細検索" >
-            <Prefectures label="都道府県" setPrefecture={this.setPrefecture.bind(this)} />
+            <Prefectures
+              label="都道府県*"
+              setPrefecture={this.setPrefecture.bind(this)}
+              value={this.state.prefecture}
+            />
             <AutoComplete
               id="brewrey"
               floatingLabelFixed={true}

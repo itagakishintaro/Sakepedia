@@ -52,11 +52,11 @@ class Detail extends React.Component{
     if( !this.props.isLogin ) {
       styles.displayWhenLoggedOut.display = 'block'
     }
-
+    const imageURL = '//' + location.host + '/api/sakes/' + this.props.sake._id + '/image'
     return (
       <div>
         <div className={classes.header}>
-          <img src={ this.props.sake.image } className={classes.image} />
+          <img src={ imageURL } className={classes.image} />
           <div>
             <div><span className={classes.title}>{this.props.sake.brand}　{this.props.sake.subname}</span>( {this.props.sake.type} )</div>
             <div>{this.props.sake.brewery} ( {this.props.sake.prefecture} )</div>
