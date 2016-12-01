@@ -55,10 +55,12 @@ router.get( '/myBreweries', ( req, res ) => {
   if ( req.query['reviews.userid'] ) {
     reviews.userid = decodeURIComponent(req.query['reviews.userid']);
     query['reviews'] = { '$elemMatch': reviews }
+    collection( 'sake' ).distinct( 'brewery', query, {}, ( err, docs ) => {
+      res.send( docs );
+    } );
+  } else {
+    res.send([]);
   }
-  collection( 'sake' ).distinct( 'brewery', query, {}, ( err, docs ) => {
-    res.send( docs );
-  } );
 } );
 
 // GET find brands

@@ -12,7 +12,7 @@ class CompleteContainer extends React.Component {
   constructor(props) {
     super(props)
     getAllBreweries( this.props.dispatch )
-    getMyBreweries( this.props.dispatch )
+    getMyBreweries( this.props.dispatch, window.localStorage.getItem( 'userid' ) )
   }
 
   render() {

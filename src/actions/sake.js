@@ -95,10 +95,12 @@ export const getSakeList = ( dispatch, words ) => {
 
 export const getMySakeList = ( dispatch, words ) => {
   document.getElementById('loading').style.display = 'block'
-  let query = 'action=search'
-  if( words['reviews.userid'] ) {
-    query = `${query}&reviews.userid=${encodeURIComponent(words['reviews.userid'])}`
+  if( !words['reviews.userid'] ) {
+    return
   }
+
+  let query = 'action=search'
+  query = `${query}&reviews.userid=${encodeURIComponent(words['reviews.userid'])}`
   if( words.from ) {
     query = `${query}&from=${encodeURIComponent(words.from)}`
   }
@@ -153,9 +155,9 @@ export const getBreweries = ( dispatch ) => {
     })
 }
 
-export const getMyBreweries = ( dispatch ) => {
+export const getMyBreweries = ( dispatch, userid ) => {
   document.getElementById('loading').style.display = 'block'
-  let url = '/api/sakes/mybreweries'
+  let url = `/api/sakes/mybreweries?reviews.userid=${encodeURIComponent( userid )}`
   axios.get( url )
     .then( res => {
       dispatch( setMyBreweries( res.data ) )
