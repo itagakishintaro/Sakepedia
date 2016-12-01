@@ -9,6 +9,7 @@ import Login from './components/Login'
 import GlossaryContainer from './containers/GlossaryContainer'
 import ShoplistContainer from './containers/ShoplistContainer'
 import MypageContainer from './containers/MypageContainer'
+import CompleteContainer from './containers/CompleteContainer'
 
 const Routes = (
   <Route path='/' component={App}>
@@ -19,6 +20,7 @@ const Routes = (
     <Route path="glossary" component={GlossaryContainer}/>
     <Route path="shoplist" component={ShoplistContainer}/>
     <Route path="mypage" component={MypageContainer}/>
+    <Route path="complete" component={CompleteContainer}/>
   </Route>
 );
 export default Routes;

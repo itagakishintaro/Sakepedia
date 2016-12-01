@@ -35,6 +35,13 @@ export const setBreweries = ( breweries ) => {
   }
 }
 
+export const setMyBreweries = ( breweries ) => {
+  return {
+    type: 'SETMYBREWERIES',
+    breweries,
+  }
+}
+
 export const setSakeYeasts = ( sakeYeasts ) => {
   return {
     type: 'SETKOUBOS',
@@ -143,6 +150,20 @@ export const getBreweries = ( dispatch ) => {
     })
     .catch( error => {
       handleCashe(url, ( data ) => { dispatch( setBreweries( data ) ) })
+    })
+}
+
+export const getMyBreweries = ( dispatch ) => {
+  document.getElementById('loading').style.display = 'block'
+  let url = '/api/sakes/mybreweries'
+  axios.get( url )
+    .then( res => {
+      dispatch( setMyBreweries( res.data ) )
+      document.getElementById('loading').style.display = 'none'
+    })
+    .catch( error => {
+      handleCashe(url, ( data ) => { dispatch( setMyBreweries( data ) ) })
+      document.getElementById('loading').style.display = 'none'
     })
 }
 
