@@ -10,6 +10,7 @@ let sakesApi = require('./routes/api/sakesApi');
 let ocrApi = require('./routes/api/ocrApi');
 let glossaryApi = require('./routes/api/glossaryApi');
 let shoplistApi = require('./routes/api/shoplistApi');
+let breweriesApi = require('./routes/api/breweriesApi');
 let screen = require('./routes/screen');
 // passport
 let twitter = require('./routes/auth/twitter');
@@ -39,6 +40,7 @@ app.use('/api/sakes', sakesApi);
 app.use('/api/ocr', ocrApi);
 app.use('/api/glossary', glossaryApi);
 app.use('/api/shoplist', shoplistApi);
+app.use('/api/breweries', breweriesApi);
 app.use('/', screen);
 // passport
 app.use(twitter.session({

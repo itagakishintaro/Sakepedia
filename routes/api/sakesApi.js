@@ -48,6 +48,19 @@ router.get( '/', ( req, res ) => {
   } );
 } );
 
+// GET find my breweries
+router.get( '/myBreweries', ( req, res ) => {
+  let query = {}
+  let reviews = {}
+  if ( req.query['reviews.userid'] ) {
+    reviews.userid = decodeURIComponent(req.query['reviews.userid']);
+    query['reviews'] = { '$elemMatch': reviews }
+  }
+  collection( 'sake' ).distinct( 'brewery', query, {}, ( err, docs ) => {
+    res.send( docs );
+  } );
+} );
+
 // GET find brands
 router.get( '/brands', ( req, res ) => {
   collection( 'sake' ).distinct( 'brand', ( err, docs ) => { res.send( docs) } );
