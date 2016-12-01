@@ -21,12 +21,15 @@ const handleCashe = ( url, func ) => {
 }
 
 export const getGlossary = ( dispatch ) => {
+  document.getElementById('loading').style.display = 'block'
   let url = '/api/glossary'
   axios.get( url )
     .then( res => {
       dispatch( setGlossary( res.data ) )
+      document.getElementById('loading').style.display = 'none'
     })
     .catch( error => {
       handleCashe(url, ( data ) => { dispatch( setGlossary( data ) ) })
+      document.getElementById('loading').style.display = 'none'
     })
 }

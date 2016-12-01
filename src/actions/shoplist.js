@@ -21,12 +21,15 @@ const handleCashe = ( url, func ) => {
 }
 
 export const getShoplist = ( dispatch ) => {
+  document.getElementById('loading').style.display = 'block'
   let url = '/api/shoplist'
   axios.get( url )
     .then( res => {
       dispatch( setShoplist( res.data ) )
+      document.getElementById('loading').style.display = 'none'
     })
     .catch( error => {
       handleCashe(url, ( data ) => { dispatch( setShoplist( data ) ) })
+      document.getElementById('loading').style.display = 'none'
     })
 }
