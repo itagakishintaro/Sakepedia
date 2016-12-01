@@ -21,15 +21,12 @@ const handleCashe = ( url, func ) => {
 }
 
 export const getAllBreweries = ( dispatch ) => {
-  document.getElementById('loading').style.display = 'block'
   let url = '/api/breweries'
   axios.get( url )
     .then( res => {
       dispatch( setAllBreweries( res.data ) )
-      document.getElementById('loading').style.display = 'none'
     })
     .catch( error => {
       handleCashe(url, ( data ) => { dispatch( setAllBreweries( data ) ) })
-      document.getElementById('loading').style.display = 'none'
     })
 }

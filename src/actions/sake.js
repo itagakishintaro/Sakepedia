@@ -156,16 +156,13 @@ export const getBreweries = ( dispatch ) => {
 }
 
 export const getMyBreweries = ( dispatch, userid ) => {
-  document.getElementById('loading').style.display = 'block'
   let url = `/api/sakes/mybreweries?reviews.userid=${encodeURIComponent( userid )}`
   axios.get( url )
     .then( res => {
       dispatch( setMyBreweries( res.data ) )
-      document.getElementById('loading').style.display = 'none'
     })
     .catch( error => {
       handleCashe(url, ( data ) => { dispatch( setMyBreweries( data ) ) })
-      document.getElementById('loading').style.display = 'none'
     })
 }
 
