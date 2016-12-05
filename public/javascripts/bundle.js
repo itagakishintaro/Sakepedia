@@ -28648,27 +28648,27 @@
 	
 	var _NewSakeContainer2 = _interopRequireDefault(_NewSakeContainer);
 	
-	var _SearchContainer = __webpack_require__(/*! ./containers/SearchContainer */ 665);
+	var _SearchContainer = __webpack_require__(/*! ./containers/SearchContainer */ 666);
 	
 	var _SearchContainer2 = _interopRequireDefault(_SearchContainer);
 	
-	var _Login = __webpack_require__(/*! ./components/Login */ 673);
+	var _Login = __webpack_require__(/*! ./components/Login */ 674);
 	
 	var _Login2 = _interopRequireDefault(_Login);
 	
-	var _GlossaryContainer = __webpack_require__(/*! ./containers/GlossaryContainer */ 674);
+	var _GlossaryContainer = __webpack_require__(/*! ./containers/GlossaryContainer */ 675);
 	
 	var _GlossaryContainer2 = _interopRequireDefault(_GlossaryContainer);
 	
-	var _ShoplistContainer = __webpack_require__(/*! ./containers/ShoplistContainer */ 679);
+	var _ShoplistContainer = __webpack_require__(/*! ./containers/ShoplistContainer */ 680);
 	
 	var _ShoplistContainer2 = _interopRequireDefault(_ShoplistContainer);
 	
-	var _MypageContainer = __webpack_require__(/*! ./containers/MypageContainer */ 682);
+	var _MypageContainer = __webpack_require__(/*! ./containers/MypageContainer */ 683);
 	
 	var _MypageContainer2 = _interopRequireDefault(_MypageContainer);
 	
-	var _CompleteContainer = __webpack_require__(/*! ./containers/CompleteContainer */ 685);
+	var _CompleteContainer = __webpack_require__(/*! ./containers/CompleteContainer */ 686);
 	
 	var _CompleteContainer2 = _interopRequireDefault(_CompleteContainer);
 	
@@ -70268,9 +70268,9 @@
 	
 	var _sake = __webpack_require__(/*! ../actions/sake */ 623);
 	
-	var _brewery = __webpack_require__(/*! ../actions/brewery */ 686);
+	var _brewery = __webpack_require__(/*! ../actions/brewery */ 661);
 	
-	var _NewSake = __webpack_require__(/*! ../components/NewSake */ 661);
+	var _NewSake = __webpack_require__(/*! ../components/NewSake */ 662);
 	
 	var _NewSake2 = _interopRequireDefault(_NewSake);
 	
@@ -70338,6 +70338,57 @@
 
 /***/ },
 /* 661 */
+/*!********************************!*\
+  !*** ./src/actions/brewery.js ***!
+  \********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.getAllBreweries = exports.setAllBreweries = undefined;
+	
+	var _axios = __webpack_require__(/*! axios */ 624);
+	
+	var _axios2 = _interopRequireDefault(_axios);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var setAllBreweries = exports.setAllBreweries = function setAllBreweries(breweries) {
+	  return {
+	    type: 'SETALLBREWERIES',
+	    breweries: breweries
+	  };
+	};
+	
+	var handleCashe = function handleCashe(url, func) {
+	  if ('caches' in window) {
+	    caches.match(url).then(function (response) {
+	      if (response) {
+	        response.json().then(function (json) {
+	          console.log('get from cache');
+	          func(json);
+	        });
+	      }
+	    });
+	  }
+	};
+	
+	var getAllBreweries = exports.getAllBreweries = function getAllBreweries(dispatch) {
+	  var url = '/api/breweries';
+	  _axios2.default.get(url).then(function (res) {
+	    dispatch(setAllBreweries(res.data));
+	  }).catch(function (error) {
+	    handleCashe(url, function (data) {
+	      dispatch(setAllBreweries(data));
+	    });
+	  });
+	};
+
+/***/ },
+/* 662 */
 /*!***********************************!*\
   !*** ./src/components/NewSake.js ***!
   \***********************************/
@@ -70389,11 +70440,11 @@
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
-	var _Prefectures = __webpack_require__(/*! ./Prefectures */ 662);
+	var _Prefectures = __webpack_require__(/*! ./Prefectures */ 663);
 	
 	var _Prefectures2 = _interopRequireDefault(_Prefectures);
 	
-	var _NewSakeValidation = __webpack_require__(/*! ./NewSakeValidation */ 663);
+	var _NewSakeValidation = __webpack_require__(/*! ./NewSakeValidation */ 664);
 	
 	var _NewSakeValidation2 = _interopRequireDefault(_NewSakeValidation);
 	
@@ -70401,7 +70452,7 @@
 	
 	var _smoothScroll2 = _interopRequireDefault(_smoothScroll);
 	
-	var _ImageHandler = __webpack_require__(/*! ../util/ImageHandler */ 664);
+	var _ImageHandler = __webpack_require__(/*! ../util/ImageHandler */ 665);
 	
 	var _ImageHandler2 = _interopRequireDefault(_ImageHandler);
 	
@@ -70889,7 +70940,7 @@
 	exports.default = NewSake;
 
 /***/ },
-/* 662 */
+/* 663 */
 /*!***************************************!*\
   !*** ./src/components/Prefectures.js ***!
   \***************************************/
@@ -71033,7 +71084,7 @@
 	exports.default = Prefectures;
 
 /***/ },
-/* 663 */
+/* 664 */
 /*!*********************************************!*\
   !*** ./src/components/NewSakeValidation.js ***!
   \*********************************************/
@@ -71152,7 +71203,7 @@
 	exports.default = validate;
 
 /***/ },
-/* 664 */
+/* 665 */
 /*!**********************************!*\
   !*** ./src/util/ImageHandler.js ***!
   \**********************************/
@@ -71209,7 +71260,7 @@
 	exports.default = handleImage;
 
 /***/ },
-/* 665 */
+/* 666 */
 /*!*******************************************!*\
   !*** ./src/containers/SearchContainer.js ***!
   \*******************************************/
@@ -71231,13 +71282,13 @@
 	
 	var _sake = __webpack_require__(/*! ../actions/sake */ 623);
 	
-	var _brewery = __webpack_require__(/*! ../actions/brewery */ 686);
+	var _brewery = __webpack_require__(/*! ../actions/brewery */ 661);
 	
-	var _List = __webpack_require__(/*! ../Components/List */ 666);
+	var _List = __webpack_require__(/*! ../Components/List */ 667);
 	
 	var _List2 = _interopRequireDefault(_List);
 	
-	var _Search = __webpack_require__(/*! ../components/Search */ 672);
+	var _Search = __webpack_require__(/*! ../components/Search */ 673);
 	
 	var _Search2 = _interopRequireDefault(_Search);
 	
@@ -71308,7 +71359,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(SearchContainer);
 
 /***/ },
-/* 666 */
+/* 667 */
 /*!********************************!*\
   !*** ./src/Components/List.js ***!
   \********************************/
@@ -71326,19 +71377,19 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 667);
+	var _list = __webpack_require__(/*! ../../public/stylesheets/scss/list.scss */ 668);
 	
 	var _list2 = _interopRequireDefault(_list);
 	
-	var _MySakeCard = __webpack_require__(/*! ../components/MySakeCard */ 669);
+	var _MySakeCard = __webpack_require__(/*! ../components/MySakeCard */ 670);
 	
 	var _MySakeCard2 = _interopRequireDefault(_MySakeCard);
 	
-	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 671);
+	var _SakeCard = __webpack_require__(/*! ../components/SakeCard */ 672);
 	
 	var _SakeCard2 = _interopRequireDefault(_SakeCard);
 	
-	var _calcReviews = __webpack_require__(/*! ../util/calcReviews */ 670);
+	var _calcReviews = __webpack_require__(/*! ../util/calcReviews */ 671);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -71455,7 +71506,7 @@
 	exports.default = List;
 
 /***/ },
-/* 667 */
+/* 668 */
 /*!*******************************************!*\
   !*** ./public/stylesheets/scss/list.scss ***!
   \*******************************************/
@@ -71464,7 +71515,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./list.scss */ 668);
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./list.scss */ 669);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 269)(content, {});
@@ -71484,7 +71535,7 @@
 	}
 
 /***/ },
-/* 668 */
+/* 669 */
 /*!**************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/list.scss ***!
   \**************************************************************************************************************/
@@ -71503,7 +71554,7 @@
 	};
 
 /***/ },
-/* 669 */
+/* 670 */
 /*!**************************************!*\
   !*** ./src/components/MySakeCard.js ***!
   \**************************************/
@@ -71533,7 +71584,7 @@
 	
 	var _TypeMark2 = _interopRequireDefault(_TypeMark);
 	
-	var _calcReviews = __webpack_require__(/*! ../util/calcReviews */ 670);
+	var _calcReviews = __webpack_require__(/*! ../util/calcReviews */ 671);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -71661,7 +71712,7 @@
 	exports.default = MySakeCard;
 
 /***/ },
-/* 670 */
+/* 671 */
 /*!*********************************!*\
   !*** ./src/util/calcReviews.js ***!
   \*********************************/
@@ -71708,7 +71759,7 @@
 	exports.averageReview = averageReview;
 
 /***/ },
-/* 671 */
+/* 672 */
 /*!************************************!*\
   !*** ./src/components/SakeCard.js ***!
   \************************************/
@@ -71738,7 +71789,7 @@
 	
 	var _TypeMark2 = _interopRequireDefault(_TypeMark);
 	
-	var _calcReviews = __webpack_require__(/*! ../util/calcReviews */ 670);
+	var _calcReviews = __webpack_require__(/*! ../util/calcReviews */ 671);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -71815,6 +71866,10 @@
 	          justifyContent: 'space-between',
 	          padding: '0 0 0 1em'
 	        },
+	        reviewNumber: {
+	          display: 'inline-block',
+	          margin: '.5em'
+	        },
 	        text: {
 	          height: '6em',
 	          overflow: 'hidden'
@@ -71825,6 +71880,7 @@
 	        }
 	      };
 	      var imageURL = '//' + location.host + '/api/sakes/' + this.props.sake._id + '/image';
+	      var reviewNumber = this.props.sake.reviews ? '(' + this.props.sake.reviews.length + ')' : '';
 	      return _react2.default.createElement(
 	        _reactRouter.Link,
 	        { to: '/sake/' + this.props.sake._id, style: styles.link },
@@ -71849,6 +71905,11 @@
 	              { style: styles.description },
 	              _react2.default.createElement(_Stars2.default, { evaluation: (0, _calcReviews.averageEvaluation)(this.props.sake.reviews) }),
 	              _react2.default.createElement(
+	                'span',
+	                { style: styles.reviewNumber },
+	                reviewNumber
+	              ),
+	              _react2.default.createElement(
 	                'div',
 	                { style: styles.text },
 	                this.props.sake.description
@@ -71870,7 +71931,7 @@
 	exports.default = SakeCard;
 
 /***/ },
-/* 672 */
+/* 673 */
 /*!**********************************!*\
   !*** ./src/components/Search.js ***!
   \**********************************/
@@ -71902,7 +71963,7 @@
 	
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 	
-	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 662);
+	var _Prefectures = __webpack_require__(/*! ../components/Prefectures */ 663);
 	
 	var _Prefectures2 = _interopRequireDefault(_Prefectures);
 	
@@ -72048,7 +72109,7 @@
 	exports.default = Search;
 
 /***/ },
-/* 673 */
+/* 674 */
 /*!*********************************!*\
   !*** ./src/components/Login.js ***!
   \*********************************/
@@ -72146,7 +72207,7 @@
 	exports.default = Login;
 
 /***/ },
-/* 674 */
+/* 675 */
 /*!*********************************************!*\
   !*** ./src/containers/GlossaryContainer.js ***!
   \*********************************************/
@@ -72166,9 +72227,9 @@
 	
 	var _reactRedux = __webpack_require__(/*! react-redux */ 159);
 	
-	var _glossary = __webpack_require__(/*! ../actions/glossary */ 675);
+	var _glossary = __webpack_require__(/*! ../actions/glossary */ 676);
 	
-	var _Glossary = __webpack_require__(/*! ../components/Glossary */ 676);
+	var _Glossary = __webpack_require__(/*! ../components/Glossary */ 677);
 	
 	var _Glossary2 = _interopRequireDefault(_Glossary);
 	
@@ -72223,7 +72284,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(GlossaryContainer);
 
 /***/ },
-/* 675 */
+/* 676 */
 /*!*********************************!*\
   !*** ./src/actions/glossary.js ***!
   \*********************************/
@@ -72277,7 +72338,7 @@
 	};
 
 /***/ },
-/* 676 */
+/* 677 */
 /*!************************************!*\
   !*** ./src/components/Glossary.js ***!
   \************************************/
@@ -72295,7 +72356,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _sheets = __webpack_require__(/*! ../../public/stylesheets/scss/sheets.scss */ 677);
+	var _sheets = __webpack_require__(/*! ../../public/stylesheets/scss/sheets.scss */ 678);
 	
 	var _sheets2 = _interopRequireDefault(_sheets);
 	
@@ -72405,7 +72466,7 @@
 	exports.default = Glossary;
 
 /***/ },
-/* 677 */
+/* 678 */
 /*!*********************************************!*\
   !*** ./public/stylesheets/scss/sheets.scss ***!
   \*********************************************/
@@ -72414,7 +72475,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./sheets.scss */ 678);
+	var content = __webpack_require__(/*! !./../../../~/css-loader?sourceMap&modules!./../../../~/sass-loader?sourceMap&modules!./sheets.scss */ 679);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 269)(content, {});
@@ -72434,7 +72495,7 @@
 	}
 
 /***/ },
-/* 678 */
+/* 679 */
 /*!****************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap&modules!./~/sass-loader?sourceMap&modules!./public/stylesheets/scss/sheets.scss ***!
   \****************************************************************************************************************/
@@ -72455,7 +72516,7 @@
 	};
 
 /***/ },
-/* 679 */
+/* 680 */
 /*!*********************************************!*\
   !*** ./src/containers/ShoplistContainer.js ***!
   \*********************************************/
@@ -72475,9 +72536,9 @@
 	
 	var _reactRedux = __webpack_require__(/*! react-redux */ 159);
 	
-	var _shoplist = __webpack_require__(/*! ../actions/shoplist */ 680);
+	var _shoplist = __webpack_require__(/*! ../actions/shoplist */ 681);
 	
-	var _Shoplist = __webpack_require__(/*! ../components/Shoplist */ 681);
+	var _Shoplist = __webpack_require__(/*! ../components/Shoplist */ 682);
 	
 	var _Shoplist2 = _interopRequireDefault(_Shoplist);
 	
@@ -72532,7 +72593,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(ShoplistContainer);
 
 /***/ },
-/* 680 */
+/* 681 */
 /*!*********************************!*\
   !*** ./src/actions/shoplist.js ***!
   \*********************************/
@@ -72586,7 +72647,7 @@
 	};
 
 /***/ },
-/* 681 */
+/* 682 */
 /*!************************************!*\
   !*** ./src/components/Shoplist.js ***!
   \************************************/
@@ -72604,7 +72665,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _sheets = __webpack_require__(/*! ../../public/stylesheets/scss/sheets.scss */ 677);
+	var _sheets = __webpack_require__(/*! ../../public/stylesheets/scss/sheets.scss */ 678);
 	
 	var _sheets2 = _interopRequireDefault(_sheets);
 	
@@ -72752,7 +72813,7 @@
 	exports.default = Shoplist;
 
 /***/ },
-/* 682 */
+/* 683 */
 /*!*******************************************!*\
   !*** ./src/containers/MypageContainer.js ***!
   \*******************************************/
@@ -72774,11 +72835,11 @@
 	
 	var _sake = __webpack_require__(/*! ../actions/sake */ 623);
 	
-	var _List = __webpack_require__(/*! ../Components/List */ 666);
+	var _List = __webpack_require__(/*! ../Components/List */ 667);
 	
 	var _List2 = _interopRequireDefault(_List);
 	
-	var _MySearch = __webpack_require__(/*! ../components/MySearch */ 683);
+	var _MySearch = __webpack_require__(/*! ../components/MySearch */ 684);
 	
 	var _MySearch2 = _interopRequireDefault(_MySearch);
 	
@@ -72843,7 +72904,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(MypageContainer);
 
 /***/ },
-/* 683 */
+/* 684 */
 /*!************************************!*\
   !*** ./src/components/MySearch.js ***!
   \************************************/
@@ -72869,7 +72930,7 @@
 	
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 	
-	var _time = __webpack_require__(/*! ../util/time */ 684);
+	var _time = __webpack_require__(/*! ../util/time */ 685);
 	
 	var _time2 = _interopRequireDefault(_time);
 	
@@ -72988,7 +73049,7 @@
 	exports.default = MySearch;
 
 /***/ },
-/* 684 */
+/* 685 */
 /*!**************************!*\
   !*** ./src/util/time.js ***!
   \**************************/
@@ -73019,7 +73080,7 @@
 	exports.default = localISOString;
 
 /***/ },
-/* 685 */
+/* 686 */
 /*!*********************************************!*\
   !*** ./src/containers/CompleteContainer.js ***!
   \*********************************************/
@@ -73039,7 +73100,7 @@
 	
 	var _reactRedux = __webpack_require__(/*! react-redux */ 159);
 	
-	var _brewery = __webpack_require__(/*! ../actions/brewery */ 686);
+	var _brewery = __webpack_require__(/*! ../actions/brewery */ 661);
 	
 	var _sake = __webpack_require__(/*! ../actions/sake */ 623);
 	
@@ -73099,57 +73160,6 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(CompleteContainer);
 
 /***/ },
-/* 686 */
-/*!********************************!*\
-  !*** ./src/actions/brewery.js ***!
-  \********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.getAllBreweries = exports.setAllBreweries = undefined;
-	
-	var _axios = __webpack_require__(/*! axios */ 624);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var setAllBreweries = exports.setAllBreweries = function setAllBreweries(breweries) {
-	  return {
-	    type: 'SETALLBREWERIES',
-	    breweries: breweries
-	  };
-	};
-	
-	var handleCashe = function handleCashe(url, func) {
-	  if ('caches' in window) {
-	    caches.match(url).then(function (response) {
-	      if (response) {
-	        response.json().then(function (json) {
-	          console.log('get from cache');
-	          func(json);
-	        });
-	      }
-	    });
-	  }
-	};
-	
-	var getAllBreweries = exports.getAllBreweries = function getAllBreweries(dispatch) {
-	  var url = '/api/breweries';
-	  _axios2.default.get(url).then(function (res) {
-	    dispatch(setAllBreweries(res.data));
-	  }).catch(function (error) {
-	    handleCashe(url, function (data) {
-	      dispatch(setAllBreweries(data));
-	    });
-	  });
-	};
-
-/***/ },
 /* 687 */
 /*!************************************!*\
   !*** ./src/components/Complete.js ***!
@@ -73168,7 +73178,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _sheets = __webpack_require__(/*! ../../public/stylesheets/scss/sheets.scss */ 677);
+	var _sheets = __webpack_require__(/*! ../../public/stylesheets/scss/sheets.scss */ 678);
 	
 	var _sheets2 = _interopRequireDefault(_sheets);
 	

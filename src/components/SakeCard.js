@@ -59,6 +59,10 @@ class SakeCard extends React.Component {
         justifyContent: 'space-between',
         padding: '0 0 0 1em',
       },
+      reviewNumber: {
+        display: 'inline-block',
+        margin: '.5em',
+      },
       text: {
         height: '6em',
         overflow: 'hidden',
@@ -69,6 +73,7 @@ class SakeCard extends React.Component {
       }
     }
     const imageURL = '//' + location.host + '/api/sakes/' + this.props.sake._id + '/image'
+    let reviewNumber = this.props.sake.reviews? '(' + this.props.sake.reviews.length + ')': ''
     return (
       <Link to={`/sake/${this.props.sake._id}`} style={styles.link}>
         <Card style={ styles.card }>
@@ -83,6 +88,7 @@ class SakeCard extends React.Component {
             </div>
             <div style={ styles.description }>
               <Stars evaluation={ averageEvaluation( this.props.sake.reviews ) } />
+              <span style={ styles.reviewNumber }>{ reviewNumber }</span>
               <div style={ styles.text }>{ this.props.sake.description }</div>
             </div>
           </CardText>
