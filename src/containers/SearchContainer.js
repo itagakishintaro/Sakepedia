@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 // actions
-import { getSakeList, getBrands, getBreweries, setSakeList } from '../actions/sake'
+import { getSakeList, getBrands, setSakeList } from '../actions/sake'
+import { getAllBreweries } from '../actions/brewery'
 // material-ui
 import List from '../Components/List'
 // components
@@ -13,7 +14,7 @@ class SearchContainer extends React.Component {
     setSakeList( [] )
     this.search = this.search.bind(this)
     getBrands( this.props.dispatch )
-    getBreweries( this.props.dispatch )
+    getAllBreweries( this.props.dispatch )
   }
 
   search( query ) {
@@ -26,7 +27,7 @@ class SearchContainer extends React.Component {
       <div>
         <Search
           brands = {this.props.brands}
-          breweries = {this.props.breweries}
+          breweries = { this.props.allBreweries }
           search = {this.search}
         />
         <List list={this.props.list}/>

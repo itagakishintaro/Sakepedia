@@ -70,7 +70,7 @@ class Search extends React.Component {
               id="brewrey"
               floatingLabelFixed={true}
               floatingLabelText="蔵元"
-              dataSource={ this.props.breweries }
+              dataSource={ this.props.breweries.filter( b => this.state.prefecture? b[2] === this.state.prefecture: true ).map( array => array[0] ) }
               fullWidth={true}
             />
             <AutoComplete

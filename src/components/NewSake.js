@@ -278,7 +278,7 @@ class NewSake extends React.Component {
           />
           <AutoComplete
             id="brewery"
-            dataSource={this.props.breweries}
+            dataSource={ this.props.breweries.filter( b => this.state.prefecture? b[2] === this.state.prefecture: true ).map( array => array[0] ) }
             errorText={this.state.errorText.brewery}
             floatingLabelFixed={true}
             floatingLabelText="蔵元*"
