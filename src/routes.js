@@ -10,6 +10,7 @@ import GlossaryContainer from './containers/GlossaryContainer'
 import ShoplistContainer from './containers/ShoplistContainer'
 import MypageContainer from './containers/MypageContainer'
 import CompleteContainer from './containers/CompleteContainer'
+import Api from './components/Api'
 
 const Routes = (
   <Route path='/' component={App}>
@@ -21,6 +22,7 @@ const Routes = (
     <Route path="shoplist" component={ShoplistContainer}/>
     <Route path="mypage" component={MypageContainer}/>
     <Route path="complete" component={CompleteContainer}/>
+    <Route path="api" component={Api}/>
   </Route>
 );
 export default Routes;

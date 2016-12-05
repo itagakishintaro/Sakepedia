@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 // material-ui
 import { cyan500, cyan50 } from 'material-ui/styles/colors'
 import FontIcon from 'material-ui/FontIcon'
@@ -34,6 +35,8 @@ const Footer = () => {
       <a href="https://github.com/itagakishintaro/Sakepedia/issues" target="_blank" style={styles.link}>
         <i className="fa fa-github" aria-hidden="true" style={styles.icon}></i>ご意見・ご要望
       </a>
+      <span> / </span>
+      <Link to={'/api'} style={styles.link}>APIについて</Link>
       <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
         <img alt="クリエイティブ・コモンズ・ライセンス" style={styles.ccby} src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a></div>
   )

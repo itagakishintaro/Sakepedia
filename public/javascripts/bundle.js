@@ -28672,6 +28672,10 @@
 	
 	var _CompleteContainer2 = _interopRequireDefault(_CompleteContainer);
 	
+	var _Api = __webpack_require__(/*! ./components/Api */ 991);
+	
+	var _Api2 = _interopRequireDefault(_Api);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Routes = _react2.default.createElement(
@@ -28684,7 +28688,8 @@
 	  _react2.default.createElement(_reactRouter.Route, { path: 'glossary', component: _GlossaryContainer2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'shoplist', component: _ShoplistContainer2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'mypage', component: _MypageContainer2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: 'complete', component: _CompleteContainer2.default })
+	  _react2.default.createElement(_reactRouter.Route, { path: 'complete', component: _CompleteContainer2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: 'api', component: _Api2.default })
 	);
 	exports.default = Routes;
 
@@ -66788,6 +66793,8 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactRouter = __webpack_require__(/*! react-router */ 202);
+	
 	var _colors = __webpack_require__(/*! material-ui/styles/colors */ 523);
 	
 	var _FontIcon = __webpack_require__(/*! material-ui/FontIcon */ 297);
@@ -66831,6 +66838,16 @@
 	      { href: 'https://github.com/itagakishintaro/Sakepedia/issues', target: '_blank', style: styles.link },
 	      _react2.default.createElement('i', { className: 'fa fa-github', 'aria-hidden': 'true', style: styles.icon }),
 	      'ご意見・ご要望'
+	    ),
+	    _react2.default.createElement(
+	      'span',
+	      null,
+	      ' / '
+	    ),
+	    _react2.default.createElement(
+	      _reactRouter.Link,
+	      { to: '/api', style: styles.link },
+	      'APIについて'
 	    ),
 	    _react2.default.createElement(
 	      'a',
@@ -68768,7 +68785,7 @@
 	
 	
 	// module
-	exports.push([module.id, "._37soP-CgkV47HJHHPN-0wt {\n  display: flex; }\n  ._37soP-CgkV47HJHHPN-0wt ._-aclf8JvETKAr3DoLPF3R {\n    height: 100px;\n    margin: 0 1em 1em; }\n  ._37soP-CgkV47HJHHPN-0wt .d-p7X-iJno14UzotpbGc7 {\n    font-size: 1.5em; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/public/stylesheets/scss/detail.scss"],"names":[],"mappings":"AAEA;EACE,cAAc,EAUf;EAXD;IAII,cAAc;IACd,kBAAkB,EACnB;EANH;IASI,iBAAiB,EAClB","file":"detail.scss","sourcesContent":["@import 'common';\r\n\r\n.header {\r\n  display: flex;\r\n\r\n  .image {\r\n    height: 100px;\r\n    margin: 0 1em 1em;\r\n  }\r\n\r\n  .title {\r\n    font-size: 1.5em;\r\n  }\r\n}\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "@charset \"UTF-8\";\nh2 {\n  font-size: 1.3em; }\n\npre {\n  display: block;\n  color: #333;\n  word-break: break-all;\n  word-wrap: break-word;\n  background-color: #f5f5f5;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  padding: .5em;\n  margin: 0;\n  white-space: pre-wrap;\n  font-size: 1em;\n  line-height: 1.5em;\n  font-family: \"\\6E38\\30B4\\30B7\\30C3\\30AF\\4F53\", \"Yu Gothic\", YuGothic, \"\\30D2\\30E9\\30AE\\30CE\\89D2\\30B4   Pro\", \"Hiragino Kaku Gothic Pro\", \"\\30E1\\30A4\\30EA\\30AA\", \"Meiryo\", sans-serif; }\n\n._37soP-CgkV47HJHHPN-0wt {\n  display: flex; }\n  ._37soP-CgkV47HJHHPN-0wt ._-aclf8JvETKAr3DoLPF3R {\n    height: 100px;\n    margin: 0 1em 1em; }\n  ._37soP-CgkV47HJHHPN-0wt .d-p7X-iJno14UzotpbGc7 {\n    font-size: 1.5em; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/detail.scss","/./public/stylesheets/scss/public/stylesheets/scss/_common.scss","/./public/stylesheets/scss/public/stylesheets/scss/detail.scss"],"names":[],"mappings":"AAAA,iBAAiB;ACEjB;EACE,iBAAiB,EAClB;;AACD;EACE,eAAe;EACf,YAAY;EACZ,sBAAsB;EACtB,sBAAsB;EACtB,0BAA0B;EAC1B,uBAAuB;EACvB,mBAAmB;EACnB,cAAc;EACd,UAAU;EACV,sBAAsB;EACtB,eAAe;EACf,mBAAmB;EACnB,uLAAa,EAAA;;AChBf;EACE,cAAc,EAUf;EAXD;IAII,cAAc;IACd,kBAAkB,EACnB;EANH;IASI,iBAAiB,EAClB","file":"detail.scss","sourcesContent":["@charset \"UTF-8\";\nh2 {\n  font-size: 1.3em; }\n\npre {\n  display: block;\n  color: #333;\n  word-break: break-all;\n  word-wrap: break-word;\n  background-color: #f5f5f5;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  padding: .5em;\n  margin: 0;\n  white-space: pre-wrap;\n  font-size: 1em;\n  line-height: 1.5em;\n  font-family: \"游ゴシック体\", \"Yu Gothic\", YuGothic, \"ヒラギノ角ゴ Pro\", \"Hiragino Kaku Gothic Pro\", \"メイリオ\", \"Meiryo\", sans-serif; }\n\n.header {\n  display: flex; }\n  .header .image {\n    height: 100px;\n    margin: 0 1em 1em; }\n  .header .title {\n    font-size: 1.5em; }\n","$grey200: #eee;\r\n$grey300: #e0e0e0;\r\nh2 {\r\n  font-size: 1.3em;\r\n}\r\npre {\r\n  display: block;\r\n  color: #333;\r\n  word-break: break-all;\r\n  word-wrap: break-word;\r\n  background-color: #f5f5f5;\r\n  border: 1px solid #ccc;\r\n  border-radius: 4px;\r\n  padding: .5em;\r\n  margin: 0;\r\n  white-space: pre-wrap;\r\n  font-size: 1em;\r\n  line-height: 1.5em;\r\n  font-family: \"游ゴシック体\", \"Yu Gothic\", YuGothic, \"ヒラギノ角ゴ Pro\", \"Hiragino Kaku Gothic Pro\", \"メイリオ\", \"Meiryo\", sans-serif;\r\n}\r\n","@import 'common';\r\n\r\n.header {\r\n  display: flex;\r\n\r\n  .image {\r\n    height: 100px;\r\n    margin: 0 1em 1em;\r\n  }\r\n\r\n  .title {\r\n    font-size: 1.5em;\r\n  }\r\n}\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 	exports.locals = {
@@ -68925,7 +68942,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".HqZb6oqoqCXoXRVtiMsTb {\n  border-collapse: collapse;\n  width: 100%; }\n\n._2_jq7FiMLvDGlKVFYLt3Um {\n  background-color: #eee;\n  border: 1px solid #e0e0e0;\n  font-weight: normal;\n  text-align: left; }\n\n._1cCXTTKmrr4_cXCWTLitPv {\n  border: 1px solid #e0e0e0;\n  white-space: pre-wrap;\n  word-break: break-all; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/public/stylesheets/scss/detailInfo.scss","/./public/stylesheets/scss/public/stylesheets/scss/_common.scss"],"names":[],"mappings":"AAIA;EACE,0BAA0B;EAC1B,YAAY,EACb;;AAED;EACE,uBCVY;EDWZ,0BCVe;EDWf,oBAAoB;EACpB,iBAAiB,EAClB;;AAED;EACE,0BChBe;EDiBf,sBAAsB;EACtB,sBAAsB,EACvB","file":"detailInfo.scss","sourcesContent":["@import 'common';\r\n\r\n$border: 1px solid $grey300;\r\n\r\n.table {\r\n  border-collapse: collapse;\r\n  width: 100%;\r\n}\r\n\r\n.th {\r\n  background-color: $grey200;\r\n  border: $border;\r\n  font-weight: normal;\r\n  text-align: left;\r\n}\r\n\r\n.td {\r\n  border: $border;\r\n  white-space: pre-wrap;\r\n  word-break: break-all;\r\n}\r\n","$grey200: #eee;\r\n$grey300: #e0e0e0;\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "@charset \"UTF-8\";\nh2 {\n  font-size: 1.3em; }\n\npre {\n  display: block;\n  color: #333;\n  word-break: break-all;\n  word-wrap: break-word;\n  background-color: #f5f5f5;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  padding: .5em;\n  margin: 0;\n  white-space: pre-wrap;\n  font-size: 1em;\n  line-height: 1.5em;\n  font-family: \"\\6E38\\30B4\\30B7\\30C3\\30AF\\4F53\", \"Yu Gothic\", YuGothic, \"\\30D2\\30E9\\30AE\\30CE\\89D2\\30B4   Pro\", \"Hiragino Kaku Gothic Pro\", \"\\30E1\\30A4\\30EA\\30AA\", \"Meiryo\", sans-serif; }\n\n.HqZb6oqoqCXoXRVtiMsTb {\n  border-collapse: collapse;\n  width: 100%; }\n\n._2_jq7FiMLvDGlKVFYLt3Um {\n  background-color: #eee;\n  border: 1px solid #e0e0e0;\n  font-weight: normal;\n  text-align: left; }\n\n._1cCXTTKmrr4_cXCWTLitPv {\n  border: 1px solid #e0e0e0;\n  white-space: pre-wrap;\n  word-break: break-all; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/detailInfo.scss","/./public/stylesheets/scss/public/stylesheets/scss/_common.scss","/./public/stylesheets/scss/public/stylesheets/scss/detailInfo.scss"],"names":[],"mappings":"AAAA,iBAAiB;ACEjB;EACE,iBAAiB,EAClB;;AACD;EACE,eAAe;EACf,YAAY;EACZ,sBAAsB;EACtB,sBAAsB;EACtB,0BAA0B;EAC1B,uBAAuB;EACvB,mBAAmB;EACnB,cAAc;EACd,UAAU;EACV,sBAAsB;EACtB,eAAe;EACf,mBAAmB;EACnB,uLAAa,EAAA;;ACdf;EACE,0BAA0B;EAC1B,YAAY,EACb;;AAED;EACE,uBDVY;ECWZ,0BDVe;ECWf,oBAAoB;EACpB,iBAAiB,EAClB;;AAED;EACE,0BDhBe;ECiBf,sBAAsB;EACtB,sBAAsB,EACvB","file":"detailInfo.scss","sourcesContent":["@charset \"UTF-8\";\nh2 {\n  font-size: 1.3em; }\n\npre {\n  display: block;\n  color: #333;\n  word-break: break-all;\n  word-wrap: break-word;\n  background-color: #f5f5f5;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  padding: .5em;\n  margin: 0;\n  white-space: pre-wrap;\n  font-size: 1em;\n  line-height: 1.5em;\n  font-family: \"游ゴシック体\", \"Yu Gothic\", YuGothic, \"ヒラギノ角ゴ Pro\", \"Hiragino Kaku Gothic Pro\", \"メイリオ\", \"Meiryo\", sans-serif; }\n\n.table {\n  border-collapse: collapse;\n  width: 100%; }\n\n.th {\n  background-color: #eee;\n  border: 1px solid #e0e0e0;\n  font-weight: normal;\n  text-align: left; }\n\n.td {\n  border: 1px solid #e0e0e0;\n  white-space: pre-wrap;\n  word-break: break-all; }\n","$grey200: #eee;\r\n$grey300: #e0e0e0;\r\nh2 {\r\n  font-size: 1.3em;\r\n}\r\npre {\r\n  display: block;\r\n  color: #333;\r\n  word-break: break-all;\r\n  word-wrap: break-word;\r\n  background-color: #f5f5f5;\r\n  border: 1px solid #ccc;\r\n  border-radius: 4px;\r\n  padding: .5em;\r\n  margin: 0;\r\n  white-space: pre-wrap;\r\n  font-size: 1em;\r\n  line-height: 1.5em;\r\n  font-family: \"游ゴシック体\", \"Yu Gothic\", YuGothic, \"ヒラギノ角ゴ Pro\", \"Hiragino Kaku Gothic Pro\", \"メイリオ\", \"Meiryo\", sans-serif;\r\n}\r\n","@import 'common';\r\n\r\n$border: 1px solid $grey300;\r\n\r\n.table {\r\n  border-collapse: collapse;\r\n  width: 100%;\r\n}\r\n\r\n.th {\r\n  background-color: $grey200;\r\n  border: $border;\r\n  font-weight: normal;\r\n  text-align: left;\r\n}\r\n\r\n.td {\r\n  border: $border;\r\n  white-space: pre-wrap;\r\n  word-break: break-all;\r\n}\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 	exports.locals = {
@@ -70005,7 +70022,7 @@
 	
 	
 	// module
-	exports.push([module.id, "", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"_common.scss","sourceRoot":"webpack://"}]);
+	exports.push([module.id, "@charset \"UTF-8\";\nh2 {\n  font-size: 1.3em; }\n\npre {\n  display: block;\n  color: #333;\n  word-break: break-all;\n  word-wrap: break-word;\n  background-color: #f5f5f5;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  padding: .5em;\n  margin: 0;\n  white-space: pre-wrap;\n  font-size: 1em;\n  line-height: 1.5em;\n  font-family: \"\\6E38\\30B4\\30B7\\30C3\\30AF\\4F53\", \"Yu Gothic\", YuGothic, \"\\30D2\\30E9\\30AE\\30CE\\89D2\\30B4   Pro\", \"Hiragino Kaku Gothic Pro\", \"\\30E1\\30A4\\30EA\\30AA\", \"Meiryo\", sans-serif; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/_common.scss","/./public/stylesheets/scss/public/stylesheets/scss/_common.scss"],"names":[],"mappings":"AAAA,iBAAiB;ACEjB;EACE,iBAAiB,EAClB;;AACD;EACE,eAAe;EACf,YAAY;EACZ,sBAAsB;EACtB,sBAAsB;EACtB,0BAA0B;EAC1B,uBAAuB;EACvB,mBAAmB;EACnB,cAAc;EACd,UAAU;EACV,sBAAsB;EACtB,eAAe;EACf,mBAAmB;EACnB,uLAAa,EAAA","file":"_common.scss","sourcesContent":["@charset \"UTF-8\";\nh2 {\n  font-size: 1.3em; }\n\npre {\n  display: block;\n  color: #333;\n  word-break: break-all;\n  word-wrap: break-word;\n  background-color: #f5f5f5;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  padding: .5em;\n  margin: 0;\n  white-space: pre-wrap;\n  font-size: 1em;\n  line-height: 1.5em;\n  font-family: \"游ゴシック体\", \"Yu Gothic\", YuGothic, \"ヒラギノ角ゴ Pro\", \"Hiragino Kaku Gothic Pro\", \"メイリオ\", \"Meiryo\", sans-serif; }\n","$grey200: #eee;\r\n$grey300: #e0e0e0;\r\nh2 {\r\n  font-size: 1.3em;\r\n}\r\npre {\r\n  display: block;\r\n  color: #333;\r\n  word-break: break-all;\r\n  word-wrap: break-word;\r\n  background-color: #f5f5f5;\r\n  border: 1px solid #ccc;\r\n  border-radius: 4px;\r\n  padding: .5em;\r\n  margin: 0;\r\n  white-space: pre-wrap;\r\n  font-size: 1em;\r\n  line-height: 1.5em;\r\n  font-family: \"游ゴシック体\", \"Yu Gothic\", YuGothic, \"ヒラギノ角ゴ Pro\", \"Hiragino Kaku Gothic Pro\", \"メイリオ\", \"Meiryo\", sans-serif;\r\n}\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -72506,7 +72523,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".tJVVD8QJ7u2-oyWuhCJLu {\n  border-collapse: collapse; }\n\n._3FXjxynw_j3yz96ywxKn-q {\n  background-color: #eee;\n  border: 1px solid #e0e0e0;\n  font-weight: normal;\n  text-align: left;\n  vertical-align: top;\n  white-space: pre-wrap; }\n\n._3O3dIEzXuj6mcw15n7Et3r {\n  border: 1px solid #e0e0e0;\n  vertical-align: top;\n  white-space: pre-wrap;\n  word-break: break-all; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/public/stylesheets/scss/sheets.scss","/./public/stylesheets/scss/public/stylesheets/scss/_common.scss"],"names":[],"mappings":"AAIA;EACE,0BAA0B,EAC3B;;AAED;EACE,uBCTY;EDUZ,0BCTe;EDUf,oBAAoB;EACpB,iBAAiB;EACjB,oBAAoB;EACpB,sBAAsB,EACvB;;AAED;EACE,0BCjBe;EDkBf,oBAAoB;EACpB,sBAAsB;EACtB,sBAAsB,EACvB","file":"sheets.scss","sourcesContent":["@import 'common';\r\n\r\n$border: 1px solid $grey300;\r\n\r\n.table {\r\n  border-collapse: collapse;\r\n}\r\n\r\n.th {\r\n  background-color: $grey200;\r\n  border: $border;\r\n  font-weight: normal;\r\n  text-align: left;\r\n  vertical-align: top;\r\n  white-space: pre-wrap;\r\n}\r\n\r\n.td {\r\n  border: $border;\r\n  vertical-align: top;\r\n  white-space: pre-wrap;\r\n  word-break: break-all;\r\n}\r\n","$grey200: #eee;\r\n$grey300: #e0e0e0;\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "@charset \"UTF-8\";\nh2 {\n  font-size: 1.3em; }\n\npre {\n  display: block;\n  color: #333;\n  word-break: break-all;\n  word-wrap: break-word;\n  background-color: #f5f5f5;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  padding: .5em;\n  margin: 0;\n  white-space: pre-wrap;\n  font-size: 1em;\n  line-height: 1.5em;\n  font-family: \"\\6E38\\30B4\\30B7\\30C3\\30AF\\4F53\", \"Yu Gothic\", YuGothic, \"\\30D2\\30E9\\30AE\\30CE\\89D2\\30B4   Pro\", \"Hiragino Kaku Gothic Pro\", \"\\30E1\\30A4\\30EA\\30AA\", \"Meiryo\", sans-serif; }\n\n.tJVVD8QJ7u2-oyWuhCJLu {\n  border-collapse: collapse;\n  margin-bottom: 1em; }\n\n._3FXjxynw_j3yz96ywxKn-q {\n  background-color: #eee;\n  border: 1px solid #e0e0e0;\n  font-weight: normal;\n  text-align: left;\n  vertical-align: top;\n  white-space: pre-wrap; }\n\n._3O3dIEzXuj6mcw15n7Et3r {\n  border: 1px solid #e0e0e0;\n  vertical-align: top;\n  white-space: pre-wrap;\n  word-break: break-all; }\n", "", {"version":3,"sources":["/./public/stylesheets/scss/sheets.scss","/./public/stylesheets/scss/public/stylesheets/scss/_common.scss","/./public/stylesheets/scss/public/stylesheets/scss/sheets.scss"],"names":[],"mappings":"AAAA,iBAAiB;ACEjB;EACE,iBAAiB,EAClB;;AACD;EACE,eAAe;EACf,YAAY;EACZ,sBAAsB;EACtB,sBAAsB;EACtB,0BAA0B;EAC1B,uBAAuB;EACvB,mBAAmB;EACnB,cAAc;EACd,UAAU;EACV,sBAAsB;EACtB,eAAe;EACf,mBAAmB;EACnB,uLAAa,EAAA;;ACdf;EACE,0BAA0B;EAC1B,mBAAmB,EACpB;;AAED;EACE,uBDVY;ECWZ,0BDVe;ECWf,oBAAoB;EACpB,iBAAiB;EACjB,oBAAoB;EACpB,sBAAsB,EACvB;;AAED;EACE,0BDlBe;ECmBf,oBAAoB;EACpB,sBAAsB;EACtB,sBAAsB,EACvB","file":"sheets.scss","sourcesContent":["@charset \"UTF-8\";\nh2 {\n  font-size: 1.3em; }\n\npre {\n  display: block;\n  color: #333;\n  word-break: break-all;\n  word-wrap: break-word;\n  background-color: #f5f5f5;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  padding: .5em;\n  margin: 0;\n  white-space: pre-wrap;\n  font-size: 1em;\n  line-height: 1.5em;\n  font-family: \"游ゴシック体\", \"Yu Gothic\", YuGothic, \"ヒラギノ角ゴ Pro\", \"Hiragino Kaku Gothic Pro\", \"メイリオ\", \"Meiryo\", sans-serif; }\n\n.table {\n  border-collapse: collapse;\n  margin-bottom: 1em; }\n\n.th {\n  background-color: #eee;\n  border: 1px solid #e0e0e0;\n  font-weight: normal;\n  text-align: left;\n  vertical-align: top;\n  white-space: pre-wrap; }\n\n.td {\n  border: 1px solid #e0e0e0;\n  vertical-align: top;\n  white-space: pre-wrap;\n  word-break: break-all; }\n","$grey200: #eee;\r\n$grey300: #e0e0e0;\r\nh2 {\r\n  font-size: 1.3em;\r\n}\r\npre {\r\n  display: block;\r\n  color: #333;\r\n  word-break: break-all;\r\n  word-wrap: break-word;\r\n  background-color: #f5f5f5;\r\n  border: 1px solid #ccc;\r\n  border-radius: 4px;\r\n  padding: .5em;\r\n  margin: 0;\r\n  white-space: pre-wrap;\r\n  font-size: 1em;\r\n  line-height: 1.5em;\r\n  font-family: \"游ゴシック体\", \"Yu Gothic\", YuGothic, \"ヒラギノ角ゴ Pro\", \"Hiragino Kaku Gothic Pro\", \"メイリオ\", \"Meiryo\", sans-serif;\r\n}\r\n","@import 'common';\r\n\r\n$border: 1px solid $grey300;\r\n\r\n.table {\r\n  border-collapse: collapse;\r\n  margin-bottom: 1em;\r\n}\r\n\r\n.th {\r\n  background-color: $grey200;\r\n  border: $border;\r\n  font-weight: normal;\r\n  text-align: left;\r\n  vertical-align: top;\r\n  white-space: pre-wrap;\r\n}\r\n\r\n.td {\r\n  border: $border;\r\n  vertical-align: top;\r\n  white-space: pre-wrap;\r\n  word-break: break-all;\r\n}\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 	exports.locals = {
@@ -82621,6 +82638,261 @@
 	    return String(it).replace(regExp, replacer);
 	  };
 	};
+
+/***/ },
+/* 991 */
+/*!*******************************!*\
+  !*** ./src/components/Api.js ***!
+  \*******************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 161);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _sheets = __webpack_require__(/*! ../../public/stylesheets/scss/sheets.scss */ 678);
+	
+	var _sheets2 = _interopRequireDefault(_sheets);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Api = function Api() {
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(
+	      'h2',
+	      null,
+	      '銘柄一覧（GET）'
+	    ),
+	    _react2.default.createElement(
+	      'pre',
+	      null,
+	      '/api/sakes'
+	    ),
+	    _react2.default.createElement(
+	      'p',
+	      null,
+	      '登録されている銘柄データとレビューデータを取得します（100件が上限）。',
+	      _react2.default.createElement('br', null),
+	      '画像は取得できません。別途画像のAPIで取得してください。'
+	    ),
+	    _react2.default.createElement(
+	      'table',
+	      { className: _sheets2.default.table },
+	      _react2.default.createElement(
+	        'tr',
+	        { className: _sheets2.default.tr },
+	        _react2.default.createElement(
+	          'th',
+	          { className: _sheets2.default.th },
+	          'クエリー',
+	          _react2.default.createElement('br', null),
+	          'パラメーター'
+	        ),
+	        _react2.default.createElement(
+	          'th',
+	          { className: _sheets2.default.th },
+	          '説明'
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'tr',
+	        { className: _sheets2.default.tr },
+	        _react2.default.createElement(
+	          'td',
+	          { className: _sheets2.default.td },
+	          'prefecture'
+	        ),
+	        _react2.default.createElement(
+	          'td',
+	          { className: _sheets2.default.td },
+	          '都道府県名（例：山形県）'
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'tr',
+	        { className: _sheets2.default.tr },
+	        _react2.default.createElement(
+	          'td',
+	          { className: _sheets2.default.td },
+	          'brewery'
+	        ),
+	        _react2.default.createElement(
+	          'td',
+	          { className: _sheets2.default.td },
+	          '蔵元（例：高木酒造）'
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'tr',
+	        { className: _sheets2.default.tr },
+	        _react2.default.createElement(
+	          'td',
+	          { className: _sheets2.default.td },
+	          'brand'
+	        ),
+	        _react2.default.createElement(
+	          'td',
+	          { className: _sheets2.default.td },
+	          '銘柄（例：十四代）'
+	        )
+	      )
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      null,
+	      'サンプル'
+	    ),
+	    _react2.default.createElement(
+	      'pre',
+	      null,
+	      '/api/sakes?prefecture=山形県&brewery=高木酒造&brand=十四代'
+	    ),
+	    _react2.default.createElement(
+	      'p',
+	      null,
+	      '※クエリーパラメーターはURIエンコードしてください。'
+	    ),
+	    _react2.default.createElement(
+	      'h2',
+	      null,
+	      '銘柄（GET）'
+	    ),
+	    _react2.default.createElement(
+	      'pre',
+	      null,
+	      '/api/sakes/:id'
+	    ),
+	    _react2.default.createElement(
+	      'p',
+	      null,
+	      '指定したidに該当する銘柄データとレビューデータを取得します。',
+	      _react2.default.createElement('br', null),
+	      'idは銘柄一覧の"_id"か詳細画面のURLから確認してください。'
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      null,
+	      'サンプル'
+	    ),
+	    _react2.default.createElement(
+	      'pre',
+	      null,
+	      '/api/sakes/58119e581e09280011814c87'
+	    ),
+	    _react2.default.createElement(
+	      'h2',
+	      null,
+	      '画像（GET）'
+	    ),
+	    _react2.default.createElement(
+	      'pre',
+	      null,
+	      '/api/sakes/:id/image'
+	    ),
+	    _react2.default.createElement(
+	      'p',
+	      null,
+	      '指定したidに該当する銘柄の画像データを取得します。',
+	      _react2.default.createElement('br', null),
+	      'idは銘柄一覧の"_id"か詳細画面のURLから確認してください。'
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      null,
+	      'サンプル'
+	    ),
+	    _react2.default.createElement(
+	      'pre',
+	      null,
+	      '/api/sakes/58119e581e09280011814c87/image'
+	    ),
+	    _react2.default.createElement(
+	      'h2',
+	      null,
+	      '蔵元（GET）'
+	    ),
+	    _react2.default.createElement(
+	      'pre',
+	      null,
+	      '/api/breweries'
+	    ),
+	    _react2.default.createElement(
+	      'p',
+	      null,
+	      '登録されている蔵元データを取得します。'
+	    ),
+	    _react2.default.createElement(
+	      'p',
+	      null,
+	      '管理者確認前の最新データはGoogle Spread Sheetsから取得できます。'
+	    ),
+	    _react2.default.createElement(
+	      'a',
+	      { target: '_blank', href: 'https://docs.google.com/spreadsheets/d/1ko_2HlIC-KtAp9aMJlrDD4MiIv81DKouhdPdo3BQDGY/edit#gid=0' },
+	      '管理者確認前の最新データ'
+	    ),
+	    _react2.default.createElement(
+	      'h2',
+	      null,
+	      '用語集（GET）'
+	    ),
+	    _react2.default.createElement(
+	      'pre',
+	      null,
+	      '/api/glossary'
+	    ),
+	    _react2.default.createElement(
+	      'p',
+	      null,
+	      '登録されている用語集データを取得します。'
+	    ),
+	    _react2.default.createElement(
+	      'p',
+	      null,
+	      '管理者確認前の最新データはGoogle Spread Sheetsから取得できます。'
+	    ),
+	    _react2.default.createElement(
+	      'a',
+	      { target: '_blank', href: 'https://docs.google.com/spreadsheets/d/13xAtWg2neS0TF-8vY2BluIvd5Bbnbx5b0OUsCnnOg4k/edit#gid=0' },
+	      '管理者確認前の最新データ'
+	    ),
+	    _react2.default.createElement(
+	      'h2',
+	      null,
+	      '酒屋リスト（GET）'
+	    ),
+	    _react2.default.createElement(
+	      'pre',
+	      null,
+	      '/api/shoplist'
+	    ),
+	    _react2.default.createElement(
+	      'p',
+	      null,
+	      '登録されている酒屋リストデータを取得します。'
+	    ),
+	    _react2.default.createElement(
+	      'p',
+	      null,
+	      '管理者確認前の最新データはGoogle Spread Sheetsから取得できます。'
+	    ),
+	    _react2.default.createElement(
+	      'a',
+	      { target: '_blank', href: 'https://docs.google.com/spreadsheets/d/1PwS4aOTBwdERwZWTMQ1VUWa1-lzE7SPLLaQ1nX4BOAc/edit#gid=0' },
+	      '管理者確認前の最新データ'
+	    )
+	  );
+	};
+	// css
+	exports.default = Api;
 
 /***/ }
 /******/ ]);
