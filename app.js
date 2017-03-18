@@ -19,10 +19,13 @@ let google = require('./routes/auth/google');
 let logout = require('./routes/auth/logout');
 
 let app = express();
+// force ssl
+let forceSsl = require('force-ssl-heroku');
+app.use(forceSsl);
 
 // limit size
 app.use(bodyParser.json({limit: '5mb'}));
-app.use(bodyParser.urlencoded({limit: '5mb'}));
+app.use(bodyParser.urlencoded({extended: true, limit: '5mb'}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

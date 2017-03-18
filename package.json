@@ -17,6 +17,7 @@
     "es6-promise": "^4.0.5",
     "express": "~4.13.4",
     "express-session": "^1.14.1",
+    "force-ssl-heroku": "^1.0.2",
     "google-auth-library": "^0.9.9",
     "googleapis": "^14.2.0",
     "material-ui": "^0.15.1",
