@@ -11,8 +11,8 @@ let passport = require('passport');
 let GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 passport.use(new GoogleStrategy({
-  clientID: '560253381715-6mq1o6v3916vhruhqcusdurm95pg024c.apps.googleusercontent.com',
-  clientSecret: 'yxyL3s7bNXocPHfDWsFexS5R',
+  clientID: '596192477016-8td4sh74uj44r5itatkvlrml3e45cefu.apps.googleusercontent.com',
+  clientSecret: '9NW57hdsbRKYzZxoSz15nFOL',
   callbackURL: `${constants.host}/auth/google/callback`},
   ( token, tokenSecret, profile, done ) => {
     process.nextTick( () => {
