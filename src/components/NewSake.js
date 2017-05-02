@@ -130,17 +130,17 @@ class NewSake extends React.Component {
     this.setState({ snackbarOpen: false })
   }
 
-  handleFile() {
-    let file = document.getElementById('file').files[0]
+  handleFile( from ) {
+    let file = document.getElementById(from).files[0]
     handleImage( file, 400, ( dataURL ) => {
       document.getElementById( 'image' ).value = dataURL
       document.getElementById( 'thumbnail' ).src = dataURL
     } )
   }
 
-  handleOcr() {
+  handleOcr( from ) {
     document.getElementById('loading').style.display='block';
-    let file = document.getElementById('ocr').files[0]
+    let file = document.getElementById(from).files[0]
     handleImage( file, 600, ( dataURL ) => {
       document.getElementById( 'thumbnail2' ).src = dataURL
       axios.post( '/api/ocr/', { content: dataURL.replace(/^data:image\/(png|jpeg);base64,/, '') } )
@@ -287,12 +287,19 @@ class NewSake extends React.Component {
             searchText={this.props.sake.brewery}
           />
           <div style={styles.label}>ラベル写真</div>
-          <label htmlFor="file">
+          <label htmlFor="fileFromCamera">
             <div style={styles.camera}>
               <FontIcon className="material-icons">photo_camera</FontIcon>
             </div>
-            <input type="file" id="file" accept="image/*" capture="camera" style={styles.file} onChange={this.handleFile}/>
+            <input type="file" id="fileFromCamera" accept="image/*" capture="camera" style={styles.file} onChange={ () => this.handleFile('fileFromCamera') }/>
           </label>
+          <label htmlFor="fileFromLocal">
+            <div style={styles.camera}>
+              <FontIcon className="material-icons">folder</FontIcon>
+            </div>
+            <input type="file" id="fileFromLocal" accept="image/*" style={styles.file} onChange={ () => this.handleFile('fileFromLocal') }/>
+          </label>
+
           <TextField
               id="image"
               floatingLabelFixed={true}
@@ -301,14 +308,21 @@ class NewSake extends React.Component {
               style={{display: 'none'}}
             />
           <img id="thumbnail" src="" width="25%" style={ styles.thumbnail }/>
+
           <div style={styles.label}>裏ラベル写真(文字を読み取る)</div>
-          <label htmlFor="ocr">
+          <label htmlFor="ocrFromCamera">
             <div style={styles.camera}>
               <FontIcon className="material-icons">photo_camera</FontIcon>
             </div>
-            <input type="file" id="ocr" accept="image/*" capture="camera" style={styles.file} onChange={this.handleOcr}/>
+            <input type="file" id="ocrFromCamera" accept="image/*" capture="camera" style={styles.file} onChange={ () => this.handleOcr('ocrFromCamera') }/>
           </label>
-          <img id="thumbnail2" src="" width="100%"/>
+          <label htmlFor="ocrFromLocal">
+            <div style={styles.camera}>
+              <FontIcon className="material-icons">folder</FontIcon>
+            </div>
+            <input type="file" id="ocrFromLocal" accept="image/*" style={styles.file} onChange={ () => this.handleOcr('ocrFromLocal') }/>
+          </label>
+          <img id="thumbnail2" src="" width="25%" style={ styles.thumbnail }/>
 
           <TextField
             id="description"
