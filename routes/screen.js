@@ -6,6 +6,15 @@ let twitter = require('./auth/twitter');
 let facebook = require('./auth/facebook');
 let google = require('./auth/google');
 
+const constants = require('../constants');
+// For Old Damain
+router.all( '/*', ( req, res, next ) => {
+  if ( req.headers.host === 'sakepedia.herokuapp.com' ) {
+    res.redirect(301, constants.host);
+  } else {
+    next();
+  }
+} );
 /* GET home page. */
 router.get('/', (req, res) => {
   let user = {}
