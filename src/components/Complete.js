@@ -1,7 +1,9 @@
 import React, { PropTypes } from 'react'
 // css
-import classes from '../../public/stylesheets/scss/sheets.scss'
+import sheetsClasses from '../../public/stylesheets/scss/sheets.scss'
+import classes from '../../public/stylesheets/scss/complete.scss'
 // material-ui
+import Dialog from 'material-ui/Dialog'
 import FontIcon from 'material-ui/FontIcon'
 import RaisedButton from 'material-ui/RaisedButton'
 
@@ -15,6 +17,13 @@ class Complete extends React.Component {
     this.completeNum = this.completeNum.bind(this)
     this.getAllBreweryNames = this.getAllBreweryNames.bind(this)
     this.percent = this.percent.bind(this)
+    // for modal
+    this.state = {
+      open: false,
+      selectedPref: '',
+    }
+    this.handleOpen = this.handleOpen.bind(this)
+    this.handleClose = this.handleClose.bind(this)
   }
 
   trophy( pref, allBreweryNames ) {
@@ -56,6 +65,14 @@ class Complete extends React.Component {
     return Math.round( percent * 10 ) / 10
   }
 
+  // for modal
+  handleOpen(selectedPref) {
+    this.setState({open: true, selectedPref})
+  }
+  handleClose() {
+    this.setState({open: false})
+  }
+
   render() {
     const styles = {
       button: {
@@ -64,6 +81,14 @@ class Complete extends React.Component {
       table: {
         width: '100%',
       },
+      link: {
+        color: '#00bcd4',
+        textDecolation: 'underline',
+      },
+      smallIcon: {
+        color: '#757575',
+        fontSize: 'small',
+      }
     }
     if( this.props.allBreweries.length === 0 || this.props.myBreweries.length === 0 ){
       document.getElementById('loading').style.display = 'block'
@@ -83,25 +108,45 @@ class Complete extends React.Component {
             icon={<FontIcon className="material-icons">cloud_upload</FontIcon>}
           />
         </a>
-        <table className={classes.table} style={styles.table}>
-          <tr className={classes.tr}>
-            <th className={classes.th}><i className="fa fa-trophy"></i></th>
-            <th className={classes.th}>都道府県</th>
-            <th className={classes.th}>蔵元数</th>
-            <th className={classes.th}>制覇率</th>
+        <table className={sheetsClasses.table} style={styles.table}>
+          <tr className={sheetsClasses.tr}>
+            <th className={sheetsClasses.th}><i className="fa fa-trophy"></i></th>
+            <th className={sheetsClasses.th}>都道府県</th>
+            <th className={sheetsClasses.th}>蔵元数</th>
+            <th className={sheetsClasses.th}>制覇率</th>
           </tr>
           { this.prefectures.map( pref => {
             let allBreweryNames = this.getAllBreweryNames( pref )
             return (
-              <tr className={classes.tr}>
-                <td className={classes.td}>{ this.trophy( pref, allBreweryNames ) }</td>
-                <td className={classes.td}>{pref}</td>
-                <td className={classes.td}>{ this.completeNum( pref, allBreweryNames ) } / { allBreweryNames.length }</td>
-                <td className={classes.td}>{ this.percent( pref, allBreweryNames ) } %</td>
+              <tr className={sheetsClasses.tr}>
+                <td className={sheetsClasses.td}>{ this.trophy( pref, allBreweryNames ) }</td>
+                <td className={sheetsClasses.td}><a style={styles.link} onTouchTap={ () => this.handleOpen(pref) } >{pref} <FontIcon className="material-icons" style={styles.smallIcon}>launch</FontIcon></a></td>
+                <td className={sheetsClasses.td}>{ this.completeNum( pref, allBreweryNames ) } / { allBreweryNames.length }</td>
+                <td className={sheetsClasses.td}>{ this.percent( pref, allBreweryNames ) } %</td>
               </tr>
             )
           } ) }
         </table>
+        <Dialog
+          title="蔵元一覧"
+          autoScrollBodyContent={true}
+          open={this.state.open}
+          onRequestClose={this.handleClose}
+        >
+          <ul>
+            {
+              this.getAllBreweryNames( this.state.selectedPref ).map( name => {
+                let completed = ''
+                if( this.props.myBreweries.includes(name) ){
+                  completed = classes.completed
+                }
+                return (
+                  <li className={completed}>{name}</li>
+                )
+              })
+            }
+          </ul>
+        </Dialog>
       </div>
     )
   }

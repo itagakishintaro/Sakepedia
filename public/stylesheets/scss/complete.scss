@@ -1,0 +1,9 @@
+@import 'common';
+
+.completed {
+  color: $cyan500;
+}
+
+.completed::before {
+  content: '[済]';
+}
