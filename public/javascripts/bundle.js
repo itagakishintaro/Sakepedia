@@ -70637,8 +70637,8 @@
 	    }
 	  }, {
 	    key: 'handleFile',
-	    value: function handleFile(from) {
-	      var file = document.getElementById(from).files[0];
+	    value: function handleFile() {
+	      var file = document.getElementById('file').files[0];
 	      (0, _ImageHandler2.default)(file, 400, function (dataURL) {
 	        document.getElementById('image').value = dataURL;
 	        document.getElementById('thumbnail').src = dataURL;
@@ -70646,9 +70646,9 @@
 	    }
 	  }, {
 	    key: 'handleOcr',
-	    value: function handleOcr(from) {
+	    value: function handleOcr() {
 	      document.getElementById('loading').style.display = 'block';
-	      var file = document.getElementById(from).files[0];
+	      var file = document.getElementById('ocr').files[0];
 	      (0, _ImageHandler2.default)(file, 600, function (dataURL) {
 	        document.getElementById('thumbnail2').src = dataURL;
 	        _axios2.default.post('/api/ocr/', { content: dataURL.replace(/^data:image\/(png|jpeg);base64,/, '') }).then(function (r) {
@@ -70814,7 +70814,7 @@
 	        ),
 	        _react2.default.createElement(
 	          'label',
-	          { htmlFor: 'fileFromCamera' },
+	          { htmlFor: 'file' },
 	          _react2.default.createElement(
 	            'div',
 	            { style: styles.camera },
@@ -70824,25 +70824,7 @@
 	              'photo_camera'
 	            )
 	          ),
-	          _react2.default.createElement('input', { type: 'file', id: 'fileFromCamera', accept: 'image/*', capture: 'camera', style: styles.file, onChange: function onChange() {
-	              return _this4.handleFile('fileFromCamera');
-	            } })
-	        ),
-	        _react2.default.createElement(
-	          'label',
-	          { htmlFor: 'fileFromLocal' },
-	          _react2.default.createElement(
-	            'div',
-	            { style: styles.camera },
-	            _react2.default.createElement(
-	              _FontIcon2.default,
-	              { className: 'material-icons' },
-	              'folder'
-	            )
-	          ),
-	          _react2.default.createElement('input', { type: 'file', id: 'fileFromLocal', accept: 'image/*', style: styles.file, onChange: function onChange() {
-	              return _this4.handleFile('fileFromLocal');
-	            } })
+	          _react2.default.createElement('input', { type: 'file', id: 'file', accept: 'image/*', capture: 'camera', style: styles.file, onChange: this.handleFile })
 	        ),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'image',
@@ -70859,7 +70841,7 @@
 	        ),
 	        _react2.default.createElement(
 	          'label',
-	          { htmlFor: 'ocrFromCamera' },
+	          { htmlFor: 'ocr' },
 	          _react2.default.createElement(
 	            'div',
 	            { style: styles.camera },
@@ -70869,25 +70851,7 @@
 	              'photo_camera'
 	            )
 	          ),
-	          _react2.default.createElement('input', { type: 'file', id: 'ocrFromCamera', accept: 'image/*', capture: 'camera', style: styles.file, onChange: function onChange() {
-	              return _this4.handleOcr('ocrFromCamera');
-	            } })
-	        ),
-	        _react2.default.createElement(
-	          'label',
-	          { htmlFor: 'ocrFromLocal' },
-	          _react2.default.createElement(
-	            'div',
-	            { style: styles.camera },
-	            _react2.default.createElement(
-	              _FontIcon2.default,
-	              { className: 'material-icons' },
-	              'folder'
-	            )
-	          ),
-	          _react2.default.createElement('input', { type: 'file', id: 'ocrFromLocal', accept: 'image/*', style: styles.file, onChange: function onChange() {
-	              return _this4.handleOcr('ocrFromLocal');
-	            } })
+	          _react2.default.createElement('input', { type: 'file', id: 'ocr', accept: 'image/*', capture: 'camera', style: styles.file, onChange: this.handleOcr })
 	        ),
 	        _react2.default.createElement('img', { id: 'thumbnail2', src: '', width: '25%', style: styles.thumbnail }),
 	        _react2.default.createElement(_TextField2.default, {
