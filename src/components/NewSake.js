@@ -291,7 +291,7 @@ class NewSake extends React.Component {
             <div style={styles.camera}>
               <FontIcon className="material-icons">photo_camera</FontIcon>
             </div>
-            <input type="file" id="file" accept="image/*" capture="camera" style={styles.file} onChange={ this.handleFile }/>
+            <input type="file" id="file" accept="image/*" style={styles.file} onChange={ this.handleFile }/>
           </label>
 
           <TextField
@@ -308,7 +308,7 @@ class NewSake extends React.Component {
             <div style={styles.camera}>
               <FontIcon className="material-icons">photo_camera</FontIcon>
             </div>
-            <input type="file" id="ocr" accept="image/*" capture="camera" style={styles.file} onChange={ this.handleOcr }/>
+            <input type="file" id="ocr" accept="image/*" style={styles.file} onChange={ this.handleOcr }/>
           </label>
           <img id="thumbnail2" src="" width="25%" style={ styles.thumbnail }/>
 

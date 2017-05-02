@@ -70824,7 +70824,7 @@
 	              'photo_camera'
 	            )
 	          ),
-	          _react2.default.createElement('input', { type: 'file', id: 'file', accept: 'image/*', capture: 'camera', style: styles.file, onChange: this.handleFile })
+	          _react2.default.createElement('input', { type: 'file', id: 'file', accept: 'image/*', style: styles.file, onChange: this.handleFile })
 	        ),
 	        _react2.default.createElement(_TextField2.default, {
 	          id: 'image',
@@ -70851,7 +70851,7 @@
 	              'photo_camera'
 	            )
 	          ),
-	          _react2.default.createElement('input', { type: 'file', id: 'ocr', accept: 'image/*', capture: 'camera', style: styles.file, onChange: this.handleOcr })
+	          _react2.default.createElement('input', { type: 'file', id: 'ocr', accept: 'image/*', style: styles.file, onChange: this.handleOcr })
 	        ),
 	        _react2.default.createElement('img', { id: 'thumbnail2', src: '', width: '25%', style: styles.thumbnail }),
 	        _react2.default.createElement(_TextField2.default, {
