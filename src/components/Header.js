@@ -17,6 +17,7 @@ class Header extends React.Component{
   }
 
   toggleMenu(){
+    console.log("hello");
     this.setState({open: !this.state.open})
   }
 
@@ -65,7 +66,7 @@ class Header extends React.Component{
         <AppBar
           title="Sakepedia"
           iconElementLeft={
-            <IconButton onTouchTap={ this.toggleMenu } ><MenuIcon color={'#fff'} /></IconButton>
+            <IconButton onClick={ this.toggleMenu } ><MenuIcon color={'#fff'} /></IconButton>
           }
           onTitleTouchTap={ this.toHome }
           style={ styles.appbar }
