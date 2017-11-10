@@ -120,7 +120,7 @@ class Complete extends React.Component {
             return (
               <tr className={sheetsClasses.tr}>
                 <td className={sheetsClasses.td}>{ this.trophy( pref, allBreweryNames ) }</td>
-                <td className={sheetsClasses.td}><a style={styles.link} onTouchTap={ () => this.handleOpen(pref) } >{pref} <FontIcon className="material-icons" style={styles.smallIcon}>launch</FontIcon></a></td>
+                <td className={sheetsClasses.td}><a style={styles.link} onClick={ () => this.handleOpen(pref) } >{pref} <FontIcon className="material-icons" style={styles.smallIcon}>launch</FontIcon></a></td>
                 <td className={sheetsClasses.td}>{ this.completeNum( pref, allBreweryNames ) } / { allBreweryNames.length }</td>
                 <td className={sheetsClasses.td}>{ this.percent( pref, allBreweryNames ) } %</td>
               </tr>

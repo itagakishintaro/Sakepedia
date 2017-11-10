@@ -57,9 +57,9 @@ class Header extends React.Component{
     }
     let loginout
     if( this.props.isLogin ) {
-      loginout = <MenuItem href='/auth/logout' onTouchTap={ this.logout }>ログアウト <i className="fa fa-sign-out" aria-hidden="true"></i></MenuItem>
+      loginout = <MenuItem href='/auth/logout' onClick={ this.logout }>ログアウト <i className="fa fa-sign-out" aria-hidden="true"></i></MenuItem>
     } else {
-      loginout = <Link to={'/login'} style={styles.link}><MenuItem onTouchTap={ this.close }>ログイン <i className="fa fa-sign-in" aria-hidden="true"></i></MenuItem></Link>
+      loginout = <Link to={'/login'} style={styles.link}><MenuItem onClick={ this.close }>ログイン <i className="fa fa-sign-in" aria-hidden="true"></i></MenuItem></Link>
     }
     return (
       <div>
@@ -72,12 +72,12 @@ class Header extends React.Component{
           style={ styles.appbar }
         />
         <Drawer open={this.state.open} docked={false} onRequestChange={ this.close }>
-          <Link to={'/'} style={styles.link}><MenuItem onTouchTap={ this.close }>トップ</MenuItem></Link>
-          <Link to={'/mypage'} style={styles.link} onTouchTap={this.preventWhenLoggedout}><MenuItem onTouchTap={ this.close } disabled={!this.props.isLogin}>マイページ</MenuItem></Link>
-          <Link to={'/complete'} style={styles.link} onTouchTap={this.preventWhenLoggedout}><MenuItem onTouchTap={ this.close } disabled={!this.props.isLogin}>蔵元コンプリート</MenuItem></Link>
-          <Link to={'/sake/new'} style={styles.link} onTouchTap={this.preventWhenLoggedout}><MenuItem onTouchTap={ this.close } disabled={!this.props.isLogin}>銘柄登録</MenuItem></Link>
-          <Link to={'/glossary'} style={styles.link}><MenuItem onTouchTap={ this.close }>用語集</MenuItem></Link>
-          <Link to={'/shoplist'} style={styles.link}><MenuItem onTouchTap={ this.close }>酒屋リスト</MenuItem></Link>
+          <Link to={'/'} style={styles.link}><MenuItem onClick={ this.close }>トップ</MenuItem></Link>
+          <Link to={'/mypage'} style={styles.link} onClick={this.preventWhenLoggedout}><MenuItem onClick={ this.close } disabled={!this.props.isLogin}>マイページ</MenuItem></Link>
+          <Link to={'/complete'} style={styles.link} onClick={this.preventWhenLoggedout}><MenuItem onClick={ this.close } disabled={!this.props.isLogin}>蔵元コンプリート</MenuItem></Link>
+          <Link to={'/sake/new'} style={styles.link} onClick={this.preventWhenLoggedout}><MenuItem onClick={ this.close } disabled={!this.props.isLogin}>銘柄登録</MenuItem></Link>
+          <Link to={'/glossary'} style={styles.link}><MenuItem onClick={ this.close }>用語集</MenuItem></Link>
+          <Link to={'/shoplist'} style={styles.link}><MenuItem onClick={ this.close }>酒屋リスト</MenuItem></Link>
           <MenuItem>
             <div id="fb-root"></div>
             <div id="fb-area"></div>

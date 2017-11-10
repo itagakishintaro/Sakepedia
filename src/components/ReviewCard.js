@@ -73,7 +73,7 @@ class ReviewCard extends React.Component {
     if( this.isMine() ) {
       styles.updateBtn.display = 'inline'
     }
-    let subtitle = <span><span>{this.props.review.username}</span><i className="fa fa-pencil-square-o fa-2x" style={styles.updateBtn} onTouchTap={this.updateReview.bind(this)}></i></span>
+    let subtitle = <span><span>{this.props.review.username}</span><i className="fa fa-pencil-square-o fa-2x" style={styles.updateBtn} onClick={this.updateReview.bind(this)}></i></span>
     return (
       <Card style={ styles.card }>
         <div style={ styles.date }>{ dateFormat(this.props.review.date , 'yyyy/mm/dd HH:MM')}</div>

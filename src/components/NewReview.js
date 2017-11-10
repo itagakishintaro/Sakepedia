@@ -238,7 +238,7 @@ class NewReview extends React.Component {
             fullWidth={true}
           />
 
-          <RaisedButton label={createOrUpdate} primary={true} style={styles.button} onTouchTap={ this.send.bind(this) } />
+          <RaisedButton label={createOrUpdate} primary={true} style={styles.button} onClick={ this.send.bind(this) } />
           <div id="error" className="error"></div>
       </div>
     )

@@ -34484,7 +34484,7 @@
 	      if (this.props.isLogin) {
 	        loginout = _react2.default.createElement(
 	          _materialUi.MenuItem,
-	          { href: '/auth/logout', onTouchTap: this.logout },
+	          { href: '/auth/logout', onClick: this.logout },
 	          '\u30ED\u30B0\u30A2\u30A6\u30C8 ',
 	          _react2.default.createElement('i', { className: 'fa fa-sign-out', 'aria-hidden': 'true' })
 	        );
@@ -34494,7 +34494,7 @@
 	          { to: '/login', style: styles.link },
 	          _react2.default.createElement(
 	            _materialUi.MenuItem,
-	            { onTouchTap: this.close },
+	            { onClick: this.close },
 	            '\u30ED\u30B0\u30A4\u30F3 ',
 	            _react2.default.createElement('i', { className: 'fa fa-sign-in', 'aria-hidden': 'true' })
 	          )
@@ -34521,34 +34521,34 @@
 	            { to: '/', style: styles.link },
 	            _react2.default.createElement(
 	              _materialUi.MenuItem,
-	              { onTouchTap: this.close },
+	              { onClick: this.close },
 	              '\u30C8\u30C3\u30D7'
 	            )
 	          ),
 	          _react2.default.createElement(
 	            _reactRouter.Link,
-	            { to: '/mypage', style: styles.link, onTouchTap: this.preventWhenLoggedout },
+	            { to: '/mypage', style: styles.link, onClick: this.preventWhenLoggedout },
 	            _react2.default.createElement(
 	              _materialUi.MenuItem,
-	              { onTouchTap: this.close, disabled: !this.props.isLogin },
+	              { onClick: this.close, disabled: !this.props.isLogin },
 	              '\u30DE\u30A4\u30DA\u30FC\u30B8'
 	            )
 	          ),
 	          _react2.default.createElement(
 	            _reactRouter.Link,
-	            { to: '/complete', style: styles.link, onTouchTap: this.preventWhenLoggedout },
+	            { to: '/complete', style: styles.link, onClick: this.preventWhenLoggedout },
 	            _react2.default.createElement(
 	              _materialUi.MenuItem,
-	              { onTouchTap: this.close, disabled: !this.props.isLogin },
+	              { onClick: this.close, disabled: !this.props.isLogin },
 	              '\u8535\u5143\u30B3\u30F3\u30D7\u30EA\u30FC\u30C8'
 	            )
 	          ),
 	          _react2.default.createElement(
 	            _reactRouter.Link,
-	            { to: '/sake/new', style: styles.link, onTouchTap: this.preventWhenLoggedout },
+	            { to: '/sake/new', style: styles.link, onClick: this.preventWhenLoggedout },
 	            _react2.default.createElement(
 	              _materialUi.MenuItem,
-	              { onTouchTap: this.close, disabled: !this.props.isLogin },
+	              { onClick: this.close, disabled: !this.props.isLogin },
 	              '\u9298\u67C4\u767B\u9332'
 	            )
 	          ),
@@ -34557,7 +34557,7 @@
 	            { to: '/glossary', style: styles.link },
 	            _react2.default.createElement(
 	              _materialUi.MenuItem,
-	              { onTouchTap: this.close },
+	              { onClick: this.close },
 	              '\u7528\u8A9E\u96C6'
 	            )
 	          ),
@@ -34566,7 +34566,7 @@
 	            { to: '/shoplist', style: styles.link },
 	            _react2.default.createElement(
 	              _materialUi.MenuItem,
-	              { onTouchTap: this.close },
+	              { onClick: this.close },
 	              '\u9152\u5C4B\u30EA\u30B9\u30C8'
 	            )
 	          ),
@@ -80389,7 +80389,7 @@
 	          floatingLabelText: '\u30DE\u30EA\u30A2\u30FC\u30B8\u30E5',
 	          fullWidth: true
 	        }),
-	        _react2.default.createElement(_RaisedButton2.default, { label: createOrUpdate, primary: true, style: styles.button, onTouchTap: this.send.bind(this) }),
+	        _react2.default.createElement(_RaisedButton2.default, { label: createOrUpdate, primary: true, style: styles.button, onClick: this.send.bind(this) }),
 	        _react2.default.createElement('div', { id: 'error', className: 'error' })
 	      );
 	    }
@@ -80744,7 +80744,7 @@
 	          null,
 	          this.props.review.username
 	        ),
-	        _react2.default.createElement('i', { className: 'fa fa-pencil-square-o fa-2x', style: styles.updateBtn, onTouchTap: this.updateReview.bind(this) })
+	        _react2.default.createElement('i', { className: 'fa fa-pencil-square-o fa-2x', style: styles.updateBtn, onClick: this.updateReview.bind(this) })
 	      );
 	      return _react2.default.createElement(
 	        _Card.Card,
@@ -82036,7 +82036,7 @@
 	          hintText: '\u5546\u54C1\u306E\u30DB\u30FC\u30E0\u30DA\u30FC\u30B8\u306A\u3069',
 	          type: 'url'
 	        }),
-	        _react2.default.createElement(_RaisedButton2.default, { label: this.btnLabel, primary: true, style: styles.button, onTouchTap: this.send.bind(this) }),
+	        _react2.default.createElement(_RaisedButton2.default, { label: this.btnLabel, primary: true, style: styles.button, onClick: this.send.bind(this) }),
 	        _react2.default.createElement('div', { id: 'error', className: 'error' })
 	      );
 	    }
@@ -83206,7 +83206,7 @@
 	            _react2.default.createElement(_RaisedButton2.default, {
 	              label: '\u691C\u7D22',
 	              primary: true,
-	              onTouchTap: this.detailSearch,
+	              onClick: this.detailSearch,
 	              style: styles.button })
 	          )
 	        )
@@ -84150,7 +84150,7 @@
 	        _react2.default.createElement(_RaisedButton2.default, {
 	          label: '\u691C\u7D22',
 	          primary: true,
-	          onTouchTap: this.detailSearch,
+	          onClick: this.detailSearch,
 	          style: styles.button })
 	      );
 	    }
@@ -84509,7 +84509,7 @@
 	                { className: _sheets2.default.td },
 	                _react2.default.createElement(
 	                  'a',
-	                  { style: styles.link, onTouchTap: function onTouchTap() {
+	                  { style: styles.link, onClick: function onClick() {
 	                      return _this2.handleOpen(pref);
 	                    } },
 	                  pref,

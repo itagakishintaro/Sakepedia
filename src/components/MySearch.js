@@ -75,7 +75,7 @@ class MySearch extends React.Component {
           <RaisedButton
             label="検索"
             primary={true}
-            onTouchTap={ this.detailSearch }
+            onClick={ this.detailSearch }
             style={ styles.button } />
       </div>
     )

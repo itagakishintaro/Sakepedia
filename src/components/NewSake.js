@@ -411,7 +411,7 @@ class NewSake extends React.Component {
             type="url"
           />
 
-        <RaisedButton label={this.btnLabel} primary={true} style={styles.button} onTouchTap={this.send.bind(this)} />
+        <RaisedButton label={this.btnLabel} primary={true} style={styles.button} onClick={this.send.bind(this)} />
         <div id="error" className="error"></div>
       </div>
     )
