@@ -10,7 +10,7 @@ class Stars extends React.Component {
     for( let i = 0; i < Math.round( this.props.evaluation ); i++ ) {
       stars.push( <FontIcon className="material-icons" color={yellow500}>star</FontIcon> )
     }
-    for( let i = 0; i < Max - Math.round( this.props.evaluation ); i++ ) {
+    for( let i = 0; i < MAX - Math.round( this.props.evaluation ); i++ ) {
       stars.push( <FontIcon className="material-icons" color={grey100}>star</FontIcon> )
     }
     return ( <span>{stars}</span> )
