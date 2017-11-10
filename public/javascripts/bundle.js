@@ -76828,7 +76828,7 @@
 	          'star'
 	        ));
 	      }
-	      for (var _i = 0; _i < Max - Math.round(this.props.evaluation); _i++) {
+	      for (var _i = 0; _i < MAX - Math.round(this.props.evaluation); _i++) {
 	        stars.push(_react2.default.createElement(
 	          _FontIcon2.default,
 	          { className: 'material-icons', color: _colors.grey100 },
